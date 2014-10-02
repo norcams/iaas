@@ -5,7 +5,7 @@ norcams/iaas is an open source effort focused around automating, documenting
 and delivering all parts of a complete, Openstack-based production-quality
 infrastructure. This repository is our project handbook.
 
-Infrastructure as code and 'automation first' are the main driving
+Infrastructure as code and 'automation first' are the main technical driving
 forces along with a general need for faster and more efficient delivery
 of standardized, self-provisioned services among IT-departments in the
 norwegian academic sector.
