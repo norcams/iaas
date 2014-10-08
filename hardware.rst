@@ -32,21 +32,21 @@ Servers
 3 management role
 
 - 1u 1x12 core with 128gb RAM
-- 2 SFP+ 10gb and 2 1gbE
+- 2x SFP+ 10gb and 2x 1gbE
 - 2x SSD drives
 - Room for more disks
 
 3 compute role
 
 - 1u 2x12 core with 512Gb RAM
-- 2 SFP+ 10Gb and 2 1GbE
+- 2x SFP+ 10Gb and 2x 1GbE
 - 2x SSD drives
 - Room for more disks
 
 5 storage role
 
 - 2u 1x12 core with 128gb RAM
-- 2 SFP+ 10Gb and 2 1GbE
+- 2x SFP+ 10Gb and 2x 1GbE
 - 8x 3.5" 2tb SATA drives
 - 4x 120gb SSD drives
 - Room for more disks
