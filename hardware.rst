@@ -35,6 +35,7 @@ Servers
 - 2x SFP+ 10gb and 2x 1gbE
 - 2x SSD drives RAID1
 - Room for more disks
+- Redundant PSUs
 
 3x compute nodes
 
@@ -42,6 +43,7 @@ Servers
 - 2x SFP+ 10Gb and 2x 1GbE
 - 2x SSD drives RAID1
 - Room for more disks
+- Redundant PSUs
 
 5x storage nodes
 
@@ -51,8 +53,10 @@ Servers
 - 4x 120gb SSD drives
 - No RAID, only JBOD
 - Room for more disks (12x 3.5" ?)
-
+- Redundant PSUs
 
 Comments
 
+- Management and compute nodes could very well be the same chassis with different specs.
+  Possibly even higher density like half width would be considered, but not blade chassis (it would mean non-standard cabling/connectivity)
 - 2tb disks for storage nodes to speed up recovery times with Ceph
