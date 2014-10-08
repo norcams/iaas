@@ -6,7 +6,7 @@ The project will deliver a geo-distributed iaas service across (at least) three
 locations. A key point is that each location is built from the same specification. This is
 done to simplify and limit influence of external variables as much as possible.
 
-The spec represents a minimal baseline.
+The spec represents a minimal baseline for one location.
 
 Networking
 ----------
