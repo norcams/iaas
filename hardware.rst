@@ -53,5 +53,6 @@ Servers
 - Room for more disks (12x 3.5" ?)
 
 
-Comments:
+Comments
+
 - 2tb disks for storage nodes to speed up recovery times with Ceph
