@@ -1,6 +1,5 @@
-Hardware specification
-======================
-
+dev hardware specification
+==========================
 (draft)
 
 The project will deliver a geo-distributed iaas service across (at least) three
@@ -12,13 +11,19 @@ done to simplify and limit influence of external variables as much as possible.
 Networking
 ----------
 
-4 switches in routed leaf-spine fabric (OSPF)
+4 L3 switches
+
+- Will be connected as routed leaf-spine fabric (OSPF)
 - Each with at least 48 ports 10gb SFP+ / 4 ports 40gb QSFP
+- Swithces that support ONIE/OCP preferred
 
 1 management switch (L2)
-- 48 ports 1GbE
+
+- 48 ports 1GbE, VLAN support
+- Remote management possible
 
 48 10GBase-SR SFP+ tranceivers
+
 8  40GBase-SR4 QSFP+ tranceivers
 
 Servers
