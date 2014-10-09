@@ -59,4 +59,5 @@ Comments
 
 - Management and compute nodes could very well be the same chassis with different specs.
   Possibly even higher density like half width would be considered, but not blade chassis (it would mean non-standard cabling/connectivity)
+- Important key attribute for SSD drives is sequential write performance
 - 2tb disks for storage nodes to speed up recovery times with Ceph
