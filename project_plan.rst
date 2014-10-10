@@ -260,19 +260,37 @@ Project milestones and scheduling
 The following describes planned progress and possible startup dates for the
 project activies
 
-+------------------------------------------------------+------------+
-| Activity                                             | Date       |
-+======================================================+============+
-| Startup activity 1 and 2                             | June 2014  |
-+------------------------------------------------------+------------+
-| *Minimum viable product*. Per activity 1, one of     |            |
-| three physical sites installed and running.          |            |
-+------------------------------------------------------+------------+
-| *Locations complete*. All sites up and running.      |            |
-| No storage or instance uptime guaranteed.            |            |
-+------------------------------------------------------+------------+
-*Functionally complete*. All functional goals          |            |
-| completed and operative.                             |            |
-+------------------------------------------------------+------------+
++------------------------------------------------------------+----------------+
+| Activity                                                   | Date           |
++============================================================+================+
+| Startup activity 1 and 2                                   | June 2014      |
++------------------------------------------------------------+----------------+
+| *Minimum viable product*. Per activity 1, one of three     | October 2014   |
+| physical sites installed and running.                      |                |
++------------------------------------------------------------+----------------+
+| *Locations complete*. All sites up and running. No storage | December 2014  |
+| or instance uptime guaranteed.                             |                |
++------------------------------------------------------------+----------------+
+| *Functionally complete*. All functional goals completed    | February 2015  |
+| and operative. No storage or instance uptime guaranteed.   |                |
++------------------------------------------------------------+----------------+
+| *Incubation period*. Pre-production tuning, testing and    | February-June  |
+| verification. Early customers given access. Best effort    | 2015           |
+| storage consistency and instance uptime. Documenting any   |                |
+| further development needed.                                |                |
++------------------------------------------------------------+----------------+
+| *Project delivery*. Activites 1, 2 delivered as described. | 15. June 2015  |
++------------------------------------------------------------+----------------+
+
+Resources and budgeting
+=======================
+
+*This part of the project plan is not public*
 
 
+Project organization and management
+===================================
+
+The UH-sky steering group represents the top level project management
+
+- 
