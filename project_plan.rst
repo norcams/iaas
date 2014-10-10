@@ -1,7 +1,6 @@
 ====================
 UH-sky IaaS platform
 ====================
-
 Project plan and description
 
 Descriptive summary
@@ -255,15 +254,25 @@ be only loosely coupled to the IaaS project but we think it would be beneficial
 to wait until the core functionality of the IaaS platform is in place.
 
 
+Project milestones and scheduling
+=================================
 
+The following describes planned progress and possible startup dates for the
+project activies
 
-
-
-
-
-
-
-
-
++------------------------------------------------------+------------+
+| Activity                                             | Date       |
++======================================================+============+
+| Startup activity 1 and 2                             | June 2014  |
++------------------------------------------------------+------------+
+| *Minimum viable product*. Per activity 1, one of     |            |
+| three physical sites installed and running.          |            |
++------------------------------------------------------+------------+
+| *Locations complete*. All sites up and running.      |            |
+| No storage or instance uptime guaranteed.            |            |
++------------------------------------------------------+------------+
+*Functionally complete*. All functional goals          |            |
+| completed and operative.                             |            |
++------------------------------------------------------+------------+
 
 
