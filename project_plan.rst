@@ -22,8 +22,11 @@ the earliest startup time for these activities to be February/March 2015.
 The base IaaS platform will deliver these services:
 
 - Compute
-- Storage, 2 variants:
+
+- Storage in 2 variants
+
   - Block storage, accessible as virtual disks for compute instances
+
   - Object storage, accessible over the network as an API
 
 Limitations
@@ -33,7 +36,9 @@ Limitations
   backup state that backup data must be off-site, off-grid (e.g tape). A
   planned property of the storage system is to be able to select that an
   instance will be replicated to another location.
+
 - The additional activites described are dependent on the base IaaS platform.
+
 - Initial success criterias for the additional activities are described but
   no cost estimates (resources, budget) are given as part of this project plan.
 
@@ -44,7 +49,9 @@ To be able to deliver the platform as described, on time, it is a requirement
 that the project get access to the needed resources
 
 - At least 3 people must work full-time (100%) with the main project activity
+
 - No roles less than 50%
+
 - If split roles are used, alternating blocks of at least 3 days continuous
   work hours must be with the project
 
@@ -65,10 +72,15 @@ future IT infrastructure delivery in the academic sector.
 The project has defined the following activities:
 
 1. Develop, document and deliver a base IaaS platform
+
 2. Integration of authentication and authorization
+
 3. Further develop and verify services to cover 'traditional workloads'
+
 4. Research and suggest a solution for PaaS
+
 5. Research and suggest possible SaaS servics
+
 6. Research and specify a consumer-focused self-service portal
 
 Activities 1 and 2 have been passed by the UH-sky steering group in June 2014.
@@ -340,5 +352,36 @@ Norwegian NREN organization.
 
 Meetings in the steering group are organized by the UNINETT UH-sky program
 manager, Kristin Selvaag.
+
+Risks
+=====
+
+- The hardware investments planned will have a lifetime of at least four years.
+  Risks involved with the investment is considered *low*. All aquired hardware
+  will be usable to its full extent in the local organizations even if the
+  project fails.
+
+- Delays in progress (3 months or more) due to lack of access to resources,
+  non-foreseen technical or organizational complexities, or problems with
+  coordinating efforts across the participants is *very likely*.
+
+- Inaccuracies in cost estimates for harware (both current and futur) is not
+  considered high. However, the project does not estimate costs for production
+  usage of the finished platform.
+
+
+Appendix
+========
+
+Questions and additions
+
+1. Support for the Microsoft Windows operating system
+-----------------------------------------------------
+
+2. Licensing of instances in the service
+----------------------------------------
+
+3. Calculating needed capacity for development
+----------------------------------------------
 
 
