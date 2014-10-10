@@ -3,15 +3,11 @@ UH-sky IaaS platform
 ====================
 
 Project plan and description
-----------------------------
-
-(draft in English)
-
 
 Descriptive summary
 ===================
 
-This plan describes what the IaaS project will develop and deliver. The project
+This document describes what the IaaS project will develop and deliver. The project
 aims to position IaaS as a common building block and vessel for future IT
 infrastructure and services delivery in the academic sector.
 
@@ -205,24 +201,58 @@ part of a shared pool of resources. Existing systems and available free
 capacity vary greatly between locations but this must not prevent or stop all
 parties from participating.
 
-Licensing is an important question that this activiy must address.
+Licensing is an important question that this activity must address.
 
 
 4. Research and suggest a solution for PaaS
 -------------------------------------------
 
+There is a definite interest in PaaS as a concept in our communities. Earlier
+discussions has revealed that it is very likely we would want to deliver some
+form of PaaS solution on top of the IaaS platform. Today, from what we know,
+only UNINETT and its internal Nova project has experience with PaaS as an
+environment.
+
+This activity must research and suggest a form and model for a PaaS service
+delivered on top of the base IaaS platform. The suggested solution must be
+described and cost must be estimated.
+
 
 5. Research and suggest possible SaaS servics
 ---------------------------------------------
+
+Several of the common IT services in the sector are already today delivered in
+models that are close to SaaS. From our UH-sky viewpoint it is natural to look
+at these services as possible future migrations to the IaaS platform. This
+activity must actively approach the sector on multiple fronts to find use cases
+and needs that could possibly fit in a SaaS model. Early examples of such
+services could be software used in labs or classrooms. Is SPSS as a service
+possible?
 
 
 6. Research and specify a consumer-focused self-service portal
 ---------------------------------------------------------------
 
+This activity will define goals to enable a uniform, consumer-focused,
+self-service portal for all IaaS, PaaS (SaaS?) related services. A central
+point for consuming the services is needed.
 
+Functional aspects we'd need solved are
 
+- Chargeback. Automatically generated billing based on usage.
 
+- Support for several cloud and virt providers, both private and public
 
+- Possibility for migrating workloads/instances and data between different
+  infrastructure providers
+
+- Overview and monitoring of allocated resources across providers
+
+There are several products today that cover most if not all of the functional
+aspects described. A central customer-focused portal should be developed using
+one of them as a base. A development project formed around this activity will
+be only loosely coupled to the IaaS project but we think it would be beneficial
+to wait until the core functionality of the IaaS platform is in place.
 
 
 
