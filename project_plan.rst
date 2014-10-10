@@ -1,12 +1,15 @@
 ====================
 UH-sky IaaS platform
 ====================
-*Project plan and description*
+
+Project plan and description
+----------------------------
 
 (draft in English)
 
-Summary
--------
+
+Descriptive summary
+===================
 
 This plan describes what the IaaS project will develop and deliver. The project
 aims to position IaaS as a common building block and vessel for future IT
@@ -50,15 +53,15 @@ that the project get access to the needed resources
   work hours must be with the project
 
 The project will need at least 6 months from the *Locations complete* milestone
-to delivery of the platform. This means that if delivery is to be complete by
-15th of June 2015 procurement of the needed hardware will need to be completed
-within 2014. If hardware is delayed until 2015, the final delivery date will be
-delayed the same amount of time, counting from August 15th 2015, as June and
-July are not counted due to vacations. E.g, if *Locations complete* is reached
-in February 2015 final delivery will be 15th of October 2015.
+to delivery of the platform. This means that to deliver on time by 15th of June
+2015 procurement of the needed hardware will need to be completed within 2014.
+If hardware is delayed until 2015, the final delivery date will be delayed the
+same amount of time, counting from August 15th 2015, as June and July are not
+counted due to vacations. E.g, if *Locations complete* is reached in February
+2015 final delivery will be 15th of October 2015.
 
 Project goals and success criterias
------------------------------------
+===================================
 
 The project will deliver a base IaaS platform to form a buildling block for
 future IT infrastructure delivery in the academic sector.
@@ -183,15 +186,38 @@ done as part of this.
 3. Further develop and verify services to cover 'traditional workloads'
 -----------------------------------------------------------------------
 
+The base IaaS platform is planned to be built using OpenStack, a framework for
+building modern scalable cloud-centric infrastructure. Traditional enterprise
+workloads, defined as long-lived instances with critical data and state kept as
+part of the boot filesystem, is not as easily integrated into this framework.
+We believe a lot of our potential users would also like the service to cover
+this class of workloads.
 
+This activity integrates a solution tailored for traditional workloads with the
+base IaaS platform. Openstack and its service APIs are used to unify the
+solution so that the consumer side of the service is kept uniform. The solution
+can make use of existing infrastructure at each site/location, possibly by
+utilizing existing excess capacity, or later by expansion.
 
+A key value proposition for this activity is to confirm and further develop the
+requirement that any solution, knowledge and people working in the project are
+part of a shared pool of resources. Existing systems and available free
+capacity vary greatly between locations but this must not prevent or stop all
+parties from participating.
 
+Licensing is an important question that this activiy must address.
 
 
 4. Research and suggest a solution for PaaS
-5. Research and suggest possible SaaS servics
-6. Research and specify a consumer-focused self-service portal
+-------------------------------------------
 
+
+5. Research and suggest possible SaaS servics
+---------------------------------------------
+
+
+6. Research and specify a consumer-focused self-service portal
+---------------------------------------------------------------
 
 
 
