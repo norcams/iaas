@@ -292,6 +292,53 @@ Resources and budgeting
 Project organization and management
 ===================================
 
-The UH-sky steering group represents the top level project management
+Day-to-day activties are led by technical project manager Jan Ivar Beddari. A
+weekly meeting for planning is held wednesdays at 13:00. Daily "morning meetings"
+to keep track of activites are held at 0930. Both these regular meetings are
+held online using video conferencing.
 
-- 
+Core development and engineering team
+
+- Erlend Midttun, NTNU
+
+- Øystein Viggen, NTNU
+
+- Tor Lædre, University of Bergen
+
+- Mikael Dalsgård, University of Oslo
+
+- Hege Trosvik, University of Oslo
+
+- Hans-Henry Jakbosen, University of Tromsø
+
+- Marte Karidatter Skadsem, University of Tromsø
+
+The UH-sky steering group represents the top level project management and
+project ownership. This group consists of the IT Directors from the four larger
+universities and representatives from university colleges and UNINETT, the
+Norwegian NREN organization.
+
+- Håkon Alstad, IT Director, NTNU Norwegian University of Science and
+  Technology
+
+- Lars Oftedal, IT Director, University of Oslo
+
+- Stig Ørsje, IT Director, University of Tromsø
+
+- Tore Burheim, IT Director, University of Bergen
+
+- Thor-Inge Næsset, IT Manager, NHH Norwegian School of Economics
+
+- Vidar Solheim, IT Director, HiST Sør-Trøndelag University College
+
+- Frode Gether-Rønning, Head of IT-dept., AHO The Oslo School of Architecture
+  and Design
+
+- Petter Kongshaug, CEO, UNINETT
+
+- Tor Holmen, Deputy CEO, UNINETT
+
+Meetings in the steering group are organized by the UNINETT UH-sky program
+manager, Kristin Selvaag.
+
+
