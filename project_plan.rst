@@ -1,7 +1,12 @@
+====================
 UH-sky IaaS platform
-Project plan and description
+====================
+*Project plan and description*
+
+(draft in English)
 
 Summary
+-------
 
 This plan describes what the IaaS project will develop and deliver. The project
 aims to position IaaS as a common building block and vessel for future IT
@@ -23,6 +28,7 @@ The base IaaS platform will deliver these services:
   - Object storage, accessible over the network as an API
 
 Limitations
+-----------
 
 - The project will not deliver *traditional backup*. A common definition of
   backup state that backup data must be off-site, off-grid (e.g tape). A
@@ -33,6 +39,7 @@ Limitations
   no cost estimates (resources, budget) are given as part of this project plan.
 
 Prerequisites
+-------------
 
 To be able to deliver the platform as described, on time, it is a requirement
 that the project get access to the needed resources
@@ -51,18 +58,21 @@ July are not counted due to vacations. E.g, if *Locations complete* is reached
 in February 2015 final delivery will be 15th of October 2015.
 
 Project goals and success criterias
+-----------------------------------
 
 The project will deliver a base IaaS platform to form a buildling block for
 future IT infrastructure delivery in the academic sector.
 
 The project has defined the following activities:
 
-1. (main) Develop, document and deliver a base IaaS platform
+1. Develop, document and deliver a base IaaS platform
 2. Integration of authentication and authorization
 3. Further develop and verify services to cover 'traditional workloads'
 4. Research and suggest a solution for PaaS
 5. Research and suggest possible SaaS servics
 6. Research and specify a consumer-focused self-service portal
+
+Activities 1 and 2 have been passed by the UH-sky steering group in June 2014.
 
 To describe the activities a format similar to user stories is used. The
 stories share a common set of definitions
@@ -88,9 +98,10 @@ large instance
   A compute instance defined as 4 vCPU, 16GB RAM, 100GB storage
 
 
-Activity specifications
+1. Develop, document and deliver a base IaaS platform
+-----------------------------------------------------
 
-1 (main) Develop, document and deliver a base IaaS platform
+This is the main project activity.
 
 - The service must deliver capacity for ~750 small instances or ~275 large
   instanecs with a total of 100tb accessible storage. This capacity should
@@ -137,11 +148,49 @@ Activity specifications
 - An administrator must use two-factor authentication for any access to the
   service for systems management and maintenance purposes.
 
+- An administrator must be able to expand capacity, plan and execute
+  infrastructure changes and fix errors in all parts of the service by using
+  version-controlled code and automation. This key point should cover all
+  operational tasks like discovery, deployment, maintenance, monitoring and
+  troubleshooting.
+
+
+2. Integration of authentication and authorization
+--------------------------------------------------
+
+- A user must be able to authenticate via FEIDE and be authorized as belonging
+  to a tenant in the service
+
+- Any FEIDE user passwords should NOT be stored in the service
+
+Before the service can be used in a production scenario it is neccessary to
+integrate central authentication and authorization. Users in the service must
+be identified as belonging to an organizational entity with correct billing
+information.
+
+This activity must research and document a model and solution that shows how
+user- and organization data from FEIDE (and other sources) can be integrated
+to cover the needs of the service. The model must be detailed enough to make
+it possible to estimate cost and resource constraints for the solution.
+
+Limitations in the chosen solution and model must be described. Suggestions
+and cost estimates for more advanced id/authN/authZ models, e.g users and
+billing across organizational boundaries, must be discussed. An analysis and
+assessment of integration with the UNINETT project *FEIDE Connect* should be
+done as part of this.
+
+
+3. Further develop and verify services to cover 'traditional workloads'
+-----------------------------------------------------------------------
 
 
 
 
 
+
+4. Research and suggest a solution for PaaS
+5. Research and suggest possible SaaS servics
+6. Research and specify a consumer-focused self-service portal
 
 
 
