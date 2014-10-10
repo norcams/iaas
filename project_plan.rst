@@ -274,12 +274,12 @@ project activies
 | *Functionally complete*. All functional goals completed    | February 2015  |
 | and operative. No storage or instance uptime guaranteed.   |                |
 +------------------------------------------------------------+----------------+
-| *Incubation period*. Pre-production tuning, testing and    | February-June  |
-| verification. Early customers given access. Best effort    | 2015           |
+| *Incubation period*. Pre-production tuning, testing and    | Feb.-Jun. 2015 |
+| verification. Early customers given access. Best effort    |                |
 | storage consistency and instance uptime. Documenting any   |                |
 | further development needed.                                |                |
 +------------------------------------------------------------+----------------+
-| *Project delivery*. Activites 1, 2 delivered as described. | 15. June 2015  |
+| *Project delivery*. Activites 1, 2 delivered as described. | 15.6.2015      |
 +------------------------------------------------------------+----------------+
 
 Resources and budgeting
