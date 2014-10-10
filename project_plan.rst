@@ -1,7 +1,8 @@
 ====================
 UH-sky IaaS platform
 ====================
-Project plan and description
+
+.. contents:: Project plan and description
 
 Descriptive summary
 ===================
