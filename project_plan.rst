@@ -373,15 +373,47 @@ Risks
 Appendix
 ========
 
-Questions and additions
+Questions and additions for the goals and criterias
 
 1. Support for the Microsoft Windows operating system
 -----------------------------------------------------
 
+A basic Windows-based instance requires substantial capacity from the service
+when compared to a basic Linux-based instance.
+
+The project aims to support Windows instances in the best way possible. Testing
+done within the project will determine what the technical solution will be.
+Windows will be tested in the service as *large instances* and performance will
+be measured and compared to our existing virtualization infrastructures.
+
 2. Licensing of instances in the service
 ----------------------------------------
+
+The project will not handle or research licensing of instances in the service.
+Tenants must ensure that they are properly licensed for all instances they
+create using the service. Microsoft and Red Hat are examples of vendors with
+software products and operating systems that requires licensing.
+
+In a future production service we recommend negotiating agreements with vendors
+for *site licensing*. This could potentially be more cost effective than
+purchasing licenses per tenant or organization. The project has so far not
+planned or set aside resources towards this.
+
 
 3. Calculating needed capacity for development
 ----------------------------------------------
 
+Back-of-a-napkin assessment of development compute capacity
+
+- Physical cores (non-hyperthreaded): 2x12 core, 3x nodes, 3x sites = 216 cores
+
+- Virtual cores: 4x oversubscription = 864 vCPU, 3x oversubscription = 648 vCPU
+
+- RAM, no oversubscription = 512 GB 3x nodes, 3x sites = 4608 GB raw capacity
+
+Instances
+
+- *Small instances*: 1 vCPU, ~6 GB RAM, 10 GB disk ~ 72 instances per compute node, 648 total (at 3x cpu oversubscription)
+
+- *Large instances*: 4 vCPU, ~24 GB RAM, 100 GB disk ~ 18 instanecs per compute node, 162 total (at 3x cpu oversubscription)
 
