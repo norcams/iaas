@@ -73,3 +73,10 @@ direction, milestones and general progress. This is the place for any larger
 topics or issues involving the full team. To schedule a topic for this meeting
 project members make a card in Trello and label it as *Discussion*.
 
+Social sharing platform
+-----------------------
+
+We have been using a NorCAMS Google Plus-community to share links of project
+related information for a while. Anyone with relevant content is free to use
+this as a channel. We put up a web redirect to the community page to make it
+easier to find, it is at http://plus.norcams.org
