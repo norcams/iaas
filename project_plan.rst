@@ -317,7 +317,7 @@ Core development and engineering team
 
 - Tor Lædre, University of Bergen
 
-- Mikael Dalsgård, University of Oslo
+- Mikael Dalsgard, University of Oslo
 
 - Hege Trosvik, University of Oslo
 
