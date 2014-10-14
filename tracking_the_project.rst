@@ -35,8 +35,8 @@ column once they are reached.
 The board is public and available at https://trello.com/b/m7tD31zU/iaas To be
 able to comment on a card you'll need a Trello account.
 
-Core team daily schedule
-------------------------
+Core team weekly schedule
+-------------------------
 
 This table shows which days the core team members are available. Jan Ivar and
 Tor are working full time.
