@@ -1,0 +1,5 @@
+# .gitignore
+.vagrant
+*~
+*.swp
+docs/_*/
