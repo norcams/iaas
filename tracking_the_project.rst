@@ -33,7 +33,8 @@ milestones broken out from the project plan. Goals move directly to the Done
 column once they are reached.
 
 The board is public and available at https://trello.com/b/m7tD31zU/iaas To be
-able to comment on a card you'll need a Trello account.
+able to comment on a card you'll need a Trello account. Most of the team
+members use a Google account as their login identity.
 
 Core team weekly schedule
 -------------------------
@@ -54,24 +55,44 @@ Tor           1            1            1            1            1
 Øystein       0            1            0            1            1
 ============ ============ ============ ============ ============ ============
 
-Morning meeting
----------------
+Daily status meeting
+--------------------
 
 The core team has daily meetings at 09:30 every work day. These are short
 meetings meant to summarize what has been worked on since yesterday, what will
 be done today and what blocks progress, if anything. Each team member is
 expected to speak briefly about their own situation.
 
-Morning meetings are held on Goolge Hangouts. The URL to the meeting is pasted
-in the IRC chat a few minutes before it starts.
+Daily meetings are held on Goolge Hangouts and published to the project
+calendar. They are also announced in the chat room a few minutes before they
+start.
 
-Weekly project meeting
-----------------------
+Weekly planning meeting
+-----------------------
 
 The project has a weekly status and planning meeting where we discuss
 direction, milestones and general progress. This is the place for any larger
 topics or issues involving the full team. To schedule a topic for this meeting
 project members make a card in Trello and label it as *Discussion*.
+
+The weekly status meeting is held on Google Hangouts and published to the
+project calendar.
+
+Project calendar
+----------------
+
+Meetings and events are published to a public Google calendar. It is possible
+to `read it`_ as a webpage or `subscribe to it`_ in ical format.
+
+.. _read it: https://www.google.com/calendar/embed?src=kum6d33mfvaotbuo2bc921eaoo%40group.calendar.google.com&ctz=Europe/Oslo
+.. _subscribe to it: https://www.google.com/calendar/ical/kum6d33mfvaotbuo2bc921eaoo%40group.calendar.google.com/public/basic.ics
+
+Right now you'll need to use the webpage interface to find the Google Hangouts
+video links for each event. There is a plan to update the event description
+field in the ical data with the Hangout URL by using `this Python code`_ but it
+has not been done yet.
+
+.. _this Python code: https://github.com/Yeraze/CalendarHangout
 
 Social sharing platform
 -----------------------
@@ -80,3 +101,4 @@ We have been using a NorCAMS Google Plus-community to share links of project
 related information for a while. Anyone with relevant content is free to use
 this as a channel. We put up a web redirect to the community page to make it
 easier to find, it is at http://plus.norcams.org
+
