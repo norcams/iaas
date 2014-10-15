@@ -1,3 +1,14 @@
+NOTE:
+
+We are working to publish this as a documentation site and some links we
+distributed earlier are no longer working, updated locations are
+
+- Project plan
+  https://github.com/norcams/iaas/blob/master/docs/project/plan.rst
+
+- Development hardware spec (draft)
+  https://github.com/norcams/iaas/blob/master/docs/design/hardware.rst
+
 norcams/iaas
 ============
 
