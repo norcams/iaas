@@ -56,7 +56,7 @@ Tor           1            1            1            1            1
 ============ ============ ============ ============ ============ ============
 
 Daily status meeting
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 The core team has daily meetings at 09:30 every work day. These are short
 meetings meant to summarize what has been worked on since yesterday, what will
@@ -68,12 +68,12 @@ calendar. They are also announced in the chat room a few minutes before they
 start.
 
 Weekly planning meeting
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
-The project has a weekly status and planning meeting where we discuss
-direction, milestones and general progress. This is the place for any larger
-topics or issues involving the full team. To schedule a topic for this meeting
-project members make a card in Trello and label it as *Discussion*.
+The weekly planning meeting where we discuss direction, milestones and general
+progress. This is the place for any larger topics or issues involving the full
+team. To schedule a topic for this meeting project members make a card in
+Trello and label it as *Discussion*.
 
 The weekly status meeting is held on Google Hangouts and published to the
 project calendar.
