@@ -1,12 +1,12 @@
-dev hardware specification
-==========================
-(draft)
+Development hardware (draft)
+============================
 
 The project will deliver a geo-distributed iaas service across (at least) three
-locations. A key point is that each location is built from the same specification. This is
-done to simplify and limit influence of external variables as much as possible.
+locations. A key point is that each location is built from the same hardware
+specification. This is done to simplify and limit influence of external
+variables as much as possible while building the base platform.
 
-The spec represents a minimal baseline for one location.
+The spec represents a minimal baseline for one site/location.
 
 Networking
 ----------
