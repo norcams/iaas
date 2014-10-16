@@ -5,8 +5,7 @@ iaas
 This is our `current documentation`_.
 
 .. toctree::
-    :glob:
-    :maxdepth: 2
+    :maxdepth: 3
 
     getting_started/index
     installation/index
