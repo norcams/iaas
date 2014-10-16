@@ -304,8 +304,8 @@ Resources and budgeting
 Project organization and management
 ===================================
 
-Day-to-day activties are led by technical project manager Jan Ivar Beddari. A
-weekly meeting for planning is held wednesdays at 13:00. Daily "morning meetings"
+Day-to-day activties are led by technical project lead Jan Ivar Beddari. A
+weekly meeting for planning is held Thursday at 13:00. Daily "morning meetings"
 to keep track of activites are held at 0930. Both these regular meetings are
 held online using video conferencing.
 
