@@ -2,6 +2,8 @@
 Tracking the project
 ====================
 
+.. contents::
+
 Chat room
 ---------
 
