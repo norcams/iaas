@@ -1,0 +1,85 @@
+============================
+2014-16-10: Planning Meeting
+============================
+.. contents:: :depth: 2
+
+Present: Jan Ivar, Tor, Erlend, Hege, Hans-Henry, Mikael
+
+1. Defining a MVP
+=================
+
+.. image:: https://pbs.twimg.com/media/ByuBHIsIMAAfnVZ.png:small
+
+Jan Ivar brought up some ideas around MVP as a concept. Discussed defining an
+MVP and what it means. We got so far as to define a few general limitations and
+some actions around networking.
+
+Outcome
+-------
+
+The current list of characteristics defining our MVP
+
+- Networking
+
+  - 2x 10GB fiber (SR) to the core network at each location
+
+  - A single /24 public IPv4 subnet per site will be allocated for the infrastructure
+
+- Feature limitations
+
+  - No redundancy for the Openstack services
+
+  - No central authN/Z
+
+  - No persistence (no booting from Cinder) for instances, we'll use local disk
+    on the compute nodes
+
+
+Actions
+-------
+
+- Write a short introduction about the plans for connectivity to the core
+  network at each site. We will share this with the local organizations so
+  that they are aware of the plans. (Jan Ivar, Hege)
+
+2. Ceph training
+================
+
+There's a need for basic Ceph training as part of the project. At least one
+person from each org.
+
+Outcome
+-------
+
+Using the online course is fine, it has a curriculum and dates posted at
+http://www.inktank.com/university/ceph130/. Pricing is not too bad, about $1000
+for two days.
+
+Jan Ivar suggests that Tor, Marte, Erlend and Mikael does the training, they'll
+need to check if they are allowed and report back. Tor is ready and might even
+do it already next week. For the rest of the group we are looking at November
+19-20.
+
+3. Openstack Summit
+===================
+
+We discussed a little around what sessions we want to be focusing on. It might
+make sense to not have everybody go to the same sessions :-) Jan Ivar reported
+he will focus on networking (IPv6!) and openstack maintenance and release
+engineering (packaging).
+
+There's an Openstack Summit app for Android on Google Play.
+
+4. Meetings with potential partners
+===================================
+
+The project is in a process where we are meeting with potential partners.  Jan
+Ivar reported about the current status of that and it looks like we're headed
+in a good direction. Interest among vendors and external parties towards our
+project is great.
+
+Jan Ivar `shared a presentation`_ (mostly in Norwegian) he gave at one of the
+meetings.
+
+.. _shared a presentation: https://docs.google.com/presentation/d/1tg2_SbNBARZhuypOfoN28B-XzyXYhyjgcfH9wV0_hBw/edit#slide=id.g4d9e0a49c_00
+
