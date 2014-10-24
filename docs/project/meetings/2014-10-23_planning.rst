@@ -1,0 +1,73 @@
+===================================
+2014-10-23: Weekly planning meeting
+===================================
+.. contents:: :depth: 2
+
+Present: Jan Ivar, Mikael, Tor
+
+1. MVP and networking
+=====================
+
+.. image:: https://www.lucidchart.com/publicSegments/view/5449ffaa-59f0-4ce9-be25-0fd50a00caaf/image.png
+
+Outcome
+-------
+
+- Jump hosts ideally need to provide redundancy for access across locations.
+
+- Ideally we'd want access across the infrastructure for both in- and
+  out-of-band managmenet (switches and servers).
+
+- It was (again) suggested that we use private IP addressing for at least the
+  out-of-band management, maybe also the in-band management.
+
+- Discussion is not finalized
+
+Actions
+-------
+
+- Identify IP segments (/24 with possibility for /23)
+
+- Write a spec of how we want the public (service) IP segment routed across two
+  fibers (static routes, how does redundancy/failover work with this?)
+
+
+2. Illustrate and document cabling of the equipment
+===================================================
+
+We need to make a cabling illustration to show our current plan for
+connectivity.
+
+Actions
+-------
+
+- Jan Ivar, Tor and Raymond will make a draft next week. Hege will need to
+  verify and ask questions :-)
+
+3. Keeping people busy the next weeks
+=====================================
+
+Jan Ivar and Tor are at Devopsdays Ghent next week, and a lot of people in and
+around the project will go to Paris for Openstack Summit the week after.
+
+We should write up some tasks and TODOs for winch to keep people busy when they
+feel ready to move on with PUppet.
+
+Actions
+-------
+
+- Jan Ivar adds more open cards to Planned in Trello, focusing on winch and
+  Puppet
+
+4. Better ability to draw an sketch during a meeting
+====================================================
+
+When discussing we need a better ability to draw and sketch stuff during
+meetings.
+
+Actions
+-------
+
+- We tested a few solutions and https://awwapp.com seems like it might fit our
+  needs. We'll try using it over the next few meetings.
+
