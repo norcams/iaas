@@ -10,7 +10,7 @@ Present: Jan Ivar, Tor, Erlend, Hege, Hans-Henry, Mikael
 
 .. image:: https://pbs.twimg.com/media/ByuBHIsIMAAfnVZ.png:small
 
-Jan Ivar brought up some ideas around MVP as a concept. Discussed defining an
+Jan Ivar brought up some ideas around MVP as a concept. Discussed defining a
 MVP and what it means. We got so far as to define a few general limitations and
 some actions around networking.
 

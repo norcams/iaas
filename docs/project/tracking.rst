@@ -41,13 +41,13 @@ members use a Google account as their login identity.
 Core team weekly schedule
 -------------------------
 
-This table shows which days the core team members are available. Jan Ivar and
-Tor are working full time.
+This table shows which days the core team members are available. Jan Ivar, Tor
+and Erlend are working full time.
 
 ============ ============ ============ ============ ============ ============
    Name       Monday       Tuesday      Wednesday    Thursday     Friday
 ============ ============ ============ ============ ============ ============
-Erlend        0            1            0            1            1
+Erlend        1            1            1            1            1
 Hans-Henry    1            1            1            0            0
 Hege          0            0            1            1            0
 Jan Ivar      1            1            1            1            1

@@ -1,6 +1,6 @@
-=====================
-year-month-day: Title
-=====================
+==============================
+year-month-day: Notes template
+==============================
 .. contents:: :depth: 2
 
 Present: Person A, Person B
