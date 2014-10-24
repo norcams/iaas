@@ -1,6 +1,6 @@
-================
-Project meetings
-================
+========
+Meetings
+========
 
 These are notes taken at various meetings held in the project.
 
