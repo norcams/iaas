@@ -8,7 +8,7 @@ Present: Jan Ivar, Mikael, Tor
 1. MVP and networking
 =====================
 
-.. image:: https://www.lucidchart.com/publicSegments/view/5449ffaa-59f0-4ce9-be25-0fd50a00caaf/image.png
+.. image:: https://www.lucidchart.com/publicSegments/view/544a27e9-f6cc-49b3-8f5a-320c0a00c60b/image.png
 
 Outcome
 -------
