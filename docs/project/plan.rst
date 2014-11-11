@@ -304,6 +304,9 @@ Resources and budgeting
 Project organization and management
 ===================================
 
+Core development and engineering
+--------------------------------
+
 Day-to-day activties are led by technical project lead Jan Ivar Beddari. A
 weekly meeting for planning is held Thursday at 13:00. Daily "morning meetings"
 to keep track of activites are held at 0930. Both these regular meetings are
@@ -323,8 +326,11 @@ Core development and engineering team
 
 - Marte Karidatter Skadsem, University of Tromsø
 
-The project group reports to a technical steering group with representatives
-from all the participating organizations. Its main function is to coordinate
+Technical steering group
+------------------------
+
+The project reports to a technical steering group with representatives from all
+the participating organizations. Its main function is to coordinate
 commuication and solve issues that could possibly block progress in the
 project. This group is given a mandate from the top level project management to
 specify its roles and functions.
@@ -342,6 +348,9 @@ Its members are
 - Kristin Selvaag, UNINETT, UH-sky
 
 - Jan Ivar Beddari, UH IaaS tech project lead
+
+Top-level management and ownership
+----------------------------------
 
 The UH-sky steering group represents the top level project management and
 project ownership. This group consists of the IT Directors from the four larger
