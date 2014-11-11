@@ -7,9 +7,9 @@ Project plan and description
 Descriptive summary
 ===================
 
-This document describes what the IaaS project will develop and deliver. The project
-aims to position IaaS as a common building block and vessel for future IT
-infrastructure and services delivery in the academic sector.
+This document describes what the IaaS project will develop and deliver. The
+project aims to position IaaS as a common building block and vessel for future
+IT infrastructure and services delivery in the academic sector.
 
 The main project activity is developing, documenting and delivering an open
 source IaaS platform ready for production use by June 15th 2015.
@@ -313,8 +313,6 @@ Core development and engineering team
 
 - Erlend Midttun, NTNU
 
-- Øystein Viggen, NTNU
-
 - Tor Lædre, University of Bergen
 
 - Mikael Dalsgard, University of Oslo
@@ -324,6 +322,26 @@ Core development and engineering team
 - Hans-Henry Jakbosen, University of Tromsø
 
 - Marte Karidatter Skadsem, University of Tromsø
+
+The project group reports to a technical steering group with representatives
+from all the participating organizations. Its main function is to coordinate
+commuication and solve issues that could possibly block progress in the
+project. This group is given a mandate from the top level project management to
+specify its roles and functions.
+
+Its members are
+
+- Kjetil Otter Olsen, University of Oslo (group lead)
+
+- Per Markussen, University of Tromsø
+
+- Ola Ervik, NTNU Norwegian University of Science and Technology
+
+- Raymond Kristiansen, University of Bergen
+
+- Kristin Selvaag, UNINETT, UH-sky
+
+- Jan Ivar Beddari, UH IaaS tech project lead
 
 The UH-sky steering group represents the top level project management and
 project ownership. This group consists of the IT Directors from the four larger
