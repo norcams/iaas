@@ -14,7 +14,7 @@ Mandat
 ======
 
 #. Gruppen skal ta tekniske beslutninger innenfor prosjektets mandat, mål,
-økonomiske og tidsmessige rammer.
+   økonomiske og tidsmessige rammer.
 
 #. Teknisk styringsgruppe rapporterer til styringsgruppen via programleder.
 
