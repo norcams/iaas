@@ -3,30 +3,33 @@ Build docs locally using Sphinx
 
 This describes how to build the documentation from norcams/iaas locally
 
-CentOS 6.x
-----------
+RHEL, CentOS, Fedora
+--------------------
+
+You'll need the python-virtualenvwrapper package from EPEL
 
 .. code:: bash
 
-   sudo yum install python-virtualenv
-   sudo easy_install pip
-   sudo pip install virtualenvwrapper
+   sudo yum -y install python-virtualenvwrapper
+   # Restart shell
+   exit
    
-   source /usr/bin/virtualenvwrapper.sh 
+   # Make a virtual Python environment
+   # This env is placed in .virtualenv in $HOME
    mkvirtualenv docs
-   # virtual python env is placed in .virtualenv in $HOME
    
    # activate the docs virtualenv
    workon docs
    # install sphinx into it
    pip install sphinx sphinx_rtd_theme
    
+   # Compile docs
    cd iaas/docs
    make html
    
-   # open in modern internet browser of choice
+   # Open in modern internet browser of choice
    xdg-open _build/html/index.html
    
+   # Deactivate the virtualenv
    deactivate
-
 
