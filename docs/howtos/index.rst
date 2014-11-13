@@ -9,4 +9,5 @@ project.
     :maxdepth: 2
 
     reStructuredText syntax overview <http://rest-sphinx-memo.readthedocs.org/>
+    build_docs
 
