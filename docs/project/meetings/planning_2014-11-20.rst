@@ -1,0 +1,100 @@
+============================
+2014-11-20: Planning meeting
+============================
+.. contents:: :depth: 2
+
+Present: Hege, Trond, Mikael, Erlend, Jan Ivar
+
+
+1. Networks and IPs
+===================
+
+The discussions around this (and the different policies) are not providing any
+value to us. A compromise seems to be the best idea:
+
+- The planned jumphost can be virtual or physical (in-rack) if that is
+  preferred
+
+- In-band management network
+  - IP adressing can be public or private
+
+  - Public gateway can be through core network or NATed via jump-host
+
+  - DHCP helper address activation must be controllable by the project (off/on)
+
+- Out-of-band management network
+
+  - Same basic requirements as in-band
+
+- Access control for managment networks
+
+  - Access to both networks are *only allowed* using ssh via the jumphost
+
+Cabling guide documentation is not ready yet but will be real soon now.
+
+Outcome
+-------
+
+No changes, we agree as described.
+
+Actions
+-------
+
+- Each location reports VLAN ids for mgmt networks so we can auto-configure the
+  management switch
+
+- Jan Ivar prioritizes getting cabling documentation done
+
+
+2. How do we want to manage DNS for the MVP install?
+====================================================
+
+We must choose one of
+
+- Internal DNS controlled by Foreman/controller box
+
+- External DNS subdomain with updates done with Foreman (e.g .uh-iaas.uib.no)
+  through nsupdate + secure key
+
+Outcome
+-------
+
+This question was clearer than last week and we disussed pros and cons of both
+alternatives. We plan on reaching consensus at the meeting next week.
+
+Actions
+-------
+
+- External updating is OK at UIB. NTNU and USIT will check with local resources
+  which approach they prefer.
+
+- A first decision on this for the MVP will be made at the next meeting
+
+
+3. New codebase 'himlar' started
+================================
+
+We've chosen to use r10k https://github.com/adrienthebo/r10k and git references
+instead of git submodules for the first phase. We might revisit this decision
+at a later stage if/when people think submodules is a better way.
+
+https://etherpad.openstack.org/p/norcams-workshop
+
+We're practicing doing a Github Pull Request workflow to learn.
+
+Actions
+-------
+
+- When the codebase has accounts, sudo, ssh, ntp do a wider presentation of it
+  for the full project group
+
+- Ask project members to add their own ssh public keys as a PR to himlar
+
+
+4. Misc
+=======
+
+- Discussed pointing to http://iaas.readthedocs.org from other locations to
+  increase visibility. CNAME pointers like iaas.uio.no might be worth it?
+
+
