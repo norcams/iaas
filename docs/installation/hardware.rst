@@ -12,4 +12,5 @@ This documents how to install the hardware for our development phase.
     rack_placement
     cabling
     logical_host_network
+    manuals
 
