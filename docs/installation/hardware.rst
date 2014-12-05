@@ -4,7 +4,7 @@ Hardware installation
 
 .. contents::
 
-This documents how to install the Dell hardware for our development phase.
+This documents how to install the hardware for our development phase.
 
 .. toctree::
     :maxdepth: 2
