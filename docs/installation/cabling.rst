@@ -24,9 +24,11 @@ Conceptual overview
 This illustrates the cabling concept without including all the connected hosts.
 
 .. image:: images/cabling_overview_mvp.png
+   :target: ../_images/cabling_overview_mvp.png
 
 This image is the same as the one above except the routers are fully connected
 to enable testing of more redundancy scenarios.
 
 .. image:: images/cabling_overview_full.png
+   :target: ../_images/cabling_overview_full.png
 
