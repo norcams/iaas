@@ -1,8 +1,7 @@
-Development hardware (draft)
-============================
+Development hardware requirements
+=================================
 
-The project will deliver a geo-distributed iaas service across (at least) three
-locations. A key point is that each location is built from the same hardware
+A key point is that each location is built from the same hardware
 specification. This is done to simplify and limit influence of external
 variables as much as possible while building the base platform.
 
@@ -11,20 +10,23 @@ The spec represents a minimal baseline for one site/location.
 Networking
 ----------
 
-4x L3 switches
+4x Layer 3 routers/switches
 
-- Will be connected as routed leaf-spine fabric (OSPF)
-- Each with at least 48 ports 10gb SFP+ / 4 ports 40gb QSFP
-- Swithces that support ONIE/OCP preferred
+- Connected as routed leaf-spine fabric (OSPF)
+- At least 48 ports 10gb SFP+ / 4 ports 40gb QSFP
+- Support for ONIE/OCP preferred
 
 1x L2 management switch
 
-- 48 ports 1GbE, VLAN
+- 48 ports 1GbE, VLAN capable
 - Remote management possible
 
-48x 10GBase-SR SFP+ tranceivers
+Cabling and optics
 
-8x  40GBase-SR4 QSFP+ tranceivers
+- 48x 10GBase-SR SFP+ tranceivers
+- 8x 40GBase-SR4 QSFP+ tranceivers
+- 4x QSFP+ to QSFP+, 40GbE passive copper direct attach cable, 0.5 meter
+- 4x 3 or 5 meter QSFP+ to QSFP+ OM3 MTP fiber cable
 
 Servers
 -------
