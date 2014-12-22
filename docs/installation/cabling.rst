@@ -1,13 +1,13 @@
 Cabling
 =======
 
-All of the servers will be connected with 2x10G fiber links, a single 1G
-ethernet cable for eth0 (PXE) and a 1G ethernet for the bare metal controller
-(BMC).
+All of the servers will be connected with dual 10G fiber links, a single 1G
+ethernet cable for management (PXE) and a 1G ethernet for the bare metal
+controller (BMC).
 
-The routers will be cabled as simple as possible for the mvp, then we'll
-increase the number of physical connections at a later stage when testing
-solutins for host redundancy.
+The layer 3 switches will be cabled as simple as possible for the first minimal product
+installation. Later we'll increase the number of physical connections for testing more
+designs and solutions.
 
 Connection sheet
 ----------------
@@ -21,13 +21,14 @@ devices. It is also available in `HTML format`_.
 Conceptual overview
 -------------------
 
-This illustrates the cabling concept without including all the connected hosts.
+This illustrates the cabling concept with a minmal solution for switch
+connectivity.
 
 .. image:: images/cabling_overview_mvp.png
    :target: ../_images/cabling_overview_mvp.png
 
-This image is the same as the one above except the routers are fully connected
-to enable testing of more redundancy scenarios.
+This is the same concept as above, but with additional switch cabling to to
+enable testing of different network design and redundancy scenarios.
 
 .. image:: images/cabling_overview_full.png
    :target: ../_images/cabling_overview_full.png
