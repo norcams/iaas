@@ -1,6 +1,6 @@
-======
-Howtos
-======
+=================
+Howtos and guides
+=================
 
 This is a collection of howtos and documentation bits with relevance to the
 project.
@@ -10,4 +10,4 @@ project.
 
     reStructuredText syntax overview <http://rest-sphinx-memo.readthedocs.org/>
     build_docs
-
+    git_tips
