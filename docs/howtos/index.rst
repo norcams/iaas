@@ -13,4 +13,4 @@ project.
     git_tips
     installing_libvirt
     mgmtswitch
-
+    idrac-provision.rst
