@@ -16,6 +16,7 @@ Then power on the switch.
 After the switch has booted, you can now enter the enable state:
 
 .. code:: bash
+
   > enable
 
 The switch will default to jumpstart mode, trying to get a
@@ -28,6 +29,7 @@ Now we need to provide an ip address, create user with a passord
 and set enable password in order to provide ssh access:
 
 .. code:: bash
+
   # configure
   (conf)# interface managementethernet 0/0
   (conf-if-ma-0/0)# ip address 10.0.0.2 /32
@@ -49,6 +51,7 @@ Configure the switch itself
 Let's configure the rest! We start by shutting down all ports
 
 .. code:: bash
+
   > enable
   # configure
   (conf)# interface range gigabitethernet 0/0-47
@@ -61,6 +64,7 @@ to core you can create one. If you don't, omit all references to it
 later in the document:
 
 .. code:: bash
+
   (conf)# interface port-channel 1
   (conf-if-po-1)# switchport
   (conf-if-po-1)# no shutdown
@@ -69,6 +73,7 @@ later in the document:
 Assign interfaces to the port channel group:
 
 .. code:: bash
+
   (conf)# interface range gigabitethernet 0/42-43
   (conf-if-range-gi-0/42-43)# no switchport
   (conf-if-range-gi-0/42-43)# port-channel-protocol LACP
@@ -79,6 +84,7 @@ Assign interfaces to the port channel group:
 Define in-band and out-of-band VLANs:
 
 .. code:: bash
+
   (conf)# interface vlan 201
   (conf-if-vl-201)# description "iaas in-band mgmt"
   (conf-if-vl-201)# no ip address
@@ -96,5 +102,6 @@ Define in-band and out-of-band VLANs:
 Congratulations! Save the config and happy server provisioning:
 
 .. code:: bash
+
   # write
   # copy running-config startup-config
