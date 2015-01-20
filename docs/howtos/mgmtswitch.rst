@@ -13,22 +13,17 @@ to ttyUSBx using screen, tmux, putty or other useable software.
 
 Then power on the switch.
 
-After the switch has booted, you can now enter the enable state:
-
-.. code:: bash
+After the switch has booted, you can now enter the enable state::
 
   > enable
 
 The switch will default to jumpstart mode, trying to get a
-config from a central repository. We will disable it by typing
+config from a central repository. We will disable it by typing ::
 
-.. code:: bash
   # reload-type normal
 
 Now we need to provide an ip address, create user with a passord
-and set enable password in order to provide ssh access:
-
-.. code:: bash
+and set enable password in order to provide ssh access::
 
   # configure
   (conf)# interface managementethernet 0/0
@@ -48,9 +43,7 @@ with access to the switch's management network.
 Configure the switch itself
 ---------------------------
 
-Let's configure the rest! We start by shutting down all ports
-
-.. code:: bash
+Let's configure the rest! We start by shutting down all ports::
 
   > enable
   # configure
@@ -61,18 +54,14 @@ Let's configure the rest! We start by shutting down all ports
 
 If you want to use a port channel (with LACP) for redundant uplink
 to core you can create one. If you don't, omit all references to it
-later in the document:
-
-.. code:: bash
+later in the document::
 
   (conf)# interface port-channel 1
   (conf-if-po-1)# switchport
   (conf-if-po-1)# no shutdown
   (conf-if-po-1)# exit
 
-Assign interfaces to the port channel group:
-
-.. code:: bash
+Assign interfaces to the port channel group::
 
   (conf)# interface range gigabitethernet 0/42-43
   (conf-if-range-gi-0/42-43)# no switchport
@@ -81,9 +70,7 @@ Assign interfaces to the port channel group:
   (conf-if-range-gi-0/42-43)# no shutdown
   (conf-if-range-gi-0/42-43)# exit
 
-Define in-band and out-of-band VLANs:
-
-.. code:: bash
+Define in-band and out-of-band VLANs::
 
   (conf)# interface vlan 201
   (conf-if-vl-201)# description "iaas in-band mgmt"
@@ -99,9 +86,7 @@ Define in-band and out-of-band VLANs:
   (conf-if-vl-201)# exit
   (conf)# exit
 
-Congratulations! Save the config and happy server provisioning:
-
-.. code:: bash
+Congratulations! Save the config and happy server provisioning::
 
   # write
   # copy running-config startup-config
