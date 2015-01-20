@@ -18,7 +18,7 @@ After the switch has booted, you can now enter the enable state::
   > enable
 
 The switch will default to jumpstart mode, trying to get a
-config from a central repository. We will disable it by typing ::
+config from a central repository. We will disable it by typing::
 
   # reload-type normal
 
