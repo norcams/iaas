@@ -6,6 +6,10 @@ controller can be configured automatically by reading
 settings from an xml file located on a USB stick. The USB
 port to be used is labelled with a wrench icon.
 
+By default, Dell PE 13g servers will auto apply config
+in this manner if the default username and/or password
+is not changed, so typically new servers are prime targets.
+
 Create USB stick and copy files to it
 -------------------------------------
 
