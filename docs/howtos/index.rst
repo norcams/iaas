@@ -12,3 +12,5 @@ project.
     build_docs
     git_tips
     installing_libvirt
+    mgmtswitch
+
