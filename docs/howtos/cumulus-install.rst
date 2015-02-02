@@ -24,7 +24,7 @@ download the install file::
   http://opencomputeproject.github.io/onie/docs/user-guide/
 
 Now, for the dhcp server to serve out an IP address
-and URL for ONIE to download from dhcp option 114 (URL)
+and URL for ONIE to download from, dhcp option 114 (URL)
 is used. This example utilizes ISC dhcpd::
 
   option default-url = "http://192.168.0.1/onie-installer-powerpc";
