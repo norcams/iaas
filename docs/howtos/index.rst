@@ -15,3 +15,4 @@ project.
     mgmtswitch
     cumulus-install
     idrac-provision
+    idrac-vnc
