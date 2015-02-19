@@ -3,9 +3,11 @@ IP Addressing Plan
 
 We have 3 different subnets:
 
-x.x.x.x/26 oob
-x.x.x.x/26 mgmt
-x.x.x.x/24 cloud-public-addresses
+::
+
+    x.x.x.x/26 oob
+    x.x.x.x/26 mgmt
+    x.x.x.x/24 cloud-public-addresses
 
 mgmt ip allocation
 ------------------
