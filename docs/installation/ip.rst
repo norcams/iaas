@@ -17,13 +17,21 @@ mgmt ip allocation
     x.x.x.1  gw
     x.x.x.2  gw
     x.x.x.3  gw
-    x.x.x.4  jumphost
-    x.x.x.5  foreman1
-    x.x.x.6  foreman2
-    x.x.x.7  leaf1
-    x.x.x.8  leaf2
-    x.x.x.9  leaf3
-    x.x.x.10 leaf4
+    x.x.x.4  login-1
+    x.x.x.5  foreman-1
+    x.x.x.6  empty
+    x.x.x.7  leaf-1
+    x.x.x.8  leaf-2
+    x.x.x.9  leaf-3
+    x.x.x.10 leaf-4
+    x.x.x.11 controller-1
+    x.x.x.12 controller-2
+    x.x.x.13 controller-3
+    x.x.x.14 osd-1
+    x.x.x.15 osd-2
+    x.x.x.16 osd-3
+    x.x.x.17 osd-4
+    x.x.x.18 osd-5
 
 cloud public address ip allocation
 ----------------------------------
