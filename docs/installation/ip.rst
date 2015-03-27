@@ -27,14 +27,14 @@ mgmt ip allocation
     x.x.x.11 controller-1
     x.x.x.12 controller-2
     x.x.x.13 controller-3
-    x.x.x.11 compute-1
-    x.x.x.12 compute-2
-    x.x.x.13 compute-3
-    x.x.x.14 osd-1
-    x.x.x.15 osd-2
-    x.x.x.16 osd-3
-    x.x.x.17 osd-4
-    x.x.x.18 osd-5
+    x.x.x.14 compute-1
+    x.x.x.15 compute-2
+    x.x.x.16 compute-3
+    x.x.x.17 osd-1
+    x.x.x.18 osd-2
+    x.x.x.19 osd-3
+    x.x.x.20 osd-4
+    x.x.x.21 osd-5
 
 cloud public address ip allocation
 ----------------------------------
