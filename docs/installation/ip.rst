@@ -27,6 +27,9 @@ mgmt ip allocation
     x.x.x.11 controller-1
     x.x.x.12 controller-2
     x.x.x.13 controller-3
+    x.x.x.11 compute-1
+    x.x.x.12 compute-2
+    x.x.x.13 compute-3
     x.x.x.14 osd-1
     x.x.x.15 osd-2
     x.x.x.16 osd-3
