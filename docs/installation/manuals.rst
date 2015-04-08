@@ -8,6 +8,10 @@ Links to external hardware documentation
 * `Dell PowerEdge R630 <http://www.dell.com/support/home/no/en/nodhs1/product-support/product/poweredge-r630/manuals>`_
 * `Dell PowerEdge R730xd <http://www.dell.com/support/home/no/en/nodhs1/product-support/product/poweredge-r730xd/manuals>`_
 
+Dell RACADM
+
+* `iDRAC8 RACADM Command Line Interface <http://www.dell.com/support/Manuals/us/en/19/Topic/integrated-dell-remote-access-cntrllr-8-with-lifecycle-controller-v2.00.00.00/RACADM_iDRAC_Pub-v1/en-us/GUID-6B6564AB-EE63-49EF-A7D6-47154C343841>`_
+
 Dell iDRAC Direct
 
 * `Methods to Save and Restore PowerEdge Server Configuration Settings and Firmware Images <http://en.community.dell.com/techcenter/extras/m/white_papers/20440787>`_
