@@ -75,3 +75,29 @@ Nå skal det være en Foreman-instans kjørende som det kan logges inn i
 GUI på (http/https). Denne kjører da i en egen virtuell libvirt-instans på den fysiske
 kontroller-noden.
 
+
+Etter Foreman-installasjon
+--------------------------
+
+Man bør få inn kontroller-noden i Foreman og få registrert denne som en *compute
+resource* slik at man kan installere andre systemer som feks. master-noden, i
+tillegg til å få registrert Foreman selv som kjørende her.
+
+1. På kontroller-noden, kjør **puppet apply --test** et par ganger
+#. I Foreman signer evt. sertifikatet dersom det står som pending
+#. På Foreman-noden **/etc/puppet/node.rb --push-facts** (nødvendig?)
+#. I Foreman-GUI registrer en ny libvirt-ressurs:
+
+   a. ``Infrastructure -> Compute resources``
+   #. ``New compute resource``
+   #. :Name: hva man vil
+      :Provider: Libvirt
+      :URL: qemu+tcp://<loc>-controller-01.iaas.uio.no:16509/system
+      :Display type: VNC
+
+   #. Test gjerne forbindelsen: ``Test connection``
+   #. ``Submit``
+
+#. Klikk inn på den nye ressursen og gå til fanen `Virtual machines`;
+   Foreman-noden skal nå automatisk være registrert her.
+
