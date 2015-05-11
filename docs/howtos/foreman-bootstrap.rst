@@ -1,103 +1,110 @@
-Hvordan bootstrap'e en Foreman-instans
-======================================
+How to boostrap a Foreman-instance
+==================================
 
-Her beskrives hvordan et nytt miljø initialiseres ut fra en enslig fungerende
-*login*-node. Øvrige bokser er fysisk installert (inklusive oppsett av
-`BIOS`/`iDrac`) men forøvrig urørt.
-
-
-Forutsetninger
---------------
-
-- fungerende login-node (med oppdatert */opt/[himlar|repo]*-kataloger)
-- maskinen er konfigurert med `puppet`
-- ingen management-node er satt opp (`controller`)
-- *hieradata/<loc>/common.yaml* er populert med aktuelle node-adressedata
-- alle kommandoer kjøres som `root`
+This document describes the procedure to initialize a new environment from a
+single login node. The systems to be used are all physically installed
+(including configuration of `BIOS`/`iDrac`) but otherwise untouched.
 
 
-Prosedyre
+Prerequisites
+-------------
+
+- a functioning login node (with an up-to-date */opt/[himlar|repo]* hiearchy)
+- the system is configured by `Puppet`
+- no management-node are installed (`controller`)
+- *hieradata/<loc>/common.yaml*  is populated with relevant network data
+- all commands run as the admin user (`root`)
+  (log in using normal login procedure: `iaas` user from login node, then *sudo*)
+
+Procedure
 ---------
 
-1. På login-node: **/usr/local/sbin/bootstrap-<loc>-controller-01.sh**
+1. On the login node: **/usr/local/sbin/bootstrap-<loc>-controller-01.sh**
    
    .. NOTE::
-      Feilmeldingen "curl: (33) HTTP server doesn't seem to support byte
-      ranges. Cannot resume." er ufarlig dersom skriptet er kjørt også
-      tidligere, da det betyr at filene som hentes allerede finnes lokalt.
+      The error message "curl: (33) HTTP server doesn't seem to support byte
+      ranges. Cannot resume." is harmless when the script has been previously
+      run. If so this is just an indication that the files to be fetched are
+      already in place.
 
-#. Boot aktuell fysisk node
-   Feks. via web-GUI mot `iDrac` eller kommandolinje på login-node:
+#. Boot the relevant physical node
+   For instance by using the web GUI on the `iDrac` or with this command on the
+   login node:
 
-        **idracadm -r <idrac-IP for kommende <loc>-controller-01> -u gaussian -p <idrac-pw> serveraction powercycle**
+        **idracadm -r <idrac-IP for <loc>-controller-01 to be installed> -u gaussian -p <idrac-pw> serveraction powercycle**
 
    .. NOTE::
-      Sørg for at maskinen PXE-booter primært ved første boot!
+      Make sure the system is configured to PXE boot on first attempt!
 
-#. Når ny kontroller er ferdig installert, må skriptet i punkt 1) stoppes dersom
-   maskinen har PXE permanent satt som primær boot-metode (ellers blir det evig
-   reinstallasjon)
+   .. IMPORTANT::
+      When the new controller is fully installed, the script started in 1) must be
+      quit if the new system is set to primarly attempt PXE boot, otherwise
+      it will enter an endless installation loop!
 
-#. Logg inn på ny kontroller-node
+#. Log on to the freshly installed controller node
 
-#. **/opt/himlar/provision/puppetrun.sh**
+#. run **/opt/himlar/provision/puppetrun.sh**
 
-#. Åpne for trafikk mot port 8000:
+#. Punch a hole in the firewall for traffic to port 8000:
 
    **iptables -I INPUT 1 -p tcp --dport 8000 -j ACCEPT**
 
-#. **/usr/local/sbin/bootstrap-<loc>-foreman-01.sh**
+#. run **/usr/local/sbin/bootstrap-<loc>-foreman-01.sh**
 
-   1. **virsh list** skal nå liste foreman-instansen som kjørende.
-   #. Installasjonen kan monitoreres med VNC: **vncviewer <loc>-controller.01....**
-      (bruk den vnc-viewer som foretrekkes)
-   #. Meldingen "*Guest installation complete... restarting guest.*" kommer i
-      terminalen skriptet ble kjørt i når installasjonen er klar.
-   #. Installasjonen kan  sjekkes med **ssh iaas@<loc>-foreman-01...** fra
-      login-noden.
+   1. **virsh list** should now report the foreman instance as running
+   #. The install can be monitored with **vncviewer <loc>-controller.01....**
+      (or your preferred vnc viewer application))
+   #. When the message "*Guest installation complete... restarting guest.*" is
+      written to the terminal from where the script was started, the system
+      is installed and ready for use.
 
-#. Når installasjonen er klar kan trafikk mot port 8000 igjen sperres på
-   kontroller-noden: **iptables -D INPUT 1**
+   #. The new controller node can be logged on to from the login node:
+      **ssh iaas@<loc>-foreman-01...**.
 
-#. Sync over */opt/repo* fra login-node til foreman-noden (husk å fikse
-   `eier:gruppe` hvis aktuelt, skal være `root:root`)
+#. When controller node installation is complete the firewall can be restored:
+   **iptables -D INPUT 1**
 
-#. Logg inn på ``foreman``-maskin fra login-noden (bruker `iaas` + sudo),
-   sjekk gjerne logg fra installasjonen (*/root/install.post.log*)
+#. Sync */opt/repo* from login node to foreman node (**NB**: fix/repair
+   ownership if necessary, should be `root:root`)
 
-#. **HIMLAR_CERTNAME=<certname> /opt/himlar/provision/puppetrun.sh**
+#. Log on to the new ``foreman`` system from the login node, optionally check
+   the install log: */root/install.post.log*
 
-   Kjør gjerne flere ganger.
+#. run **HIMLAR_CERTNAME=<certname> /opt/himlar/provision/puppetrun.sh**
 
-#. **/opt/himlar/provision/foreman-settings.sh**
+   This command can be run several times.
 
-Nå skal det være en Foreman-instans kjørende som det kan logges inn i
-GUI på (http/https). Denne kjører da i en egen virtuell libvirt-instans på den fysiske
-kontroller-noden.
+#. run **/opt/himlar/provision/foreman-settings.sh**
+
+At this point there should be a working Foreman instance running which can be
+logged in to through the web GUI (http/https). This system is then running in an
+libvirt instance on the physical controller node.
 
 
-Etter Foreman-installasjon
---------------------------
+Additional steps after Foreman installation
+-------------------------------------------
 
-Man bør få inn kontroller-noden i Foreman og få registrert denne som en *compute
-resource* slik at man kan installere andre systemer som feks. master-noden, i
-tillegg til å få registrert Foreman selv som kjørende her.
+It is beneficial to get the controller node registered in Foreman and listed as
+a *compute resource*. This way it is possible to install other systems, like the
+OpenStack master node, in addition to get the Foreman node itself connected to
+this libvirt resource.
 
-1. På kontroller-noden, kjør **puppet apply --test** et par ganger
-#. I Foreman signer evt. sertifikatet dersom det står som pending
-#. På Foreman-noden **/etc/puppet/node.rb --push-facts** (nødvendig?)
-#. I Foreman-GUI registrer en ny libvirt-ressurs:
+1. On the controller node, run **puppet apply --test** a couple of times
+#. In Foreman GUI sign relevant pending certificate requests if any
+#. On Foreman node (cli) run **/etc/puppet/node.rb --push-facts** (is this
+   necessary?)
+#. In Foreman GUI register a libvirt resource:
 
    a. ``Infrastructure -> Compute resources``
    #. ``New compute resource``
-   #. :Name: hva man vil
+   #. :Name: whatever descriptive
       :Provider: Libvirt
       :URL: qemu+tcp://<loc>-controller-01.iaas.uio.no:16509/system
       :Display type: VNC
 
-   #. Test gjerne forbindelsen: ``Test connection``
+   #. Check the configured connection: ``Test connection``
    #. ``Submit``
 
-#. Klikk inn på den nye ressursen og gå til fanen `Virtual machines`;
-   Foreman-noden skal nå automatisk være registrert her.
+#. Select the new resource in the GUI and then the `Virtual machines` tab;
+   the Foreman node should now be automatically registered here.
 

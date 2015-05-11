@@ -16,3 +16,4 @@ project.
     cumulus-install
     idrac-provision
     idrac-vnc
+    foreman-bootstrap
