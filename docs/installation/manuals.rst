@@ -11,6 +11,7 @@ Links to external hardware documentation
 Dell RACADM
 
 * `iDRAC8 RACADM Command Line Interface <http://www.dell.com/support/Manuals/us/en/19/Topic/integrated-dell-remote-access-cntrllr-8-with-lifecycle-controller-v2.00.00.00/RACADM_iDRAC_Pub-v1/en-us/GUID-6B6564AB-EE63-49EF-A7D6-47154C343841>`_
+* `iDRAC8 RACADM Command Line Interface Reference Guide <http://topics-cdn.dell.com/pdf/integrated-dell-remote-access-cntrllr-8-with-lifecycle-controller-v2.00.00.00_Reference%20Guide2_en-us.pdf>`_
 
 Dell iDRAC Direct
 
