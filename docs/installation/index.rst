@@ -8,4 +8,5 @@ Documentation describing installation of the IaaS platform
     :maxdepth: 2
 
     hardware
+    ip
 
