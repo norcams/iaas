@@ -25,6 +25,7 @@ Norwegian NREN organization.
     norcams
     people
     tracking
-    meetings/index
     plan
+    reports/index
+    meetings/index
 
