@@ -69,7 +69,7 @@ prosjektplanen forutsetter er ressursmangel gjennom hele prosjektperioden.
 
   * Erlend Midttun (NTNU, 100%)
 
-  * Mikael Dalsgård (USIT, 60%)
+  * Mikael Dalsgard (USIT, 60%)
 
   * Hege Trosvik (USIT, 40%)
 
