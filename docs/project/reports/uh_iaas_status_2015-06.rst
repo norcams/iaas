@@ -7,8 +7,8 @@ Rapport til UH-sky styringsgruppe av prosjektleder Jan Ivar Beddari, den 15.6.20
 Innledning
 ----------
 
-15.6.2015 var sluttdato for UH IaaS prosjektet slik det ble vedtatt av UH-sky
-styringsgruppa i juni 2014. Dette dokumentet oppsummerer status med
+15. juni var sluttdato for UH IaaS-prosjektet slik det ble vedtatt av UH-sky
+styringsgruppa i juni 2014. Dette dokumentet oppsummerer status per sluttdato med
 utgangspunkt i målene i den `vedtatte prosjektplanen`_.
 
 .. _vedtatte prosjektplanen: http://iaas.readthedocs.org/en/latest/project/plan.html
@@ -16,8 +16,8 @@ utgangspunkt i målene i den `vedtatte prosjektplanen`_.
 Mål som ikke er leveringsklare
 ------------------------------
 
-Målene satt for prosjektet er beskrevet i prosjektplanen. Det var to hovedmål i
-planen som ble vedtatt og gitt ressurser.
+Leveransemålene er beskrevet i prosjektplanen som aktiviteter. Akvititet 1 og 2
+ble vedtatt gjennomført og tilført ressurser.
 
 1. Develop, document and deliver a base IaaS platform
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -115,11 +115,11 @@ og #2 i prosjektplanen foreslår vi følgende tiltak.
 1. Utsettelse av produksjonsdato til 31.12.2015
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Gitt at dagens prosjektbemanning (4 personer) videreføres vil vi kunne levere
-tjenesten per kravene definert som aktivet #1 prosjektplanen innen 31.12.2015.
+Hvis prosjektet bemannes videre på samme måte (4 personer) vil tjenesten kunne
+leveres som beskrevet under aktivitet #1 i prosjektplanen innen 31.12.2015.
 
-Tjenesten vil kunne leveres som pilot for et mindre utvalg brukere og felles
-systemer fra ca september 2015. Prosjektet er i kontakt med flere interesserte
+Tjenesten vil leveres som pilot for et mindre utvalg brukere og felles systemer
+fra ca september 2015. Prosjektet er i kontakt med flere interesserte
 pilotbrukere og vil følge disse opp.
 
 2. Nye ressurser knyttes til prosjektet for å jobbe med Feide og Connect
@@ -136,7 +136,7 @@ være mulig å avtale fortsatt bruk av plattformen. Dette må avklares med
 UNINETT av UH-sky styringsgruppa.
 
 UH IaaS ber om en ressurs på 600 timer fram til ny produksjonsdato 31.12.2015
-for å få igangsatt dette arbeidet. Tilstrekkelig utviklings- og
+for å utføre dette arbeidet. Tilstrekkelig utviklings- og
 infrastrukturkompetanse til å kunne jobbe i kommunikasjon med Connect sine
 utviklere, implementere løsninga og innlemme den i UH IaaS er en forutsetning.
 
@@ -166,7 +166,7 @@ Fungerer teknisk styringsgruppe slik som planlagt?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 I løpet av det siste halvåret av prosjektet har ideen om en "teknisk
-styringsgruppe" fjernet seg et godt stykke fra den opprinnelige ideen.
+styringsgruppe" beveget seg et godt stykke fra den opprinnelige ideen.
 Arbeidsflyten teknisk styringsgruppe var ment å støtte kan beskrives slik:
 
 1. Tekniske behov og krav settes *i prosjektet* basert på prosjektplanen
