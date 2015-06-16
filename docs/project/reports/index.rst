@@ -12,5 +12,5 @@ The reports are written in Norwegian.
     :glob:
     :maxdepth: 2
 
-    uh_iaas_statusrapport_*
+    uh_iaas_status_*
 
