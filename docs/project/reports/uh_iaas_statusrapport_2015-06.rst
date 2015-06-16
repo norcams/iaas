@@ -167,7 +167,7 @@ Fungerer teknisk styringsgruppe slik som planlagt?
 
 I løpet av det siste halvåret av prosjektet har ideen om en "teknisk
 styringsgruppe" fjernet seg et godt stykke fra den opprinnelige ideen.
-Arbeidsflyten teknisk styringsgruppe var ment å støtte var beskrevet slik:
+Arbeidsflyten teknisk styringsgruppe var ment å støtte kan beskrives slik:
 
 1. Tekniske behov og krav settes *i prosjektet* basert på prosjektplanen
 
@@ -175,19 +175,18 @@ Arbeidsflyten teknisk styringsgruppe var ment å støtte var beskrevet slik:
 
 3. Prosjektet gjør bruk av teknisk styringsgruppe for å løse dette konkret
 
-Det `første mandatet`_ til teknisk styringsgruppe var utformet for å løse dette
-praktisk retta, utførende behovet.
-
-Etter at det både fra lokale organisasjoner og UH-sky prosjektkoordinator ble
-stilt spørsmål rundt rapportering og andre formelle prosesskrav fikk teknisk
-styringsgruppe en utvidet rolle. Hva den rollen nå er blitt er nokså uklart.
+`Mandatet`_ til teknisk styringsgruppe ble utformet for å fungere i en slik
+arbeidsflyt. Etter at det både fra lokale organisasjoner og UH-sky
+prosjektkoordinator ble stilt spørsmål rundt rapportering og andre formelle
+prosesskrav fikk teknisk styringsgruppe en utvidet rolle. Hva den rollen nå er
+blitt er nokså uklart.
 
 Teknisk styringsgruppe kan muligens fortsatt ha oppgavene som følger av det
 opprinnelige mandatet. Den er samtidig nå i ferd med å også få en annen,
 bredere "UH-sky styringsfunksjon" som det også er stort behov for - men som bør
 være et annet bord og en annen prosess.
 
-.. _første mandatet: ../meetings/teknisk_styringsgruppe_mandat.html
+.. _Mandatet: http://iaas.readthedocs.org/en/latest/project/meetings/teknisk_styringsgruppe_mandat.html
 
 Hvordan bør et UH-sky prosjekt med felles ressurspool rapportere?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
