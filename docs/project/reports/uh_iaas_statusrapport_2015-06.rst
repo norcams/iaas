@@ -180,7 +180,7 @@ praktisk retta, utførende behovet.
 
 Etter at det både fra lokale organisasjoner og UH-sky prosjektkoordinator ble
 stilt spørsmål rundt rapportering og andre formelle prosesskrav fikk teknisk
-styringsgruppe en utvidet rolle. Hva den rollen nå er blitt, er nokså uklart.
+styringsgruppe en utvidet rolle. Hva den rollen nå er blitt er nokså uklart.
 
 Teknisk styringsgruppe kan muligens fortsatt ha oppgavene som følger av det
 opprinnelige mandatet. Den er samtidig nå i ferd med å også få en annen,
