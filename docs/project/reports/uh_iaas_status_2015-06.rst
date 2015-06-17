@@ -206,7 +206,7 @@ Referanser
 ----------
 
 * UH IaaS sin prosjektplan: http://iaas.readthedocs.org/en/latest/project/plan.html
-  (versjonn som inkluderer kapittelet om ressurser og budsjett ligger i Agora)
+  (versjon med kapittel om ressurser og budsjett ligger i Agora)
 
 * Feide Connect: http://feideconnect.no/prosjekt/
 
