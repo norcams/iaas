@@ -36,7 +36,7 @@ mgmt ip allocation
     x.x.x.20 osd-4
     x.x.x.21 osd-5
 
-cloud public address ip allocation
+cloud address ip allocation
 ----------------------------------
 
 ::
@@ -44,8 +44,8 @@ cloud public address ip allocation
     ### x.x.x.x/24 reservert for uh-sky
     # x.x.x.0/29 reservert nett-loopback
     x.x.x.0/32    - ledig
-    x.x.x.1/32    leaf1
-    x.x.x.2/32    leaf2
+    172.16.0.1/32    fd00:0::1/128    leaf1
+    172.16.0.2/32    fd00:0::2/128    leaf2
     x.x.x.3/32    leaf3
     x.x.x.4/32    leaf4
     x.x.x.5/32    - ledig
@@ -54,7 +54,7 @@ cloud public address ip allocation
     # x.x.x.8/29  - ledig
     # x.x.x.16/28 - ledig
     # x.x.x.32/27 reservert nett-p2p
-    x.x.x.32/30   leaf1 - leaf2
+    172.16.1.0/24    fd00:1::0/64   leaf1 - leaf2
     x.x.x.36/30   leaf3 - leaf4
     x.x.x.40/30   leaf2 - leaf3
     x.x.x.44/30   - ledig
@@ -64,6 +64,8 @@ cloud public address ip allocation
     x.x.x.60/30   - ledig
     # x.x.x.64/26 - ledig
     # x.x.x.128/25 reservert host-nett
+    172.16.100.0/24    fd00:100::0/64    host-nett for all fysiske noder
+    # below is historic
     x.x.x.128/29 controller 1
     x.x.x.136/29 controller 2
     x.x.x.144/29 controller 3
