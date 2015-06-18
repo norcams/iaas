@@ -65,6 +65,21 @@ cloud address ip allocation
     # x.x.x.64/26 - ledig
     # x.x.x.128/25 reservert host-nett
     172.16.100.0/24    fd00:100::0/64    host-nett for all fysiske noder
+        172.16.100.1 leaf1
+        172.16.100.2 leaf2
+        172.16.100.3 leaf3
+        172.16.100.4 leaf4
+        172.16.100.5 controller1
+        172.16.100.6 controller2
+        172.16.100.7 controller3
+        172.16.100.8 compute1
+        172.16.100.9 compute2
+        172.16.100.10 compute3
+        172.16.100.11 storage1
+        172.16.100.12 storage2
+        172.16.100.13 storage3
+        172.16.100.14 storage4
+        172.16.100.15 storage5
     # below is historic
     x.x.x.128/29 controller 1
     x.x.x.136/29 controller 2
