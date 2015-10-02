@@ -26,6 +26,7 @@ Norwegian NREN organization.
     people
     tracking
     plan
+    releaseplan
     reports/index
     meetings/index
 
