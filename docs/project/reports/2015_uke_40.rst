@@ -1,0 +1,72 @@
+======
+Uke 40
+======
+.. contents:: :depth: 2
+
+Implementasjon
+==============
+
+Oppsummering av kode som det jobbes på i øyeblikket.
+
+- Implementasjon av Project Calico-komponentene i en egen calico2 branch av
+  norcams/himlar
+
+- Grunnoppsett for Consul som skal benyttes for å dele konfig-informasjon
+  mellom datasentre
+
+- Spesifikasjon av oppsett for lokalt LVM-oppsett for compute
+
+- Påbegynt arbeid med Serverspec
+
+
+Pågående aktiviteter
+====================
+
+Aktiviteter i prosjektet denne uka.
+
+Rapportering i fra UH IaaS i linja
+----------------------------------
+
+UH-sky-styringsgruppa har ønsket at rapportering fra prosjektleder i UH IaaS
+knyttet mot linjeorganisasjonene som deltar. Det blir fra nå av ukentlig
+rapportering i dette formatet.
+
+I den forbindelse er det også laget en prosjektplan som beskriver arbeid som
+gjøres framover i form av versjonerte milepæler
+
+- http://iaas.readthedocs.org/en/latest/project/releaseplan.html
+
+Releaseplanen vil oppdateres ukentlig så den reflekterer status fra de daglig
+oppdaterte verktøyene våre, Trello https://trello.com/b/m7tD31zU/iaas og GitHub
+https://github.com/norcams/himlar/milestones
+
+Klargjøring av lokale test-nettverk
+-----------------------------------
+
+På UIB og NTNU er vi i gang med å etablere lokale test-oppsett av
+nettverkslogikken som er lik den som er planlagt for produksjon. Forenklingen i
+test er at det ikke er behov for failover, bare et enkelt linknett og en
+statisk rute. I test er gateway på IaaS-siden en Cumulus Linux virtuell maskin.
+
+.. image:: images/devnet_overview.png
+   :target: ../_images/devnet_overview.png
+
+Kommende aktiviteter
+====================
+
+Aktiviteter neste uke.
+
+Møte om IP-adresseer og tilkobling av nett
+------------------------------------------
+
+Et møte med nettverksavdelingene på hver lokasjon er under planlegging. Møtet
+skal beskrive nettverksløsninga internt og ta opp tema rundt IP-adressering og
+tilkobling av gw'er for produksjon. Vi har ikke fått satt dato ennå.
+
+Prosjektledermøte i UH-sky
+--------------------------
+
+Kristin Selvaag fra UH-sky har jevnlig møte med alle delprosjektene hvor UH
+IaaS deltar. Onsdag 7. oktober er et slikt møte planlagt over video hvor agenda
+i hovedsak er referat fra UH-sky styringsgruppemøtet som var i uke 40.
+

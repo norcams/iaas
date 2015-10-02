@@ -1,5 +1,5 @@
-UH IaaS status 2015-06
-======================
+Sluttrapport 2015-06
+====================
 Rapport til UH-sky styringsgruppe av prosjektleder Jan Ivar Beddari, den 15.6.2015
 
 .. contents:: Oversikt
