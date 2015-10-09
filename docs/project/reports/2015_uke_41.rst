@@ -1,5 +1,5 @@
 ======
-Uke 40
+Uke 41
 ======
 .. contents:: :depth: 2
 
@@ -50,9 +50,6 @@ Rapportering i fra UH IaaS i linja
 
 Har ikke fått noen kommentarer på nye rapporteringsrutiner ennå. Kom gjerne med
 tanker omkring dette!
-
-oppdaterte verktøyene våre, Trello https://trello.com/b/m7tD31zU/iaas og GitHub
-https://github.com/norcams/himlar/milestones
 
 Klargjøring av lokale test-nettverk
 -----------------------------------
