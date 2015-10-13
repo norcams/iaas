@@ -98,10 +98,10 @@ at https://github.com/norcams/himlar/milestones
 
 - Cinder (block storage) service with Ceph backend enabled
 
-0.4.0
+0.4.0 (on production hardware)
 -----
 
-*Due date*: xx.11.2015
+*Due date*: 12.11.2015
 
 - Service on production network and hardware
 
