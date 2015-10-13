@@ -24,8 +24,8 @@ Pågående aktiviteter
 
 Aktiviteter i prosjektet denne uka.
 
-Rapportering i fra UH IaaS i linja
-----------------------------------
+Rapportering fra UH IaaS i linja
+--------------------------------
 
 UH-sky-styringsgruppa har ønsket at rapportering fra prosjektleder i UH IaaS
 knyttet mot linjeorganisasjonene som deltar. Det blir fra nå av ukentlig
