@@ -1,0 +1,62 @@
+instanser:
+----------
+
+prod:
+
+internal
+IPv4 10.0.0.0/12:
+- 10.1.0.0/16 bgo instanser
+- 10.2.0.0/16 osl instanser
+- 10.3.0.0/16 trd instanser
+IPv6
+
+
+public IPv4
+
+
+public IPv6
+
+
+public
+
+dev:
+
+internal
+IPv4 10.16.0.0/12
+- 10.17.0.0/16 dev01 instanser
+- 10.18.0.0/16 dev02 instanser
+- 10.19.0.0/16 dev03 instanser
+- 10.20.0.0/16 
+
+
+infra:
+------
+
+prod:
+
+IPv4 172.16.0.0/16
+
+172.16.16.0/20 bgo transport
+172.16.32.0/20 osl transport
+172.16.48.0/20 trd transport
+
+
+dev:
+
+172.17.0.0/16
+
+172.17.16.0/20 dev01 transport
+172.17.32.0/20 dev02 transport
+172.17.48.0/20 dev03 transport
+172.17.64.0/20 vagrant transport
+
+
+
+
+Sette opp cumulus gw basert på VX:
+
+1)
+https://support.cumulusnetworks.com/hc/en-us/articles/202325278-Configuring-a-Management-Namespace
+
+
+
