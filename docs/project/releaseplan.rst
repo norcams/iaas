@@ -71,17 +71,17 @@ the current status. Data for this list is correlated from the UH IaaS Trello
 board at https://trello.com/b/m7tD31zU/iaas and GithHub milestones and issues
 at https://github.com/norcams/himlar/milestones
 
-0.1.0 (current release)
------------------------
+0.1.0
+-----
 
 - Internal testing only.
 
 - Network implementation completed.
 
-0.2.0
------
+0.2.0 (current release)
+-----------------------
 
-*Due date*: 15.10.2015
+*Released*: 15.10.2015
 
 - First release enabling pilot user access
 
@@ -113,7 +113,7 @@ at https://github.com/norcams/himlar/milestones
 
 *Due date*: 15.12.2015
 
-- FEIDE/FEIDE Connect enabled
+- FEIDE Connect-pilot integration enabled
 
 - A user can select one of three regions for workloads
 
