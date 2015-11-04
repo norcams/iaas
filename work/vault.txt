@@ -6,6 +6,9 @@ consul lokalt)
 
 https://releases.hashicorp.com/vault/0.3.1/vault_0.3.1_linux_amd64.zip
 
+Kan selvsagt kompileres selv hvis man vil føle seg mer sikker.
+
+
 Startes slik:
 
 vault -config <config> server
@@ -109,3 +112,25 @@ Eksempel på bruk:
 
 
  Merknad: 'policies' forventes å være base64-kodet. Andre nøkler ikke.
+
+
+envconsul
+---------
+
+Som for vault kan denne hentes ferdigkompilert eller kompileres selv fra github
+(krever Go). Binær:
+
+https://github.com/hashicorp/envconsul/releases/download/v0.6.0/envconsul_0.6.0_linux_amd64.zip
+
+Enkeltstående binærfil.
+
+Eksempel på bruk for å hente verdien lagret over og skrive ut miljøvariablene
+inklusive de som ble hentet:
+
+  envconsul -consul=10.0.3.15:8500 -secret consul/roles/readonly env
+
+Merk: base64-dekodingen kun fordi akkurat denne nøkkelen lagres base64-kodet,
+dette er ikke det normale. For å lese verdien i klartekst og bekrefte:
+
+  envconsul -consul=10.0.3.15:8500 -secret consul/roles/readonly env | grep ^consul_roles_readonly_policy | cut -f2 -d= | base64 -d
+
