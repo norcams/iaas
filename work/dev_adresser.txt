@@ -43,13 +43,12 @@ IPv4 172.16.0.0/16
 
 dev:
 
-172.17.0.0/16
+IPv4 172.17.0.0/16
 
-172.17.16.0/20 dev01 transport
-172.17.32.0/20 dev02 transport
-172.17.48.0/20 dev03 transport
-172.17.64.0/20 vagrant transport
-
+172.17.0.0/24 vagrant transport
+172.17.1.0/24 dev01 transport
+172.17.2.0/24 dev02 transport
+172.17.3.0/24 dev03 transport
 
 
 
