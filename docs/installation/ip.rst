@@ -1,5 +1,79 @@
-IP Addressing Plan
 ==================
+IP addressing plan
+==================
+
+.. contents::
+
+Instance networks and addresses
+-------------------------------
+
+This describes from what IP network and prefix an instance workload will
+receive its address. Normally this will happen at boot time through DHCP.
+
+Public
+^^^^^^
+
+Public network.
+
+========= ======= ================= ======
+ region    env     IPv4              IPv6
+========= ======= ================= ======
+ bgo      prod     158.39.77.0/24    2001:700:2:8300::/56
+ trd      prod     158.39.48.0/24    2001:700:2:8400::/56
+ osl      prod     158.37.63.0/24    2001:700:2:8200::/56
+ dev01    dev      129.177.31.96/27  TBD
+ dev02    dev      (10.171.94.0/24)  TBD
+ dev03    dev      x.y/z             TBD
+ vagrant  dev      (10.0.0.0/16)     TBD
+========= ======= ================= ======
+
+Private
+^^^^^^^
+
+Region-specific private network. All instances in the same region are
+reachable if security policy is configured.
+
+========= ======= ============== ======
+ region    env     IPv4           IPv6
+========= ======= ============== ======
+ bgo      prod     10.1.0.0/16    TBD
+ trd      prod     10.2.0.0/16    TBD
+ osl      prod     10.3.0.0/16    TBD
+ dev01    dev      10.17.0.0/16   TBD
+ dev02    dev      10.18.0.0/16   TBD
+ dev03    dev      10.19.0.0/16   TBD
+ vagrant  dev      10.20.0.0/16   TBD
+========= ======= ============== ======
+
+Internal
+^^^^^^^^
+
+Cross-region, encrypted network.
+
+========= ======= ============== ======
+ region    env     IPv4           IPv6
+========= ======= ============== ======
+ bgo      prod     10.x/y         TBD
+ trd      prod     10.x/y         TBD
+ osl      prod     10.x/y         TBD
+ dev01    dev      10.x/y         TBD
+ dev02    dev      10.x/y         TBD
+ dev03    dev      10.x/y         TBD
+========= ======= ============== ======
+
+
+Infrastructure addresses
+------------------------
+
+Instance addresses
+^^^^^^^^^^^^^^^^^^
+
+Infrastructure addresses
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+
+
 
 We have 3 different subnets:
 
