@@ -4,8 +4,8 @@ IP addressing plan
 
 .. contents::
 
-Instance networks and addresses
--------------------------------
+Instance workloads
+------------------
 
 This describes from what IP network and prefix an instance workload will
 receive its address. Normally this will happen at boot time through DHCP.
@@ -19,13 +19,16 @@ Public network.
  region    env     IPv4              IPv6
 ========= ======= ================= ======
  bgo      prod     158.39.77.0/24    2001:700:2:8300::/56
- trd      prod     158.39.48.0/24    2001:700:2:8400::/56
  osl      prod     158.37.63.0/24    2001:700:2:8200::/56
+ trd      prod     158.39.48.0/24    2001:700:2:8400::/56
  dev01    dev      129.177.31.96/27  TBD
- dev02    dev      (10.171.94.0/24)  TBD
+ dev02    dev      158.38.144.0/24   TBD
  dev03    dev      x.y/z             TBD
- vagrant  dev      (10.0.0.0/16)     TBD
+ vagrant  dev      (10.0.0.0/24)     TBD
 ========= ======= ================= ======
+
+.. NOTE:: The networks enclosed in parentheses are not reachable outside of
+          their locally managed routing domains.
 
 Private
 ^^^^^^^
@@ -36,19 +39,19 @@ reachable if security policy is configured.
 ========= ======= ============== ======
  region    env     IPv4           IPv6
 ========= ======= ============== ======
- bgo      prod     10.1.0.0/16    TBD
- trd      prod     10.2.0.0/16    TBD
- osl      prod     10.3.0.0/16    TBD
- dev01    dev      10.17.0.0/16   TBD
- dev02    dev      10.18.0.0/16   TBD
- dev03    dev      10.19.0.0/16   TBD
- vagrant  dev      10.20.0.0/16   TBD
+ bgo       prod    10.1.0.0/16    TBD
+ osl       prod    10.2.0.0/16    TBD
+ trd       prod    10.3.0.0/16    TBD
+ dev01     dev     10.17.0.0/16   TBD
+ dev02     dev     10.18.0.0/16   TBD
+ dev03     dev     10.19.0.0/16   TBD
+ vagrant   dev     10.16.0.0/24   TBD
 ========= ======= ============== ======
 
 Internal
 ^^^^^^^^
 
-Cross-region, encrypted network.
+Future cross-region, GRE+IPsec encrypted network.
 
 ========= ======= ============== ======
  region    env     IPv4           IPv6
@@ -62,18 +65,68 @@ Cross-region, encrypted network.
 ========= ======= ============== ======
 
 
-Infrastructure addresses
-------------------------
+Infrastructure and management
+-----------------------------
 
-Instance addresses
-^^^^^^^^^^^^^^^^^^
+This describes adressing of the IaaS system and backend services.
 
-Infrastructure addresses
-^^^^^^^^^^^^^^^^^^^^^^^^
+mgmt network
+^^^^^^^^^^^^
+
+Interactive ssh access, os level maintenance services
+
+========= ======= =================== ====== ======
+ region    env     IPv4                IPv6   vlan
+========= ======= =================== ====== ======
+ bgo      prod     172.16.32.0/21      TBD
+ osl      prod     129.240.224.97/27   TBD
+ trd      prod     10.171.91.0/24      TBD    1077
+ dev01    dev      192.168.10.0/24     TBD
+ dev02    dev      10.171.92.0/24      TBD    1078
+ dev03    dev      TBD                 TBD
+ vagrant  dev      TBD                 TBD
+========= ======= =================== ====== ======
+
+oob network
+^^^^^^^^^^^
+
+Out of band management, `IPMI BMC devices`_.
+
+========= ======= =================== ====== ======
+ region    env     IPv4                IPv6   vlan
+========= ======= =================== ====== ======
+ bgo      prod     172.16.24.0/21      N/A
+ osl      prod     129.240.224.65/27   N/A
+ trd      prod     10.171.86.1/24      N/A    986
+ dev01    dev      TBD                 N/A
+ dev02    dev      10.171.93.0/24      N/A    1079
+ dev03    dev      TBD                 N/A
+========= ======= =================== ====== ======
+
+.. _IPMI BMC devices: https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface#Baseboard_management_controller
+
+transport network
+^^^^^^^^^^^^^^^^^
+
+========= ======= ================ ====== ======
+ region    env     IPv4             IPv6   vlan
+========= ======= ================ ====== ======
+ bgo       prod     172.18.0.0/19   TBD    N/A
+ osl       prod     172.18.32.0/19  TBD    N/A
+ trd       prod     172.18.64.0/19  TBD    N/A
+ dev01     dev      172.31.1.0/24   TBD
+ dev02     dev      172.31.2.0/24   TBD    1074
+ dev03     dev      172.31.3.0/24   TBD
+ vagrant   dev      172.31.0.0/24   TBD
+========= ======= ================ ====== ======
+
+service addresses
+^^^^^^^^^^^^^^^^^
 
 
 
-
+Old (to be removed)
+----------------------------------------
 
 We have 3 different subnets:
 
@@ -84,7 +137,7 @@ We have 3 different subnets:
     x.x.x.x/24 cloud-public-addresses
 
 mgmt ip allocation
-------------------
+^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -111,7 +164,7 @@ mgmt ip allocation
     x.x.x.21 osd-5
 
 cloud address ip allocation
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
