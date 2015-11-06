@@ -10,6 +10,9 @@ Instance workloads
 This describes from what IP network and prefix an instance workload will
 receive its address. Normally this will happen at boot time through DHCP.
 
+* The private IPv4 block for instance workloads is *10.0.0.0/9* split up as
+  described in the tables below
+
 Public
 ^^^^^^
 
@@ -75,6 +78,13 @@ mgmt network
 
 Interactive ssh access, os level maintenance services
 
+====== ===============
+ env    IPv4 prefix
+====== ===============
+ prod   172.16.0.0/16
+ dev    172.31.0.0/19
+====== ===============
+
 ========= ======= =================== ====== ======
  region    env     IPv4                IPv6   vlan
 ========= ======= =================== ====== ======
@@ -84,13 +94,20 @@ Interactive ssh access, os level maintenance services
  dev01    dev      192.168.10.0/24     TBD
  dev02    dev      10.171.92.0/24      TBD    1078
  dev03    dev      TBD                 TBD
- vagrant  dev      TBD                 TBD
+ vagrant  dev      172.31.0.0/24       TBD
 ========= ======= =================== ====== ======
 
 oob network
 ^^^^^^^^^^^
 
 Out of band management, `IPMI BMC devices`_.
+
+====== ================
+ env    IPv4 prefix
+====== ================
+ prod   172.17.0.0/16
+ dev    172.31.32.0/19
+====== ================
 
 ========= ======= =================== ====== ======
  region    env     IPv4                IPv6   vlan
@@ -101,6 +118,7 @@ Out of band management, `IPMI BMC devices`_.
  dev01    dev      TBD                 N/A
  dev02    dev      10.171.93.0/24      N/A    1079
  dev03    dev      TBD                 N/A
+ vagrant  dev      172.31.32.0/24      N/A
 ========= ======= =================== ====== ======
 
 .. _IPMI BMC devices: https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface#Baseboard_management_controller
@@ -108,16 +126,23 @@ Out of band management, `IPMI BMC devices`_.
 transport network
 ^^^^^^^^^^^^^^^^^
 
+====== ================
+ env    IPv4 prefix
+====== ================
+ prod   172.18.0.0/16
+ dev    172.31.64.0/19
+====== ================
+
 ========= ======= ================ ====== ======
  region    env     IPv4             IPv6   vlan
 ========= ======= ================ ====== ======
  bgo       prod     172.18.0.0/19   TBD    N/A
  osl       prod     172.18.32.0/19  TBD    N/A
  trd       prod     172.18.64.0/19  TBD    N/A
- dev01     dev      172.31.1.0/24   TBD
- dev02     dev      172.31.2.0/24   TBD    1074
- dev03     dev      172.31.3.0/24   TBD
- vagrant   dev      172.31.0.0/24   TBD
+ dev01     dev      172.31.65.0/24  TBD
+ dev02     dev      172.31.66.0/24  TBD    1074
+ dev03     dev      172.31.67.0/24  TBD
+ vagrant   dev      172.31.64.0/24  TBD
 ========= ======= ================ ====== ======
 
 service addresses
