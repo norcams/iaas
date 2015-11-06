@@ -135,17 +135,17 @@ Internal routed link network used for routing all service and storage traffic.
  dev    172.31.64.0/19
 ====== ================
 
-========= ======= ================ ====== ======
- region    env     IPv4             IPv6   vlan
-========= ======= ================ ====== ======
- bgo       prod     172.18.0.0/19   TBD    N/A
- osl       prod     172.18.32.0/19  TBD    N/A
- trd       prod     172.18.64.0/19  TBD    N/A
- dev01     dev      172.31.65.0/24  TBD
- dev02     dev      172.31.66.0/24  TBD    1074
- dev03     dev      172.31.67.0/24  TBD
- vagrant   dev      172.31.64.0/24  TBD
-========= ======= ================ ====== ======
+========= ======= ================ ====== ====== ========
+ region    env     IPv4             IPv6   VLAN   BGP AS
+========= ======= ================ ====== ====== ========
+ bgo       prod     172.18.0.0/19   TBD    N/A    65501
+ osl       prod     172.18.32.0/19  TBD    N/A    65502
+ trd       prod     172.18.64.0/19  TBD    N/A    65503
+ dev01     dev      172.31.65.0/24  TBD           65535
+ dev02     dev      172.31.66.0/24  TBD    1074   65534
+ dev03     dev      172.31.67.0/24  TBD           65533
+ vagrant   dev      172.31.64.0/24  TBD    N/A    65500
+========= ======= ================ ====== ====== ========
 
 service addresses
 ^^^^^^^^^^^^^^^^^
