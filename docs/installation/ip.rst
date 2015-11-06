@@ -126,6 +126,8 @@ Out of band management, `IPMI BMC devices`_.
 transport network
 ^^^^^^^^^^^^^^^^^
 
+Internal routed link network used for routing all service and storage traffic.
+
 ====== ================
  env    IPv4 prefix
 ====== ================
@@ -148,9 +150,33 @@ transport network
 service addresses
 ^^^^^^^^^^^^^^^^^
 
+.. NOTE:: WORK IN PROGRESS
+
+Used for public and internal service endpoints.
+
+====== ================ ======== ====== ======
+ env                   type
+------ ---------------------------------------
+        IPv4             IPv6     IPv4   IPv6
+====== ================ ======== ====== ======
+ prod   172.18.0.0/16    TBD      TBD    TBD
+ dev    172.31.64.0/19   TBD      TBD    TBD
+====== ================ ======== ====== ======
+
+========= ======= ================ ======
+ region    env     IPv4             IPv6
+========= ======= ================ ======
+ bgo       prod     172.18.0.0/19   TBD
+ osl       prod     172.18.32.0/19  TBD
+ trd       prod     172.18.64.0/19  TBD
+ dev01     dev      172.31.65.0/24  TBD
+ dev02     dev      172.31.66.0/24  TBD
+ dev03     dev      172.31.67.0/24  TBD
+ vagrant   dev      172.31.64.0/24  TBD
+========= ======= ================ ======
 
 
-Old (to be removed)
+Old data (to be removed)
 ----------------------------------------
 
 We have 3 different subnets:
