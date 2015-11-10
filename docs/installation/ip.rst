@@ -10,9 +10,6 @@ Instance workloads
 This describes from what IP network and prefix an instance workload will
 receive its address. Normally this will happen at boot time through DHCP.
 
-* The private IPv4 block for instance workloads is *10.0.0.0/9* split up as
-  described in the tables below
-
 Public
 ^^^^^^
 
@@ -35,6 +32,13 @@ Public network.
 
 Private
 ^^^^^^^
+
+========== ===============
+ protocol     prefix
+========== ===============
+ IPv4       10.0.0.0/9
+ IPv6       TBD
+========== ===============
 
 Region-specific private network. All instances in the same region are
 reachable if security policy is configured.
