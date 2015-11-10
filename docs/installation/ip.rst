@@ -151,6 +151,24 @@ Internal routed link network used for routing all service and storage traffic.
  vagrant   dev      172.31.64.0/24  TBD    N/A    65500
 ========= ======= ================ ====== ====== ========
 
+Each region-specific transport network block is again split up in smaller
+prefix reservations to allow for up to 4 separated L2 switching domains, one
+per interface on the physical nodes.
+
+Example split of the bgo prod transport block:
+
+============ =================
+ interface    reserved IPv4
+============ =================
+ transport1   172.18.0.0/21
+ transport2   172.18.8.0/21
+ transport3   172.18.16.0/21
+ transport4   172.18.24.0/21
+============ =================
+
+The actual deployed IP subnets starts out with a /24 mask which is then
+increased as needed.
+
 service addresses
 ^^^^^^^^^^^^^^^^^
 
