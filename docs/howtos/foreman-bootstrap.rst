@@ -19,7 +19,13 @@ Prerequisites
 Procedure
 ---------
 
-1. On the login node: **/usr/local/sbin/bootstrap-<loc>-controller-01.sh**
+1. Make sure the dhcp and tftp services are allowed through the firewall, if
+   RHEL 7/Centos 7: **firewall-cmd --list-services**
+
+   If *tftp* and *dhcp* is not amongst the permitted services on that list, add
+   the ones missing, for instance: **firewall-cmd --add-service dhcp**
+
+#. On the login node: **/usr/local/sbin/bootstrap-<loc>-controller-01.sh**
    
    .. NOTE::
       The error message "curl: (33) HTTP server doesn't seem to support byte
