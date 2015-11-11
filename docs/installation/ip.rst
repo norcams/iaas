@@ -156,7 +156,7 @@ prefix reservations to allow for up to 4 separated L2 switching domains, one
 per interface on the physical nodes.
 
 For IPv4, we split the /19 prefix per region into four /21's. Example split of
-the bgo prod transport block:
+the `bgo prod`_ transport block:
 
 ============ =================
  interface    reserved IPv4
@@ -167,8 +167,7 @@ the bgo prod transport block:
  transport4   172.18.24.0/21
 ============ =================
 
-The actual deployed IP subnets may start as a /24 bitmask which is then
-increased as needed.
+.. _bgo prod: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&mask=19&division=7.31
 
 service addresses
 ^^^^^^^^^^^^^^^^^
