@@ -46,13 +46,13 @@ reachable if security policy is configured.
 ========= ======= ============== ======
  region    env     IPv4           IPv6
 ========= ======= ============== ======
- bgo       prod    10.1.0.0/16    TBD
- osl       prod    10.2.0.0/16    TBD
- trd       prod    10.3.0.0/16    TBD
- dev01     dev     10.17.0.0/16   TBD
- dev02     dev     10.18.0.0/16   TBD
- dev03     dev     10.19.0.0/16   TBD
- vagrant   dev     10.16.0.0/24   TBD
+ bgo       prod    10.1.0.0/20    TBD
+ osl       prod    10.2.0.0/20    TBD
+ trd       prod    10.3.0.0/20    TBD
+ dev01     dev     10.17.0.0/20   TBD
+ dev02     dev     10.18.0.0/20   TBD
+ dev03     dev     10.19.0.0/20   TBD
+ vagrant   dev     10.16.0.0/20   TBD
 ========= ======= ============== ======
 
 Internal
@@ -76,6 +76,23 @@ Infrastructure and management
 -----------------------------
 
 This describes adressing of the IaaS system and backend services.
+
+service addresses
+^^^^^^^^^^^^^^^^^
+
+These addresses are used for public and internal service endpoints.
+
+========= ====== ================ ======
+ type      env    IPv4             IPv6
+========= ====== ================ ======
+ public    prod   As needed [1]_
+ private   prod   172.19.0.0/19
+ public    dev    As needed [1]_
+ private   dev    172.31.96.0/20
+========= ====== ================ ======
+
+.. [1] Pulibc IPv4 service addresses are limited and assigned as needed from
+   the end of the `public`_ instance range in each env.
 
 mgmt network
 ^^^^^^^^^^^^
@@ -168,34 +185,6 @@ the `bgo prod`_ transport block:
 ============ =================
 
 .. _bgo prod: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&mask=19&division=7.31
-
-service addresses
-^^^^^^^^^^^^^^^^^
-
-.. NOTE:: WORK IN PROGRESS
-
-Used for public and internal service endpoints.
-
-====== ================ ======== ====== ======
- env                   type
------- ---------------------------------------
-        IPv4             IPv6     IPv4   IPv6
-====== ================ ======== ====== ======
- prod   172.18.0.0/16    TBD      TBD    TBD
- dev    172.31.64.0/19   TBD      TBD    TBD
-====== ================ ======== ====== ======
-
-========= ======= ================ ======
- region    env     IPv4             IPv6
-========= ======= ================ ======
- bgo       prod     172.18.0.0/19   TBD
- osl       prod     172.18.32.0/19  TBD
- trd       prod     172.18.64.0/19  TBD
- dev01     dev      172.31.65.0/24  TBD
- dev02     dev      172.31.66.0/24  TBD
- dev03     dev      172.31.67.0/24  TBD
- vagrant   dev      172.31.64.0/24  TBD
-========= ======= ================ ======
 
 
 Old data (to be removed)
