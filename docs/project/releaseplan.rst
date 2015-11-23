@@ -94,18 +94,26 @@ at https://github.com/norcams/himlar/milestones
 0.3.0
 -----
 
-*Due date*: 06.11.2015
+*Rescheduled as 0.5.0*
 
 - Cinder (block storage) service with Ceph backend enabled
 
-0.4.0 (on production hardware)
+0.4.0 (production hardware)
 -----
 
-*Due date*: 12.11.2015
+*Due date*: 24.11.2015
 
 - Service on production network and hardware
 
 - Performance restrictions lifted
+
+
+0.5.0
+-----
+
+*Due date*: 3.12.2015
+
+- Cinder (block storage) service with Ceph backend enabled
 
 
 1.0.0
@@ -113,9 +121,14 @@ at https://github.com/norcams/himlar/milestones
 
 *Due date*: 15.12.2015
 
-- FEIDE Connect-pilot integration enabled
+- Open for production usage
 
-- A user can select one of three regions for workloads
+2.0.0
+-----
+
+*Due date*: Jan/Feb 2016
+
+- FEIDE Connect integration enabled
 
 
 Status reports
