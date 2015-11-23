@@ -111,7 +111,7 @@ at https://github.com/norcams/himlar/milestones
 0.5.0
 -----
 
-*Due date*: 3.12.2015
+*Due date*: *pending*
 
 - Cinder (block storage) service with Ceph backend enabled
 
