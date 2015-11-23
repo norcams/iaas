@@ -1,3 +1,8 @@
+OBS! UTDATERT!
+
+Endelig publisert kopi ligger på
+http://iaas.readthedocs.org/en/latest/project/reports/2015_11_uhps_notat.html
+
 ================================================
 Notat om organisering av drift av IaaS-tjenesten
 ================================================
