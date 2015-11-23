@@ -56,11 +56,23 @@ Only select pilot users will have access to the systems during the 0-series.
 1.x.y series release goals
 --------------------------
 
-This series will work towards delivery of a feature complete service as
+This series will work towards delivery of a feature complete basic service as
 described by the original project plan.
 
-The first 1.x.y release will enable access for all users through integration
-with FEIDE or FEIDE Connect.
+The first 1.x.y release will enable manually provisioned access for all users
+to the basic IaaS service in each region.
+
+2.x.y series release goals
+--------------------------
+
+This series will work towards integrating the service with federated login.
+
+* Enabled self-service access through integration with FEIDE or FEIDE Connect.
+
+* Consolidated user accounts across regions.
+
+The first 2.x.y release will enable (limited) access to the service for all
+accounts within FEIDE.
 
 Release plan
 ============
