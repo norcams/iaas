@@ -50,11 +50,10 @@ fysiske lagrings- og compute-noder per lokasjon uten kostnader i personell. I en
 situasjon hvor deler gjøres som forenklet leveranse (f.eks bare compute) vil
 tallene være enda større.
 
-UH PS vil også tilrettelegge og hjelpe til med gjenbruk av felles-systemet til
+UH PS vil også tilrettelegge og hjelpe til med gjenbruk av felles kode til
 mer spesialiserte oppgaver. HPC ved UiT, compute-ressurser i SAFE (UiB) og TSD
-(USIT) er eksempler på slike. UH PS som beskrevet i dette forslaget vil ikke ha
-ressurser til å *drifte* disse spesial-løsningene men vil kunne bidra som
-teknologileverandør.
+(USIT) er eksempler på slike. UH PS vil etter avtale kunne hjelpe til med drift
+og vedlikehold av disse innenfor tilgjengelige ressurser.
 
 Support
 -------
@@ -67,7 +66,7 @@ som et utgangspunkt.
 Vaktordning
 -----------
 
-UH PS ønsker ikke i utgangspunktet en egen "førstelinje" vaktordning. UH PS vil
+UH PS ønsker ikke i utgangspunktet en egen førstelinje vaktordning. UH PS vil
 ha en ordning med tilkalling hvis problemet når et visst eskalert nivå,
 forsøksvis mellom kl 0800-2200.
 
@@ -94,7 +93,7 @@ Personellressurser
 ------------------
 
 UH PS sin initielle bemanning for drift av IaaS og støttefunksjoner som
-beskrevet i dette forslaget vil være 4,4 stillinger.
+beskrevet i dette forslaget vil være 5,4 stillinger.
 
 Teamleder (40%)
 ^^^^^^^^^^^^^^^
@@ -117,25 +116,28 @@ Teknisk leder har hovedansvar for drift og utvikling og skal også aktivt bidra
 til at UH PS blir et attraktivt, utadrettet felles fagmiljø til nytte for hele
 sektoren.
 
-3 ingeniører (3x100%)
+4 ingeniører (4x100%)
 ^^^^^^^^^^^^^^^^^^^^^
-UH PS trenger tre ingeniører med seinornivå kompetanseprofiler på OpenStack,
+UH PS trenger fire ingeniører med seinornivå kompetanseprofiler på OpenStack,
 Linux operativsystem-drift, automatisering/programmering, lagring og nettverk.
 
 Prosjektgruppa for UH IaaS hadde ingen ressurser i 100% med hovedvekt på
 nettverkskompetanse. USIT bidro med en stilling på 40% som ble en veldig viktig
 nøkkelressurs i prosjektet men samtidig en flaskehals med tanke på tilgjengelig
-tid. I UH PS vil det være spesielt viktig å ha en 100% stilling med denne
-kompetanseprofilen.
+tid. I UH PS vil det være spesielt viktig å ha en 100% stilling med en slik
+kompetanseprofil.
+
+Det anbefales at minst en 100% ressurs er fysisk plassert på hver av de tre
+eksisterende IaaS-lokasjonene.
 
 Risiko ved minimumsbemanning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Ressursene beskrevet her er et absolutt minimum for å kunne ha en forsvarlig
-driftssituasjon. Hvis en ønsker å redusere risiko for lengere, ikke-planlagt
-nedetid, ved f.eks sykdom eller andre uforutsette hendelser, må bemanningen økes
-med ytterligere to personer. Det vil gi rom for å fordele ansvaret bredere og
-dermed øke tryggheten.
+driftssituasjon. Hvis en ønsker å redusere risiko for ikke-planlagt nedetid ved
+f.eks sykdom eller andre uforutsette hendelser må bemanningen økes med
+ytterligere en person. Dette vil gi rom for å fordele ansvaret bredere og dermed
+øke tryggheten.
 
 Budsjett til reiser og kurs
 ---------------------------
