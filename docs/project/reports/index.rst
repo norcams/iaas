@@ -12,7 +12,8 @@ Reports are written in Norwegian.
     :glob:
     :maxdepth: 1
 
-    sluttrapport_2015_06
+    2015_06_sluttrapport
+    2015_11_uhps_notat
 
 Weekly status
 -------------
