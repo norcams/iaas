@@ -159,25 +159,25 @@ Internal routed link network used for routing all service and storage traffic.
 ========= ======= ============ ================ ====== ====== ========
  region    env     Interface    IPv4             IPv6   VLAN   BGP AS
 ========= ======= ============ ================ ====== ====== ========
- bgo       prod    *            172.18.0.0/19    TBD           65501
+ bgo       prod                 172.18.0.0/19    TBD           65501
  bgo       prod    transport1   172.18.0.0/21    TBD    100    65501
  bgo       prod    transport2   172.18.8.0/21    TBD    200    65501
- osl       prod    *            172.18.32.0/19   TBD           65502
+ osl       prod                 172.18.32.0/19   TBD           65502
  osl       prod    transport1   172.18.32.0/21   TBD    100    65502
  osl       prod    transport2   172.18.40.0/21   TBD    200    65502
- trd       prod    *            172.18.64.0/19   TBD           65503
+ trd       prod                 172.18.64.0/19   TBD           65503
  trd       prod    transport1   172.18.64.0/21   TBD    100    65503
  trd       prod    transport2   172.18.72.0/21   TBD    200    65503
- dev01     dev     *            172.31.32.0/23   TBD           65535
+ dev01     dev                  172.31.32.0/23   TBD           65535
  dev01     dev     transport1   172.31.32.0/24   TBD           65535
  dev01     dev     transport2   172.31.33.1/24   TBD           65535
- dev02     dev     *            172.31.34.0/23   TBD    1074   65534
+ dev02     dev                  172.31.34.0/23   TBD    1074   65534
  dev02     dev     transport1   172.31.34.0/24   TBD    1074   65534
  dev02     dev     transport2   172.31.35.0/24   TBD    1074   65534
- dev03     dev     *            172.31.36.0/23   TBD           65533
+ dev03     dev                  172.31.36.0/23   TBD           65533
  dev03     dev     transport1   172.31.36.0/24   TBD           65533
  dev03     dev     transport2   172.31.37.0/24   TBD           65533
- vagrant   dev     *            172.31.46.0/23   TBD           65500
+ vagrant   dev                  172.31.46.0/23   TBD           65500
  vagrant   dev     transport1   172.31.46.0/24   TBD           65500
  vagrant   dev     transport2   172.31.47.0/24   TBD           65500
 ========= ======= ============ ================ ====== ====== ========
