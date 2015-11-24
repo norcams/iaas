@@ -14,8 +14,8 @@ og omfatter utstyr plassert ved UiB, UiO og NTNU. Prosjektet har vært bemannet
 med ressurser fra disse organisasjonene i utviklingsfasen.
 
 Når tjenesten skal i bruk for produksjon er det nøvendig å diskutere felles
-organisering og sette permissene som skal gjelde videre. Dette dokumentet
-fokuserer på hvordan vi per i dag mener dette bør fungere i praksis.
+organisering og sette permisser for hva som skal gjelde videre. Dette
+dokumentet fokuserer på hvordan vi per i dag mener dette bør fungere i praksis.
 
 .. _prosjektplanen: http://iaas.readthedocs.org/en/latest/project/plan.html
 
@@ -31,29 +31,29 @@ IaaS-tjenesten.
 I prosjektperioden har UH IaaS opparbeidet seg mye erfaring med distribuert
 jobbing mellom organisasjonene. Prosjektgruppa er samlet enige om at å dedikere
 utførende ressurser i 100% til UH PS er nødvendig for å opprettholde forsvarlig
-leveransekvalitet i produksjon. Ressursene i UH PS bør være formelt del av
-organisasjonene som deltar men med alle arbeidsoppgaver spesifisert av en felles
-driftsorganisasjonen. Et forslag til løsning kan være at en jobber mot en modell
-med *utleie* av ressurser.
+leveransekvalitet i produksjon. Ressursene i UH PS bør formelt tilhøre
+organisasjonene som deltar men med alle arbeidsoppgaver spesifisert av en
+felles driftsorganisasjon. Et forslag til løsning kan være at en jobber mot en
+modell med *utleie* av ressurser.
 
 Oppgaver
 --------
 
-UH PS sin primære oppgave er å drift og videreutvikle en felles plattformen for
-IaaS som UH IaaS legger grunnlaget for. I prosjektplanen er dette driftsansvaret
-begrenset til de tre lokasjonene som er omtalt, Bergen, Oslo og Trondheim.
+UH PS sin primære oppgave er drift og videreutvikling av en felles plattform
+for IaaS som UH IaaS har lagt grunnlaget for. Slik prosjektplanen beskriver er
+tre lokasjoner klare for produksjon, Bergen, Oslo og Trondheim.
 
 UH PS vil med de ressursene som er beskrevet i dette forslaget kunne drifte
-disse lokasjonene uten ytterligere tilførsel av ressurser til de når en
+disse lokasjonene uten ytterligere tilførsel av personell til de når en
 betraktelig størrelse. UH IaaS anslår at platformen kan utvides til minst 200
-fysiske lagrings- og compute-noder per lokasjon uten kostnader i personell. I en
-situasjon hvor deler gjøres som forenklet leveranse (f.eks bare compute) vil
-tallene være enda større.
+fysiske lagrings- og compute-noder per lokasjon uten merkostnader til
+personell. I en situasjon hvor deler gjøres som forenklet leveranse (f.eks bare
+compute) vil tallene være enda større.
 
-UH PS vil også tilrettelegge og hjelpe til med gjenbruk av felles kode til
-mer spesialiserte oppgaver. HPC ved UiT, compute-ressurser i SAFE (UiB) og TSD
+UH PS vil også tilrettelegge og hjelpe til med gjenbruk av felles kode til mer
+spesialiserte oppgaver. HPC ved UiT, compute-ressurser i SAFE (UiB) og TSD
 (USIT) er eksempler på slike. UH PS vil etter avtale kunne hjelpe til med drift
-og vedlikehold av disse innenfor tilgjengelige ressurser.
+og vedlikehold av disse og lignende tjenester innenfor tilgjengelige ressurser.
 
 Support
 -------
@@ -86,8 +86,8 @@ Organisering og ressurser
 Vi mener mye av den praktiske modellen fra UH IaaS kan videreføres mens den
 administrative siden må styrkes. UH PS sin daglige ledelse består av to roller,
 en *teknisk leder* og en merkantil/administrativ *teamleder*. Disse skal
-rapportere til de aktuelle lokalle linjeorganisasjonene og til
-UH-sky-organisasjonen.
+rapportere til de aktuelle lokale linjeorganisasjonene og til
+UHsky-organisasjonen.
 
 Personellressurser
 ------------------
@@ -166,8 +166,8 @@ strukturert, men samtidig enkel, så både de som utfører den og mottakerene ik
 føler at dette tar for mye tid.
 
 Evalueringen bør dreie seg både om interne ting rundt organisering og
-kommunikasjon, og om tjenesteleveranse, kvalitet, brukerforventning, alle
-aspekter ved UH PS sine funksjoner eller forventninger til de.
+kommunikasjon, og om tjenesteleveransen. Kvalitet, brukerforventning og alle
+aspekter ved UH PS sine funksjoner eller forventninger til de ønskes belyst.
 
 Vi tror at i en distribuert organisasjonsmodell er ryddig rapportering fra eiere
 *tilbake* til organisasjonen viktig.
