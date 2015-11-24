@@ -156,33 +156,27 @@ Internal routed link network used for routing all service and storage traffic.
  dev    172.31.64.0/19
 ====== ================
 
-========= ======= ================ ====== ====== ========
- region    env     IPv4             IPv6   VLAN   BGP AS
-========= ======= ================ ====== ====== ========
- bgo       prod     172.18.0.0/19   TBD    N/A    65501
- osl       prod     172.18.32.0/19  TBD    N/A    65502
- trd       prod     172.18.64.0/19  TBD    N/A    65503
- dev01     dev      172.31.65.0/24  TBD           65535
- dev02     dev      172.31.66.0/24  TBD    1074   65534
- dev03     dev      172.31.67.0/24  TBD           65533
- vagrant   dev      172.31.64.0/24  TBD    N/A    65500
-========= ======= ================ ====== ====== ========
+========= ======= ============ ================ ====== ====== ========
+ region    env     Interface    IPv4             IPv6   VLAN   BGP AS
+========= ======= ============ ================ ====== ====== ========
+ bgo       prod    *            172.18.0.0/19    TBD           65501
+ bgo       prod    transport1   172.18.0.0/21    TBD    100    65501
+ bgo       prod    transport2   172.18.8.0/21    TBD    200    65501
+ osl       prod    *            172.18.32.0/19   TBD           65502
+ osl       prod    transport1   172.18.32.0/21   TBD    100    65502
+ osl       prod    transport2   172.18.40.0/21   TBD    200    65502
+ trd       prod    *            172.18.64.0/19   TBD           65503
+ trd       prod    transport1   172.18.64.0/21   TBD    100    65503
+ trd       prod    transport2   172.18.72.0/21   TBD    200    65503
+ dev01     dev     *            172.31.65.0/24   TBD           65535
+ dev02     dev     *            172.31.66.0/24   TBD    1074   65534
+ dev03     dev     *            172.31.67.0/24   TBD           65533
+ vagrant   dev     *            172.31.64.0/24   TBD           65500
+========= ======= ============ ================ ====== ====== ========
 
-Each region-specific transport network block is again split up in smaller
-prefix reservations to allow for up to 4 separated L2 switching domains, one
-per interface on the physical nodes.
-
-For IPv4, we split the /19 prefix per region into four /21's. Example split of
-the `bgo prod`_ transport block:
-
-============ =================
- interface    reserved IPv4
-============ =================
- transport1   172.18.0.0/21
- transport2   172.18.8.0/21
- transport3   172.18.16.0/21
- transport4   172.18.24.0/21
-============ =================
+As specified above, each region-specific transport network block is again split
+up in smaller prefix reservations to allow for up to 4 separated L2 switching
+domains, one per interface on the physical nodes.
 
 .. _bgo prod: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&mask=19&division=7.31
 
