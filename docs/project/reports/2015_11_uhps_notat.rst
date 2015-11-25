@@ -14,7 +14,7 @@ og omfatter utstyr plassert ved UiB, UiO og NTNU. Prosjektet har vært bemannet
 med ressurser fra disse organisasjonene i utviklingsfasen.
 
 Når tjenesten skal i bruk for produksjon er det nøvendig å diskutere felles
-organisering og sette permisser for hva som skal gjelde videre. Dette
+organisering og sette premisser for hva som skal gjelde videre. Dette
 dokumentet fokuserer på hvordan vi per i dag mener dette bør fungere i praksis.
 
 .. _prosjektplanen: http://iaas.readthedocs.org/en/latest/project/plan.html
@@ -118,7 +118,7 @@ sektoren.
 
 4 ingeniører (4x100%)
 ^^^^^^^^^^^^^^^^^^^^^
-UH PS trenger fire ingeniører med seinornivå kompetanseprofiler på OpenStack,
+UH PS trenger fire ingeniører med seniornivå kompetanseprofiler på OpenStack,
 Linux operativsystem-drift, automatisering/programmering, lagring og nettverk.
 
 Prosjektgruppa for UH IaaS hadde ingen ressurser i 100% med hovedvekt på
