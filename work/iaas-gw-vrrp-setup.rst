@@ -1,8 +1,8 @@
 VRRP setup on IaaS gateways
 ===========================
 
-Shutdown the uplink port
-------------------------
+Shutdown the uplink interface
+-----------------------------
 
 .. code-block:: bash
 
