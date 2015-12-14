@@ -167,17 +167,17 @@ Prefix reservations per link type and location
  env    link        region   IPv4 prefix        IPv6 prefix
 ====== =========== ======== ================== =============
  prod   leaf-node   bgo      172.18.0.0/19      TBD
-                    osl      172.18.32.0/19     TBD
-                    trd      172.18.64.0/19     TBD
-        gw-gw       bgo      172.18.224.0/22    TBD
-                    osl      172.18.228.0/22    TBD
-                    trd      172.18.232.0/22    TBD
-dev     leaf-node   dev01    172.31.32.0/23     TBD
-                    dev02    172.31.34.0/23     TBD
-                    dev03    172.31.36.0/23     TBD
-        gw-gw       dev01    172.31.46.0/26     TBD
-                    dev02    172.31.46.64/26    TBD
-                    dev03    172.31.46.128/26   TBD
+ prod   leaf-node   osl      172.18.32.0/19     TBD
+ prod   leaf-node   trd      172.18.64.0/19     TBD
+ prod   gw-gw       bgo      172.18.224.0/22    TBD
+ prod   gw-gw       osl      172.18.228.0/22    TBD
+ prod   gw-gw       trd      172.18.232.0/22    TBD
+ dev    leaf-node   dev01    172.31.32.0/23     TBD
+ dev    leaf-node   dev02    172.31.34.0/23     TBD
+ dev    leaf-node   dev03    172.31.36.0/23     TBD
+ dev    gw-gw       dev01    172.31.46.0/26     TBD
+ dev    gw-gw       dev02    172.31.46.64/26    TBD
+ dev    gw-gw       dev03    172.31.46.128/26   TBD
 ====== =========== ======== ================== =============
 
 IP networks in use
