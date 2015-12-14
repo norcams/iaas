@@ -26,7 +26,7 @@ Software versions as milestones
 The UH IaaS project is focused on the value of *continuous improvement* within
 the constraints of a larger, delivery focused plan. Thus as engineers it makes
 sense for us to couple planning to what we are actually producing day to day -
-which is code.
+which is code and documentation.
 
 Our milestones will use software versioning as a method of describing the
 iterative work needed to reach each of the main goals. For the testing and
@@ -83,64 +83,59 @@ the current status. Data for this list is correlated from the UH IaaS Trello
 board at https://trello.com/b/m7tD31zU/iaas and GithHub milestones and issues
 at https://github.com/norcams/himlar/milestones
 
-0.1.0
+0.5.0
 -----
 
-- Internal testing only.
+*Due date*: 15.12.2015
 
-- Network implementation completed.
+- Released with pilot status - manually provisioned users
 
-0.2.0 (current release)
------------------------
-
-*Released*: 15.10.2015
-
-- First release enabling pilot user access
-
-- Performance will be limited/restricted
-
-- compute and image services will use local disk
-
-- IP addressing will be limited or non-public
-
-0.3.0
------
-
-*Rescheduled as 0.5.0*
-
-- Cinder (block storage) service with Ceph backend enabled
-
-0.4.0 (production hardware)
------
-
-*Due date*: 24.11.2015
-
-- Service on production network and hardware
+- Service runs on production network and hardware
 
 - Performance restrictions lifted
 
+0.5.1
+-----
 
-0.5.0
+- Enable DNS PTR and A records on public addresses (*<instance>.<region>.uhdc.no*)
+
+0.6.0
 -----
 
 *Due date*: *pending*
 
-- Cinder (block storage) service with Ceph backend enabled
+- Cinder (block storage) service, Ceph backend
+
+- FEIDE Connect integration, proof-of-concept
+
+
+0.7.0
+-----
+
+*Due date*: *Not set*
+
+- Object storage (Swift API)
+
+- Orchestration service (OpenStack Heat)
 
 
 1.0.0
 -----
 
-*Due date*: 15.12.2015
+*Due date*: *jan/feb 2016*
 
 - Open for production usage
+
+- Security and update process documented and accepted by third parties
+
+- Defined and documented what service level users are given
 
 2.0.0
 -----
 
-*Due date*: Jan/Feb 2016
+*Due date*: *Not set*
 
-- FEIDE Connect integration enabled
+- FEIDE Connect *phase 1 integration* enabled as per http://github.com/norcams/himlar-connect
 
 
 Status reports
