@@ -135,7 +135,9 @@ at https://github.com/norcams/himlar/milestones
 
 *Due date*: *Not set*
 
-- FEIDE Connect *phase 1 integration* enabled as per http://github.com/norcams/himlar-connect
+- FEIDE Connect `phase 1 integration`_ enabled
+
+.. _phase 1 integration: https://github.com/norcams/himlar-connect#integration-phase-1-mvp
 
 
 Status reports
