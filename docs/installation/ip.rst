@@ -149,38 +149,58 @@ transport network
 
 Internal routed link network used for routing all service and storage traffic.
 
-====== ================
- env    IPv4 prefix
-====== ================
- prod   172.18.0.0/16
- dev    172.31.32.0/20
-====== ================
+Network prefixes
 
-========= ======= ============ ================ ====== ====== ========
- region    env     Interface    IPv4             IPv6   VLAN   BGP AS
-========= ======= ============ ================ ====== ====== ========
- bgo       prod                 172.18.0.0/19    TBD           65501
- bgo       prod    transport1   172.18.0.0/21    TBD    100    65501
- bgo       prod    transport2   172.18.8.0/21    TBD    200    65501
- osl       prod                 172.18.32.0/19   TBD           65502
- osl       prod    transport1   172.18.32.0/21   TBD    100    65502
- osl       prod    transport2   172.18.40.0/21   TBD    200    65502
- trd       prod                 172.18.64.0/19   TBD           65503
- trd       prod    transport1   172.18.64.0/21   TBD    100    65503
- trd       prod    transport2   172.18.72.0/21   TBD    200    65503
- dev01     dev                  172.31.32.0/23   TBD           65535
- dev01     dev     transport1   172.31.32.0/24   TBD           65535
- dev01     dev     transport2   172.31.33.1/24   TBD           65535
- dev02     dev                  172.31.34.0/23   TBD    1074   65534
- dev02     dev     transport1   172.31.34.0/24   TBD    1074   65534
- dev02     dev     transport2   172.31.35.0/24   TBD    1074   65534
- dev03     dev                  172.31.36.0/23   TBD           65533
- dev03     dev     transport1   172.31.36.0/24   TBD           65533
- dev03     dev     transport2   172.31.37.0/24   TBD           65533
- vagrant   dev                  172.31.46.0/23   TBD           65500
- vagrant   dev     transport1   172.31.46.0/24   TBD           65500
- vagrant   dev     transport2   172.31.47.0/24   TBD           65500
-========= ======= ============ ================ ====== ====== ========
+========= ================
+ env       IPv4 prefix
+========= ================
+ `prod`_   172.18.0.0/16
+ `dev`_    172.31.32.0/20
+========= ================
+
+.. _prod: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&mask=16&division=29.723d9c40
+.. _dev: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.31.32.0&mask=20&division=29.723d9c40
+
+Prefix reservations per link type and location
+
+====== =========== ======== ================== =============
+ env    link        region   IPv4 prefix        IPv6 prefix
+====== =========== ======== ================== =============
+ prod   leaf-node   bgo      172.18.0.0/19      TBD
+                    osl      172.18.32.0/19     TBD
+                    trd      172.18.64.0/19     TBD
+        gw-gw       bgo      172.18.224.0/22    TBD
+                    osl      172.18.228.0/22    TBD
+                    trd      172.18.232.0/22    TBD
+dev     leaf-node   dev01    172.31.32.0/23     TBD
+                    dev02    172.31.34.0/23     TBD
+                    dev03    172.31.36.0/23     TBD
+        gw-gw       dev01    172.31.46.0/26     TBD
+                    dev02    172.31.46.64/26    TBD
+                    dev03    172.31.46.128/26   TBD
+====== =========== ======== ================== =============
+
+IP networks in use
+
+========= ======= ============ ================= ====== ====== ========
+ region    env     Name         IPv4              IPv6   VLAN   BGP AS
+========= ======= ============ ================= ====== ====== ========
+ bgo       prod    transport1   172.18.0.0/21     TBD    100    65501
+ bgo       prod    transport2   172.18.8.0/21     TBD    200    65501
+ osl       prod    transport1   172.18.32.0/21    TBD    100    65502
+ osl       prod    transport2   172.18.40.0/21    TBD    200    65502
+ osl       prod    link1        172.18.228.0/30   TBD           65502
+ trd       prod    transport1   172.18.64.0/21    TBD    100    65503
+ trd       prod    transport2   172.18.72.0/21    TBD    200    65503
+ dev01     dev     transport1   172.31.32.0/24    TBD           65535
+ dev01     dev     transport2   172.31.33.1/24    TBD           65535
+ dev02     dev     transport1   172.31.34.0/24    TBD    1074   65534
+ dev02     dev     transport2   172.31.35.0/24    TBD    1074   65534
+ dev03     dev     transport1   172.31.36.0/24    TBD           65533
+ dev03     dev     transport2   172.31.37.0/24    TBD           65533
+ vagrant   dev     transport1   172.31.46.0/24    TBD           65500
+ vagrant   dev     transport2   172.31.47.0/24    TBD           65500
+========= ======= ============ ================= ====== ====== ========
 
 As specified above, each region-specific transport network block is again split
 up in smaller prefix reservations to allow for up to 4 separated L2 switching
