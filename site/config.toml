@@ -1,0 +1,107 @@
+baseurl = "http://iaas.uhsky.no/"
+languageCode = "en-US"
+title = "UH IaaS"
+theme = "hugo-creative-theme"
+
+[params]
+
+  # You can use Markdown syntax for urls [text](//url.to/source) for
+  # most longer texts.
+
+  # All icons using Fontawesome's icon font. Look at fortawesome.github.io/Font-Awesome/icons/
+  # for more icons. The icons are represented by their corresponding
+  # CSS class.
+
+  # All projects of the portfolio are defined in their own files.
+  # You can find example projects at 'exampleSite/data/projects'. Copy the 'projects'
+  # folder into the 'data' directory at the root of this Hugo site.
+  # For more informtion take a look at the README.
+
+  # To provide some metadata for search engines feel free to add a few
+  # information about you and your website.
+  name = "UH IaaS"
+  description = "The Norwegian academic community cloud"
+
+  # The path must be relative to the static folder
+  favicon = "favicon.ico"
+
+  # Navigation
+  [params.navigation]
+    brand = "UH IaaS"
+
+    [params.navigation.links]
+      about          = "About"
+      services       = "Services"
+      portfolio      = "Our team"
+      contact        = "Contact"
+
+
+  # Hero section
+  [params.hero]
+    # To change the background of the hero section, replace the 'header.jpg' at './static/img' with your own.
+    slogan     = "Infrastructure for your ideas"
+    subtitle   = "Fast, standardized servers and storage available when you need it. Get access to a secure modern IT infrastructure where you - the students and scientists - set the goals."
+    buttonText = "Find out more"
+
+
+  # About section
+  [params.about]
+    headline    = "We've got what you need!"
+    description = "Traditionally, ordering IT resources and access from your local IT department has been a longwinded process. The UH IaaS service delivers standardized servers and storage quickly with less effort where you, the user, are the driver. Our self-service platform is built on top of [OpenStack](//www.openstack.org), a industry standard management system."
+    buttonText = "Getting started"
+
+  # Service section
+  [params.services]
+    headline = "Self serviced infrastructure"
+
+    [[params.services.list]]
+      icon = "fa-server"
+      title = "Compute"
+      description = "Any capacity, any OS. Bring your own, or use our managed templates."
+
+    [[params.services.list]]
+      icon = "fa-hdd-o"
+      title = "Block storage"
+      description = "Capacity as you go. You store data, we'll expand as needed. Coming soon."
+
+    [[params.services.list]]
+      icon = "fa-database"
+      title = "Object storage"
+      description = "Filesystems are hard. Don't need them any more? Use objects. Coming soon."
+
+    [[params.services.list]]
+      icon = "fa-heart"
+      title = "Geo redundancy"
+      description = "Sites in Bergen, Oslo and Trondheim. They won't all go down at once."
+
+    [[params.services.list]]
+      icon = "fa-heart"
+      title = "Open source"
+      description = "Monitor and inspect every single change. We do, or you do. Built with trust."
+
+    [[params.services.list]]
+      icon = "fa-slack"
+      title = "Open minds"
+      description = "Ready to start your next project with us? Need help? Come talk to us!"
+
+  # Portfolio modals
+  [params.portfolio.modal]
+        client = "Client"
+        date = "Date"
+        category = "Category"
+        buttonText = "Close"
+
+    # Aside section
+  [params.aside]
+    headline = "Try your demo environment"
+
+    [params.aside.button]
+      text = "Log in using FEIDE Connect"
+      link = "//github.com/norcams/himlar"
+
+  # Contact section
+  [params.contact]
+    headline = "It's still early. Ask us anything."
+    description = "Ready to start your next project with us? That's great! We hope to work with anyone interested to further develop our service. Please tell us what your plans are and how we could help!"
+    phone = "+47-45066782"
+    email = "code+iaas@beddari.net"
