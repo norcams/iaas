@@ -1,7 +1,7 @@
 baseurl = "http://iaas.uhsky.no/"
 languageCode = "en-US"
 title = "UH IaaS"
-theme = "hugo-creative-theme"
+theme = "iaas"
 
 [params]
 
@@ -30,11 +30,10 @@ theme = "hugo-creative-theme"
     brand = "UH IaaS"
 
     [params.navigation.links]
-      about          = "About"
+      about          = "Demo"
       services       = "Services"
-      portfolio      = "Our team"
+  #   portfolio      = "Our team"
       contact        = "Contact"
-
 
   # Hero section
   [params.hero]
@@ -47,8 +46,9 @@ theme = "hugo-creative-theme"
   # About section
   [params.about]
     headline    = "We've got what you need!"
-    description = "Traditionally, ordering IT resources and access from your local IT department has been a longwinded process. The UH IaaS service delivers standardized servers and storage quickly with less effort where you, the user, are the driver. Our self-service platform is built on top of [OpenStack](//www.openstack.org), a industry standard management system."
-    buttonText = "Getting started"
+    description = "Traditionally, getting access to IT resources has been a longwinded process. The UH IaaS service deliver standardized servers and storage quickly with less effort where you - the user - are the driver. Our self-service platform is built on [OpenStack](//www.openstack.org), a industry standard management system."
+    buttonText = "Try the demo"
+    buttonLink = "https://dashboard.iaas.uib.no"
 
   # Service section
   [params.services]
@@ -70,19 +70,19 @@ theme = "hugo-creative-theme"
       description = "Filesystems are hard. Don't need them any more? Use objects. Coming soon."
 
     [[params.services.list]]
-      icon = "fa-heart"
+      icon = "fa-globe"
       title = "Geo redundancy"
-      description = "Sites in Bergen, Oslo and Trondheim. They won't all go down at once."
+      description = "Sites located in Bergen, Oslo and Trondheim. They won't all go down at once."
 
-    [[params.services.list]]
-      icon = "fa-heart"
-      title = "Open source"
-      description = "Monitor and inspect every single change. We do, or you do. Built with trust."
+#    [[params.services.list]]
+#      icon = "fa-heart"
+#      title = "Open source"
+#      description = "Monitor and inspect every single change. We do, or you do. Built with trust."
 
-    [[params.services.list]]
-      icon = "fa-slack"
-      title = "Open minds"
-      description = "Ready to start your next project with us? Need help? Come talk to us!"
+#    [[params.services.list]]
+#      icon = "fa-slack"
+#      title = "Open minds"
+#      description = "Ready to start your next project with us? Need help? Come talk to us!"
 
   # Portfolio modals
   [params.portfolio.modal]
@@ -93,15 +93,17 @@ theme = "hugo-creative-theme"
 
     # Aside section
   [params.aside]
-    headline = "Try your demo environment"
+    headline = "Great. Where do I get more details?"
 
     [params.aside.button]
-      text = "Log in using FEIDE Connect"
-      link = "//github.com/norcams/himlar"
+      text = "Read more"
+      link = "//iaas.readthedocs.org/en/latest/getting_started/index.html"
 
   # Contact section
   [params.contact]
     headline = "It's still early. Ask us anything."
-    description = "Ready to start your next project with us? That's great! We hope to work with anyone interested to further develop our service. Please tell us what your plans are and how we could help!"
-    phone = "+47-45066782"
-    email = "code+iaas@beddari.net"
+    description = "We hope to work with anyone interested to further develop our service. Please [join our chat service](http://uhps.herokuapp.com), tell us what your plans are, and how we could help!"
+    slack = "http://uhps.herokuapp.com"
+    github = "http://github.com/norcams"
+    trello = "https://trello.com/b/m7tD31zU/iaas"
+

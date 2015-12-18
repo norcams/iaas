@@ -3,17 +3,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">{{ with .Site.Params.contact.headline }}{{ . }}{{ end }}</h2>
+                <h2 class="section-heading">{{ with .Site.Params.contact.headline }}{{ . | markdownify }}{{ end }}</h2>
                 <hr class="primary">
                 <p>{{ with .Site.Params.contact.description }}{{ . | markdownify }}{{ end }}</p>
             </div>
             <div class="col-lg-4 col-lg-offset-2 text-center">
-                <i class="fa fa-phone fa-3x wow bounceIn"></i>
-                <p>{{ with .Site.Params.contact.phone }}{{ . }}{{ end }}</p>
+                <i class="fa fa-slack fa-3x wow bounceIn"></i>
+                <a href="{{ with .Site.Params.contact.slack }}{{ . }}{{ end }}">
+                <p>Join our chat!</p></a>
             </div>
             <div class="col-lg-4 text-center">
-                <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p><a href="mailto:{{ with .Site.Params.contact.email }}{{ . }}{{ end }}">{{ with .Site.Params.contact.email }}{{ . }}{{ end }}</a></p>
+                <i class="fa fa-github fa-3x wow bounceIn"></i>
+                <a href="{{ with .Site.Params.contact.github }}{{ . }}{{ end }}">
+                <p>github</p></a>
             </div>
         </div>
     </div>
