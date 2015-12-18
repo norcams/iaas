@@ -46,7 +46,7 @@ theme = "iaas"
   # About section
   [params.about]
     headline    = "We've got what you need!"
-    description = "Traditionally, getting access to IT resources has been a longwinded process. The UH IaaS service deliver standardized servers and storage quickly with less effort where you - the user - are the driver. Our self-service platform is built on [OpenStack](//www.openstack.org), a industry standard management system."
+    description = "Traditionally, getting access to IT resources has been a longwinded process. The UH IaaS service deliver standardized servers and storage quickly with less effort where you - the user - are the driver. Our self-service platform is built on [OpenStack](//www.openstack.org), an industry standard management system."
     buttonText = "Try the demo"
     buttonLink = "https://dashboard.iaas.uib.no"
 
