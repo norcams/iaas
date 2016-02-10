@@ -88,7 +88,7 @@ These addresses are used for public and internal service endpoints.
  public    prod   As needed [1]_
  private   prod   172.19.0.0/19
  public    dev    As needed [1]_
- private   dev    172.31.48.0/20
+ private   dev    172.31.16.0/20
 ========= ====== ================ ======
 
 .. [1] Pulibc IPv4 service addresses are limited and assigned as needed from
@@ -103,7 +103,7 @@ Interactive ssh access, os level maintenance services
  env    IPv4 prefix
 ====== ===============
  prod   172.16.0.0/16
- dev    172.31.0.0/20
+ dev    172.31.0.0/21
 ====== ===============
 
 ========= ======= =================== ====== ======
@@ -112,10 +112,9 @@ Interactive ssh access, os level maintenance services
  bgo      prod     172.16.0.0/21       TBD
  osl      prod     129.240.224.97/27   TBD
  trd      prod     10.171.91.0/24      TBD    1077
- dev01    dev      172.31.0.0/24       TBD
- dev02    dev      172.31.1.0/24       TBD    1078
- dev03    dev      172.31.2.0/24       TBD
- vagrant  dev      172.31.15.0/24      TBD
+ vagrant  dev      172.31.0.0/24       TBD
+ dev01    dev      172.31.1.0/24       TBD
+ dev02    dev      172.31.2.0/24       TBD    1078
 ========= ======= =================== ====== ======
 
 oob network
@@ -127,7 +126,7 @@ Out of band management, `IPMI BMC devices`_.
  env    IPv4 prefix
 ====== ================
  prod   172.17.0.0/16
- dev    172.31.16.0/20
+ dev    172.31.8.0/21
 ====== ================
 
 ========= ======= =================== ====== ======
@@ -136,10 +135,9 @@ Out of band management, `IPMI BMC devices`_.
  bgo      prod     172.17.0.0/21       N/A
  osl      prod     129.240.224.65/27   N/A
  trd      prod     10.171.86.1/24      N/A    986
- dev01    dev      172.31.16.0/24      N/A
- dev02    dev      172.31.17.0/24      N/A    1079
- dev03    dev      172.31.18.0/24      N/A
- vagrant  dev      172.31.31.0/24      N/A
+ vagrant  dev      172.31.8.0/24       N/A
+ dev01    dev      172.31.9.0/24       N/A
+ dev02    dev      172.31.10.0/24      N/A    1079
 ========= ======= =================== ====== ======
 
 .. _IPMI BMC devices: https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface#Baseboard_management_controller
@@ -172,12 +170,12 @@ Prefix reservations per link type and location
  prod   gw-gw       bgo      172.18.224.0/22    TBD
  prod   gw-gw       osl      172.18.228.0/22    TBD
  prod   gw-gw       trd      172.18.232.0/22    TBD
- dev    leaf-node   dev01    172.31.32.0/23     TBD
- dev    leaf-node   dev02    172.31.34.0/23     TBD
- dev    leaf-node   dev03    172.31.36.0/23     TBD
- dev    gw-gw       dev01    172.31.46.0/26     TBD
- dev    gw-gw       dev02    172.31.46.64/26    TBD
- dev    gw-gw       dev03    172.31.46.128/26   TBD
+ dev    leaf-node   vagrant  172.31.32.0/23     TBD
+ dev    leaf-node   dev01    172.31.34.0/23     TBD
+ dev    leaf-node   dev02    172.31.36.0/23     TBD
+ dev    gw-gw       vagrant  172.31.46.0/26
+ dev    gw-gw       dev01    172.31.46.64/26    TBD
+ dev    gw-gw       dev02    172.31.46.128/26   TBD
 ====== =========== ======== ================== =============
 
 IP networks in use
@@ -192,14 +190,12 @@ IP networks in use
  osl       prod    link1        172.18.228.0/30   TBD           65502
  trd       prod    transport1   172.18.64.0/21    TBD    100    65503
  trd       prod    transport2   172.18.72.0/21    TBD    200    65503
- dev01     dev     transport1   172.31.32.0/24    TBD           65535
- dev01     dev     transport2   172.31.33.1/24    TBD           65535
- dev02     dev     transport1   172.31.34.0/24    TBD    1074   65534
- dev02     dev     transport2   172.31.35.0/24    TBD    1074   65534
- dev03     dev     transport1   172.31.36.0/24    TBD           65533
- dev03     dev     transport2   172.31.37.0/24    TBD           65533
- vagrant   dev     transport1   172.31.46.0/24    TBD           65500
- vagrant   dev     transport2   172.31.47.0/24    TBD           65500
+ vagrant   dev     transport1   172.31.32.0/24    TBD           65500
+ vagrant   dev     transport2   172.31.33.0/24    TBD           65500
+ dev01     dev     transport1   172.31.34.0/24    TBD           65535
+ dev01     dev     transport2   172.31.35.1/24    TBD           65535
+ dev02     dev     transport1   172.31.36.0/24    TBD    1074   65534
+ dev02     dev     transport2   172.31.37.0/24    TBD    1074   65534
 ========= ======= ============ ================= ====== ====== ========
 
 As specified above, each region-specific transport network block is again split
