@@ -110,7 +110,7 @@ Interactive ssh access, os level maintenance services
  region    env     IPv4                IPv6   vlan
 ========= ======= =================== ====== ======
  bgo      prod     172.16.0.0/21       TBD
- osl      prod     129.240.224.97/27   TBD
+ osl      prod     172.16.32.0/21      TBD
  trd      prod     10.171.91.0/24      TBD    1077
  vagrant  dev      172.31.0.0/24       TBD
  dev01    dev      172.31.1.0/24       TBD
