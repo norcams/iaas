@@ -14,6 +14,7 @@ project.
     installing_libvirt
     mgmtswitch
     cumulus-install
+    cumulus-vagrantbox
     idrac-provision
     idrac-vnc
     foreman-bootstrap
