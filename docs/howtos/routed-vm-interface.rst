@@ -126,6 +126,12 @@ then verify that it works:
    ip addr add 172.31.16.18/24 dev eth1
    ip link
    ip link set dev eth1 up
+   # switch default gw
+   ip route del default
+   ip route add default via 172.31.16.1
+
+To make configuring services that use the new interface easier - use the new
+service IP interface as the default gw for the guest.
 
 You should now be able to ping the outside dummy gateway using the new interface
 
