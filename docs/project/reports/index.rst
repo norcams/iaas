@@ -12,9 +12,6 @@ Reports are written in Norwegian.
     :glob:
     :maxdepth: 1
 
-    2015_06_sluttrapport
-    2015_11_uhps_notat
-
 Weekly status
 -------------
 
@@ -22,4 +19,15 @@ Weekly status
     :glob:
     :maxdepth: 1
 
-    *_uke_*
+    2016_uke_*
+
+Archive
+-------
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    2015_06_sluttrapport
+    2015_11_uhps_notat
+    2015_uke_*

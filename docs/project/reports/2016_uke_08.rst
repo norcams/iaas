@@ -1,0 +1,37 @@
+=====
+Uke 8
+=====
+av Raymond Kristiansen, UH IaaS, 26.februar 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- Puppetkode for Cinder med Ceph backend. Denne kjører nå i *dev01*
+
+- Puppetkode for Dataporten applikasjon for provisjonering av personlig
+  prosjekt i keystone. Denne kjører på dpapp node i *dev01*. Denne applikasjonen
+  kjøres ikke på forsvarlig måte og må endres før endelig produksjon.
+
+
+Tentative fremdrift
+===================
+
+- Flytte alle hemmeligheter ut av hieradata som ligger på github og over i et
+  lokalt gitrepo før reinstall.
+
+- Reinstall av *osl* og *bgo* med Ceph lagring og Dataporten-innlogging 8.mars
+
+- Sikkerhetsgjennomgang og dokumentasjon
+
+- Felles workshop for hele teamet
+
+Avklaringer
+===========
+
+- Detaljert oversikt over medlemmer og deltakelse fra alle teammedlemmer fra
+  UiB og UiO.
+
+- Avklare ressurser fra UNINETT for å fullføre Dataporten (FEIDE connect)
+  integrasjon for grupper
