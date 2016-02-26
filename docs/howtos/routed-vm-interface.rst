@@ -22,6 +22,7 @@ this example we'll generate a random MAC address in the format libvirt expects
 and use that to create a dummy dev01 service network IP interface
 
 .. code:: bash
+
    modprobe dummy
    mac=$(hexdump -vn3 -e '/3 "52:54:00"' -e '/1 ":%02x"' -e '"\n"' /dev/urandom)
    ip link add virgw-service address $mac type dummy
@@ -35,6 +36,7 @@ outgoing traffic. But when we "up" the interface in the last step above an
 entry for the 172.31.16.0/24 network will be made in the kernel routing table:
 
 .. code:: bash
+
    [root@dev01-controller-03 ~]# ip route | grep virgw-service
    172.31.16.0/24 dev virgw-service  proto kernel  scope link  src 172.31.16.1
 
@@ -42,6 +44,7 @@ Because we don't want any non-instance traffic to be routed to this interface
 we remove that route
 
 .. code:: bash
+
    ip route del 172.31.16.0/24
 
 We've now prepared the controller host to act as a dummy gateway for the VM
@@ -55,6 +58,7 @@ name. The settings for the device are derived from what calico does on the
 compute nodes:
 
 .. code:: bash
+
    ip tuntap add dev tap-service1 mode tap one_queue vnet_hdr
    ip tuntap
    ip tuntap help
@@ -64,6 +68,7 @@ for the VM we want to add a service interface to. Make sure the domain is not
 running first.
 
 .. code:: bash
+
    virsh shutdown <vm_instance_name>
    virsh edit <vm_instance_name>
 
@@ -71,6 +76,7 @@ Insert an xml block describing the new network interface with a new random mac
 address (replace the xx:xx:xx or use the hexdump generator again)
 
 .. code:: xml
+
    <interface type='ethernet'>
      <mac address='52:54:00:xx:xx:xx'/>
      <script path=''/>
