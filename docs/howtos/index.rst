@@ -15,6 +15,7 @@ project.
     mgmtswitch
     cumulus-install
     cumulus-vagrantbox
+    routed-vm-interface
     idrac-provision
     idrac-vnc
     foreman-bootstrap
