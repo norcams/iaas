@@ -18,6 +18,20 @@ To start using the chat room connect to a IRC server on the Freenode network
 and join the #uh-sky room. Remember, everything in the room is logged on the
 public internet at https://botbot.me/freenode/uh-sky/
 
+Social sharing platform
+-----------------------
+
+We have been using a NorCAMS Google Plus-community to share links of project
+related information for a while. Anyone with relevant content is free to use
+this as a channel. We put up a web redirect to the community page to make it
+easier to find, it is at http://plus.norcams.org
+
+Mailing list
+------------
+
+We have a mailing list for everybody interested in IaaS hosted at UNINETT.
+Join us here https://sympa.uninett.no/lists/uninett.no/info/faggruppe-iaas
+
 Tasks and progress reporting
 ----------------------------
 
@@ -41,17 +55,13 @@ members use a Google account as their login identity.
 Core team weekly schedule
 -------------------------
 
-This table shows which days the core team members are available. Jan Ivar, Tor
-and Erlend are working full time.
+This table shows which days the core team members are available. 
 
 ============ ============ ============ ============ ============ ============
    Name       Monday       Tuesday      Wednesday    Thursday     Friday
 ============ ============ ============ ============ ============ ============
-Erlend        1            1            1            1            1
-Hans-Henry    1            1            1            0            0
 Hege          0            0            1            1            0
-Jan Ivar      1            1            1            1            1
-Marte         0            0            0.5          1            1
+Raymond       1            1            1            1            1
 Mikael        0            1            1            1            0
 Tor           1            1            1            1            1
 
@@ -79,28 +89,3 @@ Trello and label it as *Discussion*.
 
 The weekly status meeting is held on Google Hangouts and published to the
 project calendar.
-
-Project calendar
-----------------
-
-Meetings and events are published to a public Google calendar. It is possible
-to `read it`_ as a webpage or `subscribe to it`_ in ical format.
-
-.. _read it: https://www.google.com/calendar/embed?src=kum6d33mfvaotbuo2bc921eaoo%40group.calendar.google.com&ctz=Europe/Oslo
-.. _subscribe to it: https://www.google.com/calendar/ical/kum6d33mfvaotbuo2bc921eaoo%40group.calendar.google.com/public/basic.ics
-
-Right now you'll need to use the webpage interface to find the Google Hangouts
-video links for each event. There is a plan to update the event description
-field in the ical data with the Hangout URL by using `this Python code`_ but it
-has not been done yet.
-
-.. _this Python code: https://github.com/Yeraze/CalendarHangout
-
-Social sharing platform
------------------------
-
-We have been using a NorCAMS Google Plus-community to share links of project
-related information for a while. Anyone with relevant content is free to use
-this as a channel. We put up a web redirect to the community page to make it
-easier to find, it is at http://plus.norcams.org
-
