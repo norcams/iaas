@@ -47,21 +47,25 @@ In order to deploy the Vagrant environment, follow this guide.
    you're running Fedora and have the RPMFusion_ repositories
    available::
 
-     # dnf -y install vagrant vagrant-libvirt libvirt-daemon-kvm
+     dnf -y install vagrant vagrant-libvirt libvirt-daemon-kvm
 
 #. Start the libvirtd service, and make sure that it is started at
    boot::
 
-     # systemctl start libvirtd.service
-     # systemctl enable libvirtd.service
+     systemctl start libvirtd.service
+     systemctl enable libvirtd.service
+
+#. Add the user that will be running Vagrant to the **wheel** group::
+
+     usermod -G wheel -a <username>
 
 #. Clone the latest version of the `norcams/himlar`_ git repository
    from Github::
 
-     $ git clone git@github.com:norcams/himlar.git
+     git clone git@github.com:norcams/himlar.git
 
 #. Bring the vagrant hosts up::
 
-     $ cd himlar
-     $ vagrant up
+     cd himlar
+     vagrant up
 
