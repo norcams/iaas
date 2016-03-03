@@ -26,6 +26,7 @@ Setting up the Vagrant environment
 ==================================
 
 .. _RPMFusion: http://rpmfusion.org/
+.. _norcams/himlar: https://github.com/norcams/himlar
 
 In order to deploy the Vagrant environment, follow this guide.
 
@@ -54,7 +55,7 @@ In order to deploy the Vagrant environment, follow this guide.
      # systemctl start libvirtd.service
      # systemctl enable libvirtd.service
 
-#. Clone the latest version of the **norcams/himlar** git repository
+#. Clone the latest version of the `norcams/himlar`_ git repository
    from Github::
 
      $ git clone git@github.com:norcams/himlar.git
