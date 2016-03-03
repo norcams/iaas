@@ -15,7 +15,7 @@ Fullført
 Under arbeid
 ============
 
-I forbindelse med test av applikasjonen som skal provisjonere personlig
+I forbindelse med testing av applikasjonen som skal provisjonere personlig
 prosjekt i keystone så oppstod det endel utfordringer som ikke kom opp i
 testen på `dev01`. Vi jobber derfor nå med følgende:
 
