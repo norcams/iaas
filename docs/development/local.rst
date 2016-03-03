@@ -32,6 +32,9 @@ In order to deploy the Vagrant environment, follow this guide.
 
 #. Make sure that the requirements_ are met
 
+#. Ensure that CPU virtualization extensions are enabled on the
+   host. You'll probably need to enter BIOS setup for this.
+
 #. Create a file **/etc/polkit-1/rules.d/10-libvirt.rules** with the
    following contents::
 
