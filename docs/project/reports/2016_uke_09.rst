@@ -1,0 +1,48 @@
+=====
+Uke 9
+=====
+av Raymond Kristiansen, UH IaaS, 03. mars 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- Løsning for håndtering av hemmeligheter er satt opp på `osl-login-01` og
+  `bgo-login-01`. Vi bruker gitolite for speiling av data.
+
+
+Under arbeid
+============
+
+I forbindelse med test av applikasjonen som skal provisjonere personlig
+prosjekt i keystone så oppstod det endel utfordringer som ikke kom opp i
+testen på `dev01`. Vi jobber derfor nå med følgende:
+
+- Flytte brannmur for åpne endepunkt til noden fremfor å ha det på leaf
+
+- Flytte dashboard over på egen node. Vi ser også for oss at denne noden også
+  kjører proxy for de åpne APIene.
+
+
+Planlagt fremdrift
+==================
+
+- Flytte alle hemmeligheter ut av hieradata som ligger på github
+
+- Reinstall av *osl* og *bgo* med Ceph lagring og Dataporten-innlogging 9.mars
+
+- Felles workshop for hele teamet i uke 11.
+
+- Sikkerhetsgjennomgang og dokumentasjon
+
+Avklaringer
+===========
+
+Samme som sist uke.
+
+- Detaljert oversikt over medlemmer og deltakelse fra alle teammedlemmer fra
+  UiB og UiO.
+
+- Avklare ressurser fra UNINETT for å fullføre Dataporten (FEIDE connect)
+  integrasjon for grupper
