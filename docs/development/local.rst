@@ -25,4 +25,42 @@ the VMs must med the following requirements:
 Setting up the Vagrant environment
 ==================================
 
-FIXME.
+.. _RPMFusion: http://rpmfusion.org/
+
+In order to deploy the Vagrant environment, follow this guide.
+
+#. Make sure that the requirements_ are met
+
+#. Create a file **/etc/polkit-1/rules.d/10-libvirt.rules** with the
+   following contents::
+
+     polkit.addRule(function(action, subject) {
+       if ((action.id == "org.libvirt.unix.manage"
+         || action.id == "org.libvirt.unix.monitor")
+         && subject.isInGroup("wheel")) {
+         return polkit.Result.YES;
+       }
+     });
+
+#. Install Vagrant and libvirt. In this case, it is assumed that
+   you're running Fedora and have the RPMFusion_ repositories
+   available::
+
+     # dnf -y install vagrant vagrant-libvirt libvirt-daemon-kvm
+
+#. Start the libvirtd service, and make sure that it is started at
+   boot::
+
+     # systemctl start libvirtd.service
+     # systemctl enable libvirtd.service
+
+#. Clone the latest version of the **norcams/himlar** git repository
+   from Github::
+
+     $ git clone git@github.com:norcams/himlar.git
+
+#. Bring the vagrant hosts up::
+
+     $ cd himlar
+     $ vagrant up
+
