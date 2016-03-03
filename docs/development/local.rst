@@ -67,6 +67,10 @@ In order to deploy the Vagrant environment, follow this guide.
 
      git clone git@github.com:norcams/himlar.git
 
+   or with https::
+
+     git clone https://github.com/norcams/himlar.git
+
 #. Bring the vagrant hosts up::
 
      cd himlar
