@@ -27,6 +27,7 @@ Active puppet modules reside in `/etc/puppet/modules`. For minor changes in
 
   cd /opt/himlar
   HIMLAR_PUPPETFILE=deploy provision/puppetmodules.sh
+  apachectl graceful
 
 To rebuild all modules from source:
 
@@ -35,6 +36,7 @@ To rebuild all modules from source:
   rm -Rf /etc/puppet/modules
   cd /opt/himlar
   provision/puppetmodules.sh
+  apachectl graceful
 
 
 Secrets
