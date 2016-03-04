@@ -7,7 +7,7 @@ Development in Vagrant
 .. contents::
 .. section-numbering::
 
-*Last changed: |date|*
+*Last changed: |date| *
 
 Requirements
 ============
@@ -82,7 +82,7 @@ Connecting to Horizon
 
 Horizon is the web GUI component in OpenStack. If you've followed the
 `Setting up the Vagrant environment`_ guide above, you should now be
-able to connect a browser to it::
+able to connect a browser to the Horizon GUI::
 
   https://172.31.24.20/
 
@@ -91,7 +91,7 @@ use an SSH tunnel. Create an SSH tunnel with::
 
   ssh -L 8443:172.31.24.20:443 <username>@<hostname>
 
-Then, point your browser to::
+After creating the SSH tunnel, point your browser to::
 
   https://localhost:8443/
 
