@@ -7,7 +7,7 @@ Development in Vagrant
 .. contents::
 .. section-numbering::
 
-*Last changed: |date|
+*Last changed: |date|*
 
 Requirements
 ============
