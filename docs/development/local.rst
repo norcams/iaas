@@ -112,9 +112,21 @@ Become root::
 
   sudo -i
 
+
+Set up admin authentication
+---------------------------
+
 The `norcams/himlar`_ repo is available from within the vagrant VM as
 ``/opt/himlar``. Run the **00-credentials_setup.sh** script::
 
-  cd /opt/himlar/tests
-  00-credentials_setup.sh
+  /opt/himlar/tests/00-credentials_setup.sh
+
+In order to "become" the OpenStack administrator, you then only need
+to source the **~/keystonerc_admin** file::
+
+  . ~/keystonerc_admin
+
+To switch to the demo user, source the **~/keystonerc_demo** file::
+
+  . ~/keystonerc_demo
 
