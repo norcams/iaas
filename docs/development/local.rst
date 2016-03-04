@@ -96,4 +96,5 @@ After creating the SSH tunnel, point your browser to::
 
   https://localhost:8443/
 
-
+Note that authentication through Feide Connect (aka "Dataporten") uses
+redirection and is not usable when connecting through an SSH tunnel.
