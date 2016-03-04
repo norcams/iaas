@@ -4,8 +4,7 @@
 Development in Vagrant
 ======================
 
-.. footer::
-   Last changed: |date|
+Last changed: |date|
 
 .. contents::
 .. section-numbering::
