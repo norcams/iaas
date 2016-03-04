@@ -4,10 +4,13 @@
 Development in Vagrant
 ======================
 
+--------------------
+Last changed: |date|
+--------------------
+
 .. contents::
 .. section-numbering::
 
-*Last changed: |date| *
 
 Requirements
 ============
