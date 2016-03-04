@@ -17,8 +17,8 @@ the VMs must med the following requirements:
 
 ====================  =======================================
 **Operating system**  libvirt capable (only tested Fedora 23)
-**Memory**            FIXME. (8GB recommended)
-**Disk**              FIXME.
+**Memory**            16 GB minimum, 32 GB recommended
+**Disk space**        8 GB minimum on ``/var/lib/libvirt``
 ====================  =======================================
 
 
@@ -75,4 +75,24 @@ In order to deploy the Vagrant environment, follow this guide.
 
      cd himlar
      vagrant up
+
+
+Connecting to Horizon
+=====================
+
+Horizon is the web GUI component in OpenStack. If you've followed the
+`Setting up the Vagrant environment`_ guide above, you should now be
+able to connect a browser to it::
+
+  https://172.31.24.20/
+
+If the VMs are running on a remote host, the best approach will be to
+use an SSH tunnel. Create an SSH tunnel with::
+
+  ssh -L 8443:172.31.24.20:443 <username>@<hostname>
+
+Then, point your browser to::
+
+  https://localhost:8443/
+
 
