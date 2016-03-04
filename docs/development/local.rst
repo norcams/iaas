@@ -97,4 +97,24 @@ After creating the SSH tunnel, point your browser to::
   https://localhost:8443/
 
 Note that authentication through Feide Connect (aka "Dataporten") uses
-redirection and is not usable when connecting through an SSH tunnel.
+redirection and is not possible when connecting through an SSH tunnel.
+
+
+Setting up local user and tenant
+================================
+
+Logging into the VMs is fairly simple. In order to set up a demo user
+and tenant, log into the master VM::
+
+  vagrant ssh master
+
+Become root::
+
+  sudo -i
+
+The `norcams/himlar`_ repo is available from within the vagrant VM as
+``/opt/himlar``. Run the **00-credentials_setup.sh** script::
+
+  cd /opt/himlar/tests
+  00-credentials_setup.sh
+
