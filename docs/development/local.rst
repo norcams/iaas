@@ -121,6 +121,14 @@ The `norcams/himlar`_ repo is available from within the vagrant VM as
 
   /opt/himlar/tests/00-credentials_setup.sh
 
+This will create 3 files in your home directory:
+
+================  ==================================================
+openstack.config  Defines the demo username etc. Used by other tests
+keystonerc_admin  Sets environment variables for administrator
+keystonerc_demo   Sets environment variables for demo user
+================  ==================================================
+
 In order to "become" the OpenStack administrator, you then only need
 to source the **~/keystonerc_admin** file::
 
@@ -129,4 +137,34 @@ to source the **~/keystonerc_admin** file::
 To switch to the demo user, source the **~/keystonerc_demo** file::
 
   . ~/keystonerc_demo
+
+
+Create demo user and project (tenant)
+-------------------------------------
+
+This can be accomplished simply by running::
+
+  /opt/himlar/tests/01-keystone-create_demo_user.sh
+
+But for the sake of learning, you may want to to this manually:
+
+#. Source the file that defines the administrator environment::
+
+     source ~/keystonerc_admin
+
+#. Create a demo tenant (project)::
+
+     openstack project create --or-show demoproject
+
+#. Create a demo user and set the password::
+
+     openstack user create --or-show --password himlar0pen demo
+
+#. Associate the demo user with the demo tenant::
+
+     openstack user set --project demoproject demo
+
+#. Show the demo user::
+
+     openstack user show demo
 
