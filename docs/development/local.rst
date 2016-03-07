@@ -113,8 +113,8 @@ Become root::
   sudo -i
 
 
-Set up admin authentication
----------------------------
+API authentication configuration
+--------------------------------
 
 The `norcams/himlar`_ repo is available from within the vagrant VM as
 ``/opt/himlar``. Run the **00-credentials_setup.sh** script::
