@@ -192,14 +192,17 @@ shown below:
 
      openstack image create "CirrOS test image" --disk-format qcow2 --public --file /tmp/cirros.img
 
-   This can also be accomplished by using Glance directly::
+   .. NOTE::
+      This can also be accomplished by using Glance directly::
 
-     glance image-create --name "CirrOS test image" --disk-format qcow2 --container-format bare --visibility public --file /tmp/cirros.img
+        glance image-create --name "CirrOS test image" --disk-format qcow2 --container-format bare \
+            --visibility public --file /tmp/cirros.img
 
 #. List images::
 
      openstack image list
 
-   Optionally, list images Nova API::
+   Optionally, list images using the Nova API::
 
      nova image-list
+
