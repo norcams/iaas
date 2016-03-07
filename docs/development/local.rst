@@ -175,7 +175,7 @@ Upload an image to Glance
 
 This can be accomplished simply by running::
 
-  /opt/himlar/tests/01-keystone-create_demo_user.sh
+  /opt/himlar/tests/02-glance-import_cirros_image.sh
 
 But for the sake of learning, you may want to to this manually as
 shown below:
