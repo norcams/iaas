@@ -207,3 +207,43 @@ shown below:
 
      nova image-list
 
+
+Create a network security group
+-------------------------------
+
+This can be accomplished simply by running::
+
+  /opt/himlar/tests/03-neutron-create_security_group_and_rules.sh
+
+But for the sake of learning, you may want to to this manually as
+shown below:
+
+#. Source the file that defines the administrator environment::
+
+     source ~/keystonerc_admin
+
+#. Create a network security group called "test_sec_group"::
+
+     openstack security group create test_sec_group
+
+#. Add a rule which allows incoming SSH::
+
+     openstack security group rule create --proto tcp --dst-port 22 test_sec_group
+
+#. Add a rule which allows incoming ICMP::
+
+     openstack security group rule create --proto icmp test_sec_group
+
+#. Show the newly created security group::
+
+     openstack security group show test_sec_group --max-width 70
+
+.. NOTE::
+   This could have been done using the Neutron API instead of the
+   generic openstack command::
+
+     neutron security-group-create test_sec_group
+     neutron security-group-rule-create --direction ingress --protocol tcp \
+         --port_range_min 22 --port_range_max 22 test_sec_group
+     neutron security-group-rule-create --protocol icmp --direction ingress test_sec_group
+     neutron security-group-show test_sec_group
