@@ -123,11 +123,11 @@ The `norcams/himlar`_ repo is available from within the vagrant VM as
 
 This will create 3 files in your home directory:
 
-================  ==================================================
-openstack.config  Defines the demo username etc. Used by other tests
-keystonerc_admin  Sets environment variables for administrator
-keystonerc_demo   Sets environment variables for demo user
-================  ==================================================
+====================  ==================================================
+**openstack.config**  Defines the demo username etc. Used by other tests
+**keystonerc_admin**  Sets environment variables for administrator
+**keystonerc_demo**   Sets environment variables for demo user
+====================  ==================================================
 
 In order to "become" the OpenStack administrator, you then only need
 to source the **~/keystonerc_admin** file::
