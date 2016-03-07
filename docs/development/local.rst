@@ -169,3 +169,37 @@ shown below:
 
      openstack user show demo
 
+
+Upload an image to Glance
+-------------------------
+
+This can be accomplished simply by running::
+
+  /opt/himlar/tests/01-keystone-create_demo_user.sh
+
+But for the sake of learning, you may want to to this manually as
+shown below:
+
+#. Source the file that defines the administrator environment::
+
+     source ~/keystonerc_admin
+
+#. Download CirrOS image::
+
+     curl -o /tmp/cirros.img http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img
+
+#. Upload and create the image in Glance::
+
+     openstack image create "CirrOS test image" --disk-format qcow2 --public --file /tmp/cirros.img
+
+   This can also be accomplished by using Glance directly::
+
+     glance image-create --name "CirrOS test image" --disk-format qcow2 --container-format bare --visibility public --file /tmp/cirros.img
+
+#. List images::
+
+     openstack image list
+
+   Optionally, list images Nova API::
+
+     nova image-list
