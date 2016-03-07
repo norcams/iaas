@@ -146,63 +146,26 @@ This can be accomplished simply by running::
 
   /opt/himlar/tests/01-keystone-create_demo_user.sh
 
-But for the sake of learning, you may want to to this manually. Follow
-the list below, which is includes example output.
+But for the sake of learning, you may want to to this manually as
+shown below:
 
 #. Source the file that defines the administrator environment::
 
      source ~/keystonerc_admin
 
-#. Create a demo tenant (project):
+#. Create a demo tenant (project)::
 
-   .. parsed-literal::
+     openstack project create --or-show demoproject
 
-     [root\@vagrant-master-01 ~ (admin)]# **openstack project create --or-show demoproject**
-     +-------------+----------------------------------+
-     | Field       | Value                            |
-     +-------------+----------------------------------+
-     | description |                                  |
-     | domain_id   | default                          |
-     | enabled     | True                             |
-     | id          | 21d91346d499468da2c97a037ccef022 |
-     | is_domain   | False                            |
-     | name        | demoproject                      |
-     | parent_id   | None                             |
-     +-------------+----------------------------------+
+#. Create a demo user and set the password::
 
-#. Create a demo user and set the password:
+     openstack user create --or-show --password himlar0pen demo
 
-   .. parsed-literal::
+#. Associate the demo user with the demo tenant::
 
-     [root\@vagrant-master-01 ~ (admin)]# **openstack user create --or-show --password himlar0pen demo**
-     +-----------+----------------------------------+
-     | Field     | Value                            |
-     +-----------+----------------------------------+
-     | domain_id | default                          |
-     | enabled   | True                             |
-     | id        | d3968c1f35a8457faab0afd3f8f2e0bf |
-     | name      | demo                             |
-     +-----------+----------------------------------+
+     openstack user set --project demoproject demo
 
-#. Associate the demo user with the demo tenant:
+#. Show the demo user::
 
-   .. parsed-literal::
-
-     [root\@vagrant-master-01 ~ (admin)]# **openstack user set --project demoproject demo**
-     (no output)
-
-#. Show the demo user:
-
-   .. parsed-literal::
-
-     [root\@vagrant-master-01 ~ (admin)]# **openstack user show demo**
-     +--------------------+----------------------------------+
-     | Field              | Value                            |
-     +--------------------+----------------------------------+
-     | default_project_id | 21d91346d499468da2c97a037ccef022 |
-     | domain_id          | default                          |
-     | enabled            | True                             |
-     | id                 | d3968c1f35a8457faab0afd3f8f2e0bf |
-     | name               | demo                             |
-     +--------------------+----------------------------------+
+     openstack user show demo
 
