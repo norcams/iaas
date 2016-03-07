@@ -195,7 +195,8 @@ shown below:
    .. NOTE::
       This can also be accomplished by using Glance directly::
 
-        glance image-create --name "CirrOS test image" --disk-format qcow2 --container-format bare \
+        glance image-create --name "CirrOS test image" \
+            --disk-format qcow2 --container-format bare \
             --visibility public --file /tmp/cirros.img
 
 #. List images::
