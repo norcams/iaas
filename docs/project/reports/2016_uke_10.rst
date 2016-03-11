@@ -1,0 +1,32 @@
+======
+Uke 10
+======
+av Raymond Kristiansen, UH IaaS, 11. mars 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- Ny node dashboard som kjører horizon og har en API proxy for tilgang til fra
+  klienter som ikke har tilgang til internt service-nett.
+
+- Reinstall av `bgo` med cinder (ceph backend) og FEIDE connect innlogging.
+  Vi kan provisjonere personlig prosjekt og logge inn og starte instanser med
+  blokklagring.
+
+- Reinstall av `osl` pågår mens rapporten skrives.
+
+Under arbeid
+============
+
+- Flytte alle hemmeligheter ut av hieradata som ligger på github
+
+- Sette opp et nytt dev-anlegg ved UiO
+
+Planlagt fremdrift
+==================
+
+- Felles workshop for hele teamet i Oslo 15. og 16.mars
+
+- Sikkerhetsgjennomgang og dokumentasjon
