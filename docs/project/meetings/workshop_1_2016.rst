@@ -33,7 +33,7 @@ Onsdag 16.mars
   - Pilotering, hvem skal få tilbud?
   - Jus, hvilke type data kan være med ut i piloten
 
-2. Diskusjonsteam
+2. Diskusjonstema
   - DNS, dhcp, brukerhåndtering, logging, overvåking
 
 3. Teknisk gjennomgang
