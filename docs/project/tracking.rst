@@ -60,11 +60,14 @@ This table shows which days the core team members are available.
 ============ ============ ============ ============ ============ ============
    Name       Monday       Tuesday      Wednesday    Thursday     Friday
 ============ ============ ============ ============ ============ ============
-Hege          0            0            1            1            0
+Hege          0            0            0            0            0
 Raymond       1            1            1            1            1
 Mikael        0            1            1            1            0
 Tor           1            1            1            1            1
-
+Trond         0            1            1            0            0
+Øyvind        0            1            1            0            0
+Geir          0            0            1            1            1
+Petter        0            0            0            0            0
 ============ ============ ============ ============ ============ ============
 
 Daily status meeting
