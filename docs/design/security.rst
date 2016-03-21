@@ -142,3 +142,33 @@ Security auditing tools
 FIXME.
 
 
+Secure communication
+====================
+
+From `OpenStack Security Guide`_:
+
+  *There are a number of situations where there is a security
+  requirement to assure the confidentiality or integrity of network
+  traffic in an OpenStack deployment. This is generally achieved using
+  cryptographic measures, such as the Transport Layer Security (TLS)
+  protocol.*
+
+FIXME.
+
+
+Certification authorities
+-------------------------
+
+FIXME.
+
+
+TLS libraries
+-------------
+
+FIXME.
+
+
+Cryptographic algorithms, cipher modes, and protocols
+-----------------------------------------------------
+
+FIXME.
