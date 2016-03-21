@@ -54,10 +54,17 @@ The UH-IaaS infrastructure is, from hardware and up, managed
 completely by the UH-IaaS group, and therefore independent of each
 institution. Links to infrastructure documentation:
 
-* Hardware inventory: FIXME
-* Software inventory: FIXME
-* Network topology: FIXME
-* Services, protocols and ports: FIXME
+**Hardware inventory [-]**
+  FIXME
+
+**Software inventory [-]**
+  FIXME
+
+**Network topology [-]**
+  FIXME
+
+**Services, protocols and ports [-]**
+  FIXME
 
 
 Management
@@ -81,4 +88,57 @@ From `OpenStack Security Guide`_:
   discussed below. This also involves knowing when an upgrade is
   necessary.*
 
+Vulnerability management
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _OpenStack Announce mailing list: http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-announce
+
+Updates are announced on the `OpenStack Announce mailing list`_.
+
+FIXME: Are we subscribed to this list?
+
+FIXME: Are we subscribed to similar list pertaining to the repo/distro
+used?
+
+**Triage [-]**
+  When we are notified of a security update, this is discussed at the
+  next morning meeting. We will then decide the impact of the update
+  to our environment, and take proper action.
+
+  * FIXME: Make this a policy.
+
+**Testing the updates [-]**
+  We have test clouds in each location (currently OSL and BGO) which
+  in most respects are identical to the production clouds. This allows
+  for easy testing of updates.
+
+  * FIXME: Make this a policy.
+  * FIXME: OSL test cloud isn't ready yet.
+
+**Deploying the updates [-]**
+  When testing is completed and the update is verified, and we are
+  satisfied with any performance impact, stability, application impact
+  etc., the update is deployed in production. This is done
+  automatically via the following procedure:
+
+  * FIXME: Automatic update procedure?
+
+Configuration management
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXME: Describe automated configuration and deployment, or add links.
+
+**Policy changes [-]**
+  FIXME: How are policy changes tracked?
+
+Secure backup and recovery
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 FIXME.
+
+Security auditing tools
+~~~~~~~~~~~~~~~~~~~~~~~
+
+FIXME.
+
+
