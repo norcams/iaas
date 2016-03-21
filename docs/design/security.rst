@@ -30,7 +30,7 @@ System documentation
 ====================
 
 +-------------------------+---------------------+
-| **Impact**              | Medium              |
+| **Impact**              | Low                 |
 +-------------------------+---------------------+
 | **Implemented percent** | **0%** (0/4)        |
 +-------------------------+---------------------+
@@ -38,7 +38,7 @@ System documentation
 System Inventory
 ----------------
 
-From `OpenStackSecurity Guide`_:
+From `OpenStack Security Guide`_:
 
   Documentation should provide a general description of the OpenStack
   environment and cover all systems used (production, development,
@@ -72,7 +72,7 @@ Management
 Continuous systems management
 -----------------------------
 
-From `OpenStackSecurity Guide`_:
+From `OpenStack Security Guide`_:
 
   A cloud will always have bugs. Some of these will be security
   problems. For this reason, it is critically important to be prepared
