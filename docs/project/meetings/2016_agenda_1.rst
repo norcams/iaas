@@ -1,6 +1,6 @@
-===============
-Workshop 1-2016
-===============
+======================
+Agenda Workshop 1-2016
+======================
 
 Første felles workshop for prosjektet i 2016 blir i Oslo 15. og 16.mars.
 

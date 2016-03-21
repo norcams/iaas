@@ -1,41 +1,30 @@
-========
-Meetings
-========
+=====
+Møter
+=====
 
-Daily status briefing
----------------------
+Morgenmøte
+----------
 
-The core team has daily meetings at 09:30 every work day. These are short
-meetings meant to summarize what has been worked on since yesterday, what will
-be done today and what blocks progress, if anything. Each team member is
-expected to speak briefly about their own situation.
+Kort statusmøte som holdes hver dag kl 09:30 på Google Hangout. Bør ikke ta
+lenger tid enn 10 min og uten referat.
 
-Daily meetings are held using Goolge Hangouts at http://hangout.norcams.org
+Videomøte
+---------
+
+Ved behov avholdes det videomøte onsdager kl 10:00.
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    2016_uke_*
 
 
-Planning meeting
+Felles samlinger
 ----------------
 
-As needed, thursdays at 13.00 we have a planning meeting. This is the main
-arena for discussing the project, choices we are making and planning ahead.
-
 .. toctree::
     :glob:
-    :maxdepth: 2
+    :maxdepth: 1
 
-    planning_*
-
-Technical steering group
-------------------------
-
-As needed, meetings in the technical steering group is called. This group has a
-mandate granted by the UH-sky leadership to govern the day-to-day coordination
-and management needs of the project. These meeting notes are written in
-Norwegian.
-
-.. toctree::
-    :glob:
-    :maxdepth: 2
-
-    teknisk_styringsgruppe_*
-
+    2016_workshop_*
