@@ -40,7 +40,7 @@ System Inventory
 
 From `OpenStack Security Guide`_:
 
-  Documentation should provide a general description of the OpenStack
+  *Documentation should provide a general description of the OpenStack
   environment and cover all systems used (production, development,
   test, etc.). Documenting system components, networks, services, and
   software often provides the bird’s-eye view needed to thoroughly
@@ -48,7 +48,7 @@ From `OpenStack Security Guide`_:
   security domain bridging points. A system inventory may need to
   capture ephemeral resources such as virtual machines or virtual disk
   volumes that would otherwise be persistent resources in a
-  traditional IT system.
+  traditional IT system.*
 
 The UH-IaaS infrastructure is, from hardware and up, managed
 completely by the UH-IaaS group, and therefore independent of each
@@ -74,11 +74,11 @@ Continuous systems management
 
 From `OpenStack Security Guide`_:
 
-  A cloud will always have bugs. Some of these will be security
+  *A cloud will always have bugs. Some of these will be security
   problems. For this reason, it is critically important to be prepared
   to apply security updates and general software updates. This
   involves smart use of configuration management tools, which are
   discussed below. This also involves knowing when an upgrade is
-  necessary.
+  necessary.*
 
 FIXME.
