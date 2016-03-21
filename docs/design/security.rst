@@ -145,6 +145,12 @@ FIXME.
 Secure communication
 ====================
 
++-------------------------+---------------------+
+| **Impact**              | High                |
++-------------------------+---------------------+
+| **Implemented percent** | **0%** (0/?)        |
++-------------------------+---------------------+
+
 From `OpenStack Security Guide`_:
 
   *There are a number of situations where there is a security
