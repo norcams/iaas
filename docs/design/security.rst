@@ -64,16 +64,16 @@ institution. Except for networking interface and physical hardware
 management, there are no dependencies on the institutions. Links to
 infrastructure documentation:
 
-**[----] Hardware inventory**
+** ``[----]`` Hardware inventory**
   FIXME
 
-**[----] Software inventory**
+** ``[----]`` Software inventory**
   FIXME
 
-**[----] Network topology**
+** ``[----]`` Network topology**
   FIXME
 
-**[----] Services, protocols and ports**
+** ``[----]`` Services, protocols and ports**
   FIXME
 
 
@@ -110,14 +110,14 @@ FIXME: Are we subscribed to this list?
 FIXME: Are we subscribed to similar list pertaining to the repo/distro
 used?
 
-**[----] Triage**
+** ``[----]`` Triage**
   When we are notified of a security update, this is discussed at the
   next morning meeting. We will then decide the impact of the update
   to our environment, and take proper action.
 
   * FIXME: Make this a policy.
 
-**[----] Testing the updates**
+** ``[----]`` Testing the updates**
   We have test clouds in each location (currently OSL and BGO) which
   in most respects are identical to the production clouds. This allows
   for easy testing of updates.
@@ -125,7 +125,7 @@ used?
   * FIXME: Make this a policy.
   * FIXME: OSL test cloud isn't ready yet.
 
-**[----] Deploying the updates**
+** ``[----]`` Deploying the updates**
   When testing is completed and the update is verified, and we are
   satisfied with any performance impact, stability, application impact
   etc., the update is deployed in production. This is done
@@ -138,7 +138,7 @@ Configuration management
 
 FIXME: Describe automated configuration and deployment, or add links.
 
-**[----] changes**
+** ``[----]`` changes**
   FIXME: How are policy changes tracked?
 
 Secure backup and recovery
@@ -148,7 +148,7 @@ If we at some point decide to take backup of the infrastructure or
 instances, we should include the backup procedures and policies in the
 overall security plan.
 
-**[PASS] Backup procedure and policy**
+** ``[PASS]`` Backup procedure and policy**
   We do not take backup of anything (yet).
 
 Security auditing tools
@@ -159,7 +159,7 @@ Security auditing tools
 We should consider using SCAP_ or similar security auditing tools in
 combination with configuration management.
 
-**[----] Decide whether or not to use security auditing tools**
+** ``[----]`` Decide whether or not to use security auditing tools**
   FIXME: Need to decide
 
 
@@ -184,19 +184,19 @@ facilitates security patching, upgrades, bug fixes, and other critical
 changes. Software that runs with the highest privilege levels in the
 cloud needs special attention.
 
-**[PASS] Node provisioning**
+** ``[PASS]`` Node provisioning**
   We use PXE for provisioning, which is recommended. We also use a
   separate, isolated network within the management security domain for
   provisioning. The provisioning process is handled by Foreman with
   Puppet, and is documented here: FIXME
 
-**[----] Verified boot**
+** ``[----]`` Verified boot**
   It is recommended to use *secure boot* via TPM chip to boot the
   infrastructure nodes in the cloud.
 
   * FIXME: Consider secure boot
 
-**[----] Node hardening**
+** ``[----]`` Node hardening**
   General hardening of the operating system is something that we need
   to address and document.
 
@@ -213,7 +213,7 @@ From `OpenStack Security Guide`_:
   of these areas are different. By checking both, we achieve higher
   assurance that the system is operating as desired.*
 
-**[----] Intrusion detection system**
+** ``[----]`` Intrusion detection system**
   There are a number of intrusion detection systems available. We need
   to consider using one of them.
 
@@ -224,7 +224,7 @@ Server hardening
 
 This mostly includes file integrity management.
 
-**[----] File integrity management (FIM)**
+** ``[----]`` File integrity management (FIM)**
   We should consider a FIM tool to ensure that files such as sensitive
   system or application configuration files are no corrupted or
   changed to allow unauthorized access or malicious behaviour.
@@ -252,13 +252,13 @@ From `OpenStack Security Guide`_:
 Dashboard
 ~~~~~~~~~
 
-**[----] Capabilities**
+** ``[----]`` Capabilities**
   We should consider which capabilities the dashboard should offer to
   customers and administrators.
 
   * FIXME: Consider capabilities and document decisions
 
-**[----] Security considerations**
+** ``[----]`` Security considerations**
   There are a few things that need to be considered (from `OpenStack
   Security Guide`_):
 
@@ -286,13 +286,13 @@ Dashboard
 OpenStack API
 ~~~~~~~~~~~~~
 
-**[----] Capabilities**
+** ``[----]`` Capabilities**
   We should consider which capabilities the OpenStack API should offer to
   customers and administrators.
 
   * FIXME: Consider capabilities and document decisions
 
-**[----] Security considerations**
+** ``[----]`` Security considerations**
   There are a few things that need to be considered (from `OpenStack
   Security Guide`_):
 
@@ -306,7 +306,7 @@ OpenStack API
 Secure shell (SSH)
 ~~~~~~~~~~~~~~~~~~
 
-**[----] Host key fingerprints**
+** ``[----]`` Host key fingerprints**
   Host key fingerprints should be stored in a secure and queryable
   location. One particularly convenient solution is DNS using SSHFP
   resource records as defined in RFC-4255. For this to be secure, it
@@ -317,7 +317,7 @@ Secure shell (SSH)
 Management utilities
 ~~~~~~~~~~~~~~~~~~~~
 
-**[----] Security considerations**
+** ``[----]`` Security considerations**
   There are a few things that need to be considered (from `OpenStack
   Security Guide`_):
 
@@ -332,14 +332,14 @@ Management utilities
 Out-of-band management interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**[----] Security considerations**
+** ``[----]`` Security considerations**
   There are a few things that need to be considered (from `OpenStack
   Security Guide`_):
 
   * Use strong passwords and safeguard them, or use client-side TLS
     authentication.
     - FIXME: Ensure and document this
-  * **[PASS]** Ensure that the network interfaces are on their own
+  * ** ``[PASS]`` ** Ensure that the network interfaces are on their own
     private(management or a separate) network. Segregate management
     domains with firewalls or other network gear.
   * If you use a web interface to interact with the BMC/IPMI, always
@@ -392,7 +392,7 @@ The security guide recommends that we use separate PKI deployments for
 internal systems and public facing services. In the future, we may
 want to use separate PKI deployments for different security domains.
 
-**[----] Customer facing interfaces using trusted CA**
+** ``[----]`` Customer facing interfaces using trusted CA**
   All customer facing interfaces should be provisioned using
   Certificate Authorities that are installed in the operating system
   certificate bundles by default. It should just work without the
@@ -403,7 +403,7 @@ want to use separate PKI deployments for different security domains.
   * FIXME: Identify and list all customer facing interfaces
   * FIXME: Ensure publicly recognized CA on these interfaces
 
-**[----] Internal endpoints use non-public CA**
+** ``[----]`` Internal endpoints use non-public CA**
   As described above, it is recommended to use a private CA for
   internal endpoints.
 
@@ -422,7 +422,7 @@ From `OpenStack Security Guide`_:
 
 We need to make sure that we're using an updated version of OpenSSL.
 
-**[----] Ensure updated OpenSSL**
+** ``[----]`` Ensure updated OpenSSL**
   UH-IaaS is based on CentOS, and uses the OpenSSL library from that
   distro. We need to make sure that OpenSSL is up-to-date.
 
@@ -440,15 +440,15 @@ acceptable to
 accept **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA** in
 cases where we don't control both endpoints.
 
-**[----] Ensure TLS 1.2**
+** ``[----]`` Ensure TLS 1.2**
   Make sure that only TLS 1.2 is used. Previous versions of TLS, as
   well as SSL, should be disabled completely.
 
-**[----] Limit cipher suite on public endpoints**
+** ``[----]`` Limit cipher suite on public endpoints**
   Limit the cipher suite on public facing endpoints to the
   general **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA**.
 
-**[----] Limit cipher suite on internal endpoints**
+** ``[----]`` Limit cipher suite on internal endpoints**
   Limit the cipher suite on public facing endpoints
   to **ECDHE-ECDSA-AES256-GCM-SHA384**.
 
@@ -490,7 +490,7 @@ From `OpenStack Security Guide`_:
   public or internal API end point values. This can lead to internal
   management traffic being routed to external API endpoints.*
 
-**[----] Configure internal URLs in the Identity service catalog**
+** ``[----]`` Configure internal URLs in the Identity service catalog**
   The guide recommends that our Identity service catalog be aware of
   our internal URLs. This feature is not utilized by default, but may
   be leveraged through configuration. See `API endpoint configuration
@@ -498,7 +498,7 @@ From `OpenStack Security Guide`_:
 
   * FIXME: Ensure and document this
 
-**[----] Configure applications for internal URLs**
+** ``[----]`` Configure applications for internal URLs**
   It is recommended that each OpenStack service communicating to the
   API of another service must be explicitly configured to access the
   proper internal API endpoint. See `API endpoint configuration
@@ -519,7 +519,7 @@ From `OpenStack Security Guide`_:
   pipeline or adding additional middleware might have unpredictable
   security impact.*
 
-**[----] Document middleware**
+** ``[----]`` Document middleware**
   We should careful when implementating non-standard software in the
   middleware, and this should be thoroughly documented.
 
@@ -535,14 +535,14 @@ From `OpenStack Security Guide`_:
   as possible. Where deployments allow, API endpoints should be
   deployed on separate hosts for increased isolation.*
 
-**[----] Namespaces**
+** ``[----]`` Namespaces**
   Linux supports namespaces to assign processes into independent
   domains.
 
   * FIXME: Are we using namespaces to compartmentalize API endpoint
     processes?
 
-**[----] Network policy**
+** ``[----]`` Network policy**
   We should pay special attention to API endpoints, as they typically
   bridge multiple security domains. Policies should be in place and
   documented, and we can use firewalls, SELinux etc. to enforce proper
@@ -550,7 +550,7 @@ From `OpenStack Security Guide`_:
 
   * FIXME: Implement and document this
 
-**[----] Mandatory access controls**
+** ``[----]`` Mandatory access controls**
   API endpoint processes should be as isolated from each other as
   possible. This should be enforced through Mandatory Access Controls
   (e.g. SELinux), not just Discretionary Access Controls.
