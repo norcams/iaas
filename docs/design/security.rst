@@ -473,14 +473,14 @@ Internal API communications
 From `OpenStack Security Guide`_:
 
   *OpenStack provides both public facing and private API endpoints. By
-   default, OpenStack components use the publicly defined
-   endpoints. The recommendation is to configure these components to
-   use the API endpoint within the proper security domain.*
+  default, OpenStack components use the publicly defined
+  endpoints. The recommendation is to configure these components to
+  use the API endpoint within the proper security domain.*
 
   *Services select their respective API endpoints based on the
-   OpenStack service catalog. These services might not obey the listed
-   public or internal API end point values. This can lead to internal
-   management traffic being routed to external API endpoints.*
+  OpenStack service catalog. These services might not obey the listed
+  public or internal API end point values. This can lead to internal
+  management traffic being routed to external API endpoints.*
 
 **[--] Configure internal URLs in the Identity service catalog**
   The guide recommends that our Identity service catalog be aware of
@@ -504,12 +504,12 @@ Paste and middleware
 From `OpenStack Security Guide`_:
 
   *Most API endpoints and other HTTP services in OpenStack use the
-   Python Paste Deploy library. From a security perspective, this
-   library enables manipulation of the request filter pipeline through
-   the application’s configuration. Each element in this chain is
-   referred to as middleware. Changing the order of filters in the
-   pipeline or adding additional middleware might have unpredictable
-   security impact.*
+  Python Paste Deploy library. From a security perspective, this
+  library enables manipulation of the request filter pipeline through
+  the application’s configuration. Each element in this chain is
+  referred to as middleware. Changing the order of filters in the
+  pipeline or adding additional middleware might have unpredictable
+  security impact.*
 
 **[--] Document middleware**
   We should careful when implementating non-standard software in the
@@ -523,9 +523,9 @@ API endpoint process isolation and policy
 From `OpenStack Security Guide`_:
 
   *You should isolate API endpoint processes, especially those that
-   reside within the public security domain should be isolated as much
-   as possible. Where deployments allow, API endpoints should be
-   deployed on separate hosts for increased isolation.*
+  reside within the public security domain should be isolated as much
+  as possible. Where deployments allow, API endpoints should be
+  deployed on separate hosts for increased isolation.*
 
 **[--] Namespaces**
   Linux supports namespaces to assign processes into independent
