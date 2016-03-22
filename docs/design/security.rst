@@ -448,6 +448,12 @@ cases where we don't control both endpoints.
 API endpoints
 =============
 
++-------------------------+---------------------+
+| **Impact**              | High                |
++-------------------------+---------------------+
+| **Implemented percent** | **0%** (0/?)        |
++-------------------------+---------------------+
+
 From `OpenStack Security Guide`_:
 
   *The process of engaging an OpenStack cloud is started through the
