@@ -28,10 +28,10 @@ guide, and try to answer the following questions:
 For each recommendation, there is at least one check that can have one
 of four different values:
 
-* **[PASS]** This check has been passed
-* **[FAIL]** This check is failed
-* **[----]** This check has not been considered yet
-* **[DEFERRED]** This check has been postponed or does not apply
+* **``[PASS]``** This check has been passed
+* **``[FAIL]``** This check is failed
+* **``[----]``** This check has not been considered yet
+* **``[DEFERRED]``** This check has been postponed or does not apply
 
 
 System documentation
