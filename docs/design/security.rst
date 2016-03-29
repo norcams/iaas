@@ -1208,3 +1208,23 @@ See the above link for info about these checks.
 ``[----]`` **Check-Block-08: Is max size for the body of a request set to default (114688)?**
   Yes/No?
 
+
+Shared File Systems
+===================
+
+.. _OpenStack Security Guide\: Shared File Systems: http://docs.openstack.org/security-guide/shared-file-systems.html
+
+From `OpenStack Security Guide\: Shared File Systems`_:
+
+  *The Shared File Systems service (manila) provides a set of services
+  for management of shared file systems in a multi-tenant cloud
+  environment, similar to how OpenStack provides for block-based
+  storage management through the OpenStack Block Storage service
+  project. With the Shared File Systems service, you can create a
+  remote file system, mount the file system on your instances, and
+  then read and write data from your instances to and from your file
+  system.*
+
+We are not using Manila.
+
+
