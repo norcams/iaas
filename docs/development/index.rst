@@ -6,5 +6,6 @@ Development
     :glob:
     :maxdepth: 2
 
+    nodes
     local
     deploy
