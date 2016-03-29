@@ -1465,7 +1465,7 @@ Data processing
 
 .. _OpenStack Security Guide\: Data processing: http://docs.openstack.org/security-guide/data-processing.html
 
-From `OpenStack Security Guide\:  Data processing`_:
+From `OpenStack Security Guide\: Data processing`_:
 
   *The Data processing service for OpenStack (sahara) provides a
   platform for the provisioning and management of instance clusters
