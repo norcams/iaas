@@ -785,11 +785,11 @@ Domain names
 From OpenStack Security Guide:
 
   *We strongly recommend deploying dashboard to a second-level domain,
-  such as ``https://example.com``, rather than deploying dashboard on
+  such as https://example.com, rather than deploying dashboard on
   a shared subdomain of any level, for example
-  ``https://openstack.example.org`` or
-  ``https://horizon.openstack.example.org``. We also advise against
-  deploying to bare internal domains like ``https://horizon/``. These
+  https://openstack.example.org or
+  https://horizon.openstack.example.org. We also advise against
+  deploying to bare internal domains like https://horizon/. These
   recommendations are based on the limitations of browser
   same-origin-policy.*
 
@@ -876,7 +876,7 @@ From OpenStack Security Guide:
 
   *Dashboards that utilize multiple instances of JavaScript should be
   audited for vulnerabilities such as inappropriate use of the
-  ``@csrf_exempt`` decorator.*
+  @csrf_exempt decorator.*
 
 ``[----]`` **Audit custom dashboards**
   FIXME: Are we using any custom dashboards?
@@ -962,7 +962,7 @@ Secret key
 
 Ref: `OpenStack Security Guide\: Dashboard - Secret key`_
 
-  *The dashboard depends on a shared ``SECRET_KEY`` setting for some
+  *The dashboard depends on a shared SECRET_KEY setting for some
   security functions. The secret key should be a randomly generated
   string at least 64 characters long, which must be shared across all
   active dashboard instances. Compromise of this key may allow a
@@ -1062,8 +1062,8 @@ From `OpenStack Security Guide\: Compute`_:
   be deployment specific. In this chapter we will call out general
   best practice around Compute security as well as specific known
   configurations that can lead to security issues. In general, the
-  ``nova.conf`` file and the ``/var/lib/nova`` locations should be
-  secured. Controls like centralized logging, the ``policy.json`` file,
+  nova.conf file and the /var/lib/nova locations should be
+  secured. Controls like centralized logging, the policy.json file,
   and a mandatory access control framework should be
   implemented. Additionally, there are environmental considerations to
   keep in mind, depending on what functionality is desired for your
@@ -1129,7 +1129,7 @@ Checklist
 
 .. _OpenStack Security Guide\: Compute - Checklist: http://docs.openstack.org/security-guide/compute/checklist.html
 
-*Ref: `OpenStack Security Guide\: Compute - Checklist`_*
+Ref: `OpenStack Security Guide\: Compute - Checklist`_
 
 See the above link for info about these checks.
 
@@ -1148,4 +1148,63 @@ See the above link for info about these checks.
 ``[----]`` **Check-Compute-05: Does Nova communicate with Glance securely?**
   Yes/No?
 
+
+Block Storage
+=============
+
+.. _OpenStack Security Guide\: Block Storage: http://docs.openstack.org/security-guide/block-storage.html
+
++-------------------------+---------------------+
+| **Impact**              | High                |
++-------------------------+---------------------+
+| **Implemented percent** | **0%** (0/8)        |
++-------------------------+---------------------+
+
+From `OpenStack Security Guide\: Block Storage`_:
+
+  *OpenStack Block Storage (cinder) is a service that provides software
+  (services and libraries) to self-service manage persistent
+  block-level storage devices. This creates on-demand access to Block
+  Storage resources for use with OpenStack Compute (nova)
+  instances. This creates software-defined storage via abstraction by
+  virtualizing pools of block storage to a variety of back-end storage
+  devices which can be either software implementations or traditional
+  hardware storage products. The primary functions of this is to
+  manage the creation, attaching and detaching of the block
+  devices. The consumer requires no knowledge of the type of back-end
+  storage equipment or where it is located.*
+
+
+Checklist
+---------
+
+.. _OpenStack Security Guide\: Block Storage - Checklist: http://docs.openstack.org/security-guide/block-storage/checklist.html
+
+Ref: `OpenStack Security Guide\: Block Storage - Checklist`_
+
+See the above link for info about these checks.
+
+``[----]`` **Check-Block-01: Is user/group ownership of config files set to root/cinder?**
+  Yes/No?
+
+``[----]`` **Check-Block-02: Are strict permissions set for configuration files?**
+  Yes/No?
+
+``[----]`` **Check-Block-03: Is keystone used for authentication?**
+  Yes/No?
+
+``[----]`` **Check-Block-04: Is TLS enabled for authentication?**
+  Yes/No?
+
+``[----]`` **Check-Block-05: Does cinder communicate with nova over TLS?**
+  Yes/No?
+
+``[----]`` **Check-Block-06: Does cinder communicate with glance over TLS?**
+  Yes/No?
+
+``[----]`` **Check-Block-07: Is NAS operating in a secure environment?**
+  Yes/No?
+
+``[----]`` **Check-Block-08: Is max size for the body of a request set to default (114688)?**
+  Yes/No?
 
