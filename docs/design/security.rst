@@ -1358,12 +1358,12 @@ Object Storage
 
 From `OpenStack Security Guide\: Object Storage`_:
 
-  OpenStack Object Storage (swift) is a service that provides software
+  *OpenStack Object Storage (swift) is a service that provides software
   that stores and retrieves data over HTTP. Objects (blobs of data)
   are stored in an organizational hierarchy that offers anonymous
   read-only access, ACL defined access, or even temporary
   access. Object Store supports multiple token-based authentication
-  mechanisms implemented via middleware.
+  mechanisms implemented via middleware.*
 
 .. NOTE::
    Does not apply. We are not using Swift.
@@ -1459,4 +1459,24 @@ Message queue process isolation and policy
 ``[----]`` **Use mandatory access controls**
   FIXME: SELinux in enforcing mode on all nodes
 
+
+Data processing
+===============
+
+.. _OpenStack Security Guide\: Data processing: http://docs.openstack.org/security-guide/data-processing.html
+
+From `OpenStack Security Guide\:  Data processing`_:
+
+  *The Data processing service for OpenStack (sahara) provides a
+  platform for the provisioning and management of instance clusters
+  using processing frameworks such as Hadoop and Spark. Through the
+  OpenStack dashboard or REST API, users will be able to upload and
+  execute framework applications which may access data in object
+  storage or external providers. The data processing controller uses
+  the Orchestration service to create clusters of instances which may
+  exist as long-running groups that can grow and shrink as requested,
+  or as transient groups created for a single workload.*
+
+.. NOTE::
+   Does not apply. We are not using Sahara.
 
