@@ -563,6 +563,12 @@ Identity
 
 .. _OpenStack Security Guide\: Identity: http://docs.openstack.org/security-guide/identity.html
 
++-------------------------+---------------------+
+| **Impact**              | High                |
++-------------------------+---------------------+
+| **Implemented percent** | **0%** (0/?)        |
++-------------------------+---------------------+
+
 From `OpenStack Security Guide\: Identity`_:
 
   *Identity service (keystone) provides identity, token, catalog, and
