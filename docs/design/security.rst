@@ -1234,6 +1234,12 @@ Networking
 
 .. _OpenStack Security Guide\: Networking: http://docs.openstack.org/security-guide/networking.html
 
++-------------------------+---------------------+
+| **Impact**              | High                |
++-------------------------+---------------------+
+| **Implemented percent** | **0%** (0/?)        |
++-------------------------+---------------------+
+
 From `OpenStack Security Guide\: Networking`_:
 
   *OpenStack Networking enables the end-user or tenant to define,
