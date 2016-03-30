@@ -11,6 +11,7 @@ This is our `current documentation`_.
     installation/index
     design/index
     development/index
+    security/index
     howtos/index
     project/index
 
