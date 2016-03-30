@@ -26,4 +26,18 @@ of four different values:
     :maxdepth: 2
 
     documentation
-
+    secure-communication
+    api-endpoints
+    identity
+    dashboard
+    compute
+    block-storage
+    shared-file-systems
+    networking
+    object-storage
+    messaging
+    data-processing
+    databases
+    tenant-data
+    instance-management
+   
