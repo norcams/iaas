@@ -19,7 +19,7 @@ If you want to use the UiO dashboard, point your browser to:
 
   https://dashboard.iaas.uio.no/
 
-Which one is right for you? It depend on which cloud deployment you
+Which one is right for you? It depends on which cloud deployment you
 wish to use. If you're a UiO user, you may want to use the
 infrastructure at UiO. Similarly, as a UiB user, you'll probably want
 to use the UiB version. Currently, the two implementations are
