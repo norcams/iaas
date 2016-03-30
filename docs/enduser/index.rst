@@ -8,3 +8,4 @@ End user guide for the UH-IaaS OpenStack cloud.
     :maxdepth: 2
 
     conventions
+    intro
