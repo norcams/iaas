@@ -1,6 +1,6 @@
 .. |date| date::
 
-====================
+
 System documentation
 ====================
 
