@@ -1,13 +1,11 @@
 .. |date| date::
 
-===============
 Message queuing
 ===============
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Message queuing: http://docs.openstack.org/security-guide/messaging.html
 

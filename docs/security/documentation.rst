@@ -1,11 +1,11 @@
 .. |date| date::
-Last changed: |date|
-
-.. contents::
-.. section-numbering::
 
 System documentation
 ====================
+
+Last changed: |date|
+
+.. contents::
 
 +-------------------------+---------------------+
 | **Impact**              | Low                 |
@@ -16,7 +16,9 @@ System documentation
 System Inventory
 ----------------
 
-From `OpenStack Security Guide`_:
+.. _OpenStack Security Guide\: System documentation: http://docs.openstack.org/security-guide/documentation.html
+
+From `OpenStack Security Guide\: System documentation`_:
 
   *Documentation should provide a general description of the OpenStack
   environment and cover all systems used (production, development,

@@ -1,13 +1,11 @@
 .. |date| date::
 
-==========
 Networking
 ==========
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Networking: http://docs.openstack.org/security-guide/networking.html
 

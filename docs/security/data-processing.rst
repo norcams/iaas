@@ -1,13 +1,11 @@
 .. |date| date::
 
-===============
 Data processing
 ===============
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Data processing: http://docs.openstack.org/security-guide/data-processing.html
 

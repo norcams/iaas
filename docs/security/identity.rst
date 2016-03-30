@@ -1,13 +1,11 @@
 .. |date| date::
 
-========
 Identity
 ========
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Identity: http://docs.openstack.org/security-guide/identity.html
 

@@ -1,13 +1,11 @@
 .. |date| date::
 
-===================
 Shared File Systems
 ===================
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Shared File Systems: http://docs.openstack.org/security-guide/shared-file-systems.html
 

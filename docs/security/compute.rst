@@ -1,13 +1,11 @@
 .. |date| date::
 
-=======
 Compute
 =======
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Compute: http://docs.openstack.org/security-guide/compute.html
 

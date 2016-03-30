@@ -1,13 +1,11 @@
 .. |date| date::
 
-=========
 Databases
 =========
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Databases: http://docs.openstack.org/security-guide/databases.html
 

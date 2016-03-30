@@ -1,13 +1,11 @@
 .. |date| date::
 
-=============
 API endpoints
 =============
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 +-------------------------+---------------------+
 | **Impact**              | High                |
@@ -15,7 +13,9 @@ Last changed: |date|
 | **Implemented percent** | **0%** (0/?)        |
 +-------------------------+---------------------+
 
-From `OpenStack Security Guide`_:
+.. _OpenStack Security Guide\: API endpoints: http://docs.openstack.org/security-guide/api-endpoints.html
+
+From `OpenStack Security Guide\: API endpoints`_:
 
   *The process of engaging an OpenStack cloud is started through the
   querying of an API endpoint. While there are different challenges
@@ -31,7 +31,7 @@ Internal API communications
 
 .. _API endpoint configuration recommendations: http://docs.openstack.org/security-guide/api-endpoints/api-endpoint-configuration-recommendations.html
 
-From `OpenStack Security Guide`_:
+From OpenStack Security Guide:
 
   *OpenStack provides both public facing and private API endpoints. By
   default, OpenStack components use the publicly defined
@@ -62,7 +62,7 @@ From `OpenStack Security Guide`_:
 Paste and middleware
 ~~~~~~~~~~~~~~~~~~~~
 
-From `OpenStack Security Guide`_:
+From OpenStack Security Guide:
 
   *Most API endpoints and other HTTP services in OpenStack use the
   Python Paste Deploy library. From a security perspective, this
@@ -81,7 +81,7 @@ From `OpenStack Security Guide`_:
 API endpoint process isolation and policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From `OpenStack Security Guide`_:
+From OpenStack Security Guide:
 
   *You should isolate API endpoint processes, especially those that
   reside within the public security domain should be isolated as much

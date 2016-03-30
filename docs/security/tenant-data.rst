@@ -1,13 +1,11 @@
 .. |date| date::
 
-===================
 Tenant data privacy
 ===================
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Tenant data privacy: http://docs.openstack.org/security-guide/tenant-data.html
 

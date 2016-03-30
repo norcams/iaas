@@ -1,13 +1,11 @@
 .. |date| date::
 
-==========
 Management
 ==========
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 +-------------------------+---------------------+
 | **Impact**              | Medium              |
@@ -18,7 +16,9 @@ Last changed: |date|
 Continuous systems management
 -----------------------------
 
-From `OpenStack Security Guide`_:
+.. _OpenStack Security Guide\: Management - Continuous systems management: http://docs.openstack.org/security-guide/management/continuous-systems-management.html
+
+From `OpenStack Security Guide\: Management - Continuous systems management`_:
 
   *A cloud will always have bugs. Some of these will be security
   problems. For this reason, it is critically important to be prepared
@@ -95,7 +95,9 @@ combination with configuration management.
 Integrity life-cycle
 --------------------
 
-From `OpenStack Security Guide`_:
+.. _OpenStack Security Guide\: Management - Integrity life-cycle: http://docs.openstack.org/security-guide/management/integrity-life-cycle.html
+
+From `OpenStack Security Guide\: Management - Integrity life-cycle`_:
 
   *We define integrity life cycle as a deliberate process that provides
   assurance that we are always running the expected software with the
@@ -134,7 +136,7 @@ cloud needs special attention.
 Runtime verification
 ~~~~~~~~~~~~~~~~~~~~
 
-From `OpenStack Security Guide`_:
+From OpenStack Security Guide:
 
   *Once the node is running, we need to ensure that it remains in a
   good state over time. Broadly speaking, this includes both
@@ -164,7 +166,9 @@ This mostly includes file integrity management.
 Management interfaces
 ---------------------
 
-From `OpenStack Security Guide`_:
+.. _OpenStack Security Guide\: Management - Management interfaces: http://docs.openstack.org/security-guide/management/management-interfaces.html
+
+From `OpenStack Security Guide\: Management - Management interfaces`_:
 
   *It is necessary for administrators to perform command and control
   over the cloud for various operational functions. It is important

@@ -1,13 +1,11 @@
 .. |date| date::
 
-=============
 Block Storage
 =============
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Block Storage: http://docs.openstack.org/security-guide/block-storage.html
 

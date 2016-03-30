@@ -1,13 +1,11 @@
 .. |date| date::
 
-============================
 Instance security management
 ============================
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Instance security management: http://docs.openstack.org/security-guide/instance-management.html
 

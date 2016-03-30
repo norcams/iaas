@@ -1,13 +1,11 @@
 .. |date| date::
 
-==============
 Object Storage
 ==============
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Object Storage: http://docs.openstack.org/security-guide/object-storage.html
 

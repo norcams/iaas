@@ -1,13 +1,11 @@
 .. |date| date::
 
-=========
 Dashboard
 =========
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 .. _OpenStack Security Guide\: Dashboard: http://docs.openstack.org/security-guide/dashboard.html
 
