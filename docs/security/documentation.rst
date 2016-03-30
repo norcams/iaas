@@ -1,14 +1,11 @@
 .. |date| date::
-
-
-System documentation
-====================
-
 Last changed: |date|
 
 .. contents::
 .. section-numbering::
 
+System documentation
+====================
 
 +-------------------------+---------------------+
 | **Impact**              | Low                 |
