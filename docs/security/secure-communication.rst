@@ -1,13 +1,11 @@
 .. |date| date::
 
-====================
 Secure communication
 ====================
 
 Last changed: |date|
 
 .. contents::
-.. section-numbering::
 
 +-------------------------+---------------------+
 | **Impact**              | High                |
@@ -15,7 +13,9 @@ Last changed: |date|
 | **Implemented percent** | **0%** (0/?)        |
 +-------------------------+---------------------+
 
-From `OpenStack Security Guide`_:
+.. _OpenStack Security Guide\: Secure communication: http://docs.openstack.org/security-guide/secure-communication.html
+
+From `OpenStack Security Guide\: Secure communication`_:
 
   *There are a number of situations where there is a security
   requirement to assure the confidentiality or integrity of network
@@ -67,7 +67,7 @@ want to use separate PKI deployments for different security domains.
 TLS libraries
 -------------
 
-From `OpenStack Security Guide`_:
+From OpenStack Security Guide:
 
   *The TLS and HTTP services within OpenStack are typically implemented
   using OpenSSL which has a module that has been validated for FIPS
