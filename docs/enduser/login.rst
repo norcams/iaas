@@ -52,7 +52,16 @@ To log in, choose "Dataporten" as authentication mechanism, then click
 
 .. image:: images/dashboard-login-02.png
    :align: center
-   :alt: Dataporten
+   :alt: Dataporten: choose institution
+
+Select the correct educational institution, by clicking on it. You'll
+then reach this page:
+
+.. image:: images/dashboard-login-03.png
+   :align: center
+   :alt: Dataporten: login
+
+Type in your regular user name and password, and click "Login".
 
 If this is your first time logging in, proceed with `First login`_
 below.
@@ -63,3 +72,6 @@ First login
 
 When logging in for the first time, you need accept that Dataporten_
 collects and stores some information about you.
+
+FIXME.
+
