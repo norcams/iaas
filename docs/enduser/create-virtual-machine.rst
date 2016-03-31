@@ -124,19 +124,19 @@ Click "Launch Instance". The following window will appear:
 
 In this window, enter the following values:
 
-* Availability Zone: nova (the default)
-* Instance Name: Select a name for your new virtual machine
-* Flavor: Choose whichever size that fits your purpose
-* Instance Count: How many virtual machines to create (usually only 1)
-* Instance Boot Source: Select whichever is appropriate for your
+* **Availability Zone**: nova (the default)
+* **Instance Name**: Select a name for your new virtual machine
+* **Flavor**: Choose whichever size that fits your purpose
+* **Instance Count**: How many virtual machines to create (usually only 1)
+* **Instance Boot Source**: Select whichever is appropriate for your
   needs:
 
-  - Boot from image: This is usually preferred. In this case, the
+  - *Boot from image*: This is usually preferred. In this case, the
     virtual machine will boot from a standard cloud image.
-  - Boot from snapshot: If you have previously taken a snapshot from
+  - *Boot from snapshot*: If you have previously taken a snapshot from
     another virtual machine, you can boot from it when creating your
     new virtual machine
-  - Boot from volume: FIXME.
-  - Boot from image (creates a new volume): FIXME
-  - Boot from volume snapshot (creates a new volume): FIXME
+  - *Boot from volume*: FIXME.
+  - *Boot from image (creates a new volume)*: FIXME
+  - *Boot from volume snapshot (creates a new volume)*: FIXME
 
