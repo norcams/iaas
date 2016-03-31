@@ -10,3 +10,4 @@ End user guide for the UH-IaaS OpenStack cloud.
     conventions
     intro
     login
+    dashboard
