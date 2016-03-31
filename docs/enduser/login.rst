@@ -57,17 +57,15 @@ then reach this page:
    :align: center
    :alt: Dataporten: login
 
-Type in your regular user name and password, and click "Login".
+Type in your regular user name and password, and click "Login". You
+should then be redirected back to the UH-IaaS dashboard:
 
-If this is your first time logging in, proceed with `First login`_
-below.
+.. image:: images/dashboard-login-99.png
+   :align: center
+   :alt: Log in finished
 
+You are now logged in, and can proceed with using OpenStack.
 
-First login
------------
-
-When logging in for the first time, you need accept that Dataporten_
-collects and stores some information about you.
-
-FIXME.
-
+.. IMPORTANT::
+   When logging in for the first time, you need to accept that
+   Dataporten_ collects and stores some information about you.
