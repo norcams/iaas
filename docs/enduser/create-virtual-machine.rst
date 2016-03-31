@@ -94,7 +94,11 @@ created private key will be downloaded by the browser automatically:
 
 The name of the downloaded file is based on the name you provided
 earlier. In this example the file is called "test.pem" as "test" was
-provided as the keypair name.
+provided as the keypair name. Remember to restrict the access to the
+private key, as SSH will refuse to use unless it's properly
+protected::
+
+  $ chmod 0600 test.pem
 
 In order to use the downloaded private key, use the **-i** option to
 ssh, like this (example for "test.pem" above)::
@@ -132,7 +136,8 @@ In this window, enter the following values:
   needs:
 
   - *Boot from image*: This is usually preferred. In this case, the
-    virtual machine will boot from a standard cloud image.
+    virtual machine will boot from a standard cloud image. When
+    selecting this option, you can choose from a list of images.
   - *Boot from snapshot*: If you have previously taken a snapshot from
     another virtual machine, you can boot from it when creating your
     new virtual machine
@@ -140,3 +145,58 @@ In this window, enter the following values:
   - *Boot from image (creates a new volume)*: FIXME
   - *Boot from volume snapshot (creates a new volume)*: FIXME
 
+When finished with the "Details" tab, select the "Access & Security"
+tab:
+
+.. image:: images/dashboard-create-instance-03.png
+   :align: center
+   :alt: Dashboard - Launch instance - Access & Security
+
+Here, choose which SSH keypair you want to assign to this virtual
+machine, and choose any security groups. The "default" security group
+allows ICMP (ping) and SSH access to the virtual machine. When
+finished with this tab, select the "Networking" tab:
+
+.. image:: images/dashboard-create-instance-04.png
+   :align: center
+   :alt: Dashboard - Launch instance - Networking
+
+Here, you may select to attach networks to the virtual machine:
+
+* **public**: The virtual machine will be on the public network, and
+  receive a "real" IPv4 address which is accessible from the Internet.
+* **private**: The virtual machine will be on the private network,
+  which is shared within the current project in which the virtual
+  machine is created.
+
+You can choose one or both of these networks.
+
+The "Post-Creation" and "Advanced" tabs are normally not used. When
+satisfied, clik "Launch" to create your virtual machine.
+
+.. image:: images/dashboard-create-instance-05.png
+   :align: center
+   :alt: Dashboard - Launch instance - finished
+
+After a few moments, the virtual machine is up and running. If you
+chose a public IPv4 address (and selected the default security group),
+the virtual machine is accessible from the Internet::
+
+  $ ping 158.39.77.15
+  PING 158.39.77.15 (158.39.77.15) 56(84) bytes of data.
+  64 bytes from 158.39.77.15: icmp_seq=1 ttl=55 time=6.15 ms
+  64 bytes from 158.39.77.15: icmp_seq=2 ttl=55 time=6.05 ms
+  64 bytes from 158.39.77.15: icmp_seq=3 ttl=55 time=6.01 ms
+
+You can log in to the virtual machine using the SSH key assigned to
+the virtual machine. In case you let OpenStack create the keypair for
+you (example with "test.pem" above)::
+
+  $ ssh -i test.pem cirros@158.39.77.15
+  $ uname -sr
+  Linux 3.2.0-80-virtual
+  $ sudo -i
+  # whoami
+  root
+
+FIXME: The default security group doesn't allow SSH/ICMP!!
