@@ -130,6 +130,7 @@ In this window, enter the following values:
 * Instance Count: How many virtual machines to create (usually only 1)
 * Instance Boot Source: Select whichever is appropriate for your
   needs:
+
   - Boot from image: This is usually preferred. In this case, the
     virtual machine will boot from a standard cloud image.
   - Boot from snapshot: If you have previously taken a snapshot from
