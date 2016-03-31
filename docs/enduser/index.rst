@@ -11,3 +11,4 @@ End user guide for the UH-IaaS OpenStack cloud.
     intro
     login
     dashboard
+    create-virtual-machine
