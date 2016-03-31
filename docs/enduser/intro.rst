@@ -73,7 +73,7 @@ According to standard definitions of cloud computing, there are three
 layers:
 
 .. image:: images/Cloud_computing_layers.png
-   :align: left
+   :align: center
    :alt: Public Domain, https://commons.wikimedia.org/w/index.php?curid=18327835
 
 The UH-IaaS cloud provides
