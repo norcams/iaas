@@ -26,8 +26,8 @@ to use the UiB version. Currently, the two implementations are
 identical.
 
 
-The login screen
-----------------
+Step by step
+------------
 
 .. _Dataporten: https://www.uninett.no/en/service-platform-dataporten
 .. _UNINETT: https://www.uninett.no/en
