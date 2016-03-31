@@ -29,6 +29,9 @@ identical.
 The login screen
 ----------------
 
+.. _Dataporten: https://www.uninett.no/en/service-platform-dataporten
+.. _UNINETT: https://www.uninett.no/en
+
 Regardless of which of the locations' dashboard you connect to, you'll
 be presented with the following:
 
@@ -36,3 +39,27 @@ be presented with the following:
    :align: center
    :alt: The default login screen
 
+There are two methods for logging in. The method labelled "Dataporten"
+is correct for regular users. The "Local user" method is reserved for
+administrator and testing purposes.
+
+.. NOTE::
+   Dataporten_ is an external authentication service, which is provided
+   by UNINETT_.
+
+To log in, choose "Dataporten" as authentication mechanism, then click
+"Connect". You'll be redirected to this page:
+
+.. image:: images/dashboard-login-02.png
+   :align: center
+   :alt: Dataporten
+
+If this is your first time logging in, proceed with `First login`_
+below.
+
+
+First login
+-----------
+
+When logging in for the first time, you need accept that Dataporten_
+collects and stores some information about you.
