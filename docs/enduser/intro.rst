@@ -9,9 +9,16 @@ Last changed: |date|
 
 .. _OpenStack: https://www.openstack.org/
 .. _OpenStack End User Guide: http://docs.openstack.org/user-guide/index.html
+.. _cloud: https://en.wikipedia.org/wiki/Cloud_computing
+.. _Infrastructure-as-a-Service: https://en.wikipedia.org/wiki/Cloud_computing#Infrastructure_as_a_service_.28IaaS.29
+.. _RESTful: https://en.wikipedia.org/wiki/Representational_state_transfer
+.. _OpenStack services: http://www.openstack.org/software/project-navigator
+.. _JSON: https://en.wikipedia.org/wiki/JSON
+.. _XML: https://en.wikipedia.org/wiki/XML
+.. _serialization: https://en.wikipedia.org/wiki/Serialization
 
-The UH-IaaS cloud is based on OpenStack_, which is a large framework
-of software components used to deliver an Infrastructure-as-a-Service
+The UH-IaaS cloud_ is based on OpenStack_, which is a large framework
+of software components used to deliver an Infrastructure-as-a-Service_
 consisting of compute, networking and storage resources.
 
 This document is aimed at the end user. We'll borrow a lot from the
@@ -52,5 +59,5 @@ and services by using the native OpenStack APIs or the EC2
 compatibility API.
 
 To use the OpenStack APIs, it helps to be familiar with HTTP/1.1,
-RESTful web services, the OpenStack services, and JSON or XML data
-serialization formats.
+RESTful_ web services, the `OpenStack services`_, and JSON_ or XML_ data
+serialization_ formats.
