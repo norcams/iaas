@@ -46,6 +46,7 @@ Compute tab
   delete images, and launch instances from images and snapshots.
 
 * Access & Security: Use the following tabs to complete these tasks:
+
   - Security Groups: View, create, edit, and delete security groups
     and security group rules.
   - Key Pairs: View, create, edit, import, and delete key pairs.
