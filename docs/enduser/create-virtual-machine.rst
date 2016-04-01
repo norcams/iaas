@@ -166,10 +166,24 @@ Here, you may select to attach networks to the virtual machine:
 * **public**: The virtual machine will be on the public network, and
   receive a "real" IPv4 address which is accessible from the Internet.
 * **private**: The virtual machine will be on the private network,
-  which is shared within the current project in which the virtual
-  machine is created.
+  which is shared within the OpenStack location (e.g. Bergen, Oslo) in
+  which the virtual machine is created.
 
 You can choose one or both of these networks.
+
+.. IMPORTANT::
+   Currently, you should choose only one of these networks. Due to a
+   technical issue with default routing setup on the virtual machine,
+   using both simultanously may not work. This will be fixed in the
+   future. FIXME.
+
+.. WARNING::
+   The networking setup differs from the default OpenStack networking
+   as documented elsewhere. There are no really private network
+   available just for one project. The private network, as mentioned
+   above, is shared within the location (e.g. Oslo, Bergen). This
+   means that all virtual machines can reach each other within the
+   location regardless of their project association.
 
 The "Post-Creation" and "Advanced" tabs are normally not used. When
 satisfied, clik "Launch" to create your virtual machine.
