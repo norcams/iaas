@@ -32,26 +32,32 @@ From the Project tab, you can access the following categories:
 Compute tab
 ~~~~~~~~~~~
 
-* Overview: View reports for the project.
+* **Overview**: View reports for the project.
 
-* Instances: View, launch, create a snapshot from, stop, pause, or
+* **Instances**: View, launch, create a snapshot from, stop, pause, or
   reboot instances, or connect to them through VNC.
 
-* Volumes: Use the following tabs to complete these tasks:
-  - Volumes: View, create, edit, and delete volumes.
-  - Volume Snapshots: View, create, edit, and delete volume snapshots.
+* **Volumes**: Use the following tabs to complete these tasks:
 
-* Images: View images and instance snapshots created by project users,
-  plus any images that are publicly available. Create, edit, and
-  delete images, and launch instances from images and snapshots.
+  - *Volumes*: View, create, edit, and delete volumes.
+  - *Volume Snapshots*: View, create, edit, and delete volume snapshots.
 
-* Access & Security: Use the following tabs to complete these tasks:
+* **Images**: View images and instance snapshots created by project
+  users, plus any images that are publicly available. Create, edit,
+  and delete images, and launch instances from images and snapshots.
 
-  - Security Groups: View, create, edit, and delete security groups
+* **Access & Security**: Use the following tabs to complete these tasks:
+
+  - *Security Groups*: View, create, edit, and delete security groups
     and security group rules.
-  - Key Pairs: View, create, edit, import, and delete key pairs.
-  - Floating IPs: Allocate an IP address to or release it from a project.
-  - API Access: View API endpoints.
+  - *Key Pairs*: View, create, edit, import, and delete key pairs.
+  - *Floating IPs*: Allocate an IP address to or release it from a
+    project.
+  - *API Access*: View API endpoints.
+
+.. NOTE::
+   Even though the *Floating IPs* tab is present under "Access &
+   Security", this feature is not used in the UH-IaaS cloud.
 
 Network tab
 ~~~~~~~~~~~
