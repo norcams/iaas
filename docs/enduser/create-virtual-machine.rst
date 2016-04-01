@@ -47,7 +47,8 @@ you don't already have one::
 
 Another option is to let OpenStack create a keypair for you, more
 about that later. To import your existing keypair into OpenStack, go
-to the **Access & Security** tab under **Project**:
+to the **Access & Security** tab under **Project** and select "Key
+Pairs":
 
 .. image:: images/dashboard-access-and-security-01.png
    :align: center
@@ -73,7 +74,7 @@ Letting OpenStack create a keypair
 
 You can let OpenStack create a keypair for you, if you don't wish to
 use an existing one. Go to the **Access & Security** tab
-under **Project**:
+under **Project** and select "Key Pairs":
 
 .. image:: images/dashboard-access-and-security-01.png
    :align: center
@@ -195,8 +196,79 @@ satisfied, clik "Launch" to create your virtual machine.
    :alt: Dashboard - Launch instance - finished
 
 After a few moments, the virtual machine is up and running. If you
-chose a public IPv4 address (and selected the default security group),
-the virtual machine is accessible from the Internet::
+chose a public IPv4 address the virtual machine is accessible from the
+Internet, but you need to manage security groups in order to reach
+it. By default, all network access is denied.
+
+
+Allowing ICMP and SSH access
+----------------------------
+
+In order to allow traffic to the virtual machine, you need to create a
+new security group which allows it, and attach that security group to
+the virtual machine. Alternatively, you can modify an existing rule
+such as "default". To create a new security group, go to the **Access &
+Security** tab under **Project** and select "Security Groups":
+
+.. image:: images/dashboard-access-and-security-02.png
+   :align: center
+   :alt: Dashboard - Access & Security
+
+Click on "Create Security Group":
+
+.. image:: images/dashboard-create-secgroup-01.png
+   :align: center
+   :alt: Dashboard - Create Security Group
+
+Fill in a name for the new security group, and optionally a
+description. Then click "Create Security Group":
+
+.. image:: images/dashboard-create-secgroup-02.png
+   :align: center
+   :alt: Dashboard - Create Security Group
+
+Next, click "Manage Rules" for the "ICMP and SSH" security group:
+
+.. image:: images/dashboard-create-secgroup-03.png
+   :align: center
+   :alt: Dashboard - Create Security Group
+
+You want to add a couple of rules. Click "Add Rule":
+
+.. image:: images/dashboard-create-secgroup-04.png
+   :align: center
+   :alt: Dashboard - Create Security Group
+
+Select "ALL ICMP" from the drop-down menu under "Rule". Leave the rest
+at its default and click "Add". Repeat the process and select "SSH"
+from the "Rule" drop-down menu, and the result should be:
+
+.. image:: images/dashboard-create-secgroup-05.png
+   :align: center
+   :alt: Dashboard - Create Security Group
+
+Go back to the **Instances** tab under Compute, and use the drop-down
+menu to the right of your newly created virtual machine. Select "Edit
+Security Groups":
+
+.. image:: images/dashboard-instance-edit-secgroup-01.png
+   :align: center
+   :alt: Dashboard - Edit Security Group
+
+The following will appear:
+
+.. image:: images/dashboard-instance-edit-secgroup-02.png
+   :align: center
+   :alt: Dashboard - Edit Security Group
+
+Add the "ICMP and SSH" security group and click "Save".
+
+
+Accessing the virtual machine
+-----------------------------
+
+With a proper security group in place, the virtual machine is now
+reachable from the Internet::
 
   $ ping 158.39.77.15
   PING 158.39.77.15 (158.39.77.15) 56(84) bytes of data.
@@ -216,3 +288,4 @@ you (example with "test.pem" above)::
   root
 
 FIXME: The default security group doesn't allow SSH/ICMP!!
+
