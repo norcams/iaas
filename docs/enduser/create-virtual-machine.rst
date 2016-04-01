@@ -287,5 +287,4 @@ you (example with "test.pem" above)::
   # whoami
   root
 
-FIXME: The default security group doesn't allow SSH/ICMP!!
 
