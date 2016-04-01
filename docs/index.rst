@@ -8,6 +8,7 @@ This is our `current documentation`_.
     :maxdepth: 3
 
     getting_started/index
+    enduser/index
     installation/index
     design/index
     development/index
