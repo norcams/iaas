@@ -155,8 +155,8 @@ tab:
 
 Here, choose which SSH keypair you want to assign to this virtual
 machine, and choose any security groups. The "default" security group
-allows ICMP (ping) and SSH access to the virtual machine. When
-finished with this tab, select the "Networking" tab:
+doesn't allow any access to the virtual machine unless it's
+modified. When finished with this tab, select the "Networking" tab:
 
 .. image:: images/dashboard-create-instance-04.png
    :align: center
@@ -201,7 +201,7 @@ Internet, but you need to manage security groups in order to reach
 it. By default, all network access is denied.
 
 
-Allowing ICMP and SSH access
+Allowing SSH and ICMP access
 ----------------------------
 
 In order to allow traffic to the virtual machine, you need to create a
@@ -227,7 +227,7 @@ description. Then click "Create Security Group":
    :align: center
    :alt: Dashboard - Create Security Group
 
-Next, click "Manage Rules" for the "ICMP and SSH" security group:
+Next, click "Manage Rules" for the "SSH and ICMP" security group:
 
 .. image:: images/dashboard-create-secgroup-03.png
    :align: center
@@ -261,7 +261,7 @@ The following will appear:
    :align: center
    :alt: Dashboard - Edit Security Group
 
-Add the "ICMP and SSH" security group and click "Save".
+Add the "SSH and ICMP" security group and click "Save".
 
 
 Accessing the virtual machine
