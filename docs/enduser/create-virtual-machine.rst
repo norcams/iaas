@@ -178,12 +178,14 @@ You can choose one or both of these networks.
    future. FIXME.
 
 .. WARNING::
-   The networking setup differs from the default OpenStack networking
-   as documented elsewhere. There are no really private network
-   available just for one project. The private network, as mentioned
-   above, is shared within the location (e.g. Oslo, Bergen). This
-   means that all virtual machines can reach each other within the
-   location regardless of their project association.
+   The networking setup in UH-IaaS differs from the default OpenStack
+   networking as documented elsewhere. There are no really private
+   network available just for one project. The private network, as
+   mentioned above, is shared within the location (e.g. Oslo,
+   Bergen). This means that all virtual machines can reach each other
+   within the location regardless of their project association. You
+   should use Security Groups to restrict network traffic access to
+   your virtual machines also on the private network.
 
 The "Post-Creation" and "Advanced" tabs are normally not used. When
 satisfied, clik "Launch" to create your virtual machine.
