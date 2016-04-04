@@ -1,0 +1,42 @@
+======
+Uke 13
+======
+av Raymond Kristiansen, UH IaaS, 04. april 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- Sikring av API endepunkt med TLS er klar i kode. Mangler litt hieradata før
+  kan rulles ut alle steder.
+
+- Alle passord er flyttet ut av git-repoet som ligger på github.com
+
+- Sikkerhetsdokument er på plass. Vi kan nå begynne å jobbe med de delene
+  som skal på plass til piloten. (:doc:`../../security/index`)
+
+Under arbeid
+============
+
+- Brukerdokumentasjon er påbegynt og forsetter frem mot piloten går på luften.
+  (:doc:`../../enduser/index`)
+
+- Reinstall av OSL torsdag 7.april
+
+- Sette opp et nytt dev-anlegg ved UiO
+
+Planlagt fremdrift
+==================
+
+- Piloten er planlagt klar 18.april.
+
+- Sikkerhetsgjennomgang og dokumentasjon
+
+Avklaringer
+===========
+
+- Vi har basert innlogging og provisjonering på FEIDE connect som er planlagt
+  avskrudd 15. april. Dataporten som skal avløse denne tjenesten er ikke klar
+  for UiO og UiB idag. Nødløsning blir lokale konto dersom vi ikke har dette på
+  plass.
