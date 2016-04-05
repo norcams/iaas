@@ -85,12 +85,12 @@ Horizon is the web GUI component in OpenStack. If you've followed the
 `Setting up the Vagrant environment`_ guide above, you should now be
 able to connect a browser to the Horizon GUI::
 
-  https://172.31.24.20/
+  https://172.31.24.22/
 
 If the VMs are running on a remote host, the best approach will be to
 use an SSH tunnel. Create an SSH tunnel with::
 
-  ssh -L 8443:172.31.24.20:443 <username>@<hostname>
+  ssh -L 8443:172.31.24.22:443 <username>@<hostname>
 
 After creating the SSH tunnel, point your browser to::
 
