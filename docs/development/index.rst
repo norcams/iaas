@@ -2,10 +2,12 @@
 Development
 ===========
 
+This is the internal documentation for IaaS team.
+
 .. toctree::
     :glob:
     :maxdepth: 2
 
     nodes
-    local
+    vagrant/index
     deploy
