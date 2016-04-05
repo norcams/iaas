@@ -10,8 +10,10 @@ Last changed: |date|
 Connecting to Horizon
 =====================
 
+.. _Setting up the Vagrant environment: http://iaas.readthedocs.org/en/latest/development/vagrant/libvirt.html#setting-up-the-vagrant-environment
+
 Horizon is the web GUI component in OpenStack. If you've followed the
-`Setting up the Vagrant environment`_ guide above, you should now be
+`Setting up the Vagrant environment`_ guide earlier, you should now be
 able to connect a browser to the Horizon GUI::
 
   https://172.31.24.22/
@@ -44,6 +46,8 @@ Become root::
 
 API authentication configuration
 --------------------------------
+
+.. _norcams/himlar: https://github.com/norcams/himlar
 
 The `norcams/himlar`_ repo is available from within the vagrant VM as
 ``/opt/himlar``. Run the **00-credentials_setup.sh** script::
