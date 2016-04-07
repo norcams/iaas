@@ -11,3 +11,4 @@ This is the internal documentation for IaaS team.
     nodes
     vagrant/index
     deploy
+    Two-factor-authentication.rst
