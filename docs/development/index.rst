@@ -12,3 +12,4 @@ This is the internal documentation for IaaS team.
     vagrant/index
     deploy
     Two-factor-authentication
+    reinstall
