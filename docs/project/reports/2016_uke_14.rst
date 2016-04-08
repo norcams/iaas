@@ -1,0 +1,39 @@
+======
+Uke 14
+======
+av Raymond Kristiansen, UH IaaS, 08. april 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- Sikring av API endepunkt med TLS er klar på *dev01*, *osl* og *bgo*
+
+- Alle passord er nå blitt endret
+
+- Tofaktor er satt opp på login-nodene  og alle må ha tatt det i bruk til piloten
+  går live 18.april.
+
+Under arbeid
+============
+
+- Kode for å kjøre service- og public-nett til nodene over transportnett. I
+  test på *dev01*
+
+- Brukerdokumentasjon er påbegynt og forsetter frem mot piloten går på luften.
+
+- Sette opp et nytt dev-anlegg ved UiO
+
+- Node med rsyslog server og logstash til å finne feil i piloten.
+
+- Flytting fra FEIDE connect til Dataporten for innlogging og provisionering
+
+Planlagt fremdrift
+==================
+
+- Piloten er planlagt klar til bruk 18.april. Innlogging er avhengig av hva
+  som skjer med Dataporten. Nødløsning blir lokale konto dersom vi ikke har
+  dette på plass.
+
+- Sikkerhetsgjennomgang og dokumentasjon. Blir et møte i Oslo 15. april.
