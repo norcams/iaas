@@ -72,9 +72,6 @@ Step-by-step setup
   
        - Do you want to disallow multiple uses of the same authentication
          token? This restricts you to one login about every 30s, but it increases
-         your chances to notice or even prevent man-in-the-middle attacks (y/n) Do you
-         want to disallow multiple uses of the same authentication
-         token? This restricts you to one login about every 30s, but it increases
          your chances to notice or even prevent man-in-the-middle attacks (y/n) **n**
   
        - By default, tokens are good for 30 seconds and in order to compensate for
@@ -88,7 +85,7 @@ Step-by-step setup
          By default, this limits attackers to no more than 3 login attempts every 30s.
          Do you want to enable rate-limiting (y/n) **y**
 
-   2. Provide to the user the secret key which is printed, the QR code drawn or
+   2. Provide the user with the secret key which is printed, the QR code drawn or
       the URL displayed - all after the initial question.
 
    3. Install a TOTP client application on any of the compatibel user devices
