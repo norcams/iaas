@@ -100,3 +100,19 @@ The volume is now detached.
 
 Delete a volume
 ---------------
+
+Deleting a volume is pretty straightforward. In the **Volumes** tab
+under **Compute**, select the appropriate check boxes for the volumes
+that you want to delete, and click ``Delete Volumes``:
+
+.. image:: images/dashboard-delete-volume-01.png
+   :align: center
+   :alt: Dashboard - Delete volumes
+
+The confirm your choice, clik ``Delete Volumes``:
+
+.. image:: images/dashboard-delete-volume-02.png
+   :align: center
+   :alt: Dashboard - Delete volumes confirmation
+
+The volume is then deleted.
