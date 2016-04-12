@@ -113,7 +113,7 @@ that you want to delete, and click ``Delete Volumes``:
    :align: center
    :alt: Dashboard - Delete volumes
 
-The confirm your choice, clik ``Delete Volumes``:
+The confirm your choice, click ``Delete Volumes``:
 
 .. image:: images/dashboard-delete-volume-02.png
    :align: center
