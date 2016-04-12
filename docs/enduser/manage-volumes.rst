@@ -66,9 +66,13 @@ click on ``Attach Volume``.
 
 .. image:: images/dashboard-attach-volume-02.png
    :align: center
-   :alt: Dashboard - Attach volume
+   :alt: Dashboard - Attach volume part 2
 
 The volume is now attached to the virtual machine.
+
+.. image:: images/dashboard-attach-volume-03.png
+   :align: center
+   :alt: Dashboard - Attach volume finished
 
 
 Detach a volume from a virtual machine
