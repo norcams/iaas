@@ -12,3 +12,4 @@ End user guide for the UH-IaaS OpenStack cloud.
     login
     dashboard
     create-virtual-machine
+    manage-volumes
