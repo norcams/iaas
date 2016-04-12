@@ -36,7 +36,7 @@ Fill in the form:
 * **Description**: An optional description
 * **Volume Source**: Either no source, i.e. an empty volume, or create
   a volume from an image
-* **Type**: Choose "rbd"
+* **Type**: You can leave this empty
 * **Size**: The size of the volume, in GB
 * **Availability Zone**: Choose "nova"
 
