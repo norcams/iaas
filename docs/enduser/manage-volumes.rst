@@ -74,6 +74,22 @@ The volume is now attached to the virtual machine.
    :align: center
    :alt: Dashboard - Attach volume finished
 
+The volume can now be used as a regular block device from within the
+virtual machine (example)::
+
+  # lsblk
+  NAME   MAJ:MIN RM    SIZE RO TYPE MOUNTPOINT
+  vda    253:0    0      1G  0 disk
+  `-vda1 253:1    0 1011.9M  0 part /
+  vdb    253:16   0     10G  0 disk
+  # mkfs.ext4 /dev/vdb
+  [...]
+  # mkdir /persistent01 && mount /dev/vdb /persistent01
+  # df -h /persistent01
+  Filesystem                Size      Used Available Use% Mounted on
+  /dev/vdb                  9.8G    150.5M      9.2G   2% /persistent01
+
+
 
 Detach a volume from a virtual machine
 --------------------------------------
