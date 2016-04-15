@@ -154,5 +154,7 @@ In order for a VM to reach an address on it's same subnet, proxy-arp has to be
 enabled on the tap interface. Then the host computer with the router will offer it's
 own mac address from the tap interface and then route the traffic.
 
+.. code:: bash
+
    [root@dev01-controller-03 ~]# echo 1 > /proc/sys/net/ipv4/conf/tap-dev01db02/proxy_arp
 
