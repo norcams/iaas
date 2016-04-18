@@ -150,4 +150,11 @@ On the controller host, verify that bird knows about the host route, e.g
    172.31.34.0/24     dev eth1.912 [direct1 21:38:10] * (240)
    172.31.35.0/24     dev eth1.913 [direct1 21:38:10] * (240)
 
+In order for a VM to reach an address on it's same subnet, proxy-arp has to be
+enabled on the tap interface. Then the host computer with the router will offer it's
+own mac address from the tap interface and then route the traffic.
+
+.. code:: bash
+
+   [root@dev01-controller-03 ~]# echo 1 > /proc/sys/net/ipv4/conf/tap-dev01db02/proxy_arp
 

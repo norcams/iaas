@@ -13,3 +13,4 @@ This is the internal documentation for IaaS team.
     deploy
     Two-factor-authentication
     reinstall
+    secret-repo
