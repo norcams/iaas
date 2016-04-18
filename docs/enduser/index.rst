@@ -7,6 +7,7 @@ End user guide for the UH-IaaS OpenStack cloud.
 .. toctree::
     :maxdepth: 2
 
+    pilot
     conventions
     intro
     login
