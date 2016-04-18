@@ -1,0 +1,45 @@
+======
+Uke 15
+======
+av Raymond Kristiansen, UH IaaS, 18. april 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- Møte med sikkerhetsgruppen ved USIT. Vi er klar for pilot så lenge det
+  jobbes med avsjekk av sikkerhetsdokumentet vårt fremover.
+
+- Flyttet fra FEIDE connect (ble skrudd av 15. april) til Dataporten for
+  autentisering. UiO er forsatt ikke inn på Dataporten, men vil være inne
+  i løpet av noen dager.
+
+- Sikring av `access`-noden. Python-applikasjonen for å provisjonere
+  prosjekter kjører nå i apache med mod_wsgi og med https. Denne autentisere
+  også nå mot Dataporten.
+
+
+Under arbeid
+============
+
+- Kode for å kjøre service- og public-nett til nodene over transportnett. I
+  test på *dev01*
+
+- Brukerdokumentasjon er påbegynt og forsetter frem mot piloten går på luften.
+
+- Sette opp et nytt dev-anlegg ved UiO
+
+Planlagt fremdrift
+==================
+
+- `osl` og `bgo` skal være klar for vanlige brukere ved starten av 19.april.
+
+- Annonsere at tjenstene er klar for pilot:
+
+  - Raymond og Tor vil være i Trondheim på UNINETT-konferanse 20. og 21.
+
+  - Trond skal fortelle om tjenesten på USIT sin konferanse denne uken.
+
+- Avtalt nytt møte med sikkerhetsgruppen ved USIT i begynnelsen av juni for
+  oppfølging av sikkerhetsdokumentet.
