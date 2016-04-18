@@ -51,7 +51,16 @@ instances will be terminated.
 Contact
 -------
 
-The administrators from UiB and UiO can be reached
+The administrators from UiB and UiO can be reached through the
+channels listed below.
 
-* By IRC at #uh-sky at freenode.net
-* By email to iaas-core@usit.uio.no
+Chat room
+~~~~~~~~~
+
+We have a public chat rom at https://uhps.slack.com
+
+Reporting issues
+~~~~~~~~~~~~~~~~
+
+Issues should be reported via the GitHub project norcams/iaas:
+https://github.com/norcams/iaas/issues
