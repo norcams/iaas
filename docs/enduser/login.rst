@@ -50,8 +50,22 @@ be redirected to this page:
    :align: center
    :alt: Dataporten: choose institution
 
-Select the correct educational institution, by clicking on it. You'll
-then reach this page:
+Select the correct educational institution, by clicking on it.
+
+If this is your first time using the UNINETT Dataporten service, you
+will be asked to accept the privacy policy. This step needs to be
+completed before you can continue:
+
+.. image:: images/dashboard-login-02b.png
+   :align: center
+   :alt: Dataporten: Accept privacy policy
+
+.. NOTE::
+   If you at this point get an "Internal Server Error", reload the
+   dashboard URL from `which dashboard?`_ and try again. It should
+   work the second time. This is a bug.
+
+You'll then reach this page:
 
 .. image:: images/dashboard-login-03.png
    :align: center
