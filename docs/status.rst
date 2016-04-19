@@ -1,10 +1,20 @@
+.. |date| date::
+
 ==============
 UH-IaaS Status
 ==============
 
+Last changed: |date|
+
 Make sure to read the :doc:`/enduser/index` before you start.
 
+.. IMPORTANT::
+  **Next planned maintenance window**:
 
+  10.mai (tentative): all services except compute
+
+Current service status
+======================
 
 ============== ==== ====
 Component      BGO  OSL
