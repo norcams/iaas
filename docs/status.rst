@@ -15,7 +15,7 @@ Make sure to read the :doc:`/enduser/index` before you start.
 .. IMPORTANT::
   **Next planned maintenance window**:
 
-  10.mai (tentative): all services except compute
+  May 10 (tentative): all services except compute
 
 Current service status
 ======================
