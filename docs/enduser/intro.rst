@@ -150,6 +150,12 @@ but both terms are used interchangeably.
 Glossary
 ~~~~~~~~
 
+**BGO**
+  The OpenStack infrastructure located University of Bergen (UiB).
+
+**OSL**
+  The OpenStack infrastructure located University of Oslo (UiO).
+
 **Project**
   A container used to group a set of resources such as virtual
   machines, volumes and images with the same access rights and quota.
