@@ -10,7 +10,8 @@ UH-IaaS Status
 
 Last changed: |date|
 
-Make sure to read the :doc:`/enduser/index` before you start.
+Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
+before you start.
 
 .. IMPORTANT::
   **Next planned maintenance window**:
