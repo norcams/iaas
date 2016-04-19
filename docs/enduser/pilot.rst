@@ -43,10 +43,15 @@ Uptime and SLAs
 We do not guarantee anything during the pilot phase. We will try to
 keep things up and running, but this is done on a best effort basis.
 
-Every three weeks, we will schedule a downtime window where all
-services in the cloud will be reinstalled. When this happens, all
-instances will be terminated.
+Every week we will reinstall a compute node that has been running for the last
+three weeks. When this happens, all instances running on the compute node will
+be terminated. The compute node used for new instances will always be running
+for three weeks before scheduled reinstall. We will also *try* to notify users
+running on a compute node scheduled for reinstall 24 hours before the reinstall.
 
+Every four weeks, we will schedule a downtime window where all services
+in the cloud will be unavailable. We will try to make running instances
+available in this window.
 
 Contact
 -------
