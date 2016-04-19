@@ -24,7 +24,7 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |N|  |N|
+Access         |Y|  |N|
 Dashboard      |Y|  |N|
 API            |W|  |N|
 Compute        |Y|  |N|
