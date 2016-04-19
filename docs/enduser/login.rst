@@ -7,6 +7,59 @@ Last changed: |date|
 
 .. contents::
 
+.. _Dataporten: https://www.uninett.no/en/service-platform-dataporten
+.. _UNINETT: https://www.uninett.no/en
+
+
+First time login
+----------------
+
+In order to successfully log in at the dashboard at either location,
+you first need to provision yourself as a user with an appropriate
+group and project. This is accomplished by following the steps below.
+
+First, decide where (i.e. which location) you want to provision. For
+BGO, go to
+
+  https://access.iaas.uib.no/
+
+or for OSL:
+
+  https://access.iaas.uio.no/
+
+The following window will appear:
+
+.. image:: images/access-01.png
+   :align: center
+   :alt: Access
+
+Click ``Logg inn``:
+
+.. image:: images/access-02.png
+   :align: center
+   :alt: Access
+
+Here, you need to select your login provider. You should find your
+university or college in the list. Simply select it and the following
+appears:
+
+.. image:: images/access-03.png
+   :align: center
+   :alt: Access
+
+In order to use this service, and to authenticate using `Dataporten`_,
+you need to accept that the service stores some information about
+you. Click ``Yes, I accept`` to continue.
+
+.. image:: images/access-04.png
+   :align: center
+   :alt: Access
+
+This finishes the initial login and provision procedure. In order to
+continue to the dashboard, click ``Fortsett til UH-IaaS``.
+
+
+
 Which dashboard?
 ----------------
 
@@ -29,9 +82,6 @@ identical.
 Step by step
 ------------
 
-.. _Dataporten: https://www.uninett.no/en/service-platform-dataporten
-.. _UNINETT: https://www.uninett.no/en
-
 Regardless of which of the locations' dashboard you connect to, you'll
 be presented with the following:
 
@@ -50,22 +100,8 @@ be redirected to this page:
    :align: center
    :alt: Dataporten: choose institution
 
-Select the correct educational institution, by clicking on it.
-
-If this is your first time using the UNINETT Dataporten service, you
-will be asked to accept the privacy policy. This step needs to be
-completed before you can continue:
-
-.. image:: images/dashboard-login-02b.png
-   :align: center
-   :alt: Dataporten: Accept privacy policy
-
-.. NOTE::
-   If you at this point get an "Internal Server Error", reload the
-   dashboard URL from `which dashboard?`_ and try again. It should
-   work the second time. This is a bug.
-
-You'll then reach this page:
+Select the correct educational institution, by clicking on it. You'll
+then reach this page:
 
 .. image:: images/dashboard-login-03.png
    :align: center
