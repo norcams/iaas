@@ -19,7 +19,7 @@ before you start.
   May 10 (tentative): all services except compute
 
 Current service status
-======================
+----------------------
 
 ============== ==== ====
 Component      BGO  OSL
@@ -43,3 +43,14 @@ Location BGO:
 - Dashboard: https://dashboard.iaas.uib.no
 
 - Access: https://access.iaas.uib.no
+
+Get help
+--------
+
+We have a public chat room at https://uhps.slack.com
+
+Reporting issues
+----------------
+
+Issues should be reported via the GitHub project norcams/iaas:
+https://github.com/norcams/iaas/issues
