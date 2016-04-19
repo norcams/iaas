@@ -24,7 +24,7 @@ compute-03  |O| |O| |A| R   R   |I|
 
 - R = running
 
-- green = active
+- green = active (new instances spawn here)
 
 - red = off
 
