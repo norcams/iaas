@@ -14,3 +14,4 @@ This is the internal documentation for IaaS team.
     Two-factor-authentication
     reinstall
     secret-repo
+    compute
