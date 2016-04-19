@@ -79,7 +79,3 @@ should then be redirected back to the UH-IaaS dashboard:
    :alt: Log in finished
 
 You are now logged in, and can proceed with using OpenStack.
-
-.. IMPORTANT::
-   When logging in for the first time, you need to accept that
-   Dataporten_ collects and stores some information about you.
