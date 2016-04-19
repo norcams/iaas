@@ -1,5 +1,9 @@
 .. |date| date::
 
+.. |W| image:: images/16x16_warning.png
+.. |Y| image:: images/16x16_yes.png
+.. |N| image:: images/16x16_no.png
+
 ==============
 UH-IaaS Status
 ==============
@@ -19,12 +23,12 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         ok
-Dashboard      ok
-API
-Compute        ok
-Block storage  ok
-Image          ok
+Access         |Y|  |N|
+Dashboard      |Y|  |N|
+API            |W|  |N|
+Compute        |Y|  |N|
+Block storage  |Y|  |N|
+Image          |Y|  |N|
 ============== ==== ====
 
 Location OSL:
