@@ -29,8 +29,14 @@ appropriate.
 Who can use the UH-IaaS cloud?
 ------------------------------
 
-At the time of this writing, the UH-IaaS cloud is not yet in
-production state. Only select testers can use the cloud at this stage.
+.. _Pilot - Terms of Service: pilot.html
+.. _Logging in: login.html
+
+At the time of this writing, the UH-IaaS cloud is in a pilot stage,
+i.e. not yet in production state. All users at UiB and UiO can use
+the UH-IaaS cloud as explained in `Pilot - Terms of Service`_. Before
+using the service, you must register with the authentication mechanism
+and the service itself. This is explained in detail in `Logging in`_.
 
 
 What can you do with the UH-IaaS cloud?
