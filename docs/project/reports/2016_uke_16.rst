@@ -1,0 +1,38 @@
+======
+Uke 16
+======
+av Raymond Kristiansen, UH IaaS, 22. april 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- `bgo` ble klar for pilot denne uken. Demo ble holdt både på UiO, UiB og
+  på UNINETT sin tekniske samling.
+
+- console-tilgang skal igjen være tilgjengelig for instanser via dashboard
+
+- Status-siden som kan brukes som inngangsport for nye brukere:
+  http://status.iaas.uib.no
+
+Under arbeid
+============
+
+- Sette opp et nytt dev-anlegg ved UiO
+
+Planlagt fremdrift
+==================
+
+- `osl` har for øyeblikket litt problemer med nettverk og er derfor ikke klar
+  til å brukes i pilot. Regner med at det blir fikset neste uke.
+
+- Se på mulighet for API-tilgang når brukere logger inn via Dataporten.
+
+- Finne brukere til piloten.
+
+- Brukerstøtte for dem som har tatt det piloten i bruk.
+
+- Neste uke blir jeg og Tor bort i 3 dager på IPv6-kurs, og 3. og 4. mai
+  er UiB sin årlige it-konferanse. Det kan påvirke fremdriften de to neste
+  ukene.
