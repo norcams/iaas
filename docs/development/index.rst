@@ -15,3 +15,4 @@ This is the internal documentation for IaaS team.
     reinstall
     secret-repo
     compute
+    logging
