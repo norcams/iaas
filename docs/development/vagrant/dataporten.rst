@@ -25,13 +25,15 @@ and for `master`::
 
   https://dashboard.himlar.local:5000/v3/auth/OS-FEDERATION/websso/oidc/redirect
 
-Also make sure `dashboard.himlar.local` and `access.himlar.local` is your
-vagrant hosts :file:`/etc/hosts`
+Also make sure `dashboard.himlar.local` and `access.himlar.local` are in
+:file:`/etc/hosts` on the machine you are running your browser.
 
 Then copy `Client ID` and `Client Secret` from `Oauth details` to::
 
   hieradata/secrets/nodes/vagrant-access-01.secrets.yaml
   hieradata/secrets/nodes/vagrant-master-01.secrets.yaml
+
+Reference hieradata/secrets/nodes on the other locations for exact content.
 
 To setup `master` to allow Dataporten login in `horizon` run this provision
 script once on the master as root::
