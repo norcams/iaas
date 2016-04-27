@@ -2,7 +2,10 @@
 Workshop 1 - 2016
 =================
 
-:doc:`2016_agenda_1`
+.. toctree::
+    :maxdepth: 1
+
+    2016_agenda_1
 
 **Tid og sted**: Avholdt i Oslo 15. og 16.mars.
 

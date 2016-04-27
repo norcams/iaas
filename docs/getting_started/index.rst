@@ -2,6 +2,9 @@
 Getting started
 ===============
 
-:doc:`/status`
+.. toctree::
+    :maxdepth: 1
 
-:doc:`/enduser/index`
+    /status
+    /norcams
+    /enduser/index

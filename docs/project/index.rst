@@ -20,9 +20,8 @@ project organization is named UH-sky and is coordinated by UNINETT, the
 Norwegian NREN organization.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
-    norcams
     people
     tracking
     reports/index
