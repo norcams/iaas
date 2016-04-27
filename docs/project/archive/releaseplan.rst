@@ -147,4 +147,3 @@ UH IaaS will produce weekly status reports which describes ongoing and upcoming
 work items, problem areas and milestone updates.
 
 The status reports will be published on this site and emailed internally.
-

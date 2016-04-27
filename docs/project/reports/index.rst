@@ -28,6 +28,4 @@ Archive
     :glob:
     :maxdepth: 1
 
-    2015_06_sluttrapport
-    2015_11_uhps_notat
     2015_uke_*

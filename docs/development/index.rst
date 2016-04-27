@@ -9,6 +9,7 @@ This is the internal documentation for IaaS team.
     :maxdepth: 2
 
     nodes
+    github
     vagrant/index
     deploy
     Two-factor-authentication
