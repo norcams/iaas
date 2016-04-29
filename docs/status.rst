@@ -14,9 +14,9 @@ Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
 
 .. CAUTION::
-  ETA BGO will be back online 30.april
-  
-  ETA OSL sometimes in week 18
+  ETA BGO: back online 30.april
+
+  ETA OSL: sometimes in week 18
 
 .. IMPORTANT::
   **Next planned maintenance window**:
