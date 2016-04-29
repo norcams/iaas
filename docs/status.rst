@@ -16,6 +16,8 @@ before you start.
 .. IMPORTANT::
   **Next planned maintenance window**:
 
+  ETA on BGO is 30.april
+  ETA on OSL week 18
   May 10 (tentative): all services except compute
 
 Current service status
@@ -24,12 +26,12 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |Y|  |N|
-Dashboard      |Y|  |N|
-API            |W|  |N|
-Compute        |Y|  |N|
-Block storage  |Y|  |N|
-Image          |Y|  |N|
+Access         |N|  |N|
+Dashboard      |N|  |N|
+API            |N|  |N|
+Compute        |N|  |N|
+Block storage  |N|  |N|
+Image          |N|  |N|
 ============== ==== ====
 
 Location OSL:
