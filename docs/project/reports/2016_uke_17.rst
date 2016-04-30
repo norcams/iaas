@@ -1,0 +1,36 @@
+======
+Uke 17
+======
+av Raymond Kristiansen, UH IaaS, 30. april 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- `bgo` er tilbake etter problemene som oppstod etter strømstans fredag 29.april
+
+- Begrenset aktivitet i prosjektet denne uken pga ipv6 kurs ved UiB.
+
+Under arbeid
+============
+
+- Sette opp et nytt dev-anlegg ved UiO
+
+- Eget service nett som erstatter transport nett på noder
+
+
+Planlagt fremdrift
+==================
+
+- `osl` er enda ikke klar for pilot. Vi tror vi har løsningen og vil prøve
+  den ut i uke 18.
+
+- Se på mulighet for API-tilgang når brukere logger inn via Dataporten.
+
+- Finne brukere til piloten.
+
+- Brukerstøtte for dem som har tatt det piloten i bruk.
+
+- I uke 18 er det intern samling ved IT-avd ved UiB og en helligdag.
+  Det vil derfor være litt mindre aktivitet i prosjektet kommende uke.
