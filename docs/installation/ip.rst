@@ -82,14 +82,18 @@ service addresses
 
 These addresses are used for public and internal service endpoints.
 
-========= ====== ================ ======
- type      env    IPv4             IPv6
-========= ====== ================ ======
- public    prod   As needed [1]_
- private   prod   172.19.0.0/19
- public    dev    As needed [1]_
- private   dev    172.31.16.0/20
-========= ====== ================ ======
+========= ========= ====== ================ ======
+ region    type      env    IPv4             IPv6
+========= ========= ====== ================ ======
+ bgo       private   prod   172.19.0.0/21    TBD
+ osl       private   prod   172.19.32.0/21   TBD
+ trd       private   prod   172.19.64.0/21   TBD
+ dev01     private   dev    172.31.16.0/24   TBD
+ dev02     private   dev    172.31.17.0/24   TBD
+ dev03     private   dev    172.31.18.0/24   TBD
+ all       public    dev    As needed [1]_   TBD
+ all       public    prod   As needed [1]_   TBD
+========= ========= ====== ================ ======
 
 .. [1] Pulibc IPv4 service addresses are limited and assigned as needed from
    the end of the `public`_ instance range in each env.
@@ -305,5 +309,5 @@ cloud address ip allocation
     x.x.x.240/29 - ledig
     x.x.x.248/29 - ledig
 
-All boxes, including network equipment, have a mgmt interface and an oob interface 
+All boxes, including network equipment, have a mgmt interface and an oob interface
 on two separate networks in addition to the cloud public network.
