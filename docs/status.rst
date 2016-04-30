@@ -14,7 +14,6 @@ Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
 
 .. CAUTION::
-  ETA BGO: 30.april
 
   ETA OSL: week 18
 
@@ -29,12 +28,12 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |N|  |N|
-Dashboard      |N|  |N|
-API            |N|  |N|
-Compute        |N|  |N|
-Block storage  |N|  |N|
-Image          |N|  |N|
+Access         |Y|  |N|
+Dashboard      |Y|  |N|
+API            |W|  |N|
+Compute        |Y|  |N|
+Block storage  |Y|  |N|
+Image          |Y|  |N|
 ============== ==== ====
 
 Location OSL:
