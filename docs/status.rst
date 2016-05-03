@@ -23,7 +23,7 @@ before you start.
   May 10 (tentative): all services except compute
 
 Current service status
-----------------------
+======================
 
 ============== ==== ====
 Component      BGO  OSL
@@ -48,13 +48,46 @@ Location BGO:
 
 - Access: https://access.iaas.uib.no
 
-Get help
---------
+
+Known issues
+============
+
+API access doesn't work with Dataporten authentication
+------------------------------------------------------
+
+Due to current limitations with tokenized authentication through the
+Dataporten service, API access is only possible with local users. If
+you need API access, please contact us. We will provide a local user
+account for you to use with API, which will be a member of your
+personal project. This is a temporary workaround.
+
+Some GUI components in dashboard don't work
+-------------------------------------------
+
+Some features related to networking (e.g. Floating IPs, Routers) in
+the dashboard GUI don't work. This is by design, and is related to our
+networking setup. These GUI components will be removed to avoid
+confusion.
+
+
+Changelog
+=========
+
+Important changes that affect users will be logged here.
+
+**2016-05-02**
+  Corrected an error in the OS network stack on compute nodes, which
+  prevented the OSL location from working properly. Both locations are
+  now up and running.
+
+
+Getting help
+============
 
 We have a public chat room at https://uhps.slack.com
 
 Reporting issues
-----------------
+================
 
 Issues should be reported via the GitHub project norcams/iaas:
 https://github.com/norcams/iaas/issues
