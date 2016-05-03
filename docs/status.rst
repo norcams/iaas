@@ -13,10 +13,6 @@ Last changed: |date|
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
 
-.. CAUTION::
-
-  ETA OSL: week 18
-
 .. IMPORTANT::
   **Next planned maintenance window**:
 
