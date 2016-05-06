@@ -57,19 +57,16 @@ you need API access, please contact us. We will provide a local user
 account for you to use with API, which will be a member of your
 personal project. This is a temporary workaround.
 
-Some GUI components in dashboard don't work
--------------------------------------------
-
-Some features related to networking (e.g. Floating IPs, Routers) in
-the dashboard GUI don't work. This is by design, and is related to our
-networking setup. These GUI components will be removed to avoid
-confusion.
-
 
 Changelog
 =========
 
 Important changes that affect users will be logged here.
+
+**2016-05-06**
+  Removed some networking related GUI elements in dashboard, which by
+  design doesn't work in our setup. This includes Floating IPs,
+  Networks and Routers.
 
 **2016-05-02**
   Corrected an error in the OS network stack on compute nodes, which
