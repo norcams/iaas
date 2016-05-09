@@ -23,11 +23,14 @@ hieradata
 
 Data in here is accessed and controlled by *git* at `git@git.<domain>` in `hieradata/secrets`.
 
+This repo should not be accessed outside our locations and you will need your
+SSH key to get access to the git repo (try ssh -A <user>@<loc>-login-01).
+
 For retrieval and update of data, follow this routine:
 
 .. code:: bash
 
-    git clone git@git.iaas.uio.no/hieradata/secrets
+    git clone git@git.iaas.uio.no:hieradata/secrets
     cd secrets
     ... edit ...
     git commit ...
