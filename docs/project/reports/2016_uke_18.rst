@@ -1,0 +1,30 @@
+======
+Uke 18
+======
+av Raymond Kristiansen, UH IaaS, 9. mai 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- `osl` ble klar for bruk 2.mai
+
+- Begrenset aktivitet i prosjektet denne uken pga fridager og IT-forum ved UiB
+
+Under arbeid
+============
+
+- Sette opp et nytt dev-anlegg ved UiO
+
+- Eget service nett som erstatter transport nett på noder
+
+
+Planlagt fremdrift
+==================
+
+- Møte med UNINETT om bruk av Dataporten for API-tilgang i uke 19
+
+- Finne brukere til piloten.
+
+- Brukerstøtte for dem som har tatt det piloten i bruk.
