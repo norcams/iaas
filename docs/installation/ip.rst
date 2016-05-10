@@ -137,7 +137,8 @@ Out of band management, `IPMI BMC devices`_.
  region    env     IPv4                IPv6   vlan
 ========= ======= =================== ====== ======
  bgo      prod     172.17.0.0/21       N/A
- osl      prod     129.240.224.65/27   N/A
+ osl      prod     129.240.224.65/27   N/A    old
+ osl      prod     172.17.32.0/21      N/A
  trd      prod     10.171.86.1/24      N/A    986
  vagrant  dev      172.31.8.0/24       N/A
  dev01    dev      172.31.9.0/24       N/A
