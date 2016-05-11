@@ -14,3 +14,4 @@ End user guide for the UH-IaaS OpenStack cloud.
     dashboard
     create-virtual-machine
     manage-volumes
+    api
