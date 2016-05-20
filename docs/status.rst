@@ -13,6 +13,10 @@ Last changed: |date|
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
 
+.. CAUTION::
+    Planned downtime for services 31.5 (BGO) and 1.6 (OSL). Running instances
+    should be fine.
+
 Current service status
 ======================
 
