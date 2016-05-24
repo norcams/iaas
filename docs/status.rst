@@ -56,6 +56,14 @@ you need API access, please contact us. We will provide a local user
 account for you to use with API, which will be a member of your
 personal project. This is a temporary workaround.
 
+Only personal projects
+----------------------
+
+We currently have a limitation on projects, in which only personal
+projects are supported. Work is on the way to build common projects
+functionality (using groups) into Dataporten, which will be the
+authoriative source for this type of metadata.
+
 
 Changelog
 =========
