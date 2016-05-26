@@ -70,16 +70,9 @@ Changelog
 
 Important changes that affect users will be logged here.
 
-**2016-05-06**
-  Removed some networking related GUI elements in dashboard, which by
-  design doesn't work in our setup. This includes Floating IPs,
-  Networks and Routers.
-
-**2016-05-02**
-  Corrected an error in the OS network stack on compute nodes, which
-  prevented the OSL location from working properly. Both locations are
-  now up and running.
-
+**2016-05-24**
+  Nested virtualization is now enabled on the compute hosts.
+  This should make it possible to run virtual machines inside an instance.
 
 Getting help
 ============
