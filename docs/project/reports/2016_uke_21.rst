@@ -1,0 +1,49 @@
+======
+Uke 21
+======
+av Raymond Kristiansen, UH IaaS, 30. mai 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- Lokal bruker med API-tilgang. Vi har fått ny versjon av applikasjonen som
+  oppretter prosjektene til også å opprette brukeren. For eksisterende brukere
+  kan vi opprette lokal bruker manuelt.
+
+- Vi har sendt tekst til UNINETT sin tjenestekatalog.
+
+Under arbeid
+============
+
+- Egen node for console. Nå over SSL og med SPICE (http://www.spice-space.org/)
+
+- Puppetkode for konfigurasjon av Cumulus-boksene
+
+- `dev03` ved UiO begynner å ta form
+
+
+Planlagt fremdrift
+==================
+
+- Neste planlagt vedlikehold 31.mai (`bgo`) og 1. juni (`osl`). Det blir kun
+  vanlig OS-patching denne gangen (noder + controller)
+
+- Ønsker å avholde en ny samling før sommerferien.
+
+- UNINETT (UH-sky infrastruktur) ønsker møte om fremdrift og hva de evt.
+  kan hjelpe med. Avtalt møte 2. juni med Hildegunn Vada, Jan Meijer og meg.
+
+Utfordringer
+============
+
+- Trenger flere pilot-brukere for å få tilbakemelding på hva vi må prioritere
+
+- Den originale planen om å løse prosjekt for grupper via `access` på
+  samme måte som for personlig prosjekt ser ikke ut til å fungere. Trenger
+  nok å tenke nytt på hvordan vi skal løse dette. Har ikke vært etterspurt og
+  vi vil ta det manuelt inntil vi finner en løsning her. Den opprinnelige
+  planen vi ble enig om sammen med UNINETT i des 2015 finnes her::
+
+  https://github.com/norcams/himlar-connect/blob/master/README.md
