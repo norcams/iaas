@@ -1,7 +1,42 @@
+========
 Patching
 ========
 
 This is a log of command from the manual patching done in `bgo`.
+
+deploy latest code:
+===================
+.. code-block:: bash
+  cd ansible
+  bin/bgo/deploy.sh
+
+firewall:
+=========
+
+foreman-01:
+-----------
+
+Edit :file:`/opt/himlar/hieradata/common/common.yaml` and remove these lines::
+
+  37: - '129.177.0.0/16'
+  38: - '129.240.0.0/16'
+
+dashboard-01:
+-------------
+Remove these rules for iptables::
+
+  235 public openstack-dashboard and api accept tcp from 129.240.0.0/16
+  235 public openstack-dashboard and api accept tcp from 129.177.0.0/16
+
+access-01:
+-------------
+Remove these rules for iptables::
+
+  190 dpapp-http accept tcp from 129.177.0.0/16
+  190 dpapp-http accept tcp from 129.240.0.0/16
+
+patching:
+=========
 
 login-01:
 ---------
@@ -86,3 +121,15 @@ master-01
 .. code-block:: bash
 
   init 6
+
+
+firewall:
+=========
+
+foreman-01:
+-----------
+
+Remove changes from :file:`/opt/himlar/hieradata/common/common.yaml`::
+
+  cd /opt/himlar
+  git checkout -f
