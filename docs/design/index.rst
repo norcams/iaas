@@ -8,3 +8,4 @@ High-level documents describing the IaaS platform design
     :maxdepth: 2
 
     hardware
+    nodes
