@@ -49,3 +49,11 @@ To update /opt/himlar/hieradata/secrets:
 
     cd /opt/himlar
     provision/puppetsecrets.sh
+
+With ansible
+============
+
+To use `ansible <ansible/index.html>`_ to deployment::
+
+  cd <ansible-repo>
+  bin/<loc>/deploy.sh

@@ -4,44 +4,49 @@ Patching
 
 This is a log of command from the manual patching done in `bgo`.
 
-deploy latest code:
-===================
+deploy latest code
+==================
 .. code-block:: bash
-  cd ansible
+
+  cd <ansible-repo>
   bin/bgo/deploy.sh
 
-firewall:
-=========
+firewall on
+===========
 
-foreman-01:
------------
+foreman-01
+----------
 
 Edit :file:`/opt/himlar/hieradata/common/common.yaml` and remove these lines::
 
   37: - '129.177.0.0/16'
   38: - '129.240.0.0/16'
 
-dashboard-01:
--------------
+dashboard-01
+------------
+
 Remove these rules for iptables::
 
   235 public openstack-dashboard and api accept tcp from 129.240.0.0/16
   235 public openstack-dashboard and api accept tcp from 129.177.0.0/16
 
-access-01:
--------------
+access-01
+---------
+
 Remove these rules for iptables::
 
   190 dpapp-http accept tcp from 129.177.0.0/16
   190 dpapp-http accept tcp from 129.240.0.0/16
 
-patching:
-=========
+patching
+========
 
-login-01:
----------
+login-01
+--------
+
 .. code-block:: bash
 
+  cd <ansible-repo>
   sudo ansible-playbook --become -e "hosts=bgo-nodes" lib/yumupdate.yaml
 
 Unable to run this on bgo-controller and bgo-foreman-01 has failures.
@@ -61,7 +66,7 @@ controller-01
   virsh list # should show all three running
 
 cephmon-01
--------------
+----------
 .. code-block:: bash
 
   service ceph start
@@ -123,8 +128,8 @@ master-01
   init 6
 
 
-firewall:
-=========
+firewall off
+============
 
 foreman-01:
 -----------

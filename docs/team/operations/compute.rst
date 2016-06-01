@@ -1,5 +1,4 @@
 .. |A| image:: /images/16x16_yes.png
-.. |R| running
 .. |O| image:: /images/16x16_no.png
 .. |I| image:: /images/16x16_warning.png
 
@@ -12,7 +11,7 @@ tries to explain the status of each node for a six week period:
 
 
 =========== === === === === === ===
-Node        16  17  18  19  20  21
+Node        22  23  24  25  26  27
 =========== === === === === === ===
 compute-01  |A| R   R   |I| R   R
 
@@ -29,3 +28,19 @@ compute-03  |O| |O| |A| R   R   |I|
 - red = off
 
 - yellow = reinstall, then active
+
+Ansible script
+==============
+
+To reinstall a compute host with `ansible <ansible/index.html>`_ run::
+
+  cd <ansible-repo>
+  bin/rebuild_compute.sh <HOST> --force
+
+Make sure puppet is run at least once after the host is reinstalled.
+
+Switch active compute host
+==========================
+
+After the new host is reinstalled set it to enable with Openstack cli or horizon.
+Set the last weeks compute host to disable.

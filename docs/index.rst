@@ -14,6 +14,7 @@ This is our `current documentation`_.
     development/index
     security/index
     howtos/index
+    team/index
     project/index
 
 .. _current documentation: https://iaas.readthedocs.org/
