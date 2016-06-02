@@ -14,8 +14,8 @@ Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
 
 .. CAUTION::
-    Planned downtime for services 31.5 (BGO) and 1.6 (OSL). Running instances
-    should be fine.
+    BGO will be down between 18.00 on 03.06 to 13:00 on 04.06. More information:
+    http://meldinger.uib.no/itdrift.php?id=53975
 
 Current service status
 ======================
