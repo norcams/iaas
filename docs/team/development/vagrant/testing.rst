@@ -10,7 +10,7 @@ Last changed: |date|
 Connecting to Horizon
 =====================
 
-.. _Setting up the Vagrant environment: http://iaas.readthedocs.org/en/latest/development/vagrant/libvirt.html#setting-up-the-vagrant-environment
+.. _Setting up the Vagrant environment: http://iaas.readthedocs.io/en/latest/team/development/vagrant/libvirt.html#setting-up-the-vagrant-environment
 
 Horizon is the web GUI component in OpenStack. If you've followed the
 `Setting up the Vagrant environment`_ guide earlier, you should now be
