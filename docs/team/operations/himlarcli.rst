@@ -12,9 +12,15 @@ Location
 
 Himlar CLI can be found under :file:`/opt/himlarcli` on `login`, `master` and
 `dashboard` nodes. Config file is distributed with puppet under
-:file:`/etc/himlarcli/config.ini`. There is an `ansible <ansible/index.html>`_
-playbook and script under :file:`bin/<loc>/himlarcli.sh` to update to
-latest version.
+:file:`/etc/himlarcli/config.ini`.
+
+Deploy
+------
+There is an `ansible <ansible/index.html>`_ playbook and script to update to
+latest version on all::
+
+  cd <ansible-repo>
+  bin/<loc>/himlarcli.sh
 
 Running
 =======
