@@ -26,6 +26,8 @@ Running
 =======
 
 All python script should have help text when passing `-h` argument to a script.
+Since we log everything we should run this all scripts as `root`. Logs are
+found under :file:`logs/`.
 
 Login
 -----
