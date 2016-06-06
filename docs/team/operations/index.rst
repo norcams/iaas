@@ -11,3 +11,4 @@ Operations
     logging
     ansible/index
     patching
+    himlarcli
