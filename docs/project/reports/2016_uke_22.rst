@@ -1,0 +1,46 @@
+======
+Uke 22
+======
+av Raymond Kristiansen, UH IaaS, 06. mai 2016
+
+.. contents:: :depth: 2
+
+Fullført
+========
+
+- UNINETT får tilgang til pilot. Etter møte med UNINETT forrige uke ble
+  vi enig om at de også får tilgang til å teste i piloten.
+
+- Full stop på `bgo` i helgen pga av bytte av UPS. Alle instanser som kjørte
+  fredag ble startet igjen lørdag formiddag sammen med alle tjenstene.
+
+Under arbeid
+============
+
+- Egen node for console. Nå over SSL og med SPICE (http://www.spice-space.org/)
+
+- Puppetkode for konfigurasjon av Cumulus-boksene
+
+- `dev03` ved UiO begynner å ta form
+
+- Test av redundans på nettverk
+
+Planlagt fremdrift
+==================
+
+- Jeg tar nå ferie og er tilbake 14. juni.
+
+- Ønsker å avholde en ny samling før sommerferien.
+
+Utfordringer
+============
+
+- Trenger flere pilot-brukere for å få tilbakemelding på hva vi må prioritere
+
+- Den originale planen om å løse prosjekt for grupper via `access` på
+  samme måte som for personlig prosjekt ser ikke ut til å fungere. Trenger
+  nok å tenke nytt på hvordan vi skal løse dette. Har ikke vært etterspurt og
+  vi vil ta det manuelt inntil vi finner en løsning her. Den opprinnelige
+  planen vi ble enig om sammen med UNINETT i des 2015 finnes her::
+
+  https://github.com/norcams/himlar-connect/blob/master/README.md
