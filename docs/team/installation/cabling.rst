@@ -15,8 +15,8 @@ Connection sheet
 A `LibreOffice spreadsheet`_ documents all the connections between the hosts and
 devices. It is also available in `HTML format`_.
 
-.. _LibreOffice spreadsheet: ../_static/cabling.ods
-.. _HTML format: ../_static/cabling.htm
+.. _LibreOffice spreadsheet: ../../files/cabling.ods
+.. _HTML format: ../../files/cabling.htm
 
 Conceptual overview
 -------------------
