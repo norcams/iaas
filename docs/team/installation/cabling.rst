@@ -14,11 +14,12 @@ Connection sheet
 
 A `LibreOffice spreadsheet`_ documents all the connections between the hosts and
 devices. It is also available in `HTML format`_. For the location SAFE theres is a
-different cabling scheme available `here`_.
+different cabling scheme available `here`_ (`in HTML`_).
 
 .. _LibreOffice spreadsheet: ../../_static/cabling.ods
 .. _HTML format: ../../_static/cabling.htm
 .. _here: ../../_static/safe-cabling.ods
+.. _in HTML: ../../_static/safe-cabling.html
 
 Conceptual overview
 -------------------
