@@ -60,6 +60,14 @@ projects are supported. Work is on the way to build common projects
 functionality (using groups) into Dataporten, which will be the
 authoriative source for this type of metadata.
 
+Console non-functional
+----------------------
+
+There is no console functionality at the moment. We are in the process of
+switching to secure connections using the SPICE protocol, until we have this
+properly running there will not be any console connections through the
+dashboard.
+
 
 Changelog
 =========
