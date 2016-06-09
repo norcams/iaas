@@ -14,6 +14,11 @@ Last changed: |date|
 First time login
 ----------------
 
+.. NOTE::
+   This step is only needed if you've never logged in before. For
+   the normal login procedure, skip this step and go directly to
+   `Subsequent logins`_.
+
 In order to successfully log in at the dashboard at either location,
 you first need to provision yourself as a user with an appropriate
 group and project. This is accomplished by following the steps below.
@@ -60,8 +65,8 @@ continue to the dashboard, click ``Fortsett til UH-IaaS``.
 
 
 
-Which dashboard?
-----------------
+Subsequent logins
+-----------------
 
 Currently the UH-IaaS is deployed in two locations, UiB and UiO. To
 log in to the UiB dashboard, point your browser to:
@@ -77,10 +82,6 @@ wish to use. If you're a UiO user, you may want to use the
 infrastructure at UiO. Similarly, as a UiB user, you'll probably want
 to use the UiB version. Currently, the two implementations are
 identical.
-
-
-Step by step
-------------
 
 Regardless of which of the locations' dashboard you connect to, you'll
 be presented with the following:
