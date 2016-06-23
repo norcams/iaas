@@ -27,3 +27,4 @@ Norwegian NREN organization.
     reports/index
     meetings/index
     archive/index
+    plans/production
