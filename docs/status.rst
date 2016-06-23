@@ -60,13 +60,13 @@ projects are supported. Work is on the way to build common projects
 functionality (using groups) into Dataporten, which will be the
 authoriative source for this type of metadata.
 
-Console non-functional
-----------------------
+Console limitation
+------------------
 
-There is no console functionality at the moment. We are in the process of
-switching to secure connections using the SPICE protocol, until we have this
-properly running there will not be any console connections through the
-dashboard.
+Console is now operational for all *new* instances (already existing with
+non-functional console will not get any). There is for now a limitation which
+requires the environment (e.x. X) to run in one of the EN locales to get
+a correct key mapping (whatever the locale active inside the instance)!
 
 
 Changelog
