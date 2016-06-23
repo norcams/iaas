@@ -43,14 +43,14 @@ Location BGO:
 Known issues
 ============
 
-API access doesn't work with Dataporten authentication
-------------------------------------------------------
+API access
+----------
 
-Due to current limitations with tokenized authentication through the
-Dataporten service, API access is only possible with local users. If
-you need API access, please contact us. We will provide a local user
-account for you to use with API, which will be a member of your
-personal project. This is a temporary workaround.
+All new users will get a pass phrase to use with API when they provision
+a personal project (see :doc:`enduser/login`). Existing users
+please contact us. We will provide a pass phrase for you to use with the API.
+
+See :doc:`enduser/api` for more information about use of API.
 
 Only personal projects
 ----------------------
@@ -68,15 +68,6 @@ non-functional console will not get any). There is for now a limitation which
 requires the environment (e.x. X) to run in one of the EN locales to get
 a correct key mapping (whatever the locale active inside the instance)!
 
-
-Changelog
-=========
-
-Important changes that affect users will be logged here.
-
-**2016-05-24**
-  Nested virtualization is now enabled on the compute hosts.
-  This should make it possible to run virtual machines inside an instance.
 
 Getting help
 ============

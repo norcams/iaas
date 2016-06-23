@@ -7,9 +7,9 @@ Last changed: |date|
 
 .. contents::
 
-API access to our IaaS will be limited in the first phase of the pilot.
-Access will be given only on request since authentication with Dataporten
-do not support API access at the moment. We are working to fix this.
+You will get a password when you do the initial first login
+(see :doc:`login`). Please make sure you write this down for later
+user. If you where an early adopter or forgot your password please contact us.
 
 OpenStack cli
 -------------
