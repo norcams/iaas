@@ -119,6 +119,7 @@ Interactive ssh access, os level maintenance services
  vagrant  dev      172.31.0.0/24       TBD
  dev01    dev      172.31.1.0/24       TBD
  dev02    dev      172.31.2.0/24       TBD    1078
+ local1   dev      172.31.200.0/24     TBD    10
 ========= ======= =================== ====== ======
 
 oob network
@@ -201,6 +202,7 @@ IP networks in use
  dev01     dev     transport2   172.31.35.1/24    TBD           65535
  dev02     dev     transport1   172.31.36.0/24    TBD    1074   65534
  dev02     dev     transport2   172.31.37.0/24    TBD    1074   65534
+ local1    dev     transport    172.31.100.0/24   TBD    100    -
 ========= ======= ============ ================= ====== ====== ========
 
 As specified above, each region-specific transport network block is again split
