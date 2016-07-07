@@ -16,6 +16,10 @@ Prerequisites
 - all commands run as the admin user (`root`)
   (log in using normal login procedure: `iaas` user from login node, then *sudo*)
 
+.. IMPORTANT::
+  When doing a complete reinstall make sure :file:`peerdns: 'no'`
+  is in the network configuration for the nodes controller-01 and admin-01.
+
 Procedure
 ---------
 
@@ -26,7 +30,7 @@ Procedure
    the ones missing, for instance: **firewall-cmd --add-service dhcp**
 
 #. On the login node: **/usr/local/sbin/bootstrap-<loc>-controller-01.sh**
-   
+
    .. NOTE::
       The error message "curl: (33) HTTP server doesn't seem to support byte
       ranges. Cannot resume." is harmless when the script has been previously
@@ -76,6 +80,8 @@ Procedure
 #. Log on to the new ``foreman`` system from the login node, optionally check
    the install log: */root/install.post.log*
 
+#. run **bash /root/puppet_bootstrap.sh**
+
 #. run **HIMLAR_CERTNAME=<certname> /opt/himlar/provision/puppetrun.sh**
 
    This command can be run several times.
@@ -113,4 +119,3 @@ this libvirt resource.
 
 #. Select the new resource in the GUI and then the `Virtual machines` tab;
    the Foreman node should now be automatically registered here.
-

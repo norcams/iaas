@@ -6,6 +6,7 @@ Operations
     :glob:
     :maxdepth: 2
 
+    himlar-bootstrap
     deploy
     compute
     logging
