@@ -7,3 +7,4 @@ Development
     :maxdepth: 2
 
     vagrant/index
+    ip
