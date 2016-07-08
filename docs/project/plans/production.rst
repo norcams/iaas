@@ -27,10 +27,21 @@ Dette er en liste over ønsket funksjonalitet når vi går i produksjon:
 
 - tilgang til oppdaterte image for et utvalg av linux distroer
 
-Lansering
-=========
+Leveranser
+==========
 
-Målet er å være produksjonsklar 1.nov og lansere 14. november 2016
+Intern leveranseplan:
+
+======== ===================================================
+ Frist    Leveranse
+======== ===================================================
+ 1.sept   Oppgradere til mitaka
+ 26.sept  Felles keystone og full reinstall av bgo og osl
+ 01.nov   Produksjonsklar bgo og osl
+ 14.nov   Lansering
+======== ===================================================
+
+Det endelige målet er å være produksjonsklar 1.nov og lansere 14. november 2016
 
 
 Ressurser
@@ -46,9 +57,24 @@ Hardware
 
 Hardware ved lansering per lokasjon:
 
-- compute: X NOK
+Compute
+~~~~~~~
 
-- storage: X NOK
+Trenger å doble antall compute noder ved lansering.
+
+**3 ekstra maskiner:** 3 x 125K = 375K
+
+Storage
+~~~~~~~
+
+Dersom vi ønsker å tilby sentral lagring av OS-disk trenger vi 5 nye maskiner.
+
+**Alt 1:** 5 x SSD maskiner 500K = 2500K
+
+**Alt 2:** 5 x NL SAS 120K = ca 600K
+
+
+Alle priser er budsjettpriser fra Dell.
 
 Usikkerhet
 ==========
@@ -69,5 +95,5 @@ Ressurser
 ----------
 
 - 2 årsverk i 6 mnd
-- storage: X NOK per lokasjon
-- api server: X NOK per lokasjon
+- storage: 600K NOK per lokasjon
+- api server: 125K NOK per lokasjon
