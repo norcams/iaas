@@ -39,6 +39,7 @@ Intern leveranseplan:
  26.sept  Felles keystone og full reinstall av bgo og osl
  01.nov   Produksjonsklar bgo og osl
  14.nov   Lansering
+ 1.7.17   Utvidet funksjonalitet
 ======== ===================================================
 
 Det endelige målet er å være produksjonsklar 1.nov og lansere 14. november 2016
