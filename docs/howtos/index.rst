@@ -18,4 +18,3 @@ project.
     routed-vm-interface
     idrac-provision
     idrac-vnc
-    foreman-bootstrap

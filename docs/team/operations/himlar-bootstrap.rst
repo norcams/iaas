@@ -1,5 +1,5 @@
-How to boostrap a Foreman-instance
-==================================
+How to boostrap Himlar
+======================
 
 This document describes the procedure to initialize a new environment from a
 single login node. The systems to be used are all physically installed
