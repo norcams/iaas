@@ -107,6 +107,7 @@ Interactive ssh access, os level maintenance services
  env    IPv4 prefix
 ====== ===============
  prod   172.16.0.0/16
+ test   172.18.0.0/16
  dev    172.31.0.0/21
 ====== ===============
 
@@ -116,6 +117,8 @@ Interactive ssh access, os level maintenance services
  bgo      prod     172.16.0.0/21       TBD
  osl      prod     172.16.32.0/21      TBD
  trd      prod     10.171.91.0/24      TBD    1077
+ test01   test     172.28.0.0/24       TBD
+ test02   test     172.28.32.0/24      TBD
  vagrant  dev      172.31.0.0/24       TBD
  dev01    dev      172.31.1.0/24       TBD
  dev02    dev      172.31.2.0/24       TBD    1078
@@ -141,6 +144,7 @@ Out of band management, `IPMI BMC devices`_.
  osl      prod     129.240.224.65/27   N/A    old
  osl      prod     172.17.32.0/21      N/A
  trd      prod     10.171.86.1/24      N/A    986
+ test01   test     uses uib oob        N/A
  vagrant  dev      172.31.8.0/24       N/A
  dev01    dev      172.31.9.0/24       N/A
  dev02    dev      172.31.10.0/24      N/A    1079
@@ -159,10 +163,12 @@ Network prefixes
  env       IPv4 prefix
 ========= ================
  `prod`_   172.18.0.0/16
+ `test`_   172.30.0.0/16
  `dev`_    172.31.32.0/20
 ========= ================
 
 .. _prod: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&mask=16&division=29.723d9c40
+.. _test: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.30.0.0&mask=16&division=29.723d9c40
 .. _dev: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.31.32.0&mask=20&division=29.723d9c40
 
 Prefix reservations per link type and location
@@ -196,6 +202,7 @@ IP networks in use
  osl       prod    link1        172.18.228.0/30   TBD           65502
  trd       prod    transport1   172.18.64.0/21    TBD    100    65503
  trd       prod    transport2   172.18.72.0/21    TBD    200    65503
+ test01    test    trp          172.30.0.0/24     TBD      
  vagrant   dev     transport1   172.31.32.0/24    TBD           65500
  vagrant   dev     transport2   172.31.33.0/24    TBD           65500
  dev01     dev     transport1   172.31.34.0/24    TBD           65535
