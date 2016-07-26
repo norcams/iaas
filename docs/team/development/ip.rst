@@ -49,6 +49,9 @@ image-03       eth1  trans x.x.x.38
 db-01          eth1  trans x.x.x.41
 db-02          eth1  trans x.x.x.42
 db-03          eth1  trans x.x.x.43
+volume-01      eth1  trans x.x.x.46
+volume-02      eth1  trans x.x.x.47
+volume-03      eth1  trans x.x.x.48
 dashboard-01   eth1  trans x.x.x.51
 dashboard-02   eth1  trans x.x.x.52
 dashboard-03   eth1  trans x.x.x.53
