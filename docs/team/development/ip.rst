@@ -43,6 +43,9 @@ master-01      eth1  trans x.x.x.20
 mq-01          eth1  trans x.x.x.31
 mq-02          eth1  trans x.x.x.32
 mq-03          eth1  trans x.x.x.33
+image-01       eth1  trans x.x.x.36
+image-02       eth1  trans x.x.x.37
+image-03       eth1  trans x.x.x.38
 db-01          eth1  trans x.x.x.41
 db-02          eth1  trans x.x.x.42
 db-03          eth1  trans x.x.x.43
