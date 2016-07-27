@@ -120,10 +120,12 @@ Interactive ssh access, os level maintenance services
  test01   test     172.28.0.0/24       TBD
  test02   test     172.28.32.0/24      TBD
  vagrant  dev      172.31.0.0/24       TBD
- dev01    dev      172.31.1.0/24       TBD
+ dev01*   dev      172.31.1.0/24       TBD
  dev02    dev      172.31.2.0/24       TBD    1078
- local1   dev      172.31.200.0/24     TBD    10
+ local1   dev      172.31.4.0/24     TBD    10
 ========= ======= =================== ====== ======
+
+*= replaced by test01
 
 oob network
 ^^^^^^^^^^^
@@ -145,10 +147,11 @@ Out of band management, `IPMI BMC devices`_.
  osl      prod     172.17.32.0/21      N/A
  trd      prod     10.171.86.1/24      N/A    986
  test01   test     uses uib oob        N/A
- vagrant  dev      172.31.8.0/24       N/A
- dev01    dev      172.31.9.0/24       N/A
+ dev01*   dev      172.31.9.0/24       N/A
  dev02    dev      172.31.10.0/24      N/A    1079
 ========= ======= =================== ====== ======
+
+*= replaced by test01
 
 .. _IPMI BMC devices: https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface#Baseboard_management_controller
 
@@ -164,12 +167,12 @@ Network prefixes
 ========= ================
  `prod`_   172.18.0.0/16
  `test`_   172.30.0.0/16
- `dev`_    172.31.32.0/20
+ `dev`_    172.31.16.0/20
 ========= ================
 
 .. _prod: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.18.0.0&mask=16&division=29.723d9c40
 .. _test: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.30.0.0&mask=16&division=29.723d9c40
-.. _dev: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.31.32.0&mask=20&division=29.723d9c40
+.. _dev: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.31.16.0&mask=20&division=29.723d9c40
 
 Prefix reservations per link type and location
 
@@ -202,14 +205,13 @@ IP networks in use
  osl       prod    link1        172.18.228.0/30   TBD           65502
  trd       prod    transport1   172.18.64.0/21    TBD    100    65503
  trd       prod    transport2   172.18.72.0/21    TBD    200    65503
- test01    test    trp          172.30.0.0/24     TBD      
- vagrant   dev     transport1   172.31.32.0/24    TBD           65500
- vagrant   dev     transport2   172.31.33.0/24    TBD           65500
+ test01    test    trp          172.30.0.0/24     TBD
+ vagrant   dev     transport1   172.31.16.0/24    TBD           65500
  dev01     dev     transport1   172.31.34.0/24    TBD           65535
  dev01     dev     transport2   172.31.35.1/24    TBD           65535
  dev02     dev     transport1   172.31.36.0/24    TBD    1074   65534
  dev02     dev     transport2   172.31.37.0/24    TBD    1074   65534
- local1    dev     transport    172.31.100.0/24   TBD    100    -
+ local1    dev     transport    172.31.32.0/24   TBD    100    -
 ========= ======= ============ ================= ====== ====== ========
 
 As specified above, each region-specific transport network block is again split
