@@ -1,0 +1,60 @@
+======
+Uke 30
+======
+av Raymond Kristiansen, UH IaaS, 1. aug 2016
+
+.. contents:: :depth: 2
+
+Dette er en samlerapport for alt som har skjedd i sommer og planen videre.
+
+Fullført
+========
+
+- Utvilingssite i Bergen (`dev01`) har gjennoppstått som `test01` og er satt
+  opp med nytt nettverksoppsett.
+- Meldingskøen er skilt ut på egen node og driftes nå uavhengig av de andre
+  openstack-tjenestene.
+- Nye noder for image, volume og nova relaterte tjenster er skilt ut på egne
+  noder
+
+Under arbeid
+============
+
+- Vi jobber forsatt med en testsite i Oslo. `test01` vil forhåpentligvis være
+  klar om ikke lenge.
+
+- Det jobbes med å få på plass en tjeneste for DNS for instanser
+
+
+Planlagt fremdrift
+==================
+
+- Det er skrevet et eget dokument om leveransen og hva som skal til for å gå
+  :doc:`../plans/production`
+
+- Vi kommer til å gjennomføre nettverksomleggingen vi ble enig om på
+  :doc:`../meetings/2016_workshop_2` i uke 31 (bgo) og uke 32 (osl)
+
+- Søknad til UNINETT. Trond har fått redaktøransvaret for denne. Vi må ha klart
+  et utkast senest mandag 15.august som kan sendes til UNINETT. Siste frist
+  for endelig versjon er rundt 1.september.
+
+- Vi trenger også minst en felles samling i høst.
+
+- Det er også ønskelig at alle i prosjekt deltar på Openstack Summit i
+  Barcelona: https://www.openstack.org/summit/barcelona-2016
+
+Utfordringer
+============
+
+- I :doc:`../plans/production` har jeg skrevet at vi trenger 4 personer frem
+  til nyttår for å komme i produksjon. Vi er nå prosjektleder (100% delt),
+  UiB (1 person 100%) og UiO (1 person 60% og en person 40%).
+
+Oppdatert status
+================
+
+Arbeidet frem til leveranse 14. november vil vi oppdatere fortløpende
+på Trello: https://trello.com/b/loLFWWtV/iaas-release-plan
+
+Kun større oppgaver, utfordringer og avvik vil bli oppdatert her.
