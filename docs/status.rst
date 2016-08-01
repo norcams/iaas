@@ -13,7 +13,7 @@ Last changed: |date|
  .. CAUTION::
     **3.aug BGO:** Scheduled downtime of all services.
 
-    **11.aug OSL:** Scheduled downtime of all services.
+    **10.aug OSL:** Scheduled downtime of all services.
 
 
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
