@@ -10,6 +10,12 @@ UH-IaaS Status
 
 Last changed: |date|
 
+ .. CAUTION::
+    **3.aug BGO:** Scheduled downtime of all services.
+
+    **11.aug OSL:** Scheduled downtime of all services.
+
+
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
 
@@ -21,7 +27,7 @@ Component      BGO  OSL
 ============== ==== ====
 Access         |Y|  |Y|
 Dashboard      |Y|  |Y|
-API            |W|  |W|
+API            |Y|  |Y|
 Compute        |Y|  |Y|
 Block storage  |Y|  |Y|
 Image          |Y|  |Y|
