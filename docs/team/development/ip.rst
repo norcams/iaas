@@ -64,6 +64,9 @@ console-03     eth1  trans x.x.x.63
 network-01     eth1  trans x.x.x.66
 network-02     eth1  trans x.x.x.67
 network-03     eth1  trans x.x.x.68
+identity-01    eth1  trans x.x.x.81
+identity-02    eth1  trans x.x.x.82
+identity-03    eth1  trans x.x.x.83
 cephmon-01     eth1  trans x.x.x.91
 cephmon-02     eth1  trans x.x.x.92
 cephmon-03     eth1  trans x.x.x.93
