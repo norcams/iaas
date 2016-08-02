@@ -69,10 +69,9 @@ authoriative source for this type of metadata.
 Console limitation
 ------------------
 
-Console is now operational for all *new* instances (already existing with
-non-functional console will not get any). There is for now a limitation which
-requires the environment (e.x. X) to run in one of the EN locales to get
-a correct key mapping (whatever the locale active inside the instance)!
+There is a limitation which requires the environment (e.x. X) to run
+in one of the EN locales to get a correct key mapping (whatever the
+locale active inside the instance)!
 
 
 Getting help
