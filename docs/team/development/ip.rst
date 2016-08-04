@@ -64,6 +64,9 @@ console-03     eth1  trans x.x.x.63
 network-01     eth1  trans x.x.x.66
 network-02     eth1  trans x.x.x.67
 network-03     eth1  trans x.x.x.68
+novactrl-01    eth1  trans x.x.x.71
+novactrl-02    eth1  trans x.x.x.72
+novactrl-03    eth1  trans x.x.x.73
 identity-01    eth1  trans x.x.x.81
 identity-02    eth1  trans x.x.x.82
 identity-03    eth1  trans x.x.x.83
