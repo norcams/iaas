@@ -11,7 +11,6 @@ UH-IaaS Status
 Last changed: |date|
 
  .. CAUTION::
-    **3.aug BGO:** Scheduled downtime of all services.
 
     **10.aug OSL:** Scheduled downtime of all services.
 
