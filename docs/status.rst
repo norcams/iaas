@@ -12,7 +12,7 @@ Last changed: |date|
 
  .. CAUTION::
 
-    **10.aug OSL:** Scheduled downtime of all services.
+    **11.aug OSL:** Scheduled downtime of all services between 13:00 and 15:00
 
 
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
