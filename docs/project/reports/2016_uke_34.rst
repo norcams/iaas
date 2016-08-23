@@ -1,0 +1,61 @@
+======
+Uke 34
+======
+av Raymond Kristiansen, UH IaaS, 23. aug 2016
+
+.. contents:: :depth: 2
+
+
+Fullført
+========
+
+- Netverksomlegging ble utført i uke 31 og 32 som planlagt både i `bgo` og `osl`.
+  Endel mindre problemer ble løst der og da, noen av disse midlertidig.
+
+- Puppetkode for å splitte ut alle Openstack tjenester på egne noder er klar.
+  Dette er en forutsetning for å kunne oppgradere uten store avbrudd i tjenestene.
+
+- Søknaden om midler er sendt til UNINETT for høring.
+
+Under arbeid
+============
+
+- Vi jobber forsatt med en testsite i Oslo. Det har tatt veldig lang tid og jeg
+  er usikker på når den vil være operativ.
+
+- Det jobbes med å få på plass en tjeneste for DNS for instanser.
+
+
+Planlagt fremdrift
+==================
+
+- 23. og 24. august vil vi sette i drift nye noder i for Openstack tjenester i
+  `bgo` og `osl`
+
+- Vi vil starte jobben med oppgradering til mitaka så raskt vi har skilt ut
+  alle tjenestene på egne noder.
+
+- Felles samling i Oslo, 7. og 8. september. Det er tenkt både en workshop
+  og planlegging av leveransen i november.
+
+- Søknad til UNINETT. Jeg skal ha et møte med UNINETT denne uken.
+
+- Det er også ønskelig at alle i prosjekt deltar på Openstack Summit i
+  Barcelona: https://www.openstack.org/summit/barcelona-2016
+
+Utfordringer
+============
+
+- I :doc:`../plans/production` har jeg skrevet at vi trenger 4 personer frem
+  til nyttår for å komme i produksjon. Vi er nå prosjektleder (100% delt),
+  UiB (1 person 100%) og UiO (1 person 60% og en person 40%). Det ser ikke ut
+  til å berøre datoene i leveransen, men vil kunne påvirke innholdet dersom vi
+  støter på større utfordringer.
+
+Oppdatert status
+================
+
+Arbeidet frem til leveranse 14. november vil vi oppdatere fortløpende
+på Trello: https://trello.com/b/loLFWWtV/iaas-release-plan
+
+Kun større oppgaver, utfordringer og avvik vil bli oppdatert her.
