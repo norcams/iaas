@@ -17,15 +17,19 @@ before you start.
 Current service status
 ======================
 
+.. WARNING::
+   **OSL will be undergoing maintanance today. Some services will be
+   temporarily down or unstable.**
+
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |Y|  |Y|
-Dashboard      |Y|  |Y|
-API            |Y|  |Y|
-Compute        |Y|  |Y|
-Block storage  |Y|  |Y|
-Image          |Y|  |Y|
+Access         |Y|  |W|
+Dashboard      |Y|  |W|
+API            |Y|  |W|
+Compute        |Y|  |W|
+Block storage  |Y|  |W|
+Image          |Y|  |W|
 ============== ==== ====
 
 Location OSL:
