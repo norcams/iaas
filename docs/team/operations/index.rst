@@ -13,3 +13,4 @@ Operations
     ansible/index
     patching
     himlarcli
+    local-repo
