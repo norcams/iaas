@@ -1,6 +1,6 @@
-=====================================================
-External (but locally administered) repository server
-=====================================================
+=================
+Repository server
+=================
 
 For locally created packages and to ensure integrity and version control of
 externally hosted essential code a local repository server is set up outside of
