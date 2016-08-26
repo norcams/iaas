@@ -149,6 +149,7 @@ Out of band management, `IPMI BMC devices`_.
  osl      prod     172.17.32.0/21      N/A
  trd      prod     10.171.86.1/24      N/A    986
  test01   test     uses uib oob        N/A
+ test02   test     172.28.160.0/24     N/A
  ---      ---      --- old ---
  dev01    dev      172.31.9.0/24       N/A
  dev02    dev      172.31.10.0/24      N/A    1079
