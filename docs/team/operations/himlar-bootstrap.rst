@@ -29,13 +29,15 @@ Procedure
    If *tftp* and *dhcp* is not amongst the permitted services on that list, add
    the ones missing, for instance: **firewall-cmd --add-service dhcp**
 
+#. Enable NAT of relevant mgmt interface on the login node out through the public facing interface
+
 #. On the login node: **/usr/local/sbin/bootstrap-<loc>-controller-01.sh**
 
    .. NOTE::
       The error message "curl: (33) HTTP server doesn't seem to support byte
       ranges. Cannot resume." is harmless when the script has been previously
       run. If so this is just an indication that the files to be fetched are
-      already in place.
+      already in place. But please make sure the files nevertheless are recent!
 
 #. Boot the relevant physical node
    For instance by using the web GUI on the `iDrac` or with this command on the
@@ -44,7 +46,8 @@ Procedure
         **idracadm -r <idrac-IP for <loc>-controller-01 to be installed> -u gaussian -p <idrac-pw> serveraction powercycle**
 
    .. NOTE::
-      Make sure the system is configured to PXE boot on first attempt!
+      Make sure the system is configured to PXE boot on the relevant (mgmt)
+      interface on first attempt! Might require BIOS setup.
 
    .. IMPORTANT::
       When the new controller is fully installed, the script started in 1) must be
