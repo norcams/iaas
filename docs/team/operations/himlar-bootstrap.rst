@@ -11,14 +11,24 @@ Prerequisites
 
 - a functioning login node (with an up-to-date */opt/[himlar|repo]* hiearchy)
 - the system is configured by `Puppet`
-- no management-node are installed (`controller`)
-- *hieradata/<loc>/common.yaml*  is populated with relevant network data
+- no management-node is installed (`controller`)
+- *hieradata/<loc>/common.yaml*, *hieradata/common/common.yaml*, *hieradata/nodes/<loc>/...*
+  etc. are populated with relevant data
 - all commands run as the admin user (`root`)
   (log in using normal login procedure: `iaas` user from login node, then *sudo*)
 
 .. IMPORTANT::
   When doing a complete reinstall make sure :file:`peerdns: 'no'`
   is in the network configuration for the nodes controller-01 and admin-01.
+  
+  Also make sure gateway and DNS points to the login node or wherever there is
+  a connection out and/or a resolverreachable. This might require toggling
+  of data in 'common.yaml' or the relevant node files.
+  
+  This should be manipulated on the code activated on the login node from where
+  the bootstrap process is initialized befoe the run. Changes after installation
+  of the controller node should be activated on the node itself
+  ("/opt/himlar/hieradata").
 
 Procedure
 ---------
@@ -56,7 +66,9 @@ Procedure
 
 #. Log on to the freshly installed controller node
 
-#. run **/opt/himlar/provision/puppetrun.sh**
+#. Run **bash -x puppet_bootstrap.sh**
+
+#. Run **/opt/himlar/provision/puppetrun.sh**
 
 #. Punch a hole in the firewall for traffic to port 8000:
 
