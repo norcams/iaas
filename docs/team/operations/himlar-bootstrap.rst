@@ -66,9 +66,11 @@ Procedure
 
 #. Log on to the freshly installed controller node
 
-#. Run **bash -x puppet_bootstrap.sh**
+#. Run **bash /root/puppet_bootstrap.sh**
+   This run puppet in bootstrap mode
 
 #. Run **/opt/himlar/provision/puppetrun.sh**
+   This run puppet normally
 
 #. Punch a hole in the firewall for traffic to port 8000:
 
@@ -84,15 +86,12 @@ Procedure
       is installed and ready for use.
 
    #. The new controller node can be logged on to from the login node:
-      **ssh iaas@<loc>-foreman-01...**.
+      **ssh iaas@<loc>-admin-01...**.
 
 #. When controller node installation is complete the firewall can be restored:
    **iptables -D INPUT 1**
 
-#. Sync */opt/repo* from login node to foreman node (**NB**: fix/repair
-   ownership if necessary, should be `root:root`)
-
-#. Log on to the new ``foreman`` system from the login node, optionally check
+#. Log on to the new ``admin`` system from the login node, optionally check
    the install log: */root/install.post.log*
 
 #. run **bash /root/puppet_bootstrap.sh**
@@ -104,8 +103,8 @@ Procedure
 #. run **/opt/himlar/provision/foreman-settings.sh**
 
 At this point there should be a working Foreman instance running which can be
-logged in to through the web GUI (http/https). This system is then running in an
-libvirt instance on the physical controller node.
+logged in to through the web GUI (http/https). This system is running in an
+virtual instance on the physical controller node.
 
 
 Additional steps after Foreman installation
@@ -116,7 +115,7 @@ a *compute resource*. This way it is possible to install other systems, like the
 OpenStack master node, in addition to get the Foreman node itself connected to
 this libvirt resource.
 
-1. On the controller node, run **puppet apply --test** a couple of times
+1. On the controller node, run **puppet agent --test** a couple of times
 #. In Foreman GUI sign relevant pending certificate requests if any
 #. On Foreman node (cli) run **/etc/puppet/node.rb --push-facts** (is this
    necessary?)
@@ -133,4 +132,7 @@ this libvirt resource.
    #. ``Submit``
 
 #. Select the new resource in the GUI and then the `Virtual machines` tab;
-   the Foreman node should now be automatically registered here.
+   the admin node should now be automatically registered here.
+
+.. NOTE::
+   For this to work the hostname of the controller must be registered in DNS!
