@@ -9,13 +9,15 @@ single login node. The systems to be used are all physically installed
 Prerequisites
 -------------
 
-- a functioning login node (with an up-to-date */opt/[himlar|repo]* hiearchy)
-- the system is configured by `Puppet`
-- no management-node is installed (`controller`)
+- a login node (with an up-to-date */opt/[himlar|repo]* hiearchy) which is
+  maintained by `Puppet`
+- no management-node installed (`controller`)
 - *hieradata/<loc>/common.yaml*, *hieradata/common/common.yaml*, *hieradata/nodes/<loc>/...*
   etc. are populated with relevant data
 - all commands run as the admin user (`root`)
   (log in using normal login procedure: `iaas` user from login node, then *sudo*)
+- the new controller node (and all further controller and compute nodes) must
+  have CPU virtualization extentions enabled in BIOS
 
 .. IMPORTANT::
   When doing a complete reinstall make sure :file:`peerdns: 'no'`
@@ -136,3 +138,7 @@ this libvirt resource.
 
 .. NOTE::
    For this to work the hostname of the controller must be registered in DNS!
+
+#. If Foreman is expected to controll the (un)registration of DNS records, an
+   RNDC secret which is authorized to alter the proper DDNS domain must be
+   installed as */etc/rndc.key* on the new admin node.
