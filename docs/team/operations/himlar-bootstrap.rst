@@ -78,13 +78,17 @@ Procedure
 
    **iptables -I INPUT 1 -p tcp --dport 8000 -j ACCEPT**
 
-#. run **/usr/local/sbin/bootstrap-<loc>-foreman-01.sh**
+#. run **/usr/local/sbin/bootstrap-<loc>-admin.sh**
 
    1. **virsh list** should now report the foreman instance as running
    #. The install can be monitored with **vncviewer <loc>-controller.01....**
       (or your preferred vnc viewer application))
-   #. When the message "*Guest installation complete... restarting guest.*" is
-      written to the terminal from where the script was started, the system
+   #. When the message 
+      
+     "*Domain creation completed.
+      Restarting guest.*"
+      
+      is written to the terminal from where the script was started, the system
       is installed and ready for use.
 
    #. The new controller node can be logged on to from the login node:
@@ -95,6 +99,8 @@ Procedure
 
 #. Log on to the new ``admin`` system from the login node, optionally check
    the install log: */root/install.post.log*
+
+#. make sure clock is correct
 
 #. run **bash /root/puppet_bootstrap.sh**
 
