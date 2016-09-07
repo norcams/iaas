@@ -100,7 +100,7 @@ Procedure
 #. Log on to the new ``admin`` system from the login node, optionally check
    the install log: */root/install.post.log*
 
-#. make sure clock is correct
+#. make sure clock is correct and any relevant **rndc.key** is in place
 
 #. run **bash /root/puppet_bootstrap.sh**
 
@@ -145,6 +145,8 @@ this libvirt resource.
 .. NOTE::
    For this to work the hostname of the controller must be registered in DNS!
 
-#. If Foreman is expected to controll the (un)registration of DNS records, an
-   RNDC secret which is authorized to alter the proper DDNS domain must be
-   installed as */etc/rndc.key* on the new admin node.
+.. IMPORTANT::
+   If the admin node (and Foreman) is expected to controll the
+   (un)registration of DNS records, an RNDC secret which is authorized to alter
+   the proper DDNS domain must be installed as */etc/rndc.key* on the new admin
+   node.
