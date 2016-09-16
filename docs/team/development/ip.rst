@@ -82,12 +82,12 @@ Openstack hosts
  node           inf   net   addr
 ============== ===== ===== =========
 controller-01  eth1  trans x.x.x.100
-controller-01  eth1  trans x.x.x.101
-controller-01  eth1  trans x.x.x.102
+controller-02  eth1  trans x.x.x.101
+controller-03  eth1  trans x.x.x.102
 compute-01*    eth1  trans x.x.x.103
-compute-01*    eth1  trans x.x.x.104
-compute-02*    eth1  trans x.x.x.105
-storage-03*    eth1  trans x.x.x.106
+compute-02*    eth1  trans x.x.x.104
+compute-03*    eth1  trans x.x.x.105
+storage-01*    eth1  trans x.x.x.106
 storage-02*    eth1  trans x.x.x.107
 storage-03*    eth1  trans x.x.x.108
 storage-04*    eth1  trans x.x.x.109
