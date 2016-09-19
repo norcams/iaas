@@ -10,6 +10,9 @@ UH-IaaS Status
 
 Last changed: |date|
 
+.. WARNING::
+   ** We are upgrading to latest version of Openstack. 20.09 in BGO and 21.09 for OSL.
+   Some services will be temporarily down or unstable.**
 
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
