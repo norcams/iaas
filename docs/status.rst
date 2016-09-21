@@ -11,8 +11,8 @@ UH-IaaS Status
 Last changed: |date|
 
 .. WARNING::
-   ** 21.09: We are upgrading to latest version of Openstack in BGO and OSL.
-   Some services will be temporarily down or unstable.**
+   ** Known issues: After the upgrade to new Openstack version on 21.09
+   all existing personal SSH key pairs must be added once more. **
 
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
