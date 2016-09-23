@@ -1,0 +1,64 @@
+======
+Uke 38
+======
+av Raymond Kristiansen, UH IaaS, 23. sep 2016
+
+.. contents:: :depth: 2
+
+
+Fullført
+========
+
+- Workshop ved USIT 7. og 8. september.
+
+- Oppgradering til mitaka i uke 38. Utført med ansible som kunne testes i
+  `test01` og `test02` først. Tok ca 60 min i `bgo` og `osl`, og førte kun
+  til små avbrudd i de forskjellige tjenesten under oppgraderingen. Alle
+  kjørende instanser skal ha fungert som normalt under oppdateringen.
+
+- Søknaden om prosjektmidler fra UH-sky er sendt til UNINETT. Usikkert når den
+  er ferdig behandlet.
+
+- Det er satt opp et internt monitoringstjeneste basert på Sensu. I første
+  omgang skal det gi oss et dashboard med litt metrics om hva som skjer.
+
+Under arbeid
+============
+
+- `test02` ved USIT er satt opp, men mangler forsatt public nett. Har derfor
+  litt begrenset nytteverdi. Det jobbes med å fullfør oppsettet, men krever
+  nok litt hjelp av nettverk ved USIT for å få fullført.
+
+- Det jobbes med å få på plass en tjeneste for DNS for instanser.
+
+Planlagt fremdrift
+==================
+
+- Sette opp felles keystone database for to lokasjoner. Dette vil gjøre det
+  mulig å ha et felles dashboard med to regioner: `osl` og `bgo`.
+
+- Oppgradere ceph til siste versjon.
+
+- Det er også ønskelig at alle i prosjekt deltar på Openstack Summit i
+  Barcelona: https://www.openstack.org/summit/barcelona-2016
+
+Utfordringer
+============
+
+- API-tilgang er ikke optimal slik den er satt opp nå, men det fungerer. Ser
+  ingen enkel fiks som kan løse det før vi går i produksjon i november.
+  Det blir da viktig å gjøre brukerne kjent med hvilke utfordringer som gjelder.
+
+- I :doc:`../plans/production` har jeg skrevet at vi trenger 4 personer frem
+  til nyttår for å komme i produksjon. Vi er nå prosjektleder (100% delt),
+  UiB (1 person 100%) og UiO (1 person 60% og en person 40%). Det ser ikke ut
+  til å berøre datoene i leveransen, men vil kunne påvirke innholdet dersom vi
+  støter på større utfordringer.
+
+Oppdatert status
+================
+
+Arbeidet frem til leveranse 14. november vil vi oppdatere fortløpende
+på Trello: https://trello.com/b/loLFWWtV/iaas-release-plan
+
+Kun større oppgaver, utfordringer og avvik vil bli oppdatert her.
