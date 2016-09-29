@@ -10,6 +10,7 @@ Operations
     deploy
     compute
     logging
+    foreman
     ansible/index
     patching
     himlarcli
