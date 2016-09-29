@@ -24,6 +24,16 @@ The *iaas* group owns all files and directories under the repo root, the
 hierarchy is configured with the `set group ID` bit. Accordingly
 all relevant repo operations can (and should) be done as the *iaas* user.
 
+**NOTE**
+
+Make sure new packages and files have the correct SELinux label::
+
+  sudo restorecon <file>
+
+or::
+
+  sudo restorecon -R <directory>
+
 
 YUM repository
 --------------
