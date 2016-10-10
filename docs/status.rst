@@ -13,9 +13,9 @@ Last changed: |date|
 .. WARNING::
    **Complete reinstall:** In preparation of the end of pilot and start
    of production in November we will do a complete reinstall of both locations
-   during the week starting on 10. of October. After the reinstall all users
+   during the week starting on 10th of October. After the reinstall all users
    will be able to continue testing the new production setup. Initial plan is
-   to reinstall `bgo` the 12. and `osl` the 13. of October.
+   to reinstall `bgo` the 12th and `osl` the 13th of October.
    This page and the slack channel will be updated during the reinstall.
    **All existing instances, images, volumes, snapshots and users will be delete.**
    (There is an option to use Openstack CLI to save and download images.)
