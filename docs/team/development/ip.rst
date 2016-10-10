@@ -21,14 +21,15 @@ leaf-04    mgmt       x.x.x.7
 Management hosts
 ----------------
 
-========= ===== ===== ========
- node      inf   net   addr
-========= ===== ===== ========
-login-01  eth0  mgmt  x.x.x.10
-admin-01  eth0  mgmt  x.x.x.11
-proxy-01  eth0  mgmt  x.x.x.12
-logger-01 eth0  mgmt  x.x.x.13
-========= ===== ===== ========
+=========== ===== ===== ======== =============== =========
+ node        inf   net   addr     host            profile
+=========== ===== ===== ======== =============== =========
+login-01    eth0  mgmt  x.x.x.10 NA
+admin-01    eth0  mgmt  x.x.x.11 controller-01   L
+proxy-01    eth0  mgmt  x.x.x.12 controller-01   S
+logger-01   eth0  mgmt  x.x.x.13 controller-01   M
+monitor-01  eth0  mgmt  x.x.x.14 controller-01   M
+=========== ===== ===== ======== =============== =========
 
 Openstack nodes
 ---------------
@@ -36,44 +37,44 @@ Openstack nodes
 Management net (mgmt) should have the same last octet as the
 transport net (trans).
 
-============== ===== ===== ========
- node           inf   net   addr
-============== ===== ===== ========
-master-01      eth1  trans x.x.x.20
-mq-01          eth1  trans x.x.x.31
-mq-02          eth1  trans x.x.x.32
-mq-03          eth1  trans x.x.x.33
-image-01       eth1  trans x.x.x.36
-image-02       eth1  trans x.x.x.37
-image-03       eth1  trans x.x.x.38
-db-01          eth1  trans x.x.x.41
-db-02          eth1  trans x.x.x.42
-db-03          eth1  trans x.x.x.43
-volume-01      eth1  trans x.x.x.46
-volume-02      eth1  trans x.x.x.47
-volume-03      eth1  trans x.x.x.48
-dashboard-01   eth1  trans x.x.x.51
-dashboard-02   eth1  trans x.x.x.52
-dashboard-03   eth1  trans x.x.x.53
-access-01      eth1  trans x.x.x.56
-access-02      eth1  trans x.x.x.57
-access-03      eth1  trans x.x.x.58
-console-01     eth1  trans x.x.x.61
-console-02     eth1  trans x.x.x.62
-console-03     eth1  trans x.x.x.63
-novactrl-01    eth1  trans x.x.x.66
-novactrl-02    eth1  trans x.x.x.67
-novactrl-03    eth1  trans x.x.x.68
-network-01     eth1  trans x.x.x.71
-network-02     eth1  trans x.x.x.72
-network-03     eth1  trans x.x.x.73
-identity-01    eth1  trans x.x.x.81
-identity-02    eth1  trans x.x.x.82
-identity-03    eth1  trans x.x.x.83
-cephmon-01     eth1  trans x.x.x.91
-cephmon-02     eth1  trans x.x.x.92
-cephmon-03     eth1  trans x.x.x.93
-============== ===== ===== ========
+============== ===== ===== ======== ================ =========
+ node           inf   net   addr     host             profile
+============== ===== ===== ======== ================ =========
+master-01      eth1  trans x.x.x.20 NA
+mq-01          eth1  trans x.x.x.31 controller-01     S
+mq-02          eth1  trans x.x.x.32 NA
+mq-03          eth1  trans x.x.x.33 NA
+image-01       eth1  trans x.x.x.36 controller-02     M
+image-02       eth1  trans x.x.x.37 NA
+image-03       eth1  trans x.x.x.38 NA
+db-01          eth1  trans x.x.x.41 controller-01     S
+db-02          eth1  trans x.x.x.42 controller-02     S
+db-03          eth1  trans x.x.x.43 NA
+volume-01      eth1  trans x.x.x.46 controller-03     M
+volume-02      eth1  trans x.x.x.47 NA
+volume-03      eth1  trans x.x.x.48 NA
+dashboard-01   eth1  trans x.x.x.51 controller-02     M
+dashboard-02   eth1  trans x.x.x.52 NA
+dashboard-03   eth1  trans x.x.x.53 NA
+access-01      eth1  trans x.x.x.56 controller-03     S
+access-02      eth1  trans x.x.x.57 NA
+access-03      eth1  trans x.x.x.58 NA
+console-01     eth1  trans x.x.x.61 controller-03     M
+console-02     eth1  trans x.x.x.62 NA
+console-03     eth1  trans x.x.x.63 NA
+novactrl-01    eth1  trans x.x.x.66 controller-02     M
+novactrl-02    eth1  trans x.x.x.67 NA
+novactrl-03    eth1  trans x.x.x.68 NA
+network-01     eth1  trans x.x.x.71 controller-03     M
+network-02     eth1  trans x.x.x.72 NA
+network-03     eth1  trans x.x.x.73 NA
+identity-01    eth1  trans x.x.x.81 controller-03     M
+identity-02    eth1  trans x.x.x.82 NA
+identity-03    eth1  trans x.x.x.83 NA
+cephmon-01     eth1  trans x.x.x.91 controller-01     S
+cephmon-02     eth1  trans x.x.x.92 controller-02     S
+cephmon-03     eth1  trans x.x.x.93 controller-03     S
+============== ===== ===== ======== ================ =========
 
 Openstack hosts
 ---------------
