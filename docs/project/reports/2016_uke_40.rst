@@ -1,0 +1,61 @@
+======
+Uke 40
+======
+av Raymond Kristiansen, UH IaaS, 10. okt 2016
+
+.. contents:: :depth: 2
+
+
+Fullført
+========
+
+- Søknaden om prosjektmidler fra UH-sky er godkjent i styringsgruppen.
+
+- Test av felles database for keystone og felles dashboard for to lokasjoner.
+
+Under arbeid
+============
+
+- Både `test01` og `test02` venter på at eksternt utførte oppgaver skal løses
+  før disse kan betegnes som fullverdig testinstallasjoner.
+
+- Det jobbes med å få på plass en tjeneste for DNS for instanser. Denne vil
+  forhåpentligvis være på plass i løpet av året.
+
+Planlagt fremdrift
+==================
+
+- Vi vil i uke 41 ta en full reinstallasjon av begge lokasjonene. Dette vil
+  slette alt som ligger der idag, og klargjøre oss for produksjon.
+
+- Etter reinstallasjonen vil vi sette opp en felles keystone database.
+  Dette vil gjøre det mulig å ha et felles dashboard med to regioner:
+  `osl` og `bgo`.
+
+- Oppgradere ceph til siste versjon.
+
+- Skaffe priser for mer hardware til vi går i produksjon.
+
+Utfordringer
+============
+
+- DNS tjenesten for instanser vil ikke være klar til vi går i produksjon.
+  Hovedgrunnen er mangel på dedikert personer i prosjekt.
+
+- API-tilgang er ikke optimal slik den er satt opp nå, men det fungerer. Ser
+  ingen enkel fiks som kan løse det før vi går i produksjon i november.
+  Det blir da viktig å gjøre brukerne kjent med hvilke utfordringer som gjelder.
+
+- I :doc:`../plans/production` har jeg skrevet at vi trenger 4 personer frem
+  til nyttår for å komme i produksjon. Vi er nå prosjektleder (100% delt),
+  UiB (1 person 100%) og UiO (1 person 60% og en person 40%). Det ser ikke ut
+  til å berøre datoene i leveransen, men vil kunne påvirke innholdet dersom vi
+  støter på større utfordringer.
+
+Oppdatert status
+================
+
+Arbeidet frem til leveranse 14. november vil vi oppdatere fortløpende
+på Trello: https://trello.com/b/loLFWWtV/iaas-release-plan
+
+Kun større oppgaver, utfordringer og avvik vil bli oppdatert her.
