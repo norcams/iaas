@@ -11,8 +11,14 @@ UH-IaaS Status
 Last changed: |date|
 
 .. WARNING::
-   ** Known issues: After the upgrade to new Openstack version on 21.09
-   all existing personal SSH key pairs must be added once more. **
+   **Complete reinstall:** In preparation of the end of pilot and start
+   of production in November we will do a complete reinstall of both locations
+   during the week starting on 10. of October. After the reinstall all users
+   will be able to continue testing the new production setup. Initial plan is
+   to reinstall `bgo` in Tuesday the 11. and `osl` at Wedensday the 12.
+   This page and the slack channel will be updated during the reinstall.
+   **All existing instances, images, volumes, snapshots and users will be delete.**
+   (There is an option to use Openstack CLI to save and download images.)
 
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
@@ -60,9 +66,7 @@ Only personal projects
 ----------------------
 
 We currently have a limitation on projects, in which only personal
-projects are supported. Work is on the way to build common projects
-functionality (using groups) into Dataporten, which will be the
-authoriative source for this type of metadata.
+projects are supported.
 
 Console limitation
 ------------------
