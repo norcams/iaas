@@ -34,12 +34,12 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |Y|  |Y|
-Dashboard      |Y|  |Y|
-API            |Y|  |Y|
-Compute        |Y|  |Y|
-Block storage  |Y|  |Y|
-Image          |Y|  |Y|
+Access         |N|  |Y|
+Dashboard      |N|  |Y|
+API            |N|  |Y|
+Compute        |N|  |Y|
+Block storage  |N|  |Y|
+Image          |N|  |Y|
 ============== ==== ====
 
 Location OSL:
