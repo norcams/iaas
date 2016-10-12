@@ -11,6 +11,11 @@ UH-IaaS Status
 Last changed: |date|
 
 .. WARNING::
+   **BGO is going down on the 12th of October at 11.00.**
+   We will announce when the location will be ready for testing after
+   the reinstall.
+
+.. WARNING::
    **Complete reinstall:** In preparation of the end of pilot and start
    of production in November we will do a complete reinstall of both locations
    during the week starting on 10th of October. After the reinstall all users
