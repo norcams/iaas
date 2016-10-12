@@ -12,10 +12,11 @@ Network hosts
 ========= ===== ===== ========
  node      inf   net   addr
 ========= ===== ===== ========
-leaf-01    mgmt       x.x.x.4
-leaf-02    mgmt       x.x.x.5
-leaf-03    mgmt       x.x.x.6
-leaf-04    mgmt       x.x.x.7
+leaf-01    mgmt       x.x.x.1
+leaf-02    mgmt       x.x.x.2
+leaf-03    mgmt       x.x.x.3
+leaf-04    mgmt       x.x.x.4
+mgmt-01    mgmt       x.x.x.9
 ========= ===== ===== ========
 
 Management hosts
