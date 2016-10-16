@@ -5,45 +5,53 @@ This document describes the procedure to initialize a new environment from a
 single login node. The systems to be used are all physically installed
 (including configuration of `BIOS`/`iDrac`) but otherwise untouched.
 
+loc=[**bgo|osl|test01|test02|local1|local2|local3|...**]
+
 
 Prerequisites
 -------------
 
-- a login node (with an up-to-date */opt/[himlar|repo]* hiearchy) which is
+- A login node (with an up-to-date */opt/[himlar|repo]* hiearchy) which is
   maintained by `Puppet`
-- no management-node installed (`controller`)
-- *hieradata/<loc>/common.yaml*, *hieradata/common/common.yaml*, *hieradata/nodes/<loc>/...*
+- No management-node installed (`controller`)
+- *hieradata/${loc}/common.yaml*, *hieradata/common/common.yaml*, *hieradata/nodes/${loc}/...*
   etc. are populated with relevant data
-- all commands run as the admin user (`root`)
-  (log in using normal login procedure: `iaas` user from login node, then *sudo*)
-- the new controller node (and all further controller and compute nodes) must
+- All commands run as the admin user (`root`) unless noted
+  (consult the document `2FA on jumphosts (login nodes) <https://iaas.readthedocs.io/en/latest/team/getting_started/two-factor-authentication.html>`_)
+- The new controller node (and all further controller and compute nodes) must
   have CPU virtualization extentions enabled in BIOS
 
 .. IMPORTANT::
-  When doing a complete reinstall make sure :file:`peerdns: 'no'`
-  is in the network configuration for the nodes controller-01 and admin-01.
-  
-  Also make sure gateway and DNS points to the login node or wherever there is
-  a connection out and/or a resolverreachable. This might require toggling
-  of data in 'common.yaml' or the relevant node files.
-  
-  This should be manipulated on the code activated on the login node from where
-  the bootstrap process is initialized befoe the run. Changes after installation
-  of the controller node should be activated on the node itself
-  ("/opt/himlar/hieradata").
+   When doing a complete reinstall make sure `peerdns: 'no'`
+   is in the network configuration for the nodes controller-01 and admin-01.
+   
+   Also make sure gateway and DNS points to the login node or wherever there is
+   a connection out and/or a resolverreachable. This might require toggling
+   of data in 'common.yaml' or the relevant node files.
+   
+   This should be manipulated on the code activated on the login node from where
+   the bootstrap process is initialized befoe the run. Changes after installation
+   of the controller node should be activated on the node itself
+   ("/opt/himlar/hieradata").
 
 Procedure
 ---------
 
 1. Make sure the dhcp and tftp services are allowed through the firewall, if
-   RHEL 7/Centos 7: **firewall-cmd --list-services**
+   RHEL 7/Centos 7:
+   
+   **firewall-cmd --list-services**
 
    If *tftp* and *dhcp* is not amongst the permitted services on that list, add
-   the ones missing, for instance: **firewall-cmd --add-service dhcp**
+   the ones missing, for instance:
+   
+   **firewall-cmd --add-service dhcp**
 
 #. Enable NAT of relevant mgmt interface on the login node out through the public facing interface
 
-#. On the login node: **/usr/local/sbin/bootstrap-<loc>-controller-01.sh**
+#. On the login node:
+   
+   **/usr/local/sbin/bootstrap-$loc-controller-01.sh**
 
    .. NOTE::
       The error message "curl: (33) HTTP server doesn't seem to support byte
@@ -51,11 +59,9 @@ Procedure
       run. If so this is just an indication that the files to be fetched are
       already in place. But please make sure the files nevertheless are recent!
 
-#. Boot the relevant physical node
-   For instance by using the web GUI on the `iDrac` or with this command on the
-   login node:
-
-        **idracadm -r <idrac-IP for <loc>-controller-01 to be installed> -u gaussian -p <idrac-pw> serveraction powercycle**
+#. Boot the relevant physical node using the web GUI on the `iDrac` or with this command on the login node:
+   
+   **idracadm -r <idrac-IP for $loc-controller-01 to be installed> -u gaussian -p <idrac-pw> serveraction powercycle**
 
    .. NOTE::
       Make sure the system is configured to PXE boot on the relevant (mgmt)
@@ -66,87 +72,75 @@ Procedure
       quit if the new system is set to primarly attempt PXE boot, otherwise
       it will enter an endless installation loop!
 
-#. Log on to the freshly installed controller node
+#. Log on to the freshly installed controller node:
+   
+   (**sudo**) **ssh iaas@$loc-controller-01**
 
-#. Run **bash /root/puppet_bootstrap.sh**
-   This run puppet in bootstrap mode
+#. Run puppet in boostrap mode:
+   
+   **bash /root/puppet_bootstrap.sh**
 
-#. Run **/opt/himlar/provision/puppetrun.sh**
-   This run puppet normally
+#. Run puppet normally:
+   
+   **/opt/himlar/provision/puppetrun.sh**
 
 #. Punch a hole in the firewall for traffic to port 8000:
 
    **iptables -I INPUT 1 -p tcp --dport 8000 -j ACCEPT**
 
-#. run **/usr/local/sbin/bootstrap-<loc>-admin.sh**
+#. Initiate installation of the admin node/Foreman:
+   
+   **/usr/local/sbin/bootstrap-$loc-admin.sh**
 
    1. **virsh list** should now report the foreman instance as running
-   #. The install can be monitored with **vncviewer <loc>-controller.01....**
-      (or your preferred vnc viewer application))
+   #. The install can be monitored with **vncviewer $loc-controller.01**,
+      **virt-manager** connected to *$loc-controller-01* or your preferred
+      vnc viewer application
    #. When the message 
       
-     "*Domain creation completed.
+      "*Domain creation completed.
       Restarting guest.*"
       
       is written to the terminal from where the script was started, the system
       is installed and ready for use.
 
    #. The new controller node can be logged on to from the login node:
-      **ssh iaas@<loc>-admin-01...**.
+      
+      **ssh iaas@$loc-admin-01...**.
 
 #. When controller node installation is complete the firewall can be restored:
+
    **iptables -D INPUT 1**
 
 #. Log on to the new ``admin`` system from the login node, optionally check
    the install log: */root/install.post.log*
 
-#. make sure clock is correct and any relevant **rndc.key** is in place
+#. ensure the system time is correct 
 
-#. run **bash /root/puppet_bootstrap.sh**
+#. Distribute relevant *rndc.key*:
 
-#. run **HIMLAR_CERTNAME=<certname> /opt/himlar/provision/puppetrun.sh**
+   run the ``ansible`` job **push_secrets.yaml**
+   (check tasks.md for syntax, use correct host)
 
-   This command can be run several times.
+   NB: the `secrets` repo must already have the key installed
 
-#. run **/opt/himlar/provision/foreman-settings.sh**
+#. Run puppet in bootsrap mode:
+   
+   **bash /root/puppet_bootstrap.sh**
+
+#. Run puppet again:
+  
+   **HIMLAR_CERTNAME=<certname> /opt/himlar/provision/puppetrun.sh**
+
+   This command may be run several times.
+
+#. Configure Foreman:
+
+   - **/opt/himlar/provision/foreman-settings.sh**
+   - run the ``himlarcli`` command **foreman_setup.py**
+     (remember to use the appropriate configuration file for the environment)
 
 At this point there should be a working Foreman instance running which can be
-logged in to through the web GUI (http/https). This system is running in an
+logged on to through the web GUI (http/https). This system is running in an
 virtual instance on the physical controller node.
 
-
-Additional steps after Foreman installation
--------------------------------------------
-
-It is beneficial to get the controller node registered in Foreman and listed as
-a *compute resource*. This way it is possible to install other systems, like the
-OpenStack master node, in addition to get the Foreman node itself connected to
-this libvirt resource.
-
-1. On the controller node, run **puppet agent --test** a couple of times
-#. In Foreman GUI sign relevant pending certificate requests if any
-#. On Foreman node (cli) run **/etc/puppet/node.rb --push-facts** (is this
-   necessary?)
-#. In Foreman GUI register a libvirt resource:
-
-   a. ``Infrastructure -> Compute resources``
-   #. ``New compute resource``
-   #. :Name: whatever descriptive
-      :Provider: Libvirt
-      :URL: qemu+tcp://<loc>-controller-01.iaas.uio.no:16509/system
-      :Display type: VNC
-
-   #. Check the configured connection: ``Test connection``
-   #. ``Submit``
-
-#. Select the new resource in the GUI and then the `Virtual machines` tab;
-   the admin node should now be automatically registered here.
-
-.. NOTE::
-   For this to work the hostname of the controller must be registered in DNS!
-
-.. IMPORTANT::
-   If the admin node (and Foreman) is expected to controll the
-   (un)registration of DNS records, an RNDC secret which is authorized to alter
-   the proper DDNS domain must be installed as */etc/rndc.key* on the new admin
-   node.
