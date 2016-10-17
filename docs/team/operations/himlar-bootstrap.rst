@@ -160,14 +160,18 @@ Procedure
      nodes file for the environment.
    - Recommended sequence:
 
-     a. proxy-01
-     #. ...
-     #. Remaining nodes, may be done by running:
+     a. leaf nodes if applicable (make sure puppet is run afterwards)
+     #. proxy-01 (make sure puppet is run afterwards)
+     #. Remaining controller nodes (make sure puppet is run afterwards)
+     #. Remaining nodes; may be done by executing:
 
         **node.py -c config.ini.$loc xxx full**
 
         This will install all nodes in the list ``<himlarcli top dir>/config/nodes/$loc.yaml``. Exisiting nodes
         will be skipped.
+
+  .. IMPORTANT::
+     DO NOT run puppet on any of the nodes unless explicitly specified!
 
   .. NOTE::
      Physical hosts may have to be rebooted or powered on manually. Make sure
