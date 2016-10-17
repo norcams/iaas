@@ -15,3 +15,4 @@ Operations
     patching
     himlarcli
     local-repo
+    ssl
