@@ -124,7 +124,7 @@ Procedure
 
    NB: the `secrets` repo must already have the key installed
 
-#. Run puppet in bootsrap mode:
+#. Run puppet in bootstrap mode:
    
    **bash /root/puppet_bootstrap.sh**
 
@@ -136,11 +136,40 @@ Procedure
 
 #. Configure Foreman:
 
-   - **/opt/himlar/provision/foreman-settings.sh**
-   - run the ``himlarcli`` command **foreman_setup.py**
-     (remember to use the appropriate configuration file for the environment)
+   a. **/opt/himlar/provision/foreman-settings.sh**
+   #. run the ``himlarcli`` command **foreman_setup.py**
+      (remember to use the appropriate configuration file for the environment)
 
-At this point there should be a working Foreman instance running which can be
-logged on to through the web GUI (http/https). This system is running in an
-virtual instance on the physical controller node.
+#. Log on to the Foreman instance now running on the address *https://foreman.<mgmt domain>*.
+
+#. Sign the certificate request from the controlelr node:
+
+   **Infrastructure --> Smartproxies --> $loc-admin-01.<mgmt domain> --> Puppet CA --> Sign (Action)** for *$loc-controller-01.<mgmt domain>*
+
+#. Set up autosigning of future certificate requests:
+
+   From location of previous action: **Autosign entries --> New --> Name: *.<mgmt domain> --> Save**
+
+#. After 15 minutes (or after a manual puppet run on the node)
+   *$loc-controller-01* should be listed under **Hosts --> All hosts**
+
+#. Install the rest of the nodes in the environment:
+
+   - Install either through the *Foreman GUI* or using he *himlarcli* command **node.py -c config.ini.$loc <node> install**
+   - Using the *himlarcli* command the nodes will iautomatically be set up according to the
+     nodes file for the environment.
+   - Recommended sequence:
+
+     a. proxy-01
+     #. ...
+     #. Remaining nodes, may be done by running:
+
+        **node.py -c config.ini.$loc xxx full**
+
+        This will install all nodes in the list ``<himlarcli top dir>/config/nodes/$loc.yaml``. Exisiting nodes
+        will be skipped.
+
+  .. NOTE::
+     Physical hosts may have to be rebooted or powered on manually. Make sure
+     they are configured to PXE boot on the managment interface on their first boot.
 
