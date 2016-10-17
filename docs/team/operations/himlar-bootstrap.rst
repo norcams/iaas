@@ -144,6 +144,9 @@ Procedure
    #. run the ``himlarcli`` command **foreman_setup.py**
       (remember to use the appropriate configuration file for the environment)
 
+   Adapt if necessary *foreman-settings.sh* to local requirements, for
+   instance the `installdevice` host parameter setting for the storage host group.
+
 #. Log on to the Foreman instance now running on the address *https://foreman.<mgmt domain>*.
 
 #. Sign the certificate request from the controlelr node:
