@@ -160,6 +160,10 @@ Procedure
 #. After 15 minutes (or after a manual puppet run on the node)
    *$loc-controller-01* should be listed under **Hosts --> All hosts**
 
+#. Ensure all data, modules and secrets are up to date:
+
+   Run the ``ansible`` job **bin/deploy.sh $loc**
+
 #. Install the rest of the nodes in the environment:
 
    - Install either through the *Foreman GUI* or using he *himlarcli* command **node.py -c config.ini.$loc <node> install**
