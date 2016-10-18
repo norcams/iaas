@@ -16,6 +16,10 @@ Prerequisites
 - No management-node installed (`controller`)
 - *hieradata/${loc}/common.yaml*, *hieradata/common/common.yaml*, *hieradata/nodes/${loc}/...*
   etc. are populated with relevant data
+- puppet is disabled on new nodes:
+
+  ensure **$loc/modules/puppet.yaml** includes *puppet::runmode: 'none'*
+
 - All commands run as the admin user (`root`) unless noted
   (consult the document `2FA on jumphosts (login nodes) <https://iaas.readthedocs.io/en/latest/team/getting_started/two-factor-authentication.html>`_)
 - The new controller node (and all further controller and compute nodes) must
@@ -124,7 +128,7 @@ Procedure
 
    NB: the `secrets` repo must already have the key installed
 
-#. Run puppet in bootsrap mode:
+#. Run puppet in bootstrap mode:
    
    **bash /root/puppet_bootstrap.sh**
 
@@ -136,11 +140,51 @@ Procedure
 
 #. Configure Foreman:
 
-   - **/opt/himlar/provision/foreman-settings.sh**
-   - run the ``himlarcli`` command **foreman_setup.py**
-     (remember to use the appropriate configuration file for the environment)
+   a. **/opt/himlar/provision/foreman-settings.sh**
+   #. run the ``himlarcli`` command **foreman_setup.py**
+      (remember to use the appropriate configuration file for the environment)
 
-At this point there should be a working Foreman instance running which can be
-logged on to through the web GUI (http/https). This system is running in an
-virtual instance on the physical controller node.
+   Adapt if necessary *foreman-settings.sh* to local requirements, for
+   instance the `installdevice` host parameter setting for the storage host group.
+
+#. Log on to the Foreman instance now running on the address *https://foreman.<mgmt domain>*.
+
+#. Sign the certificate request from the controlelr node:
+
+   **Infrastructure --> Smartproxies --> $loc-admin-01.<mgmt domain> --> Puppet CA --> Sign (Action)** for *$loc-controller-01.<mgmt domain>*
+
+#. Set up autosigning of future certificate requests:
+
+   From location of previous action: **Autosign entries --> New --> Name: *.<mgmt domain> --> Save**
+
+#. After 15 minutes (or after a manual puppet run on the node)
+   *$loc-controller-01* should be listed under **Hosts --> All hosts**
+
+#. Ensure all data, modules and secrets are up to date:
+
+   Run the ``ansible`` job **bin/deploy.sh $loc**
+
+#. Install the rest of the nodes in the environment:
+
+   - Install either through the *Foreman GUI* or using he *himlarcli* command **node.py -c config.ini.$loc <node> install**
+   - Using the *himlarcli* command the nodes will iautomatically be set up according to the
+     nodes file for the environment.
+   - Recommended sequence:
+
+     a. leaf nodes if applicable (make sure puppet is run afterwards)
+     #. proxy-01 (make sure puppet is run afterwards)
+     #. Remaining controller nodes (make sure puppet is run afterwards)
+     #. Remaining nodes; may be done by executing:
+
+        **node.py -c config.ini.$loc xxx full**
+
+        This will install all nodes in the list ``<himlarcli top dir>/config/nodes/$loc.yaml``. Exisiting nodes
+        will be skipped.
+
+  .. IMPORTANT::
+     DO NOT run puppet on any of the nodes unless explicitly specified!
+
+  .. NOTE::
+     Physical hosts may have to be rebooted or powered on manually. Make sure
+     they are configured to PXE boot on the managment interface on their first boot.
 
