@@ -11,7 +11,7 @@ UH-IaaS Status
 Last changed: |date|
 
 .. WARNING::
-   **BGO is going down on the 12th of October at 11.00.**
+   **OSL is going down on the 18th of October at 13.00.**
    We will announce when the location will be ready for testing after
    the reinstall.
 
@@ -20,7 +20,7 @@ Last changed: |date|
    of production in November we will do a complete reinstall of both locations
    during the week starting on 10th of October. After the reinstall all users
    will be able to continue testing the new production setup. Initial plan is
-   to reinstall `bgo` the 12th and `osl` the 13th of October.
+   to reinstall `bgo` the 12th and `osl` the 18th of October.
    This page and the slack channel will be updated during the reinstall.
    **All existing instances, images, volumes, snapshots and users will be delete.**
    (There is an option to use Openstack CLI to save and download images.)
@@ -34,12 +34,12 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |N|  |Y|
-Dashboard      |N|  |Y|
-API            |N|  |Y|
-Compute        |N|  |Y|
-Block storage  |N|  |Y|
-Image          |N|  |Y|
+Access         |Y|  |N|
+Dashboard      |Y|  |N|
+API            |Y|  |N|
+Compute        |Y|  |N|
+Block storage  |Y|  |N|
+Image          |Y|  |N|
 ============== ==== ====
 
 Location OSL:
