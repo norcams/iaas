@@ -11,15 +11,10 @@ UH-IaaS Status
 Last changed: |date|
 
 .. WARNING::
-   **Both OSL and BGO are down for testing**
-
-.. WARNING::
-   **Complete reinstall:** In preparation of the end of pilot and start
-   of production in November we will do a complete reinstall of both locations.
-   After the reinstall all users will be able to continue testing the new
-   production setup. This page and the slack channel will be updated during the reinstall.
-   **All existing instances, images, volumes, snapshots and users will be delete.**
-   (There is an option to use Openstack CLI to save and download images.)
+   **20th October - Complete reinstall:** In preparation of the end of pilot and start
+   of production in November we have done a complete reinstall of both locations.
+   All users will now be able to continue testing the new production setup.
+   **All existing instances, images, volumes, snapshots and users have been deleted.**
 
 Make sure to read both the :doc:`/enduser/index` and :doc:`/enduser/pilot`
 before you start.
@@ -30,29 +25,30 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |N|  |N|
-Dashboard      |N|  |N|
-API            |N|  |N|
-Compute        |N|  |N|
-Block storage  |N|  |N|
-Image          |N|  |N|
+Access         |Y|  |N|
+Dashboard      |Y|  |N|
+API            |Y|  |N|
+Compute        |Y|  |Y|
+Block storage  |Y|  |Y|
+Image          |Y|  |Y|
 ============== ==== ====
 
-Location OSL:
-
-- Dashboard: https://dashboard.iaas.uio.no
-
-- Access: https://access.iaas.uio.no
-
-Location BGO:
+Both BGO and OSL:
 
 - Dashboard: https://dashboard.iaas.uib.no
 
 - Access: https://access.iaas.uib.no
 
+- API: https://api.iaas.uib.no
 
 Known issues
 ============
+
+OSL and BGO location
+--------------------
+There is now one UH-Iaas cloud with two regions: BGO and OSL. Provision is
+done once at https://access.iaas.uib.no. In the dashboard you will have access
+to both regions. For API access remember to set REGION_NAME in rc-file.
 
 API access
 ----------

@@ -28,6 +28,7 @@ Create a ::file:`keystone_rc.sh` file:
   export OS_IDENTITY_API_VERSION=3
   export OS_USER_DOMAIN_NAME=dataporten
   export OS_PROJECT_DOMAIN_NAME=dataporten
+  export OS_REGION_NAME=bgo|osl
   export OS_NO_CACHE=1
 
 Make sure *<email>* is the same as the one used by FEIDE.
