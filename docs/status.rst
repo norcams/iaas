@@ -46,7 +46,7 @@ Known issues
 
 OSL and BGO location
 --------------------
-There is now one UH-Iaas cloud with two regions: BGO and OSL. Provision is
+There are now one UH-Iaas cloud with two regions: BGO and OSL. Provision is
 done once at https://access.iaas.uib.no. In the dashboard you will have access
 to both regions. For API access remember to set REGION_NAME in rc-file.
 
