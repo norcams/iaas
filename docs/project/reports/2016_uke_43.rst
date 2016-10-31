@@ -1,0 +1,66 @@
+======
+Uke 43
+======
+av Raymond Kristiansen, UH IaaS, 31. okt 2016
+
+.. contents:: :depth: 2
+
+
+Fullført
+========
+
+- Reinstallasjon av `bgo` ble utført i uke 41. Vi testet de installasjon av en
+  region fra grunnen av, samt at vi ryddet litt i tjenesteadresser og navn.
+
+- Reinstallasjon av 'osl' ble utført i uke 42. `osl` benytter samme
+  keystone-database som `bgo` og identity-nodene i `bgo` og `osl` vil svare
+  akkurat det samme på api-kall. Bruker trenger da kun å provisjonere
+  tilgang en gang for begge regioner. Vi har også kun et dashboard for begge
+  regioner.
+
+
+Under arbeid
+============
+
+- Både `test01` og `test02` venter på at eksternt utførte oppgaver skal løses
+  før disse kan betegnes som fullverdig testinstallasjoner.
+
+- Det jobbes med å få på plass en tjeneste for DNS for instanser. Denne vil
+  forhåpentligvis være på plass i løpet av året.
+
+Planlagt fremdrift
+==================
+
+- Oppdatere brukerdokumentasjon og sikkerhetsdokument
+
+- Sette opp sluttbrukertjenestene på nytt domene uh-iaas.no
+
+- Stressteste regionene for oppstart og sletting av instanser
+
+- Se på muligheter for mer HW. Vi har fått penger av UNINETT til å utvide
+  kapasitenten litt. Vi må finne ut hvordan vi får mest mulig ut av de
+  midlene.
+
+Utfordringer
+============
+
+- DNS tjenesten for instanser vil ikke være klar til vi går i produksjon.
+  Hovedgrunnen er mangel på dedikert personer i prosjekt.
+
+- API-tilgang er ikke optimal slik den er satt opp nå, men det fungerer. Ser
+  ingen enkel fiks som kan løse det før vi går i produksjon i november.
+  Det blir da viktig å gjøre brukerne kjent med hvilke utfordringer som gjelder.
+
+- I :doc:`../plans/production` har jeg skrevet at vi trenger 4 personer frem
+  til nyttår for å komme i produksjon. Vi er nå prosjektleder (100% delt),
+  UiB (1 person 100%) og UiO (1 person 60% og en person 40%). Det ser ikke ut
+  til å berøre datoene i leveransen, men vil kunne påvirke innholdet dersom vi
+  støter på større utfordringer.
+
+Oppdatert status
+================
+
+Arbeidet frem til leveranse 14. november vil vi oppdatere fortløpende
+på Trello: https://trello.com/b/loLFWWtV/iaas-release-plan
+
+Kun større oppgaver, utfordringer og avvik vil bli oppdatert her.
