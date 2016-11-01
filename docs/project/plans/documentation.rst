@@ -18,6 +18,8 @@ Kan basere oss på dagens versjon. Vi trenger iallefall litt om:
 * Support
 * SLA
 * API / avansert bruk
+* Changelog
+* Known issues
 
 Teknisk dokumentasjon
 ---------------------
@@ -35,6 +37,8 @@ Teknisk dokumentasjon
 
 Prosjektdokumentasjon
 ---------------------
+
+Sammen med teknisk eller i egen?
 
 **Språk:** norsk
 
