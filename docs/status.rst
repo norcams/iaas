@@ -25,9 +25,9 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |Y|  |N|
-Dashboard      |Y|  |N|
-API            |Y|  |N|
+Access         |Y| 
+Dashboard      |Y|
+API            |Y|
 Compute        |Y|  |Y|
 Block storage  |Y|  |Y|
 Image          |Y|  |Y|
