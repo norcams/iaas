@@ -41,7 +41,7 @@ trpport net (trp).
 ============== ===== ===== ======== ================ =========
  node           inf   net   addr     host             profile
 ============== ===== ===== ======== ================ =========
-master-01      eth1  trp   x.x.x.20 NA
+status-01      eth1  trp   x.x.x.21 controller-02     S
 mq-01          eth1  trp   x.x.x.31 controller-01     S
 mq-02          eth1  trp   x.x.x.32 NA
 mq-03          eth1  trp   x.x.x.33 NA
@@ -72,6 +72,9 @@ network-03     eth1  trp   x.x.x.73 NA
 identity-01    eth1  trp   x.x.x.81 controller-03     M
 identity-02    eth1  trp   x.x.x.82 NA
 identity-03    eth1  trp   x.x.x.83 NA
+api-01         eth1  trp   x.x.x.86 controller-01     M
+api-02         eth1  trp   x.x.x.87 NA
+api-03         eth1  trp   x.x.x.88 NA
 cephmon-01     eth1  trp   x.x.x.91 controller-01     S
 cephmon-02     eth1  trp   x.x.x.92 controller-02     S
 cephmon-03     eth1  trp   x.x.x.93 controller-03     S
