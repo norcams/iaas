@@ -7,6 +7,8 @@ Dette er et utkast til plan for bruk av DNS til interne og offentlige tjenester.
 Offentlig (uh-iaas.no)
 ======================
 
+Felles
+------
 * **www.uh-iaas.no**: i første omgang en enkel landingside med linker til alt
   annet
 * **docs.uh-iaas.no**: samme som uh-iaas.readthedocs.org
@@ -14,13 +16,17 @@ Offentlig (uh-iaas.no)
   med.
 * **access.uh-iaas.no**: dpapp for provisjonering
 * **dashboard.uh-iaas.no**: Openstack horizon
-* **console.<loc>.uh-iaas.no**: Openstack consoleproxy
 * **api.uh-iaas.no**: identity public endpoint
-* **compute.api.uh-iaas.no**: compute public endpoints
-* **identity.api.uh-iaas.no**: identity public endpoints
-* **network.api.uh-iaas.no**: network public endpoints
-* **image.api.uh-iaas.no**: image public endpoints
-* **volume.api.uh-iaas.no**: volume public endpoints
+
+Per lokasjon
+------------
+
+* **identity.api.<loc>.uh-iaas.no**: identity public endpoint
+* **compute.api.<loc>.uh-iaas.no**: compute public endpoints
+* **network.api.<loc>.uh-iaas.no**: network public endpoints
+* **image.api.<loc>.uh-iaas.no**: image public endpoints
+* **volume.api.<loc>.uh-iaas.no**: volume public endpoints
+* **console.<loc>.uh-iaas.no**: Openstack consoleproxy
 
 Instanser
 ---------
