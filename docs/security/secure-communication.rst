@@ -45,7 +45,7 @@ The security guide recommends that we use separate PKI deployments for
 internal systems and public facing services. In the future, we may
 want to use separate PKI deployments for different security domains.
 
-``[----]`` **Customer facing interfaces using trusted CA**
+``[PASS]`` **Customer facing interfaces using trusted CA**
   All customer facing interfaces should be provisioned using
   Certificate Authorities that are installed in the operating system
   certificate bundles by default. It should just work without the
@@ -53,13 +53,21 @@ want to use separate PKI deployments for different security domains.
   third-party software. We need certificates signed by a widely
   recognized public CA.
 
-  * FIXME: Identify and list all customer facing interfaces
-  * FIXME: Ensure publicly recognized CA on these interfaces
+  * dashboard.uh-iaas.no
+  * api.uh-iaas.no
+  * access.uh-iaas-no
+  * console.<region>.uh-iaas.no
+  * <service>.api.<region>.uh-iaas.no
 
-``[----]`` **Internal endpoints use non-public CA**
+  * We use Digicert Terena CA on all customer facing interfaces.
+
+``[DEFERRED]`` **Internal endpoints use non-public CA**
   As described above, it is recommended to use a private CA for
   internal endpoints.
 
+  * db connection between regions use non-public CA
+  * internal connection within regions use private network
+  
   * FIXME: Identify and list all internal endpoints
   * FIXME: Ensure non-public CA on these endpoints
 
@@ -75,13 +83,11 @@ From OpenStack Security Guide:
 
 We need to make sure that we're using an updated version of OpenSSL.
 
-``[----]`` **Ensure updated OpenSSL**
+``[PASS]`` **Ensure updated OpenSSL**
   UH-IaaS is based on CentOS, and uses the OpenSSL library from that
   distro. We need to make sure that OpenSSL is up-to-date.
 
-  * FIXME: How often are critical components like openssl updated, and
-    how is the procedure?
-
+  * OpenSSL and all other packages are manually updated once a month.
 
 Cryptographic algorithms, cipher modes, and protocols
 -----------------------------------------------------
@@ -101,6 +107,6 @@ cases where we don't control both endpoints.
   Limit the cipher suite on public facing endpoints to the
   general **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA**.
 
-``[----]`` **Limit cipher suite on internal endpoints**
+``[DEFERRED]`` **Limit cipher suite on internal endpoints**
   Limit the cipher suite on public facing endpoints
   to **ECDHE-ECDSA-AES256-GCM-SHA384**.
