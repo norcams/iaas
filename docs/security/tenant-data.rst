@@ -72,17 +72,20 @@ From OpenStack Security Guide:
 The security guide states that the cloud operators should do the
 following:
 
-``[----]`` **Track, document and verify media sanitization and disposal actions**
-  FIXME: Describe and document
+``[DEFERRED]`` **Track, document and verify media sanitization and disposal actions**
+  * OSL: Media are shredded before being disposed
+  * BGO: unknown
 
-``[----]`` **Test sanitation equipment and procedures to verify proper performance**
-  FIXME: Document testing
+``[DEFERRED]`` **Test sanitation equipment and procedures to verify proper performance**
+  * OSL: Equipment has been properly tested
+  * BGO: unknown
 
-``[----]`` **Sanitize portable, removable storage devices prior to connecting such devices to the cloud infrastructure**
-  FIXME: Document policies regarding this
+``[PASS]`` **Sanitize portable, removable storage devices prior to connecting such devices to the cloud infrastructure**
+  * Portable, removable media are never connected to the cloud infrastructure
 
-``[----]`` **Destroy cloud system media that cannot be sanitized**
-  FIXME: wtf?
+``[DEFERRED]`` **Destroy cloud system media that cannot be sanitized**
+  * OSL: Media are destroyed using a shredder
+  * BGO: unknown
 
 Data not securely erased
 """"""""""""""""""""""""
@@ -219,5 +222,5 @@ From `OpenStack Security Guide\: Tenant data privacy - Key management`_:
   Module (HSM) or the use of the Key Management Interchange Protocol
   (KMIP), which is supported by an open-source project called PyKMIP.*
 
-``[----]`` **Consider adding Barbican**
+``[DEFERRED]`` **Consider adding Barbican**
   FIXME: Consider and document
