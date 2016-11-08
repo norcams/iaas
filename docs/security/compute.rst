@@ -52,11 +52,9 @@ Ref: `OpenStack Security Guide\: Compute - Hardening the virtualization layers`_
 Physical hardware (PCI passthrough)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Ensure that the hypervisor is configured to utilize IOMMU**
-  FIXME: Make sure
+``[N/A]`` **Ensure that the hypervisor is configured to utilize IOMMU**
 
-``[----]`` **Disable PCI passthrough**
-  FIXME: Is this disabled?
+``[PASS]`` **Disable PCI passthrough**
 
 Minimizing the QEMU code base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,8 +69,8 @@ Does not apply. We are using precompiled QEMU.
 Mandatory access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Ensure SELinux / sVirt is running in Enforcing mode**
-  FIXME: Make sure
+``[DEFERRED]`` **Ensure SELinux / sVirt is running in Enforcing mode**
+A device ACL for the instance virtual network interfaces needs review, but risk is assumed to be low.
 
 
 How to select virtual consoles
@@ -82,8 +80,7 @@ How to select virtual consoles
 
 Ref: `OpenStack Security Guide\: Compute - How to select virtual consoles`_
 
-``[----]`` **Choose which virtual console we want**
-  FIXME: Select and document
+``[PASS]`` We run SSL hardened spice console
 
 
 Checklist
@@ -95,17 +92,17 @@ Ref: `OpenStack Security Guide\: Compute - Checklist`_
 
 See the above link for info about these checks.
 
-``[----]`` **Check-Compute-01: Is user/group ownership of config files set to root/nova?**
-  Yes/No?
+``[PASS]`` **Check-Compute-01: Is user/group ownership of config files set to root/nova?**
+  Yes
 
-``[----]`` **Check-Compute-02: Are strict permissions set for configuration files?**
-  Yes/No?
+``[PASS]`` **Check-Compute-02: Are strict permissions set for configuration files?**
+  Yes
 
-``[----]`` **Check-Compute-03: Is keystone used for authentication?**
-  Yes/No?
+``[PASS]`` **Check-Compute-03: Is keystone used for authentication?**
+  Yes
 
-``[----]`` **Check-Compute-04: Is secure protocol used for authentication?**
-  Yes/No?
+``[PASS]`` **Check-Compute-04: Is secure protocol used for authentication?**
+  Yes?
 
-``[----]`` **Check-Compute-05: Does Nova communicate with Glance securely?**
-  Yes/No?
+``[DEFERRED]`` **Check-Compute-05: Does Nova communicate with Glance securely?**
+  Nova communicates with glance on a private network for now, but TLS is in the pipeline.
