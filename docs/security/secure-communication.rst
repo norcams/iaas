@@ -10,7 +10,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **33%** (2/6)        |
+| **Implemented percent** | **33%** (2/6)       |
 +-------------------------+---------------------+
 
 .. _OpenStack Security Guide\: Secure communication: http://docs.openstack.org/security-guide/secure-communication.html
