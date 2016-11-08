@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/8)        |
+| **Implemented percent** | **75%** (6/8)       |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Block Storage`_:
@@ -37,7 +37,7 @@ UH-IaaS block storage description
   system. Every compute node is given read/write access to a pool where
   instance block volumes are stored. The connection is made with the ceph
   rbd client.
- 
+
 
 Checklist
 ---------

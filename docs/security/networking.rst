@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **91%** (10/11)     |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Networking`_:
