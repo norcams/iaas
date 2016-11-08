@@ -188,3 +188,31 @@ Procedure
      Physical hosts may have to be rebooted or powered on manually. Make sure
      they are configured to PXE boot on the managment interface on their first boot.
 
+#. Execute puppet on the node in this sequence:
+
+   a. `mq-01`, `logger-01`
+   #. `db-01`, `db-02`, `dashboard-01`, `monitor-01`
+
+      For `dashboard-01` the certificates must be first distributed.
+
+   #. `cephmon-0[1-]`
+   #. `identity-01`, `access-01`
+
+      For `access-01` the certificates must be first distributed.
+
+   #. `storage0[1-]`
+   #. `volume-01`, `image-o1`, `network-01`, `novactrl-01`, `console-01`
+
+      For `console-01` the certificates must be first distributed.
+
+   #. `compute-0[1-]`
+
+#. Enable regular puppet execution by removing *puppet::runmode: 'none'* from
+   1. **virsh list** should now report the foreman instance as running
+   #. The install can be monitored with **vncviewer $loc-controller.01**,
+      **virt-manager** connected to *$loc-controller-01* or your preferred
+      vnc viewer application
+   #. When the message 
+      
+      "*Domain creation completed.
+      Restarting guest.*"

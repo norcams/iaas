@@ -37,7 +37,7 @@ Ref: `OpenStack Security Guide\: Identity - Authentication`_
 Invalid login attempts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Prevent or mitigate brute-force attacks**
+``[DEFERRED]`` **Prevent or mitigate brute-force attacks**
   A pattern of repetitive failed login attempts is generally an
   indicator of brute-force attacks. This is important to us as ours is
   a public cloud. We need to figure out if our user authentication
@@ -46,19 +46,28 @@ Invalid login attempts
   policies around reviewing access control logs to identify and detect
   unauthorized attempts to access accounts.
 
-  * FIXME: Implement or describe as outlined above
+  * As it stands there are no preventive methods in place. Although
+    there are centralized logging so fra no methodical analyzis are
+    done on these.
+    Must consider setting up detection of brute-force attacks, but this
+    is not considered for the short term.
+
 
 Multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Multi-factor authentication for privileged accounts**
+``[DEFERRED]`` **Multi-factor authentication for privileged accounts**
 
   We should employ multi-factor authentication for network access to
   privileged user accounts. This will provide insulation from brute
   force, social engineering, and both spear and mass phishing attacks
   that may compromise administrator passwords.
 
-  * FIXME: Implement multi-factor
+  * There are no distinction on from where access to service accounts
+    is allowd. Some mechanism should be in place to stop attemtps to use
+    service accounts when not applicable. Multi-factor authentication
+    might be considered for this. Especially as the user names for service
+    accounts are well known.
 
 
 Authentication methods
@@ -73,7 +82,11 @@ Ref: `OpenStack Security Guide\: Identity - Authentication methods`_
   authentication policy requirements, such as password policy
   enforcement (password length, diversity, expiration etc.).
 
-  * FIXME: Document this
+  * There are currently no password policy enforced on service accounts.
+
+    Regular users are set up after autentication through `Dataporten`. Their
+    password are auto-generated and random, the logic used is currently only
+    documented in code (github:nocams-himlar-db-prep).
 
 
 Authorization
@@ -99,23 +112,23 @@ Establish formal access control policies
   creating, deleting, disabling, and enabling accounts, and for
   assigning privileges to the accounts.
 
-  * FIXME: Describe this
+  * No policies in place for account creation of any kind 
 
 ``[----]`` **Describe periodic review**
   We should periodically review the policies to ensure that the
   configuration is in compliance with approved policies.
 
-  * FIXME: Describe policy for reviewing the policies
+  * No policies -> no review process
 
 Service authorization
 ~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Don't use "tempAuth" file for service auth**
+``[PASSED]`` **Don't use "tempAuth" file for service auth**
   The Compute and Object Storage can be configured to use the Identity
   service to store authentication information. The "tempAuth" file
   method displays the password in plain text and should not be used.
 
-  * FIXME: Make sure that we're not using "tempAuth"
+  * Object storage and Swift is not implemented. `tempAuth` is not used.
 
 ``[----]`` **Use client authentication for TLS**
   The Identity service supports client authentication for TLS which
@@ -123,15 +136,15 @@ Service authorization
   authentication factor, in addition to the user name and password,
   that provides greater reliability on user identification.
 
-  * FIXME: Is this implemented?
+  * Currently not implemented
 
-``[----]`` **Protect sensitive files**
+``[FAIL]`` **Protect sensitive files**
   The cloud administrator should protect sensitive configuration files
   from unauthorized modification. This can be achieved with mandatory
   access control frameworks such as SELinux, including
   ``/etc/keystone/keystone.conf`` and ``X.509`` certificates.
 
-  * FIXME: SELinux
+  * SELinux should be implemented
 
 
 Policies
@@ -141,7 +154,7 @@ Policies
 
 Ref: `OpenStack Security Guide\: Identity - Policies`_
 
-``[----]`` **Describe policy configuration management**
+``[DEFERRED]`` **Describe policy configuration management**
   Each OpenStack service defines the access policies for its resources
   in an associated policy file. A resource, for example, could be API
   access, the ability to attach to a volume, or to fire up
@@ -150,7 +163,7 @@ Ref: `OpenStack Security Guide\: Identity - Policies`_
   control policies do not unintentionally weaken the security of any
   resource.
 
-  * FIXME: Describe policy for changing policy.json
+  * No policy in place. Currently running default.
 
 
 Tokens
@@ -166,10 +179,11 @@ Ref: `OpenStack Security Guide\: Identity - Tokens`_
   recommended expiry value should be set to a lower value that allows
   enough time for internal services to complete tasks.*
 
-``[----]`` **Reduce token lifetime**
+``[DEFERRED]`` **Reduce token lifetime**
   We should consider reducing the token lifetime.
 
-  * FIXME: Consider this
+  * Currently the token expiration time is the default one hour. Should consider
+    reducing this.
 
 
 Checklist
@@ -180,18 +194,21 @@ Checklist
 Ref: `OpenStack Security Guide\: Identity - Checklist`_
 
 See the above link for info about these checks.
-
-``[----]`` **Check-Identity-02: Are strict permissions set for Identity configuration files?**
+``[No]`` **Check-Identity-01: Is user/group ownership of config files set to keystone?**
   Yes/No?
 
-``[----]`` **Check-Identity-03: is TLS enabled for Identity?**
+``["Yes"]`` **Check-Identity-02: Are strict permissions set for Identity configuration files?**
+  Yes/No?
+            COMMENT: Not all files in check list exists, the rest is OK
+
+``[No]`` **Check-Identity-03: is TLS enabled for Identity?**
   Yes/No?
 
-``[----]`` **Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?**
+``[No]`` **Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?**
   Yes/No?
 
-``[----]`` **Check-Identity-05: Is max_request_body_size set to default (114688)?**
+``[Yes]`` **Check-Identity-05: Is max_request_body_size set to default (114688)?**
   Yes/No?
 
-``[----]`` **Check-Identity-06: Disable admin token in /etc/keystone/keystone.conf**
+``[No]`` **Check-Identity-06: Disable admin token in /etc/keystone/keystone.conf**
   Yes/No?
