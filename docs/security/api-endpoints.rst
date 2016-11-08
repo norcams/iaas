@@ -10,7 +10,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **66%** (4/6)       |
 +-------------------------+---------------------+
 
 .. _OpenStack Security Guide\: API endpoints: http://docs.openstack.org/security-guide/api-endpoints.html
@@ -43,21 +43,30 @@ From OpenStack Security Guide:
   public or internal API end point values. This can lead to internal
   management traffic being routed to external API endpoints.*
 
-``[----]`` **Configure internal URLs in the Identity service catalog**
+``[PASS]`` **Configure internal URLs in the Identity service catalog**
   The guide recommends that our Identity service catalog be aware of
   our internal URLs. This feature is not utilized by default, but may
   be leveraged through configuration. See `API endpoint configuration
   recommendations`_ for details.
 
-  * FIXME: Ensure and document this
+  * All services have configured admin, internal and public endpoints.
 
-``[----]`` **Configure applications for internal URLs**
+``[PASS]`` **Configure applications for internal URLs**
   It is recommended that each OpenStack service communicating to the
   API of another service must be explicitly configured to access the
   proper internal API endpoint. See `API endpoint configuration
-  recommendations`_. 
+  recommendations`_.
 
-  * FIXME: Ensure and document this
+  All service to service communication use internal endpoints within
+  a region. This includes:
+
+  * volume to identity
+  * image to identity
+  * network to identity
+  * compute to identity
+  * compute to image
+  * compute to volume
+  * compute to network
 
 Paste and middleware
 ~~~~~~~~~~~~~~~~~~~~
@@ -72,11 +81,11 @@ From OpenStack Security Guide:
   pipeline or adding additional middleware might have unpredictable
   security impact.*
 
-``[----]`` **Document middleware**
+``[N/A]`` **Document middleware**
   We should careful when implementating non-standard software in the
   middleware, and this should be thoroughly documented.
 
-  * FIXME: Are we using any non-standard middleware?
+  * We are not using any non-standard middleware
 
 API endpoint process isolation and policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,14 +97,13 @@ From OpenStack Security Guide:
   as possible. Where deployments allow, API endpoints should be
   deployed on separate hosts for increased isolation.*
 
-``[----]`` **Namespaces**
+``[N/A]`` **Namespaces**
   Linux supports namespaces to assign processes into independent
   domains.
 
-  * FIXME: Are we using namespaces to compartmentalize API endpoint
-    processes?
+  * All service endpoint run on different virtual hosts.
 
-``[----]`` **Network policy**
+``[DEFERRED]`` **Network policy**
   We should pay special attention to API endpoints, as they typically
   bridge multiple security domains. Policies should be in place and
   documented, and we can use firewalls, SELinux etc. to enforce proper
@@ -103,7 +111,7 @@ From OpenStack Security Guide:
 
   * FIXME: Implement and document this
 
-``[----]`` **Mandatory access controls**
+``[DEFERRED]`` **Mandatory access controls**
   API endpoint processes should be as isolated from each other as
   possible. This should be enforced through Mandatory Access Controls
   (e.g. SELinux), not just Discretionary Access Controls.

@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **91%** (10/11)     |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Networking`_:
@@ -42,13 +42,11 @@ Does not apply. We're using Calico, in which L2 isn't employed at all.
 Network services
 ~~~~~~~~~~~~~~~~
 
-``[----]`` **Use Neutron for security groups**
-  When using the Networking service, we recommend that you enable
-  security groups in this service and disable it in the Compute
-  service.
-
-  * FIXME: Describe how this works with Calico
-
+``[PASS]`` **Use Neutron for security groups**
+  The calico neutron network plugin provides a rich security feature set.
+  Calico uses neutron security groups and implements the rules with
+  iptables on the compute hosts. Thus, security rulesets can be described
+  down to instance level.
 
 Networking services security best practices
 -------------------------------------------
@@ -57,20 +55,24 @@ Networking services security best practices
 
 Ref: `OpenStack Security Guide\: Networking - Networking services security best practices`_
 
-``[----]`` **Document how Calico is used in UH-IaaS infrastructure**
-  FIXME: Provide documentation
+``[PASS]`` **Document how Calico is used in UH-IaaS infrastructure**
+  We enable the calico plugin as the neutron core plugin system wide. Thus, no L2
+  connectivity is provided between instances, and as a design feature, no project
+  isolation on L3 connectivity. In other words, there is no such thing as a
+  private network, even for RFC 1918 address spaces. This design relies on
+  security groups to provide isolation and pr project security.
 
-``[----]`` **Document which security domains have access to OpenStack network node**
-  FIXME: Provide documentation
+``[N/A]`` **Document which security domains have access to OpenStack network node**
+  As a consequence of our network design, no network nodes are deployed.
 
-``[----]`` **Document which security domains have access to SDN services node**
-  FIXME: Provide documentation
+``[N/A]`` **Document which security domains have access to SDN services node**
+  We do not use SDN service nodes.
 
 OpenStack Networking service configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Restrict bind address of the API server: neutron-server**
-  FIXME: Document restriction
+``[PASS]`` **Restrict bind address of the API server: neutron-server**
+  Neutron API servers is bound to interal network only. 
 
 
 Securing OpenStack networking services
@@ -91,14 +93,16 @@ From OpenStack Security Guide:
   OpenStack Networking policy definitions affect network availability,
   network security and overall OpenStack security.*
 
-``[----]`` **Evaluate network policy**
-  FIXME: Evaluate and document
+``[PASS]`` **Evaluate network policy**
+  User creation of networks, virtual routers and networks is prohibited by
+  policy. Only administrator created networking resources are available
+  for projects and users. 
 
 Quotas
 ~~~~~~
 
-``[----]`` **Document choices wrt. networking quotas**
-  FIXME: Document this
+``[N/A]`` **Document choices wrt. networking quotas**
+  As users can not create networking resources, no quotas apply.
 
 
 Checklist
@@ -110,17 +114,17 @@ Ref: `OpenStack Security Guide\: Networking - Checklist`_
 
 See the above link for info about these checks.
 
-``[----]`` **Check-Neutron-01: Is user/group ownership of config files set to root/neutron?**
-  Yes/No?
+``[PASS]`` **Check-Neutron-01: Is user/group ownership of config files set to root/neutron?**
+  Yes
 
-``[----]`` **Check-Neutron-02: Are strict permissions set for configuration files?**
-  Yes/No?
+``[PASS]`` **Check-Neutron-02: Are strict permissions set for configuration files?**
+  Yes
 
-``[----]`` **Check-Neutron-03: Is keystone used for authentication?**
-  Yes/No?
+``[PASS]`` **Check-Neutron-03: Is keystone used for authentication?**
+  Yes
 
-``[----]`` **Check-Neutron-04: Is secure protocol used for authentication?**
-  Yes/No?
+``[PASS]`` **Check-Neutron-04: Is secure protocol used for authentication?**
+  Yes
 
-``[----]`` **Check-Neutron-05: Is TLS enabled on Neutron API server?**
-  Yes/No?
+``[DEFERRED]`` **Check-Neutron-05: Is TLS enabled on Neutron API server?**
+  Neutron API communicates on a private network for now, but TLS is in the pipeline.
