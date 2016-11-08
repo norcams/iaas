@@ -85,10 +85,8 @@ From OpenStack Security Guide:
   be vulnerable to security breaches associated with fake HTTP Host
   headers.*
 
-``[FAIL]`` **Is ALLOWED_HOSTS configured for dashboard?**
-  The UH-IaaS should be accessible from mostly everywhere. Setting
-  ALLOWED_HOSTS would limit the access to a select few, which isn't
-  what we want.
+``[DEFERRED]`` **Is ALLOWED_HOSTS configured for dashboard?**
+  FIXME
 
 Horizon image upload
 ~~~~~~~~~~~~~~~~~~~~
