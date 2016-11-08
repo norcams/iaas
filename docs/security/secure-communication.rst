@@ -10,7 +10,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **33%** (2/6)        |
 +-------------------------+---------------------+
 
 .. _OpenStack Security Guide\: Secure communication: http://docs.openstack.org/security-guide/secure-communication.html
@@ -67,7 +67,7 @@ want to use separate PKI deployments for different security domains.
 
   * db connection between regions use non-public CA
   * internal connection within regions use private network
-  
+
   * FIXME: Identify and list all internal endpoints
   * FIXME: Ensure non-public CA on these endpoints
 
@@ -99,11 +99,11 @@ acceptable to
 accept **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA** in
 cases where we don't control both endpoints.
 
-``[----]`` **Ensure TLS 1.2**
+``[DEFERRED]`` **Ensure TLS 1.2**
   Make sure that only TLS 1.2 is used. Previous versions of TLS, as
   well as SSL, should be disabled completely.
 
-``[----]`` **Limit cipher suite on public endpoints**
+``[DEFERRED]`` **Limit cipher suite on public endpoints**
   Limit the cipher suite on public facing endpoints to the
   general **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA**.
 
