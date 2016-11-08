@@ -50,14 +50,14 @@ From OpenStack Security Guide:
   provides protection of the communications from tampering and
   eavesdropping in-transit to the messaging server.*
 
-``[----]`` **Ensure TLS is used for RabbitMQ**
-  FIXME: yes/no
+``[DEFERRED]`` **Ensure TLS is used for RabbitMQ**
+  * TLS is NOT used for the messaging service. Should be considered.
 
-``[----]`` **Use an internally managed CA**
-  FIXME: Document this
+``[DEFERRED]`` **Use an internally managed CA**
+  * No CA as TLS is not used
 
-``[----]`` **Ensure restricted file permissions on certificate and key files**
-  FIXME: yes/no
+``[DEFERRED]`` **Ensure restricted file permissions on certificate and key files**
+  * No CA as TLS is not used
 
 Queue authentication and access control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,11 +71,11 @@ From OpenStack Security Guide:
   and passwords, accounts should be created per-service and node for
   finer grained auditability of access to the queue.*
 
-``[----]`` **Configure X.509 client certificates on all OpenStack service nodes**
-  FIXME: Implement and document
+``[DEFERRED]`` **Configure X.509 client certificates on all OpenStack service nodes**
+  * Currently no TLS/user certificates set up
 
-``[----]`` **Any user names and passwords are per-service and node**
-  FIXME: Implement and document
+``[DEFERRED]`` **Any user names and passwords are per-service and node**
+  * Currently common password. ?????
 
 Message queue process isolation and policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,8 +88,8 @@ Message queue process isolation and policy
 
   * FIXME: Ensure and document
 
-``[----]`` **Ensure queue servers only accept connections from management network**
+``[DEFERRED]`` **Ensure queue servers only accept connections from management network**
   FIXME: Ensure and document
 
-``[----]`` **Use mandatory access controls**
+``[DEFERRED]`` **Use mandatory access controls**
   FIXME: SELinux in enforcing mode on all nodes
