@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **44%** (4/9)        |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Databases`_:
@@ -26,7 +26,7 @@ From `OpenStack Security Guide\: Databases`_:
   Security Guide currently focuses on PostgreSQL and MySQL.*
 
 .. NOTE::
-   We are using MySQL.
+   We are using MariaDB 10.1 with packages directly from upstream repo.
 
 
 Database back end considerations
@@ -36,7 +36,7 @@ Database back end considerations
 
 Ref: `OpenStack Security Guide\: Databases - Database back end considerations`_
 
-``[----]`` **Evaluate existing MySQL security guidance**
+``[DEFERRED]`` **Evaluate existing MySQL security guidance**
   See link above for details.
 
   * FIXME: Evaluate and document
@@ -58,33 +58,39 @@ From OpenStack Security Guide:
   that unique database user accounts be created per node needing
   access to the database.*
 
-``[----]`` **Unique database user accounts per node**
-  FIXME: Document this
+``[PASS]`` **Unique database user accounts per node**
 
-``[----]`` **Separate database administrator account**
-  FIXME: Document this
+  Each service run on different host, and each host has a unique user.
 
-``[----]`` **Database administrator account is protected**
+``[PASS]`` **Separate database administrator account**
+
+  The root user is only used to provision new databases and users.
+
+``[DEFERRED]`` **Database administrator account is protected**
   FIXME: Document this
 
 Require user accounts to require SSL transport
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **The database user accounts are configured to require TLS**
-  FIXME: Document this
+``[DEFERRED]`` **The database user accounts are configured to require TLS**
+
+  All databases support TLS, but only DB replication between location requires
+  TLS.
 
 Authentication with X.509 certificates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **The database user accounts are configured to require X.509 certificates**
+``[DEFERRED]`` **The database user accounts are configured to require X.509 certificates**
   FIXME: Document this
 
 Nova-conductor
 ~~~~~~~~~~~~~~
 
-``[----]`` **Document how Nova-conductor is used**
-  FIXME: Are we using Nova-conductor?
+``[PASS]`` OpenStack Compute offers a sub-service called nova-conductor which
+  proxies database connections over RPC.
 
+  We use nova conductor, and nova compute have access to it over the message bus.
+  The RPC messaging bus are not encrypted, but run on a private network.
 
 Database transport security
 ---------------------------
@@ -96,11 +102,16 @@ Ref: `OpenStack Security Guide\: Databases - Database transport security`_
 Database server IP address binding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Database access only over an isolated management network**
-  FIXME: Document this
+``[PASS]`` **Database access only over an isolated management network**
+
+  Database replication is done over public network, with TLS and firewall to
+  restrict access.
+
 
 Database transport
 ~~~~~~~~~~~~~~~~~~
 
-``[----]`` **The database requires TLS**
-  FIXME: Document this
+``[DEFERRED]`` **The database requires TLS**
+
+  All databases support TLS transport, but only DB replication between
+  locations requires TLS.
