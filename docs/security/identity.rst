@@ -77,16 +77,20 @@ Authentication methods
 
 Ref: `OpenStack Security Guide\: Identity - Authentication methods`_
 
-``[----]`` **Document authentication policy requirements**
+``[DEFERRED]`` **Document authentication policy requirements**
   We should document (or provide link to external documentation) the
   authentication policy requirements, such as password policy
   enforcement (password length, diversity, expiration etc.).
 
   * There are currently no password policy enforced on service accounts.
-
+    
     Regular users are set up after autentication through `Dataporten`. Their
     password are auto-generated and random, the logic used is currently only
     documented in code (github:nocams-himlar-db-prep).
+    
+    There should be a proper documentation and policy (enforcing) with regards
+    to passwords, especially when users themselves later on can generate their
+    own passwords.
 
 
 Authorization
@@ -130,15 +134,16 @@ Service authorization
 
   * Object storage and Swift is not implemented. `tempAuth` is not used.
 
-``[----]`` **Use client authentication for TLS**
+``[FAILED]`` **Use client authentication for TLS**
   The Identity service supports client authentication for TLS which
   may be enabled. TLS client authentication provides an additional
   authentication factor, in addition to the user name and password,
   that provides greater reliability on user identification.
 
-  * Currently not implemented
+  * The negative implications for the user experience by implementing this
+    is considered to outweight the extra security gained by this.
 
-``[FAIL]`` **Protect sensitive files**
+``[DEFERRED]`` **Protect sensitive files**
   The cloud administrator should protect sensitive configuration files
   from unauthorized modification. This can be achieved with mandatory
   access control frameworks such as SELinux, including
@@ -179,12 +184,12 @@ Ref: `OpenStack Security Guide\: Identity - Tokens`_
   recommended expiry value should be set to a lower value that allows
   enough time for internal services to complete tasks.*
 
-``[DEFERRED]`` **Reduce token lifetime**
+``[FAILED]`` **Reduce token lifetime**
   We should consider reducing the token lifetime.
 
-  * Currently the token expiration time is the default one hour. Should consider
-    reducing this.
-
+  * Currently the token expiration time is the default one hour. The
+    rationale is that this strikes a good balance between an acceptable
+    user experience and security.
 
 Checklist
 ---------
@@ -196,10 +201,11 @@ Ref: `OpenStack Security Guide\: Identity - Checklist`_
 See the above link for info about these checks.
 ``[No]`` **Check-Identity-01: Is user/group ownership of config files set to keystone?**
   Yes/No?
+         COMMENT: ownership set to `root:keystone`
 
-``["Yes"]`` **Check-Identity-02: Are strict permissions set for Identity configuration files?**
+``[Yes]`` **Check-Identity-02: Are strict permissions set for Identity configuration files?**
   Yes/No?
-            COMMENT: Not all files in check list exists, the rest is OK
+          COMMENT: Not all files in check list exists, the rest is OK
 
 ``[No]`` **Check-Identity-03: is TLS enabled for Identity?**
   Yes/No?
