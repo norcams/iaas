@@ -30,6 +30,15 @@ From `OpenStack Security Guide\: Block Storage`_:
   storage equipment or where it is located.*
 
 
+UH-IaaS block storage description
+---------------------------------
+
+  We have deployed a cinder backend based on Ceph, the clustered file
+  system. Every compute node is given read/write access to a pool where
+  instance block volumes are stored. The connection is made with the ceph
+  rbd client.
+ 
+
 Checklist
 ---------
 
@@ -39,26 +48,26 @@ Ref: `OpenStack Security Guide\: Block Storage - Checklist`_
 
 See the above link for info about these checks.
 
-``[----]`` **Check-Block-01: Is user/group ownership of config files set to root/cinder?**
-  Yes/No?
+``[PASS]`` **Check-Block-01: Is user/group ownership of config files set to root/cinder?**
+  Yes
 
-``[----]`` **Check-Block-02: Are strict permissions set for configuration files?**
-  Yes/No?
+``[PASS]`` **Check-Block-02: Are strict permissions set for configuration files?**
+  Yes
 
-``[----]`` **Check-Block-03: Is keystone used for authentication?**
-  Yes/No?
+``[PASS]`` **Check-Block-03: Is keystone used for authentication?**
+  Yes
 
-``[----]`` **Check-Block-04: Is TLS enabled for authentication?**
-  Yes/No?
+``[PASS]`` **Check-Block-04: Is TLS enabled for authentication?**
+  Yes
 
-``[----]`` **Check-Block-05: Does cinder communicate with nova over TLS?**
-  Yes/No?
+``[DEFERRED]`` **Check-Block-05: Does cinder communicate with nova over TLS?**
+  Cinder communicates with nova on a private network for now, but TLS is in the pipeline.
 
-``[----]`` **Check-Block-06: Does cinder communicate with glance over TLS?**
-  Yes/No?
+``[DEFERRED]`` **Check-Block-06: Does cinder communicate with glance over TLS?**
+  Cinder communicates with glance on a private network for now, but TLS is in the pipeline.
 
-``[----]`` **Check-Block-07: Is NAS operating in a secure environment?**
-  Yes/No?
+``[N/A]`` **Check-Block-07: Is NAS operating in a secure environment?**
+  We do not have a NAS in our environment.
 
-``[----]`` **Check-Block-08: Is max size for the body of a request set to default (114688)?**
-  Yes/No?
+``[PASS]`` **Check-Block-08: Is max size for the body of a request set to default (114688)?**
+  Yes
