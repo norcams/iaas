@@ -20,7 +20,9 @@ of four different values:
 * ``[PASS]`` This check has been passed
 * ``[FAIL]`` This check is failed
 * ``[----]`` This check has not been considered yet
-* ``[DEFERRED]`` This check has been postponed or does not apply
+* ``[N/A]`` This check is not applicable
+* ``[DEFERRED]`` This check has been postponed, will be considered at
+  a later time
 
 .. toctree::
     :maxdepth: 2
