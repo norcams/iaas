@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **100%** (6/6)      |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Instance security management`_:
@@ -49,8 +49,9 @@ From OpenStack Security Guide:
   provide a way to fairly and securely distribute entropy through a
   distributed system.*
 
-``[----]`` **Consider adding hardware random number generators (HRNG)**
-  FIXME: Consider and document
+``[PASS]`` **Consider adding hardware random number generators (HRNG)**
+  We do not consider HRNG necessary for a deployment of this scale. This
+  may be revisited in the future.
 
 
 Scheduling instances to nodes
@@ -62,8 +63,10 @@ From OpenStack Security Guide:
   must be selected. This selection is performed by the nova-scheduler
   which determines how to dispatch compute and volume requests.*
 
-``[----]`` **Describe which scheduler and filters that are used**
-  FIXME: Document this
+``[PASS]`` **Describe which scheduler and filters that are used**
+  For now, we use the default nova scheduling filters, and all compute
+  hosts are considered equal in features and performance. This will
+  change in the future if the need arise for more specialized resources.
 
 
 Trusted images
@@ -76,24 +79,25 @@ From OpenStack Security Guide:
   able to ensure the image they are utilizing has not been tampered
   with.*
 
-``[----]`` **Maintain golden images**
-  FIXME: Describe/document policies for maintaining a set of golden
-  images obtained from trusted sources
+``[PASS]`` **Maintain golden images**
+  We provide updated upstream cloud images for popular linux distributions.
+  Other operating system golden images will be evaluated.
 
-``[DEFERRED]`` **Consider enabling instance signature verification**
-  Only available in Mitaka and later releases
+``[N/A]`` **Consider enabling instance signature verification**
+  For now, this is beyond the scope of the project.
 
 
 Instance migrations
 ~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Disable live migration**
-  FIXME: disable this if we don't want to support it
+``[PASS]`` **Disable live migration**
+  Live migration is not available in our deployment. For now, the instances
+  have to be cold migrated. This is an admin only task, used mainly in
+  conjunction with reinstallation of compute hosts.
 
 
 Monitoring, alerting, and reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Aggrgate logs, e.g. to ELK**
-  FIXME: Implement and document
-
+``[PASS]`` **Aggrgate logs, e.g. to ELK**
+  Compute host logs are sent to an ELK stack.
