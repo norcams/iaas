@@ -94,11 +94,11 @@ Regarding erasure of metadata, the security guide suggests using
 database and/or system configuration for auto vacuuming and periodic
 free-space wiping.
 
-``[----]`` **Periodic database vacuuming**
-  FIXME: Implement and document
+``[DEFERRED]`` **Periodic database vacuuming**
+  Not implemented at this time. We will revisit this at a later time.
 
-``[----]`` **Periodic free-space wiping of ephemeral storage**
-  FIXME: Implement and document
+``[FAIL]`` **Periodic free-space wiping of ephemeral storage**
+  We're not doing this, as we consider this to be an acceptable risk.
 
 Instance memory scrubbing
 """""""""""""""""""""""""
@@ -121,12 +121,11 @@ From OpenStack Security Guide:
   below. When this feature is used, destruction of data is
   accomplished by securely deleting the encryption key.*
 
-``[----]`` **Consider volume encryption**
-  FIXME: This depends on the plugin used. Document this.
+``[DEFERRED]`` **Consider volume encryption**
+  Nice to have, but adds complexity. We will revisit this.
 
-``[----]`` **Secure erasure of volume data**
-  FIXME: Review and implement mechanisms that are feasible and
-  applicable in our case.
+``[FAIL]`` **Secure erasure of volume data**
+  We're not doing this, as we consider this to be an acceptable risk.
 
 Image service delay delete feature
 """"""""""""""""""""""""""""""""""
@@ -137,9 +136,8 @@ From OpenStack Security Guide:
   pend the deletion of an image for a defined time period. It is
   recommended to disable this feature if it is a security concern*
 
-``[----]`` **Consider disabling delayed delete**
-  FIXME: Consider if this is a security concern, and consider
-  disabling the delayed delete feature
+``[PASS]`` **Consider disabling delayed delete**
+  Considered, we don't think this is a security concern.
 
 Compute soft delete feature
 """""""""""""""""""""""""""
@@ -150,9 +148,8 @@ From OpenStack Security Guide:
   instance that is deleted to be in a soft-delete state for a defined
   time period. The instance can be restored during this time period.*
 
-``[----]`` **Consider disabling compute soft delete**
-  FIXME: Consider if this is a security concern, and consider
-  disabling the soft delete feature
+``[PASS]`` **Consider disabling compute soft delete**
+  Considered, we don't think this is a security concern.
 
 Compute instance ephemeral storage
 """"""""""""""""""""""""""""""""""
@@ -163,7 +160,7 @@ From OpenStack Security Guide:
   dependent on the chosen hypervisor and the OpenStack Compute
   plug-in.*
 
-``[----]`` **Document ephemeral storage deletion**
+``[DEFERRED]`` **Document ephemeral storage deletion**
   FIXME: Document how this works in our environment
 
 
@@ -183,29 +180,29 @@ From `OpenStack Security Guide\: Tenant data privacy - Data encryption`_:
 Volume encryption
 ~~~~~~~~~~~~~~~~~
 
-``[----]`` **Consider volume encryption**
-  FIXME: Consider this and document
+``[DEFERRED]`` **Consider volume encryption**
+  Postponed.
 
 Ephemeral disk encryption
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Consider ephemeral disk encryption**
-  FIXME: Consider this and document
+``[PASS]`` **Consider ephemeral disk encryption**
+  Considered.
 
 Block Storage volumes and instance ephemeral filesystems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Consider which options we have available**
+``[DEFERRED]`` **Consider which options we have available**
   FIXME: Document
 
-``[----]`` **Consider adding encryption**
-  FIXME: Consider and document
+``[PASS]`` **Consider adding encryption**
+  Considered.
 
 Network data
 ~~~~~~~~~~~~
 
-``[----]`` **Consider encrypting tenant data over IPsec or other tunnels**
-  FIXME: Consider and document
+``[PASS]`` **Consider encrypting tenant data over IPsec or other tunnels**
+  Considered. Not a security concern in our case.
 
 
 Key management
