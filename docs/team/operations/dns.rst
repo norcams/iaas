@@ -19,7 +19,7 @@ access.uh-iaas.no             uh-access.iaas.uio.no
 dashboard.uh-iaas.no          uh-dboard.iaas.uio.no
 console.osl.uh-iaas.no        uh-console.iaas.uio.no
 console.bgo.uh-iaas.no        uh-console.iaas.uib.no
-api.uh-iaas.no                uh-api.iaas.uio.no
+api.uh-iaas.no                uh-api.iaas.uib.no
 compute.api.bgo.uh-iaas.no    uh-api.iaas.uib.no
 identity.api.bgo.uh-iaas.no   uh-api.iaas.uib.no
 network.api.bgo.uh-iaas.no    uh-api.iaas.uib.no
