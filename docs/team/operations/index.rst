@@ -16,3 +16,4 @@ Operations
     himlarcli
     local-repo
     ssl
+    dns
