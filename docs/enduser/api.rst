@@ -24,7 +24,7 @@ Create a ::file:`keystone_rc.sh` file:
   export OS_USERNAME=<email>
   export OS_TENANT_NAME=<email>
   export OS_PASSWORD=<password>
-  export OS_AUTH_URL=https://dashboard.iaas.[uib|uio].no:5000/v3
+  export OS_AUTH_URL=https://api.uh-iaas.no:5000/v3
   export OS_IDENTITY_API_VERSION=3
   export OS_USER_DOMAIN_NAME=dataporten
   export OS_PROJECT_DOMAIN_NAME=dataporten
