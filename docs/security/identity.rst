@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **19%** (3/16)      |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Identity`_:
@@ -127,14 +127,14 @@ Establish formal access control policies
 Service authorization
 ~~~~~~~~~~~~~~~~~~~~~
 
-``[PASSED]`` **Don't use "tempAuth" file for service auth**
+``[PASS]`` **Don't use "tempAuth" file for service auth**
   The Compute and Object Storage can be configured to use the Identity
   service to store authentication information. The "tempAuth" file
   method displays the password in plain text and should not be used.
 
   * Object storage and Swift is not implemented. `tempAuth` is not used.
 
-``[FAILED]`` **Use client authentication for TLS**
+``[FAIL]`` **Use client authentication for TLS**
   The Identity service supports client authentication for TLS which
   may be enabled. TLS client authentication provides an additional
   authentication factor, in addition to the user name and password,
@@ -199,22 +199,22 @@ Checklist
 Ref: `OpenStack Security Guide\: Identity - Checklist`_
 
 See the above link for info about these checks.
-``[No]`` **Check-Identity-01: Is user/group ownership of config files set to keystone?**
+``[FAIL]`` **Check-Identity-01: Is user/group ownership of config files set to keystone?**
   Yes/No?
          COMMENT: ownership set to `root:keystone`
 
-``[Yes]`` **Check-Identity-02: Are strict permissions set for Identity configuration files?**
+``[PASS]`` **Check-Identity-02: Are strict permissions set for Identity configuration files?**
   Yes/No?
           COMMENT: Not all files in check list exists, the rest is OK
 
-``[No]`` **Check-Identity-03: is TLS enabled for Identity?**
+``[FAIL]`` **Check-Identity-03: is TLS enabled for Identity?**
   Yes/No?
 
-``[No]`` **Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?**
+``[FAIL]`` **Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?**
   Yes/No?
 
-``[Yes]`` **Check-Identity-05: Is max_request_body_size set to default (114688)?**
+``[PASS]`` **Check-Identity-05: Is max_request_body_size set to default (114688)?**
   Yes/No?
 
-``[No]`` **Check-Identity-06: Disable admin token in /etc/keystone/keystone.conf**
+``[FAIL]`` **Check-Identity-06: Disable admin token in /etc/keystone/keystone.conf**
   Yes/No?

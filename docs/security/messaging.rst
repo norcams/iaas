@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **0%** (0/8)        |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Message queuing`_:
