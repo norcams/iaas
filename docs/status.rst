@@ -11,6 +11,12 @@ UH-IaaS Status
 Last changed: |date|
 
 .. WARNING::
+   **9. November - Domain change:** We will change the domain for UH-IaaS services
+   today. We expect some downtime for all services during the day. Compute instances
+   should not be affected. Updated URLs can be found below. More updates will be posted
+   to our slack channel.
+
+.. WARNING::
    **20th October - Complete reinstall:** In preparation of the end of pilot and start
    of production in November we have done a complete reinstall of both locations.
    All users will now be able to continue testing the new production setup.
@@ -25,21 +31,21 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |Y| 
-Dashboard      |Y|
-API            |Y|
+Access         |N|
+Dashboard      |N|
+API            |N|
 Compute        |Y|  |Y|
-Block storage  |Y|  |Y|
-Image          |Y|  |Y|
+Block storage  |N|  |N|
+Image          |N|  |N|
 ============== ==== ====
 
 Both BGO and OSL:
 
-- Dashboard: https://dashboard.iaas.uib.no
+- Dashboard: https://dashboard.uh-iaas.no
 
-- Access: https://access.iaas.uib.no
+- Access: https://access.uh-iaas.no
 
-- API: https://api.iaas.uib.no
+- API: https://api.uh-iaas.no
 
 Known issues
 ============
@@ -47,7 +53,7 @@ Known issues
 OSL and BGO location
 --------------------
 There are now one UH-Iaas cloud with two regions: BGO and OSL. Provision is
-done once at https://access.iaas.uib.no. In the dashboard you will have access
+done once at https://access.uh-iaas.no. In the dashboard you will have access
 to both regions. For API access remember to set REGION_NAME in rc-file.
 
 API access
