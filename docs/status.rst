@@ -11,10 +11,8 @@ UH-IaaS Status
 Last changed: |date|
 
 .. WARNING::
-   **9. November - Domain change:** We will change the domain for UH-IaaS services
-   today. We expect some downtime for all services during the day. Compute instances
-   should not be affected. Updated URLs can be found below. More updates will be posted
-   to our slack channel.
+   **9. November - Domain change:** We will change the domain for UH-IaaS services.
+   Updated URLs can be found below.
 
 .. WARNING::
    **20th October - Complete reinstall:** In preparation of the end of pilot and start
@@ -31,12 +29,12 @@ Current service status
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         |N|
-Dashboard      |N|
-API            |N|
+Access         
+Dashboard
+API            |Y|  |Y|
 Compute        |Y|  |Y|
-Block storage  |N|  |N|
-Image          |N|  |N|
+Block storage  |Y|  |Y|
+Image          |Y|  |Y|
 ============== ==== ====
 
 Both BGO and OSL:
