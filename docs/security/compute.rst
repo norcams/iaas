@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **78%** (0/9)       |
+| **Implemented percent** | **78%** (7/9)       |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Compute`_:

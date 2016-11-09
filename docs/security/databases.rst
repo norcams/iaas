@@ -59,11 +59,9 @@ From OpenStack Security Guide:
   access to the database.*
 
 ``[PASS]`` **Unique database user accounts per node**
-
   Each service run on different host, and each host has a unique user.
 
 ``[PASS]`` **Separate database administrator account**
-
   The root user is only used to provision new databases and users.
 
 ``[DEFERRED]`` **Database administrator account is protected**
@@ -73,7 +71,6 @@ Require user accounts to require SSL transport
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``[DEFERRED]`` **The database user accounts are configured to require TLS**
-
   All databases support TLS, but only DB replication between location requires
   TLS.
 
@@ -86,11 +83,13 @@ Authentication with X.509 certificates
 Nova-conductor
 ~~~~~~~~~~~~~~
 
-``[PASS]`` OpenStack Compute offers a sub-service called nova-conductor which
+``[PASS]`` **Consider turning off nova-conductor**
+  OpenStack Compute offers a sub-service called nova-conductor which
   proxies database connections over RPC.
 
   We use nova conductor, and nova compute have access to it over the message bus.
-  The RPC messaging bus are not encrypted, but run on a private network.
+  The RPC messaging bus are not encrypted, but run on a private
+  network. This is acceptable risk.
 
 Database transport security
 ---------------------------
@@ -103,7 +102,6 @@ Database server IP address binding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``[PASS]`` **Database access only over an isolated management network**
-
   Database replication is done over public network, with TLS and firewall to
   restrict access.
 
@@ -112,6 +110,5 @@ Database transport
 ~~~~~~~~~~~~~~~~~~
 
 ``[DEFERRED]`` **The database requires TLS**
-
   All databases support TLS transport, but only DB replication between
   locations requires TLS.
