@@ -26,11 +26,16 @@ before you start.
 Current service status
 ======================
 
+========= ======
+Component Status
+========= ======
+Access     |Y|
+Dashboard  |Y|
+========= ======
+
 ============== ==== ====
 Component      BGO  OSL
 ============== ==== ====
-Access         
-Dashboard
 API            |Y|  |Y|
 Compute        |Y|  |Y|
 Block storage  |Y|  |Y|
