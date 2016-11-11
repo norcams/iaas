@@ -48,7 +48,7 @@ Both BGO and OSL:
 
 - Access: https://access.uh-iaas.no
 
-- API: https://api.uh-iaas.no
+- API: https://api.uh-iaas.no:5000/v3
 
 Known issues
 ============
