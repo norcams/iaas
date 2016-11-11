@@ -1,0 +1,68 @@
+======
+Uke 45
+======
+av Raymond Kristiansen, UH IaaS, 11. nov 2016
+
+.. contents:: :depth: 2
+
+
+Fullført
+========
+
+- Vi mener at det viktigste er klar til å gå i produksjon 14. november kl. 14.
+  Gjennstående oppgaver blir oppdatert her: https://trello.com/b/loLFWWtV/iaas-release-plan
+
+
+- Byttet til nytt domene for alle tjenestene som går ut mot brukere:
+
+  * https://dashboard.uh-iaas.no
+  * https://docs.uh-iaas.no
+  * https://access.uh-iaas.no
+  * https://status.uh-iaas.no
+
+- Benchmarking av lette beregningsoppgaver er utført og vi skal kunne ta i mot
+  denne typen workloads med grei nok ytelse. Det vil dog kreve et
+  spesialkonfigurert sett av compute noder beregnet kun for denne typen workloads.
+
+Under arbeid
+============
+
+- Ny hardware er klart til bestilling. Vi kjøper inn 3 nye compute noder til
+  både `osl` og `bgo`.
+
+- `test02` venter på at eksternt utførte oppgaver skal løses før denne
+  kan betegnes som fullverdig testinstallasjoner.
+
+- Det jobbes med å få på plass en tjeneste for DNS for instanser. Denne vil
+  forhåpentligvis være på plass i løpet av året.
+
+Planlagt fremdrift
+==================
+
+- Flere av deltakerne i prosjektet skal delta og snakke om UH-IaaS i Trondheim
+  neste uke på UNINETT sin samling.
+
+- Support og testing
+
+- Stressteste regionene for oppstart og sletting av instanser
+
+
+Utfordringer
+============
+
+- DNS tjenesten for instanser vil ikke være klar til vi går i produksjon.
+  Hovedgrunnen er mangel på dedikert personer i prosjekt.
+
+- I :doc:`../plans/production` har jeg skrevet at vi trenger 4 personer frem
+  til nyttår for å komme i produksjon. Vi er nå prosjektleder (100% delt),
+  UiB (1 person 100%) og UiO (1 person 60% og en person 40%). Det ser ikke ut
+  til å berøre datoene i leveransen, men vil kunne påvirke innholdet dersom vi
+  støter på større utfordringer.
+
+Oppdatert status
+================
+
+Arbeidet frem til leveranse 14. november vil vi oppdatere fortløpende
+på Trello: https://trello.com/b/loLFWWtV/iaas-release-plan
+
+Kun større oppgaver, utfordringer og avvik vil bli oppdatert her.
