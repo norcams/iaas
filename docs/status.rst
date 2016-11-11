@@ -57,7 +57,8 @@ OSL and BGO location
 --------------------
 There are now one UH-Iaas cloud with two regions: BGO and OSL. Provision is
 done once at https://access.uh-iaas.no. In the dashboard you will have access
-to both regions. For API access remember to set REGION_NAME in rc-file.
+to both regions. For API access remember to set REGION_NAME to region name
+in lowercase in rc-file.
 
 API access
 ----------
