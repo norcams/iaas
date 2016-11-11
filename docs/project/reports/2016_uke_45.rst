@@ -15,10 +15,10 @@ Fullført
 
 - Byttet til nytt domene for alle tjenestene som går ut mot brukere:
 
-  * https://dashboard.uh-iaas.no
-  * https://docs.uh-iaas.no
-  * https://access.uh-iaas.no
+  * http://docs.uh-iaas.no
   * https://status.uh-iaas.no
+  * https://access.uh-iaas.no
+  * https://dashboard.uh-iaas.no
 
 - Benchmarking av lette beregningsoppgaver er utført og vi skal kunne ta i mot
   denne typen workloads med grei nok ytelse. Det vil dog kreve et
