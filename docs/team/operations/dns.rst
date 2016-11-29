@@ -25,7 +25,7 @@ dashboard-osl.uh-iaas.no      uh-dboard.iaas.uio.no
 dashboard-bgo.uh-iaas.no      uh-dboard.iaas.uib.no
 console.osl.uh-iaas.no        uh-console.iaas.uio.no
 console.bgo.uh-iaas.no        uh-console.iaas.uib.no
-api.uh-iaas.no                uh-api.iaas.uib.no
+api.uh-iaas.no                uh-api-front.iaas.uib.no
 compute.api.bgo.uh-iaas.no    uh-api.iaas.uib.no
 identity.api.bgo.uh-iaas.no   uh-api.iaas.uib.no
 network.api.bgo.uh-iaas.no    uh-api.iaas.uib.no

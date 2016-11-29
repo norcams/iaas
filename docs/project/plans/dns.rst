@@ -1,8 +1,12 @@
+.. |date| date::
+
 ===
 DNS
 ===
 
-Dette er et utkast til plan for bruk av DNS til interne og offentlige tjenester.
+Sist endret: |date|
+
+Dette er den planen vi nå bruker for DNS til interne og offentlige tjenester.
 
 Offentlig (uh-iaas.no)
 ======================
@@ -27,6 +31,7 @@ Per lokasjon
 * **image.api.<loc>.uh-iaas.no**: image public endpoints
 * **volume.api.<loc>.uh-iaas.no**: volume public endpoints
 * **console.<loc>.uh-iaas.no**: Openstack consoleproxy
+* (**dashboard-<loc>.uh-iaas.no**: intern dashboard)
 
 Instanser
 ---------
