@@ -2,11 +2,19 @@
 Planer
 ======
 
-Diverse dokumenterte planer.
+Diverse dokumenterte planer:
 
 .. toctree::
     :maxdepth: 2
 
-    production
+    resources
     documentation
     dns
+
+Arkiv
+-----
+
+    .. toctree::
+        :maxdepth: 2
+
+        archive/index

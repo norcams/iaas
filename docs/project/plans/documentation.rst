@@ -1,8 +1,12 @@
+.. |date| date::
+
 =============
 Dokumentasjon
 =============
 
-Utkast til organisering av vår interne og offentlige dokumentasjon.
+Sist endret: |date|
+
+Organisering av vår interne og offentlige dokumentasjon.
 
 
 Brukerdokumentasjon
@@ -11,6 +15,7 @@ Brukerdokumentasjon
 - **Språk:** engelsk
 - **Kildekode:** github.com/norcams/docs-enduser
 - **Adresse:** docs.uh-iaas.no (uh-iaas.readthedocs.org)
+- **Status:** klar for bruk
 
 Kan basere oss på dagens versjon. Vi trenger iallefall litt om:
 
@@ -27,6 +32,7 @@ Teknisk dokumentasjon
 - **Språk:** engelsk
 - **Kildekode:** github.com/norcams/docs-iaas
 - **Adresse:** iaas.readthedocs.org
+- **Status:** i bruk, men trenger opprydding
 
 * Design
 * Overview
@@ -41,6 +47,7 @@ Prosjektdokumentasjon
 Sammen med teknisk eller i egen?
 
 **Språk:** norsk
+**Status:** bruke samme som teknisk dokumentasjon nå
 
 * Planer
 * Rapporter
