@@ -2,9 +2,18 @@
 Getting started
 ===============
 
-.. toctree::
-    :maxdepth: 1
+For end users of UH-IaaS
+------------------------
 
-    /status
-    /norcams
-    /enduser/index
+* Documentation at http://docs.uh-iaas.no
+* Status at https://status.uh-iaas.no
+
+For UH-IaaS developer and operators
+-----------------------------------
+
+* :doc:`/team/index`
+
+For project information
+-----------------------
+
+* :doc:`/project/index`
