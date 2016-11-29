@@ -1,0 +1,36 @@
+======
+Uke 47
+======
+av Raymond Kristiansen, UH IaaS, 29. nov 2016
+
+.. contents:: :depth: 2
+
+
+Fullført
+========
+
+- Produksjonssetting ble utført som planlagt 14. november. Oppdatert tall på
+  bruk kan finnes på https://status.uh-iaas.no
+
+Under arbeid
+============
+
+- Ny hardware er bestilt. Vi kjøper inn 3 nye compute noder til
+  både `osl` og `bgo`.
+
+- Arbeid med å få opp `test02` pågår forsatt.
+
+- Det jobbes med å få på plass en tjeneste for DNS til instanser. Denne vil
+  forhåpentligvis være på plass i om ikke lenge.
+
+Planlagt fremdrift
+==================
+
+- Arbeid med det merkantile foregår ved siden av og planen er å få det klart
+  i løpet av året.
+
+- Stressteste regionene for oppstart og sletting av instanser
+
+- Pga ferieavvikling så vil nye ting og rapporteringen opphøre frem til
+  nyttår. Vi vil nå fokusere på å finne brukere og hjelpe dem å ta det
+  i bruk.
