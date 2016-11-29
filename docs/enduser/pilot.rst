@@ -5,6 +5,10 @@ Pilot Phase -- Terms of Service
 
 Last changed: |date|
 
+.. WARNING::
+  **This information is deprecated.** Use http://docs.uh-iaas.no for updated
+  end user documentation.
+
 .. contents::
 
 .. WARNING::

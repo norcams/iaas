@@ -5,8 +5,11 @@ Create a Linux virtual machine
 
 Last changed: |date|
 
-.. contents::
+.. WARNING::
+  **This information is deprecated.** Use http://docs.uh-iaas.no for updated
+  end user documentation.
 
+.. contents::
 
 Setting up a keypair
 --------------------
@@ -23,11 +26,11 @@ If the local computer is Linux, any BSD variant such as
 FreeBSD, or MacOSX, the easiest way is to create a keypair locally if
 you don't already have one::
 
-  $ ssh-keygen 
+  $ ssh-keygen
   Generating public/private rsa key pair.
-  Enter file in which to save the key (/home/username/.ssh/id_rsa): 
-  Enter passphrase (empty for no passphrase): 
-  Enter same passphrase again: 
+  Enter file in which to save the key (/home/username/.ssh/id_rsa):
+  Enter passphrase (empty for no passphrase):
+  Enter same passphrase again:
   Your identification has been saved in /home/username/.ssh/id_rsa.
   Your public key has been saved in /home/username/.ssh/id_rsa.pub.
   The key fingerprint is:
@@ -303,4 +306,3 @@ CirrOS         cirros
 
 This is a non-exhaustive list. For images not listed here, consult the
 image vendor's documentation.
-

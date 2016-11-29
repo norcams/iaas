@@ -5,6 +5,10 @@ The dashboard
 
 Last changed: |date|
 
+.. WARNING::
+  **This information is deprecated.** Use http://docs.uh-iaas.no for updated
+  end user documentation.
+
 .. contents::
 
 The dashboard is the common web user interface for OpenStack. It is a

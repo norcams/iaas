@@ -5,6 +5,10 @@ Conventions
 
 Last changed: |date|
 
+.. WARNING::
+  **This information is deprecated.** Use http://docs.uh-iaas.no for updated
+  end user documentation.
+
 .. contents::
 
 Notices
@@ -41,4 +45,3 @@ If the command should be run by the root user, the prompt will instead
 be the following::
 
   # command
-

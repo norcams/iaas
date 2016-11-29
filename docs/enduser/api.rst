@@ -5,6 +5,10 @@ OpenStack API
 
 Last changed: |date|
 
+.. WARNING::
+  **This information is deprecated.** Use http://docs.uh-iaas.no for updated
+  end user documentation.
+
 .. contents::
 
 You will get a password when you do the initial first login
