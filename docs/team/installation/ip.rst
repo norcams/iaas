@@ -161,6 +161,7 @@ Management switches
  region    env     IPv4                IPv6   vlan
 ========= ======= =================== ====== ======
   osl       prod    10.17.32.0/24        N/A 
+  bgo       prod    10.17.0.0/24         N/A 
 ========= ======= =================== ====== ======
 
 .. _IPMI BMC devices: https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface#Baseboard_management_controller
