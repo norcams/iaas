@@ -216,8 +216,8 @@ IP networks in use
  osl       prod    link1        172.18.228.0/30   TBD           65502
  trd       prod    transport1   172.18.64.0/21    TBD    100    65503
  trd       prod    transport2   172.18.72.0/21    TBD    200    65503
- test01    test    trp          172.30.0.0/24     TBD
- test02    test    trp          172.30.32.0/24    TBD
+ test01    test    trp          172.30.0.0/24     TBD           65535
+ test02    test    trp          172.30.32.0/24    TBD           65536
  vagrant   dev     trp          172.31.8.0/24     TBD           65500
  local1    dev     trp          172.31.12.0/24    TBD    100
  ---       ---     ---          --- old ---
