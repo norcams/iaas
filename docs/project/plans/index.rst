@@ -8,6 +8,7 @@ Diverse dokumenterte planer:
     :maxdepth: 2
 
     resources
+    projects
     documentation
     dns
 
