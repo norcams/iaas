@@ -7,10 +7,14 @@ Generation
 ----------
 
 Generation for :file:`*.iaas.uio.no` and :file:`*.iaas.uib.no` are done
-following each organizations normal process.
+following each organizations normal process. :file:`*.uh-iaas.no` are
+done at UNINETT.
 
-For self signed certificates we use our own Root CA located on `login` under
-:file:`/opt/repo/secrets/ca_setup`
+For self signed certificates we use our own Root CA git repo on `login`::
+
+  git@git.iaas.uib.no:ca_setup
+
+This repo should also all key, certs and config files for all certs in use.
 
 Naming conventions
 ------------------
