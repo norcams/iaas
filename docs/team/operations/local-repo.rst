@@ -124,7 +124,7 @@ Files
 Considerations
 ``````````````
 
-- ``test`` should never point to more recent snapshots than ``prod``
+- ``test`` should never point to older snapshots than ``prod``
 - Pointers in ``prod`` **must also** exist in ``test``, the rationale
   being that this somewhat ensures that `prod` has already been tested.
   Links in the `prod` configuration which does not also exist in the `test`
