@@ -26,5 +26,5 @@ Profile
 * each openstack role should have one class named after itself that will include
   feature classes
 * location hieradata override should always be done in the same module/role
-  file as in common
-* module hieradata should be group by module classes
+  file as in the common version of module/role
+* module hieradata should be grouped by module classes

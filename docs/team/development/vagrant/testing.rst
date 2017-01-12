@@ -6,6 +6,9 @@ Testing in Vagrant
 
 Last changed: |date|
 
+.. WARNING::
+  This might be outdated.
+
 
 Connecting to Horizon
 =====================

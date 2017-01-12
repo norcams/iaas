@@ -6,6 +6,6 @@ Development
     :glob:
     :maxdepth: 2
 
-    vagrant/index
     puppet
+    vagrant/index
     ip

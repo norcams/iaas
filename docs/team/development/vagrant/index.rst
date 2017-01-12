@@ -6,7 +6,8 @@ Vagrant
     :glob:
     :maxdepth: 2
 
-    libvirt
     development
+    virtualbox
+    libvirt
     testing
     dataporten
