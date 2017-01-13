@@ -1,10 +1,6 @@
-.. |date| date::
-
 ======================
 Prosjektadministrasjon
 ======================
-
-Sist endret: |date|
 
 All aktivitet som ikke kan utføres i personlige prosjekter krever at vi
 oppretter et nytt prosjekt for oppgavene og tildeler kvoter til den.
@@ -40,3 +36,27 @@ scriptet kjøres i (f.eks. bgo). Kvoter settes per region, mens prosjektet er
 felles for alle regioner. For å sette kvote i andre regioner må scriptet kjøres
 på nytt i den aktuelle regionen. Scriptet kan også brukes til å gi andre enn
 eier tilgang til prosjektet (grant).
+
+Kurs
+====
+
+Det er laget et eget opplegg for administrasjon av kursprosjekter. Kort fortalt
+fungerer det på følgende måte:
+
+* foreleser og studenter får tilgang til sitt eget prosjekt med navn: <org>-<kurs>-<epost>
+* foreleser får rollen superuser i sitt eget prosjekt og user i studentenes prosjekter
+* foreleser kan lage public image i sitt prosjekt med superuser rollen
+
+
+Verktøy
+-------
+
+Bruk :file:`course.py` i `himlarcli` for å opprett, liste ut eller slette
+kursprosjekter. Når man kjører `create` må man huske på følgende:
+
+* **name**: kursnavn må være på formen <org>-<kurs>. F.eks. uib-inf110
+* **user**: er navn på foreleser som må ligge i system før man starter
+* **file**: fil med liste over epostadressene til studentene (case sensitiv)
+
+Studentene vil ikke få tilgang før skriptet er kjøret etter at de er i systemet.
+Man kan gjenta scriptet så mange ganger man vil med samme input.
