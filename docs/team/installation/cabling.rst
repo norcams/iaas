@@ -36,3 +36,8 @@ enable testing of different network design and redundancy scenarios.
 .. image:: images/cabling_overview_full.png
    :target: ../_images/cabling_overview_full.png
 
+osl-login-01
+------------
+
+.. image:: images/osl-login-01.svg
+   :target: ../_images/osl-login-01.svg
