@@ -1,10 +1,7 @@
-.. |date| date::
 
 ==================
 Ressursplanlegging
 ==================
-
-Sist endret: |date|
 
 Compute
 =======
@@ -13,43 +10,75 @@ Definisjoner
 ------------
 
 **N**
-  Antall compute noder per AZ (idag samme som per region)
+  Antall compute noder per region
+
+**G**
+  En gruppe maskiner (host aggregate) Må være faktor av **N**
+
+**A**
+  Antall ledige compute hosts (A=N/G)
 
 **U**
-  Utnyttelse: **U-1/U** hvor U må være en faktor av **N**
-  (U > 2 om vi ønsker over 50% utnyttelse)
+  Ubrukte compute hosts (U=N/G)
+
+**L**
+  Låste compute hosts (L=N/G)
+
+**D**
+  Antall uker mellom en aktiv rotasjon
 
 **R**
   Antall uker før en compute node blir reinstallert (patchet)
 
-**D**
-  Antall uker et set med noder kjører uten endringere
-
 **I**
-  Antall uker vi kan love at en instans kjører uten planlagt restart
+  Antall uker mellom instans restart (første restart kan komme etter **D** uker)
 
 Formler
 -------
-* **R=D*U**
-* **I=(U-1)*D**
+* **R=D*G**
+* **I=(G-1)*D**
 
 Status
 ------
 
 Idag:
 
-* **N=3**
-* **U=3 (66% utnyttelse)**
+* **N=6**
+* **A=2**
+* **U=2**
+* **L=2**
 * **D=2**
 
-Eksempler
----------
+Start status idag (januar 2017):
 
-=== === ===
- D   R   I
-=== === ===
- 1   3   2
- 2   6   4
- 3   9   6
- 4  12   8
-=== === ===
+* G1 = L
+* G2 = A
+* G3 = L
+
+Regler:
+
+* U -> A
+* A -> L
+* L -> U (med flytting og reinsall)
+
+========== ==== ==== ====
+ rotasjon   G1   G2   G3
+========== ==== ==== ====
+ 1*         U    L    A
+ 2          A    U    L
+ 3          L    A    U
+ 4          U    L    A
+ 5          A    U    L
+ 6          L    A    U
+========== ==== ==== ====
+
+*= Vi må trikse litt for å komme ut av dagens status til rotasjon 1.
+
+
+Konklusjon
+----------
+
+Vi trenger ikke å restarte instaser oftere enn hver 4 uke (nye instanser kan
+bli restartet etter 2-4 uker). Vi får reinstallert compute hosts hver 6 uke.
+Vi har alltid 2 ledige compute hosts dersom gruppen som er aktiv går full.
+Så ved behov kan vi kjøre U -> A og A -> L.
