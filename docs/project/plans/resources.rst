@@ -3,6 +3,10 @@
 Ressursplanlegging compute
 ==========================
 
+**Oppdatering 19.januar 2017**: Vi ble enig om å gå for forslag 1 i første
+omgang. I tillegg er det fornuftig å likevel tagge gruppene med installuke
+for fremtidig planlegging.
+
 Definisjoner
 ============
 
