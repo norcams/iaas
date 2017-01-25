@@ -9,6 +9,7 @@ Diverse dokumenterte planer:
 
     resources
     projects
+    flavors
     documentation
     dns
 
