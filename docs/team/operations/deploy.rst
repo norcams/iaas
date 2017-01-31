@@ -7,7 +7,7 @@ With ansible
 
 To use `ansible <ansible/index.html>`_ to deployment::
 
-  cd $ansible
+  cd $ANSIBLE
   bin/deploy.sh <loc>
 
 
