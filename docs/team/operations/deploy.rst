@@ -2,23 +2,35 @@
 Deployment of new code
 ======================
 
-Deployment is done on the puppetmaster node. From login you should reach it by running
+With ansible
+============
+
+To use `ansible <ansible/index.html>`_ to deployment::
+
+  cd $ansible
+  bin/deploy.sh <loc>
+
+
+Manual deployment
+=================
+
+Deployment is done on the :file:`admin-01` node. From login you should reach it by running
 
 .. code:: bash
 
-  ssh iaas@puppet
+  ssh iaas@<loc>-admin-01.<domain>
 
 Hieradata and profile
-=====================
+---------------------
 
 .. code:: bash
 
+  sudo -i
   cd /opt/himlar
   git pull
-  apachectl graceful
 
 Puppet modules
-==============
+--------------
 
 Active puppet modules reside in `/etc/puppet/modules`. For minor changes in
 `Puppetfile` this should update the active modules from source:
@@ -27,7 +39,6 @@ Active puppet modules reside in `/etc/puppet/modules`. For minor changes in
 
   cd /opt/himlar
   HIMLAR_PUPPETFILE=deploy provision/puppetmodules.sh
-  apachectl graceful
 
 To rebuild all modules from source:
 
@@ -40,7 +51,7 @@ To rebuild all modules from source:
 
 
 Secrets
-=======
+-------
 
 Secrets are stored at `git@git.<domain>` in `hieradata/secrets`.
 To update /opt/himlar/hieradata/secrets:
@@ -49,11 +60,3 @@ To update /opt/himlar/hieradata/secrets:
 
     cd /opt/himlar
     provision/puppetsecrets.sh
-
-With ansible
-============
-
-To use `ansible <ansible/index.html>`_ to deployment::
-
-  cd <ansible-repo>
-  bin/<loc>/deploy.sh
