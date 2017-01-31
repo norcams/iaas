@@ -51,7 +51,6 @@ d1.large     4    8           60  default-1
 Andre typer flavor
 ==================
 
-* **m2** større general purpose
 * **c1** mye cpu
 * **x1** mye minne
 * **h1** for hpc
