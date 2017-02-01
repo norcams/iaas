@@ -28,6 +28,7 @@ of four different values:
     :maxdepth: 2
 
     documentation
+    management
     secure-communication
     api-endpoints
     identity
@@ -42,4 +43,3 @@ of four different values:
     databases
     tenant-data
     instance-management
-   
