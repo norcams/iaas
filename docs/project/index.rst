@@ -1,23 +1,21 @@
-=================
-About the project
-=================
+==============
+Prosjektstatus
+==============
 
-norcams/iaas is an open source effort focused around automating, documenting
-and delivering all parts of a complete, Openstack-based production-quality
-infrastructure. This repository is our project handbook.
+Disse sidene vil inneholde informasjon relatert til samarbeid og prosjekter
+rundt UH-IaaS (UH-sektorens interne IaaS).
 
-Infrastructure as code and 'automation first' are the main technical driving
-forces along with a general need for faster and more efficient delivery of
-standardized, self-provisioned services among IT-departments in the Norwegian
-academic sector.
+UH-IaaS er et samarbeid mellom UiO og UiB om å drifte en sektor intern IaaS
+basert på `OpenStack <https://www.openstack.org>`_. Det står hardware i USIT og
+UiB sine egne serverrom, og disse utgjør i dag UH-IaaS sine to separate regioner
+(felles IDP, mens resten er separat).
 
-Development is funded by the participating entities by contributing employees
-and knowledge into a nationally distributed team of engineers.
+Vi har et felles driftsteam med deltakere fra både UiO og UiB, og jobber
+også sammen med `UH-sky <https://www.uninett.no/skytjenester>`_
+(UNINETT sitt skyprogram) om å promotere og videreutvikle tjenesten.
 
-Project goals are set, changed and validated within a formal project
-organization where management from all contributing entities are present. This
-project organization is named UH-sky and is coordinated by UNINETT, the
-Norwegian NREN organization.
+Planen er å kunne tilby UH-IaaS til hele sektoren. Mer om hvordan man tar
+den i bruk kan finnes her https://www.uninett.no/infrastructure-service-iaas-uh-iaas
 
 .. toctree::
     :maxdepth: 1
