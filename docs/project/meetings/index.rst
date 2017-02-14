@@ -27,4 +27,5 @@ Felles samlinger
     :glob:
     :maxdepth: 1
 
+    2017_workshop_*
     2016_workshop_*
