@@ -1,6 +1,6 @@
-==============
-Prosjektstatus
-==============
+======
+Status
+======
 
 Disse sidene vil inneholde informasjon relatert til samarbeid og prosjekter
 rundt UH-IaaS (UH-sektorens interne IaaS).

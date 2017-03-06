@@ -22,6 +22,6 @@ Contents
     security/index
     howtos/index
     team/index
-    project/index
+    status/index
 
 .. _current documentation: https://iaas.readthedocs.org/
