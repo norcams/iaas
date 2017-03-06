@@ -2,8 +2,9 @@
 Flavors
 =======
 
-Her er en oversikt over hvilke flavor av instatanser som skal være tilgjengelig:
+Sist endret: 2017-03-06
 
+Her er en oversikt over hvilke flavor av instatanser som skal være tilgjengelig:
 
 m1
 ==

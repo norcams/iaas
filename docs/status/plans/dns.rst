@@ -1,10 +1,8 @@
-.. |date| date::
-
 ===
 DNS
 ===
 
-Sist endret: |date|
+Sist endret: 2017-03-06
 
 Dette er den planen vi nå bruker for DNS til interne og offentlige tjenester.
 

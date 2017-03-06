@@ -2,6 +2,8 @@
 Prosjektadministrasjon
 ======================
 
+Sist endret: 2017-03-06
+
 All aktivitet som ikke kan utføres i personlige prosjekter krever at vi
 oppretter et nytt prosjekt for oppgavene og tildeler kvoter til den.
 

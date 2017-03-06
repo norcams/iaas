@@ -1,13 +1,10 @@
-.. |date| date::
-
 =============
 Dokumentasjon
 =============
 
-Sist endret: |date|
+Sist endret: 2017-03-06
 
 Organisering av vår interne og offentlige dokumentasjon.
-
 
 Brukerdokumentasjon
 -------------------
@@ -41,14 +38,15 @@ Teknisk dokumentasjon
 * Operations
 * Security
 
-Prosjektdokumentasjon
----------------------
+Team- og prosjektdokumentasjon
+------------------------------
 
-Sammen med teknisk eller i egen?
+- **Språk:** norsk
+- **Kildekode:** github.com/norcams/docs-iaas
+- **Adresse:** iaas.readthedocs.org
+- **Status:** bruke samme som teknisk dokumentasjon nå
 
-**Språk:** norsk
-**Status:** bruke samme som teknisk dokumentasjon nå
-
+* Teamstatus
 * Planer
 * Rapporter
 * Policy
