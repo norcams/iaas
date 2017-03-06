@@ -13,7 +13,9 @@ For UH-IaaS developer and operators
 
 * :doc:`/team/index`
 
-For project information
------------------------
+For team and project status information
+---------------------------------------
 
-* :doc:`/project/index`
+This will be in norwegian only.
+
+* :doc:`/status/index`

@@ -8,8 +8,7 @@ involved in the project.
 End user documentation are found at http://docs.uh-iaas.no
 
 In addition to information about development and operations, we also
-have a section in norwegian about the current status of the
-`project <project/index.html>`_
+have a section in norwegian about the `current status <status/index.html>`_
 
 Contents
 --------
