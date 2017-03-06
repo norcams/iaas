@@ -49,7 +49,7 @@ test er at det ikke er behov for failover, bare et enkelt linknett og en
 statisk rute. I test er gateway på IaaS-siden en Cumulus Linux virtuell maskin.
 
 .. image:: images/devnet_overview.png
-   :target: ../_images/devnet_overview.png
+   :target: _images/devnet_overview.png
 
 Kommende aktiviteter
 ====================
@@ -69,4 +69,3 @@ Prosjektledermøte i UH-sky
 Kristin Selvaag fra UH-sky har jevnlig møte med alle delprosjektene hvor UH
 IaaS deltar. Onsdag 7. oktober er et slikt møte planlagt over video hvor agenda
 i hovedsak er referat fra UH-sky styringsgruppemøtet som var i uke 40.
-
