@@ -1,94 +1,87 @@
-====================
-Tracking the project
-====================
+==============
+Kontaktpunkter
+==============
+
+Sist endret: 2017-01-19
+
+Her er oversikten over alle faste møteflater og kontaktpunkter for teamet
+og andre som jobber mot teamet.
 
 .. contents::
 
-Chat room
----------
+Møter
+=====
 
-All members of the project are expected to join and follow our chat room while
-working. The chat room is used for socializing, status updates, informal quick
-questions and coordinating various group efforts.
+Morgenmøte
+----------
 
-Commit messages from the most important git repositories we use are announced
-in the chat room automatically.
+Hver morgen kl 09:30 til 09:40 avholdes det et kort statusmøte. Agenda for
+møte er en kort oppsummering fra hver enkelt. Dette kan innehold hva som
+har skjedd siden sist, hva er planen videre og eventuelle utfordringer man
+trenger hjelp til.
 
-To start using the chat room connect to a IRC server on the Freenode network
-and join the #uh-sky room. Remember, everything in the room is logged on the
-public internet at https://botbot.me/freenode/uh-sky/
+Vi bruker Google Hangout til å avholde videomøter. Direkte link til vårt rom
+http://hangout.norcams.org
 
-Social sharing platform
------------------------
+Utvidet morgemøte
+-----------------
 
-We have been using a NorCAMS Google Plus-community to share links of project
-related information for a while. Anyone with relevant content is free to use
-this as a channel. We put up a web redirect to the community page to make it
-easier to find, it is at http://plus.norcams.org
+Ved behov utvides morgenmøte hver onsdag med inntil en time (frem til 10:30).
+Her har man mulighet til å diskutere større tema. Agenda for ukesmøte skal
+ligge i Trello på forhånd. Kort skal være merket "discussion" og ligge i "Now"
+for at de vil bli lagt til agenda.
 
-Mailing list
-------------
+Samling
+-------
 
-We have a mailing list for everybody interested in IaaS hosted at UNINETT.
-Join us here https://sympa.uninett.no/lists/uninett.no/info/faggruppe-iaas
+3-4 ganger i året avholdes det en felles workshop for hele teamet. Disse blir
+avholdt ved behov og strekker seg vanligvis over 1-2 dager. Vi har et mål om at
+vi prøver å rullere på om samlingen avholdes ved UiO eller UiB.
 
-Tasks and progress reporting
-----------------------------
+Kommunikasjon
+=============
 
-The project uses a Trello board for tasks and project planning. Core members
-are expected to add and manage cards directly on the board. Tasks described on
-the cards should not be too complicated to solve, ideally we want cards to flow
-through the board each day. If we do this correctly we get a low-cost,
-low-friction way of reporting progress and status.
+IRC
+---
 
-*Divide and conquer* seems like a good idea to try for this. If a card stays in
-the same column for a day, divide it and try to get smaller parts of it to Done!
+Vi bruker **#uh-sky** (ikke #uh-iaas??) på https://freenode.org som
+hovedkanal for chat mens man jobber. Når man jobber med UH-IaaS så forventes
+det at man deltar her. Vi logger også viktige github-repo til denne kanalen.
 
-The Goals column is a bit special. This is where we put larger goals and
-milestones broken out from the project plan. Goals move directly to the Done
-column once they are reached.
+**NB!** Husk at alt som skrives her er offentlig og logges til
+https://botbot.me/freenode/uh-sky/
 
-The board is public and available at https://trello.com/b/m7tD31zU/iaas To be
-able to comment on a card you'll need a Trello account. Most of the team
-members use a Google account as their login identity.
+Slack
+-----
 
-Core team weekly schedule
--------------------------
+Vi har også et eget team på https://uhps.slack.com. Her har vi følgende
+kanaler:
 
-This table shows which days the core team members are available. 
+* **#iaas** (åpen): brukes til å snakke direkte med sluttbrukere. Forventes
+  at alle deltar her når de jobber med UH-IaaS.
 
-============ ============ ============ ============ ============ ============
-   Name       Monday       Tuesday      Wednesday    Thursday     Friday
-============ ============ ============ ============ ============ ============
-Hege          0            0            0            0            0
-Raymond       1            1            1            1            1
-Mikael        0            1            1            1            0
-Tor           1            1            1            1            1
-Trond         0            1            1            0            0
-Øyvind        0            1            1            0            0
-Geir          0            0            1            1            1
-Petter        0            0            0            0            0
-============ ============ ============ ============ ============ ============
+* **#team** (privat): brukes kun av team medlemmer for emner som ikke passer
+  på offentlig IRC. Trello poster også oppdateringer her.
+  Forventes at alle deltar her når de jobber med UH-IaaS.
 
-Daily status meeting
-^^^^^^^^^^^^^^^^^^^^
+* **#vakt** (privat): brukes av sensu til å varsle om avvik. Frivillig å
+  delta, men det vil kreves at den som har vakt følger med her.
 
-The core team has daily meetings at 09:30 every work day. These are short
-meetings meant to summarize what has been worked on since yesterday, what will
-be done today and what blocks progress, if anything. Each team member is
-expected to speak briefly about their own situation.
+Epost
+-----
 
-Daily meetings are held on Goolge Hangouts and published to the project
-calendar. They are also announced in the chat room a few minutes before they
-start.
+Vi har en epostliste for teamet og andre knyttet som er knyttet til oss.
+Denne listen administreres av USIT og er ment for intern bruk.
 
-Weekly planning meeting
-^^^^^^^^^^^^^^^^^^^^^^^
+Prosjektstyring
+===============
 
-The weekly planning meeting where we discuss direction, milestones and general
-progress. This is the place for any larger topics or issues involving the full
-team. To schedule a topic for this meeting project members make a card in
-Trello and label it as *Discussion*.
+Vi bruker Trello til å administrere oppgaver og prosjekter. Det forventes at
+alle i teamet har konto og er medlem av vårt team som ligger under
+https://trello.com/norcams. Det vil være en blanding av åpen og lukket
+informasjon som ligger her.
 
-The weekly status meeting is held on Google Hangouts and published to the
-project calendar.
+Policy
+------
+
+TODO
