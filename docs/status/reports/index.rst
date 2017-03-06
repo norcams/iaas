@@ -1,31 +1,45 @@
-=======
-Reports
-=======
+====================
+Rapporter og referat
+====================
 
-The UH IaaS project lead and team reports regularly to both the local
-organizations that take part and to the UH-sky leadership.
+Her vil man finne ukesrapporter og referat fra fellessamlinger.
 
-The reports are written publicliy here but also sendt directly via email.
-Reports are written in Norwegian.
-
-.. toctree::
-    :glob:
-    :maxdepth: 1
-
-Weekly status
--------------
+Fellessamlinger
+===============
 
 .. toctree::
     :glob:
     :maxdepth: 1
 
-    2016_uke_*
+    workshop/2017_workshop_*
+    workshop/2016_workshop_*
 
-Archive
--------
+Ukesrapport
+===========
+
+2017
+----
 
 .. toctree::
     :glob:
     :maxdepth: 1
 
-    2015_uke_*
+    2017/uke_*
+
+2016
+----
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    2016/2016_uke_*
+
+2015
+----
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    2015/2015_uke_*
