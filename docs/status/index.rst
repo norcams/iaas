@@ -15,14 +15,14 @@ også sammen med `UH-sky <https://www.uninett.no/skytjenester>`_
 (UNINETT sitt skyprogram) om å promotere og videreutvikle tjenesten.
 
 Planen er å kunne tilby UH-IaaS til hele sektoren. Mer om hvordan man tar
-den i bruk kan finnes her https://www.uninett.no/infrastructure-service-iaas-uh-iaas
+den i bruk kan finnes her https://www.uninett.no/uh-iaas
 
 .. toctree::
     :maxdepth: 1
 
     people
+    names
     tracking
     reports/index
-    meetings/index
-    archive/index
     plans/index
+    archive/index
