@@ -1,11 +1,13 @@
-=============
-Teamdeltakere
-=============
+=======================
+Teamdeltakere og roller
+=======================
+
+Sist endret: 2017-01-19
 
 **Teamleder/Prosjektleder:** Raymond Kristiansen, UiB (100%)
 
-Deltakere:
-----------
+Deltakere
+---------
 
 * Tor Lædre - UiB (100%)
 
@@ -16,6 +18,12 @@ Deltakere:
 * Øyvind Kolbu - UiO (40%)
 
 * Anders Vaage - UiB (100%)
+
+Tjenesteansvarlig
+-----------------
+
+* Irene Husa - UiB
+
 
 Koordinatorer
 -------------
