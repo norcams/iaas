@@ -2,7 +2,7 @@
 Kontaktpunkter
 ==============
 
-Sist endret: 2017-01-19
+Sist endret: 2017-03-06
 
 Her er oversikten over alle faste møteflater og kontaktpunkter for teamet
 og andre som jobber mot teamet.

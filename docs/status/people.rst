@@ -2,7 +2,7 @@
 Teamdeltakere og roller
 =======================
 
-Sist endret: 2017-01-19
+Sist endret: 2017-03-07
 
 **Teamleder/Prosjektleder:** Raymond Kristiansen, UiB (100%)
 

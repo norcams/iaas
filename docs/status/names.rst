@@ -2,6 +2,11 @@
 Navnekonvensjon
 ===============
 
+Sist endret: 2017-03-07
+
+.. WARNING::
+   Under arbeid.
+
 Her følger en oversikt over hvilke navn brukes til hva og hva som menes.
 
 Overordnet
@@ -18,7 +23,7 @@ Forslag **norcams**
 Produkt
 -------
 
-Vi har valgt å kalle vår versjon av en Openstack installasjon **himlar**
+Vi har valgt å navngi vår versjon av en Openstack installasjon **himlar**
 (flertall av himmel på nynorsk). Dette navnet blir brukt på git-repoet som
 vi bruker for å installere en lokasjon av vår Openstack.
 
