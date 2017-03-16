@@ -39,6 +39,15 @@ felles for alle regioner. For å sette kvote i andre regioner må scriptet kjør
 på nytt i den aktuelle regionen. Scriptet kan også brukes til å gi andre enn
 eier tilgang til prosjektet (grant).
 
+Gi tilgang
+==========
+
+Bruk :file:`project.py` i `himlarcli` for å gi tilgang til flere
+brukere i prosjektet. Eksempel::
+
+  ./project.py -u user@foo.bar -p foo-bar-project grant
+
+
 Kurs
 ====
 
