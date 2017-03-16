@@ -32,12 +32,13 @@ det er kjent hva det skal brukes og formålet er innenfor kjerneområdene våre
 Oppretting
 ==========
 
-Bruk :file:`project.py` i `himlarcli` for å opprette prosjektet. Dersom `type`
-er definert i :file:`config/quotas.yaml` vil det bli kvoten i den regionen
-scriptet kjøres i (f.eks. bgo). Kvoter settes per region, mens prosjektet er
-felles for alle regioner. For å sette kvote i andre regioner må scriptet kjøres
-på nytt i den aktuelle regionen. Scriptet kan også brukes til å gi andre enn
-eier tilgang til prosjektet (grant).
+Bruk :file:`project.py` i `himlarcli` for å opprette
+prosjektet. Dersom `type` er definert i :file:`config/quotas.yaml` vil
+det bli kvoten i den regionen scriptet kjøres i (f.eks. bgo). Kvoter
+settes per region, mens prosjektet er felles for alle regioner. For å
+sette kvote i andre regioner må scriptet kjøres på nytt i den aktuelle
+regionen. Scriptet kan også brukes til å gi andre enn eier tilgang til
+prosjektet (se under).
 
 Gi tilgang
 ==========
