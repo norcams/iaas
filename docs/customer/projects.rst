@@ -16,6 +16,12 @@ Alle ressurser i prosjektet, det kan være instanser, lagring eller image,
 er kun tilgjengelig i prosjektet og kan ikke flyttes eller deles med andre
 prosjekter.
 
+Kvoter
+======
+
+Kvoter begrense hvor mye ressurser et prosjekt kan bruke. Kvoter er alltid
+per region. Så man kan i teorien alltid bruke hele kvoten både i BGO og OSL.
+
 Prosjekttyper
 =============
 
@@ -64,14 +70,11 @@ Prosjekt vil bli slettet når undervisningen er over.
 
 Denne produkttypen vil kunne administreres via integrering mot FS/LMS.
 
-Kvote og betaling
-=================
+Betaling
+========
 
 Betaling vil skje ved at hver organisasjon blir fakturert for all bruk i
 sine prosjekter (med unntak av demoprosjekt). Priser er per måned og vi vil
 faktuere hver 6. måned.
 
 Fakturagrunnlaget vil bli hente ved å telle kjørende instanser på X, Y, eller Z.
-
-For å gjøre det lettere å planlegge ressursbruk er det mulig å sette kvoter på
-prosjektene som vil begrense hvor mye ressurser et prosjekt kan bruke.
