@@ -42,21 +42,21 @@ Utfordringer
 Ingen endringer på dette siste uken. Så jeg lar det stå.
 
 - Dersom diskbruken for OS i instanser forsetter å øke vil vi om ikke altfor
- lenge trenge mer disk. Vi har penger igjen fra i fjor til å kjøpe mer disk.
- Vi ligger nå i BGO på 20-40% bruk på de aktive compute nodene. Vi jobber med
- en plan for å bygge om Ceph-clusteret til å kunne også håndtere OS-disk.
+  lenge trenge mer disk. Vi har penger igjen fra i fjor til å kjøpe mer disk.
+  Vi ligger nå i BGO på 20-40% bruk på de aktive compute nodene. Vi jobber med
+  en plan for å bygge om Ceph-clusteret til å kunne også håndtere OS-disk.
 
 - Vi har fått penger fra UNINETT for 2 ekstra stillinger i 2017. 1. februar
- fikk vi en ekstra person ved UiB, mens vi ikke har fått noen ekstra person
- ved UiO enda. Det vil medføre at de planlagte leveransene knyttet til avtalen
- med UNINETT for 1. juli 2017 med stor sannsynlighet ikke vil bli levert.
- Dette vil først og fremst ramme object storage.
+  fikk vi en ekstra person ved UiB, mens vi ikke har fått noen ekstra person
+  ved UiO enda. Det vil medføre at de planlagte leveransene knyttet til avtalen
+  med UNINETT for 1. juli 2017 med stor sannsynlighet ikke vil bli levert.
+  Dette vil først og fremst ramme object storage.
 
 - Det vil kreve midler til hardware for å øke kapasiteten og videreutvikle
- tjenesten. Dette behovet vil det med høy sannsynlighet komme allerede i 2017.
- Det vi ser nå at vi vil trenge midler til er mer compute, langvarig løsning på
- diskutfordringene nevnt over og object storage. Vi jobber med å tallfeste
- kortsiktige og langsiktige løsninger.
+  tjenesten. Dette behovet vil det med høy sannsynlighet komme allerede i 2017.
+  Det vi ser nå at vi vil trenge midler til er mer compute, langvarig løsning på
+  diskutfordringene nevnt over og object storage. Vi jobber med å tallfeste
+  kortsiktige og langsiktige løsninger.
 
 Annet
 =====
