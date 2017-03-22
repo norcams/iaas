@@ -19,3 +19,10 @@ For team and project status information
 This will be in norwegian only.
 
 * :doc:`/status/index`
+
+Customers and local adminstrators
+---------------------------------
+
+This will be in norwegian only.
+
+* :doc:`/customer/index`

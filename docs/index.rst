@@ -22,5 +22,6 @@ Contents
     howtos/index
     team/index
     status/index
+    customer/index
 
 .. _current documentation: https://iaas.readthedocs.org/
