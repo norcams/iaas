@@ -48,9 +48,9 @@ lokale administratorer eller via integrering med FS/LMS.
 Felles
 ------
 
-Dette er den vanligste form for prosjekter hvor man dele på ressursene i et team.
-Dette vil være aktuelt for forskningsgrupper, studentforeninger eller andre team
-som jobber samme.
+Dette er den vanligste form for prosjekter hvor man deler på ressursene i et
+prosjekt med flere brukere. Dette vil være aktuelt for forskningsgrupper,
+studentforeninger eller andre typer team som jobber sammen.
 
 Bestilling, tilganger, kvoter og flavors kan bli gitt etter henvendelse fra
 lokale administratorer.
@@ -60,14 +60,18 @@ Kurs
 
 Kursprosjekt er midlertidige prosjekter som blir brukt i forbindelse med
 undervisning. Hver deltaker, undervisere og studenter, vil få sitt eget prosjekt.
+Prosjekt vil bli slettet når undervisningen er over.
 
 Denne produkttypen vil kunne administreres via integrering mot FS/LMS.
-
 
 Kvote og betaling
 =================
 
-Hvert prosjekt, med unntak av demoprosjekt, blir fakturert for bruk via
-tilhørende organisasjonen. For å gjøre det lettere å planlegge ressursbruk er
-det mulig å sette kvoter på prosjektene som vil begrense hvor mye
-ressurser et prosjekt kan bruke.
+Betaling vil skje ved at hver organisasjon blir fakturert for all bruk i
+sine prosjekter (med unntak av demoprosjekt). Priser er per måned og vi vil
+faktuere hver 6. måned.
+
+Fakturagrunnlaget vil bli hente ved å telle kjørende instanser på X, Y, eller Z.
+
+For å gjøre det lettere å planlegge ressursbruk er det mulig å sette kvoter på
+prosjektene som vil begrense hvor mye ressurser et prosjekt kan bruke.
