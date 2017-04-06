@@ -10,4 +10,5 @@ Vagrant
     virtualbox
     libvirt
     testing
+    himlarcli
     dataporten
