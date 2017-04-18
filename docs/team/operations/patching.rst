@@ -2,139 +2,74 @@
 Patching
 ========
 
-This is a log of command from the manual patching done in `bgo`.
+Last changed: 2017-04-18
 
-deploy latest code
+Before we start
+===============
+
+Update ansible inventory for both `OSL` and `BGO` :file:`$himlarcli/ansible_hosts.py`
+
+Normal OS patching
 ==================
-.. code-block:: bash
 
-  cd <ansible-repo>
-  bin/bgo/deploy.sh
+**This should be done in a notified timeslot.**
 
-firewall on
-===========
+For each for the production regions, `BGO` and `OSL`, do the following:
 
-foreman-01
-----------
+Upgrade virutal nodes::
 
-Edit :file:`/opt/himlar/hieradata/common/common.yaml` and remove these lines::
+  sudo ansible-playbook --become -e "hosts=<loc>-nodes" lib/yumupdate.yaml
 
-  37: - '129.177.0.0/16'
-  38: - '129.240.0.0/16'
+Upgrade controller nodes::
 
-dashboard-01
-------------
+  sudo ansible-playbook --become -e "hosts=<loc>-controller" lib/yumupdate.yaml
 
-Remove these rules for iptables::
+Check if all nodes are updated::
 
-  235 public openstack-dashboard and api accept tcp from 129.240.0.0/16
-  235 public openstack-dashboard and api accept tcp from 129.177.0.0/16
-
-access-01
----------
-
-Remove these rules for iptables::
-
-  190 dpapp-http accept tcp from 129.177.0.0/16
-  190 dpapp-http accept tcp from 129.240.0.0/16
-
-patching
-========
-
-login-01
---------
-
-.. code-block:: bash
-
-  cd <ansible-repo>
-  sudo ansible-playbook --become -e "hosts=bgo-nodes" lib/yumupdate.yaml
-
-Unable to run this on bgo-controller and bgo-foreman-01 has failures.
-
-controller-01
--------------
-.. code-block:: bash
-
-  yum update -y
-  virsh shutdown bgo-master-01
-  virsh shutdown bgo-cephmon-01
-  virsh shutdown bgo-foreman-1.mgmt.iaas.intern
-  virsh list  # this should be empty
-  init 6
-  virsh start bgo-master-01
-  virsh start bgo-foreman-1.mgmt.iaas.intern
-  virsh list # should show all three running
-
-cephmon-01
-----------
-.. code-block:: bash
-
-  service ceph start
-  ceph status # verify 3 mons running
+  sudo ansible-playbook --become -e "hosts=<loc>-nodes:<loc>-controller" lib/checkupdate.yaml
 
 
-controller-02
--------------
-.. code-block:: bash
+**Reboot each controller one at the time and start all nodes.**
 
-  yum update -y
-  virsh list
-  virsh shutdown bgo-db-01
-  virsh shutdown bgo-access-01
-  virsh shutdown bgo-logger-01
-  virsh shutdown bgo-cephmon-02
-  virsh list # this should be empty
-  init 6
-  virsh start bgo-db-01
-  virsh start bgo-access-01
-  virsh start bgo-logger-01
-  virsh start bgo-cephmon-02
-  virsh list # should show all four running
+Make sure cephmon is running without error before starting on the next controller.
+Start node on controller::
 
-cephmon-02
-----------
-.. code-block:: bash
+  virsh start <node>
 
-  service ceph start
-  ceph status # verify 3 mons running
+Check ceph status on cephmon::
 
-controller-03
--------------
-.. code-block:: bash
+  ceph status
 
-  yum update -y
-  virsh list
-  virsh shutdown bgo-dashboard-01
-  virsh shutdown bgo-proxy-01
-  virsh shutdown bgo-cephmon-03
-  virsh list # this should be empty
-  init 6
-  virsh start bgo-dashboard-01
-  virsh start bgo-proxy-01
-  virsh start bgo-cephmon-03
-  virsh list # should show all four running
+None distruptive patching
+=========================
 
-cephmon-03
-----------
-.. code-block:: bash
+These step could be done without notification and can be done later then normal
+patching.
 
-  service ceph start
-  ceph status # verify 3 mons running
+Storage
+-------
 
-master-01
----------
-.. code-block:: bash
+Upgrade storage::
 
-  init 6
+  sudo ansible-playbook --become -e "hosts=<loc>-storage" lib/yumupdate.yaml
 
+Check if the storage nodes are upgraded::
 
-firewall off
-============
+  sudo ansible-playbook --become -e "hosts=<loc>-storage" lib/checkupdate.yaml
 
-foreman-01:
------------
+Reboot one storage node at the time and check ceph status before next nodes::
 
-Remove changes from :file:`/opt/himlar/hieradata/common/common.yaml`::
+  ceph status
 
-  cd /opt/himlar
-  git checkout -f
+Leaf
+----
+
+Only reboot one node at a time, and never if one node is a single point of
+failure.
+
+Upgrade node::
+
+  apt-get update
+  apt-get dist-upgrade
+
+Reboot node.
