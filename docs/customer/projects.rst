@@ -2,7 +2,7 @@
 Prosjekt
 ========
 
-Sist endret: 2017-03-22
+Sist endret: 2017-04-20
 
 .. NOTE::
   Under arbeid. Dette er et utkast og ikke et endelig dokument.
@@ -28,17 +28,11 @@ Prosjekttyper
 Demo
 ----
 
-Alle brukere får tilgang til et demoprosjekt som har en minimal kvote:
+Alle brukere får tilgang til et demo-prosjekt som har en minimal kvote og
+vil kjøre på ledig kapasitet. Ved teknisk- eller ressursutfordringer vil
+resurser kunne bli stoppet, flyttet eller slettet.
 
-* Instanser: 1
-* vCPU: 1
-* Minne: 2 GB
-
-Dette er ment å kunne brukes til testing og vi kan ikke garantere lengre oppetid
-for instanser som kjører i demoprosjekt. Ved teknisk- eller ressursproblemer vil
-instanser kunne blir skrudd av eller slettet. Prosjektene merkes med hvilke bruker
-de tilhører og ordet DEMO. Organisasjonene betaler en årlig avgift for å dekke
-bruk av demoprosjekter. Disse vil bli slettet når brukeren slutter.
+Mer detaljer on plan for demo-prosjekt finnes `her <../status/plans/demo.html>`_.
 
 Personlig
 ---------
