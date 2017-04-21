@@ -15,6 +15,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     resources
     projects
     demo
+    storage
     flavors
     documentation
     dns
