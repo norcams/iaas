@@ -274,31 +274,31 @@ Publicizing procedure
 Normal (automatic)
 ``````````````````
 
-**rpm**::
+**rpm**:
   Files placed inside this location is instantly accessible, provided correct
   SELinux labeling. No snapshoting provided!
 
 
-**yumrepo**::
+**yumrepo**:
   Files placed inside this location is instantly accessible, provided correct
   SELinux labeling. No snapshoting provided through this interface! For this use
   the REPO interface instead.
 
 
-**repo**::
+**repo**:
   Any repositories which are mirrored (including YUMREPO) have new files
   accessible here after the mirror job is run during night time. The version
   available is always the most recent!
 
 
-**snapshots**::
+**snapshots**:
   Every night after mirror job completion a snapshot of the current mirrors are
   taken. Any of these snapshots are available through this interface below a
   directory named by the timestamp [YYYY-MM-DD-hhmm]. The most current snapshot
   is additionally presented as "current".
 
 
-**test** and **prod**::
+**test** and **prod**:
   These interfaces should be seen as static representation of data from specific
   date/times. Each mirrored repository (if configured to be listed here) is
   listed with a link to a specific snapshot of the repo in question. The PROD
@@ -311,10 +311,10 @@ Normal (automatic)
 Manual routine for instant publicizing
 ``````````````````````````````````````
 
-**rpm**::
+**rpm**:
   Nothing required!
 
-**yumrepo**::
+**yumrepo**:
   New files are available through the ordinary interfaces after mirroring and
   snapshoting. This is usually done nightly, but the routines might be run
   manually if necessary:
