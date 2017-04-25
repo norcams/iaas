@@ -34,9 +34,9 @@ repository and a generic distribution point.
 
 
 .. Note::
-   It is an accepted fact by the designer of this system that the naming scheme
-   for these directories are soewhat misleading! Please read the description
-   before assuming anything realted to the role of the directory!
+   The implementor accepts the fact that the naming scheme
+   for these directories are misleading! Please read the description
+   before assuming anything related to the role of the directory!
 
 
 Stilistic diagram of the setup
@@ -119,7 +119,8 @@ Standalone file archive
 
 Files (RPM packages or other types) which are needed by the project but which should or cannot
 use the local YUM repository, can be distributed from the generic archive
-located under the ``rpm`` subdirectory. No additional operations required.
+located under the ``rpm`` subdirectory. No additional operations required, other
+than the ensuring correct SELinux label as described above.
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/rpm>`_
 
@@ -252,8 +253,8 @@ Considerations
 - Existing links not listed in the current configuration will be removed!
 
 
-How to update
-`````````````
+Update procedure
+````````````````
 
 1. Clone or pull the git repo locally
 #. Edit files
@@ -265,6 +266,64 @@ How to update
 
    This action pull the latest config and update the pointers in `test` and
    `prod`.
+
+
+Publicizing procedure
+---------------------
+
+Normal (automatic)
+``````````````````
+
+**rpm**::
+  Files placed inside this location is instantly accessible, provided correct
+  SELinux labeling. No snapshoting provided!
+
+
+**yumrepo**::
+  Files placed inside this location is instantly accessible, provided correct
+  SELinux labeling. No snapshoting provided through this interface! For this use
+  the REPO interface instead.
+
+
+**repo**::
+  Any repositories which are mirrored (including YUMREPO) have new files
+  accessible here after the mirror job is run during night time. The version
+  available is always the most recent!
+
+
+**snapshots**::
+  Every night after mirror job completion a snapshot of the current mirrors are
+  taken. Any of these snapshots are available through this interface below a
+  directory named by the timestamp [YYYY-MM-DD-hhmm]. The most current snapshot
+  is additionally presented as "current".
+
+
+**test** and **prod**::
+  These interfaces should be seen as static representation of data from specific
+  date/times. Each mirrored repository (if configured to be listed here) is
+  listed with a link to a specific snapshot of the repo in question. The PROD
+  repository is what is used in the production environment and should never be
+  more recent than TEST (this is actually prohibited by the setup routine for
+  these pointers). Data is available concurently with the snapshots it is linked
+  to.
+
+
+Manual routine for instant publicizing
+``````````````````````````````````````
+
+**rpm**::
+  Nothing required!
+
+**yumrepo**::
+  New files are available through the ordinary interfaces after mirroring and
+  snapshoting. This is usually done nightly, but the routines might be run
+  manually if necessary:
+  
+  1. /opt/kelda/repoadmin.sh -e prod sync && /usr/sbin/restorecon -R /var/www/html/uh-iaas/
+  2. /opt/kelda/repoadmin.sh -e prod snapshot
+  
+  This must be done with root privileges, which currently is not available for
+  the iaas user.
 
 
 Caveats
