@@ -2,26 +2,76 @@
 Repository server
 =================
 
-For locally created packages and to ensure integrity and version control of
-externally hosted essential code a local repository server is set up outside of
-the cloud infrastructure.
+
+Introduction
+============
+
+
+For local caching of external repositories and to facilitate a repository of
+packages created by the UH-IaaS team etc, a server system is installed.
+Because the production environment has to be carefully managed, some issues are
+raised which is attempted resolved by this setup:
+
+* Production servers must only run well known versions and combinations of
+  software (which is supposed to be tested and approved before deployment)
+* Possible to check state of code at any date in the past for debugging
+* Possible to test new code without disturbing production environment
+* Ability to maintain our own software in the same manner as any external
+  RPM repository
+* Means to distribute all kind of data files without versioning
+
+
+To acomplish all of this wehave implemented both a system for versioned/snapshoted
+mirrors of any 'external' repo (whatever the location), a local ordinary RPM
+repository and a generic distribution point.
 
 * **Hostname**: ``iaas-repo.uio.no``
-* **Alias** (name used in code): ``download.iaas.uio.no``
+* **Alias** (used in code): ``download.iaas.uio.no``
 * **Access**: as for normal infrastructure nodes (*iaas*-user from one of the
   login nodes)
 * **Repo root directory**: ``/var/www/html/uh-iaas``
+* **Available protocols**: ``https``
 
 
-Internally produced packages
-============================
+.. Note::
+   It is an accepted fact by the designer of this system that the naming scheme
+   for these directories are soewhat misleading! Please read the description
+   before assuming anything realted to the role of the directory!
+
+
+Stilistic diagram of the setup
+------------------------------
+
+
+.. image:: images/repo.png
+
+
+Directory description
+---------------------
+
+* **repo**: Mirror hiearchy. This is where all defined repositories are mirrored
+  to. Content are normally mirrored nightly.
+* **snapshots**: Nightly snapshot of all mirrors under ``repo``. Each snapshot is
+  named by the date and time of creation.
+* **prod**: For each repository a pointer (symbolic link) to a snapshot of the
+  same.
+* **test**: As for ``prod``, but separate link.
+* **yumrepo**: Locally maintained RPM repository. Mirrored under ``repo`` as any
+  external repository is.
+* **rpm**: Generic file distribution. No metadata, versioning, mirroring or
+  snapshoting.
+
+
+
+Common attributes and requirements
+==================================
 
 Packages built locally by the project are made available for use (default for the world!)
 by storing it in one of the prepared directories depending on whether the package is to
-be part of a yum repository or as a stand-alone package.
+be part of a yum repository or as a stand-alone package or file.
 
-The *iaas* group owns all files and directories under the repo root, the
-hierarchy is configured with the `set group ID` bit. Accordingly
+The *iaas* group owns all files and directories under the repository root
+directory, the hierarchy is configured with the `set group ID` bit. Accordingly
 all relevant repo operations can (and should) be done as the *iaas* user.
 
 **NOTE**
@@ -35,14 +85,21 @@ or::
   sudo restorecon -R <directory>
 
 
+
+Detailed descriptions
+=====================
+
+
 YUM repository
 --------------
 
-Packages which should always have its latest version installed on all nodes
-should be placed somewhere under the ``yumrepo`` subdirectory.
+**Directory name**: ``yumrepo``
 
-Packages which should no longer be part of this repository should be deleted for
-better maintainability.
+Packages which should be maintained by ordinary package maintainment procedures,
+are located in the YUM repository located in ``yumrepo``. These files/packages
+are then considered and consumed exactly as any other, external, repository used by the
+project/code.
+
 
 **IMPORTANT**
 
@@ -53,58 +110,118 @@ After all file operations update the repository meta data::
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/yumrepo>`_
 
-Also available with TLS (https)!
 
 
-Standalone
-----------
+Standalone file archive
+-----------------------
 
-Packages which is needed by the project but which for some reason should be kept
-outside of a normal yum repository should be placed under the ``rpm``
-subdirectory. No additional operations required.
+**Directory name**: ``rpm``
+
+Files (RPM packages or other types) which are needed by the project but which should or cannot
+use the local YUM repository, can be distributed from the generic archive
+located under the ``rpm`` subdirectory. No additional operations required.
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/rpm>`_
 
-Also available with TLS (https)!
 
 
-Local repository of externally produced code
-============================================
-
-To ensure known states of required software there is a local repository of all
-external sources used. All repositories configured bu the UH-IaaS code should
-point to this local site::
-
-    https://download.iaas.uio.no/uh-iaas/prod/
-
-This is a link to a snapshot of the data which are all tested and certified.
+Local mirror and snapshot service
+=================================
 
 
-Directories and contents
-------------------------
+To facility tight control of the code and files used in our environment, and to
+ensure the availability in case of network or external system outages etc, a
+local mirror and snapshot service is implemented.
 
-=============== ============================================================================================== ===============================================
-Long name        Description                                                                                    URL
-=============== ============================================================================================== ===============================================
-Repository      Latest sync from external sources                                                              https://download.iaas.uio.no/uh-iaas/repo
-Snapshots       Regular (usually daily) snapshots of data in repo                                              https://download.iaas.uio.no/uh-iaas/snapshots
-Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/uh-iaas/test 
-Production repo Pointer to a specific snapshot in time with well-tested data, used in production environments  https://download.iaas.uio.no/uh-iaas/prod
-=============== ============================================================================================== ===============================================
+Content and description of included subdirectories:
 
+========== =============== ============================================================================================== ===============================================
+Short name Long name        Description                                                                                    URL
+=========  =============== ============================================================================================== ===============================================
+repo       Repository      Latest sync from external sources                                                              https://download.iaas.uio.no/uh-iaas/repo
+snapshots  Snapshots       Regular (usually daily) snapshots of data in repo                                              https://download.iaas.uio.no/uh-iaas/snapshots
+test       Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/uh-iaas/test 
+prod       Production repo Pointer to a specific snapshot in time with well-tested data, used in production environments  https://download.iaas.uio.no/uh-iaas/prod
+========== =============== ============================================================================================== ===============================================
 
 Usage is normally as follows:
 
 :repo: for development or other use of most up-to-date code
 :test: test code which is aimed for next production release
 :prod: production code
-:snapshots: can be used to test against code from a specific date
+:snapshots: can be used to test against code from any specific date in the past
+
+
+
+Mirror
+------ 
+
+**Directory**: ``repo``
+
+Each mirrored repository is located directly beneath the `repo` folder. Which
+"external" (which might actually be located locally) repository is to be
+mirrored, is defined by data in the internal **repo-admin** git repo (see below
+for access details). All repositories listed in the file *repo.config* is
+attempted accessed and sync'ed. The type of repository - as defined in the
+configuration file for the apropriate listing - determines what actions are
+taken on the data. As this is mainly YUM repositories, the appropriate metadata
+commands are executed to create a proper local repository. Any YUM repo defined
+in the configuration must have a corresponding repo-definition in a suitable
+file in the ``yum.repos.d`` subdirectory (in the git repo!).
+
+The mirroring is done once every night by a root cron job.
+
+To access the most current data in the mirror, us this URL::
+
+    https://download.iaas.uio.no/uh-iaas/repo/
+
+
+Snapshots
+---------
+
+**Directory**: ``snapshots``
+
+Every night a cron job runs to create snapshots of all mirrored repositories (of
+all kinds). A snapshot subdirectory is created named by the current date and time.
+Under this all repos can be accessed. This way any data can be retrieved from
+any data in the past on which a snapshot has been taken.
+
+*current*: In the ``snapshots`` directory there is always a special "snapshot*
+named ``current``. This entry is at any time linked to the most current
+snapshot.
+
+To access the snapshot library::
+
+    https://download.iaas.uio.no/uh-iaas/prod/
+
+
+.. Note::
+   The snapshot data are created using a system of hardlinks. This way unaltered
+   data is not duplicated, which conserves space considerably.
+
+
+Test and prod
+-------------
+
+**Directories**: ``test``, ``prod``
+
+
+All mirrored repos used by UH IaaS can be accessed through a static and well
+known historic version using the *test* and *prod* interfaces. By configuring
+the apropriate files in the internal **repo-admin** git repo, each repo might
+have a ``test`` and ``prod`` pointer linking to a specific snapshot of this
+repository. NB: each and every mirrored repo can be set up to link to separate
+snapshots!
+
+.. Important::
+   This is the access point to use in the production and test environments!
+
 
 
 Configuration
 -------------
 
-Configuration for the repositories is stored in the local git repo::
+Configuration for the repositories is stored in the internal git repo::
 
     git@git.iaas.uio.no:repo-admin
 
@@ -124,13 +241,14 @@ Files
 Considerations
 ``````````````
 
-- ``test`` should never point to older snapshots than ``prod``
+- ``test`` should never point to a snapshot older than what the corresponding 
+  ``prod`` are linkng to
 - Pointers in ``prod`` **must also** exist in ``test``, the rationale
   being that this somewhat ensures that `prod` has already been tested.
   Links in the `prod` configuration which does not also exist in the `test`
-  configuration will *not* be activated.
-- If there are more than one link listed to the same repo the newest is always
-  the one activated.
+  configuration will *not* be activated (removed if the exists)!
+- If there are more than one link listed to the same repo the most current
+  is always the one activated.
 - Existing links not listed in the current configuration will be removed!
 
 
@@ -147,3 +265,20 @@ How to update
 
    This action pull the latest config and update the pointers in `test` and
    `prod`.
+
+
+Caveats
+-------
+
+* Any changes in the local YUM repository (``yumrepo``) is not
+  accessible through the mirror interface (``repo``) until after the next upcoming
+  mirror job (usually during the next night, check crontab on the mirror server
+  for details). After this the data should be accessible under the ``repo`` link.
+  
+* New data mirrored is available under the ``snapshot`` link only after the next
+  snapshot run (check crontab for details). This is normally scheduled for some
+  time after the nightly mirror job.
+
+* Data stored in any of the two local repositories are instantly accessible when
+  accessed using the direct URL's as listed above.
+
