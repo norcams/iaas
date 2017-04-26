@@ -39,8 +39,8 @@ repository and a generic distribution point.
    before assuming anything related to the role of the directory!
 
 
-Stilistic diagram of the setup
-------------------------------
+Diagram of setup
+----------------
 
 
 .. image:: images/repo.png
