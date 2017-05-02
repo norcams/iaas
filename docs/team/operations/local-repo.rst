@@ -322,8 +322,7 @@ Manual routine for instant publicizing
   1. /opt/kelda/repoadmin.sh -e prod sync && /usr/sbin/restorecon -R /var/www/html/uh-iaas/
   2. /opt/kelda/repoadmin.sh -e prod snapshot
   
-  All commands must be done with root privileges, which for the iaas user means through
- `sudo`.
+  All commands must be done with root privileges, which for the iaas user means through `sudo`.
 
 
 Caveats
