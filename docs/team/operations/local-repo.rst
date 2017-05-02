@@ -323,7 +323,7 @@ Manual routine for instant publicizing
   2. /opt/kelda/repoadmin.sh -e prod snapshot
   
   All commands must be done with root privileges, which for the iaas user means through
-* `sudo`. 
+ `sudo`.
 
 
 Caveats
