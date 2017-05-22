@@ -18,7 +18,8 @@ Morgenmøte
 Hver morgen kl 09:30 til 09:40 avholdes det et kort statusmøte. Agenda for
 møte er en kort oppsummering fra hver enkelt. Dette kan innehold hva som
 har skjedd siden sist, hva er planen videre og eventuelle utfordringer man
-trenger hjelp til.
+trenger hjelp til. Dersom det er uløste saker i RT kan disse også
+fordeles/diskuteres.
 
 Vi bruker Google Hangout til å avholde videomøter. Direkte link til vårt rom
 http://hangout.norcams.org
