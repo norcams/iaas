@@ -138,7 +138,7 @@ Content and description of included subdirectories:
 
 ========== =============== ============================================================================================== ===============================================
 Short name Long name        Description                                                                                    URL
-=========  =============== ============================================================================================== ===============================================
+========== =============== ============================================================================================== ===============================================
 repo       Repository      Latest sync from external sources                                                              https://download.iaas.uio.no/uh-iaas/repo
 snapshots  Snapshots       Regular (usually daily) snapshots of data in repo                                              https://download.iaas.uio.no/uh-iaas/snapshots
 test       Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/uh-iaas/test 
