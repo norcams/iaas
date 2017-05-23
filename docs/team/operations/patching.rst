@@ -2,12 +2,22 @@
 Patching
 ========
 
-Last changed: 2017-04-18
+Last changed: 2017-05-23
 
 Before we start
 ===============
 
 Update ansible inventory for both `OSL` and `BGO` :file:`$himlarcli/ansible_hosts.py`
+
+Make sure all nodes will autostart with::
+
+    sudo ansible-playbook --become -e "hosts=<loc>-controller" autostart_nodes.yaml
+
+.. WARNING::
+  See https://trello.com/c/7muUakUi/880-tjenester-starter-ikke-etter-reboot
+
+  Quick fix on all nodes
+  :file:`ansible -b -u iaas <loc>* -m command -a 'systemctl add-wants multi-user.target network.target'`
 
 Normal OS patching
 ==================
@@ -73,3 +83,20 @@ Upgrade node::
   apt-get dist-upgrade
 
 Reboot node.
+
+Testing
+=======
+
+After patching we should test the following:
+
+* install new instance
+* ssh to new instance
+* create volume and attach to instance
+* detach volume
+* destroy volume
+* destroy instance
+
+Only in test01 and test02
+-------------------------
+
+Reinstall a compute node and repeat the tests above.
