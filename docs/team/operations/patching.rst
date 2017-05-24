@@ -11,13 +11,15 @@ Update ansible inventory for both `OSL` and `BGO` :file:`$himlarcli/ansible_host
 
 Make sure all nodes will autostart with::
 
-    sudo ansible-playbook --become -e "hosts=<loc>-controller" autostart_nodes.yaml
+    sudo ansible-playbook --become -e "hosts=<loc>-controller" lib/autostart_nodes.yaml
 
 .. WARNING::
   See https://trello.com/c/7muUakUi/880-tjenester-starter-ikke-etter-reboot
 
   Quick fix on all nodes
-  :file:`ansible -b -u iaas <loc>* -m command -a 'systemctl add-wants multi-user.target network.target'`
+  :file:`sudo ansible -b -u iaas <loc>* -m command -a 'systemctl add-wants multi-user.target network.target'`
+  
+  Will not run on leaf nodes!
 
 Normal OS patching
 ==================
@@ -39,10 +41,11 @@ Check if all nodes are updated::
   sudo ansible-playbook --become -e "hosts=<loc>-nodes:<loc>-controller" lib/checkupdate.yaml
 
 
-**Reboot each controller one at the time and start all nodes.**
+**Reboot each controller one at the time and verify all nodes.have started**
+(might use `lib/reboot.yaml`)
 
 Make sure cephmon is running without error before starting on the next controller.
-Start node on controller::
+Start node on controller if not automatically started:
 
   virsh start <node>
 
