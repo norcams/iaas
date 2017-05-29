@@ -17,12 +17,18 @@ Make sure all nodes will autostart with::
   See https://trello.com/c/7muUakUi/880-tjenester-starter-ikke-etter-reboot
 
   Quick fix on all nodes
-  :file:`sudo ansible -b -u iaas <loc>* -m command -a 'systemctl add-wants multi-user.target network.target'`
-  
-  Will not run on leaf nodes!
+  :file:`sudo ansible -b -u iaas <loc>-nodes -m command -a 'systemctl add-wants multi-user.target network.target'`
 
 Normal OS patching
 ==================
+
+.. WARNING::
+
+  To avoid split brain in the galera cluster in production the we should turn
+  off the database on :file:`db-01` before we start on a region::
+
+    systemctrl stop mariadb.service
+    systemctrl stop crond.service
 
 **This should be done in a notified timeslot.**
 
