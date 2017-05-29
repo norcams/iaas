@@ -85,7 +85,7 @@ Reboot one storage node at the time and check ceph status before next nodes::
 
   ceph status
 
-After all nodes are rebootet, ensure that automatic rebalance is enabled:
+After all nodes are rebooted, ensure that automatic rebalancing is enabled:
 
   ceph osd unset noout
 
