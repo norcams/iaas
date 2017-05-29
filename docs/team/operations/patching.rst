@@ -68,6 +68,11 @@ patching.
 Storage
 -------
 
+Before you begin, you can avoid automatic rebalancing of the ceph cluster during
+maintenance. Run this command on a cephmon or storage node::
+
+  ceph osd set noout
+
 Upgrade storage::
 
   sudo ansible-playbook --become -e "hosts=<loc>-storage" lib/yumupdate.yaml
@@ -79,6 +84,10 @@ Check if the storage nodes are upgraded::
 Reboot one storage node at the time and check ceph status before next nodes::
 
   ceph status
+
+After all nodes are rebootet, ensure that automatic rebalance is enabled:
+
+  ceph osd unset noout
 
 Leaf
 ----
