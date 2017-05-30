@@ -7,6 +7,9 @@ Last changed: 2017-05-23
 Before we start
 ===============
 
+**Before you start make sure the repo are up to date with the snapshot you
+wish to use.**
+
 Update ansible inventory for both `OSL` and `BGO` :file:`$himlarcli/ansible_hosts.py`
 
 Make sure all nodes will autostart with::
