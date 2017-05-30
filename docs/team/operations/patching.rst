@@ -110,8 +110,8 @@ Testing
 
 .. WARNING::
   In `BGO` and `OSL` there have been some trouble after patching. First check
-  :file:`openstack-nova-scheduler` on :file:`novactrl-01` and restart the
-  service if it has errors.
+  :file:`novactrl-01` and reboot the node if it has errors or no scheduler or
+  conductor log entries.
 
 After patching we should test the following:
 
