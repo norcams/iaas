@@ -105,6 +105,11 @@ Reboot node.
 Testing
 =======
 
+.. WARNING::
+  In `BGO` and `OSL` there have been some trouble after patching. First check
+  :file:`openstack-nova-scheduler` on :file:`novactrl-01` and restart the
+  service if it has errors.
+
 After patching we should test the following:
 
 * install new instance
