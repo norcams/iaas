@@ -14,6 +14,15 @@ Fellessamlinger
     workshop/2017_workshop_*
     workshop/2016_workshop_*
 
+Endringsrapport
+===============
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    change/week_*
+
 Ukesrapport
 ===========
 
