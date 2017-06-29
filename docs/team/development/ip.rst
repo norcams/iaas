@@ -90,9 +90,13 @@ Openstack hosts
 controller-01  eth1  trp   x.x.x.100
 controller-02  eth1  trp   x.x.x.101
 controller-03  eth1  trp   x.x.x.102
+controller-04  eth1  trp   x.x.x.114
 compute-01*    eth1  trp   x.x.x.103
 compute-02*    eth1  trp   x.x.x.104
 compute-03*    eth1  trp   x.x.x.105
+compute-04*    eth1  trp   x.x.x.111
+compute-05*    eth1  trp   x.x.x.112
+compute-06*    eth1  trp   x.x.x.113
 storage-01*    eth1  trp   x.x.x.106
 storage-02*    eth1  trp   x.x.x.107
 storage-03*    eth1  trp   x.x.x.108
