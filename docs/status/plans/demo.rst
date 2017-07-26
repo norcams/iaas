@@ -2,7 +2,7 @@
 Demo-prosjekt
 =============
 
-Sist endret: 2017-04-20
+Sist endret: 2017-07-26
 
 Konsept
 =======
@@ -26,7 +26,8 @@ demo-prosjektet bli informert om hva som er endret.
 Navn
 ====
 
-Demo-prosjekt vil få navn **DEMO-<epost>** og merkes med :file:`type=demo`
+Demo-prosjekt vil få navn **DEMO-<navn>-<org>** og merkes med :file:`type=demo`
+Eksempel: **DEMO-raymond.kristiansen-uib.no**
 
 Kvote
 =====
