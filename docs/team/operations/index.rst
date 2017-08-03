@@ -14,7 +14,7 @@ Operations
     foreman
     ansible/index
     patching
-    himlarcli
+    himlarcli/index
     local-repo
     ssl
     dns
