@@ -60,8 +60,8 @@ Directory description
   external repository is.
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
   snapshoting.
-
-
+* **ports**: For FreeBSD packages. No metadata, versioning, mirroring or
+  snapshoting.  
 
 Common attributes and requirements
 ==================================
