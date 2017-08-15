@@ -19,6 +19,8 @@ Deltakere
 
 * Anders Vaage - UiB (100%)
 
+* Tannaz Navaie Roshandel - UiO (100%)
+
 Tjenesteansvarlig
 -----------------
 
@@ -45,4 +47,5 @@ Tor           1            1            1            1            1
 Trond         0            1            1            0            0
 Øyvind        0            1            1            0            0
 Anders        1            1            1            1            1
+Tannaz        1            1            1            1            1
 ============ ============ ============ ============ ============ ============
