@@ -11,7 +11,7 @@ Last changed: |date|
    out all files tracked in git and rerun :file:`bootstrap.sh`
 
 You will need to generate a CA key pair with openssl to sign the certificate
-used in vagrant to test TLS for endpoint. First make sure openssl in installed
+used in vagrant to test TLS for endpoint. First make sure openssl is installed
 on your host computer (if not, run the scipts and copy all the .pem files
 back to your host)::
 
