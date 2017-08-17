@@ -23,6 +23,6 @@ This will be in Norwegian only.
 Customers and local adminstrators
 ---------------------------------
 
-This will be in norwegian only.
+This will be in Norwegian only.
 
 * :doc:`/customer/index`
