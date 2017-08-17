@@ -16,8 +16,12 @@ Connecting to Horizon
 .. _Setting up the Vagrant environment: http://iaas.readthedocs.io/en/latest/team/development/vagrant/libvirt.html#setting-up-the-vagrant-environment
 
 Horizon is the web GUI component in OpenStack. If you've followed the
-`Setting up the Vagrant environment`_ guide earlier, you should now be
-able to connect a browser to the Horizon GUI::
+`Setting up the Vagrant environment`_ guide earlier, you should now start the nodes::
+
+  vagrant up api
+  vagrant up dashboard
+
+Connect a browser to the Horizon GUI::
 
   https://172.31.24.51/
 
