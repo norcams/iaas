@@ -82,7 +82,7 @@ From OpenStack Security Guide:
   security impact.*
 
 ``[N/A]`` **Document middleware**
-  We should careful when implementating non-standard software in the
+  We should be careful when implementing non-standard software in the 
   middleware, and this should be thoroughly documented.
 
   * We are not using any non-standard middleware
@@ -106,7 +106,7 @@ From OpenStack Security Guide:
 ``[DEFERRED]`` **Network policy**
   We should pay special attention to API endpoints, as they typically
   bridge multiple security domains. Policies should be in place and
-  documented, and we can use firewalls, SELinux etc. to enforce proper
+  documented, and we can use firewalls, SELinux, etc. to enforce proper
   compartmentalization in the network layer.
 
   * FIXME: Implement and document this
