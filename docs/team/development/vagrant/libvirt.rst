@@ -51,7 +51,7 @@ In order to deploy the Vagrant environment, follow this guide.
 
      dnf -y install vagrant vagrant-libvirt libvirt-daemon-kvm
      
- If you are running RedHat, you may also need to install::
+   If you are running RedHat, you may also need to install::
 
      yum install libvirt-devel
      
