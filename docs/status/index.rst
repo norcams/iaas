@@ -21,6 +21,7 @@ den i bruk kan finnes her https://www.uninett.no/uh-iaas
     :maxdepth: 1
 
     people
+    call
     names
     tracking
     reports/index
