@@ -19,7 +19,7 @@ Ubuntu (trusty)
 
 .. code:: bash
 
-	sudo apt-get -y install virtualenvwrapper
+	sudo apt-get -y install virtualenvwrapper make
 	# Restart shell
 	exit
 
