@@ -2,15 +2,15 @@
 Logging
 =======
 
-We have a node called `logger` where we run rsyslog-server, logstash, kibana and
-elasticsearch. The other nodes can be set up to ship logs to `logger`.
+We have a node called `logger` where we run rsyslog-server, Logstash, Kibana and
+Elasticsearch. The other nodes can be set up to ship logs to `logger`.
 
 rsyslog
 -------
 
 You can find the logs for each client under :file:`/opt/log/<hostname>`.
 
-Some openstack components have their own syslog facility::
+Some Openstack components have their own syslog facility::
 
   local0.* nova
   local1.* horizon (apache logs)
@@ -19,7 +19,7 @@ Some openstack components have their own syslog facility::
   local4.* cinder
   local5.* neutron
 
-kibana
+Kibana
 ------
 
 Access to `kibana` is limited to mgmt network on each site. You will need to
