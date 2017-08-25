@@ -15,7 +15,7 @@ Scripts
 =======
 
 Simple overview with some of the most important actions. More actions might
-exists so, please refer to the help text.
+exist, so please refer to the help text.
 
 =========== =========== ====================
 script       actions     notes
