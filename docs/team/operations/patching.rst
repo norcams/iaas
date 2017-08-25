@@ -7,7 +7,7 @@ Last changed: 2017-05-23
 Before we start
 ===============
 
-**Before you start make sure the repo are up to date with the snapshot you
+**Before you start, make sure the repo is up to date with the snapshot you
 wish to use.**
 
 Update ansible inventory for both `OSL` and `BGO` :file:`$himlarcli/ansible_hosts.py`
@@ -113,7 +113,7 @@ Testing
   :file:`novactrl-01` and reboot the node if it has errors or no scheduler or
   conductor log entries.
 
-After patching we should test the following:
+After patching, we should test the following:
 
 * install new instance
 * ssh to new instance
