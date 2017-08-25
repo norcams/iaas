@@ -3,7 +3,7 @@ Foreman
 =======
 
 Runs on :file:`<loc>-admin-01` and is the DHCP-server, puppetmaster and is used to
-install new hosts (nodes, compute and storage). Can also be used as DNS-server i dev.
+install new hosts (nodes, compute and storage). It can also be used as DNS-server in dev.
 
 Kickstart templates
 -------------------
