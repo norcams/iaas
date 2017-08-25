@@ -8,22 +8,22 @@ Introduction
 
 
 For local caching of external repositories and to facilitate a repository of
-packages created by the UH-IaaS team etc, a server system is installed.
+packages created by the UH-IaaS team etc., a server system is installed.
 Because the production environment has to be carefully managed, some issues are
 raised which is attempted resolved by this setup:
 
-* Production servers must only run well known versions and combinations of
+* Production servers must only run well-known versions and combinations of
   software (which is supposed to be tested and approved before deployment)
 * Possible to check state of code at any date in the past for debugging
 * Possible to test new code without disturbing production environment
-* Ability to maintain our own software in the same manner as any external
+* Ability to maintain our software in the same manner as any external
   RPM repository
 * Means to distribute all kind of data files without versioning
 
 
-To acomplish all of this wehave implemented both a system for versioned/snapshoted
+To accomplish all of this we have implemented both a system for versioned/snapshotted
 mirrors of any 'external' repo (whatever the location), a local ordinary RPM
-repository and a generic distribution point.
+repository and a general distribution point.
 
 * **Hostname**: ``iaas-repo.uio.no``
 * **Alias** (used in code): ``download.iaas.uio.no``
@@ -35,7 +35,7 @@ repository and a generic distribution point.
 
 .. Note::
    The implementor accepts the fact that the naming scheme
-   for these directories are misleading! Please read the description
+   for these directories is misleading! Please read the description
    before assuming anything related to the role of the directory!
 
 
@@ -49,8 +49,8 @@ Diagram of setup
 Directory description
 ---------------------
 
-* **repo**: Mirror hiearchy. This is where all defined repositories are mirrored
-  to. Content are normally mirrored nightly.
+* **repo**: Mirror hierarchy. This is where all defined repositories are mirrored
+  to. Content is normally mirrored nightly.
 * **snapshots**: Nightly snapshot of all mirrors under ``repo``. Each snapshot is
   named by the date and time of creation.
 * **prod**: For each repository a pointer (symbolic link) to a snapshot of the
@@ -59,9 +59,9 @@ Directory description
 * **yumrepo**: Locally maintained RPM repository. Mirrored under ``repo`` as any
   external repository is.
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
-  snapshoting.
+  snapshotting.
 * **ports**: For FreeBSD packages. No metadata, versioning, mirroring or
-  snapshoting.  
+  snapshotting.  
 
 Common attributes and requirements
 ==================================
@@ -71,7 +71,7 @@ by storing it in one of the prepared directories depending on whether the packag
 be part of a yum repository or as a stand-alone package or file.
 
 The *iaas* group owns all files and directories under the repository root
-directory, the hierarchy is configured with the `set group ID` bit. Accordingly
+directory; the hierarchy is configured with the `set group ID` bit. Accordingly,
 all relevant repo operations can (and should) be done as the *iaas* user.
 
 **NOTE**
@@ -95,9 +95,9 @@ YUM repository
 
 **Directory name**: ``yumrepo``
 
-Packages which should be maintained by ordinary package maintainment procedures,
+Packages which should be maintained by ordinary package maintained procedures,
 are located in the YUM repository located in ``yumrepo``. These files/packages
-are then considered and consumed exactly as any other, external, repository used by the
+are then considered and consumed exactly like any other, external, repository used by the
 project/code.
 
 
@@ -131,7 +131,7 @@ Local mirror and snapshot service
 
 
 To facility tight control of the code and files used in our environment, and to
-ensure the availability in case of network or external system outages etc, a
+ensure the availability in case of network or external system outages, etc., a
 local mirror and snapshot service is implemented.
 
 Content and description of included subdirectories:
@@ -163,8 +163,8 @@ Each mirrored repository is located directly beneath the `repo` folder. Which
 "external" (which might actually be located locally) repository is to be
 mirrored, is defined by data in the internal **repo-admin** git repo (see below
 for access details). All repositories listed in the file *repo.config* is
-attempted accessed and sync'ed. The type of repository - as defined in the
-configuration file for the apropriate listing - determines what actions are
+attempted accessed and synced. The type of repository - as defined in the
+configuration file for the appropriate listing - determines what actions are
 taken on the data. As this is mainly YUM repositories, the appropriate metadata
 commands are executed to create a proper local repository. Any YUM repo defined
 in the configuration must have a corresponding repo-definition in a suitable
@@ -184,7 +184,7 @@ Snapshots
 
 Every night a cron job runs to create snapshots of all mirrored repositories (of
 all kinds). A snapshot subdirectory is created named by the current date and time.
-Under this all repos can be accessed. This way any data can be retrieved from
+Under this, all repos can be accessed. This way any data can be retrieved from
 any data in the past on which a snapshot has been taken.
 
 *current*: In the ``snapshots`` directory there is always a special "snapshot*
@@ -209,7 +209,7 @@ Test and prod
 
 All mirrored repos used by UH IaaS can be accessed through a static and well
 known historic version using the *test* and *prod* interfaces. By configuring
-the apropriate files in the internal **repo-admin** git repo, each repo might
+the appropriate files in the internal **repo-admin** git repo, each repo might
 have a ``test`` and ``prod`` pointer linking to a specific snapshot of this
 repository. NB: each and every mirrored repo can be set up to link to separate
 snapshots!
@@ -243,12 +243,12 @@ Considerations
 ``````````````
 
 - ``test`` should never point to a snapshot older than what the corresponding 
-  ``prod`` are linkng to
+  ``prod`` are linking to
 - Pointers in ``prod`` **must also** exist in ``test``, the rationale
   being that this somewhat ensures that `prod` has already been tested.
   Links in the `prod` configuration which does not also exist in the `test`
   configuration will *not* be activated (removed if the exists)!
-- If there are more than one link listed to the same repo the most current
+- If there is more than one link listed to the same repo the most current
   is always the one activated.
 - Existing links not listed in the current configuration will be removed!
 
@@ -276,12 +276,12 @@ Normal (automatic)
 
 **rpm**:
   Files placed inside this location is instantly accessible, provided correct
-  SELinux labeling. No snapshoting provided!
+  SELinux labeling. No snapshotting provided!
 
 
 **yumrepo**:
   Files placed inside this location is instantly accessible, provided correct
-  SELinux labeling. No snapshoting provided through this interface! For this use
+  SELinux labeling. No snapshotting provided through this interface! For this use
   the REPO interface instead.
 
 
@@ -299,12 +299,12 @@ Normal (automatic)
 
 
 **test** and **prod**:
-  These interfaces should be seen as static representation of data from specific
+  These interfaces should be seen as a static representation of data from specific
   date/times. Each mirrored repository (if configured to be listed here) is
   listed with a link to a specific snapshot of the repo in question. The PROD
   repository is what is used in the production environment and should never be
   more recent than TEST (this is actually prohibited by the setup routine for
-  these pointers). Data is available concurently with the snapshots it is linked
+  these pointers). Data is available concurrently with the snapshots it is linked
   to.
 
 
@@ -316,7 +316,7 @@ Manual routine for instant publicizing
 
 **yumrepo**:
   New files are available through the ordinary interfaces after mirroring and
-  snapshoting. This is usually done nightly, but the routines might be run
+  snapshotting. This is usually done nightly, but the routines might be run
   manually if necessary:
   
   1. /opt/kelda/repoadmin.sh -e prod sync && /usr/sbin/restorecon -R /var/www/html/uh-iaas/
@@ -331,7 +331,7 @@ Caveats
 * Any changes in the local YUM repository (``yumrepo``) is not
   accessible through the mirror interface (``repo``) until after the next upcoming
   mirror job (usually during the next night, check crontab on the mirror server
-  for details). After this the data should be accessible under the ``repo`` link.
+  for details). After this, the data should be accessible under the ``repo`` link.
   
 * New data mirrored is available under the ``snapshot`` link only after the next
   snapshot run (check crontab for details). This is normally scheduled for some
