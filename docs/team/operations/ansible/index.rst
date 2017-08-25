@@ -2,7 +2,7 @@
 Ansible
 =======
 
-The ansible playbooks we use are found on github at
+The Ansible playbooks we use, are found on Github at
 https://github.com/norcams/ansible
 
 In the documentation :file:`$ANSIBLE` will be refered to as the directory
