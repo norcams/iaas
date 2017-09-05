@@ -127,7 +127,7 @@ recreate the required QR-code like this:
 #. username=<username>
 #. location=osl  (or location=bgo)
 #. secret=$(sudo head -1 /home/${username}/.google_authenticator)
-#. qrencode -o $username.png -s 5 -lM 'otpauth://totp/${location}-login-01?secret=$secret'
+#. qrencode -o $username.png -s 5 -lM "otpauth://totp/${location}-login-01?secret=$secret"
 #. display ${username}.png
 #. rm ${username}.png
 
