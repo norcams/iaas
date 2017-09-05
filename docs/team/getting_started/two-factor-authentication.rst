@@ -116,6 +116,24 @@ Login procedure
    regards to time!
 
 
+Transfer to new device
+======================
+
+If the previous device is lost, then the set up procedure should be repeated to
+configure a *new* code. But in those cases where a new device (mainly a phone)
+is purchased etc, and one still has full control of the old, it is possible to
+recreate the required QR-code like this:
+
+#. username=<username>
+#. location=osl  (or location=bgo)
+#. secret=$(sudo head -1 /home/${username}/.google_authenticator)
+#. qrencode -o $username.png -s 5 -lM 'otpauth://totp/${location}-login-01?secret=$secret'
+#. display ${username}.png
+#. rm ${username}.png
+
+.. NOTE::
+   Remember to do this on both login nodes!
+
 Emergency code
 ==============
 
