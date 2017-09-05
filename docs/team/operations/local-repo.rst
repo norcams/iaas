@@ -39,6 +39,30 @@ repository and a general distribution point.
    before assuming anything related to the role of the directory!
 
 
+Executive Summary
+-----------------
+
+**repo** is a locally hosted mirror of a set of external repositories. A
+snapshot is taken of each repo every night, these snapshots resides inside the
+**snapshot** directory date-stamped. For every one of these repositories (at
+least the ones which are utilized by the UH-IaaS infrastructure), there is a
+pointer to one of those snspshots beneath the **test** respective **prod**
+directories. Those pointers are never moved without consideration or testing,
+and especially the links in the **prod** directory. The upshot is thus: packages
+and files can be trusted not to be updated or altered in an uncontrolled
+fashion, and is available locally at all times.
+
+**yumrepo** should be assumed to be like any other ``external`` repository, only
+this `external` repository is coincidentally managed by the UH-IaaS team. Data
+configured into this is then available for consumption in the same controlled
+manner as any other external repositorry which is mirrored locally.
+
+**rpm** and **ports** are `free and unmanaged` repositories without the
+forementioned snapshotting and consistent control. Data located here is
+available instantly, but outside of any version control and without any kind of
+meta data.
+
+
 Diagram of setup
 ----------------
 
@@ -256,11 +280,18 @@ Considerations
 Update procedure
 ````````````````
 
-1. Clone or pull the git repo locally
-#. Edit files
-#. Commit and push to central git repo
-#. Log on to *osl-login-01*
-#. Run the ansible job ``update_repo.yaml``::
+1. Clone or pull the git repo locally::
+
+     git@git.iaas.uio.no:repo-admin
+
+   This must be done on a node inside the set up (like the login nodes) due
+   to access restrictions on the local git repo.
+#. Edit one or both files: `prod.config` and/or `test.config`, entering or
+   changing to reflect the date required (consult
+   `the web page <https://iaas-repo.uio.no/uh-iaas/snapshots/>`_ for exact
+   timestamp to use.
+#. Commit and push to the central git repo.
+#. On `osl-login-01` run the ansible job ``update_repo.yaml``::
 
      sudo ansible-playbook -e "hosts=download" lib/update_repo.yaml
 
@@ -282,12 +313,12 @@ Normal (automatic)
 **yumrepo**:
   Files placed inside this location is instantly accessible, provided correct
   SELinux labeling. No snapshotting provided through this interface! For this use
-  the REPO interface instead.
+  the SNAPSHOT, TEST or PROD interfaces instead.
 
 
 **repo**:
   Any repositories which are mirrored (including YUMREPO) have new files
-  accessible here after the mirror job is run during night time. The version
+  accessible here after the mirroring job is run during night time. The version
   available is always the most recent!
 
 
@@ -311,7 +342,7 @@ Normal (automatic)
 Manual routine for instant publicizing
 ``````````````````````````````````````
 
-**rpm**:
+**rpm** and **ports**:
   Nothing required!
 
 **yumrepo**:
@@ -319,11 +350,9 @@ Manual routine for instant publicizing
   snapshotting. This is usually done nightly, but the routines might be run
   manually if necessary:
   
-  1. /opt/kelda/repoadmin.sh -e prod sync && /usr/sbin/restorecon -R /var/www/html/uh-iaas/
-  2. /opt/kelda/repoadmin.sh -e prod snapshot
+  1. sudo /opt/kelda/repoadmin.sh -e prod sync
+  2. sudo /opt/kelda/repoadmin.sh -e prod snapshot
   
-  All commands must be done with root privileges, which for the iaas user means through `sudo`.
-
 
 Caveats
 -------
