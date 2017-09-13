@@ -4,6 +4,25 @@ Patching
 
 Last changed: 2017-05-23
 
+Update repo
+============
+
+These repos should be updated when doing a normal patching:
+
+* centos-base
+* centos-extras
+* centos-updates
+* centos-qemu-ev
+* ceph-jewel
+* epel
+* mariadb
+* rdo-ocata
+* rdo-newton
+
+Do **NOT** update :file:`calico22` without extra planed testing og repackaging.
+
+Avoid updating management repos at the same time as normal patching.
+
 Before we start
 ===============
 
