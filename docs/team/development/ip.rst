@@ -101,6 +101,8 @@ compute-03*    eth1  trp   x.x.x.105
 compute-04*    eth1  trp   x.x.x.111
 compute-05*    eth1  trp   x.x.x.112
 compute-06*    eth1  trp   x.x.x.113
+compute-07*    eth1  trp   x.x.x.115
+compute-08*    eth1  trp   x.x.x.116
 storage-01*    eth1  trp   x.x.x.106
 storage-02*    eth1  trp   x.x.x.107
 storage-03*    eth1  trp   x.x.x.108
