@@ -23,4 +23,7 @@ script       actions     notes
 image.py     update      update gold images
 \            usage       show image usage
 \            purge       purge unused images
+\            usage       check image usage
+quota.py     update      update default quota
+\            show        show default quota
 =========== =========== ====================
