@@ -14,6 +14,7 @@ These repos should be updated when doing a normal patching:
 * centos-updates
 * centos-qemu-ev
 * ceph-jewel
+* ceph-luminous
 * epel
 * mariadb
 * rdo-ocata
