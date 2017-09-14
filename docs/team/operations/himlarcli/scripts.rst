@@ -11,6 +11,16 @@ E.G::
 
   ./image.py update -h
 
+Options
+=======
+
+Common options for all scripts
+
+* :file:`--debug`
+* :file:`--dry-run`
+* :file:`-c /path/to/config.ini`
+* :file:`--format text|json`
+
 Scripts
 =======
 
