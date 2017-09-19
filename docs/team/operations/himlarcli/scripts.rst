@@ -27,13 +27,17 @@ Scripts
 Simple overview with some of the most important actions. More actions might
 exist, so please refer to the help text.
 
-=========== =========== ====================
+=========== =========== ===========================================
 script       actions     notes
-=========== =========== ====================
+=========== =========== ===========================================
+project.py   list        list all projects
+\            show        list project details and roles in project
+\            create      create new project
+\            delete      delete project and instances
 image.py     update      update gold images
 \            usage       show image usage
 \            purge       purge unused images
 \            usage       check image usage
 quota.py     update      update default quota
 \            show        show default quota
-=========== =========== ====================
+=========== =========== ===========================================
