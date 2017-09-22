@@ -17,7 +17,6 @@ m1
 m1 er tenkt som en general purpose type av flavors som alle prosjekter har
 tilgang til.
 
-
 =========== ==== ========== ===== ========
 Navn        vCPU RAM (GiB)  Disk   Pris
 =========== ==== ========== ===== ========
@@ -32,7 +31,8 @@ m2
 
 m2 er tenkt som større maskiner for dem som trenger mer minne og cpu enn det
 m1 dekke. Denne vil kun være tilgjengelig for prosjekter som har bestilt
-tilgang til m2.
+tilgang til m2. Alle som eksplisitt ber om økt flavor som passer inn i denne
+gruppen kan få dette.
 
 =========== ==== ========== ===== ========
 Navn        vCPU RAM (GiB)  Disk   Pris
@@ -49,6 +49,9 @@ d1
 d1 er en flavor type med mer disk enn m1. Denne vil kreves for å kreves for å
 kunne kjøre Windows og vil kun være tilgjengelig for prosjekter som har bestilt
 tilgang til d1.
+
+Vær restriktiv i forhold til hvem som får tildelt tilgang til flavors i denne
+gruppen!
 
 =========== ==== ========== ===== ========
 Navn        vCPU RAM (GiB)  Disk  Pris
