@@ -57,7 +57,7 @@ In order to deploy the Vagrant environment, follow this guide.
      
 #. Install Vagrant plugins for libvirt::
 
-     vagrant plugin install libvirt
+     vagrant plugin install vagrant-libvirt
 
 #. Start the libvirtd service, and make sure that it is started at
    boot::
