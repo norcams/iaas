@@ -94,6 +94,7 @@ IP networks in use
  test01    test    trp          172.30.0.0/24     TBD           65535
  test02    test    trp          172.30.32.0/24    TBD           65536
  vagrant   dev     trp          172.31.8.0/24     TBD           65500
+ dev       dev     trp          172.31.16.0/24    TBD           65500
  local1    dev     trp          172.31.12.0/24    TBD    100
  local2    dev     trp          172.31.13.0/24    TBD    101
 ========= ======= ============ ================= ====== ====== ========
@@ -159,7 +160,6 @@ Out of band management, `IPMI BMC devices`_.
 ====== ================
  prod   `172.17.0.0/16`_
  test   `172.28.128.0/17`_
- dev    `172.31.16.0/21`_
 ====== ================
 
 .. _172.17.0.0/16: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.17.0.0&mask=16&division=29.723d9c40
