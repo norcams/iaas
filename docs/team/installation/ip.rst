@@ -94,7 +94,6 @@ IP networks in use
  test01    test    trp          172.30.0.0/24     TBD           65535
  test02    test    trp          172.30.32.0/24    TBD           65536
  vagrant   dev     trp          172.31.8.0/24     TBD           65500
- dev       dev     trp          172.31.16.0/24    TBD           65500
  local1    dev     trp          172.31.12.0/24    TBD    100
  local2    dev     trp          172.31.13.0/24    TBD    101
 ========= ======= ============ ================= ====== ====== ========
