@@ -18,6 +18,8 @@ vil kjøre på ledig kapasitet. Ved teknisk- eller ressursutfordringer vil
 resurser kunne bli stoppet, flyttet eller slettet.
 Dersom dette inntreffer skal brukerne av demo-prosjektet bli informert.
 
+Demo-prosjekt vil få navn **DEMO-<navn>.<org>**
+
 Felles
 ------
 
@@ -38,6 +40,8 @@ som ønkser å større kvote enn det som demo-prosjekt gir.
 
 Alle ressurser følger brukeren og vil bli slettet når brukeren ikke lenger er
 tilknyttet en av de tilsluttede organisasjonene.
+
+Personlig-prosjekt vil få navn **PRIVATE-<navn>.<org>**
 
 Kurs
 ----
