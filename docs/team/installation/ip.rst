@@ -24,11 +24,10 @@ Public IPv4 network.
  osl      prod     158.39.75.0/24
  test01   test     129.177.31.64/27
  test02   test     (10.100.200.0/24)
+ vagrant  dev      (192.168.0.0/24)
  local1   dev      (192.168.12.0/24)
  local2   dev      (192.168.13.0/24)
  local3   dev      (192.168.12.0/24)
- vagrant  dev      (172.31.24.0/24)
- dev      dev      (172.31.24.0/24)
 ========= ======= ==================
 
 Public IPv6 network.
