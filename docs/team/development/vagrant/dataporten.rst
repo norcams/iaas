@@ -15,11 +15,11 @@ Login to Dataporten Dashboard, and register new application.
 
 Redirect uri from `access` should be::
 
-  https://access.himlar.local/login
+  https://access.vagrant.iaas.intern/login
 
 and for `master`::
 
-  https://dashboard.himlar.local:5000/v3/auth/OS-FEDERATION/websso/oidc/redirect
+  https://dashboard.vagrant.iaas.intern/login
   
 You need to add the following scope in `Permissions` for each application::
 
@@ -34,11 +34,11 @@ Also make sure `dashboard.himlar.local` and `access.himlar.local` are in
 Then copy `Client ID` and `Client Secret` from `Oauth details` to::
 
   hieradata/secrets/nodes/vagrant-access-01.secrets.yaml
-  hieradata/secrets/nodes/vagrant-master-01.secrets.yaml
+  hieradata/secrets/nodes/vagrant-identity-01.secrets.yaml
 
 Reference hieradata/secrets/nodes on the other locations for exact content.
 
-To setup `master` to allow Dataporten login in `horizon` run this provision
-script once on the master as root::
+To allow `Dataporten` login in `horizon` run the dataporten
+script once in himlarcli as root::
 
- /opt/himlar/provision/dataporten/setup_master.sh
+ ./dataporten.py
