@@ -38,7 +38,7 @@ Then copy `Client ID` and `Client Secret` from `Oauth details` to::
 
 Reference hieradata/secrets/nodes on the other locations for exact content.
 
-To allow `Dataporten` login in `horizon` run the dataporten
+To allow `Dataporten` login in `horizon`, run the dataporten
 script once in himlarcli as root::
 
  ./dataporten.py
