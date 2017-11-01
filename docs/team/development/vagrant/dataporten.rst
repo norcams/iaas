@@ -17,9 +17,9 @@ Redirect uri from `access` should be::
 
   https://access.vagrant.iaas.intern/login
 
-and for `master`::
+and for `dashboard`::
 
-  https://dashboard.vagrant.iaas.intern/login
+  https://identity.api.vagrant.iaas.intern:5000/v3/auth/OS-FEDERATION/websso/openidc/redirect
   
 You need to add the following scope in `Permissions` for each application::
 
