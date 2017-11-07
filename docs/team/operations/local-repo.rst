@@ -369,3 +369,33 @@ Caveats
 * Data stored in any of the two local repositories are instantly accessible when
   accessed using the direct URL's as listed above.
 
+
+Purging of old/unused data
+==========================
+
+For conservation of disk space there is a janitor script which may be used to
+remove (purge) snapshots which are no longer used::
+
+  /usr/local/sbin/snapshot_cleanup.sh
+
+.. Note::
+   Only snapshots older than the oldest snapshot still referenced by any
+   `test` or `prod` pointers may be deleted.
+
+Invocation:
+
+.. parsed-literal::
+   /usr/local/sbin/snapshot_cleanup.sh [-d|u] [-t <YYYY-MM-DD-HHMM> ]
+   
+   -u: print usage text and exit
+   -d: dry-run (just print what would otherwise be deleted)
+   -t: purge snapshots older than timestamp provided
+       Timestamp format equals format used by kelda (config fields and snapshot
+       directory naming)
+
+   If no `-t` argument provided then all snapshots older than oldest still in
+   use are removed!
+
+For now there is no automatic invocation, and any cleanup should be done
+manually. User confirmation is requested.
+
