@@ -28,7 +28,7 @@ You need to add the following scope in `Permissions` for each application::
   profile
   openid
 
-Also make sure `dashboard.himlar.local` and `access.himlar.local` are in
+Also make sure `dashboard.vagrant.iaas.intern` and `access.vagrant.iaas.intern` are in
 :file:`/etc/hosts` on the machine you are running your browser.
 
 Then copy `Client ID` and `Client Secret` from `Oauth details` to::
