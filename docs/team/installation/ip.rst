@@ -38,11 +38,11 @@ Public IPv6 network.
  bgo      prod                        2001:700:2:8300::/56
  osl      prod                        2001:700:2:8200::/56
  test01   test     (10.0.250.0/24)    (2001:700:200:915::/64)
- test02   test                        TBD
+ test02   test                        (fd32::/64)
  local1   dev                         TBD
  local2   dev                         TBD
  local3   dev                         TBD
- vagrant  dev                         TBD
+ vagrant  dev                         (fc00:700:100:200::/64)
  dev      dev                         TBD
 ========= ======= ================== ======
 
