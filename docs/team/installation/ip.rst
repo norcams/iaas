@@ -183,3 +183,22 @@ Management switches
 ========= ======= =================== ====== ======
 
 .. _IPMI BMC devices: https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface#Baseboard_management_controller
+
+
+Test02 internal gateway network
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Internal network between virtual leaf node (test02-leaf-01) and the host
+(test02-controller-00). Public traffic from instances is routed through this
+network from their default gateway (leaf) via the controlelr host and then
+NAT'ed out on its outside interface.
+
+====== ================= ===== ====== ============ ======
+                          Controller          Leaf
+------ ----------------- ------------ -------------------
+ Class       Network       IF  Adress     IF       Adress
+====== ================= ===== ====== ============ ======
+ IPv4  192.168.122.0/24   br2    1     bridge.100    2
+ IPv6  fd96::/64          br2    1     bridge.100    2
+====== ================= ===== ====== ============ ======
+
