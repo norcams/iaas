@@ -2,27 +2,18 @@
 Create a new project
 ====================
 
-**1**::
 
-   ssh <user>@<loc>-login-01.<domain>
+- ssh <user>@<loc>-login-01.<domain>
   
-**2**::
-
-   ssh iaas@<loc>-proxy-01.<domain>
+- ssh iaas@<loc>-proxy-01.<domain>
    
-**3**::
-
-   sudo -i
-   source openrc   
+- sudo -i
+- source openrc   
  
-**4**::
-
-   cd /opt/himlarcli
-   source bin/activate      
-
-**5**:: 
- 
-   run ./project.py 
+- cd /opt/himlarcli
+- source bin/activate
+      
+- run ./project.py 
    
 
 Example
