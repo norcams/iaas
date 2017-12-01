@@ -18,7 +18,6 @@ Update the *"MIN_QEMU_DISCARD_VERSION"* version in *driver.py*
    
 
 Finally, remember to restart nova:
-
 - systemctl restart openstack-nova-compute.service
 
 
