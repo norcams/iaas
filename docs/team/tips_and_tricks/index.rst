@@ -7,3 +7,4 @@ Tips and tricks
     :maxdepth: 2
 
     create-project
+    vagrant
