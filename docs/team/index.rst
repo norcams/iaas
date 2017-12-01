@@ -12,3 +12,4 @@ This is internal information about development and operations for the IaaS team.
     development/index
     operations/index
     installation/index
+    tips_and_tricks/index
