@@ -1,6 +1,6 @@
-========================
-Patch compute in vagrant
-========================
+=================================
+Patch the compute node in vagrant
+=================================
 
 Remember to patch the compute node after running "vagrant up" for the first time.
 
