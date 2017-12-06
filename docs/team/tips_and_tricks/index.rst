@@ -8,3 +8,4 @@ Tips and tricks
 
     create-project
     vagrant
+    test02-external-conn
