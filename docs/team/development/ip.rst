@@ -74,6 +74,9 @@ novactrl-03    eth1  trp   x.x.x.68
 network-01     eth1  trp   x.x.x.71
 network-02     eth1  trp   x.x.x.72
 network-03     eth1  trp   x.x.x.73
+telemetry-01   eth1  trp   x.x.x.76
+telemetry-02   eth1  trp   x.x.x.77
+telemetry-03   eth1  trp   x.x.x.78
 identity-01    eth1  trp   x.x.x.81
 identity-02    eth1  trp   x.x.x.82
 identity-03    eth1  trp   x.x.x.83
