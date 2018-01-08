@@ -2,7 +2,7 @@
 Vakt
 ====
 
-Sist endret: 2017-08-21
+Sist endret: 2018-01-08
 
 Alle i UH-IaaS deltar i en vaktordning i arbeidstiden. Vakten går over en hel
 uke.
@@ -10,16 +10,16 @@ uke.
 Rotasjon
 ========
 
-=========== === === ===
-Deltaker    Uke Uke Uke
-=========== === === ===
-Tor         34  40  46
-Trond       35  41  47
-Anders      36  42  48
-Raymond     37  43  49
-Mikael      38  44  50
-Tannaz      39  45  51
-=========== === === ===
+=========== === === === ===
+Deltaker    Uke Uke Uke Uke
+=========== === === === ===
+Trond        2   8  14  20
+Anders       3   9  15  21
+Raymond      4  10  16  22
+Mikael       5  11  17  23
+Tannaz       6  12  18  24
+Tor          7  13  19  25
+=========== === === === ===
 
 Instruks
 ========
