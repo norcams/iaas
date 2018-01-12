@@ -50,8 +50,8 @@ Normal OS patching
   To avoid split brain in the galera cluster in production the we should turn
   off the database on :file:`db-01` before we start on a region::
 
-    systemctrl stop mariadb.service
-    systemctrl stop crond.service
+    systemctl stop mariadb.service
+    systemctl stop crond.service
 
 **This should be done in a notified timeslot.**
 
