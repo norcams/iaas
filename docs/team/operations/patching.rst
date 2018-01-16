@@ -47,13 +47,11 @@ Normal OS patching
 
 .. WARNING::
 
-  To avoid split brain in the galera cluster in production the we should turn
-  off the database on :file:`db-01` before we start on a region::
+  To avoid split brain in the galera cluster (only BGO/OSL) make sure the cluster
+  size are 3 before starting. To check::
 
-    systemctl stop mariadb.service
-    systemctl stop crond.service
-
-**This should be done in a notified timeslot.**
+  $ root@<loc>-db-01: mysql
+  $ mysql: SHOW STATUS LIKE 'wsrep_cluster_size';
 
 For each for the production regions, `BGO` and `OSL`, do the following:
 
