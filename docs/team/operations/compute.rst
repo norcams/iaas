@@ -31,14 +31,14 @@ compute-03  |O| |O| |A| R   R   |I|
 
 Ansible script
 ==============
-NB! Stop the running instances before you start!
+NB! Stop the running instances or migrate them to another compute node before you start!
 
 To reinstall a compute host with `ansible <ansible/index.html>`_ run::
 
   cd <ansible-repo>
   bin/rebuild_compute.sh <HOST> --force
 
-Make sure puppet is run at least once after the host is reinstalled.
+Make sure puppet is running at least once after the host is reinstalled.
 
 Switch active compute host
 ==========================
