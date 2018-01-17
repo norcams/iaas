@@ -36,11 +36,6 @@ Make sure all nodes will autostart with::
 
     sudo ansible-playbook --become -e "hosts=<loc>-controller" lib/autostart_nodes.yaml
 
-.. WARNING::
-  See https://trello.com/c/7muUakUi/880-tjenester-starter-ikke-etter-reboot
-
-  Quick fix on all nodes
-  :file:`sudo ansible -b -u iaas <loc>-nodes -m command -a 'systemctl add-wants multi-user.target network.target'`
 
 Normal OS patching
 ==================
