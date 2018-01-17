@@ -31,6 +31,7 @@ compute-03  |O| |O| |A| R   R   |I|
 
 Ansible script
 ==============
+NB! Stop the running instances before you start!
 
 To reinstall a compute host with `ansible <ansible/index.html>`_ run::
 
