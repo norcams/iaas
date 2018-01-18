@@ -2,7 +2,7 @@
 Teamdeltakere og roller
 =======================
 
-Sist endret: 2017-03-07
+Sist endret: 2018-01-17
 
 **Teamleder/Prosjektleder:** Raymond Kristiansen, UiB (100%)
 
@@ -14,8 +14,6 @@ Deltakere
 * Mikal Dalsgard - UiO (60%)
 
 * Trond Hasle Amundsen - UiO (40%)
-
-* Øyvind Kolbu - UiO (40%)
 
 * Anders Vaage - UiB (100%)
 
@@ -45,7 +43,6 @@ Raymond       1            1            1            1            1
 Mikael        0            1            1            1            0
 Tor           1            1            1            1            1
 Trond         0            1            1            0            0
-Øyvind        0            1            1            0            0
 Anders        1            1            1            1            1
 Tannaz        1            1            1            1            1
 ============ ============ ============ ============ ============ ============
