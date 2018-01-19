@@ -52,10 +52,11 @@ and especially the links in the **prod** directory. The upshot is thus: packages
 and files can be trusted not to be updated or altered in an uncontrolled
 fashion, and is available locally at all times.
 
-**yumrepo** should be assumed to be like any other ``external`` repository, only
-this `external` repository is coincidentally managed by the UH-IaaS team. Data
-configured into this is then available for consumption in the same controlled
-manner as any other external repositorry which is mirrored locally.
+**yumrepo** and **aptrepo** should be assumed to be like any other ``external``
+repositories, only these `external` repositories are coincidentally managed by
+the UH-IaaS team. Data configured into these are then available for consumption
+in the same controlled manner as any other external repository which is mirrored
+locally.
 
 **rpm** and **ports** are `free and unmanaged` repositories without the
 forementioned snapshotting and consistent control. Data located here is
@@ -81,7 +82,9 @@ Directory description
   same.
 * **test**: As for ``prod``, but separate link.
 * **yumrepo**: Locally maintained RPM repository. Mirrored under ``repo`` as any
-  external repository is.
+  external repository is (named *uh-iaas*).
+* **aptrepo**: Locally maintained APT repository. Mirrored under ``repo`` as any
+  external repository is (named *uh-iaas-apt*).
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
   snapshotting.
 * **ports**: For FreeBSD packages. No metadata, versioning, mirroring or
@@ -134,6 +137,60 @@ After all file operations update the repository meta data::
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/yumrepo>`_
 
+.. NOTE::
+   This repository is additionally mirrored and snapshotted as any external
+   repository (named *uh-iaas*). As such it can be reached through the `test` and `prod`
+   interfaces described elsewhere.
+
+Client configuration (example)
+``````````````````````````````
+
+Example of client configuration in a yum repo file under ``/etc/yum.repos.d/``::
+  
+  [uh-iaas]
+  name=UH-IaaS repo
+  baseurl=https://download.iaas.uio.no/uh-iaas/prod/uh-iaas/
+  enabled=1
+  gpgcheck=0
+  priority=10
+
+ 
+APT repository
+--------------
+
+**Directory name**: ``aptrepo``
+
+APT-packages which should be maintained by ordinary package management tools on
+DEB-based systems, are located in the APT repository located in ``aptrepo``.
+These files/packages are then considered and consumed exactly like any other,
+external, repository used by the project/code.
+
+The architectures and codenames supported are described in the `distribution`
+file located in the ``apt`` subdirectory of the *repo-admin* GIT repository.
+
+Steps to import packages
+````````````````````````
+
+1. Save new package to the ``incoming`` subdirectory inside *aptrepo*
+#. Execute the deb repo tool inside the ``aptrepo`` directory::
+   reprepro -b . --confdir /etc/kelda/prod/apt includedeb wheezy incoming/\*
+   (replace *wheezy* with whatever codename is considered)
+#. Remove package(s) from the ``incoming`` directory
+
+
+**URL**: `<https://download.iaas.uio.no/uh-iaas/aptrepo>`_
+
+.. NOTE::
+   This repository is additionally mirrored and snapshotted as any external
+   repository (named *uh-iaas-apt*). As such it can be reached through the `test` and `prod`
+   interfaces described elsewhere.
+
+Client configuration (example)
+``````````````````````````````
+
+Example of client configuration in ``/etc/apt/sources.list`` etc::
+  
+  deb [trusted=yes] https://download.iaas.uio.no/uh-iaas/prod/uh-iaas-apt wheezy main
 
 
 Standalone file archive
@@ -310,7 +367,7 @@ Normal (automatic)
   SELinux labeling. No snapshotting provided!
 
 
-**yumrepo**:
+**yumrepo** and **aptrepo**:
   Files placed inside this location is instantly accessible, provided correct
   SELinux labeling. No snapshotting provided through this interface! For this use
   the SNAPSHOT, TEST or PROD interfaces instead.
@@ -345,7 +402,7 @@ Manual routine for instant publicizing
 **rpm** and **ports**:
   Nothing required!
 
-**yumrepo**:
+**yumrepo** and **aptrepo**:
   New files are available through the ordinary interfaces after mirroring and
   snapshotting. This is usually done nightly, but the routines might be run
   manually if necessary:
@@ -357,7 +414,7 @@ Manual routine for instant publicizing
 Caveats
 -------
 
-* Any changes in the local YUM repository (``yumrepo``) is not
+* Any changes in the local YUM or APT repository (``yumrepo`` resp. ``aptrepo``) is not
   accessible through the mirror interface (``repo``) until after the next upcoming
   mirror job (usually during the next night, check crontab on the mirror server
   for details). After this, the data should be accessible under the ``repo`` link.
@@ -366,7 +423,7 @@ Caveats
   snapshot run (check crontab for details). This is normally scheduled for some
   time after the nightly mirror job.
 
-* Data stored in any of the two local repositories are instantly accessible when
+* Data stored in any of the local repositories are instantly accessible when
   accessed using the direct URL's as listed above.
 
 
