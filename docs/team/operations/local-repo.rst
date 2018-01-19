@@ -173,6 +173,7 @@ Steps to import packages
 
 1. Save new package to the ``incoming`` subdirectory inside *aptrepo*
 #. Execute the deb repo tool inside the ``aptrepo`` directory::
+   
    reprepro -b . --confdir /etc/kelda/prod/apt includedeb wheezy incoming/\*
    (replace *wheezy* with whatever codename is considered)
 #. Remove package(s) from the ``incoming`` directory
