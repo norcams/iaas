@@ -34,10 +34,12 @@ project.py   list        list all projects
 \            show        list project details and roles in project
 \            create      create new project
 \            delete      delete project and instances
-image.py     update      update gold images
+\            grant       grant access for user to project
+image.py     update      update images (gold or private)
 \            usage       show image usage
 \            purge       purge unused images
 \            usage       check image usage
 quota.py     update      update default quota
 \            show        show default quota
+usage.py     volume      show volume usage and quota in gb
 =========== =========== ===========================================
