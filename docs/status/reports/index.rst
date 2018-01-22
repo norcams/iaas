@@ -26,6 +26,15 @@ Endringsrapport
 Ukesrapport
 ===========
 
+2018
+----
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    2018/uke_*
+
 2017
 ----
 
