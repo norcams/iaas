@@ -46,7 +46,7 @@ Gi tilgang
 Bruk :file:`project.py` i `himlarcli` for å gi tilgang til flere
 brukere i prosjektet. Eksempel::
 
-  ./project.py -u user@foo.bar -p foo-bar-project grant
+  ./project.py grant -u user@foo.bar -p foo-bar-project
 
 
 Kurs
