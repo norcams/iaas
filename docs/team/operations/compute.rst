@@ -72,7 +72,8 @@ in central1 we will need to do the following:
 Compute reinstall
 =================
 
-Each compute node in <lo>-legacy-1 will be reinstalled with each migration.
+Reinstall compute to update packages or disk setup. Remember to move to placeholder1
+before reinstall and to test after reinstall and before we start to use it.
 
 Ansible script
 --------------
