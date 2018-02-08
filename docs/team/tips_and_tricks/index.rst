@@ -11,3 +11,4 @@ Tips and tricks
     test02-external-conn
     endre-kvoter
     dataporten-vagrant-updates
+    ha-proxy
