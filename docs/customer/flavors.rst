@@ -46,7 +46,7 @@ m2.4xlarge   16    64        20
 d1
 ==
 
-d1 er en flavor type med mer disk enn m1. Denne vil kreves for å kreves for å
+d1 er en flavor type med mer disk enn m1. Denne vil kreves for å
 kunne kjøre Windows og vil kun være tilgjengelig for prosjekter som har bestilt
 tilgang til d1.
 
