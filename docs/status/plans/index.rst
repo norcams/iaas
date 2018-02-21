@@ -18,6 +18,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     documentation
     dns
     osstorage
+    telemetry
 
 Arkiv
 -----
