@@ -30,7 +30,7 @@ m1.xlarge	 4    16		 20
 m2
 ==
 
-m2 er tenkt som større maskiner for dem som trenger mer minne og cpu enn det
+m2 er tenkt som større maskiner for dem som trenger mer RAM og vCPU enn det
 m1 dekke. Denne vil kun være tilgjengelig for prosjekter som har bestilt
 tilgang til m2. Alle som eksplisitt ber om økt flavor som passer inn i denne
 gruppen kan få dette.
@@ -38,9 +38,9 @@ gruppen kan få dette.
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
-m2.xlarge    8     32        20
-m2.2xlarge   16    64        20
-m2.4xlarge   32    128       20
+m2.2xlarge    8    32        20
+m2.4xlarge   16    64        20
+m2.8xlarge   32    128       20
 =========== ==== ========== ===== =====
 
 d1
@@ -66,7 +66,7 @@ d1.4xlarge   16    64        80
 
 c1
 ==
-c1 en er flavor type for dem som trenger mer cpu enn m1.
+c1 en er flavor type for dem som trenger mer vCPU enn m1.
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
@@ -80,7 +80,7 @@ c1.8xlarge   32    64        20
 
 r1
 ==
-r1 er tenkt som en maskin med større ram som m1 og c1 dekker.
+r1 er tenkt som en maskin med mer RAM som m1 og c1 dekker.
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
