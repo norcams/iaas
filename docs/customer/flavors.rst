@@ -20,7 +20,7 @@ tilgang til.
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
-m1.tiny      1    0.5        1    
+m1.tiny      1    0.5        1
 m1.small     1    2          10
 m1.medium    1    4          20   
 m1.large     2    8          20   
@@ -66,6 +66,7 @@ d1.4xlarge   16    64        80
 
 c1
 ==
+c1 en er flavor type for dem som trenger mer cpu enn m1.
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
@@ -79,6 +80,7 @@ c1.8xlarge   32    64        20
 
 r1
 ==
+r1 er tenkt som en maskin med større ram som m1 og c1 dekker.
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
