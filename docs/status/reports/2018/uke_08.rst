@@ -13,13 +13,13 @@ Status
 ======
 
 Puppet 4 oppgraderingen er fullført og ble gjennomført uten annen nedetid enn
-restart av noen tjenester (maks 1-2 minutter).
+restart av enkelte tjenester (maks 1-2 minutter).
 
-Vi har gjort fremskritt både når det gjelder Ceilometer og Designate. Vi jobber
-nå med å sette opp Ceilometer i test og regner med at vi om kort tid bytter til
-å bruke egne navnetjenere til å håndtere uh-iaas.no og uhdc.no.
+Vi har gjort fremskritt både når det gjelder Ceilometer og Designate (DNS). Vi
+jobber nå med å sette opp Ceilometer i test og regner med at vi om kort tid
+bytter til å bruke egne navnetjenere til å håndtere uh-iaas.no og uhdc.no.
 
-I forbindelse med arbeidet med å sete opp Ceilometer så har vi nå også satt opp
+I forbindelse med arbeidet med å sette opp Ceilometer så har vi nå også satt opp
 en metric tjeneste (metric as a service). Vi er usikker på om dette er en
 tjeneste vi også skal tilby sluttbrukere eller om dette skal være kun for intern
 bruk.
