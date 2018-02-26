@@ -48,3 +48,34 @@ Dependency nodes and services
   * mq - rabbitmq (notifications)
   * metric - httpd (gnocchi api)
   * api - haproxy (all endpoints for polling)
+
+Compute
+-------
+
+This nodes runs the compute polling services. It also sends notifications to
+the message queue. The data are sendt directly to the gnocchi api for storage.
+
+Running services:
+
+  * openstack-ceilometer-polling (namespace: compute)
+
+Dependency nodes and services
+
+  * mq - rabbitmq (notifications)
+  * metric - httpd (gnocchi api)
+  * api - haproxy (volume and image for polling instans data)
+
+
+Users and projects
+==================
+
+We will need users and projects in keystone to access and limit access to
+Gnocchi. Ceilometer also needs an admin user for polling data from services.
+
+Vi use the default project :file:`services` in default domain. The following
+nodes will now also have access:
+
+* telemetry: ceilometer (role: admin)
+* metric: gnocchi (role: admin)
+* monitor: monitor (role: user)
+* status: statis (roles: user)
