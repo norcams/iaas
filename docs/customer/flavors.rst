@@ -67,6 +67,7 @@ d1.4xlarge   16    64        80
 c1
 ==
 c1 en er flavor type for dem som trenger mer vCPU enn m1.
+
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
@@ -81,6 +82,7 @@ c1.8xlarge   32    64        20
 r1
 ==
 r1 er tenkt som en maskin med mer RAM som m1 og c1 dekker.
+
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
