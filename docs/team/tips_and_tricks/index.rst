@@ -12,3 +12,4 @@ Tips and tricks
     endre-kvoter
     dataporten-vagrant-updates
     ha-proxy
+    diverse
