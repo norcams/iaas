@@ -72,8 +72,16 @@ in central1 we will need to do the following:
 Compute reinstall
 =================
 
-Reinstall compute to update packages or disk setup. Remember to move to placeholder1
-before reinstall and to test after reinstall and before we start to use it.
+Reinstall compute to update packages or disk setup. Make sure the compute node are
+empty and disabled.
+
+While the host reinstalls you could remove it to make sure it ends up in
+`iaas-team-1` AZ for testing::
+
+  openstack aggregate remove host
+  openstack compute service delete
+
+When the compute host are ready for testing move it to placeholder1.
 
 Ansible script
 --------------
