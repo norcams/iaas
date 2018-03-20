@@ -18,3 +18,4 @@ project.
     routed-vm-interface
     idrac-provision
     idrac-vnc
+    cumulus-buildling-puppet

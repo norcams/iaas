@@ -10,6 +10,6 @@ Tips and tricks
     vagrant
     test02-external-conn
     endre-kvoter
-    dataporten-vagrant-updates
+    dataporten-vagrant-update
     ha-proxy
     diverse
