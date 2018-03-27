@@ -3,7 +3,7 @@ Host overview
 ==============
 
 Address plan for individual hosts/nodes. Also look at the
-`IP addressing plan <../installation/ip.html>`_ for inforamtion about
+`IP addressing plan <../installation/ip.html>`_ for information about
 location specific network.
 
 Network hosts
@@ -36,6 +36,36 @@ logger-01   eth0  mgmt  x.x.x.13
 monitor-01  eth0  mgmt  x.x.x.14
 builder-01  eth0  mgmt  x.x.x.15
 =========== ===== ===== ========
+
+
+OOB hosts
+---------
+
+**FOR NOW ONLY APPLIES TO OSL**
+
+Most hosts have their oob interface (iDrac, ILO, etc) set up with the last
+octet the same as their trp counterpart. They are also registered in DNS with an
+-lc ending to the normal host name.
+
+Two exceptions to those rules is listed here:
+
+=============  =========  === ======= =================================
+ node             inf     net  addr    note
+=============  =========  === ======= =================================
+controller-04  em3.3378   oob   ---   No address assigned/necessary
+admin-01       eth1       oob x.x.x.9 Interface attached to br2 on host
+=============  =========  === ======= =================================
+
+*em3.3378* on controller-04 is connected to a bridge interface (*br2*), which
+sole purpose is to bridge the `OOB` network to `admin-01`.
+
+This is to allow admin-01 to control the power interface on all physical nodes
+(in the same vein as it can control the virtual power interface on all VM's).
+
+.. NOTE::
+   This only applies to the production environments (BGO and OSL) where we have
+   control of the management switches.
+
 
 Openstack nodes
 ---------------
