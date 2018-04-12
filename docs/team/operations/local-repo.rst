@@ -132,7 +132,7 @@ project/code.
 
 After all file operations update the repository meta data::
 
-  /usr/bin/createrepo <repo root directory>/yumrepo
+  sudo /usr/bin/createrepo <repo root directory>/yumrepo
 
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/yumrepo>`_
