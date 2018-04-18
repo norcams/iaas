@@ -12,4 +12,5 @@ Tips and tricks
     endre-kvoter
     dataporten-vagrant-update
     ha-proxy
+    ceph
     diverse
