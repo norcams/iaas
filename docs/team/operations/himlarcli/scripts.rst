@@ -42,4 +42,6 @@ image.py     update      update images (gold or private)
 quota.py     update      update default quota
 \            show        show default quota
 usage.py     volume      show volume usage and quota in gb
+migrate.py   migrate     migrate all instances from a compute host with shared storage
+\            list        list all instances with vm state on a compute host
 =========== =========== ===========================================
