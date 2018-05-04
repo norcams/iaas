@@ -60,7 +60,7 @@ d1.small     1     2         40
 d1.medium    1     4         40
 d1.large     2     8         60
 d1.xlarge    4     16        80
-d1.x2large   8     32        80
+d1.2xlarge   8     32        80
 d1.4xlarge   16    64        80
 =========== ==== ========== ===== =====
 
@@ -74,7 +74,7 @@ Navn        vCPU RAM (GiB)  Disk  Pris
 c1.medium    1     2         20
 c1.large     2     4         20
 c1.xlarge    4     8         20
-c1.x2large   8     16        20
+c1.2xlarge   8     16        20
 c1.4xlarge   16    32        20
 c1.8xlarge   32    64        20
 =========== ==== ========== ===== =====
@@ -89,7 +89,7 @@ Navn        vCPU RAM (GiB)  Disk  Pris
 r1.medium    1     8         20
 r1.large     2     16        20
 r1.xlarge    4     32        20
-r1.x2large   8     64        20
+r1.2xlarge   8     64        20
 r1.4xlarge   16    128       20
 =========== ==== ========== ===== =====
 
