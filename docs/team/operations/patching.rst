@@ -40,14 +40,6 @@ Make sure all nodes will autostart with::
 Normal OS patching
 ==================
 
-.. WARNING::
-
-  To avoid split brain in the galera cluster (only BGO/OSL) make sure the cluster
-  size are 3 before starting. To check::
-
-  $ root@<loc>-db-01: mysql
-  $ mysql: SHOW STATUS LIKE 'wsrep_cluster_size';
-
 For each for the production regions, `BGO` and `OSL`, do the following:
 
 Upgrade virutal nodes::

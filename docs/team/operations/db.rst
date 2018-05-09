@@ -3,30 +3,61 @@ DB
 ==
 
 
-Howto fix cluster
+Galera management
 =================
 
-If we get a warning from sensu about::
+The galera cluster consist of three nodes:
 
-  CheckWsrepReady CRITICAL: WSREP Ready is not ON. Is OFF
+* bgo-db-01
+* osl-db-01
+* uib-ha-02 (quorum node only)
 
-then the galera cluster is broken. This will happen if we have network
-problems in one location or the :file:`db-01` node is down in a location.
+To check the current status as root on db-01::
 
-First thing we need to do is to stop the server on all :file:`db-01` nodes::
+   mysql
+   SHOW STATUS LIKE 'wsrep_cluster_size';
 
-  service mysqld stop
+Cluster size must be 2 or greater.
 
-At the time the of writing the API is running on :file:`bgo-api-01` so
-the identity db must also be running in bgo. If we move the API the cluster
-must be started on the new location. On the master location, e.g. node
-:file:`bgo-db-01`::
+Start stop quorum node
+----------------------
+
+From bgo-login-01::
+
+  sudo ssh iaas@uib-ha-02
+  sudo -i
+  systemctl status garbd
+
+  systemctl stop garbd
+  systemctl start garbd
+
+Bootstrap cluster
+-----------------
+You will need to bootstrap the cluster if systemctl start mysqld fails on bgo-db-01
+for some reason.
+
+.. WARNING::
+  If there are new data on osl-db-01 this will be lost unless we have a db dump
+  and restore it on bgo-db-01 after mysqld have been started.
+
+First stop mysqld on db-01 and garbd on uib-ha-02.
+
+On bgo-db-01 edit /var/lib/mysql/grastate.dat and make sure::
+
+  safe_to_bootstrap: 1
+
+Bootstrap cluster on bgo-db-01:
 
   galera_new_cluster
 
-When the second location is back online we only need to start the servere::
+Verify that mysqld are running and do a restore if necessary::
 
-  service mysqld start
+  systemctl status mysqld
+
+Start mysqld on osl-db-01 and garbd på uib-ha-02
+
+Verify cluster size are now 3.
+
 
 How to fix etcd cluster
 =======================
