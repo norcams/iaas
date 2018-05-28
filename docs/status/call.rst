@@ -15,9 +15,9 @@ Deltaker    Uke Uke Uke Uke
 =========== === === === ===
 Trond        2   8  14  20
 Anders       3   9  15  21
-Raymond      4  10  16  22
+Raymond      4  10  16  24*
 Mikael       5  11  17  23
-Tannaz       6  12  18  24
+Tannaz       6  12  18  22*
 Tor          7  13  19  25
 =========== === === === ===
 
