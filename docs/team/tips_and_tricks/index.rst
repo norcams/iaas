@@ -14,3 +14,4 @@ Tips and tricks
     ha-proxy
     ceph
     diverse
+    samarbeidspartnere
