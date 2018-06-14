@@ -72,16 +72,11 @@ in central1 we will need to do the following:
 Compute reinstall
 =================
 
-Reinstall compute to update packages or disk setup. Make sure the compute node
-is empty and disabled.
+For compute host (hypervisor) management use himlarcli and hyervisor.py.
+This script will have sub commands for enable/disable and move between
+aggregate.
 
-While the host reinstalls you could remove it to make sure it ends up in
-`iaas-team-1` AZ for testing::
-
-  openstack aggregate remove host
-  openstack compute service delete
-
-When the compute host are ready for testing move it to placeholder1.
+Before you start make sure the compute host are empty and disabled.
 
 Ansible script
 --------------
@@ -92,3 +87,9 @@ To reinstall a compute host with `ansible <ansible/index.html>`_ run::
 
   cd <ansible-repo>
   bin/rebuild_compute.sh <HOST> --force
+
+Testing
+-------
+
+To test the compute host after a reinstall move it to the placeholder1 host
+aggregate og test with iaas-team-only-1 AZ and iaas-team only project.
