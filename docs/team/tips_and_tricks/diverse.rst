@@ -23,3 +23,23 @@ kan man kjøre følgende ansible-jobb::
 
 Man vil da få feil på de hoster som er feil satt opp sammen med utskrift av
 linjen som ikke skal være der.
+
+
+GPG-nøkkel
+----------
+
+For Keystone brukes bl.a. GPG for å kryptere og dekryptere tokens under
+distribusjonen mellom identity-nodene. Når et miljø (re)installeres eller man av
+andre grunner må sette opp ny GPG-nøkkel, må en ny slik genereres og distes til
+alle identity-noder i miljøet.
+
+Følgende rutine kjøres på relevant login-node:
+
+1. */usr/local/sbin/create-gpg.sh <loc>*
+   Genererer en ny GPG-nøkkel uten passord og evig varighet. Nøkkelen legges
+   under node-katalogen til `<loc>-identity-01` i secrets-repoet.
+
+2. *sudo ansible-playbook -e "hosts=<loc>-identity" lib/push_gpg_keys.yaml*
+   Distribuerer den genererte nøkkelen til relevante identity-noder og
+   importerer den inn i GPG.
+
