@@ -39,7 +39,7 @@ Følgende rutine kjøres på relevant login-node:
    Genererer en ny GPG-nøkkel uten passord og evig varighet. Nøkkelen legges
    under node-katalogen til `<loc>-identity-01` i secrets-repoet.
 
-2. Kopiér manuelt filen `token-secret-key.gpg` fra denne katalogen til
+2. Kopier manuelt filen `token-secret-key.gpg` fra denne katalogen til
    nodekatalogene for andre deltakende noder i miljøet.
 
 3. *sudo ansible-playbook -e "hosts=<loc>-identity" lib/push_gpg_keys.yaml*
