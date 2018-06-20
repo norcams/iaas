@@ -35,6 +35,9 @@ proxy-01    eth0  mgmt  x.x.x.12
 logger-01   eth0  mgmt  x.x.x.13
 monitor-01  eth0  mgmt  x.x.x.14
 builder-01  eth0  mgmt  x.x.x.15
+ns-01       eth0  mgmt  x.x.x.16
+resolver-01 eth0  mgmt  x.x.x.17
+resolver-02 eth0  mgmt  x.x.x.18
 =========== ===== ===== ========
 
 
@@ -76,7 +79,9 @@ Management net (mgmt) should have the same last octet as the transport net (trp)
  node           inf   net   addr
 ============== ===== ===== ========
 status-01      eth1  trp   x.x.x.21
-nat-01         eth1  trp   x.x.x.26
+report-01      eth1  trp   x.x.x.22
+nat-linux-01   eth1  trp   x.x.x.26
+nat-linux-02   eth1  trp   x.x.x.27
 mq-01          eth1  trp   x.x.x.31
 mq-02          eth1  trp   x.x.x.32
 mq-03          eth1  trp   x.x.x.33
