@@ -20,6 +20,10 @@ status-bgo.uh-iaas.no         uh-status.iaas.uib.no
 access.uh-iaas.no             uh-access-front.iaas.uib.no
 access-osl.uh-iaas.no         uh-access.iaas.uio.no
 access-bgo.uh-iaas.no         uh-access.iaas.uib.no
+request.uh-iaas.no            uh-request-front.iaas.uib.no *
+report.uh-iaas.no             uh-report-front.iaas.uib.no
+report-osl.uh-iaas.no         uh-report.iaas.uio.no
+report-bgo.uh-iaas.no         uh-report.iaas.uib.no
 dashboard.uh-iaas.no          uh-dboard-front.iaas.uib.no
 dashboard-osl.uh-iaas.no      uh-dboard.iaas.uio.no
 dashboard-bgo.uh-iaas.no      uh-dboard.iaas.uib.no
@@ -31,12 +35,18 @@ identity.api.bgo.uh-iaas.no   uh-api.iaas.uib.no
 network.api.bgo.uh-iaas.no    uh-api.iaas.uib.no
 image.api.bgo.uh-iaas.no      uh-api.iaas.uib.no
 volume.api.bgo.uh-iaas.no     uh-api.iaas.uib.no
+placement.api.bgo.uh-iaas.no  uh-api.iaas.uib.no
+metric.api.bgo.uh-iaas.no     uh-api.iaas.uib.no
 compute.api.osl.uh-iaas.no    uh-api.iaas.uio.no
 identity.api.osl.uh-iaas.no   uh-api.iaas.uio.no
 network.api.osl.uh-iaas.no    uh-api.iaas.uio.no
 image.api.osl.uh-iaas.no      uh-api.iaas.uio.no
 volume.api.osl.uh-iaas.no     uh-api.iaas.uio.no
+placement.api.osl.uh-iaas.no  uh-api.iaas.uio.no
+metric.api.osl.uh-iaas.no     uh-api.iaas.uio.no
 ============================= ========================
+
+*= redirect only to https://skjema.uio.no/iaas-project
 
 Delegated zones
 ===============
