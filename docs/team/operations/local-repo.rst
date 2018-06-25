@@ -270,13 +270,13 @@ all kinds). A snapshot subdirectory is created named by the current date and tim
 Under this, all repos can be accessed. This way any data can be retrieved from
 any data in the past on which a snapshot has been taken.
 
-*current*: In the ``snapshots`` directory there is always a special "snapshot*
+*current*: In the ``snapshots`` directory there is always a special "snapshot"
 named ``current``. This entry is at any time linked to the most current
 snapshot.
 
 To access the snapshot library::
 
-    https://download.iaas.uio.no/uh-iaas/prod/
+    https://download.iaas.uio.no/uh-iaas/snapshots/
 
 
 .. Note::
