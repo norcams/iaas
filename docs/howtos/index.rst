@@ -19,3 +19,4 @@ project.
     idrac-provision
     idrac-vnc
     cumulus-buildling-puppet
+    designate-dashboard-plugin
