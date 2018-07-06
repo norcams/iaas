@@ -9,7 +9,7 @@ How to create the designate-dashboard RPM package
 
       git clone https://github.com/openstack/designate-dashboard.git
       cd designate-dashboard
-      git checkout stable/newton
+      git checkout stable/pike
 
 #. Build RPM::
 
