@@ -2,12 +2,13 @@
 Patching
 ========
 
-Last changed: 2017-05-23
+Last changed: 2018-07-30
 
 Update repo
 ============
 
-These repos should be updated when doing a normal patching:
+Repo list (test and/or prod) are updated during the planing phase of an
+upgrade. But this is usually the repo we update:
 
 * centos-base
 * centos-extras
@@ -18,7 +19,8 @@ These repos should be updated when doing a normal patching:
 * epel
 * mariadb
 * rdo-ocata
-* rdo-newton
+* rdo-pike
+
 
 Do **NOT** update :file:`calico22` without extra planed testing og repackaging.
 
@@ -44,31 +46,34 @@ For each for the production regions, `BGO` and `OSL`, do the following:
 
 Upgrade virutal nodes::
 
-  sudo ansible-playbook --become -e "hosts=<loc>-nodes" lib/yumupdate.yaml
+  sudo ansible-playbook -e "hosts=<loc>-nodes" lib/yumupdate.yaml
 
 Upgrade controller nodes::
 
-  sudo ansible-playbook --become -e "hosts=<loc>-controller" lib/yumupdate.yaml
+  sudo ansible-playbook -e "hosts=<loc>-controller" lib/yumupdate.yaml
 
 Check if all nodes are updated::
 
-  sudo ansible-playbook --become -e "hosts=<loc>-nodes:<loc>-controller" lib/checkupdate.yaml
+  sudo ansible-playbook -e "hosts=<loc>-nodes:<loc>-controller" lib/checkupdate.yaml
 
-
-**Reboot each controller one at the time and verify all nodes.have started**
-(might use `lib/reboot.yaml`)
-
-Make sure cephmon is running without error before starting on the next controller.
-Start node on controller if not automatically started:
-
-  virsh start <node>
+For each controller do the following. Make sure cephmon is running without error
+before starting on the next controller.
 
 Check ceph status on cephmon::
 
   ceph status
 
-None distruptive patching
-=========================
+Turn off the nodes on the controller before reboot::
+
+  sudo ansible-playbook -e "hosts=<loc>-controller-<id> action=stop" lib/manage_nodes.yaml
+
+Reboot the controller::
+
+  sudo ansible-playbook -e "hosts=<loc>-controller-<id>" lib/reboot.yaml
+
+
+None disruptive patching
+========================
 
 These step could be done without notification and can be done later then normal
 patching.
