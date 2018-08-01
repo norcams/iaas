@@ -17,4 +17,5 @@ libvirt. Then following these steps will get you up and running with vagrant.
     github
     ca
     nodeset
+    ordering
     web
