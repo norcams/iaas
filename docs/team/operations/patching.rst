@@ -26,6 +26,10 @@ Do **NOT** update :file:`calico22` without extra planed testing og repackaging.
 
 Avoid updating management repos at the same time as normal patching.
 
+Set `loc` variable according to the environment which is going to be patched::
+
+    loc=bgo
+
 Before we start
 ===============
 
@@ -36,7 +40,7 @@ Update ansible inventory for both `OSL` and `BGO` :file:`$himlarcli/ansible_host
 
 Make sure all nodes will autostart with::
 
-    sudo ansible-playbook --become -e "hosts=<loc>-controller" lib/autostart_nodes.yaml
+    sudo ansible-playbook --become -e "hosts=${loc}-controller" lib/autostart_nodes.yaml
 
 
 Normal OS patching
@@ -46,15 +50,15 @@ For each for the production regions, `BGO` and `OSL`, do the following:
 
 Upgrade virutal nodes::
 
-  sudo ansible-playbook -e "hosts=<loc>-nodes" lib/yumupdate.yaml
+  sudo ansible-playbook -e "hosts=${loc}-nodes" lib/yumupdate.yaml
 
 Upgrade controller nodes::
 
-  sudo ansible-playbook -e "hosts=<loc>-controller" lib/yumupdate.yaml
+  sudo ansible-playbook -e "hosts=${loc}-controller" lib/yumupdate.yaml
 
 Check if all nodes are updated::
 
-  sudo ansible-playbook -e "hosts=<loc>-nodes:<loc>-controller" lib/checkupdate.yaml
+  sudo ansible-playbook -e "hosts=${loc}-nodes:<loc>-controller" lib/checkupdate.yaml
 
 For each controller do the following. Make sure cephmon is running without error
 before starting on the next controller.
@@ -65,11 +69,11 @@ Check ceph status on cephmon::
 
 Turn off the nodes on the controller before reboot::
 
-  sudo ansible-playbook -e "hosts=<loc>-controller-<id> action=stop" lib/manage_nodes.yaml
+  sudo ansible-playbook -e "hosts=${loc}-controller-<id> action=stop" lib/manage_nodes.yaml
 
 Reboot the controller::
 
-  sudo ansible-playbook -e "hosts=<loc>-controller-<id>" lib/reboot.yaml
+  sudo ansible-playbook -e "hosts=${loc}-controller-<id>" lib/reboot.yaml
 
 
 None disruptive patching
@@ -88,11 +92,11 @@ maintenance. Run this command on a cephmon or storage node::
 
 Upgrade storage::
 
-  sudo ansible-playbook --become -e "hosts=<loc>-storage" lib/yumupdate.yaml
+  sudo ansible-playbook --become -e "hosts=${loc}-storage" lib/yumupdate.yaml
 
 Check if the storage nodes are upgraded::
 
-  sudo ansible-playbook --become -e "hosts=<loc>-storage" lib/checkupdate.yaml
+  sudo ansible-playbook --become -e "hosts=${loc}-storage" lib/checkupdate.yaml
 
 Reboot one storage node at the time and check ceph status before next nodes::
 
