@@ -18,3 +18,4 @@ Operations
     local-repo
     ssl
     dns
+    etcd
