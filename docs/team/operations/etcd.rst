@@ -17,6 +17,7 @@ here:
 Keep the following in mind:
 
 * Delete the old member from the cluster first, then add the new one.
+* When you add the new member, etcdctl returns three environment variables you must set **on the node you're bootstrapping**
 * Make sure the etcd service is stopped and /var/lib/etcd is empty on the node you're bootstrapping
 * Disable puppet agent until you're done
 * The etcd commands for the node you're bootstrapping must be run as the etcd user.
