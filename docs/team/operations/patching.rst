@@ -55,7 +55,7 @@ For each for the production regions, `BGO` and `OSL`, do the following:
 
      sudo ansible-playbook -e "myhosts=${loc}-nodes exclude=httpd*,MariaDB*" lib/yumupdate.yaml
 
-#. While in a scheduled maintenance windows, upgrade virtual nodes::
+#. While in a scheduled maintenance window, upgrade virtual nodes::
 
      sudo ansible-playbook -e "myhosts=${loc}-nodes" lib/yumupdate.yaml
 
