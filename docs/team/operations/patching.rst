@@ -67,9 +67,8 @@ For each for the production regions, `BGO` and `OSL`, do the following:
 
      sudo ansible-playbook -e "myhosts=${loc}-nodes:<loc>-controller" lib/checkupdate.yaml
 
-   .. IMPORTANT::
-     For each controller do the following. Make sure cephmon is running
-     without error before starting on the next controller.
+For each controller do the following. Make sure cephmon is running
+without error before starting on the next controller.
 
 #. Check ceph status on cephmon::
 
