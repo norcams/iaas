@@ -86,7 +86,7 @@ without error before starting on the next controller.
 None disruptive patching
 ========================
 
-These step could be done without notification and can be done later then normal
+These steps can be done without notification and can be done later then normal
 patching.
 
 Storage
