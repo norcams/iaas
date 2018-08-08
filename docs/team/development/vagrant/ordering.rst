@@ -52,7 +52,7 @@ Metadata api
 
 We need to restart openstack-nova-metadata-api on compute-01. This can be done with ansible::
 
-  ansible-playbook -e "hosts=vagrant-compute name=openstack-nova-metadata-api.service" lib/systemd_restart.yaml
+  ansible-playbook -e "myhosts=vagrant-compute name=openstack-nova-metadata-api.service" lib/systemd_restart.yaml
 
 
 Flavors

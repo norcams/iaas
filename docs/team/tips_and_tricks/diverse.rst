@@ -19,7 +19,7 @@ EPEL-repoet settes til å peke på EPEL sitt offisielle speil-nettverk i stedet
 for vårt snapshot-kontrollerte speil. For å finne slike feilkonfigurerte systemer
 kan man kjøre følgende ansible-jobb::
 
-  sudo ansible-playbook --become -e "hosts=<whatever som vanlig>" lib/check_epel.yaml
+  sudo ansible-playbook --become -e "myhosts=<whatever som vanlig>" lib/check_epel.yaml
 
 Man vil da få feil på de hoster som er feil satt opp sammen med utskrift av
 linjen som ikke skal være der.
@@ -43,7 +43,7 @@ Følgende rutine kjøres på relevant login-node:
 2. Kopier manuelt filen `token-secret-key.gpg` fra denne katalogen til
    nodekatalogene for andre deltakende noder i miljøet.
 
-3. *sudo ansible-playbook -e "hosts=<loc>-identity" lib/push_gpg_keys.yaml*
+3. *sudo ansible-playbook -e "myhosts=<loc>-identity" lib/push_gpg_keys.yaml*
 
    Distribuerer den genererte nøkkelen til relevante identity-noder og
    importerer den inn i GPG.

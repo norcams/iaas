@@ -352,7 +352,7 @@ Update procedure
 #. Commit and push to the central git repo.
 #. On `osl-login-01` run the ansible job ``update_repo.yaml``::
 
-     sudo ansible-playbook -e "hosts=download" lib/update_repo.yaml
+     sudo ansible-playbook -e "myhosts=download" lib/update_repo.yaml
 
    This action pull the latest config and update the pointers in `test` and
    `prod`.
