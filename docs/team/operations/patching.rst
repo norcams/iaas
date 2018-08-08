@@ -49,11 +49,11 @@ Normal OS patching
 
 For each for the production regions, `BGO` and `OSL`, do the following:
 
-#. Upgrade virtual nodes, while excluding the **httpd**
-   and **mariadb** packages. This is usually safe to do outside of a
+#. Upgrade virtual nodes, while excluding the **httpd**, **mariadb**
+   and **mod_ssl** packages. This is usually safe to do outside of a
    scheduled maintenance window::
 
-     sudo ansible-playbook -e "myhosts=${loc}-nodes exclude=httpd*,MariaDB*" lib/yumupdate.yaml
+     sudo ansible-playbook -e "myhosts=${loc}-nodes exclude=httpd*,MariaDB*,mod_ssl" lib/yumupdate.yaml
 
 #. While in a scheduled maintenance window, upgrade virtual nodes::
 
