@@ -43,6 +43,10 @@ be patched::
 
   location=bgo
 
+or::
+
+  location=osl
+
 Make sure all nodes will autostart with::
 
   sudo ansible-playbook --become -e "myhosts=${location}-controller" lib/autostart_nodes.yaml
@@ -63,26 +67,37 @@ For each for the production regions, `BGO` and `OSL`, do the following:
 
      sudo ansible-playbook -e "myhosts=${location}-nodes" lib/yumupdate.yaml
 
+#. Check if all virtual nodes are updated::
+
+     sudo ansible-playbook -e "myhosts=${location}-nodes" lib/checkupdate.yaml
+
 #. Upgrade controller nodes::
 
      sudo ansible-playbook -e "myhosts=${location}-controller" lib/yumupdate.yaml
 
-#. Check if all nodes are updated::
+#. Check if all controller nodes are updated::
 
-     sudo ansible-playbook -e "myhosts=${location}-nodes:${location}-controller" lib/checkupdate.yaml
+     sudo ansible-playbook -e "myhosts=${location}-controller" lib/checkupdate.yaml
 
 For each controller do the following. Make sure cephmon is running
 without error before starting on the next controller.
 
 #. Check ceph status on cephmon::
 
-     ceph status
+     sudo ssh iaas@${location}-cephmon-01 'sudo ceph status'
+
+   Or, alternatively::
+
+     for i in $(seq 1 3); do sudo ssh iaas@${location}-cephmon-0$i 'sudo ceph status' ; done
 
 #. Turn off the nodes on the controller before reboot::
 
      sudo ansible-playbook -e "myhosts=${location}-controller-<id> action=stop" lib/manage_nodes.yaml
 
-#. Reboot the controller::
+   Monitor through **virt-manager** or **virsh list** that all virtual
+   nodes are shut down before proceeding with rebooting the controller.
+
+#. Reboot the controller node::
 
      sudo ansible-playbook -e "myhosts=${location}-controller-<id>" lib/reboot.yaml
 
