@@ -101,6 +101,11 @@ without error before starting on the next controller.
 
      sudo ansible-playbook -e "myhosts=${location}-controller-<id>" lib/reboot.yaml
 
+.. TIP::
+   Check that things work before rebooting controller-04, as error
+   analysis etc. often depends on the virtual nodes running on
+   controller-04.
+
 
 None disruptive patching
 ========================
