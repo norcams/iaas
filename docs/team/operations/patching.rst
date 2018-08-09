@@ -2,7 +2,7 @@
 Patching
 ========
 
-Last changed: 2018-07-30
+Last changed: 2018-08-09
 
 Update repo
 ============
@@ -28,7 +28,8 @@ Avoid updating management repos at the same time as normal patching.
 
 Set `loc` variable according to the environment which is going to be patched::
 
-    loc=bgo
+  loc=bgo
+
 
 Before we start
 ===============
@@ -40,7 +41,7 @@ Update ansible inventory for both `OSL` and `BGO` :file:`$himlarcli/ansible_host
 
 Make sure all nodes will autostart with::
 
-    sudo ansible-playbook --become -e "hosts=${loc}-controller" lib/autostart_nodes.yaml
+  sudo ansible-playbook --become -e "myhosts=${loc}-controller" lib/autostart_nodes.yaml
 
 
 Normal OS patching
@@ -48,69 +49,102 @@ Normal OS patching
 
 For each for the production regions, `BGO` and `OSL`, do the following:
 
-Upgrade virutal nodes::
+#. Upgrade virtual nodes, while excluding the **httpd**, **mariadb**
+   and **mod_ssl** packages. This is usually safe to do outside of a
+   scheduled maintenance window::
 
-  sudo ansible-playbook -e "hosts=${loc}-nodes" lib/yumupdate.yaml
+     sudo ansible-playbook -e "myhosts=${loc}-nodes exclude=httpd*,MariaDB*,mod_ssl" lib/yumupdate.yaml
 
-Upgrade controller nodes::
+#. While in a scheduled maintenance window, upgrade virtual nodes::
 
-  sudo ansible-playbook -e "hosts=${loc}-controller" lib/yumupdate.yaml
+     sudo ansible-playbook -e "myhosts=${loc}-nodes" lib/yumupdate.yaml
 
-Check if all nodes are updated::
+#. Upgrade controller nodes::
 
-  sudo ansible-playbook -e "hosts=${loc}-nodes:<loc>-controller" lib/checkupdate.yaml
+     sudo ansible-playbook -e "myhosts=${loc}-controller" lib/yumupdate.yaml
 
-For each controller do the following. Make sure cephmon is running without error
-before starting on the next controller.
+#. Check if all nodes are updated::
 
-Check ceph status on cephmon::
+     sudo ansible-playbook -e "myhosts=${loc}-nodes:<loc>-controller" lib/checkupdate.yaml
 
-  ceph status
+For each controller do the following. Make sure cephmon is running
+without error before starting on the next controller.
 
-Turn off the nodes on the controller before reboot::
+#. Check ceph status on cephmon::
 
-  sudo ansible-playbook -e "hosts=${loc}-controller-<id> action=stop" lib/manage_nodes.yaml
+     ceph status
 
-Reboot the controller::
+#. Turn off the nodes on the controller before reboot::
 
-  sudo ansible-playbook -e "hosts=${loc}-controller-<id>" lib/reboot.yaml
+     sudo ansible-playbook -e "myhosts=${loc}-controller-<id> action=stop" lib/manage_nodes.yaml
+
+#. Reboot the controller::
+
+     sudo ansible-playbook -e "myhosts=${loc}-controller-<id>" lib/reboot.yaml
 
 
 None disruptive patching
 ========================
 
-These step could be done without notification and can be done later then normal
+These steps can be done without notification and can be done later then normal
 patching.
 
 Storage
 -------
 
-Before you begin, you can avoid automatic rebalancing of the ceph cluster during
-maintenance. Run this command on a cephmon or storage node::
+#. Before you begin, you can avoid automatic rebalancing of the ceph
+   cluster during maintenance. Run this command on a cephmon or
+   storage node::
 
-  ceph osd set noout
+     ceph osd set noout
 
-Upgrade storage::
+#. Upgrade storage::
 
-  sudo ansible-playbook --become -e "hosts=${loc}-storage" lib/yumupdate.yaml
+     sudo ansible-playbook --become -e "myhosts=${loc}-storage" lib/yumupdate.yaml
 
-Check if the storage nodes are upgraded::
+#. Check if the storage nodes are upgraded::
 
-  sudo ansible-playbook --become -e "hosts=${loc}-storage" lib/checkupdate.yaml
+     sudo ansible-playbook --become -e "myhosts=${loc}-storage" lib/checkupdate.yaml
 
-Reboot one storage node at the time and check ceph status before next nodes::
+#. Reboot one storage node at the time and check ceph status before next nodes::
 
-  ceph status
+     ceph status
 
-After all nodes are rebooted, ensure that automatic rebalancing is enabled:
+#. After all nodes are rebooted, ensure that automatic rebalancing is enabled:
 
-  ceph osd unset noout
+     ceph osd unset noout
+
+Compute
+-------
+
+None disruptive patching will only be possible for compute nodes running in AZ
+<loc>-default-1. Compute nodes in <loc>-legacy-1 will need to be patched
+in a limited scheduled maintenance window.
+
+Before you start check to documentation for
+`reinstall of compute <compute.html#compute-reinstall>`_
+
+#. You will need an empty compute node first. There will usually always be one
+   in AZ iaas-team-only. Reinstall this first and test it. Disable all other
+   compute nodes and enable the new one.
+
+#. For each compute node migrate all instances to the enabled compute node
+   (the empty one). Use :file:`himlarcli/migrate.py`. Then reinstall the newly
+   empty compute node, and start over with the next one.
+
+#. The last compute node will now be empty and can be reinstalled, disabled
+   and added back to the AZ iaas-team-only. Update trello status for
+   `Availability zone / Host aggregate`.
 
 Leaf
 ----
 
 Only reboot one node at a time, and never if one node is a single point of
 failure.
+
+.. WARNING::
+  Never patch Cumulus VX (virtual appliance). Only physical hardware. Cumulus VX
+  are only used in testing/development.
 
 Upgrade node::
 
@@ -121,11 +155,6 @@ Reboot node.
 
 Testing
 =======
-
-.. WARNING::
-  In `BGO` and `OSL` there have been some trouble after patching. First check
-  :file:`novactrl-01` and reboot the node if it has errors or no scheduler or
-  conductor log entries.
 
 After patching, we should test the following:
 
