@@ -2,7 +2,7 @@
 Patching
 ========
 
-Last changed: 2018-08-08
+Last changed: 2018-08-09
 
 Update repo
 ============
@@ -114,11 +114,37 @@ Storage
 
      ceph osd unset noout
 
+Compute
+-------
+
+None disruptive patching will only be possible for compute nodes running in AZ
+<loc>-default-1. Compute nodes in <loc>-legacy-1 will need to be patched
+in a limited scheduled maintenance window.
+
+Before you start check to documentation for
+`reinstall of compute <compute.html#compute-reinstall>`_
+
+#. You will need an empty compute node first. There will usually always be one
+   in AZ iaas-team-only. Reinstall this first and test it. Disable all other
+   compute nodes and enable the new one.
+
+#. For each compute node migrate all instances to the enabled compute node
+   (the empty one). Use :file:`himlarcli/migrate.py`. Then reinstall the newly
+   empty compute node, and start over with the next one.
+
+#. The last compute node will now be empty and can be reinstalled, disabled
+   and added back to the AZ iaas-team-only. Update trello status for
+   `Availability zone / Host aggregate`.
+
 Leaf
 ----
 
 Only reboot one node at a time, and never if one node is a single point of
 failure.
+
+.. WARNING::
+  Never patch Cumulus VX (virtual appliance). Only physical hardware. Cumulus VX
+  are only used in testing/development.
 
 Upgrade node::
 
@@ -129,11 +155,6 @@ Reboot node.
 
 Testing
 =======
-
-.. WARNING::
-  In `BGO` and `OSL` there have been some trouble after patching. First check
-  :file:`novactrl-01` and reboot the node if it has errors or no scheduler or
-  conductor log entries.
 
 After patching, we should test the following:
 
