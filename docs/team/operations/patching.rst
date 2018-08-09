@@ -21,27 +21,31 @@ upgrade. But this is usually the repo we update:
 * rdo-ocata
 * rdo-pike
 
-
-Do **NOT** update :file:`calico22` without extra planed testing og repackaging.
+.. IMPORTANT::
+   Do **NOT** update :file:`calico22` without extra planned testing og
+   repackaging.
 
 Avoid updating management repos at the same time as normal patching.
-
-Set `loc` variable according to the environment which is going to be patched::
-
-  loc=bgo
 
 
 Before we start
 ===============
 
-**Before you start, make sure the repo is up to date with the snapshot you
-wish to use.**
+.. IMPORTANT::
+   Before you start, make sure the repo is up to date with the
+   snapshot you wish to use.
 
-Update ansible inventory for both `OSL` and `BGO` :file:`$himlarcli/ansible_hosts.py`
+Update ansible inventory for both `OSL` and `BGO`
+:file:`$himlarcli/ansible_hosts.py`
+
+Set `location` variable according to the environment which is going to
+be patched::
+
+  location=bgo
 
 Make sure all nodes will autostart with::
 
-  sudo ansible-playbook --become -e "myhosts=${loc}-controller" lib/autostart_nodes.yaml
+  sudo ansible-playbook --become -e "myhosts=${location}-controller" lib/autostart_nodes.yaml
 
 
 Normal OS patching
@@ -53,19 +57,19 @@ For each for the production regions, `BGO` and `OSL`, do the following:
    and **mod_ssl** packages. This is usually safe to do outside of a
    scheduled maintenance window::
 
-     sudo ansible-playbook -e "myhosts=${loc}-nodes exclude=httpd*,MariaDB*,mod_ssl" lib/yumupdate.yaml
+     sudo ansible-playbook -e "myhosts=${location}-nodes exclude=httpd*,MariaDB*,mod_ssl" lib/yumupdate.yaml
 
 #. While in a scheduled maintenance window, upgrade virtual nodes::
 
-     sudo ansible-playbook -e "myhosts=${loc}-nodes" lib/yumupdate.yaml
+     sudo ansible-playbook -e "myhosts=${location}-nodes" lib/yumupdate.yaml
 
 #. Upgrade controller nodes::
 
-     sudo ansible-playbook -e "myhosts=${loc}-controller" lib/yumupdate.yaml
+     sudo ansible-playbook -e "myhosts=${location}-controller" lib/yumupdate.yaml
 
 #. Check if all nodes are updated::
 
-     sudo ansible-playbook -e "myhosts=${loc}-nodes:<loc>-controller" lib/checkupdate.yaml
+     sudo ansible-playbook -e "myhosts=${location}-nodes:${location}-controller" lib/checkupdate.yaml
 
 For each controller do the following. Make sure cephmon is running
 without error before starting on the next controller.
@@ -76,11 +80,11 @@ without error before starting on the next controller.
 
 #. Turn off the nodes on the controller before reboot::
 
-     sudo ansible-playbook -e "myhosts=${loc}-controller-<id> action=stop" lib/manage_nodes.yaml
+     sudo ansible-playbook -e "myhosts=${location}-controller-<id> action=stop" lib/manage_nodes.yaml
 
 #. Reboot the controller::
 
-     sudo ansible-playbook -e "myhosts=${loc}-controller-<id>" lib/reboot.yaml
+     sudo ansible-playbook -e "myhosts=${location}-controller-<id>" lib/reboot.yaml
 
 
 None disruptive patching
@@ -100,11 +104,11 @@ Storage
 
 #. Upgrade storage::
 
-     sudo ansible-playbook --become -e "myhosts=${loc}-storage" lib/yumupdate.yaml
+     sudo ansible-playbook --become -e "myhosts=${location}-storage" lib/yumupdate.yaml
 
 #. Check if the storage nodes are upgraded::
 
-     sudo ansible-playbook --become -e "myhosts=${loc}-storage" lib/checkupdate.yaml
+     sudo ansible-playbook --become -e "myhosts=${location}-storage" lib/checkupdate.yaml
 
 #. Reboot one storage node at the time and check ceph status before next nodes::
 
@@ -117,15 +121,16 @@ Storage
 Compute
 -------
 
-None disruptive patching will only be possible for compute nodes running in AZ
-<loc>-default-1. Compute nodes in <loc>-legacy-1 will need to be patched
-in a limited scheduled maintenance window.
+None disruptive patching will only be possible for compute nodes
+running in AZ ``<location>-default-1``. Compute nodes in
+``<location>-legacy-1`` will need to be patched in a limited scheduled
+maintenance window.
 
 Before you start check to documentation for
 `reinstall of compute <compute.html#compute-reinstall>`_
 
 #. You will need an empty compute node first. There will usually always be one
-   in AZ iaas-team-only. Reinstall this first and test it. Disable all other
+   in AZ ``iaas-team-only``. Reinstall this first and test it. Disable all other
    compute nodes and enable the new one.
 
 #. For each compute node migrate all instances to the enabled compute node
@@ -143,8 +148,8 @@ Only reboot one node at a time, and never if one node is a single point of
 failure.
 
 .. WARNING::
-  Never patch Cumulus VX (virtual appliance). Only physical hardware. Cumulus VX
-  are only used in testing/development.
+   Never patch Cumulus VX (virtual appliance). Only physical hardware. Cumulus VX
+   are only used in testing/development.
 
 Upgrade node::
 
