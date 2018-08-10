@@ -33,6 +33,7 @@ The playbook needs two variables:
 The playbook will figure out the rest.
 
 This example re-adds bgo-network-02 into the cluster, managed from bgo-network-01::
+
   sudo ansible-playbook -e 'member=bgo-network-02 manage_from=bgo-network-01' lib/reconfigure_etcd_cluster.yaml
 
 If successful, all tasks should run without errors **except** 'TASK [Bootstrap
