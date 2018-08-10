@@ -88,7 +88,7 @@ Directory description
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
   snapshotting.
 * **ports**: For FreeBSD packages. No metadata, versioning, mirroring or
-  snapshotting.  
+  snapshotting.
 
 Common attributes and requirements
 ==================================
@@ -146,7 +146,7 @@ Client configuration (example)
 ``````````````````````````````
 
 Example of client configuration in a yum repo file under ``/etc/yum.repos.d/``::
-  
+
   [uh-iaas]
   name=UH-IaaS repo
   baseurl=https://download.iaas.uio.no/uh-iaas/prod/uh-iaas/
@@ -154,7 +154,7 @@ Example of client configuration in a yum repo file under ``/etc/yum.repos.d/``::
   gpgcheck=0
   priority=10
 
- 
+
 APT repository
 --------------
 
@@ -173,9 +173,9 @@ Steps to import packages
 
 1. Save new package to the ``incoming`` subdirectory inside *aptrepo*
 #. Execute the deb repo tool inside the ``aptrepo`` directory::
-   
+
    reprepro -b . --confdir /etc/kelda/prod/apt includedeb wheezy incoming/\*
-   
+
    (replace *wheezy* with whatever codename is considered)
 #. Remove package(s) from the ``incoming`` directory
 
@@ -191,7 +191,7 @@ Client configuration (example)
 ``````````````````````````````
 
 Example of client configuration in ``/etc/apt/sources.list`` etc::
-  
+
   deb [trusted=yes] https://download.iaas.uio.no/uh-iaas/prod/uh-iaas-apt wheezy main
 
 
@@ -207,6 +207,20 @@ than the ensuring correct SELinux label as described above.
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/rpm>`_
 
+Upload procedure
+````````````````
+
+Probably the simplest way to upload a file to the ``rpm`` archive is to first
+place the file on an available web site and then download it into
+the archive on *download*:
+
+1. upload file to a web archive (for instance `<https://folk.uio.no>`_ for UiO affiliated personel)
+#. log in to *download* from one of the login nodes in the usual manner::
+
+   sudo ssh iaas@download.iaas.uio.no
+
+#. `cd /var/www/html/uh-iaas/rpm`
+#. download the file with wget, curl or something like that
 
 
 Local mirror and snapshot service
@@ -224,7 +238,7 @@ Short name Long name        Description                                         
 ========== =============== ============================================================================================== ===============================================
 repo       Repository      Latest sync from external sources                                                              https://download.iaas.uio.no/uh-iaas/repo
 snapshots  Snapshots       Regular (usually daily) snapshots of data in repo                                              https://download.iaas.uio.no/uh-iaas/snapshots
-test       Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/uh-iaas/test 
+test       Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/uh-iaas/test
 prod       Production repo Pointer to a specific snapshot in time with well-tested data, used in production environments  https://download.iaas.uio.no/uh-iaas/prod
 ========== =============== ============================================================================================== ===============================================
 
@@ -238,7 +252,7 @@ Usage is normally as follows:
 
 
 Mirror
------- 
+------
 
 **Directory**: ``repo``
 
@@ -325,7 +339,7 @@ Files
 Considerations
 ``````````````
 
-- ``test`` should never point to a snapshot older than what the corresponding 
+- ``test`` should never point to a snapshot older than what the corresponding
   ``prod`` are linking to
 - Pointers in ``prod`` **must also** exist in ``test``, the rationale
   being that this somewhat ensures that `prod` has already been tested.
@@ -408,10 +422,10 @@ Manual routine for instant publicizing
   New files are available through the ordinary interfaces after mirroring and
   snapshotting. This is usually done nightly, but the routines might be run
   manually if necessary:
-  
+
   1. sudo /opt/kelda/repoadmin.sh -e prod sync
   2. sudo /opt/kelda/repoadmin.sh -e prod snapshot
-  
+
 
 Caveats
 -------
@@ -420,7 +434,7 @@ Caveats
   accessible through the mirror interface (``repo``) until after the next upcoming
   mirror job (usually during the next night, check crontab on the mirror server
   for details). After this, the data should be accessible under the ``repo`` link.
-  
+
 * New data mirrored is available under the ``snapshot`` link only after the next
   snapshot run (check crontab for details). This is normally scheduled for some
   time after the nightly mirror job.
@@ -445,7 +459,7 @@ Invocation:
 
 .. parsed-literal::
    /usr/local/sbin/snapshot_cleanup.sh [-d|u] [-t <YYYY-MM-DD-HHMM> ]
-   
+
    -u: print usage text and exit
    -d: dry-run (just print what would otherwise be deleted)
    -t: purge snapshots older than timestamp provided
