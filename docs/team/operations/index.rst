@@ -10,6 +10,7 @@ Operations
     himlar-bootstrap
     deploy
     compute
+    network
     logging
     foreman
     ansible/index
