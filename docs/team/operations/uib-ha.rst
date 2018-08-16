@@ -9,6 +9,30 @@ also be used for UH-IaaS services.
 
 Access to the nodes are only available through bgo-login-01.
 
+Domains
+-------
+
+The service are setup with to different domains:
+
+* uibproxy.ha.uib.no (use this for uib only services)
+* pubproxy.ha.uib.no (use this for public services)
+
+Test domains:
+
+* uibtestproxy.ha.uib.no
+* pubtestproxy.ha.uib.no
+
+Each domain use 2 public IPs with round-robin A-records.
+
+New service
+-----------
+
+The setup a new service using uib-ha you will need to follow two steps:
+
+#. Add your domain to the domain list hash in himlar/hiaradata/uib/ha.yaml
+#. Create a CNAME records to one of the 2 A-records above
+
+
 Deployment
 ----------
 
