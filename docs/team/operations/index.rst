@@ -20,3 +20,4 @@ Operations
     ssl
     dns
     etcd
+    uib-ha
