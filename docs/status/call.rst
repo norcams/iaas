@@ -15,10 +15,10 @@ Deltaker    Uke Uke Uke Uke
 =========== === === === ===
 Trond        28  32  38  44
 Anders       26  33  39  45
-Raymond      30  34  40  46
+Raymond      30  37  40  46
 Mikael       31  35  41  47
 Tannaz       29  36  42  48
-Tor          27  37  43  49
+Tor          27  34  43  49
 =========== === === === ===
 
 Instruks
