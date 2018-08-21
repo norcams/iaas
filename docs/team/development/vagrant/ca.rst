@@ -19,7 +19,7 @@ back to your host)::
   cd $himlar
   cd provision/ca
   echo "YOUR_SECRET" > passfile
-  ./bootstrap.sh
+  ./bootstrap_repos.sh
 
 **NB! You must run the script from the provision/ca directory!**
 
