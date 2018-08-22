@@ -16,6 +16,7 @@ Login to Dataporten Dashboard, and register new application.
 Redirect uri from `access` should be::
 
   https://access.vagrant.iaas.intern/login
+  https://access.vagrant.iaas.intern/reset
 
 and for `dashboard`::
 
