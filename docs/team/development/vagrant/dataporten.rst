@@ -2,8 +2,8 @@
 Setting up dataporten in vagrant
 ================================
 
-First make sure that the `access`-node is part of your :file:`HIMLAR_NODESET`.
-There should be at least one nodeset with `access` in :file:`nodes.yaml`.
+First make sure that the `access` and `proxy`-node are parts of your :file:`HIMLAR_NODESET`.
+There should be at least one nodeset with `access` and `proxy` in :file:`nodes.yaml`.
 
 To use Dataporten to authenticate a user in `access` and `keystone`, you
 will first need to set up two applications at https://dashboard.dataporten.no
