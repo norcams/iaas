@@ -28,11 +28,11 @@ Prerequisites
 .. IMPORTANT::
    When doing a complete reinstall make sure `peerdns: 'no'`
    is in the network configuration for the nodes controller-01 and admin-01.
-   
+
    Also make sure gateway and DNS points to the login node or wherever there is
    a connection out and/or a resolverreachable. This might require toggling
    of data in 'common.yaml' or the relevant node files.
-   
+
    This should be manipulated on the code activated on the login node from where
    the bootstrap process is initialized befoe the run. Changes after installation
    of the controller node should be activated on the node itself
@@ -43,18 +43,15 @@ Procedure
 
 1. Make sure the dhcp and tftp services are allowed through the firewall, if
    RHEL 7/Centos 7:
-   
-   **firewall-cmd --list-services**
 
-   If *tftp* and *dhcp* is not amongst the permitted services on that list, add
-   the ones missing, for instance:
-   
-   **firewall-cmd --add-service dhcp**
+   **iptables -I INPUT 1 -i <mgmt interface for environment> -p udp --dport 67:68 --sport 67:68 -j ACCEPT**
+
+   **iptables -I INPUT 1 -i <mgmt interface for environment> -p udp --dport 69 -j ACCEPT**
 
 #. Enable NAT of relevant mgmt interface on the login node out through the public facing interface
 
 #. On the login node:
-   
+
    **/usr/local/sbin/bootstrap-$loc-controller-01.sh**
 
    .. NOTE::
@@ -64,7 +61,7 @@ Procedure
       already in place. But please make sure the files nevertheless are recent!
 
 #. Boot the relevant physical node using the web GUI on the `iDrac` or with this command on the login node:
-   
+
    **idracadm -r <idrac-IP for $loc-controller-01 to be installed> -u gaussian -p <idrac-pw> serveraction powercycle**
 
    .. NOTE::
@@ -77,15 +74,15 @@ Procedure
       it will enter an endless installation loop!
 
 #. Log on to the freshly installed controller node:
-   
+
    (**sudo**) **ssh iaas@$loc-controller-01**
 
 #. Run puppet in boostrap mode:
-   
+
    **bash /root/puppet_bootstrap.sh**
 
 #. Run puppet normally:
-   
+
    **/opt/himlar/provision/puppetrun.sh**
 
 #. Punch a hole in the firewall for traffic to port 8000:
@@ -93,33 +90,34 @@ Procedure
    **iptables -I INPUT 1 -p tcp --dport 8000 -j ACCEPT**
 
 #. Initiate installation of the admin node/Foreman:
-   
+
    **/usr/local/sbin/bootstrap-$loc-admin.sh**
 
    1. **virsh list** should now report the foreman instance as running
    #. The install can be monitored with **vncviewer $loc-controller.01**,
       **virt-manager** connected to *$loc-controller-01* or your preferred
       vnc viewer application
-   #. When the message 
-      
+   #. When the message
+
       "*Domain creation completed.
       Restarting guest.*"
-      
+
       is written to the terminal from where the script was started, the system
       is installed and ready for use.
 
    #. The new controller node can be logged on to from the login node:
-      
+
       **ssh iaas@$loc-admin-01...**.
 
 #. When controller node installation is complete the firewall can be restored:
 
-   **iptables -D INPUT 1**
+   **iptables -D INPUT 1** repeated until all newly inserted rules are removed.
+   Check with **iptables -L -n**
 
 #. Log on to the new ``admin`` system from the login node, optionally check
    the install log: */root/install.post.log*
 
-#. ensure the system time is correct 
+#. ensure the system time is correct
 
 #. Distribute relevant *rndc.key*:
 
@@ -129,11 +127,11 @@ Procedure
    NB: the `secrets` repo must already have the key installed
 
 #. Run puppet in bootstrap mode:
-   
+
    **bash /root/puppet_bootstrap.sh**
 
 #. Run puppet again:
-  
+
    **HIMLAR_CERTNAME=<certname> /opt/himlar/provision/puppetrun.sh**
 
    This command may be run several times.
@@ -212,7 +210,7 @@ Procedure
    #. The install can be monitored with **vncviewer $loc-controller.01**,
       **virt-manager** connected to *$loc-controller-01* or your preferred
       vnc viewer application
-   #. When the message 
-      
+   #. When the message
+
       "*Domain creation completed.
       Restarting guest.*"
