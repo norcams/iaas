@@ -2,7 +2,7 @@
 DNS
 ===
 
-We use the domains `uh-iaas.no` and `uhdc.no`.
+We use the domains **uh-iaas.no** and **uhdc.no**.
 
 Architecture
 ============
