@@ -7,7 +7,7 @@ We use the domains `uh-iaas.no` and `uhdc.no`.
 Architecture
 ============
 
-.. image:: images/dns.svg
+.. image:: images/dns.png
 
 
 CNAME uh-iaas.no
