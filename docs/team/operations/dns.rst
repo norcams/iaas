@@ -4,6 +4,12 @@ DNS
 
 We use the domains `uh-iaas.no` and `uhdc.no`.
 
+Architecture
+============
+
+.. image:: images/dns.svg
+
+
 CNAME uh-iaas.no
 ================
 
