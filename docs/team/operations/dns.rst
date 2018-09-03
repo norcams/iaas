@@ -7,8 +7,20 @@ We use the domains **uh-iaas.no** and **uhdc.no**.
 Architecture
 ============
 
+.. _anycast: https://en.wikipedia.org/wiki/Anycast
+
+The illustration below shows the architecture of the DNS
+infrastructure. This is within a single location. In our case, with
+two or more locations, the NS nodes act as master/slave for each
+other. One NS node is the master for a given zone, and the others act
+as slaves for that zone.
+
 .. image:: images/dns.png
 
+We have two resolving DNS nodes in each location. They are set up in a
+redundant fashion where anycast_ is used to achieve redundancy. The
+idea is that instances in BGO will use the BGO resolver as primary and
+the OSL resolver as secondary, and vice versa for OSL instances.
 
 Public zone: uh-iaas.no
 =======================
