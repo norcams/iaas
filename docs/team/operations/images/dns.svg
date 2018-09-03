@@ -123,62 +123,6 @@
       </g>
     </g>
     <path
-       id="path3279"
-       sodipodi:nodetypes="ccccccc"
-       style="fill:#95c7db;stroke-width:0.26458335"
-       inkscape:connector-curvature="0"
-       d="m 100.54216,683.94473 h 87.65452 v 20.86981 52.17562 h -87.65452 v -52.17562 z" />
-    <path
-       id="path3254"
-       d="m 128.37247,725.81583 c -2.16193,2.16193 -2.74096,5.30712 -1.73826,7.99628 l 5.64948,-5.64955 4.5397,4.5397 -5.60273,5.60273 c 2.65651,0.92892 5.72603,0.33134 7.84946,-1.7918 2.18508,-2.18508 2.75235,-5.37534 1.70488,-8.08321 l 11.37902,-11.37902 c 0.074,-0.074 0.14244,-0.15461 0.20723,-0.23399 2.71203,1.0577 5.91303,0.49205 8.10293,-1.69816 2.12321,-2.12321 2.72072,-5.19265 1.7918,-7.84946 l -5.62282,5.62281 -4.53962,-4.5397 5.66956,-5.66956 c -2.68916,-1.00262 -5.83428,-0.42368 -7.99628,1.73833 -2.18968,2.18969 -2.76141,5.38498 -1.70481,8.09636 -0.0794,0.0649 -0.15332,0.13989 -0.22731,0.21394 l -11.37902,11.37902 c -2.70897,-1.05039 -5.89667,-0.48165 -8.08321,1.70488 z"
-       style="fill:#444444;stroke-width:0.26458335"
-       inkscape:connector-curvature="0" />
-    <path
-       id="path3281"
-       d="m 100.54216,654.72655 h 87.65452 v 8.34837 20.86981 h -87.65452 v -20.86981 z"
-       sodipodi:nodetypes="ccccccc"
-       style="fill:#444444;stroke-width:0.26458335"
-       inkscape:connector-curvature="0" />
-    <g
-       style="stroke-width:0.36221749"
-       id="g3283"
-       transform="matrix(0.73045434,0,0,0.73045434,258.24725,839.15678)">
-      <text
-         id="text3285"
-         style="font-weight:bold;line-height:0%;font-family:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.36221749"
-         xml:space="preserve"
-         transform="scale(1.1103,0.90062)"
-         y="-246.88498"
-         x="-185.86615"><tspan
-           id="tspan3287"
-           sodipodi:role="line"
-           x="-185.86615"
-           style="font-weight:bold;font-size:12.60900021px;line-height:1.25;font-family:'DejaVu Sans Mono';fill:#ffffff;stroke-width:0.36221749"
-           y="-243.76779" /><tspan
-           id="tspan3289"
-           sodipodi:role="line"
-           x="-185.86615"
-           style="font-weight:bold;font-size:12.60900021px;line-height:1.25;font-family:'DejaVu Sans Mono';fill:#ffffff;stroke-width:0.36221749"
-           y="-235.72897"> </tspan></text>
-      <text
-         id="text3291"
-         style="font-weight:bold;line-height:0%;font-family:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.36221749"
-         transform="scale(1.1103,0.90062)"
-         y="-260.20914"
-         x="-185.86615"
-         xml:space="preserve"><tspan
-           id="tspan3293"
-           y="-260.20914"
-           x="-185.86615"
-           style="font-weight:bold;font-size:12.60900021px;line-height:1.25;font-family:'DejaVu Sans Mono';fill:#ffffff;stroke-width:0.36221749"
-           sodipodi:role="line">ADMIN</tspan><tspan
-           y="-244.44789"
-           x="-185.86615"
-           style="font-weight:bold;font-size:12.60900021px;line-height:1.25;font-family:'DejaVu Sans Mono';fill:#ffffff;stroke-width:0.36221749"
-           sodipodi:role="line"
-           id="tspan5964">PUPPETMASTER</tspan></text>
-    </g>
-    <path
        style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M -338.66668,609.20836 H 74.083335"
        id="path5788"
@@ -371,6 +315,65 @@
        id="path5924"
        d="m 145.23279,752.08334 v 68.79168"
        style="fill:none;fill-rule:evenodd;stroke:#00c000;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       id="g6013">
+      <path
+         d="m 100.54216,683.94473 h 87.65452 v 20.86981 52.17562 h -87.65452 v -52.17562 z"
+         inkscape:connector-curvature="0"
+         style="fill:#95c7db;stroke-width:0.26458335"
+         sodipodi:nodetypes="ccccccc"
+         id="path3279" />
+      <path
+         inkscape:connector-curvature="0"
+         style="fill:#444444;stroke-width:0.26458335"
+         d="m 128.37247,725.81583 c -2.16193,2.16193 -2.74096,5.30712 -1.73826,7.99628 l 5.64948,-5.64955 4.5397,4.5397 -5.60273,5.60273 c 2.65651,0.92892 5.72603,0.33134 7.84946,-1.7918 2.18508,-2.18508 2.75235,-5.37534 1.70488,-8.08321 l 11.37902,-11.37902 c 0.074,-0.074 0.14244,-0.15461 0.20723,-0.23399 2.71203,1.0577 5.91303,0.49205 8.10293,-1.69816 2.12321,-2.12321 2.72072,-5.19265 1.7918,-7.84946 l -5.62282,5.62281 -4.53962,-4.5397 5.66956,-5.66956 c -2.68916,-1.00262 -5.83428,-0.42368 -7.99628,1.73833 -2.18968,2.18969 -2.76141,5.38498 -1.70481,8.09636 -0.0794,0.0649 -0.15332,0.13989 -0.22731,0.21394 l -11.37902,11.37902 c -2.70897,-1.05039 -5.89667,-0.48165 -8.08321,1.70488 z"
+         id="path3254" />
+      <path
+         inkscape:connector-curvature="0"
+         style="fill:#444444;stroke-width:0.26458335"
+         sodipodi:nodetypes="ccccccc"
+         d="m 100.54216,654.72655 h 87.65452 v 8.34837 20.86981 h -87.65452 v -20.86981 z"
+         id="path3281" />
+      <g
+         transform="matrix(0.73045434,0,0,0.73045434,258.24725,839.15678)"
+         id="g3283"
+         style="stroke-width:0.36221749">
+        <text
+           x="-185.86615"
+           y="-246.88498"
+           transform="scale(1.1103,0.90062)"
+           xml:space="preserve"
+           style="font-weight:bold;line-height:0%;font-family:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.36221749"
+           id="text3285"><tspan
+             y="-243.76779"
+             style="font-weight:bold;font-size:12.60900021px;line-height:1.25;font-family:'DejaVu Sans Mono';fill:#ffffff;stroke-width:0.36221749"
+             x="-185.86615"
+             sodipodi:role="line"
+             id="tspan3287" /><tspan
+             y="-235.72897"
+             style="font-weight:bold;font-size:12.60900021px;line-height:1.25;font-family:'DejaVu Sans Mono';fill:#ffffff;stroke-width:0.36221749"
+             x="-185.86615"
+             sodipodi:role="line"
+             id="tspan3289"> </tspan></text>
+        <text
+           xml:space="preserve"
+           x="-185.86615"
+           y="-260.20914"
+           transform="scale(1.1103,0.90062)"
+           style="font-weight:bold;line-height:0%;font-family:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:0.36221749"
+           id="text3291"><tspan
+             sodipodi:role="line"
+             style="font-weight:bold;font-size:12.60900021px;line-height:1.25;font-family:'DejaVu Sans Mono';fill:#ffffff;stroke-width:0.36221749"
+             x="-185.86615"
+             y="-260.20914"
+             id="tspan3293">ADMIN</tspan><tspan
+             id="tspan5964"
+             sodipodi:role="line"
+             style="font-weight:bold;font-size:12.60900021px;line-height:1.25;font-family:'DejaVu Sans Mono';fill:#ffffff;stroke-width:0.36221749"
+             x="-185.86615"
+             y="-244.44789">PUPPETMASTER</tspan></text>
+      </g>
+    </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.18245411px;line-height:125%;font-family:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
