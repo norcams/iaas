@@ -23,28 +23,80 @@ In this zone we have the following records:
 ============================= ====== ===========================================
 Record                        TYPE   VALUE
 ============================= ====== ===========================================
-access.uh-iaas.no             A      `158.39.77.250`
-access-bgo.uh-iaas.no         A      `158.39.77.250`
-access-osl.uh-iaas.no         A      `158.37.63.250`
-api.uh-iaas.no                A      `158.39.77.250`
-dashboard.uh-iaas.no          A      `158.39.77.254`
-dashboard-bgo.uh-iaas.no      A      `158.39.77.254`
-dashboard-osl.uh-iaas.no      A      `158.37.63.254`
-ns1.uh-iaas.no                A      `158.37.63.251`
-ns2.uh-iaas.no                A      `158.39.77.251`
-report.uh-iaas.no             A      `158.39.77.250`
-report-bgo.uh-iaas.no         A      `158.39.77.250`
-report-osl.uh-iaas.no         A      `158.37.63.250`
-request.uh-iaas.no            A      `158.39.77.250`
-status.uh-iaas.no             A      `158.39.77.250`
-status-bgo.uh-iaas.no         A      `158.39.77.250`
-status-osl.uh-iaas.no         A      `158.37.63.250`
-ns1.uh-iaas.no                AAAA   `2001:700:2:82ff::251`
-ns2.uh-iaas.no                AAAA   `2001:700:2:83ff::251`
-docs.uh-iaas.no               CNAME  `uh-iaas.readthedocs.io`
-www.uh-iaas.no                CNAME  `norcams.github.io`
-uh-iaas.no                    MX     `10 uninett-no.mx1.staysecuregroup.com`
-uh-iaas.no                    MX     `20 uninett-no.mx2.staysecuregroup.net`
+access.uh-iaas.no             A      ``158.39.77.250``
+access-bgo.uh-iaas.no         A      ``158.39.77.250``
+access-osl.uh-iaas.no         A      ``158.37.63.250``
+api.uh-iaas.no                A      ``158.39.77.250``
+dashboard.uh-iaas.no          A      ``158.39.77.254``
+dashboard-bgo.uh-iaas.no      A      ``158.39.77.254``
+dashboard-osl.uh-iaas.no      A      ``158.37.63.254``
+ns1.uh-iaas.no                A      ``158.37.63.251``
+ns2.uh-iaas.no                A      ``158.39.77.251``
+report.uh-iaas.no             A      ``158.39.77.250``
+report-bgo.uh-iaas.no         A      ``158.39.77.250``
+report-osl.uh-iaas.no         A      ``158.37.63.250``
+request.uh-iaas.no            A      ``158.39.77.250``
+status.uh-iaas.no             A      ``158.39.77.250``
+status-bgo.uh-iaas.no         A      ``158.39.77.250``
+status-osl.uh-iaas.no         A      ``158.37.63.250``
+ns1.uh-iaas.no                AAAA   ``2001:700:2:82ff::251``
+ns2.uh-iaas.no                AAAA   ``2001:700:2:83ff::251``
+docs.uh-iaas.no               CNAME  ``uh-iaas.readthedocs.io``
+www.uh-iaas.no                CNAME  ``norcams.github.io``
+uh-iaas.no                    MX     ``10 uninett-no.mx1.staysecuregroup.com``
+uh-iaas.no                    MX     ``20 uninett-no.mx2.staysecuregroup.net``
+============================= ====== ===========================================
+
+
+Delegated zone: osl.uh-iaas.no
+------------------------------
+
+This zone is delegated to:
+
+* ns1.uh-iaas.no (master - located in OSL)
+* ns2.uh-iaas.no (slave - located in BGO)
+
+In this zone we have the following records:
+
+============================= ====== ===========================================
+Record                        TYPE   VALUE
+============================= ====== ===========================================
+compute.api.osl.uh-iaas.no    A      ``158.37.63.250``
+identity.api.osl.uh-iaas.no   A      ``158.37.63.250``
+image.api.osl.uh-iaas.no      A      ``158.37.63.250``
+metric.api.osl.uh-iaas.no     A      ``158.37.63.250``
+network.api.osl.uh-iaas.no    A      ``158.37.63.250``
+placement.api.osl.uh-iaas.no  A      ``158.37.63.250``
+volume.api.osl.uh-iaas.no     A      ``158.37.63.250``
+console.osl.uh-iaas.no        A      ``158.37.63.250``
+resolver.osl.uh-iaas.no       A      ``158.37.63.252``
+resolver.osl.uh-iaas.no       AAAA   ``2001:700:2:82ff::252``
+============================= ====== ===========================================
+
+
+Delegated zone: bgo.uh-iaas.no
+------------------------------
+
+This zone is delegated to:
+
+* ns1.uh-iaas.no (slave - located in OSL)
+* ns2.uh-iaas.no (master - located in BGO)
+
+In this zone we have the following records:
+
+============================= ====== ===========================================
+Record                        TYPE   VALUE
+============================= ====== ===========================================
+compute.api.bgo.uh-iaas.no    A      ``158.39.77.250``
+identity.api.bgo.uh-iaas.no   A      ``158.39.77.250``
+image.api.bgo.uh-iaas.no      A      ``158.39.77.250``
+metric.api.bgo.uh-iaas.no     A      ``158.39.77.250``
+network.api.bgo.uh-iaas.no    A      ``158.39.77.250``
+placement.api.bgo.uh-iaas.no  A      ``158.39.77.250``
+volume.api.bgo.uh-iaas.no     A      ``158.39.77.250``
+console.bgo.uh-iaas.no        A      ``158.39.77.250``
+resolver.bgo.uh-iaas.no       A      ``158.39.77.252``
+resolver.bgo.uh-iaas.no       AAAA   ``2001:700:2:83ff::252``
 ============================= ====== ===========================================
 
 
