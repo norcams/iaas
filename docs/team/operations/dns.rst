@@ -10,49 +10,125 @@ Architecture
 .. image:: images/dns.png
 
 
-CNAME uh-iaas.no
+Zone: uh-iaas.no
 ================
 
-uh-iaas.no are only used for production locations.
+This zone is delegated to:
 
-============================= ========================
-Domain                         CNAME
-============================= ========================
-www.uh-iaas.no                norcams.github.io
-docs.uh-iaas.no               uh-iaas.readthedocs.io
-status.uh-iaas.no             uh-status-front.iaas.uib.no
-status-osl.uh-iaas.no         uh-status.iaas.uio.no
-status-bgo.uh-iaas.no         uh-status.iaas.uib.no
-access.uh-iaas.no             uh-access-front.iaas.uib.no
-access-osl.uh-iaas.no         uh-access.iaas.uio.no
-access-bgo.uh-iaas.no         uh-access.iaas.uib.no
-request.uh-iaas.no            uh-request-front.iaas.uib.no *
-report.uh-iaas.no             uh-report-front.iaas.uib.no
-report-osl.uh-iaas.no         uh-report.iaas.uio.no
-report-bgo.uh-iaas.no         uh-report.iaas.uib.no
-dashboard.uh-iaas.no          uh-dboard-front.iaas.uib.no
-dashboard-osl.uh-iaas.no      uh-dboard.iaas.uio.no
-dashboard-bgo.uh-iaas.no      uh-dboard.iaas.uib.no
-console.osl.uh-iaas.no        uh-console.iaas.uio.no
-console.bgo.uh-iaas.no        uh-console.iaas.uib.no
-api.uh-iaas.no                uh-api-front.iaas.uib.no
-compute.api.bgo.uh-iaas.no    uh-api.iaas.uib.no
-identity.api.bgo.uh-iaas.no   uh-api.iaas.uib.no
-network.api.bgo.uh-iaas.no    uh-api.iaas.uib.no
-image.api.bgo.uh-iaas.no      uh-api.iaas.uib.no
-volume.api.bgo.uh-iaas.no     uh-api.iaas.uib.no
-placement.api.bgo.uh-iaas.no  uh-api.iaas.uib.no
-metric.api.bgo.uh-iaas.no     uh-api.iaas.uib.no
-compute.api.osl.uh-iaas.no    uh-api.iaas.uio.no
-identity.api.osl.uh-iaas.no   uh-api.iaas.uio.no
-network.api.osl.uh-iaas.no    uh-api.iaas.uio.no
-image.api.osl.uh-iaas.no      uh-api.iaas.uio.no
-volume.api.osl.uh-iaas.no     uh-api.iaas.uio.no
-placement.api.osl.uh-iaas.no  uh-api.iaas.uio.no
-metric.api.osl.uh-iaas.no     uh-api.iaas.uio.no
-============================= ========================
+* ns1.uh-iaas.no (master - located in OSL)
+* ns2.uh-iaas.no (slave - located in BGO)
 
-*= redirect only to https://skjema.uio.no/iaas-project
+In this zone we have the following records:
+
++--------------------------+---------------------------------------------+
+| A records                | IPv4 address                                |
++==========================+=============================================+
+| access.uh-iaas.no        | 158.39.77.250                               |
+| access-bgo.uh-iaas.no    | 158.39.77.250                               |
+| access-osl.uh-iaas.no    | 158.37.63.250                               |
+| api.uh-iaas.no           | 158.39.77.250                               |
+| dashboard.uh-iaas.no     | 158.39.77.254                               |
+| dashboard-bgo.uh-iaas.no | 158.39.77.254                               |
+| dashboard-osl.uh-iaas.no | 158.37.63.254                               |
+| ns1.uh-iaas.no           | 158.37.63.251                               |
+| ns2.uh-iaas.no           | 158.39.77.251                               |
+| report.uh-iaas.no        | 158.39.77.250                               |
+| report-bgo.uh-iaas.no    | 158.39.77.250                               |
+| report-osl.uh-iaas.no    | 158.37.63.250                               |
+| request.uh-iaas.no       | 158.39.77.250                               |
+| status.uh-iaas.no        | 158.39.77.250                               |
+| status-bgo.uh-iaas.no    | 158.39.77.250                               |
+| status-osl.uh-iaas.no    | 158.37.63.250                               |
++--------------------------+---------------------------------------------+
+| AAAA records             | IPv6 address                                |
++==========================+=============================================+
+| ns1.uh-iaas.no           | 2001:700:2:82ff::251                        |
+| ns2.uh-iaas.no           | 2001:700:2:83ff::251                        |
++--------------------------+---------------------------------------------+
+| CNAME records            | Alias                                       |
++==========================+=============================================+
+| docs.uh-iaas.no          | uh-iaas.readthedocs.io                      |
+| www.uh-iaas.no           | norcams.github.io                           |
++--------------------------+---------------------------------------------+
+| MX records               | Value                                       |
++==========================+=============================================+
+| uh-iaas.no               | 10 uninett-no.mx1.staysecuregroup.com       |
+| uh-iaas.no               | 20 uninett-no.mx2.staysecuregroup.net       |
++--------------------------+---------------------------------------------+
+
+
+
+.. # ============================= ==== ===========================================
+.. # Record                        TYPE CNAME
+.. # ============================= ==== ===========================================
+.. # access.uh-iaas.no             A       158.39.77.250
+.. # access-bgo.uh-iaas.no         A       158.39.77.250
+.. # access-osl.uh-iaas.no         A       158.37.63.250
+.. # api.uh-iaas.no                A       158.39.77.250
+.. # dashboard.uh-iaas.no          A       158.39.77.254
+.. # dashboard-bgo.uh-iaas.no      A       158.39.77.254
+.. # dashboard-osl.uh-iaas.no      A       158.37.63.254
+.. # ns1.uh-iaas.no                A       158.37.63.251
+.. # ns2.uh-iaas.no                A       158.39.77.251
+.. # report.uh-iaas.no             A       158.39.77.250
+.. # report-bgo.uh-iaas.no         A       158.39.77.250
+.. # report-osl.uh-iaas.no         A       158.37.63.250
+.. # request.uh-iaas.no            A       158.39.77.250
+.. # status.uh-iaas.no             A       158.39.77.250
+.. # status-bgo.uh-iaas.no         A       158.39.77.250
+.. # status-osl.uh-iaas.no         A       158.37.63.250
+.. # ns1.uh-iaas.no                AAAA    2001:700:2:82ff::251
+.. # ns2.uh-iaas.no                AAAA    2001:700:2:83ff::251
+.. # docs.uh-iaas.no               CNAME   uh-iaas.readthedocs.io
+.. # www.uh-iaas.no                CNAME   norcams.github.io
+.. # uh-iaas.no                    MX      10 uninett-no.mx1.staysecuregroup.com
+.. # uh-iaas.no                    MX      20 uninett-no.mx2.staysecuregroup.net
+.. # ============================= ==== ===========================================
+
+
+.. # CNAME uh-iaas.no
+.. # ================
+.. # 
+.. # uh-iaas.no are only used for production locations.
+.. # 
+.. # ============================= ========================
+.. # Domain                         CNAME
+.. # ============================= ========================
+.. # www.uh-iaas.no                norcams.github.io
+.. # docs.uh-iaas.no               uh-iaas.readthedocs.io
+.. # status.uh-iaas.no             uh-status-front.iaas.uib.no
+.. # status-osl.uh-iaas.no         uh-status.iaas.uio.no
+.. # status-bgo.uh-iaas.no         uh-status.iaas.uib.no
+.. # access.uh-iaas.no             uh-access-front.iaas.uib.no
+.. # access-osl.uh-iaas.no         uh-access.iaas.uio.no
+.. # access-bgo.uh-iaas.no         uh-access.iaas.uib.no
+.. # request.uh-iaas.no            uh-request-front.iaas.uib.no *
+.. # report.uh-iaas.no             uh-report-front.iaas.uib.no
+.. # report-osl.uh-iaas.no         uh-report.iaas.uio.no
+.. # report-bgo.uh-iaas.no         uh-report.iaas.uib.no
+.. # dashboard.uh-iaas.no          uh-dboard-front.iaas.uib.no
+.. # dashboard-osl.uh-iaas.no      uh-dboard.iaas.uio.no
+.. # dashboard-bgo.uh-iaas.no      uh-dboard.iaas.uib.no
+.. # console.osl.uh-iaas.no        uh-console.iaas.uio.no
+.. # console.bgo.uh-iaas.no        uh-console.iaas.uib.no
+.. # api.uh-iaas.no                uh-api-front.iaas.uib.no
+.. # compute.api.bgo.uh-iaas.no    uh-api.iaas.uib.no
+.. # identity.api.bgo.uh-iaas.no   uh-api.iaas.uib.no
+.. # network.api.bgo.uh-iaas.no    uh-api.iaas.uib.no
+.. # image.api.bgo.uh-iaas.no      uh-api.iaas.uib.no
+.. # volume.api.bgo.uh-iaas.no     uh-api.iaas.uib.no
+.. # placement.api.bgo.uh-iaas.no  uh-api.iaas.uib.no
+.. # metric.api.bgo.uh-iaas.no     uh-api.iaas.uib.no
+.. # compute.api.osl.uh-iaas.no    uh-api.iaas.uio.no
+.. # identity.api.osl.uh-iaas.no   uh-api.iaas.uio.no
+.. # network.api.osl.uh-iaas.no    uh-api.iaas.uio.no
+.. # image.api.osl.uh-iaas.no      uh-api.iaas.uio.no
+.. # volume.api.osl.uh-iaas.no     uh-api.iaas.uio.no
+.. # placement.api.osl.uh-iaas.no  uh-api.iaas.uio.no
+.. # metric.api.osl.uh-iaas.no     uh-api.iaas.uio.no
+.. # ============================= ========================
+.. # 
+.. # *= redirect only to https://skjema.uio.no/iaas-project
 
 Delegated zones
 ===============
