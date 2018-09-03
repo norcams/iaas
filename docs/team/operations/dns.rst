@@ -29,7 +29,7 @@ done in `hieradata/osl/common.yaml`_.
 In this zone we have the following records:
 
 ============================= ====== ===========================================
-Record                        TYPE   VALUE
+RECORD                        TYPE   VALUE
 ============================= ====== ===========================================
 access.uh-iaas.no             A      158.39.77.250
 access-bgo.uh-iaas.no         A      158.39.77.250
@@ -71,7 +71,7 @@ done in `hieradata/osl/common.yaml`_.
 In this zone we have the following records:
 
 ============================= ====== ===========================================
-Record                        TYPE   VALUE
+RECORD                        TYPE   VALUE
 ============================= ====== ===========================================
 compute.api.osl.uh-iaas.no    A      158.37.63.250
 identity.api.osl.uh-iaas.no   A      158.37.63.250
@@ -101,7 +101,7 @@ done in `hieradata/bgo/common.yaml`_.
 In this zone we have the following records:
 
 ============================= ====== ===========================================
-Record                        TYPE   VALUE
+RECORD                        TYPE   VALUE
 ============================= ====== ===========================================
 compute.api.bgo.uh-iaas.no    A      158.39.77.250
 identity.api.bgo.uh-iaas.no   A      158.39.77.250
@@ -122,7 +122,7 @@ Internal zone: uhdc.no
 The following zones in **uhdc.no** has been delegated to us:
 
 ================= ========================
-Zone              NS
+ZONE              NS
 ================= ========================
 bgo.uhdc.no       ns1.uh-iaas.no (slave)
                   ns2.uh-iaas.no (master)
@@ -144,7 +144,7 @@ Test domains
 For public domain in test we have a delegated subdomains:
 
 ========= ===================
-Region    Domain
+REGION    DOMAIN
 ========= ===================
 test01    test.iaas.uib.no
 test02    test.iaas.uio.no
