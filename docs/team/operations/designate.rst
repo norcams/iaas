@@ -96,11 +96,11 @@ Blacklisted domains
 The following domains should be blacklisted in production:
 
 +------------------+------------------------------------------+-------------------------+
-| DOMAIN           | PATTERN                                  |COMMENT                  |
+| DOMAIN           | PATTERN                                  | COMMENT                 |
 +==================+==========================================+=========================+
 | uh-iaas.no       | ``^([A-Za-z0-9_\-]+\.)*uh-iaas\.no\.$``  |Official UH-IaaS domain, |
-|                  |                                          |   managed outside of    |
-|                  |                                          |   Openstack Designate   |
+|                  |                                          |managed outside of       |
+|                  |                                          |Openstack Designate      |
 +------------------+------------------------------------------+-------------------------+
 | uhdc.no          | ``^([A-Za-z0-9_\-]+\.)*uhdc\.no\.$``     |Official UH-IaaS domain, |
 |                  |                                          |managed outside of       |
