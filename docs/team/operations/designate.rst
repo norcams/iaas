@@ -53,8 +53,8 @@ the domain **foo.com** and any subdomains:
 
 .. parsed-literal::
 
-  $ **./dns.py blacklist_create \
-      --comment 'Protect domain foo.com including subdomains' \
+  $ **./dns.py blacklist_create \\
+      --comment 'Protect domain foo.com including subdomains' \\
       --pattern '^([A-Za-z0-9_\\\\-]+\.)\\*foo\\.com\\.$'**
 
 If we want to only protect the domain itself, but allow users to
@@ -62,7 +62,7 @@ create subdomains in the domain, we can use a simpler pattern:
 
 .. parsed-literal::
 
-  $ **./dns.py blacklist_create \
-      --comment 'Protect domain foo.com allowing subdomains' \
+  $ **./dns.py blacklist_create \\
+      --comment 'Protect domain foo.com allowing subdomains' \\
       --pattern '^foo\\.com\\.$'**
 
