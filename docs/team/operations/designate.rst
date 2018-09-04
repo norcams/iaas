@@ -24,12 +24,13 @@ time. The list is available here:
 * http://data.iana.org/TLD/tlds-alpha-by-domain.txt
 
 This list can be imported into Designate via the himlarcli
-command **dns.py**:
+command **dns.py**::
 
-.. parsed-literal::
+  # download the TLD list from IANA
+  curl http://data.iana.org/TLD/tlds-alpha-by-domain.txt -o /tmp/tlds-alpha-by-domain.txt
   
-  $ **curl http://data.iana.org/TLD/tlds-alpha-by-domain.txt -o /tmp/tlds-alpha-by-domain.txt**
-  $ **./dns.py tld_import --file /tmp/tlds-alpha-by-domain.txt**
+  # import the TLD list into designate
+  ./dns.py tld_import --file /tmp/tlds-alpha-by-domain.txt
 
 The **tld_import** action will add any TLDs which aren't already
 registered, with a special comment that marks the TLD as being bulk
@@ -49,20 +50,16 @@ Managing blacklists
 Blacklisting is done to prevent users from creating domains that we
 don't want them to create. This is mostly done to protect a domain
 from eventual future use. In order to prevent any users from creating
-the domain **foo.com** and any subdomains:
+the domain **foo.com** and any subdomains::
 
-.. parsed-literal::
-
-  $ **./dns.py blacklist_create \\
+  ./dns.py blacklist_create \\
       --comment 'Protect domain foo.com including subdomains' \\
-      --pattern '^([A-Za-z0-9_\\-]+\.)\\*foo\\.com\\.$'**
+      --pattern '^([A-Za-z0-9_\\-]+\\.)\\*foo\\.com\\.$'**
 
 If we want to only protect the domain itself, but allow users to
-create subdomains in the domain, we can use a simpler pattern:
+create subdomains in the domain, we can use a simpler pattern::
 
-.. parsed-literal::
-
-  $ **./dns.py blacklist_create \\
+  ./dns.py blacklist_create \\
       --comment 'Protect domain foo.com allowing subdomains' \\
       --pattern '^foo\\.com\\.$'**
 
