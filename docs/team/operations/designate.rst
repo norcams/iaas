@@ -89,3 +89,32 @@ Deleting a blacklist entry is done via the **blacklist_delete**
 action::
 
   ./dns.py blacklist_delete --id <ID>
+
+Blacklisted domains
+-------------------
+
+The following domains should be blacklisted in production:
+
++------------------+------------------------------------------+-------------------------+
+| DOMAIN           | PATTERN                                  |COMMENT                  |
++==================+==========================================+=========================+
+| uh-iaas.no       | ``^([A-Za-z0-9_\-]+\.)*uh-iaas\.no\.$``  |Official UH-IaaS domain, |
+|                  |                                          |   managed outside of    |
+|                  |                                          |   Openstack Designate   |
++------------------+------------------------------------------+-------------------------+
+| uhdc.no          | ``^([A-Za-z0-9_\-]+\.)*uhdc\.no\.$``     |Official UH-IaaS domain, |
+|                  |                                          |managed outside of       |
+|                  |                                          |Openstack Designate      |
++------------------+------------------------------------------+-------------------------+
+| uio.no           | ``^([A-Za-z0-9_\-]+\.)*uio\.no\.$``      |Domain belonging to      |
+|                  |                                          |UiO. Instances in UH-IaaS|
+|                  |                                          |are not allowed to have  |
+|                  |                                          |UiO addresses            |
++------------------+------------------------------------------+-------------------------+
+| uib.no           | ``^uib\.no\.$``                          |Domain belonging to      |
+|                  |                                          |UiB. The domain itself is|
+|                  |                                          |forbidden, but subdomains|
+|                  |                                          |are allowed              |
++------------------+------------------------------------------+-------------------------+
+
+
