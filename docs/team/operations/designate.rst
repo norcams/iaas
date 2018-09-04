@@ -63,3 +63,29 @@ create subdomains in the domain, we can use a simpler pattern::
       --comment 'Protect domain foo.com while allowing subdomains' \
       --pattern '^foo\.com\.$'
 
+Listing the blacklists is done via the **blacklist_list** action (the
+option **--pretty** formats the output in a table). Example::
+
+  $ ./dns.py blacklist_list --pretty
+  +----------------------------------+--------------------------------------------------+--------------------------------------+
+  | pattern                          | description                                      |                  id                  |
+  +----------------------------------+--------------------------------------------------+--------------------------------------+
+  | ^([A-Za-z0-9_\-]+\.)*foo\.com\.$ | Protect domain foo.com including any subdomains  | 8958bf52-8e64-4a86-87ea-2087b7bc6d60 |
+  | ^bar\.net\.$                     | Protect domain bar.net while allowing subdomains | b3f7fc9f-67a8-4d07-aabc-444f0e4d67c4 |
+  +----------------------------------+--------------------------------------------------+--------------------------------------+
+
+Updating a blacklist entry is done via the **blacklist_update**
+action. Updating the comment (example)::
+
+  $ ./dns.py blacklist_update --comment 'new comment' \
+       --id b3f7fc9f-67a8-4d07-aabc-444f0e4d67c4
+
+And updating the pattern (example)::
+
+  $ ./dns.py blacklist_update --new-pattern '^tralala\.org\.$' \
+       --id b3f7fc9f-67a8-4d07-aabc-444f0e4d67c4
+
+Deleting a blacklist entry is done via the **blacklist_delete**
+action::
+
+  ./dns.py blacklist_delete --id <ID>
