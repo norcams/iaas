@@ -21,3 +21,4 @@ Operations
     dns
     etcd
     uib-ha
+    identity
