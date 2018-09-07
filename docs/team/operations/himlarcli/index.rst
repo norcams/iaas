@@ -13,3 +13,4 @@ Source code: https://github.com/norcams/himlarcli
 
     setup
     scripts
+    publish_status
