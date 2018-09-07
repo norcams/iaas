@@ -29,7 +29,7 @@ Which will return::
   The following message will be published: We're currently having some issues. Sorry for the inconvenience. For live updates visit https://status.uh-iaas.no
   Are you sure you want to publish? (yes|no)?
 
-This has to be interactively confirmed by typing `yes`. Notice that should
+This has to be interactively confirmed by typing `yes`. Notice that you should
 always use punctuation after the last sentence in your message or template.
 
 This example uses a pre-made template instead of a command-line argument as
