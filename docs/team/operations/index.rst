@@ -19,5 +19,6 @@ Operations
     local-repo
     ssl
     dns
+    designate
     etcd
     uib-ha
