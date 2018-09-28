@@ -16,7 +16,6 @@ gjennomført med mindre noe annet går frem av dokumentet.
     projects
     documentation
     dns
-    osstorage
     telemetry
 
 Arkiv

@@ -2,7 +2,10 @@
 Lagring for OS-disk
 ===================
 
-Sist endret: 2017-11-29
+Sist endret: 2018-09-28
+
+Alternativ 1 ble valgt og produksjonsatt.
+
 
 Det vi ønsker er å benytte sentral OS-disk som default for alle instanser.
 For spesialiserte compute-ressurser vil det være aktuelt med lokal OS-disk,
