@@ -9,3 +9,7 @@ and where the Openstack and other services are running.
 
 .. image:: images/nodes.png
    :target: ../_images/nodes.png
+
+New image:
+
+.. image:: images/controllers-and-nodes.png
