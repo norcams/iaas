@@ -13,7 +13,15 @@ and where the Openstack and other services are running.
 .. WARNING::
    The following is under construction!
 
-New image:
+New stuff:
+
+Physical hardware
+-----------------
+
+.. image:: images/physical-hardware.png
+
+Virtual nodes
+-------------
 
 .. image:: images/controllers-and-nodes.png
 
