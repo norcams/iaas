@@ -16,8 +16,8 @@ Some virtual machines are scaled out horizontally, typically one on
 each controller host, mostly this applies on OpenStack services. This
 is done for efficiency and redundancy reasons.
 
-Virtual machines running OpenStack components
----------------------------------------------
+OpenStack components
+--------------------
 
 These VMs are purely running OpenStack components.
 
@@ -45,8 +45,8 @@ These VMs are purely running OpenStack components.
   Runs the OpenStack Identity component, Keystone.
 
 
-Virtual machines running infrastructure services
-------------------------------------------------
+Infrastructure services
+-----------------------
 
 These VMs are running various infrastructure services, that are used
 by either the OpenStack components, or other infrastructure or
@@ -105,8 +105,8 @@ administrative services, or both.
   Runs the cephmon service for the Ceph storage cluster.
 
 
-Virtual machines running administrative services
-------------------------------------------------
+Administrative services
+-----------------------
 
 These VMs are running on a separate controller host, because they need
 to be up and running during maintenance on other VMs.
