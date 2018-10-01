@@ -10,7 +10,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | Low                 |
 +-------------------------+---------------------+
-| **Implemented percent** | **25%** (1/4)       |
+| **Implemented percent** | **50%** (2/4)       |
 +-------------------------+---------------------+
 
 System Inventory
@@ -18,6 +18,7 @@ System Inventory
 
 .. _OpenStack Security Guide\: System documentation: http://docs.openstack.org/security-guide/documentation.html
 .. _Physical hardware: ../design/physical-hardware.html
+.. _Virtual machines: ../design/virtual-machines.html
 
 From `OpenStack Security Guide\: System documentation`_:
 
@@ -38,11 +39,12 @@ management, there are no dependencies on the institutions. Links to
 infrastructure documentation:
 
 ``[PASS]`` **Hardware inventory**
-  A high-level view of the hardware inventory is documented in the
+  A high-level view of the hardware inventory is outlined in the
   document `Physical hardware`_.
 
-``[----]`` **Software inventory**
-  FIXME
+``[PASS]`` **Software inventory**
+  A high-level view of the software inventory is outlined in the
+  document `Virtual machines`_.
 
 ``[----]`` **Network topology**
   FIXME
