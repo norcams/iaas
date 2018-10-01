@@ -57,6 +57,7 @@ The illustration below shows the various virtual machines running on
 the controller hosts.
 
 .. image:: images/controllers-and-nodes.png
+   :target: ../_images/controllers-and-nodes.png
 
 Some of the virtual machines have a purely administrative purpose,
 some provide internal infrastructure services, and some are running
