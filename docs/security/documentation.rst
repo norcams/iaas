@@ -17,6 +17,7 @@ System Inventory
 ----------------
 
 .. _OpenStack Security Guide\: System documentation: http://docs.openstack.org/security-guide/documentation.html
+.. _Physical hardware: ../design/physical-hardware.html
 
 From `OpenStack Security Guide\: System documentation`_:
 
@@ -36,8 +37,9 @@ institution. Except for networking interface and physical hardware
 management, there are no dependencies on the institutions. Links to
 infrastructure documentation:
 
-``[----]`` **Hardware inventory**
-  FIXME
+``[PASS]`` **Hardware inventory**
+  A high-level view of the hardware inventory is documented in the
+  document `Physical hardware`_.
 
 ``[----]`` **Software inventory**
   FIXME
