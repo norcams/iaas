@@ -86,7 +86,7 @@ These VMs are purely running OpenStack components.
   Runs the OpenStack Volume component, Cinder.
 
 **telemetry-01**
-  Runs the OpenStack metering component, FIXME.
+  Runs the OpenStack metering component, Ceilometer.
 
 **network-0{1,2,3}**
   Three VMs in a redundant setup, runs the OpenStack Network
