@@ -25,17 +25,19 @@ PCI passthrough
 ===============
 
 The traditional way of offering GPU resources in a virtual machine is by
-PCI passthrough a device and present it directly to the vm. This is certainly
+PCI passthroughing a device and present it directly to the vm. This is certainly
 doable and technically supported in OpenStack, but there severe caveats.
 
 **pros**:
+
 * High performance GPU for VMs, technically this can be cheap consumer grade video cards
 
 **cons**:
+
 * Some labour required pr card inserted in compute nodes
 * Some labour required in each VM
 * Does not scale very well - few VMs pr compute node
-* For NVIDIA consumer grade cards it would violate their EULA - this is a **blocker**.
+* For NVIDIA consumer grade cards it would violate their EULA - this is a **blocker**
 
 
 Virtual GPU (vGPU)
@@ -47,12 +49,14 @@ GPU vendors. This feature is supported from the OpenStack Queens release as well
 however, caveats.
 
 **pros**:
+
 * High performance GPU for VMs
 * The preferred way to serve GPUs to virtual machines
 * Trivial configuration in OpenStack
-* Scales well, many VMs pr GPU card
+* Scales well, many VMs pr GPU
 
 **cons**:
+
 * At least for for NVIDIA this could be cost prohibitve, incurring 5-6x price/performance compared to consumer grade cards
 * Additionally, for NVIDIA GPUs, a concurrent user licence fee is necessary
 
