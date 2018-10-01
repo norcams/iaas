@@ -15,6 +15,10 @@ and where the Openstack and other services are running.
 
 New stuff:
 
+.. image:: images/satellite-view.png
+   :target: ../_images/satellite-view.png
+
+
 Physical hardware
 -----------------
 
