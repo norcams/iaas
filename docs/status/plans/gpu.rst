@@ -57,7 +57,7 @@ however, caveats.
 
 **cons**:
 
-* At least for for NVIDIA this could be cost prohibitve, incurring 5-6x price/performance compared to consumer grade cards
+* At least for for NVIDIA this could be cost prohibitive, incurring 5-6x price/performance compared to consumer grade cards
 * Additionally, for NVIDIA GPUs, a concurrent user licence fee is necessary
 
 
