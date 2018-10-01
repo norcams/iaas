@@ -92,6 +92,9 @@ These VMs are purely running OpenStack components.
   Three VMs in a redundant setup, runs the OpenStack Network
   component, Neutron.
 
+**identity-01**
+  Runs the OpenStack Identity component, Keystone.
+
 
 Virtual machines running infrastructure services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
