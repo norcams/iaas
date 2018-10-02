@@ -27,9 +27,9 @@ These VMs are purely running OpenStack components.
 **dashboard-01**
   Runs the OpenStack Dashboard component, Horizon.
 
-**novactrl-0{1,2,3}**
-  Three VMs in a redundant setup, runs the controller part (e.g. API)
-  of the OpenStack Compute component, Nova.
+**novactrl-[01..n]**
+  Usually three VMs in a redundant setup, runs the controller part
+  (e.g. API) of the OpenStack Compute component, Nova.
 
 **volume-01**
   Runs the OpenStack Volume component, Cinder.
@@ -37,8 +37,8 @@ These VMs are purely running OpenStack components.
 **telemetry-01**
   Runs the OpenStack metering component, Ceilometer.
 
-**network-0{1,2,3}**
-  Three VMs in a redundant setup, runs the OpenStack Network
+**network-[01..n]**
+  Usually three VMs in a redundant setup, runs the OpenStack Network
   component, Neutron.
 
 **identity-01**
@@ -101,7 +101,7 @@ administrative services, or both.
   to give instances with a IPv6 only network access to the outside
   world via their internal IPv4 address.
 
-**cephmon-0{1,2,3}**
+**cephmon-[01..n]**
   Runs the cephmon service for the Ceph storage cluster.
 
 
