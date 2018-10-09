@@ -34,3 +34,17 @@ The illustration shows these types of physical components:
   Servers that are part of the Ceph storage cluster. They provide
   storage services to OpenStack (e.g. storage volumes).
 
+
+===================
+Networking overview
+===================
+
+Physical networking connections of each site:
+
+**BGO**
+
+.. image:: images/bgo-network.png
+
+**OSL**
+
+.. image:: images/osl-network.png
