@@ -22,3 +22,4 @@ Operations
     designate
     etcd
     uib-ha
+    hardware
