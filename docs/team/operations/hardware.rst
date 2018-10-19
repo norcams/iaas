@@ -2,9 +2,11 @@
 Hardware maintenance
 ====================
 
+Dell PowerEdge servers
+======================
 
-Upgrading firmware on Dell servers
-==================================
+Upgrading firmware
+------------------
 
 Normal procedure:
 
@@ -50,10 +52,19 @@ firmware on storage components may fail. If this happens:
      reboot
 
 
-iDRAC settings on Dell servers
-==============================
+iDRAC settings
+--------------
 
 Setting proper name on the iDRAC::
 
   racadm config -g cfgLanNetworking -o cfgDNSRacName $(hostname -s)
+
+
+Getting inventory
+-----------------
+
+An easy way to get the inventory of a Dell server is to run the
+monitoring plugin in debug mode, from the monitor server::
+
+  /usr/lib64/nagios/plugins/check_openmanage -H test02-controller-01 -d
 
