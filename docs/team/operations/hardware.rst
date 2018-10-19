@@ -48,3 +48,12 @@ firmware on storage components may fail. If this happens:
 #. Reboot::
 
      reboot
+
+
+iDRAC settings on Dell servers
+==============================
+
+Setting proper name on the iDRAC::
+
+  racadm config -g cfgLanNetworking -o cfgDNSRacName $(hostname -s)
+
