@@ -60,8 +60,8 @@ Setting proper name on the iDRAC::
   racadm config -g cfgLanNetworking -o cfgDNSRacName $(hostname -s)
 
 
-Getting inventory
------------------
+Hardware inventory
+------------------
 
 An easy way to get the inventory of a Dell server is to run the
 monitoring plugin in debug mode, from the monitor server::
