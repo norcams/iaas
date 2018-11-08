@@ -87,6 +87,8 @@ Directory description
   external repository is (named *uh-iaas-apt*).
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
   snapshotting.
+* **gem**: Local Ruby Gem distribution. No metadata, versioning, mirroring or
+  snapshotting.
 * **ports**: For FreeBSD packages. No metadata, versioning, mirroring or
   snapshotting.
 
@@ -193,6 +195,30 @@ Client configuration (example)
 Example of client configuration in ``/etc/apt/sources.list`` etc::
 
   deb [trusted=yes] https://download.iaas.uio.no/uh-iaas/prod/uh-iaas-apt wheezy main
+
+
+Ruby Gem repository
+-------------------
+
+**Directory name**: ``gem``
+
+Gems which are locally produced or adapted might be installed into this
+repository. The gems might then be installed through the 'sensu_gem* puppet
+provider or using the `--source` parameter for *gem install*.
+
+
+Steps to import gems
+````````````````````
+
+- upload package into the `gems` subdirectory
+- remove all files named '\*specs\*'  (should be 6 all in all)
+- remove the `quick` subdirecory recursively
+- run as the `iaas` user:
+  *gem generate_index --update --directory .*
+  (ignoring errors)
+
+
+For upload procedure, see below.
 
 
 Standalone file archive
@@ -378,7 +404,7 @@ Publicizing procedure
 Normal (automatic)
 ``````````````````
 
-**rpm**:
+**rpm** and **gem**:
   Files placed inside this location is instantly accessible, provided correct
   SELinux labeling. No snapshotting provided!
 
@@ -415,7 +441,7 @@ Normal (automatic)
 Manual routine for instant publicizing
 ``````````````````````````````````````
 
-**rpm** and **ports**:
+**rpm**, **gem**  and **ports**:
   Nothing required!
 
 **yumrepo** and **aptrepo**:
