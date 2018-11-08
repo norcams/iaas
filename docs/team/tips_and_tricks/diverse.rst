@@ -48,3 +48,15 @@ Følgende rutine kjøres på relevant login-node:
    Distribuerer den genererte nøkkelen til relevante identity-noder og
    importerer den inn i GPG.
 
+
+Utvide sensu-plugins-himlar
+---------------------------
+
+1. git clone git@github.com:norcams/sensu-plugins-himlar.git
+2. legg til/endre filer etter behov
+3. oppdater *lib/sensu-plugins-himlar/version.rb* (versjon)
+4. tilpass ev. *sensu-plugins-himlar.gemspec*
+5. kjør `gem build sensu-plugins-himlar.gemspec`
+6. last opp resulterende *gem*-pakke til repository-serveren som beskrevet
+   i dokumentasjonen rundt den
+7. sjekk inn og push til git-repo
