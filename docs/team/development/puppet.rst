@@ -28,3 +28,14 @@ Profile
 * location hieradata override should always be done in the same module/role
   file as in the common version of module/role
 * module hieradata should be grouped by module classes
+
+Hieradata
+=========
+
+* global hiera variables referenced in other hiera files should have generic
+  names and never full class names (e.g. :file:`openstack_version` and not
+  :file:`cinder::db::mysql::password`)
+
+* profile hashes that needs to be merged should use the same naming as autoloaded
+  input class variables (e.g. :file:`profile::openstack::designate::bind_servers`)
+  
