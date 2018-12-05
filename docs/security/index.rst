@@ -4,6 +4,9 @@ Security
 
 .. _OpenStack Security Guide: http://docs.openstack.org/security-guide/
 
+.. WARNING::
+   This document is currently under review/construction.
+
 This document is an attempt to write up all the security measures that
 can, will or should be implemented. The basis is the `OpenStack
 Security Guide`_ on openstack.org. We use the sections in the security

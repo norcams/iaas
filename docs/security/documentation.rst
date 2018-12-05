@@ -10,13 +10,15 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | Low                 |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/4)        |
+| **Implemented percent** | **50%** (2/4)       |
 +-------------------------+---------------------+
 
 System Inventory
 ----------------
 
 .. _OpenStack Security Guide\: System documentation: http://docs.openstack.org/security-guide/documentation.html
+.. _Physical hardware: ../design/physical-hardware.html
+.. _Virtual machines: ../design/virtual-machines.html
 
 From `OpenStack Security Guide\: System documentation`_:
 
@@ -36,11 +38,13 @@ institution. Except for networking interface and physical hardware
 management, there are no dependencies on the institutions. Links to
 infrastructure documentation:
 
-``[----]`` **Hardware inventory**
-  FIXME
+``[PASS]`` **Hardware inventory**
+  A high-level view of the hardware inventory is outlined in the
+  document `Physical hardware`_.
 
-``[----]`` **Software inventory**
-  FIXME
+``[PASS]`` **Software inventory**
+  A high-level view of the software inventory is outlined in the
+  document `Virtual machines`_.
 
 ``[----]`` **Network topology**
   FIXME

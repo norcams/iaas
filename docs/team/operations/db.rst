@@ -31,8 +31,23 @@ From bgo-login-01::
   systemctl stop garbd
   systemctl start garbd
 
+Resetting the Quorum
+--------------------
+
+If one of the nodes in the cluster have :file:`wsrep_cluster_status` non-Primary
+we will need to reset the quorum. On the node you will make the new master run
+this in mysql::
+
+  SET GLOBAL wsrep_provider_options='pc.bootstrap=YES';
+
+Read more on how to fix this:
+
+http://galeracluster.com/documentation-webpages/quorumreset.html
+
+
 Bootstrap cluster
 -----------------
+
 You will need to bootstrap the cluster if systemctl start mysqld fails on bgo-db-01
 for some reason.
 

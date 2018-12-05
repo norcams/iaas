@@ -2,6 +2,9 @@
 Node overview
 =============
 
+.. WARNING::
+   This page is OBSOLETE
+
 **node = a virtual machine running on a physical controller box with libvirt**
 
 This overview shows the different nodes, which network the nodes have access to

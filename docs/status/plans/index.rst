@@ -16,7 +16,8 @@ gjennomført med mindre noe annet går frem av dokumentet.
     projects
     documentation
     dns
-    osstorage
+    compute
+    gpu
     telemetry
 
 Arkiv

@@ -10,6 +10,10 @@ To use `ansible <ansible/index.html>`_ to deployment::
   cd $ANSIBLE
   bin/deploy.sh <loc>
 
+.. CAUTION::
+  Sometimes the r10k used in :file:`provision/puppetmodules.sh` will not deploy
+  a new version of a puppet module. Check deployed module version in
+  :file:`/etc/puppetlabs/code/modules/<modulename>/metadata.json`
 
 Manual deployment
 =================
@@ -32,22 +36,31 @@ Hieradata and profile
 Puppet modules
 --------------
 
-Active puppet modules reside in `/etc/puppet/modules`. For minor changes in
-`Puppetfile` this should update the active modules from source:
+Active puppet modules reside in `/etc/puppetlabs/code/modules`. For minor
+changes in `Puppetfile` this should update the active modules from source:
 
 .. code:: bash
 
   cd /opt/himlar
   HIMLAR_PUPPETFILE=deploy provision/puppetmodules.sh
 
+To rebuild a module from source:
+
+.. code:: bash
+
+    rm -Rf /etc/puppetlabs/code/modules/<modulename>
+    cd /opt/himlar
+    HIMLAR_PUPPETFILE=deploy provision/puppetmodules.sh
+
 To rebuild all modules from source:
 
 .. code:: bash
 
-  rm -Rf /etc/puppet/modules
+  rm -Rf /etc/puppetlabs/code/modules/*
   cd /opt/himlar
   provision/puppetmodules.sh
-  apachectl graceful
+
+
 
 
 Secrets

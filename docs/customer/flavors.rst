@@ -43,6 +43,26 @@ m2.4xlarge   16    64        20
 m2.8xlarge   32    128       20
 =========== ==== ========== ===== =====
 
+win
+===
+
+win er en flavor type med mer disk en m1 og er kun ment for å kjøre Windows.
+Alle instanser av denne typen vil også kjøre på compute noder som er lisensiert
+med Mircosoft Datacenter lisens. 
+
+Denne skal kun brukes til windows workloads.
+
+=========== ==== ========== ===== =====
+Navn        vCPU RAM (GiB)  Disk  Pris
+=========== ==== ========== ===== =====
+win.small    1     2         40
+win.medium   1     4         40
+win.large    2     8         60
+win.xlarge   4     16        80
+win.2xlarge  8     32        80
+win.4xlarge  16    64        80
+=========== ==== ========== ===== =====
+
 d1
 ==
 
