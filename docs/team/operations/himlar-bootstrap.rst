@@ -1,4 +1,4 @@
-How to boostrap Himlar
+How to bootstrap Himlar
 ======================
 
 This document describes the procedure to initialize a new environment from a
@@ -77,7 +77,7 @@ Procedure
 
    (**sudo**) **ssh iaas@$loc-controller-01**
 
-#. Run puppet in boostrap mode:
+#. Run puppet in bootstrap mode:
 
    **bash /root/puppet_bootstrap.sh**
 
@@ -110,7 +110,7 @@ Procedure
       **ssh iaas@$loc-admin-01...**.
 
 #. When controller node installation is complete the firewall can be restored:
-
+t
    **iptables -D INPUT 1** repeated until all newly inserted rules are removed.
    Check with **iptables -L -n**
 
@@ -118,6 +118,14 @@ Procedure
    the install log: */root/install.post.log*
 
 #. ensure the system time is correct
+
+#. Put the following in hieradata/<loc>/roles/admin.yaml
+
+   **profile::network::services::manage_dns_records: false**
+
+   to avoid a bunch of connection timeouts to the ns node which we haven't
+   installed yet. (You can disable nsupdate on single puppetruns by setting
+   the environment variable FACTER_DISABLE_NSUPDATE=1)
 
 #. Distribute relevant *rndc.key*:
 
