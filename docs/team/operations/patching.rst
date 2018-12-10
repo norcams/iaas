@@ -2,7 +2,7 @@
 Patching
 ========
 
-Last changed: 2018-08-09
+Last changed: 2018-12-07
 
 Update repo
 ============
@@ -14,12 +14,13 @@ upgrade. But this is usually the repo we update:
 * centos-extras
 * centos-updates
 * centos-qemu-ev
-* ceph-jewel
-* ceph-luminous
+* ceph-mimic
 * epel
 * mariadb
-* rdo-ocata
 * rdo-pike
+* rdo-queens
+* sensu
+* puppetlabs-PC1
 
 .. IMPORTANT::
    Do **NOT** update :file:`calico22` without extra planned testing og
