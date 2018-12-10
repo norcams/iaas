@@ -2,7 +2,7 @@
 Navnekonvensjon
 ===============
 
-Sist endret: 2017-03-07
+Sist endret: 2018-11-30
 
 .. WARNING::
    Under arbeid.
@@ -14,26 +14,25 @@ Her følger en oversikt over hvilke navn brukes til hva og hva som menes.
 Overordnet
 ==========
 
-Trenger navn på team, produkt (intern) og tjeneste (ekstern).
-
 Team
 ----
 
-Hva kaller vi oss selv vi som jobber med å sette opp en sektor intern IaaS?
-Forslag **norcams**
+Teamet opererer under navnet **norcams**, som også er vårt navnrom på Github.
 
 Produkt
 -------
 
-Vi har valgt å navngi vår versjon av en Openstack installasjon **himlar**
-(flertall av himmel på nynorsk). Dette navnet blir brukt på git-repoet som
-vi bruker for å installere en lokasjon av vår Openstack.
+Vi har valgt å navngi Openstack-installasjonen **himlar** (flertall av himmel
+på nynorsk). Dette navnet blir brukt på git-repoet for
+konfigurajonshåndteringskoden, og andre repoer, verktøy etc som er relatert
+til installasjonen (f.eks. himlarcli).
 
 Tjeneste
 --------
 
-Vi trenger et navn på tjenesten vi selger til andre organisasjoner i UH-sektoren
-og våre sluttbrukere. Inntil man har noe bedre er det navnet **UH-IaaS**.
+Vi trenger et navn på tjenesten vi selger til andre organisasjoner i
+UH-sektoren og våre sluttbrukere. For øyeblikket kaller vi tjenesten
+**UH-IaaS**. Vi vurderer å skifte dette navnet til UniSky.
 
 Lokasjoner
 ----------
