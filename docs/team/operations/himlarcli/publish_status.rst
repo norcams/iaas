@@ -12,6 +12,19 @@ E.G::
   ./publish_status.py -h
   ./publish_status.py important -h
   ./publish_status.py info -h
+  ./publish_status.py event -h
+
+There are currently three commands:
+
+* **important** will publish to Slack, Twitter and the status database displayed on
+  status.uh-iaas.no. Use for important messages about events that will directly
+  or indirectly affect users, like planned outages.  
+* **info** will publish to Twitter and status database. Use for informal messages,
+  of general interest, like if there's a new service or image available. 
+* **event** will publish to the event database, which is mostly intended for 
+  internal usage. Use for technical details about events that affected
+  availability, stability, user experience etc. Publically available via API but
+  not displayed on our status pages. 
 
 Example usage
 =============
