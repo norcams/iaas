@@ -3,19 +3,18 @@ Status
 ======
 
 Disse sidene vil inneholde informasjon relatert til samarbeid og prosjekter
-rundt UH-IaaS (UH-sektorens interne IaaS).
+rundt UH-IaaS.
 
-UH-IaaS er et samarbeid mellom UiO og UiB om å drifte en sektor intern IaaS
-basert på `OpenStack <https://www.openstack.org>`_. Det står hardware i USIT og
-UiB sine egne serverrom, og disse utgjør i dag UH-IaaS sine to separate regioner
-(felles IDP, mens resten er separat).
+UH-IaaS er et samarbeid mellom UiO og UiB om å drifte en sektorintern IaaS
+basert på `OpenStack <https://www.openstack.org>`_. All programvare og data
+befinner seg på dedikert hardware i USIT og UiB sine egne serverrom, og disse
+utgjør i dag UH-IaaS sine to separate regioner (felles IDP, mens resten er
+separat).
 
-Vi har et felles driftsteam med deltakere fra både UiO og UiB, og jobber
-også sammen med `UH-sky <https://www.uninett.no/skytjenester>`_
-(UNINETT sitt skyprogram) om å promotere og videreutvikle tjenesten.
+Vi har et felles driftsteam med deltakere fra både UiO og UiB.
 
 Planen er å kunne tilby UH-IaaS til hele sektoren. Mer om hvordan man tar
-den i bruk kan finnes her https://www.uninett.no/uh-iaas
+tjenesten i bruk finnes på http://www.uh-iaas.no
 
 .. toctree::
     :maxdepth: 1
