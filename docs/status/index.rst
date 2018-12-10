@@ -24,6 +24,7 @@ den i bruk kan finnes her https://www.uninett.no/uh-iaas
     call
     names
     tracking
+    history
     reports/index
     plans/index
     archive/index
