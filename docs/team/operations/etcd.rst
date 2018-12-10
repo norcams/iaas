@@ -41,6 +41,55 @@ member]' **which is supposed to fail**. This task runs etcd in the foreground
 asynchronously, which is needed for bootstrapping, and exits after 30 seconds.
 Then it runs Puppet, which will start etcd as a systemd service.
 
+Expanding from a single-node cluster
+------------------------------------
+
+The above playbook will bring back a reinstalled node into an already existing
+multi-node cluster, however, expanding from a single-node cluster into a
+multi-node one requires a slightly different procedure.
+
+First, the initial-cluster parameter must contain all the nodes present when
+bootstrapping, This is configured by Puppet, including the script we use for
+bootstrapping. Expand the cluster node by node; starting with the initial
+single node cluster, add a second node in the configuration, then use the
+Ansible playbook called expand_etcd_cluster::
+
+  sudo ansible-playbook -e 'member=bgo-network-02 manage_from=bgo-network-01 member_ip=172.18.0.72' lib/expand_etcd_cluster.yaml
+
+We need to provide the IP address of the new member since we cannot fetch it
+from etcdctl. 
+
+If successful, all tasks should run without errors **except** 'TASK [Bootstrap
+member]' **which is supposed to fail**. This task runs etcd in the foreground
+asynchronously, which is needed for bootstrapping, and exits after 30 seconds.
+Then it runs Puppet, which will start etcd as a systemd service.
+
+Check the etcd cluster by running the following command on one of the nodes::
+
+  etcdctl cluster-health
+
+which should report both nodes being healthy.
+
+Then proceed with the next node.
+
+Fix compute nodes after etcd outage
+===================================
+
+If the etcd cluster running on the network nodes has been unresponsive for an
+extended period of time, the following services need to be restarted on
+compute, after verifying that the cluster is healthy::
+
+  etcd
+  etcd-grpc-proxy
+  calico-dhcp-agent
+  calico-felix
+  openstack-nova-compute
+  openstack-nova-metadata-api  
+
+We have an Ansible playbook for this task::
+
+  sudo ansible-playbook -e 'myhosts=bgo-compute' lib/restart_etcd_compute.yaml <- Fix!
+
 Manually
 ========
 
