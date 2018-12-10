@@ -11,7 +11,7 @@ Deltakere
 
 * Tor Lædre - UiB (100%)
 
-* Mikal Dalsgard - UiO (60%)
+* Mikael Dalsgard - UiO (60%)
 
 * Trond Hasle Amundsen - UiO (40%)
 

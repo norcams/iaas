@@ -27,14 +27,14 @@ UH-intern IaaS (UH-IaaS MK1)
 **Periode: 2013-2015**
 
 **Personell:**
-Jan Ivar Beddari (UiO/UiB), Mikal Dalsgard (UiO), Tor Lædre (UiB),
+Jan Ivar Beddari (UiO/UiB), Mikael Dalsgard (UiO), Tor Lædre (UiB),
 Erlend Midttun (NTNU), Hege Trosvik (UiO)
 
 Interessen for IaaS var økende i sektoren og flere, deriblant UiB, startet å se
 på Openstack som et mulig teknologivalg når det gjaldt å bygge en IaaS.
 
 21. november 2013 ble det avholdt en IaaS workshop hvor deltakere fra UNINETT,
-UiO, NTNU, UiT, UiB og UiA (?) deltok. Det ble der landet på at vi ønsket en
+UiO, NTNU, UiT og UiB deltok. Det ble der landet på at vi ønsket en
 community IaaS for sektoren som bør bygges separat, felles og i samarbeid.
 
 Det var et ønske om å danne en arbeidsgruppe i sektoren med personer som kan
