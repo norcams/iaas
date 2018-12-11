@@ -48,9 +48,9 @@ Slack
 Vi har også et eget team på https://uhps.slack.com. Her har vi følgende
 kanaler:
 
-* **#team** (privat): brukes kun av team-medlemmer som hovedkanal for chat mens
-  man jobber. Trello poster også oppdateringer her.  Forventes at alle deltar
-  her når de jobber med UH-IaaS.
+* **#team** (privat): brukes kun av team-medlemmer som hovedkanal for chat.
+  Trello poster også oppdateringer her. Det forventes at alle deltar her når
+  de jobber med UH-IaaS.
 
 * **#iaas** (åpen): brukes til å snakke direkte med sluttbrukere. Forventes
   at alle deltar her når de jobber med UH-IaaS.
@@ -61,10 +61,10 @@ kanaler:
 * **#git** (åpen): commits til de viktigste repoene under norcams på Github
   publiseres her.
 
-* **#imagebuilder** (åpen): brukes til å diskutere bruken av vårt egetutviklede 
-  verktøy imagebuilder til å bygge images med og for UH-IaaS. Ble opprettet 
+* **#imagebuilder** (åpen): brukes til å diskutere bruken av vårt egenutviklede
+  verktøy imagebuilder til å bygge images med og for UH-IaaS. Ble opprettet
   spesielt for å være et kontaktpunkt mellom UH-IaaS-teamet og Windows-driftere
-  for bygging av Windows-images til UH-IaaS.  
+  for bygging av Windows-images.
 
 IRC
 ---

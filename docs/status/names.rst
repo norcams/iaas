@@ -17,7 +17,7 @@ Overordnet
 Team
 ----
 
-Teamet opererer under navnet **norcams**, som også er vårt navnrom på Github.
+Teamet opererer under navnet **norcams**, som også er vårt navnerom på Github.
 
 Produkt
 -------
