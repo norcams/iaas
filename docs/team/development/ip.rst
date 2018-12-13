@@ -107,6 +107,7 @@ access-03         eth1  trp   x.x.x.58
 console-01        eth1  trp   x.x.x.61
 console-02        eth1  trp   x.x.x.62
 console-03        eth1  trp   x.x.x.63
+coordinator-01    eth1  trp   x.x.x.64
 novactrl-01       eth1  trp   x.x.x.66
 novactrl-02       eth1  trp   x.x.x.67
 novactrl-03       eth1  trp   x.x.x.68
