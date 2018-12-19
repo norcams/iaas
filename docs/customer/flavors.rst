@@ -17,6 +17,8 @@ m1
 m1 er tenkt som en general purpose type av flavors som alle prosjekter har
 tilgang til.
 
+Ratio: 1 til 4 (vcpu til ram)
+
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
@@ -35,12 +37,13 @@ m1 dekke. Denne vil kun være tilgjengelig for prosjekter som har bestilt
 tilgang til m2. Alle som eksplisitt ber om økt flavor som passer inn i denne
 gruppen kan få dette.
 
+Ratio: 1 til 4 (vcpu til ram)
+
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
 m2.2xlarge    8    32        20
 m2.4xlarge   16    64        20
-m2.8xlarge   32    128       20
 =========== ==== ========== ===== =====
 
 win
@@ -48,9 +51,11 @@ win
 
 win er en flavor type med mer disk en m1 og er kun ment for å kjøre Windows.
 Alle instanser av denne typen vil også kjøre på compute noder som er lisensiert
-med Mircosoft Datacenter lisens. 
+med Mircosoft Datacenter lisens.
 
 Denne skal kun brukes til windows workloads.
+
+Ratio: 1 til 4 (vcpu til ram)
 
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
@@ -66,12 +71,16 @@ win.4xlarge  16    64        80
 d1
 ==
 
+Ratio: 1 til 4 (vcpu til ram)
+
 d1 er en flavor type med mer disk enn m1. Denne vil kreves for å
 kunne kjøre Windows og vil kun være tilgjengelig for prosjekter som har bestilt
 tilgang til d1.
 
 Vær restriktiv i forhold til hvem som får tildelt tilgang til flavors i denne
 gruppen!
+
+Ratio: 1 til 4 (vcpu til ram)
 
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
@@ -88,6 +97,8 @@ c1
 ==
 c1 en er flavor type for dem som trenger mer vCPU enn m1.
 
+Ratio: 1 til 2 (vcpu til ram)
+
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
 =========== ==== ========== ===== =====
@@ -96,12 +107,13 @@ c1.large     2     4         20
 c1.xlarge    4     8         20
 c1.2xlarge   8     16        20
 c1.4xlarge   16    32        20
-c1.8xlarge   32    64        20
 =========== ==== ========== ===== =====
 
 r1
 ==
 r1 er tenkt som en maskin med mer RAM som m1 og c1 dekker.
+
+Ratio: 1 til 8 (vcpu til ram)
 
 =========== ==== ========== ===== =====
 Navn        vCPU RAM (GiB)  Disk  Pris
