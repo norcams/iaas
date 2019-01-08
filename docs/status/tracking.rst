@@ -2,7 +2,7 @@
 Kontaktpunkter
 ==============
 
-Sist endret: 2017-03-06
+Sist endret: 2018-11-30
 
 Her er oversikten over alle faste møteflater og kontaktpunkter for teamet
 og andre som jobber mot teamet.
@@ -15,7 +15,7 @@ Møter
 Morgenmøte
 ----------
 
-Hver morgen kl 09:30 til 09:40 avholdes det et kort statusmøte. Agenda for
+Hver morgen kl 09:30 til 09:45 avholdes det et kort statusmøte. Agenda for
 møte er en kort oppsummering fra hver enkelt. Dette kan innehold hva som
 har skjedd siden sist, hva er planen videre og eventuelle utfordringer man
 trenger hjelp til. Dersom det er uløste saker i RT kan disse også
@@ -42,31 +42,42 @@ vi prøver å rullere på om samlingen avholdes ved UiO eller UiB.
 Kommunikasjon
 =============
 
-IRC
----
-
-Vi bruker **#uh-sky** (ikke #uh-iaas??) på https://freenode.org som
-hovedkanal for chat mens man jobber. Når man jobber med UH-IaaS så forventes
-det at man deltar her. Vi logger også viktige github-repo til denne kanalen.
-
-**NB!** Husk at alt som skrives her er offentlig og logges til
-https://botbot.me/freenode/uh-sky/
-
 Slack
 -----
 
 Vi har også et eget team på https://uhps.slack.com. Her har vi følgende
 kanaler:
 
+* **#team** (privat): brukes kun av team-medlemmer som hovedkanal for chat.
+  Trello poster også oppdateringer her. Det forventes at alle deltar her når
+  de jobber med UH-IaaS.
+
 * **#iaas** (åpen): brukes til å snakke direkte med sluttbrukere. Forventes
   at alle deltar her når de jobber med UH-IaaS.
 
-* **#team** (privat): brukes kun av team medlemmer for emner som ikke passer
-  på offentlig IRC. Trello poster også oppdateringer her.
-  Forventes at alle deltar her når de jobber med UH-IaaS.
-
 * **#vakt** (privat): brukes av sensu til å varsle om avvik. Frivillig å
   delta, men det vil kreves at den som har vakt følger med her.
+
+* **#git** (åpen): commits til de viktigste repoene under norcams på Github
+  publiseres her.
+
+* **#imagebuilder** (åpen): brukes til å diskutere bruken av vårt egenutviklede
+  verktøy imagebuilder til å bygge images med og for UH-IaaS. Ble opprettet
+  spesielt for å være et kontaktpunkt mellom UH-IaaS-teamet og Windows-driftere
+  for bygging av Windows-images.
+
+IRC
+---
+
+**#uh-sky** på freenode var tidligere teamets hovedkanal for chat, men dette er
+tenkt avviklet da vi i hovedsak har flyttet til Slack. Kan fremdeles brukes,
+men det er ikke obligatorisk for teamdeltagere å være pålogget. Viktige
+diskusjoner og beskjeder som angår hele teamet skal foregå på #team-kanalen på
+Slack Vi logger også github-repo til denne kanalen, men denne loggen skal
+flyttes til #git på Slack.
+
+**NB!** Tidligere ble kanalen logget til https://botbot.me/freenode/uh-sky/
+men denne tjenesten er avviklet f.o.m. november 2018
 
 Epost
 -----
