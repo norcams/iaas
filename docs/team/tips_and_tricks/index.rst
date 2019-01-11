@@ -6,6 +6,7 @@ Tips and tricks
     :glob:
     :maxdepth: 2
 
+    branding
     create-project
     vagrant
     test02-external-conn
