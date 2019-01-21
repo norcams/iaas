@@ -116,5 +116,10 @@ The following domains should be blacklisted in production:
 |                  |                                          |forbidden, but subdomains|
 |                  |                                          |are allowed              |
 +------------------+------------------------------------------+-------------------------+
+| uiocloud.no      | ``^uiocloud\.no\.$``                     |Domain belonging to      |
+|                  |                                          |UiO. The domain itself is|
+|                  |                                          |forbidden, but subdomains|
+|                  |                                          |are allowed              |
++------------------+------------------------------------------+-------------------------+
 
 
