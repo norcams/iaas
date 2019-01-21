@@ -122,4 +122,11 @@ The following domains should be blacklisted in production:
 |                  |                                          |are allowed              |
 +------------------+------------------------------------------+-------------------------+
 
+These are added with these commands::
+
+  ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uh-iaas\.no\.$' --comment 'Official UH-IaaS domain, managed outside of Openstack Designate'
+  ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uhdc\.no\.$' --comment 'Official UH-IaaS domain, managed outside of Openstack Designate'                                                                                                                        
+  ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uio\.no\.$' --comment 'Domain belonging to UiO. Instances in UH-IaaS are not allowed to have UiO addresses'
+  ./dns.py blacklist_create --pattern '^uib\.no\.$' --comment 'Domain belonging to UiB. The domain itself is forbidden, but subdomains are allowed'
+  ./dns.py blacklist_create --pattern '^uiocloud\.no\.$' --comment 'Domain belonging to UiO. The domain itself is forbidden, but subdomains are allowed'               
 
