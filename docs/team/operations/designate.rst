@@ -121,6 +121,21 @@ The following domains should be blacklisted in production:
 |                  |                                          |forbidden, but subdomains|
 |                  |                                          |are allowed              |
 +------------------+------------------------------------------+-------------------------+
+| uninett.no       | ``^([A-Za-z0-9_\-]+\.)*uninett\.no\.$``  |Domain belonging to      |
+|                  |                                          |Uninett. Reserved for    |
+|                  |                                          |possible future use      |
+|                  |                                          |                         |
++------------------+------------------------------------------+-------------------------+
+| ntnu.no          | ``^([A-Za-z0-9_\-]+\.)*ntnu\.no\.$``     |Domain belonging to      |
+|                  |                                          |NTNU. Reserved for       |
+|                  |                                          |possible future use      |
+|                  |                                          |                         |
++------------------+------------------------------------------+-------------------------+
+| uia.no           | ``^([A-Za-z0-9_\-]+\.)*uia\.no\.$``      |Domain belonging to      |
+|                  |                                          |UiA. Reserved for        |
+|                  |                                          |possible future use      |
+|                  |                                          |                         |
++------------------+------------------------------------------+-------------------------+
 
 These are added with these commands::
 
@@ -129,4 +144,10 @@ These are added with these commands::
   ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uio\.no\.$' --comment 'Domain belonging to UiO. Instances in UH-IaaS are not allowed to have UiO addresses'
   ./dns.py blacklist_create --pattern '^uib\.no\.$' --comment 'Domain belonging to UiB. The domain itself is forbidden, but subdomains are allowed'
   ./dns.py blacklist_create --pattern '^uiocloud\.no\.$' --comment 'Domain belonging to UiO. The domain itself is forbidden, but subdomains are allowed'               
+  ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uninett\.no\.$' --comment 'Domain belonging to Uninett. Reserved for possible future use'
+  ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*ntnu\.no\.$' --comment 'Domain belonging to NTNU. Reserved for possible future use'
+  ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uia\.no\.$' --comment 'Domain belonging to UiA. Reserved for possible future use'
+
+
+
 
