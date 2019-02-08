@@ -27,3 +27,4 @@ tjenesten i bruk finnes på http://www.uh-iaas.no
     reports/index
     plans/index
     archive/index
+    hardware
