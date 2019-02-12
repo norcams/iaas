@@ -123,9 +123,12 @@ identity-03       eth1  trp   x.x.x.83
 api-01            eth1  trp   x.x.x.86
 api-02            eth1  trp   x.x.x.87
 api-03            eth1  trp   x.x.x.88
+rgw-01            eth1  trp   x.x.x.90
 cephmon-01        eth1  trp   x.x.x.91
 cephmon-02        eth1  trp   x.x.x.92
 cephmon-03        eth1  trp   x.x.x.93
+rgw-02            eth1  trp   x.x.x.94
+rgw-03            eth1  trp   x.x.x.95
 metric-01         eth1  trp   x.x.x.96
 metric-02         eth1  trp   x.x.x.97
 metric-03         eth1  trp   x.x.x.98
