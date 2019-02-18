@@ -60,3 +60,12 @@ Utvide sensu-plugins-himlar
 6. last opp resulterende *gem*-pakke til repository-serveren som beskrevet
    i dokumentasjonen rundt den
 7. sjekk inn og push til git-repo
+
+Avassosiere noder i Foreman
+---------------------------
+
+Noder i Foreman blir ikke automatisk blir avassosiert med en compute-profil
+når du sletter compute-profilen, og dette resulterer i en ødelagt database.
+Løsningen, inntil bug'en er fikset, er dette::
+
+  for h in `hammer --csv host list --search 'facts.is_virtual == true' | cut -d, -f1 | tail -n +2`; do hammer host disassociate --id $h; done
