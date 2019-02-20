@@ -10,7 +10,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | Medium              |
 +-------------------------+---------------------+
-| **Implemented percent** | **15%** (3/19)      |
+| **Implemented percent** | **26%** (5/19)      |
 +-------------------------+---------------------+
 
 Continuous systems management
@@ -31,36 +31,37 @@ Vulnerability management
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _OpenStack Announce mailing list: http://lists.openstack.org/cgi-bin/mailman/listinfo/openstack-announce
+.. _Patching: ../team/operations/patching.html
 
-Updates are announced on the `OpenStack Announce mailing list`_.
+
+  *Updates are announced on the `OpenStack Announce mailing list`_. The
+  security notifications are also posted through the downstream
+  packages, for example, through Linux distributions that you may be
+  subscribed to as part of the package updates.*
 
 FIXME: Are we subscribed to this list?
 
 FIXME: Are we subscribed to similar list pertaining to the repo/distro
 used?
 
-``[----]`` **Triage**
+``[PASS]`` **Triage**
   When we are notified of a security update, this is discussed at the
   next morning meeting. We will then decide the impact of the update
   to our environment, and take proper action.
 
-  * FIXME: Make this a policy.
-
-``[----]`` **Testing the updates**
+``[PASS]`` **Testing the updates**
   We have test clouds in each location (currently OSL and BGO) which
   in most respects are identical to the production clouds. This allows
   for easy testing of updates.
 
-  * FIXME: Make this a policy.
-  * FIXME: OSL test cloud isn't ready yet.
-
-``[----]`` **Deploying the updates**
+``[PASS]`` **Deploying the updates**
   When testing is completed and the update is verified, and we are
   satisfied with any performance impact, stability, application impact
-  etc., the update is deployed in production. This is done
-  automatically via the following procedure:
+  etc., the update is deployed in production. This is done via the
+  following procedure:
 
-  * FIXME: Automatic update procedure?
+  * Patching_
+
 
 Configuration management
 ~~~~~~~~~~~~~~~~~~~~~~~~
