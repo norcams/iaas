@@ -17,8 +17,9 @@ System Inventory
 ----------------
 
 .. _OpenStack Security Guide\: System documentation: http://docs.openstack.org/security-guide/documentation.html
-.. _Physical hardware: ../design/physical-hardware.html
+.. _Physical hardware: ../design/physical-hardware.html#
 .. _Virtual machines: ../design/virtual-machines.html
+.. _Networking overview: ../design/physical-hardware.html#networking-overview
 
 From `OpenStack Security Guide\: System documentation`_:
 
@@ -46,8 +47,9 @@ infrastructure documentation:
   A high-level view of the software inventory is outlined in the
   document `Virtual machines`_.
 
-``[----]`` **Network topology**
-  FIXME
+``[PASS]`` **Network topology**
+  A high-level view of the network topology is outlined in the
+  document `Networking overview`_.
 
 ``[----]`` **Services, protocols and ports**
   FIXME
