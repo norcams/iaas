@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **19%** (3/16)      |
+| **Implemented percent** | **25%** (4/16)      |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Identity`_:
@@ -143,13 +143,13 @@ Service authorization
   * The negative implications for the user experience by implementing this
     is considered to outweight the extra security gained by this.
 
-``[DEFERRED]`` **Protect sensitive files**
+``[PASS]`` **Protect sensitive files**
   The cloud administrator should protect sensitive configuration files
   from unauthorized modification. This can be achieved with mandatory
   access control frameworks such as SELinux, including
   ``/etc/keystone/keystone.conf`` and ``X.509`` certificates.
 
-  * SELinux should be implemented
+  * SELinux is running in enforcing mode.
 
 
 Policies
@@ -184,7 +184,7 @@ Ref: `OpenStack Security Guide\: Identity - Tokens`_
   recommended expiry value should be set to a lower value that allows
   enough time for internal services to complete tasks.*
 
-``[FAILED]`` **Reduce token lifetime**
+``[FAIL]`` **Reduce token lifetime**
   We should consider reducing the token lifetime.
 
   * Currently the token expiration time is the default one hour. The
@@ -199,6 +199,7 @@ Checklist
 Ref: `OpenStack Security Guide\: Identity - Checklist`_
 
 See the above link for info about these checks.
+
 ``[FAIL]`` **Check-Identity-01: Is user/group ownership of config files set to keystone?**
   Yes/No?
          COMMENT: ownership set to `root:keystone`
