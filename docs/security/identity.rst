@@ -3,7 +3,7 @@
 Identity
 ========
 
-Last changed: |date|
+.. IMPORTANT:: **REVISION:** ``2019-02-21``
 
 .. contents::
 
@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **25%** (4/16)      |
+| **Implemented percent** | **25%** (5/17)      |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Identity`_:
@@ -150,6 +150,23 @@ Service authorization
   ``/etc/keystone/keystone.conf`` and ``X.509`` certificates.
 
   * SELinux is running in enforcing mode.
+
+
+Administrative users
+~~~~~~~~~~~~~~~~~~~~
+
+  *We recommend that admin users authenticate using Identity service
+  and an external authentication service that supports 2-factor
+  authentication, such as a certificate. This reduces the risk from
+  passwords that may be compromised. This recommendation is in
+  compliance with NIST 800-53 IA-2(1) guidance in the use of
+  multi-factor authentication for network access to privileged
+  accounts.*
+
+``[PASS]`` **Use 2-factor authentication for administrative access**
+  Administrative access is provided via a login service that requires
+  2-factor authentication.
+
 
 
 Policies
