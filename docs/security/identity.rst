@@ -3,7 +3,7 @@
 Identity
 ========
 
-.. IMPORTANT:: **REVISION:** ``2019-02-21``
+``REVISION 2019-02-21``
 
 .. contents::
 
