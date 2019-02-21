@@ -130,7 +130,7 @@ cephmon-object-02 eth1  trp   x.x.x.90
 cephmon-01        eth1  trp   x.x.x.91
 cephmon-02        eth1  trp   x.x.x.92
 cephmon-03        eth1  trp   x.x.x.93
-cephmon-object-02 eth1  trp   x.x.x.94
+cephmon-object-03 eth1  trp   x.x.x.94
 rgw-03            eth1  trp   x.x.x.95
 metric-01         eth1  trp   x.x.x.96
 metric-02         eth1  trp   x.x.x.97
