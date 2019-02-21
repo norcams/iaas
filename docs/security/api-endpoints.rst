@@ -10,7 +10,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **66%** (4/6)       |
+| **Implemented percent** | **100%** (6/6)      |
 +-------------------------+---------------------+
 
 .. _OpenStack Security Guide\: API endpoints: http://docs.openstack.org/security-guide/api-endpoints.html
@@ -103,17 +103,19 @@ From OpenStack Security Guide:
 
   * All service endpoint run on different virtual hosts.
 
-``[DEFERRED]`` **Network policy**
+``[PASS]`` **Network policy**
   We should pay special attention to API endpoints, as they typically
   bridge multiple security domains. Policies should be in place and
   documented, and we can use firewalls, SELinux, etc. to enforce proper
   compartmentalization in the network layer.
 
-  * FIXME: Implement and document this
+  * The API endpoints are protected via a load balancer and strict
+    firewalls. SELinux are running in enforced mode.
 
-``[DEFERRED]`` **Mandatory access controls**
+``[PASS]`` **Mandatory access controls**
   API endpoint processes should be as isolated from each other as
   possible. This should be enforced through Mandatory Access Controls
   (e.g. SELinux), not just Discretionary Access Controls.
 
-  * FIXME: API processes protected by SELinux
+  * SELinux is running in enforced mode on all nodes (virtual and
+    physical) that are involved in API endpoints.
