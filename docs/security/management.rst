@@ -39,11 +39,6 @@ Vulnerability management
   packages, for example, through Linux distributions that you may be
   subscribed to as part of the package updates.*
 
-FIXME: Are we subscribed to this list?
-
-FIXME: Are we subscribed to similar list pertaining to the repo/distro
-used?
-
 ``[PASS]`` **Triage**
   When we are notified of a security update, this is discussed at the
   next morning meeting. We will then decide the impact of the update
