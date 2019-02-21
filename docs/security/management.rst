@@ -10,7 +10,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | Medium              |
 +-------------------------+---------------------+
-| **Implemented percent** | **26%** (5/19)      |
+| **Implemented percent** | **32%** (7/19)      |
 +-------------------------+---------------------+
 
 Continuous systems management
@@ -66,10 +66,12 @@ used?
 Configuration management
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-FIXME: Describe automated configuration and deployment, or add links.
+Deployment of both physical and virtual nodes in UH-IaaS is done using
+Ansible playbooks, which are maintained on GitHub. The configuration
+managements is completely automated via Puppet. The Puppet code and
+hieradata is maintained on GitHub. All changes are tracked via Git.
 
-``[----]`` **changes**
-  FIXME: How are policy changes tracked?
+``[PASS]`` **changes**
 
 Secure backup and recovery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -119,14 +121,12 @@ cloud needs special attention.
 ``[PASS]`` **Node provisioning**
   We use PXE for provisioning, which is recommended. We also use a
   separate, isolated network within the management security domain for
-  provisioning. The provisioning process is handled by Foreman with
-  Puppet, and is documented here: FIXME
+  provisioning. The provisioning process is handled by Ansible.
 
-``[----]`` **Verified boot**
+``[FAIL]`` **Verified boot**
   It is recommended to use *secure boot* via TPM chip to boot the
-  infrastructure nodes in the cloud.
-
-  * FIXME: Consider secure boot
+  infrastructure nodes in the cloud. TPM adds unwanted complexity and
+  we don't use it.
 
 ``[----]`` **Node hardening**
   General hardening of the operating system is something that we need
@@ -186,11 +186,11 @@ From `OpenStack Security Guide\: Management - Management interfaces`_:
 Dashboard
 ~~~~~~~~~
 
-``[----]`` **Capabilities**
-  We should consider which capabilities the dashboard should offer to
-  customers and administrators.
-
-  * FIXME: Consider capabilities and document decisions
+``[PASS]`` **Capabilities**
+  The dashboard is configured via Puppet, and shows only capabilities
+  that are known to work properly. Buttons, menu items etc. that
+  doesn't work or provides capabilities that UH-IaaS doesn't offer are
+  disabled in the dashboard.
 
 ``[----]`` **Security considerations**
   There are a few things that need to be considered (from `OpenStack
