@@ -3,14 +3,14 @@
 Management
 ==========
 
-Last changed: |date|
+``REVISION 2019-02-21``
 
 .. contents::
 
 +-------------------------+---------------------+
 | **Impact**              | Medium              |
 +-------------------------+---------------------+
-| **Implemented percent** | **32%** (7/19)      |
+| **Implemented percent** | **64%** (11/17)     |
 +-------------------------+---------------------+
 
 Continuous systems management
@@ -34,7 +34,7 @@ Vulnerability management
 .. _Patching: ../team/operations/patching.html
 
 
-  *Updates are announced on the `OpenStack Announce mailing list`_. The
+  *Updates are announced on the* `OpenStack Announce mailing list`_. *The
   security notifications are also posted through the downstream
   packages, for example, through Linux distributions that you may be
   subscribed to as part of the package updates.*
@@ -86,8 +86,10 @@ Security auditing tools
 We should consider using SCAP_ or similar security auditing tools in
 combination with configuration management.
 
-``[----]`` **Decide whether or not to use security auditing tools**
-  FIXME: Need to decide
+``[FAIL]`` **Security auditing tools**
+  Security auditing tools such as SCAP adds complexity and
+  significant delays in the pipeline. Therefore, this is not a priority
+  at this time.
 
 
 Integrity life-cycle
@@ -123,11 +125,11 @@ cloud needs special attention.
   infrastructure nodes in the cloud. TPM adds unwanted complexity and
   we don't use it.
 
-``[----]`` **Node hardening**
-  General hardening of the operating system is something that we need
-  to address and document.
+``[PASS]`` **Node hardening**
+  We do general node hardening via a security baseline which we
+  maintain via Puppet. The security baseline is based on best practice
+  from the OS vendor, as well as our own experience.
 
-  * FIXME: Document hardening
 
 Runtime verification
 ~~~~~~~~~~~~~~~~~~~~
@@ -140,23 +142,23 @@ From OpenStack Security Guide:
   of these areas are different. By checking both, we achieve higher
   assurance that the system is operating as desired.*
 
-``[----]`` **Intrusion detection system**
-  There are a number of intrusion detection systems available. We need
-  to consider using one of them.
+``[FAIL]`` **Intrusion detection system**
+  At the moment we don't see the need to run an IDS system.
 
-  * FIXME: Consider IDS
 
 Server hardening
 ~~~~~~~~~~~~~~~~
 
 This mostly includes file integrity management.
 
-``[----]`` **File integrity management (FIM)**
+``[FAIL]`` **File integrity management (FIM)**
   We should consider a FIM tool to ensure that files such as sensitive
   system or application configuration files are no corrupted or
   changed to allow unauthorized access or malicious behaviour.
 
-  * FIXME: Consider FIM
+  * We don't run a specific FIM tool, but our configuration
+    management system (Puppet) functions as a watchdog for most
+    important files.
 
 
 Management interfaces
@@ -187,96 +189,118 @@ Dashboard
   doesn't work or provides capabilities that UH-IaaS doesn't offer are
   disabled in the dashboard.
 
-``[----]`` **Security considerations**
-  There are a few things that need to be considered (from `OpenStack
-  Security Guide`_):
+``[DEFERRED]`` **Security considerations**
+  There are a few things that need to be considered (from `OpenStack Security Guide`_):
 
   * The dashboard requires cookies and JavaScript to be enabled in the
     web browser.
-    - FIXME: Users should be warned according to EU law.
+
+    - **FIXME:** Users should be warned according to EU law.
+
   * The web server that hosts the dashboard should be configured for
     TLS to ensure data is encrypted.
-    - FIXME: Ensure TLS 1.2
+
+    - **FIXME:** Ensure TLS 1.2
+
   * Both the horizon web service and the OpenStack API it uses to
     communicate with the back end are susceptible to web attack
     vectors such as denial of service and must be monitored.
-    - FIXME: Monitoring
+
+    - **(pass)** We have monitoring in place
+
   * It is now possible (though there are numerous deployment/security
     implications) to upload an image file directly from a user’s hard
     disk to OpenStack Image service through the dashboard. For
     multi-gigabyte images it is still strongly recommended that the
     upload be done using the glance CLI.
-    - FIXME: Add limit to GUI uploading?
+
+    - **(pass)** Image uploading is done directly to Glance via a
+      redirect in dashboard.
+
   * Create and manage security groups through dashboard. The security
     groups allows L3-L4 packet filtering for security policies to
     protect virtual machines.
-    - FIXME: Maintain a set of default security groups
+
+    - **(pass)** The default security group blocks everything. Users
+      can edit security groups through the dashboard.
+
 
 OpenStack API
 ~~~~~~~~~~~~~
 
-``[----]`` **Capabilities**
-  We should consider which capabilities the OpenStack API should offer to
-  customers and administrators.
-
-  * FIXME: Consider capabilities and document decisions
-
-``[----]`` **Security considerations**
-  There are a few things that need to be considered (from `OpenStack
-  Security Guide`_):
+``[DEFERRED]`` **Security considerations**
+  There are a few things that need to be considered (from `OpenStack Security Guide`_):
 
   * The API service should be configured for TLS to ensure data is
     encrypted.
-    - FIXME: Ensure TLS 1.2
-  * As a web service, OpenStack API is susceptible to familiar web
-    site attack vectors such as denial of service attacks.
-    - FIXME: Monitoring
+
+    - **FIXME:** Ensure TLS 1.2
+ 
+ * As a web service, OpenStack API is susceptible to familiar web
+   site attack vectors such as denial of service attacks.
+
+    - **(pass)** We have monitoring in place
+
 
 Secure shell (SSH)
 ~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Host key fingerprints**
+``[N/A]`` **Host key fingerprints**
   Host key fingerprints should be stored in a secure and queryable
   location. One particularly convenient solution is DNS using SSHFP
   resource records as defined in RFC-4255. For this to be secure, it
   is necessary that DNSSEC be deployed.
 
-  * FIXME: Consider DNSSEC or other solutions
+  * Host keys are wiped periodically to avoid conflicts and ensure
+    that reinstalled hosts function correctly. SSH access is done
+    through a single entry point and host keys are not important.
+
 
 Management utilities
 ~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Security considerations**
-  There are a few things that need to be considered (from `OpenStack
-  Security Guide`_):
+``[PASS]`` **Security considerations**
+  There are a few things that need to be considered (from `OpenStack Security Guide`_):
 
   * The dedicated management utilities (\*-manage) in some cases use
     the direct database connection.
-    - FIXME: Don't use dedicated management utilities unless strictly
-      necessary
+
+    - **(pass)** We don't use dedicated management utilities unless
+      strictly necessary
+
   * Ensure that the .rc file which has your credential information is
     secured.
-    - FIXME: Document how this is accomplished
+
+    - **(pass)** Credential information is stored securely.
+
 
 Out-of-band management interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Security considerations**
-  There are a few things that need to be considered (from `OpenStack
-  Security Guide`_):
+``[PASS]`` **Security considerations**
+  There are a few things that need to be considered (from `OpenStack Security Guide`_):
 
   * Use strong passwords and safeguard them, or use client-side TLS
     authentication.
-    - FIXME: Ensure and document this
-  * ``[PASS]`` Ensure that the network interfaces are on their own
+
+    - **(pass)** We have strong passwords that are stored securely
+
+  * Ensure that the network interfaces are on their own
     private(management or a separate) network. Segregate management
     domains with firewalls or other network gear.
+
+    - **(pass)** OOB interfaces are on a private network
+
   * If you use a web interface to interact with the BMC/IPMI, always
     use the TLS interface, such as HTTPS or port 443. This TLS
     interface should NOT use self-signed certificates, as is often
     default, but should have trusted certificates using the correctly
     defined fully qualified domain names (FQDNs).
-    - FIXME: Use trusted CA
+
+    - **(n/a)** OOB interfaces are on a closed network and trusted CA
+      is not necessary.
+
   * Monitor the traffic on the management network. The anomalies might
     be easier to track than on the busier compute nodes.
-    - FIXME: Monitoring
+
+    - **(n/a)** Not necessary due to closed network.

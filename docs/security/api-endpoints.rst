@@ -3,14 +3,14 @@
 API endpoints
 =============
 
-Last changed: |date|
+``REVISION 2019-02-21``
 
 .. contents::
 
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **100%** (6/6)      |
+| **Implemented percent** | **85%** (6/7)       |
 +-------------------------+---------------------+
 
 .. _OpenStack Security Guide\: API endpoints: http://docs.openstack.org/security-guide/api-endpoints.html
@@ -87,6 +87,7 @@ From OpenStack Security Guide:
 
   * We are not using any non-standard middleware
 
+
 API endpoint process isolation and policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -101,7 +102,7 @@ From OpenStack Security Guide:
   Linux supports namespaces to assign processes into independent
   domains.
 
-  * All service endpoint run on different virtual hosts.
+  * All service backends run on different virtual hosts.
 
 ``[PASS]`` **Network policy**
   We should pay special attention to API endpoints, as they typically
@@ -119,3 +120,16 @@ From OpenStack Security Guide:
 
   * SELinux is running in enforced mode on all nodes (virtual and
     physical) that are involved in API endpoints.
+
+
+API endpoint rate-limiting
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From OpenStack Security Guide:
+
+  *Within OpenStack, it is recommended that all endpoints, especially
+   public, are provided with an extra layer of protection, by means of
+   either a rate-limiting proxy or web application firewall.*
+
+``[DEFERRED]`` **Rate-limiting on API endpoints**
+  FIXME: Add rate-limiting to HAProxy

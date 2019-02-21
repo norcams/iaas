@@ -12,7 +12,7 @@ Identity
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **25%** (5/17)      |
+| **Implemented percent** | **88%** (16/18)     |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Identity`_:
@@ -37,7 +37,7 @@ Ref: `OpenStack Security Guide\: Identity - Authentication`_
 Invalid login attempts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-``[DEFERRED]`` **Prevent or mitigate brute-force attacks**
+``[PASS]`` **Prevent or mitigate brute-force attacks**
   A pattern of repetitive failed login attempts is generally an
   indicator of brute-force attacks. This is important to us as ours is
   a public cloud. We need to figure out if our user authentication
@@ -46,28 +46,24 @@ Invalid login attempts
   policies around reviewing access control logs to identify and detect
   unauthorized attempts to access accounts.
 
-  * As it stands there are no preventive methods in place. Although
-    there are centralized logging so fra no methodical analyzis are
-    done on these.
-    Must consider setting up detection of brute-force attacks, but this
-    is not considered for the short term.
+  * Users are automatically banned from logging in after a number of
+    authentication requests.
 
 
 Multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[DEFERRED]`` **Multi-factor authentication for privileged accounts**
+``[PASS]`` **Multi-factor authentication for privileged accounts**
 
   We should employ multi-factor authentication for network access to
   privileged user accounts. This will provide insulation from brute
   force, social engineering, and both spear and mass phishing attacks
   that may compromise administrator passwords.
 
-  * There are no distinction on from where access to service accounts
-    is allowd. Some mechanism should be in place to stop attemtps to use
-    service accounts when not applicable. Multi-factor authentication
-    might be considered for this. Especially as the user names for service
-    accounts are well known.
+  * While authentication to service accounts is possible from the
+    "outside", administrative actions are not possible unless
+    connecting from the "inside". In order to access the "inside",
+    2-factor authentication is required.
 
 
 Authentication methods
@@ -77,20 +73,14 @@ Authentication methods
 
 Ref: `OpenStack Security Guide\: Identity - Authentication methods`_
 
-``[DEFERRED]`` **Document authentication policy requirements**
+``[N/A]`` **Document authentication policy requirements**
   We should document (or provide link to external documentation) the
   authentication policy requirements, such as password policy
   enforcement (password length, diversity, expiration etc.).
 
-  * There are currently no password policy enforced on service accounts.
-    
-    Regular users are set up after autentication through `Dataporten`. Their
+  * Regular users are set up after autentication through `Dataporten`. Their
     password are auto-generated and random, the logic used is currently only
     documented in code (github:nocams-himlar-db-prep).
-    
-    There should be a proper documentation and policy (enforcing) with regards
-    to passwords, especially when users themselves later on can generate their
-    own passwords.
 
 
 Authorization
@@ -108,21 +98,23 @@ Ref: `OpenStack Security Guide\: Identity - Authorization`_
   user’s group/roles and association to determine if access is allowed
   to the requested resource.*
 
+
 Establish formal access control policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Describe formal access control policies**
+``[N/A]`` **Describe formal access control policies**
   The policies should include the conditions and processes for
   creating, deleting, disabling, and enabling accounts, and for
   assigning privileges to the accounts.
 
-  * No policies in place for account creation of any kind 
+  * We use an external authentication point
 
-``[----]`` **Describe periodic review**
+``[DEFERRED]`` **Describe periodic review**
   We should periodically review the policies to ensure that the
   configuration is in compliance with approved policies.
 
-  * No policies -> no review process
+  * FIXME: Work in progress.
+
 
 Service authorization
 ~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +124,7 @@ Service authorization
   service to store authentication information. The "tempAuth" file
   method displays the password in plain text and should not be used.
 
-  * Object storage and Swift is not implemented. `tempAuth` is not used.
+  * ``tempAuth`` is not used.
 
 ``[FAIL]`` **Use client authentication for TLS**
   The Identity service supports client authentication for TLS which
@@ -176,7 +168,7 @@ Policies
 
 Ref: `OpenStack Security Guide\: Identity - Policies`_
 
-``[DEFERRED]`` **Describe policy configuration management**
+``[PASS]`` **Describe policy configuration management**
   Each OpenStack service defines the access policies for its resources
   in an associated policy file. A resource, for example, could be API
   access, the ability to attach to a volume, or to fire up
@@ -185,28 +177,9 @@ Ref: `OpenStack Security Guide\: Identity - Policies`_
   control policies do not unintentionally weaken the security of any
   resource.
 
-  * No policy in place. Currently running default.
+  * We are using default policies, with overrides to disable certain
+    capabilities.
 
-
-Tokens
-------
-
-.. _OpenStack Security Guide\: Identity - Tokens: http://docs.openstack.org/security-guide/identity/tokens.html
-
-Ref: `OpenStack Security Guide\: Identity - Tokens`_
-
-  *Once a user is authenticated a token is generated for authorization
-  and access to an OpenStack environment. A token can have a variable
-  life span; however the default value for expiry is one hour. The
-  recommended expiry value should be set to a lower value that allows
-  enough time for internal services to complete tasks.*
-
-``[FAIL]`` **Reduce token lifetime**
-  We should consider reducing the token lifetime.
-
-  * Currently the token expiration time is the default one hour. The
-    rationale is that this strikes a good balance between an acceptable
-    user experience and security.
 
 Checklist
 ---------
@@ -217,22 +190,26 @@ Ref: `OpenStack Security Guide\: Identity - Checklist`_
 
 See the above link for info about these checks.
 
-``[FAIL]`` **Check-Identity-01: Is user/group ownership of config files set to keystone?**
-  Yes/No?
-         COMMENT: ownership set to `root:keystone`
+``[PASS]`` **Check-Identity-01: Is user/group ownership of config files set to keystone?**
+  Ownership set to ``root:keystone`` or ``keystone:keystone``
 
 ``[PASS]`` **Check-Identity-02: Are strict permissions set for Identity configuration files?**
-  Yes/No?
-          COMMENT: Not all files in check list exists, the rest is OK
+  Not all files in check list exists, the rest is OK
 
-``[FAIL]`` **Check-Identity-03: is TLS enabled for Identity?**
-  Yes/No?
+``[N/A]`` **Check-Identity-03: is TLS enabled for Identity?**
+  Endpoint runs on the load balancer
 
-``[FAIL]`` **Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?**
-  Yes/No?
+``[PASS]`` **Check-Identity-04: Does Identity use strong hashing algorithms for PKI tokens?**
+  Yes, set to ``bcrypt``
 
 ``[PASS]`` **Check-Identity-05: Is max_request_body_size set to default (114688)?**
-  Yes/No?
+  Yes
 
-``[FAIL]`` **Check-Identity-06: Disable admin token in /etc/keystone/keystone.conf**
-  Yes/No?
+``[N/A]`` **Check-Identity-06: Disable admin token in /etc/keystone/keystone.conf**
+  Enabled in keystone.conf, but the service itself is disabled.
+
+``[PASS]`` **Check-Identity-07: insecure_debug false in /etc/keystone/keystone.conf**
+  Yes
+
+``[PASS]`` **Check-Identity-08: Use fernet token in /etc/keystone/keystone.conf**
+  Yes

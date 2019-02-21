@@ -51,5 +51,5 @@ infrastructure documentation:
   A high-level view of the network topology is outlined in the
   document `Networking overview`_.
 
-``[----]`` **Services, protocols and ports**
+``[DEFERRED]`` **Services, protocols and ports**
   FIXME

@@ -3,14 +3,14 @@
 Secure communication
 ====================
 
-Last changed: |date|
+``REVISION 2019-02-21``
 
 .. contents::
 
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **33%** (2/6)       |
+| **Implemented percent** | **50%** (3/6)       |
 +-------------------------+---------------------+
 
 .. _OpenStack Security Guide\: Secure communication: http://docs.openstack.org/security-guide/secure-communication.html
@@ -53,23 +53,15 @@ want to use separate PKI deployments for different security domains.
   third-party software. We need certificates signed by a widely
   recognized public CA.
 
-  * dashboard.uh-iaas.no
-  * api.uh-iaas.no
-  * access.uh-iaas-no
-  * console.<region>.uh-iaas.no
-  * <service>.api.<region>.uh-iaas.no
-
   * We use Digicert Terena CA on all customer facing interfaces.
 
-``[DEFERRED]`` **Internal endpoints use non-public CA**
+``[FAIL]`` **Internal endpoints use non-public CA**
   As described above, it is recommended to use a private CA for
   internal endpoints.
 
   * db connection between regions use non-public CA
-  * internal connection within regions use private network
-
-  * FIXME: Identify and list all internal endpoints
-  * FIXME: Ensure non-public CA on these endpoints
+  * internal connections within regions use private networks and using a
+    CA for these provide very little added value
 
 
 TLS libraries
@@ -89,6 +81,7 @@ We need to make sure that we're using an updated version of OpenSSL.
 
   * OpenSSL and all other packages are manually updated once a month.
 
+
 Cryptographic algorithms, cipher modes, and protocols
 -----------------------------------------------------
 
@@ -99,14 +92,18 @@ acceptable to
 accept **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA** in
 cases where we don't control both endpoints.
 
-``[DEFERRED]`` **Ensure TLS 1.2**
+``[FAIL]`` **Ensure TLS 1.2**
   Make sure that only TLS 1.2 is used. Previous versions of TLS, as
   well as SSL, should be disabled completely.
+
+  * We support TLS 1.1 and 1.2 on dashboard
 
 ``[DEFERRED]`` **Limit cipher suite on public endpoints**
   Limit the cipher suite on public facing endpoints to the
   general **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA**.
 
-``[DEFERRED]`` **Limit cipher suite on internal endpoints**
+``[N/A]`` **Limit cipher suite on internal endpoints**
   Limit the cipher suite on public facing endpoints
   to **ECDHE-ECDSA-AES256-GCM-SHA384**.
+
+  * Not using a internal CA so this doesn't apply in our case
