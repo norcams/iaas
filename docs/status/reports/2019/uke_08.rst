@@ -12,16 +12,16 @@ Oppdatert informasjon om status finnes alltid i
 Status
 ======
 
-Mye tiden de to siste uken har gått med til arbeid relatert til ny hardware.
+Mye tid de to siste uken har gått med til arbeid relatert til ny hardware.
 Det er 9 nye compute i OSL og ca 50 nye storage, network og compute i BGO.
 
 Vi har startet revidering av sikkerhetsdokumentet som forarbeid til en full
 ROS analyse. Dokumentet vil gi oss en god start på det arbeidet.
 
-Vi ser også på bruk av Ceph til object storage i Openstack. Den vil da satt opp
-med samme støtte for API som swift, Swift API og S3 API, via keystone.
+Vi ser også på bruk av Ceph til object storage i Openstack. Den vil da bli satt
+opp med samme støtte for API som swift, Swift API og S3 API, via keystone.
 
-I forbindelse med en support sak startet vi også å se litt mer på
+I forbindelse med en supportsak startet vi også å se litt mer på
 retningslinjer for kreditering av publikasjoner som benytter seg av UH-IaaS.
 Vi forhører oss med UB (UiB) om hva som må til for å f.eks. benytte CRISTIN
 i forbindelse med registering av publikasjoner i sektoren.
