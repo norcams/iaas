@@ -23,7 +23,7 @@ med samme støtte for API som swift, Swift API og S3 API, via keystone.
 
 I forbindelse med en support sak startet vi også å se litt mer på
 retningslinjer for kreditering av publikasjoner som benytter seg av UH-IaaS.
-Vi forhøærer oss med UB (UiB) om hva som må til for å f.eks. benytte CRISTIN
+Vi forhører oss med UB (UiB) om hva som må til for å f.eks. benytte CRISTIN
 i forbindelse med registering av publikasjoner i sektoren.
 
 Vi har nå også gold image for Windows 2019 (core og standard) i tillegg til 2016.
