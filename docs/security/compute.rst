@@ -53,12 +53,12 @@ Physical hardware (PCI passthrough)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   *Many hypervisors offer a functionality known as PCI
-   passthrough. This allows an instance to have direct access to a
-   piece of hardware on the node. For example, this could be used to
-   allow instances to access video cards or GPUs offering the compute
-   unified device architecture (CUDA) for high performance
-   computation. This feature carries two types of security risks:
-   direct memory access and hardware infection.*
+  passthrough. This allows an instance to have direct access to a
+  piece of hardware on the node. For example, this could be used to
+  allow instances to access video cards or GPUs offering the compute
+  unified device architecture (CUDA) for high performance
+  computation. This feature carries two types of security risks:
+  direct memory access and hardware infection.*
 
 ``[N/A]`` **Ensure that the hypervisor is configured to utilize IOMMU**
   Not applicable as PCI passthrough is disabled.
