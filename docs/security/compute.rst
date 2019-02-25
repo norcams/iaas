@@ -3,7 +3,7 @@
 Compute
 =======
 
-Last changed: |date|
+``REVISION 2019-02-25``
 
 .. contents::
 
@@ -52,9 +52,21 @@ Ref: `OpenStack Security Guide\: Compute - Hardening the virtualization layers`_
 Physical hardware (PCI passthrough)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+  *Many hypervisors offer a functionality known as PCI
+   passthrough. This allows an instance to have direct access to a
+   piece of hardware on the node. For example, this could be used to
+   allow instances to access video cards or GPUs offering the compute
+   unified device architecture (CUDA) for high performance
+   computation. This feature carries two types of security risks:
+   direct memory access and hardware infection.*
+
 ``[N/A]`` **Ensure that the hypervisor is configured to utilize IOMMU**
+  Not applicable as PCI passthrough is disabled.
 
 ``[PASS]`` **Disable PCI passthrough**
+  PCI passthrough is disabled. We may enable PCI passthrough for
+  special compute nodes with GPU etc., but these will be confined in
+  spesialized availability zones and not generally available.
 
 Minimizing the QEMU code base
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,8 +81,8 @@ Does not apply. We are using precompiled QEMU.
 Mandatory access controls
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[DEFERRED]`` **Ensure SELinux / sVirt is running in Enforcing mode**
-A device ACL for the instance virtual network interfaces needs review, but risk is assumed to be low.
+``[PASS]`` **Ensure SELinux / sVirt is running in Enforcing mode**
+  SELinux is running in enforcing mode on all hypervisor nodes.
 
 
 How to select virtual consoles
@@ -80,7 +92,9 @@ How to select virtual consoles
 
 Ref: `OpenStack Security Guide\: Compute - How to select virtual consoles`_
 
-``[PASS]`` We run SSL hardened spice console
+``[PASS]`` **Is the VNC service encrypted?**
+  Yes. Communication between the customer and the public facing VNC
+  service is encrypted.
 
 
 Checklist
@@ -101,8 +115,10 @@ See the above link for info about these checks.
 ``[PASS]`` **Check-Compute-03: Is keystone used for authentication?**
   Yes
 
-``[PASS]`` **Check-Compute-04: Is secure protocol used for authentication?**
-  Yes?
+``[FAIL]`` **Check-Compute-04: Is secure protocol used for authentication?**
+  Communication is completely on the inside on a private network,
+  which we consider to be an acceptible risk.
 
-``[DEFERRED]`` **Check-Compute-05: Does Nova communicate with Glance securely?**
-  Nova communicates with glance on a private network for now, but TLS is in the pipeline.
+``[FAIL]`` **Check-Compute-05: Does Nova communicate with Glance securely?**
+  Communication is completely on the inside on a private network,
+  which we consider to be an acceptible risk.
