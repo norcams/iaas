@@ -3,7 +3,7 @@
 Block Storage
 =============
 
-Last changed: |date|
+``REVISION 2019-02-25``
 
 .. contents::
 
@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **75%** (6/8)       |
+| **Implemented percent** | **55%** (5/9)       |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Block Storage`_:
@@ -57,17 +57,24 @@ See the above link for info about these checks.
 ``[PASS]`` **Check-Block-03: Is keystone used for authentication?**
   Yes
 
-``[PASS]`` **Check-Block-04: Is TLS enabled for authentication?**
-  Yes
+``[FAIL]`` **Check-Block-04: Is TLS enabled for authentication?**
+  Communication is completely on the inside on a private network,
+  which we consider to be an acceptible risk.
 
-``[DEFERRED]`` **Check-Block-05: Does cinder communicate with nova over TLS?**
-  Cinder communicates with nova on a private network for now, but TLS is in the pipeline.
+``[FAIL]`` **Check-Block-05: Does cinder communicate with nova over TLS?**
+  Communication is completely on the inside on a private network,
+  which we consider to be an acceptible risk.
 
-``[DEFERRED]`` **Check-Block-06: Does cinder communicate with glance over TLS?**
-  Cinder communicates with glance on a private network for now, but TLS is in the pipeline.
+``[FAIL]`` **Check-Block-06: Does cinder communicate with glance over TLS?**
+  Communication is completely on the inside on a private network,
+  which we consider to be an acceptible risk.
 
 ``[N/A]`` **Check-Block-07: Is NAS operating in a secure environment?**
   We do not have a NAS in our environment.
 
 ``[PASS]`` **Check-Block-08: Is max size for the body of a request set to default (114688)?**
   Yes
+
+``[FAIL]`` **Check-Block-09: Is the volume encryption feature enabled?**
+  We do not offer encrypted volumes at this time.
+
