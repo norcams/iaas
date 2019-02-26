@@ -1,5 +1,5 @@
 =====
-Akriv
+Arkiv
 =====
 
 Dette er dokumenter fra pre 2016 og er med her for historiske grunner.
