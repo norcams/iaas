@@ -16,7 +16,7 @@ permanent name and mgmt IP that will follow the machine from start to end::
 
   <location>-<role>-<id>
 
-This will be used for A and PTR records as well.
+This will be used for A and PTR records for mgmt as well.
 
 When a node are used in a variant/subrole we use a CNAME to map the ephemeral
 hostname to the permanent one. This will only be done in the location where
