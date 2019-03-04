@@ -9,3 +9,4 @@ Development
     puppet
     vagrant/index
     ip
+    hostname
