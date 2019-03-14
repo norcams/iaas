@@ -1,6 +1,6 @@
 .. |date| date::
 
-(2019) Shared File Systems
+[2019] Shared File Systems
 ==========================
 
 ``REVISION 2019-02-25``

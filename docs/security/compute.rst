@@ -1,6 +1,6 @@
 .. |date| date::
 
-(2019) Compute
+[2019] Compute
 ==============
 
 ``REVISION 2019-02-25``

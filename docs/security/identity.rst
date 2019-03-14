@@ -1,6 +1,6 @@
 .. |date| date::
 
-(2019) Identity
+[2019] Identity
 ===============
 
 ``REVISION 2019-02-21``

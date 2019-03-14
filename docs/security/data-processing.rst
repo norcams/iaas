@@ -1,7 +1,7 @@
 .. |date| date::
 
-(R2) Data processing
-====================
+[2019] Data processing
+======================
 
 ``REVISION 2019-03-14``
 

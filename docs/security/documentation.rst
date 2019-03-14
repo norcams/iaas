@@ -1,6 +1,6 @@
 .. |date| date::
 
-(2019) System documentation
+[2019] System documentation
 ===========================
 
 ``REVISION 2019-02-21``
