@@ -3,7 +3,7 @@
 Networking
 ==========
 
-Last changed: |date|
+``REVISION 2019-03-14``
 
 .. contents::
 
@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **91%** (10/11)     |
+| **Implemented percent** | **85%** (12/14)     |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Networking`_:
@@ -98,6 +98,25 @@ From OpenStack Security Guide:
   policy. Only administrator created networking resources are available
   for projects and users. 
 
+Security groups
+~~~~~~~~~~~~~~~
+
+  *``nova.conf`` should always disable built-in security groups and
+  proxy all security group calls to the OpenStack Networking API when
+  using OpenStack Networking.*
+
+``[PASS]`` **Set firewall_driver option in nova.conf**
+  **firewall_driver** is set
+  to **nova.virt.firewall.NoopFirewallDriver** so that nova-compute
+  does not perform iptables-based filtering itself.
+
+``[FAIL]`` **Set security_group_api option in nova.conf**
+  It is recommended that **security_group_api** is set to neutron so
+  that all security group requests are proxied to the OpenStack
+  Networking service.
+
+  We do not set the **security_group_api** option at all.
+
 Quotas
 ~~~~~~
 
@@ -126,5 +145,6 @@ See the above link for info about these checks.
 ``[PASS]`` **Check-Neutron-04: Is secure protocol used for authentication?**
   Yes
 
-``[DEFERRED]`` **Check-Neutron-05: Is TLS enabled on Neutron API server?**
-  Neutron API communicates on a private network for now, but TLS is in the pipeline.
+``[FAIL]`` **Check-Neutron-05: Is TLS enabled on Neutron API server?**
+  The negative implications for the user experience by implementing
+  this is considered to outweight the extra security gained by this.
