@@ -1,9 +1,9 @@
 .. |date| date::
 
-Instance security management
-============================
+[2019] Instance security management
+===================================
 
-Last changed: |date|
+``REVISION 2019-03-14``
 
 .. contents::
 
@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **100%** (6/6)      |
+| **Implemented percent** | **67%** (4/6)       |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Instance security management`_:
@@ -64,9 +64,10 @@ From OpenStack Security Guide:
   which determines how to dispatch compute and volume requests.*
 
 ``[PASS]`` **Describe which scheduler and filters that are used**
-  For now, we use the default nova scheduling filters, and all compute
-  hosts are considered equal in features and performance. This will
-  change in the future if the need arise for more specialized resources.
+  For normal workloads, we use the default nova scheduling filters,
+  and all compute hosts are considered equal in features and
+  performance. For specialized resources such as HPC workloads we have
+  different filters.
 
 
 Trusted images
@@ -80,20 +81,20 @@ From OpenStack Security Guide:
   with.*
 
 ``[PASS]`` **Maintain golden images**
-  We provide updated upstream cloud images for popular linux distributions.
-  Other operating system golden images will be evaluated.
+  We provide updated upstream cloud images for popular linux
+  distributions, as well as the latest Windows Server versions.
 
-``[N/A]`` **Consider enabling instance signature verification**
-  For now, this is beyond the scope of the project.
+``[FAIL]`` **Enable instance signature verification**
+  This is not something that we will prioritize at this time. It also
+  requires the setup and management of additional services.
 
 
 Instance migrations
 ~~~~~~~~~~~~~~~~~~~
 
-``[PASS]`` **Disable live migration**
-  Live migration is not available in our deployment. For now, the instances
-  have to be cold migrated. This is an admin only task, used mainly in
-  conjunction with reinstallation of compute hosts.
+``[FAIL]`` **Disable live migration**
+  While live migration has its risks, the benefits of live migration
+  for outweigh the disadvantages. We have live migration enabled.
 
 
 Monitoring, alerting, and reporting
