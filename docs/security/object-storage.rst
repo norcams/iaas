@@ -3,7 +3,7 @@
 Object Storage
 ==============
 
-Last changed: |date|
+``REVISION 2019-03-14``
 
 .. contents::
 
