@@ -1,7 +1,7 @@
 .. |date| date::
 
-Object Storage
-==============
+(2019) Object Storage
+=====================
 
 ``REVISION 2019-03-14``
 

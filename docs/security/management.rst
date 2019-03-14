@@ -1,7 +1,7 @@
 .. |date| date::
 
-Management
-==========
+(2019) Management
+=================
 
 ``REVISION 2019-02-21``
 

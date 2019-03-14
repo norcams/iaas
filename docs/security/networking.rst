@@ -1,7 +1,7 @@
 .. |date| date::
 
-Networking
-==========
+(2019) Networking
+=================
 
 ``REVISION 2019-03-14``
 

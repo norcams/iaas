@@ -1,7 +1,7 @@
 .. |date| date::
 
-Secure communication
-====================
+(2019) Secure communication
+===========================
 
 ``REVISION 2019-02-21``
 
