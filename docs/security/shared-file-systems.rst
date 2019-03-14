@@ -3,7 +3,7 @@
 Shared File Systems
 ===================
 
-Last changed: |date|
+``REVISION 2019-02-25``
 
 .. contents::
 
