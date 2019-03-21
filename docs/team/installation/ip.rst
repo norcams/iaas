@@ -22,6 +22,7 @@ Public IPv4 network.
  bgo      prod     158.39.74.0/24
  osl      prod     158.37.63.0/24
  osl      prod     158.39.75.0/24
+ osl      prod     158.39.48.0/24
  test01   test     129.177.31.64/27
  test02   test     (10.100.200.0/24)
  vagrant  dev      (192.168.0.0/24)
