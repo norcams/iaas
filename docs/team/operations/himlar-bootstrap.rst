@@ -194,6 +194,21 @@ t
      Physical hosts may have to be rebooted or powered on manually. Make sure
      they are configured to PXE boot on the managment interface on their first boot.
 
+  .. NOTE::
+     As long as we have common login nodes shared between test and production
+     environments, some additional steps must be performed until successful install of
+     proxy-01:
+
+     1) admin-01 must have the login node configured as resolver
+     2) login node must have a hole punched in the firewall for domain traffic
+        (port 53) on the relevant management interface
+     3) the login node must be set up to NAT outgoing traffic coming in on the
+        relevant management interface (hint: "/root/test02_enable_nat.sh")
+     4) admin-01 must have the login node configured as its default gateway configured
+
+     When proxy-01 is up and running all can be set back to normal.
+
+
 #. Execute puppet on the node in this sequence:
 
    a. `mq-01`, `logger-01`
