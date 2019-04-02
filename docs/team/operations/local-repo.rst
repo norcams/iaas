@@ -58,7 +58,7 @@ the UH-IaaS team. Data configured into these are then available for consumption
 in the same controlled manner as any other external repository which is mirrored
 locally.
 
-**rpm** and **ports** are `free and unmanaged` repositories without the
+**rpm**, **nonfree** and **ports** are `free and unmanaged` repositories without the
 forementioned snapshotting and consistent control. Data located here is
 available instantly, but outside of any version control and without any kind of
 meta data.
@@ -86,7 +86,8 @@ Directory description
 * **aptrepo**: Locally maintained APT repository. Mirrored under ``repo`` as any
   external repository is (named *uh-iaas-apt*).
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
-  snapshotting.
+* **nonfree** Generic file distribution. No metadata, versioning, mirroring or
+  snapshotting. Only accessible from login and proxy-nodes!
 * **gem**: Local Ruby Gem distribution. No metadata, versioning, mirroring or
   snapshotting.
 * **ports**: For FreeBSD packages. No metadata, versioning, mirroring or
@@ -221,22 +222,28 @@ Steps to import gems
 For upload procedure, see below.
 
 
-Standalone file archive
------------------------
+Standalone file archives
+------------------------
 
-**Directory name**: ``rpm``
+**Directory name**: ``rpm`` and ``nonfree``
 
 Files (RPM packages or other types) which are needed by the project but which should or cannot
 use the local YUM repository, can be distributed from the generic archive
-located under the ``rpm`` subdirectory. No additional operations required, other
+located under the ``rpm`` or ``nonfree`` subdirectory. No additional operations required, other
 than the ensuring correct SELinux label as described above.
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/rpm>`_
+**URL**: `<https://download.iaas.uio.no/uh-iaas/nonfree`_
+
+The distinction between those two, is that `nonfree` is only accessible from a
+restricted set of IP addresses (at the time of writing the *login* and *proxy*
+nodes) whereas `rpm` is reachable from wherever.
+
 
 Upload procedure
 ````````````````
 
-Probably the simplest way to upload a file to the ``rpm`` archive is to first
+Probably the simplest way to upload a file to the ``rpm`` (or ``nonfree``) archive is to first
 place the file on an available web site and then download it into
 the archive on *download*:
 
@@ -404,7 +411,7 @@ Publicizing procedure
 Normal (automatic)
 ``````````````````
 
-**rpm** and **gem**:
+**rpm**, **nonfree**  and **gem**:
   Files placed inside this location is instantly accessible, provided correct
   SELinux labeling. No snapshotting provided!
 
@@ -441,7 +448,7 @@ Normal (automatic)
 Manual routine for instant publicizing
 ``````````````````````````````````````
 
-**rpm**, **gem**  and **ports**:
+**rpm**, **nonfree**, **gem**  and **ports**:
   Nothing required!
 
 **yumrepo** and **aptrepo**:
