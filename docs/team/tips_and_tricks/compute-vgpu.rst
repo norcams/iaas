@@ -26,6 +26,13 @@ Ensure that ECC is diabled on GPU
 
 	nvidia-smi -q
 
+Otherwise, run
+
+.. code:: bash
+
+        nvidia-smi -g 0 --ecc-config=0
+
+
 Reboot
 
 Download and install the Nvidia GRID RPM
@@ -85,15 +92,13 @@ Apply the new GRUB configuration change
 
 reboot
 
-Next go to the folder where you have downloaded Nvidia driver and run the script. If any dependency, you need to install the required packages.
+Next download and run the Nvidia driver. If any dependency, you need to install the required packages.
 
 .. code:: bash
 
 	yum groupinstall "Development Tools"
 	yum install kernel-devel epel-release
 	yum install dkms
-
-Download and run the Nvidia driver
 
 .. code:: bash
 
