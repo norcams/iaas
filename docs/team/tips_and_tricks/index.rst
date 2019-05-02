@@ -18,4 +18,4 @@ Tips and tricks
     samarbeidspartnere
     norcams-himlar-dp-prep
     network-issues
-
+    compute-vgpu
