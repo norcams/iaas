@@ -7,7 +7,7 @@ Compute-vgpu-42
 
 Download and install Nvidia virtual GPU driver 
 
-Update :file:`nova.conf`:
+Update :file:`nova.conf`::
 
 	cpu_mode=custom
 	cpu_model=EPYC
@@ -48,8 +48,8 @@ Make sure that the flavor type has right properties
 
 - resources:VGPU=1
 
-Install KVM on Centos 7.6 vGPU Client
--------------------------------------
+Install Nvidia Driver on Centos 7.6
+------------------------------------
 
 Make sure NVIDIA is enabled
 
