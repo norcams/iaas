@@ -53,7 +53,7 @@ Make sure that the flavor type has right properties
 
 - aggregate_instance_extra_specs:type: s== vgpu
 
-- resources:VGPU=1
+- resources: VGPU=1
 
 Install Nvidia Driver on Centos 7.6
 ------------------------------------
@@ -73,6 +73,7 @@ Make sure NVIDIA is enabled
 	vendor: NVIDIA Corporation [10DE]
 
 Disable Nouveau driver 
+
 Edit :file:`/etc/modprobe.d/blacklist.conf` file, and add ``blacklist nouveau``
 
 Next create a new :file:`initramfs` file and taking backup of existing.
@@ -90,7 +91,7 @@ Apply the new GRUB configuration change
 
 	sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
-reboot
+Reboot
 
 Next download and run the Nvidia driver. If any dependency, you need to install the required packages.
 
@@ -107,7 +108,7 @@ Next download and run the Nvidia driver. If any dependency, you need to install 
 If the :file:`/etc/nvidia/gridd.conf` file does not already exist, create it by copying the supplied template file :file:`/etc/nvidia/gridd.conf.template`.
 
 Edit the :file:`/etc/nvidia/gridd.conf` file to set the ``EnableUI`` option to ``TRUE``
-and edit ``ServerAddress`` to ``<licenseserver>``.
+and set the ``ServerAddress`` to ``<licenseserver>``.
 
 .. code:: bash
 
