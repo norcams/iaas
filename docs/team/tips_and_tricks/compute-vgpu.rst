@@ -103,7 +103,7 @@ Next download and run the Nvidia driver. If any dependency, you need to install 
 
 .. code:: bash
 
-	./NVIDIA-Linux-x86_64-418.70-vgpu-kvm.run
+	./NVIDIA-Linux-x86_64-418.70-grid.run
 
 If the :file:`/etc/nvidia/gridd.conf` file does not already exist, create it by copying the supplied template file :file:`/etc/nvidia/gridd.conf.template`.
 
