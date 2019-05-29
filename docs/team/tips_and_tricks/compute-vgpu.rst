@@ -18,9 +18,21 @@ Update :file:`nova.conf`::
 	[pci]
 	passthrough_whitelist = {"address": "0000:<num>:00.0"}
 
+To find passthrough whitelist address 
+
+.. code:: bash
+
+	ls /sys/class/mdev_bus/
+
+To find Nvidia models
+
+.. code:: bash
+
+	ls /sys/class/mdev_bus/*/mdev_supported_types/
+
 Restart ``nova-compute``
 
-Ensure that ECC is diabled on GPU
+Ensure that ECC is disabled on GPU
 
 .. code:: bash
 
@@ -100,6 +112,11 @@ Next download and run the Nvidia driver. If any dependency, you need to install 
 	yum groupinstall "Development Tools"
 	yum install kernel-devel epel-release
 	yum install dkms
+
+.. code:: bash
+	yum update all
+	
+Reboot to update new kernels
 
 .. code:: bash
 
