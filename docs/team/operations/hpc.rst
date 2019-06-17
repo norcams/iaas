@@ -82,7 +82,16 @@ The following parameters is set via the grub boot loader, in
 Nova configuration
 ==================
 
+Only configuration that is special or relevant to the HPC compute
+nodes.
+
 On **novactrl** hosts::
 
   enabled_filters=...,NUMATopologyFilter,...
 
+On **compute** hosts::
+
+  vcpu_pin_set="4-127"
+  reserved_host_memory_mb=4096
+  cpu_allocation_ratio=1
+  ram_allocation_ratio=1.5
