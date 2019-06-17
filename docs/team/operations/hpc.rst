@@ -33,50 +33,36 @@ These hosts have 8 NUMA nodes::
 Flavors
 =======
 
+All flavors have the following properties::
+
+  hw_rng:allowed='True'
+  hw_rng:rate_bytes='1000000'
+  hw_rng:rate_period='60'
+
+In addition, we have set a type (either "alice" or "atlas")::
+
+  type='s== alice'
+
 We have the following flavors for HPC workloads:
 
 +------------------+----------+------+--------------------------------+
 | Name             | RAM (GB) | vCPU | Properties                     |
 +==================+==========+======+================================+
-| alice.large      | 8        | 2    | type='s== alice'               |
-|                  |          |      | hw_rng:allowed='True'          |
-|                  |          |      | hw_rng:rate_bytes='1000000'    |
-|                  |          |      | hw_rng:rate_period='60'        |
+| alice.large      | 8        | 2    |                                |
 +------------------+----------+------+--------------------------------+
-| alice.xlarge     | 16       | 4    | type='s== alice'               |
-|                  |          |      | hw_rng:allowed='True'          |
-|                  |          |      | hw_rng:rate_bytes='1000000'    |
-|                  |          |      | hw_rng:rate_period='60'        |
+| alice.xlarge     | 16       | 4    |                                |
 +------------------+----------+------+--------------------------------+
-| alice.2xlarge    | 24       | 8    | type='s== alice'               |
-|                  |          |      | hw_rng:allowed='True'          |
-|                  |          |      | hw_rng:rate_bytes='1000000'    |
-|                  |          |      | hw_rng:rate_period='60'        |
+| alice.2xlarge    | 24       | 8    |                                |
 +------------------+----------+------+--------------------------------+
-| atlas.large      | 8        | 2    | type='s== atlas'               |
-|                  |          |      | hw_rng:allowed='True'          |
-|                  |          |      | hw_rng:rate_bytes='1000000'    |
-|                  |          |      | hw_rng:rate_period='60'        |
-|                  |          |      | hw:cpu_policy='dedicated'      |
+| atlas.large      | 8        | 2    | hw:cpu_policy='dedicated'      |
 |                  |          |      | hw:cpu_thread_policy='require' |
 +------------------+----------+------+--------------------------------+
-| atlas.xlarge     | 16       | 4    | type='s== atlas'               |
-|                  |          |      | hw_rng:allowed='True'          |
-|                  |          |      | hw_rng:rate_bytes='1000000'    |
-|                  |          |      | hw_rng:rate_period='60'        |
-|                  |          |      | hw:cpu_policy='dedicated'      |
+| atlas.xlarge     | 16       | 4    | hw:cpu_policy='dedicated'      |
 |                  |          |      | hw:cpu_thread_policy='require' |
 +------------------+----------+------+--------------------------------+
-| atlas.2xlarge    | 24       | 8    | type='s== atlas'               |
-|                  |          |      | hw_rng:allowed='True'          |
-|                  |          |      | hw_rng:rate_bytes='1000000'    |
-|                  |          |      | hw_rng:rate_period='60'        |
+| atlas.2xlarge    | 24       | 8    |                                |
 +------------------+----------+------+--------------------------------+
-| atlascpu.2xlarge | 24       | 8    | type='s== atlas'               |
-|                  |          |      | hw_rng:allowed='True'          |
-|                  |          |      | hw_rng:rate_bytes='1000000'    |
-|                  |          |      | hw_rng:rate_period='60'        |
-|                  |          |      | hw:cpu_policy='dedicated'      |
+| atlascpu.2xlarge | 24       | 8    | hw:cpu_policy='dedicated'      |
 |                  |          |      | hw:cpu_thread_policy='require' |
 +------------------+----------+------+--------------------------------+
 
@@ -91,3 +77,12 @@ The following parameters is set via the grub boot loader, in
   hugepages=245760
   transparent_hugepage=never
   isolcpus=4-127
+
+
+Nova configuration
+==================
+
+On **novactrl** hosts::
+
+  enabled_filters=...,NUMATopologyFilter,...
+
