@@ -85,7 +85,7 @@ Hypervisor OS
 =============
 
 The following parameters is set via the grub boot loader, in
-`/etc/sysconfig/grub`::
+``/etc/sysconfig/grub``::
 
   hugepagesz=2M
   hugepages=245760
