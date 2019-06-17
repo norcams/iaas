@@ -10,6 +10,7 @@ Operations
     himlar-bootstrap
     deploy
     compute
+    hpc
     network
     logging
     foreman
