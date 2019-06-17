@@ -52,7 +52,7 @@ We have the following flavors for HPC workloads:
 |                  |          |      | hw_rng:allowed='True'          |
 |                  |          |      | hw_rng:rate_bytes='1000000'    |
 |                  |          |      | hw_rng:rate_period='60'        |
-+==================+==========+======+================================+
++------------------+----------+------+--------------------------------+
 | atlas.large      | 8        | 2    | type='s== atlas'               |
 |                  |          |      | hw_rng:allowed='True'          |
 |                  |          |      | hw_rng:rate_bytes='1000000'    |
@@ -71,7 +71,7 @@ We have the following flavors for HPC workloads:
 |                  |          |      | hw_rng:allowed='True'          |
 |                  |          |      | hw_rng:rate_bytes='1000000'    |
 |                  |          |      | hw_rng:rate_period='60'        |
-+==================+==========+======+================================+
++------------------+----------+------+--------------------------------+
 | atlascpu.2xlarge | 24       | 8    | type='s== atlas'               |
 |                  |          |      | hw_rng:allowed='True'          |
 |                  |          |      | hw_rng:rate_bytes='1000000'    |
