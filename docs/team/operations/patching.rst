@@ -2,7 +2,7 @@
 Patching
 ========
 
-Last changed: 2018-12-07
+Last changed: 2019-06-28
 
 Update repo
 ============
@@ -17,13 +17,12 @@ upgrade. But this is usually the repo we update:
 * ceph-mimic
 * epel
 * mariadb
-* rdo-pike
 * rdo-queens
 * sensu
 * puppetlabs-PC1
 
 .. IMPORTANT::
-   Do **NOT** update :file:`calico22` without extra planned testing og
+   Do **NOT** update :file:`calico`-repo without extra planned testing og
    repackaging.
 
 Avoid updating management repos at the same time as normal patching.
