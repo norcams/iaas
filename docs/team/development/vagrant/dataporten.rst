@@ -20,8 +20,8 @@ Redirect uri from `access` should be::
 
 and for `dashboard`::
 
-  https://identity.api.vagrant.iaas.intern:5000/v3/auth/OS-FEDERATION/websso/openidc/redirect
-  
+  https://identity.api.vagrant.iaas.intern:5000/v3/auth/OS-FEDERATION/websso/openid/redirect
+
 You need to add the following scope in `Permissions` for each application::
 
   email

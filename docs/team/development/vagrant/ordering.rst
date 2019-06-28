@@ -75,3 +75,7 @@ Dataporten
 `See more about setting up dataporten in vagrant <dataporten.html>`_
 
 After running destroy/up only himlarcli/dataporten.py will be needed.
+
+To create a dataporten user in vagrant after setting dashboard up, we can use
+:file:`himlarcli/access.py` to add a user request to the queue and process the
+request and add the user.
