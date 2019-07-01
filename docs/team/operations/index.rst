@@ -16,6 +16,7 @@ Operations
     foreman
     ansible/index
     patching
+    migrate
     himlarcli/index
     local-repo
     ssl
