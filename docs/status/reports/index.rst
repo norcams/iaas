@@ -11,6 +11,7 @@ Fellessamlinger
     :glob:
     :maxdepth: 1
 
+    workshop/2019_workshop_*
     workshop/2018_workshop_*
     workshop/2017_workshop_*
     workshop/2016_workshop_*
