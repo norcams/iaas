@@ -2,7 +2,7 @@
 Uke 12
 ======
 
-av Raymond Kristiansen, UH IaaS, 25. mars 2018
+av Raymond Kristiansen, UH IaaS, 25. mars 2019
 
 Oppdatert informasjon om status finnes alltid i
 `Trello <https://trello.com/norcams>`_
