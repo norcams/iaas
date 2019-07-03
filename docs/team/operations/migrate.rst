@@ -26,8 +26,7 @@ Tips
 ====
 
 * Test first with :file:`--limit 1` to see that everything is working
-* If there is a big instance on the source, manually migrate this first
-  (with openstack cli)
+* Use :file:`--large` on first run to migrate the instances with lots of RAM first
 
 
 Help
