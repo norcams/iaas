@@ -105,8 +105,8 @@ cephmds-01        eth1  trp   x.x.x.55
 access-01         eth1  trp   x.x.x.56
 access-02         eth1  trp   x.x.x.57
 access-03         eth1  trp   x.x.x.58
-cephmds-01        eth1  trp   x.x.x.59
-cephmds-01        eth1  trp   x.x.x.60
+cephmds-02        eth1  trp   x.x.x.59
+cephmds-03        eth1  trp   x.x.x.60
 console-01        eth1  trp   x.x.x.61
 console-02        eth1  trp   x.x.x.62
 console-03        eth1  trp   x.x.x.63
