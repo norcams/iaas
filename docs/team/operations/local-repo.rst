@@ -120,6 +120,10 @@ or::
 Detailed descriptions
 =====================
 
+In addition to the mirror service of true external repositories, the service
+contains and offers several proper local ones. Each of these serves different
+purposes, and thus has to be handled and maintained using distinct procedures.
+This section describes each and how to add and update packages and files.
 
 YUM repository
 --------------
