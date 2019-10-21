@@ -43,17 +43,16 @@ Executive Summary
 -----------------
 
 **repo** is a locally hosted mirror of a set of external repositories. A
-snapshot is taken of each repo every night, these snapshots resides inside the
-**snapshot** directory date-stamped. For every one of these repositories (at
-least the ones which are utilized by the UH-IaaS infrastructure), there is a
-pointer to one of those snspshots beneath the **test** respective **prod**
-directories. Those pointers are never moved without consideration or testing,
-and especially the links in the **prod** directory. The upshot is thus: packages
-and files can be trusted not to be updated or altered in an uncontrolled
-fashion, and is available locally at all times.
+snapshot is taken of each repo every night, and these snapshots resides inside
+the **snapshot** directory stamped by date. In the **test** and **prod**
+directories every repository utilized by the UH-IaaS infrastructure has a
+pointer to one of those snapshots. Those pointers are never moved without
+consideration or testing, especially the links in the **prod** directory. The
+upshot is thus: packages and files can be trusted not to be updated or altered
+in an uncontrolled fashion, and is available locally at all times.
 
 **yumrepo** and **aptrepo** should be assumed to be like any other ``external``
-repositories, only these `external` repositories are coincidentally managed by
+repositories, just that these `external` repositories are coincidentally managed by
 the UH-IaaS team. Data configured into these are then available for consumption
 in the same controlled manner as any other external repository which is mirrored
 locally.
@@ -74,18 +73,20 @@ Diagram of setup
 Directory description
 ---------------------
 
-* **repo**: Mirror hierarchy. This is where all defined repositories are mirrored
-  to. Content is normally mirrored nightly.
+* **repo**: Mirror hierarchy. This is where all defined repositories are mirrored.
+  Content is mirrored nightly.
 * **snapshots**: Nightly snapshot of all mirrors under ``repo``. Each snapshot is
   named by the date and time of creation.
 * **prod**: For each repository a pointer (symbolic link) to a snapshot of the
   same.
-* **test**: As for ``prod``, but separate link.
+* **test**: As for ``prod``, but separate links (usually for a more recent
+  snapshot which is supposed to be used for production next).
 * **yumrepo**: Locally maintained RPM repository. Mirrored under ``repo`` as any
   external repository is (named *uh-iaas*).
 * **aptrepo**: Locally maintained APT repository. Mirrored under ``repo`` as any
   external repository is (named *uh-iaas-apt*).
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
+  snapshotting. Only accessible from login and proxy-nodes!
 * **nonfree** Generic file distribution. No metadata, versioning, mirroring or
   snapshotting. Only accessible from login and proxy-nodes!
 * **gem**: Local Ruby Gem distribution. No metadata, versioning, mirroring or
