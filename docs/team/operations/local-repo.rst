@@ -147,7 +147,7 @@ After all file operations update the repository meta data::
 
 .. NOTE::
    This repository is mirrored and snapshotted just like any external
-   repository (named *uh-iaas*). As such it can be reached through thei
+   repository (named *uh-iaas*). As such it can be reached through the
    `test` and `prod` interfaces described elsewhere.
 
 Client configuration (example)
@@ -168,8 +168,9 @@ APT repository
 
 **Directory name**: ``aptrepo``
 
-APT-packages which should be maintained by ordinary package management tools on
-DEB-based systems, are located in the APT repository located in ``aptrepo``.
+iFor local APT-packages which belongs in an ordinary DEB-based repository ithere
+is a similar setup as for the above mentioned YUM repository.
+This is located in ``aptrepo``.
 These files/packages are then considered and consumed exactly like any other,
 external, repository used by the project/code.
 
@@ -191,14 +192,14 @@ Steps to import packages
 **URL**: `<https://download.iaas.uio.no/uh-iaas/aptrepo>`_
 
 .. NOTE::
-   This repository is additionally mirrored and snapshotted as any external
-   repository (named *uh-iaas-apt*). As such it can be reached through the `test` and `prod`
-   interfaces described elsewhere.
+   This repository is mirrored and snapshotted ijust like any external
+   repository (named *uh-iaas-apt*). As such it can be reached through the
+   `test` and `prod` interfaces described elsewhere.
 
 Client configuration (example)
 ``````````````````````````````
 
-Example of client configuration in ``/etc/apt/sources.list`` etc::
+Example of client configuration in ``/etc/apt/sources.list``::
 
   deb [trusted=yes] https://download.iaas.uio.no/uh-iaas/prod/uh-iaas-apt wheezy main
 
