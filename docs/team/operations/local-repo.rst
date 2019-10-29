@@ -130,10 +130,10 @@ YUM repository
 
 **Directory name**: ``yumrepo``
 
-Packages which should be maintained by ordinary package maintained procedures,
-are located in the YUM repository located in ``yumrepo``. These files/packages
-are then considered and consumed exactly like any other, external, repository used by the
-project/code.
+For local RPM packages which are maintained in the same way as any external RPM
+packages from oridnary repositories, there is a YUM repo located in ``yumrepo``.
+These files/packages are considered and consumed exactly like any other, external,
+repository used by the project/code!
 
 
 **IMPORTANT**
@@ -146,9 +146,9 @@ After all file operations update the repository meta data::
 **URL**: `<https://download.iaas.uio.no/uh-iaas/yumrepo>`_
 
 .. NOTE::
-   This repository is additionally mirrored and snapshotted as any external
-   repository (named *uh-iaas*). As such it can be reached through the `test` and `prod`
-   interfaces described elsewhere.
+   This repository is mirrored and snapshotted just like any external
+   repository (named *uh-iaas*). As such it can be reached through thei
+   `test` and `prod` interfaces described elsewhere.
 
 Client configuration (example)
 ``````````````````````````````
