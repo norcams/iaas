@@ -212,7 +212,7 @@ t
 #. Execute puppet on the node in this sequence:
 
    a. `mq-01`, `logger-01`
-   #. `db-01`, `db-02`, `dashboard-01`, `monitor-01`
+   #. `db-global-01`, `db-regional-02`, `dashboard-01`, `monitor-01`
 
       For `dashboard-01` the certificates must be first distributed.
 
@@ -220,6 +220,9 @@ t
    #. `identity-01`, `access-01`
 
       For `access-01` the certificates must be first distributed.
+
+      For `identity-01`, it's important that the openrc file is absent while bootstrapping keystone.
+      Remove the necessary include in the node file before the first puppet run. 
 
    #. `storage0[1-]`
    #. `volume-01`, `image-o1`, `network-01`, `novactrl-01`, `console-01`
