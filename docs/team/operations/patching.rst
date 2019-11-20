@@ -14,7 +14,8 @@ upgrade. But this is usually the repo we update:
 * centos-extras
 * centos-updates
 * centos-qemu-ev
-* ceph-mimic
+* ceph-nautilus
+* ceph-nautilus-noarch
 * epel
 * mariadb
 * rdo-queens
