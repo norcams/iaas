@@ -7,15 +7,15 @@ nVIDIA card and a corresponding guest running CentOS.
 
 Prerequisites:
 
-1. A license server offering an appropriate license to the guest(2)
+1. A license server offering an appropriate license to the guest(s)
    See `Virtual GPU Client Licensing User Guide <https://docs.nvidia.com/grid/latest/grid-licensing-user-guide>`_
 
 
 2. A bundle containing both a grid (client) installation file and a vGPU manager
    installation file (compute host). Assume this file is located in `/tmp`.
    Note that it is important that client and host driver versions are in sync!
-   Also make sure that the bundle version supports the pertitent compute host
-   and guest OS releases (which might be different).
+   Also make sure that the bundle version supports the pertinent compute host
+   and guest OS releases.
    See the product support matrix ("Supported Products") for the relevant
    versions in the `NVIDIA® Virtual GPU (vGPU) Software Documentation <https://docs.nvidia.com/grid/>`_
 
@@ -28,7 +28,7 @@ Note that CUDA only supports certain vGPU "models" (that is: only a certain
 limited set of vGPU profiles). See `1.6.2. NVIDIA CUDA Toolkit and OpenCL
 Support on NVIDIA vGPU Software <https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#cuda-open-cl-support-vgpu>`_
 together with `1.4.1. Virtual GPU Types <https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#virtual-gpu-types-grid>`_
-in *nVIDIA vGPU Softwware Users Guide*
+in *nVIDIA vGPU Software Users Guide*.
 Of interest is also `Virtual GPU Software R430 for Linux with KVM Release Notes
 <https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm>`_
 and `NVIDIA CUDA Installation Guide for Linux <https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html>`_.
