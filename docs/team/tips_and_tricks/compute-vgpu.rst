@@ -1,38 +1,87 @@
 ===========
-Setup vGPU 
+Setup vGPU
 ===========
 
-Compute-vgpu-42
----------------
+This documents how to install and set upp a compute host with a vGPU capable
+nVIDIA card and a corresponding guest running CentOS.
 
-Download and install Nvidia virtual GPU driver 
+Prerequisites:
 
+1. A license server offering an appropriate license to the guest(2)
+   See https://docs.nvidia.com/grid/latest/grid-licensing-user-guide
+
+2. A bundle containing both a grid (client) installation file and a vGPU manager
+   installation file (compute host). Assume this file is located in `/tmp`.
+   Note that it is important that client and host driver versions are in sync!
+   Also make sure that the bundle version supports the pertitent compute host
+   and guest OS releases (which might be different).
+   See the product support matrix ("Supported Products") for the relevant
+   versions here: https://docs.nvidia.com/grid/
+
+   The 'Bundle Release' used in these examples, is *8.1*.
+   Note that for vanilla Openstack on CentOS use generic Linux KVM bundle, NOT
+   any of the "RHEL KVM" bundles!
+
+
+Note that CUDA only supports certain vGPU "models" (that is: only a certain
+limited set of vGPU profiles). See
+https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#cuda-open-cl-support-vgpu
+together with
+https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#virtual-gpu-types-grid
+Of interest is also
+https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm
+and https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+
+For notes about OpenStack/Nova configuration, see
+https://docs.openstack.org/nova/queens/admin/virtual-gpu.html
+
+
+vGPU compute host
+-----------------
+
+'Copy-n-paste' recipe
+'''''''''''''''''''''
+
+Set nVIDIA package (bundle) name and PCI ID (check with `lspci`):
+
+..
+  bundle=NVIDIA-GRID-Linux-KVM-418.109-426.26.zip   # adjust
+  pci_id=0000\:21\:00.0                             # adjust
+
+1. echo "blacklist nouveau" > /etc/modprobe.d/blacklist.conf
+#. echo "options nouveau modeset=0" >> /etc/modprobe.d/blacklist.conf
+#. dracut --force
+#. . /root/proxy.sh
+#. yum install -y wget unzip
+#. yum groupinstall -y "Development Tools"
+#. yum install -y kernel-devel epel-release
+#. yum update -y
+#. reboot
+#. log back in
+#. mkdir /root/md
+#. cd /root/md
+#. unzip /tmp/$bundle
+#. sh \*-vgpu-kvm.run -s
+#. reboot
+#. log back in
+#. ls /sys/class/mdev_bus/$pci_id/mdev_supported_types/
+#. #decide based on available types listed the desired profile
+
+To correlate vGPU profiles under `/sys` with the tables in the nVIDIA
+documentation, check content of the file ``name`` under each profile directory.
+The profile name (`nvidia-<number>`) must then be set in hieradata and pushed to
+production. After this the compute host is ready.
+
+Manual activation (only for testing, requires disabling of puppet!):
 Update :file:`nova.conf`::
-
-	cpu_mode=custom
-	cpu_model=EPYC
 
 	[devices]
 	enabled_vgpu_types = nvidia-<num>
 
-	[pci]
-	passthrough_whitelist = {"address": "0000:<num>:00.0"}
-
-To find passthrough whitelist address 
-
-.. code:: bash
-
-	ls /sys/class/mdev_bus/
-
-To find Nvidia models
-
-.. code:: bash
-
-	ls /sys/class/mdev_bus/*/mdev_supported_types/
-
 Restart ``nova-compute``
 
-Ensure that ECC is disabled on GPU
+Up until (not including) nVIDIA Bundle Release family 9: Ensure that ECC is disabled on GPU
+(mostly is by default).
 
 .. code:: bash
 
@@ -44,20 +93,8 @@ Otherwise, run
 
         nvidia-smi -g 0 --ecc-config=0
 
-
-Reboot
-
-Download and install the Nvidia GRID RPM
-
-.. code:: bash
-
-	yum install NVIDIA-vGPU-rhel-7.6-418.66.x86_64.rpm
-
-Download and run the Nvidia driver
-
-.. code:: bash
-
-	./NVIDIA-Linux-x86_64-418.66-vgpu-kvm.run
+.. :: nvidia [vgpu|-q]
+      is a nice tool for debugging
 
 vGPU Flavor
 -----------
@@ -67,14 +104,15 @@ Make sure that the flavor type has right properties
 
 - resources: VGPU=1
 
-Install Nvidia Driver on Centos 7.6
-------------------------------------
 
-Make sure NVIDIA is enabled
+vGPU guest (instance) - CentOS 7
+--------------------------------
+
+Make sure nVIDIA GPU is enabled on the guest
 
 .. code:: bash
 
-	lshw -numeric -C display 
+	lshw -numeric -C display
 
 .. code:: bash
 
@@ -84,49 +122,32 @@ Make sure NVIDIA is enabled
 	product: NVIDIA Corporation [10DE:1EB8]
 	vendor: NVIDIA Corporation [10DE]
 
-Disable Nouveau driver 
 
-Edit :file:`/etc/modprobe.d/blacklist.conf` file, and add ``blacklist nouveau``
+Set package name and license server::
 
-Next create a new :file:`initramfs` file and taking backup of existing.
+  bundle=NVIDIA-GRID-Linux-KVM-418.109-426.26.zip   # adjust
+  licenseserver=licenseserver.host.dfqdn            # adjust
 
-.. code:: bash
 
-	mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r).img.bak  
-	dracut -v /boot/initramfs-$(uname -r).img $(uname -r)
+copy-n-paste recipe
+'''''''''''''''''''
 
-Edit :file:`/etc/default/grub` file, and add the ``nouveau.modeset=0`` into line starting with ``GRUB_CMDLINE_LINUX`` to ensure the next time you boot your VM, the Nouveau driver is disabled.
+1. eho "blacklist nouveau" > /etc/modprobe.d/blacklist.conf
+#. echo "option nouveau.modeset=0" >> /etc/modprobe.d/blacklist.conf
+#. dracut --force
+#. yum -y install wget unzip
+#. yum -y install kernel-devel epel-release
+#. yum -y groupinstall "Development Tools"
+#. yum -y update
+#. reboot
+#. log back in
+#. mkdir /root/nvidia
+#. cd /root/nvidia
+#. unzip /tmp/$bundle
+#. sh \*-grid.run -s
+#. cd /etc/nvidia/
+#. cp gridd.conf.template  gridd.conf
+#. sed -i "s/^ServerAddress=/ServerAddress=$licenseserver/" gridd.conf
+#. sed -i 's/^#EnableUI=TRUE/EnableUI=TRUE/' gridd.conf
+#. reboot
 
-Apply the new GRUB configuration change
-
-.. code:: bash
-
-	sudo grub2-mkconfig -o /boot/grub2/grub.cfg
-
-Reboot
-
-Next download and run the Nvidia driver. If any dependency, you need to install the required packages.
-
-.. code:: bash
-
-	yum groupinstall "Development Tools"
-	yum install kernel-devel epel-release
-	yum install dkms
-
-.. code:: bash
-	yum update all
-	
-Reboot to update new kernels
-
-.. code:: bash
-
-	./NVIDIA-Linux-x86_64-418.70-grid.run
-
-If the :file:`/etc/nvidia/gridd.conf` file does not already exist, create it by copying the supplied template file :file:`/etc/nvidia/gridd.conf.template`.
-
-Edit the :file:`/etc/nvidia/gridd.conf` file to set the ``EnableUI`` option to ``TRUE``
-and set the ``ServerAddress`` to ``<licenseserver>``.
-
-.. code:: bash
-
-	sudo service nvidia-gridd start
