@@ -8,7 +8,8 @@ nVIDIA card and a corresponding guest running CentOS.
 Prerequisites:
 
 1. A license server offering an appropriate license to the guest(2)
-   See https://docs.nvidia.com/grid/latest/grid-licensing-user-guide
+   See `Virtual GPU Client Licensing User Guide <https://docs.nvidia.com/grid/latest/grid-licensing-user-guide>`_
+
 
 2. A bundle containing both a grid (client) installation file and a vGPU manager
    installation file (compute host). Assume this file is located in `/tmp`.
@@ -16,7 +17,7 @@ Prerequisites:
    Also make sure that the bundle version supports the pertitent compute host
    and guest OS releases (which might be different).
    See the product support matrix ("Supported Products") for the relevant
-   versions here: https://docs.nvidia.com/grid/
+   versions in the `NVIDIA® Virtual GPU (vGPU) Software Documentation <https://docs.nvidia.com/grid/>`_
 
    The 'Bundle Release' used in these examples, is *8.1*.
    Note that for vanilla Openstack on CentOS use generic Linux KVM bundle, NOT
@@ -24,16 +25,16 @@ Prerequisites:
 
 
 Note that CUDA only supports certain vGPU "models" (that is: only a certain
-limited set of vGPU profiles). See
-https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#cuda-open-cl-support-vgpu
-together with
-https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#virtual-gpu-types-grid
-Of interest is also
-https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm
-and https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html
+limited set of vGPU profiles). See `1.6.2. NVIDIA CUDA Toolkit and OpenCL
+Support on NVIDIA vGPU Software <https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#cuda-open-cl-support-vgpu>`_
+together with `1.4.1. Virtual GPU Types <https://docs.nvidia.com/grid/latest/grid-vgpu-user-guide/index.html#virtual-gpu-types-grid>`_
+in *nVIDIA vGPU Softwware Users Guide*
+Of interest is also `Virtual GPU Software R430 for Linux with KVM Release Notes
+<https://docs.nvidia.com/grid/latest/grid-vgpu-release-notes-generic-linux-kvm>`_
+and `NVIDIA CUDA Installation Guide for Linux <https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html>`_.
 
-For notes about OpenStack/Nova configuration, see
-https://docs.openstack.org/nova/queens/admin/virtual-gpu.html
+For notes about OpenStack/Nova configuration, see `Attaching virtual GPU
+devices to guests <https://docs.openstack.org/nova/train/admin/virtual-gpu.html>`_.
 
 
 vGPU compute host
@@ -44,28 +45,33 @@ vGPU compute host
 
 Set nVIDIA package (bundle) name and PCI ID (check with `lspci`):
 
-..
-  bundle=NVIDIA-GRID-Linux-KVM-418.109-426.26.zip   # adjust
-  pci_id=0000\:21\:00.0                             # adjust
+.. code:: bash
 
-1. echo "blacklist nouveau" > /etc/modprobe.d/blacklist.conf
-#. echo "options nouveau modeset=0" >> /etc/modprobe.d/blacklist.conf
-#. dracut --force
-#. . /root/proxy.sh
-#. yum install -y wget unzip
-#. yum groupinstall -y "Development Tools"
-#. yum install -y kernel-devel epel-release
-#. yum update -y
-#. reboot
-#. log back in
-#. mkdir /root/md
-#. cd /root/md
-#. unzip /tmp/$bundle
-#. sh \*-vgpu-kvm.run -s
-#. reboot
-#. log back in
-#. ls /sys/class/mdev_bus/$pci_id/mdev_supported_types/
-#. #decide based on available types listed the desired profile
+    bundle=NVIDIA-GRID-Linux-KVM-418.109-426.26.zip   # adjust
+    pci_id=0000\:21\:00.0                             # adjust
+
+Execute installation steps:
+
+.. code:: bash
+
+    echo "blacklist nouveau" > /etc/modprobe.d/blacklist.conf
+    echo "options nouveau modeset=0" >> /etc/modprobe.d/blacklist.conf
+    dracut --force
+    . /root/proxy.sh
+    yum install -y wget unzip
+    yum groupinstall -y "Development Tools"
+    yum install -y kernel-devel epel-release
+    yum update -y
+    reboot
+    (log back in)
+    mkdir /root/md
+    cd /root/md
+    unzip /tmp/$bundle
+    sh \*-vgpu-kvm.run -s
+    reboot
+    (log back in)
+    ls /sys/class/mdev_bus/$pci_id/mdev_supported_types/
+    #decide based on available types listed the desired profile
 
 To correlate vGPU profiles under `/sys` with the tables in the nVIDIA
 documentation, check content of the file ``name`` under each profile directory.
@@ -93,8 +99,8 @@ Otherwise, run
 
         nvidia-smi -g 0 --ecc-config=0
 
-.. :: nvidia [vgpu|-q]
-      is a nice tool for debugging
+``nvidia [vgpu|-q]`` is a nice tool for debugging
+
 
 vGPU Flavor
 -----------
@@ -123,31 +129,35 @@ Make sure nVIDIA GPU is enabled on the guest
 	vendor: NVIDIA Corporation [10DE]
 
 
-Set package name and license server::
-
-  bundle=NVIDIA-GRID-Linux-KVM-418.109-426.26.zip   # adjust
-  licenseserver=licenseserver.host.dfqdn            # adjust
-
-
 copy-n-paste recipe
 '''''''''''''''''''
+Set package name and license server:
 
-1. eho "blacklist nouveau" > /etc/modprobe.d/blacklist.conf
-#. echo "option nouveau.modeset=0" >> /etc/modprobe.d/blacklist.conf
-#. dracut --force
-#. yum -y install wget unzip
-#. yum -y install kernel-devel epel-release
-#. yum -y groupinstall "Development Tools"
-#. yum -y update
-#. reboot
-#. log back in
-#. mkdir /root/nvidia
-#. cd /root/nvidia
-#. unzip /tmp/$bundle
-#. sh \*-grid.run -s
-#. cd /etc/nvidia/
-#. cp gridd.conf.template  gridd.conf
-#. sed -i "s/^ServerAddress=/ServerAddress=$licenseserver/" gridd.conf
-#. sed -i 's/^#EnableUI=TRUE/EnableUI=TRUE/' gridd.conf
-#. reboot
+.. code:: bash
+
+    bundle=NVIDIA-GRID-Linux-KVM-418.109-426.26.zip   # adjust
+    licenseserver=licenseserver.host.dfqdn            # adjust
+
+Execute installation steps:
+
+.. code:: bash
+
+    echo "blacklist nouveau" > /etc/modprobe.d/blacklist.conf
+    echo "option nouveau.modeset=0" >> /etc/modprobe.d/blacklist.conf
+    dracut --force
+    yum -y install wget unzip
+    yum -y install kernel-devel epel-release
+    yum -y groupinstall "Development Tools"
+    yum -y update
+    reboot
+    log back in
+    mkdir /root/nvidia
+    cd /root/nvidia
+    unzip /tmp/$bundle
+    sh \*-grid.run -s
+    cd /etc/nvidia/
+    cp gridd.conf.template  gridd.conf
+    sed -i "s/^ServerAddress=/ServerAddress=$licenseserver/" gridd.conf
+    sed -i 's/^#EnableUI=TRUE/EnableUI=TRUE/' gridd.conf
+    reboot
 
