@@ -14,10 +14,10 @@ Rotasjon
 Deltaker    Uke Uke Uke Uke
 =========== === === === ===
 Trond        48   4  10  16
-Anders       49   5  11  17
+Anders        2   5  11  17
 Raymond      50   6  12  18
 Mikael       51   7  13  19
-Tannaz        2   8  14  20
+Tannaz       49   8  14  20
 Tor           3   9  15  21
 =========== === === === ===
 
