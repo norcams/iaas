@@ -49,7 +49,9 @@ directories every repository utilized by the UH-IaaS infrastructure has a
 pointer to one of those snapshots. Those pointers are never moved without
 consideration or testing, especially the links in the **prod** directory. The
 upshot is thus: packages and files can be trusted not to be updated or altered
-in an uncontrolled fashion, and is available locally at all times.
+in an uncontrolled fashion, and is available locally at all times. It is
+possible to set up further such repos, in case a certain installation requires
+packages from a very specific date (other than in **test** and **prod**).
 
 **yumrepo** and **aptrepo** should be assumed to be like any other ``external``
 repositories, just that these `external` repositories are coincidentally managed by
@@ -81,6 +83,9 @@ Directory description
   same.
 * **test**: As for ``prod``, but separate links (usually for a more recent
   snapshot which is supposed to be used for production next).
+* **vgpu**: For each repository a pointer (symbolic link) to a snapshot of the
+  same. This is intended for vGPU machines for which there are very specific
+  requirements regarding version of packages.
 * **yumrepo**: Locally maintained RPM repository. Mirrored under ``repo`` as any
   external repository is (named *uh-iaas*).
 * **aptrepo**: Locally maintained APT repository. Mirrored under ``repo`` as any
@@ -279,6 +284,7 @@ repo       Repository      Latest sync from external sources                    
 snapshots  Snapshots       Regular (usually daily) snapshots of data in repo                                              https://download.iaas.uio.no/uh-iaas/snapshots
 test       Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/uh-iaas/test
 prod       Production repo Pointer to a specific snapshot in time with well-tested data, used in production environments  https://download.iaas.uio.no/uh-iaas/prod
+vgpu       vGPU repo       Pointer to a specific snapshot in time with well-tested data, used in nVIDIA vGPU environments https://download.iaas.uio.no/uh-iaas/vgpu
 ========== =============== ============================================================================================== ===============================================
 
 Usage is normally as follows:
@@ -286,6 +292,7 @@ Usage is normally as follows:
 :repo: for development or other use of most up-to-date code
 :test: test code which is aimed for next production release
 :prod: production code
+:vgpu: nVIDIA vGPU installs
 :snapshots: can be used to test against code from any specific date in the past
 
 
@@ -353,6 +360,15 @@ snapshots!
 .. Important::
    This is the access point to use in the production and test environments!
 
+vgpu...
+-------
+
+**Directories**: ``vgpu``, ``...``
+
+Same as for ``test`` and ``prod``. These are separate *modes* for installations
+which requires other versions of packages than available through the normal
+interfaces. Examples of this is nVIDIA vGPU hosts where the drivers are
+supported only under a very limited and specific set of OS versions etc.
 
 
 Configuration
@@ -373,6 +389,7 @@ Files
 :repo.config: Definition of the external repositories to mirror
 :test.config: Which snapshots and local repositories to point to in `test`
 :prod.config: Which snapshots and local repositories to point to in `prod`
+:vgpu.config: Which snapshots and local repositories to point to in `vgpu`
 
 
 Considerations
@@ -387,7 +404,9 @@ Considerations
 - If there is more than one link listed to the same repo the most current
   is always the one activated.
 - Existing links not listed in the current configuration will be removed!
-
+- The extra interfaces (like ``vgpu``) does not have any of the special
+  requirements that is in place for ``prod``, and thus may have pointers set
+  without special considerations.
 
 Update procedure
 ````````````````
@@ -398,7 +417,8 @@ Update procedure
 
    This must be done on a node inside the set up (like the login nodes) due
    to access restrictions on the local git repo.
-#. Edit one or both files: `prod.config` and/or `test.config`, entering or
+#. Edit one or both files: `prod.config` and/or `test.config` (or any of the
+   other config files), entering or
    changing to reflect the date required (consult
    `the web page <https://iaas-repo.uio.no/uh-iaas/snapshots/>`_ for exact
    timestamp to use.
@@ -441,7 +461,7 @@ Normal (automatic)
   is additionally presented as "current".
 
 
-**test** and **prod**:
+**test**, **prod**, **vgpu**, **...**:
   These interfaces should be seen as a static representation of data from specific
   date/times. Each mirrored repository (if configured to be listed here) is
   listed with a link to a specific snapshot of the repo in question. The PROD
