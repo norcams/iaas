@@ -83,42 +83,36 @@ Om ikke annet så kan man i alle fall sjekke slik:
 Dersom filen finnes er agent-kjøring disablet, og grunnen (hvis angitt) ligger
 som en tekst i filen.
 
-Hvilken instans myrdet oom-killer
----------------------------------
+Hvilken instans ble myrdet av oom-killer?
+-----------------------------------------
 
-Første steg er å finne logginnslaget i /var/log/messages
+Første steg er å finne logginnslaget i /var/log/messages::
 
-::
   # grep 'Out of memory' /var/log/messages
 
-som vil returnere f.eks.
+som vil returnere f.eks.::
 
-::
   11948:2019-12-13T04:23:58.358162+01:00 kern.err bgo-compute-06 kernel: Out of memory: Kill process 40223 (qemu-kvm) score 126 or sacrifice child
 
 Noter tidspunkt og se etter en korresponderende timestamp på filene i /var/log/libvirt/qemu
-Finner du sjekker du om siste linjen i loggfilen matcher
+Finner du sjekker du om siste linjen i loggfilen matcher::
 
-::
   shutting down, reason=crashed
 
 Om dette er tilfellet har du gode beviser på at instansen ble myrdet av
 oom-killer.
 
 For å starte instansen igjen må du finne Nova ID. Dette kan gjøres på flere
-måter, enten ved å se i instansens konfigurasjonsfil
+måter, enten ved å se i instansens konfigurasjonsfil::
 
-::
   # grep uuid /etc/libvirt/qemu/instance-00000000.xml
 
-eller ved å bruke himlarcli
+eller ved å bruke himlarcli::
 
-::
   # ./hypervisor.py instances <hypervisor> | grep instance-00000000
 
-Merk at du for øyeblikket må avkommentere
+Merk at du for øyeblikket må avkommentere::
 
-::
   #'6'': getattr(i, 'OS-EXT-SRV-ATTR:instance_name'),
 
 i hypervisor.py for å få qemu-navn listet ut i tabellen.
