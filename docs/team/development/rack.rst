@@ -38,3 +38,32 @@ osl-controller-03 Dell PowerEdge R630        232 W     380 W
 osl-controller-04 Dell PowerEdge R620        242 W     398 W
 **Total**                                    6258 W    9632 W
 ================= ========================== ========= =========
+
+
+Rack 2
+~~~~~~
+
+.. image:: images/osl-rack-2.png
+
+Estimated power consumption:
+
+================= ========================== ========= =========
+ Host              Vendor/Model               Typical   Maximum
+================= ========================== ========= =========
+osl-leaf03        ?                          
+osl-leaf04        ?                          
+osl-mgmt-01       ?                          
+osl-storage-01    Dell PowerEdge R730xd      
+osl-storage-02    Dell PowerEdge R730xd      
+osl-storage-03    Dell PowerEdge R730xd      
+osl-storage-04    Dell PowerEdge R730xd      
+osl-storage-05    Dell PowerEdge R730xd      
+osl-storage-06    Dell PowerEdge R740xd
+osl-storage-07    Dell PowerEdge R740xd
+osl-storage-08    Dell PowerEdge R730xd      
+osl-storage-09    Dell PowerEdge R730xd      
+osl-storage-10    Dell PowerEdge R730xd      
+osl-storage-11    Dell PowerEdge R730xd      
+osl-storage-12    Dell PowerEdge R730xd      
+**Total**                                    ?         ?
+================= ========================== ========= =========
