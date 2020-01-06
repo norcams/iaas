@@ -65,7 +65,7 @@ osl-storage-09    Dell PowerEdge R730xd      476 W     680 W
 osl-storage-10    Dell PowerEdge R730xd      476 W     680 W
 osl-storage-11    Dell PowerEdge R730xd      476 W     680 W
 osl-storage-12    Dell PowerEdge R730xd      476 W     680 W
-**Total**                                    ?         ?
+**Total**                                    *4996 W*  *7464 W*
 ================= ========================== ========= =========
 
 
@@ -89,5 +89,5 @@ osl-compute-15    Dell PowerEdge R7425       579 W     889 W
 osl-compute-16    Dell PowerEdge R7425       579 W     889 W
 osl-compute-21/24 Supermicro AS -2123BT-HTR  2000 W    3000 W
 osl-compute-25/28 Supermicro AS -2123BT-HTR  2000 W    3000 W
-**Total**                                    7774 W    11734 W
+**Total**                                    *7774 W*  *11734 W*
 ================= ========================== ========= =========
