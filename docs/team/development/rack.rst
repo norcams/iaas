@@ -36,5 +36,5 @@ osl-controller-01 Dell PowerEdge R630        ?         ?
 osl-controller-02 Dell PowerEdge R630        ?         ?
 osl-controller-03 Dell PowerEdge R630        ?         ?
 osl-controller-04 Dell PowerEdge R620        ?         ?
-**Total**         ?                          ?         ?
+**Total**                                    ?         ?
 ================= ========================== ========= =========
