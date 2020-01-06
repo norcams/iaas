@@ -67,3 +67,27 @@ osl-storage-11    Dell PowerEdge R730xd
 osl-storage-12    Dell PowerEdge R730xd      
 **Total**                                    ?         ?
 ================= ========================== ========= =========
+
+
+Rack 3
+~~~~~~
+
+.. image:: images/osl-rack-3.png
+
+Estimated power consumption:
+
+================= ========================== ========= =========
+ Host              Vendor/Model               Typical   Maximum
+================= ========================== ========= =========
+osl-mgmt-opx-02   ?                          
+osl-nfs-01        Dell PowerEdge R710        
+osl-compute-11    Dell PowerEdge R7425      
+osl-compute-12    Dell PowerEdge R7425      
+osl-compute-13    Dell PowerEdge R7425      
+osl-compute-14    Dell PowerEdge R7425      
+osl-compute-15    Dell PowerEdge R7425      
+osl-compute-16    Dell PowerEdge R7425      
+osl-compute-21/24 Supermicro
+osl-compute-25/28 Supermicro
+**Total**                                    ?         ?
+================= ========================== ========= =========
