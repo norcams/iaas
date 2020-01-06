@@ -1,6 +1,6 @@
-==========================
-Rack and power consumption
-==========================
+===================================
+Rack overview and power consumption
+===================================
 
 Rack placement and power consumption planning.
 
