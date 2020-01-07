@@ -56,7 +56,7 @@ Rack 2
 osl-leaf03        ?                          
 osl-leaf04        ?                          
 osl-mgmt-01       ?                          
-osl-mgmt-opx-01   ?                          
+osl-mgmt-opx-01   Dell S3048-ON
 osl-storage-01    Dell PowerEdge R730xd      368 W       572 W
 osl-storage-02    Dell PowerEdge R730xd      368 W       572 W
 osl-storage-03    Dell PowerEdge R730xd      368 W       572 W
@@ -83,7 +83,7 @@ Rack 3
 ================== ========================== =========== ===========
  Host               Vendor/Model               Typical     Maximum
 ================== ========================== =========== ===========
-osl-mgmt-opx-02    ?                          ?           ?
+osl-mgmt-opx-02    Dell S3048-ON
 osl-nfs-01         Dell PowerEdge R710        300 W       400 W
 osl-compute-11     Dell PowerEdge R7425       579 W       889 W
 osl-compute-12     Dell PowerEdge R7425       579 W       889 W
@@ -102,4 +102,13 @@ Rack 4 (planned)
 
 .. image:: images/osl-rack-4.png
 
-**Estimated power consumption:** FIXME
+**Estimated power consumption:**
+
+================== ========================== =========== ===========
+ Host               Vendor/Model               Typical     Maximum
+================== ========================== =========== ===========
+osl-spine-01       Dell S5232F-ON             360 W       635 W
+osl-spine-02       Dell S5232F-ON             360 W       635 W
+osl-compute-??     Dell PowerEdge R6525       354 W       1061 W
+**Total**                                     ?           ?
+================== ========================== =========== ===========
