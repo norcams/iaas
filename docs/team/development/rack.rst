@@ -2,6 +2,9 @@
 Rack overview and power consumption
 ===================================
 
+.. Figurene er laget med draw.io. Kildekoden til hver av dem ligger
+.. under images. De er eksportert til PNG for å brukes på web.
+
 Rack placement and power consumption planning.
 
 Region OSL
