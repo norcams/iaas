@@ -10,3 +10,4 @@ Development
     vagrant/index
     ip
     hostname
+    rack
