@@ -81,9 +81,9 @@ Rack 3
 **Estimated power consumption:**
 
 ================== ========================== =========== ===========
- Host               Vendor/Model               Typical   Maximum
+ Host               Vendor/Model               Typical     Maximum
 ================== ========================== =========== ===========
-osl-mgmt-opx-02    ?                          
+osl-mgmt-opx-02    ?                          ?           ?
 osl-nfs-01         Dell PowerEdge R710        300 W       400 W
 osl-compute-11     Dell PowerEdge R7425       579 W       889 W
 osl-compute-12     Dell PowerEdge R7425       579 W       889 W
