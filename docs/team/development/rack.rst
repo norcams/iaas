@@ -139,3 +139,9 @@ Rack 4 (planned)
 ~~~~~~
 
 .. image:: images/bgo-rack-4.png
+
+
+Rack 5 (planned)
+~~~~~~
+
+.. image:: images/bgo-rack-5.png
