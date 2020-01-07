@@ -56,6 +56,7 @@ Estimated power consumption:
 osl-leaf03        ?                          
 osl-leaf04        ?                          
 osl-mgmt-01       ?                          
+osl-mgmt-opx-01   ?                          
 osl-storage-01    Dell PowerEdge R730xd      368 W       572 W
 osl-storage-02    Dell PowerEdge R730xd      368 W       572 W
 osl-storage-03    Dell PowerEdge R730xd      368 W       572 W
