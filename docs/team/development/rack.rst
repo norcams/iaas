@@ -121,3 +121,10 @@ Rack 1
 ~~~~~~
 
 .. image:: images/bgo-rack-1.png
+
+
+Rack 2
+~~~~~~
+
+.. image:: images/bgo-rack-2.png
+
