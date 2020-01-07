@@ -112,3 +112,12 @@ osl-spine-02       Dell S5232F-ON             360 W       635 W
 osl-compute-??     Dell PowerEdge R6525       354 W       1061 W
 **Total**                                     ?           ?
 ================== ========================== =========== ===========
+
+
+Region BGO
+----------
+
+Rack 1
+~~~~~~
+
+.. image:: images/bgo-rack-1.png
