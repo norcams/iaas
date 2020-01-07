@@ -91,8 +91,8 @@ osl-compute-13     Dell PowerEdge R7425       579 W       889 W
 osl-compute-14     Dell PowerEdge R7425       579 W       889 W
 osl-compute-15     Dell PowerEdge R7425       579 W       889 W
 osl-compute-16     Dell PowerEdge R7425       579 W       889 W
-osl-compute-21/24  Supermicro AS -2123BT-HTR  2000 W      3000 W
-osl-compute-25/28  Supermicro AS -2123BT-HTR  2000 W      3000 W
+osl-compute-21..24 Supermicro AS -2123BT-HTR  2000 W      3000 W
+osl-compute-25..28 Supermicro AS -2123BT-HTR  2000 W      3000 W
 **Total**                                     *7774 W*    *11734 W*
 ================== ========================== =========== ===========
 
