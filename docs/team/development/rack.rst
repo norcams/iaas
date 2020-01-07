@@ -15,7 +15,7 @@ Rack 1
 
 .. image:: images/osl-rack-1.png
 
-Estimated power consumption:
+**Estimated power consumption:**
 
 ================= ========================== =========== ===========
  Host              Vendor/Model               Typical     Maximum
@@ -48,7 +48,7 @@ Rack 2
 
 .. image:: images/osl-rack-2.png
 
-Estimated power consumption:
+**Estimated power consumption:**
 
 ================= ========================== =========== ===========
  Host              Vendor/Model               Typical     Maximum
@@ -78,7 +78,7 @@ Rack 3
 
 .. image:: images/osl-rack-3.png
 
-Estimated power consumption:
+**Estimated power consumption:**
 
 ================== ========================== =========== ===========
  Host               Vendor/Model               Typical   Maximum
@@ -102,4 +102,4 @@ Rack 4 (planned)
 
 .. image:: images/osl-rack-4.png
 
-Estimated power consumption: FIXME
+**Estimated power consumption:** FIXME
