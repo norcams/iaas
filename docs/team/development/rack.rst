@@ -138,4 +138,4 @@ Rack 3
 Rack 4 (planned)
 ~~~~~~
 
-.. image:: images/bgo-rack-2.png
+.. image:: images/bgo-rack-4.png
