@@ -128,3 +128,14 @@ Rack 2
 
 .. image:: images/bgo-rack-2.png
 
+
+Rack 3
+~~~~~~
+
+.. image:: images/bgo-rack-3.png
+
+
+Rack 4 (planned)
+~~~~~~
+
+.. image:: images/bgo-rack-2.png
