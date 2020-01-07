@@ -102,3 +102,4 @@ Rack 4 (planned)
 
 .. image:: images/osl-rack-4.png
 
+Estimated power consumption: FIXME
