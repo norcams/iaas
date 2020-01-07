@@ -94,3 +94,10 @@ osl-compute-21/24 Supermicro AS -2123BT-HTR  2000 W      3000 W
 osl-compute-25/28 Supermicro AS -2123BT-HTR  2000 W      3000 W
 **Total**                                    *7774 W*    *11734 W*
 ================= ========================== =========== ===========
+
+
+Rack 3 (planned)
+~~~~~~~~~~~~~~~~
+
+.. image:: images/osl-rack-4.png
+
