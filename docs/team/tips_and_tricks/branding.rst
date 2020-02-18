@@ -11,11 +11,11 @@ Where do we use logo
 * Slack
 * Twitter 
 
-============
-UH-IaaS Logo
-============
+==========
+NREC Logo
+==========
 
-.. image:: images/uhiaas-logo-splash-dark.png
-
-.. image:: images/uhiaas-logo-horizontal-dark.png
+.. image:: images/nrec-horizontal_dark.svg
+|
+.. image:: images/nrec-horizontal_light.svg
 
