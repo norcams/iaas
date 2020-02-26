@@ -179,6 +179,18 @@ Upgrade node::
 
 Reboot node.
 
+
+Firmware
+--------
+
+For physical nodes it might be worth considering firmware patching.
+
+Dell
+****
+
+Run the ansible job `lib/upgrade/dell_compute.yaml`.
+
+
 Testing
 =======
 
