@@ -32,6 +32,9 @@ m1.xlarge    4    16         20
 m2
 ==
 
+.. IMPORTANT::
+   DENNE SKAL IKKE LENGER TILBYS!!!!!
+
 m2 er tenkt som større maskiner for dem som trenger mer RAM og vCPU enn det
 m1 dekke. Denne vil kun være tilgjengelig for prosjekter som har bestilt
 tilgang til m2. Alle som eksplisitt ber om økt flavor som passer inn i denne
