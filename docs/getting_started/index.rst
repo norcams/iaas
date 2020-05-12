@@ -2,14 +2,14 @@
 Getting started
 ===============
 
-For end users of UH-IaaS
-------------------------
+For end users of NREC
+---------------------
 
-* Documentation at http://docs.uh-iaas.no
-* Status at https://status.uh-iaas.no
+* Documentation at https://docs.nrec.no
+* Status at https://status.nrec.no
 
-For UH-IaaS developer and operators
------------------------------------
+For NREC developer and operators
+--------------------------------
 
 * :doc:`/team/index`
 
@@ -20,8 +20,8 @@ This will be in Norwegian only.
 
 * :doc:`/status/index`
 
-Customers and local adminstrators
----------------------------------
+Customers and local administrators
+----------------------------------
 
 This will be in Norwegian only.
 
