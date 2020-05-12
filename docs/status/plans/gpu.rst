@@ -4,7 +4,7 @@ GPU Assisted Compute
 
 Last changed: 2018-10-01
 
-There is a growing interest in GPU assisted compute resources. There are 
+There is a growing interest in GPU assisted compute resources. There are
 different alternatives as of how to offer such resources in UH-IaaS.
 
 
@@ -13,7 +13,7 @@ GPU vendors
 
 There are mainly three players in the GPU compute field - NVIDIA, AMD and Intel, the former
 being the dominant player for now, the latter the latest to join. Performance wise NVIDIA has
-the most performant GPUs. We have not considered AMD GPUs for now. Newer Intel Xeon E3 ***5 series
+the most performant GPUs. We have not considered AMD GPUs for now. Newer Intel Xeon E3 xxx5 series
 have an onboard GPU that can be used, however the performance of these GPUs compared to
 NVIDIA of AMD is unknown to us for now.
 

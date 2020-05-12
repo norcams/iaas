@@ -190,7 +190,7 @@ Dashboard
   disabled in the dashboard.
 
 ``[DEFERRED]`` **Security considerations**
-  There are a few things that need to be considered (from `OpenStack Security Guide`_):
+  There are a few things that need to be considered (from `OpenStack Security Guide\: Management - Management interfaces`_):
 
   * The dashboard requires cookies and JavaScript to be enabled in the
     web browser.
@@ -229,13 +229,13 @@ OpenStack API
 ~~~~~~~~~~~~~
 
 ``[DEFERRED]`` **Security considerations**
-  There are a few things that need to be considered (from `OpenStack Security Guide`_):
+  There are a few things that need to be considered (from `OpenStack Security Guide\: Management - Management interfaces`_):
 
   * The API service should be configured for TLS to ensure data is
     encrypted.
 
     - **FIXME:** Ensure TLS 1.2
- 
+
  * As a web service, OpenStack API is susceptible to familiar web
    site attack vectors such as denial of service attacks.
 
@@ -260,7 +260,7 @@ Management utilities
 ~~~~~~~~~~~~~~~~~~~~
 
 ``[PASS]`` **Security considerations**
-  There are a few things that need to be considered (from `OpenStack Security Guide`_):
+  There are a few things that need to be considered (from `OpenStack Security Guide\: Management - Management interfaces`_):
 
   * The dedicated management utilities (\*-manage) in some cases use
     the direct database connection.
@@ -278,7 +278,7 @@ Out-of-band management interface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``[PASS]`` **Security considerations**
-  There are a few things that need to be considered (from `OpenStack Security Guide`_):
+  There are a few things that need to be considered (from `OpenStack Security Guide\: Management - Management interfaces`_):
 
   * Use strong passwords and safeguard them, or use client-side TLS
     authentication.

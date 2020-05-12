@@ -82,7 +82,7 @@ From OpenStack Security Guide:
   security impact.*
 
 ``[N/A]`` **Document middleware**
-  We should be careful when implementing non-standard software in the 
+  We should be careful when implementing non-standard software in the
   middleware, and this should be thoroughly documented.
 
   * We are not using any non-standard middleware
@@ -128,8 +128,8 @@ API endpoint rate-limiting
 From OpenStack Security Guide:
 
   *Within OpenStack, it is recommended that all endpoints, especially
-   public, are provided with an extra layer of protection, by means of
-   either a rate-limiting proxy or web application firewall.*
+  public, are provided with an extra layer of protection, by means of
+  either a rate-limiting proxy or web application firewall.*
 
 ``[DEFERRED]`` **Rate-limiting on API endpoints**
   FIXME: Add rate-limiting to HAProxy

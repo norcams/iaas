@@ -9,11 +9,11 @@ Last changed: |date|
 
 .. _OpenStack Security Guide\: Databases: http://docs.openstack.org/security-guide/databases.html
 
-+-------------------------+---------------------+
-| **Impact**              | High                |
-+-------------------------+---------------------+
++--------------------------+---------------------+
+| **Impact**               | High                |
++--------------------------+---------------------+
 | **Implemented percent** | **44%** (4/9)        |
-+-------------------------+---------------------+
++--------------------------+---------------------+
 
 From `OpenStack Security Guide\: Databases`_:
 

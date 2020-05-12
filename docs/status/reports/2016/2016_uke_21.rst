@@ -45,5 +45,4 @@ Utfordringer
   nok å tenke nytt på hvordan vi skal løse dette. Har ikke vært etterspurt og
   vi vil ta det manuelt inntil vi finner en løsning her. Den opprinnelige
   planen vi ble enig om sammen med UNINETT i des 2015 finnes her::
-
   https://github.com/norcams/himlar-connect/blob/master/README.md

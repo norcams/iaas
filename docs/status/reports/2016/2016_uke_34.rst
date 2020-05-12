@@ -46,7 +46,7 @@ Planlagt fremdrift
 Utfordringer
 ============
 
-- I :doc:`../plans/production` har jeg skrevet at vi trenger 4 personer frem
+- I :doc:`../../plans/archive/production` har jeg skrevet at vi trenger 4 personer frem
   til nyttår for å komme i produksjon. Vi er nå prosjektleder (100% delt),
   UiB (1 person 100%) og UiO (1 person 60% og en person 40%). Det ser ikke ut
   til å berøre datoene i leveransen, men vil kunne påvirke innholdet dersom vi

@@ -76,7 +76,7 @@ Regler:
  6          L    A    U
 ========== ==== ==== ====
 
-*= Vi må trikse litt for å komme ut av dagens status til rotasjon 1.
+\*= Vi må trikse litt for å komme ut av dagens status til rotasjon 1.
 
 
 Konklusjon

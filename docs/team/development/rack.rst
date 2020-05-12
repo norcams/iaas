@@ -53,9 +53,9 @@ Rack 2
 ================= ========================== =========== ===========
  Host              Vendor/Model               Typical     Maximum
 ================= ========================== =========== ===========
-osl-leaf03        ?                          
-osl-leaf04        ?                          
-osl-mgmt-01       ?                          
+osl-leaf03        ?
+osl-leaf04        ?
+osl-mgmt-01       ?
 osl-mgmt-opx-01   Dell S3048-ON
 osl-storage-01    Dell PowerEdge R730xd      368 W       572 W
 osl-storage-02    Dell PowerEdge R730xd      368 W       572 W
@@ -136,12 +136,12 @@ Rack 3
 
 
 Rack 4 (planned)
-~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. image:: images/bgo-rack-4.png
 
 
 Rack 5 (planned)
-~~~~~~
+~~~~~~~~~~~~~~~~
 
 .. image:: images/bgo-rack-5.png

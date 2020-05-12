@@ -14,13 +14,12 @@ Fullført
 - Alle passord er flyttet ut av git-repoet som ligger på github.com
 
 - Sikkerhetsdokument er på plass. Vi kan nå begynne å jobbe med de delene
-  som skal på plass til piloten. (:doc:`../../security/index`)
+  som skal på plass til piloten. (:doc:`../../../security/index`)
 
 Under arbeid
 ============
 
 - Brukerdokumentasjon er påbegynt og forsetter frem mot piloten går på luften.
-  (:doc:`../../enduser/index`)
 
 - Reinstall av OSL torsdag 7.april
 

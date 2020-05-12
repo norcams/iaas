@@ -1,5 +1,5 @@
 How to bootstrap Himlar
-======================
+=======================
 
 This document describes the procedure to initialize a new environment from a
 single login node. The systems to be used are all physically installed
@@ -110,7 +110,7 @@ Procedure
       **ssh iaas@$loc-admin-01...**.
 
 #. When controller node installation is complete the firewall can be restored:
-t
+
    **iptables -D INPUT 1** repeated until all newly inserted rules are removed.
    Check with **iptables -L -n**
 
@@ -222,7 +222,7 @@ t
       For `access-01` the certificates must be first distributed.
 
       For `identity-01`, it's important that the openrc file is absent while bootstrapping keystone.
-      Remove the necessary include in the node file before the first puppet run. 
+      Remove the necessary include in the node file before the first puppet run.
 
    #. `storage0[1-]`
    #. `volume-01`, `image-o1`, `network-01`, `novactrl-01`, `console-01`
@@ -233,9 +233,11 @@ t
 
 #. Enable regular puppet execution by removing *puppet::runmode: 'none'* from
    1. **virsh list** should now report the foreman instance as running
+
    #. The install can be monitored with **vncviewer $loc-controller.01**,
       **virt-manager** connected to *$loc-controller-01* or your preferred
       vnc viewer application
+
    #. When the message
 
       "*Domain creation completed.

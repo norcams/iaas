@@ -28,13 +28,16 @@ Onsdag 16.mars
 **Sted:** Møterom Awk (3118), IFI, UiO
 
 1. Leveranseplan
+
   - Brukerdokumentasjon, kundeoppfølging
   - Sikkerhetsgjennomgang
   - Pilotering, hvem skal få tilbud?
   - Jus, hvilke type data kan være med ut i piloten
 
 2. Diskusjonstema
+
   - DNS, dhcp, brukerhåndtering, logging, overvåking
 
 3. Teknisk gjennomgang
+
   - puppet

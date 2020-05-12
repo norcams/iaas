@@ -19,3 +19,4 @@ Tips and tricks
     norcams-himlar-dp-prep
     network-issues
     compute-vgpu
+    dedicated-flavors

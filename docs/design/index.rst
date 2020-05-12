@@ -11,3 +11,4 @@ High-level documents describing the IaaS platform design
     physical-hardware
     virtual-machines
     hardware-requirements
+    nodes

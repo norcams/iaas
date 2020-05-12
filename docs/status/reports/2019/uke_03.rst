@@ -39,8 +39,6 @@ bli satt opp og installert når vi får den nye mgmt-switchen som er bestilt.
 Vi har også bytte logo for UH-IaaS. Samtidig har vi endret fargeprofiler
 tilsvarende den nye logoen.
 
-.. image:: ../../../team/tips_and_tricks/images/uhiaas-logo-horizontal-dark.png
-
 
 Utfordringer
 ============

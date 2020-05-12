@@ -10,7 +10,7 @@ endring ligger det en kopi av alt som ble diskutert under.
 .. contents:: Innhold
 
 Arbeidsplan våren 2019
-=====================
+======================
 
 Oppgaver
 --------

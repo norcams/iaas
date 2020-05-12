@@ -9,13 +9,12 @@ Where do we use logo
 * Enduser documentation
 * Github
 * Slack
-* Twitter 
+* Twitter
 
 ==========
 NREC Logo
 ==========
 
 .. image:: images/nrec-horizontal_dark.svg
-|
-.. image:: images/nrec-horizontal_light.svg
 
+.. image:: images/nrec-horizontal_light.svg

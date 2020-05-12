@@ -30,10 +30,10 @@ Planlagt fremdrift
 ==================
 
 - Det er skrevet et eget dokument om leveransen og hva som skal til for å gå
-  :doc:`../plans/production`
+  :doc:`../../plans/archive/production`
 
 - Vi kommer til å gjennomføre nettverksomleggingen vi ble enig om på
-  :doc:`../meetings/2016_workshop_2` i uke 31 (bgo) og uke 32 (osl)
+  :doc:`../workshop/2016_workshop_2` i uke 31 (bgo) og uke 32 (osl)
 
 - Søknad til UNINETT. Trond har fått redaktøransvaret for denne. Vi må ha klart
   et utkast senest mandag 15.august som kan sendes til UNINETT. Siste frist
@@ -47,7 +47,7 @@ Planlagt fremdrift
 Utfordringer
 ============
 
-- I :doc:`../plans/production` har jeg skrevet at vi trenger 4 personer frem
+- I :doc:`../../plans/archive/production` har jeg skrevet at vi trenger 4 personer frem
   til nyttår for å komme i produksjon. Vi er nå prosjektleder (100% delt),
   UiB (1 person 100%) og UiO (1 person 60% og en person 40%).
 

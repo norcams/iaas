@@ -186,12 +186,15 @@ Steps to import packages
 ````````````````````````
 
 1. Save new package to the ``incoming`` subdirectory inside *aptrepo*
+
 #. Execute the deb repo tool inside the ``aptrepo`` directory::
 
-   reprepro -b . --confdir /etc/kelda/prod/apt includedeb wheezy incoming/\*
+    reprepro -b . --confdir /etc/kelda/prod/apt includedeb wheezy incoming/\*
 
-   (replace *wheezy* with whatever codename is considered)
+    (replace *wheezy* with whatever codename is considered)
+
 #. Remove package(s) from the ``incoming`` directory
+
 
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/aptrepo>`_
@@ -244,7 +247,7 @@ located under the ``rpm`` or ``nonfree`` subdirectory. No additional operations 
 than the ensuring correct SELinux label as described above.
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/rpm>`_
-**URL**: `<https://download.iaas.uio.no/uh-iaas/nonfree`_
+**URL**: `<https://download.iaas.uio.no/uh-iaas/nonfree>`_
 
 The distinction between those two, is that `nonfree` is only accessible from a
 restricted set of IP addresses (at the time of writing the *login* and *proxy*
@@ -261,9 +264,10 @@ the archive on *download*:
 1. upload file to a web archive (for instance `<https://folk.uio.no>`_ for UiO affiliated personel)
 #. log in to *download* from one of the login nodes in the usual manner::
 
-   sudo ssh iaas@download.iaas.uio.no
+    sudo ssh iaas@download.iaas.uio.no
 
 #. `cd /var/www/html/uh-iaas/rpm`
+
 #. download the file with wget, curl or something like that
 
 
@@ -530,4 +534,3 @@ Invocation:
 
 For now there is no automatic invocation, and any cleanup should be done
 manually. User confirmation is requested.
-
