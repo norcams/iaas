@@ -68,3 +68,11 @@ monitoring plugin in debug mode, from the monitor server::
 
   /usr/lib64/nagios/plugins/check_openmanage -H test02-controller-01 -d
 
+iDRAC reset
+-----------
+
+If we have problems with the iDRAC, e.g. the redfish endpoint do not respond,
+we can reset the iDRAC from the host os::
+
+  yum install srvadmin-idrac.x86_64
+  /opt/dell/srvadmin/bin/idracadm7 racreset
