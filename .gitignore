@@ -4,3 +4,6 @@
 *.swp
 *.pyc
 docs/_*/
+lib/
+bin/
+share/
