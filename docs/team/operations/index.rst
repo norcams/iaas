@@ -25,3 +25,4 @@ Operations
     etcd
     uib-ha
     hardware
+    report

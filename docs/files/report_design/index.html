@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="model" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<title>Report API</title>
+
+	<!-- JQUERY (use 1.x branch to be compatible with IE 6/7/8) / UI / LAYOUT -->
+	<script type="text/javascript" src="lib/jquery/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-ui/js/jquery-ui-1.11.2.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-ui-layout/js/jquery.layout-1.4.4.js"></script>
+	<link type="text/css" rel="stylesheet" href="lib/jquery-ui-layout/css/layout-default-1.4.4.css">
+	<!-- BOOTSTRAP -->
+	<link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap-3.3.2.min.css">
+	<link type="text/css" rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme-3.3.2.min.css">
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap-3.3.2.min.js"></script>
+	<!-- REPORT SPECIFIC -->
+	<link type="text/css" rel="stylesheet" href="css/model.css">
+	<link type="text/css" rel="stylesheet" href="css/i18n.css">
+	<script type="text/javascript" src="js/model.js"></script>
+</head>
+
+<body>
+	<!-- "ui-layout-north" class set (topbar) -->
+	<div class="ui-layout-north">
+		<nav class="navbar navbar-default">
+			<div class="navbar-header">
+				<span class="navbar-brand">Report API</span>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#myModal" data-toggle="modal" class="btn go"><span class="i18n-about"></span></a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<iframe name="view" class="ui-layout-center" src="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/model.html" scrolling="no"></iframe>
+
+	<div class="ui-layout-west">
+		<iframe name="element" class="ui-layout-south" src="elements/empty-element.html"  scrolling="no"></iframe>
+		<div class="ui-layout-center">
+			<div class="panel panel-default root-panel">
+				<div class="panel-heading root-panel-heading">
+					<b><span class="i18n-modeltree"></span></b>
+				</div>
+				<div class="panel-body root-panel-body">
+					<b><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/model.html" target="view">Report API</a></b>
+					<ul class="tree">
+					<!-- START OF STRINGTEMPLATE CODE -->
+						<li><span class="i18n-model_content"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+							<ul>
+                                <li><span class="i18n-strategy"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+                                    <ul>
+                                    </ul>
+                                </li>
+								<li><span class="i18n-business_layer"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+									<ul>
+										<li class="tree-folder"><span><i class="glyphicon glyphicon-triangle-right"></i> uib </span>
+											<ul>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/d5e07a32-6946-4bcc-811f-e7b5999333f6.html" target="element"> uib sec team </a></li>
+
+											</ul>
+											</li>
+									</ul>
+								</li>
+								<li><span class="i18n-application_layer"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+									<ul>
+										<li class="tree-folder"><span><i class="glyphicon glyphicon-triangle-right"></i> uib </span>
+											<ul>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/a8506955-88e4-4bc7-8d0f-31605c1429e2.html" target="element"> haproxy </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/facfc8e6-4d40-4327-8b98-788994c2fb28.html" target="element"> webgui </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/ae423f1b-38ad-4899-add1-18e09255ced1.html" target="element"> uib instance db </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/078a3eb6-ef57-4c1b-a530-c1bb09b54b5a.html" target="element"> collection script </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/c747207f-3c65-4621-8a8f-0c3dbf07e109.html" target="element"> api key </a></li>
+
+											</ul>
+											</li><li class="tree-folder"><span><i class="glyphicon glyphicon-triangle-right"></i> bgo </span>
+											<ul>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/31fe0116-858b-49a1-9aeb-162669423492.html" target="element"> haproxy </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/5ab0f80b-0c70-4d20-a46a-014f44bb8875.html" target="element"> report api </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/b85cf3fe-3a98-4c04-9ab4-97deb3317c81.html" target="element"> report db </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/038e2a78-82b5-4df6-9b52-48a1e9672120.html" target="element"> systemd script </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/cc045c7b-1385-48c5-b086-cab01c24fd4a.html" target="element"> api key </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/d3964242-0f95-4ad3-9412-49f4816018d2.html" target="element"> owner script </a></li>
+
+											</ul>
+											</li><li class="tree-folder"><span><i class="glyphicon glyphicon-triangle-right"></i> report </span>
+											<ul>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/e3d8a556-8ebe-4784-b6b5-8bf26ccf5e96.html" target="element"> get instance </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/c10978b4-d6a2-4494-a317-e483539c2e46.html" target="element"> post instance </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/99786691-b6c7-44dc-bcca-60f99fdc0907.html" target="element"> report.nrec.no </a></li>
+
+											</ul>
+											</li><li class="tree-folder"><span><i class="glyphicon glyphicon-triangle-right"></i> osl </span>
+											<ul>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/905ba938-e4f8-4dca-92d1-b2dd0dda5660.html" target="element"> owner script </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/0ae91566-0282-4e91-80ae-f2090cee3de7.html" target="element"> report db </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/d3d0f3f9-5825-4c23-885a-d0e2725c87df.html" target="element"> report api </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/23b80c7e-1753-4b94-bac7-c3bb78bf8349.html" target="element"> haproxy </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/3db29318-4e06-4e12-a642-99622bed3a7e.html" target="element"> api key </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/156c71b7-75d2-4c1b-8b3c-a84f45b2bb7b.html" target="element"> systemd script </a></li>
+
+											</ul>
+											</li>
+									</ul>
+								</li>
+								<li><span class="i18n-technology_layer"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+									<ul>
+										<li class="tree-folder"><span><i class="glyphicon glyphicon-triangle-right"></i> bgo </span>
+											<ul>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/edddea15-f35a-4a54-8d57-a6b15bd56491.html" target="element"> bgo </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/151a285a-c9bb-4f4f-84ee-2b3346762ed7.html" target="element"> bgo-compute </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/7885f687-b406-4980-9716-775462d9c4e2.html" target="element"> bgo-controller </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/408ed713-4b4c-4a80-8f58-5ee2970e6497.html" target="element"> bgo-db-global </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/0d22c5e4-bb66-4acc-9a5d-b2e7d41bf309.html" target="element"> instance </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/f7f57460-d944-4088-8f68-0f93cbee6dc9.html" target="element"> bgo-report </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/82d0dd4d-0ffe-4fc4-8925-f45dc6159f0d.html" target="element"> bgo-api </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/0e35167e-360d-4e67-b4ce-979f6e69241f.html" target="element"> bgo-proxy </a></li>
+
+											</ul>
+											</li><li class="tree-folder"><span><i class="glyphicon glyphicon-triangle-right"></i> uib </span>
+											<ul>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/e51d8834-e7a2-430c-9b0b-f04111bf63c0.html" target="element"> uib </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/761cc35a-36aa-4ef7-b1dc-327c31a31b76.html" target="element"> uib-ha </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/4cf653c8-ff9c-4612-800a-4a9abed60608.html" target="element"> tjinfo </a></li>
+
+											</ul>
+											</li><li class="tree-folder"><span><i class="glyphicon glyphicon-triangle-right"></i> osl </span>
+											<ul>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/0768a097-f887-4446-8cb7-6d4a9f1bd3b2.html" target="element"> osl </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/102ac652-22b7-44a4-a513-a9c7025538ad.html" target="element"> osl-compute </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/dcf30ca1-f172-4d02-a2f8-d9cc649f3d50.html" target="element"> osl-controller </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/dcc52380-3dbe-40cb-80c3-99ab4f2bfce3.html" target="element"> osl-db-global </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/b23daeaa-8389-431c-ae69-2ae617b8ec95.html" target="element"> osl-api </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/24dcf4a5-3184-41c1-b887-d00490a5de3d.html" target="element"> instance </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/cc08ebb9-451a-4058-9487-7fa6cc2d3455.html" target="element"> osl-report </a></li>
+															<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/bfac4c34-8813-49e6-b5a3-4fc52a517393.html" target="element"> osl-proxy </a></li>
+
+											</ul>
+											</li>
+									</ul>
+								</li>
+								<li><span class="i18n-motivation"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+									<ul>
+									</ul>
+								</li>
+								<li><span class="i18n-implementation"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+									<ul>
+									</ul>
+								</li>
+								<li><span class="i18n-connectors"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+									<ul>
+									</ul>
+								</li>
+								<li><span class="i18n-relations"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+									<ul>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/5bafc17d-c211-41b1-8e63-a4d455646ece.html" target="element">
+															<span class="i18n-elementtype-CompositionRelationship"></span>
+														(bgo - bgo-controller) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/363693ec-4372-4de3-9941-48a746fd25a5.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(bgo-controller - bgo-db-global) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/525a0e45-760f-41e5-a30d-8f22d6df1a35.html" target="element">
+															<span class="i18n-elementtype-CompositionRelationship"></span>
+														(bgo - bgo-compute) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/4eb5bfef-82d2-4b05-ba04-4e33123c6b42.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(bgo-compute - instance) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/4cfb2451-5a84-4708-993d-3a06e9736e07.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(instance - systemd script) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/07952fa7-bf28-4b7e-9a86-41151913e6ce.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(bgo-controller - bgo-api) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/e083e65f-1433-4cbe-808c-3aff67929a26.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(bgo-controller - bgo-report) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/a9eac8ad-1a9c-477f-af05-811e42acca66.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(bgo-report - report api) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/8d7c7a6c-8cad-4b5e-864f-fff9f18e9fbe.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(bgo-api - haproxy) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/991df578-f776-4b56-80d7-100705a8b5da.html" target="element">
+															<span class="i18n-elementtype-CompositionRelationship"></span>
+														(uib - uib-ha) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/8916415c-5596-44e5-b560-e3ef984546d2.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(uib-ha - haproxy) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/91ddb403-a1c9-4935-81f9-d1e81e32b594.html" target="element">
+															<span class="i18n-elementtype-CompositionRelationship"></span>
+														(uib - tjinfo) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/bc75c038-f94f-4492-8ade-241ad0093335.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(haproxy - report.nrec.no) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/10904c29-eacd-4356-ab6a-7a47c7827fbf.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(api key - report api) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/44dcab8e-ecae-4f65-9f78-54a43f81394e.html" target="element">
+															<span class="i18n-elementtype-FlowRelationship"></span>
+														(systemd script - post instance) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/22ea07e7-dd08-4141-b825-1ea581610e7f.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(bgo-controller - bgo-proxy) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/564901f8-196d-40cf-a1bc-338c41576f0c.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(bgo-proxy - owner script) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/e402a1b7-c32d-48ec-a7b0-83b15845f4db.html" target="element">
+															<span class="i18n-elementtype-AccessRelationship"></span>
+														(owner script - report db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/3a94377e-4a5c-4d73-ba30-b1ff6a530887.html" target="element">
+															<span class="i18n-elementtype-AccessRelationship"></span>
+														(report api - report db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/36166f03-9313-4cec-93c2-40850449a61a.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(haproxy - haproxy) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/54ad2a99-2e30-4982-88e0-81ae28aae761.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(haproxy - report api) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/240c984c-4be6-4b2c-ac65-3d991b2e1fd1.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(post instance - report.nrec.no) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/a553e4f2-ede9-4d9c-846d-3ee595390a89.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(bgo-db-global - report db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/8aaf23d3-daa1-42b5-9445-78260c43b93a.html" target="element">
+															<span class="i18n-elementtype-CompositionRelationship"></span>
+														(osl-controller - osl) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/6294161b-9b7f-47f9-838f-d57c508aa66a.html" target="element">
+															<span class="i18n-elementtype-CompositionRelationship"></span>
+														(osl-compute - osl) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/37f46c4f-8289-4355-ad38-4647d55c7c6e.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(osl-controller - osl-proxy) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/ea25030c-8467-47fd-a07f-7125e38c0d48.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(osl-controller - osl-db-global) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/41068917-34ca-4744-b36f-76a84450e3a3.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(osl-controller - osl-report) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/13c2e47d-dd66-408d-9b73-f0e009ac3de8.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(osl-controller - osl-api) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/ff76e1bd-0033-4e00-8677-57b1d228e725.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(osl-db-global - report db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/a74bb8c3-886b-4928-9f55-39def33c0c4f.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(osl-api - haproxy) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/b6b4917c-105c-4c43-9402-f70a50cd2fc0.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(osl-report - report api) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/3d65d5c5-36c2-4762-b1c5-7eba81959d3d.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(osl-proxy - owner script) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/e12cbcfd-7237-4ecd-8d95-c912c6a33131.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(api key - report db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/ef98926d-5da2-4c33-b741-62417704a835.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(haproxy - haproxy) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/fa318ba7-d116-4abf-a783-61b8ec359db6.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(haproxy - report api) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/dd5f15cb-de0e-4181-88c2-ac34b1c499c2.html" target="element">
+															<span class="i18n-elementtype-AccessRelationship"></span>
+														(report api - report db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/c44bc6eb-5659-4f58-945c-d24c274ebea0.html" target="element">
+															<span class="i18n-elementtype-AccessRelationship"></span>
+														(owner script - report db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/5831eecb-5b79-4c0c-b836-5a1c8ff425d0.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(osl-compute - instance) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/d5f33cbb-9579-44a9-9870-e88fcddc4973.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(instance - systemd script) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/e8d0ec14-fd21-45c8-91ba-bd20cc5338f6.html" target="element">
+															<span class="i18n-elementtype-FlowRelationship"></span>
+														(systemd script - post instance) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/20536df7-7d49-4870-955b-2333ab707b77.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(get instance - report.nrec.no) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/6135942d-0264-4254-b847-aec5e21e4724.html" target="element">
+															<span class="i18n-elementtype-FlowRelationship"></span>
+														(get instance - collection script) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/eef88305-ab7e-4235-822c-90c573eef800.html" target="element">
+															<span class="i18n-elementtype-AccessRelationship"></span>
+														(collection script - uib instance db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/1a1baf9b-d5c9-4841-bce7-670ac605af78.html" target="element">
+															<span class="i18n-elementtype-AccessRelationship"></span>
+														(webgui - uib instance db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/bd74e76a-c7de-49c6-832d-2d86e0f16cf9.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(tjinfo - collection script) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/98f3914f-26bb-4b04-919d-ea353886f13f.html" target="element">
+															<span class="i18n-elementtype-AssociationRelationship"></span>
+														(tjinfo - uib instance db) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/1eb0c862-a8f3-4c8b-b57c-605ba664c39c.html" target="element">
+															<span class="i18n-elementtype-ServingRelationship"></span>
+														(tjinfo - webgui) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/9e38615b-af87-4b0f-b7c0-19a62d325f7c.html" target="element">
+															<span class="i18n-elementtype-AccessRelationship"></span>
+														(collection script - api key) 
+													</a></li>
+													<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/elements/dd4b7c1f-a157-40c1-8216-04c612ac31f2.html" target="element">
+															<span class="i18n-elementtype-FlowRelationship"></span>
+														(webgui - uib sec team) 
+													</a></li>
+
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><span class="i18n-views"><i class="glyphicon glyphicon-triangle-right"></i> </span>
+							<ul>
+											<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/views/a57181b7-ed42-4492-a8d6-54ce01cb515c.html" target="view"> Default View </a></li>
+											<li class="tree-element"><a href="770c4aed-d34a-4ab8-bb3a-83aebdbe0ca7/views/39126956-2d7a-4764-88c3-509af42fc8c7.html" target="view"> UiB Sec view </a></li>
+
+							</ul>
+						</li>
+					<!-- END OF STRINGTEMPLATE CODE -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- START ABOUT MODAL DIALOG -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+					<h4 class="modal-title i18n-about"></h4>
+				</div>
+				<div class="modal-body">
+					<p><strong> <span class="i18n-about-pluginname"></span></strong></p>
+					<p><span class="i18n-about-pluginversion"></span></p>
+					<p><span class="i18n-about-plugintext1"></span></p>
+					<p><span class="i18n-about-plugintext2"></span></p>
+					<p><a href="https://www.archimatetool.com" target="_blank">Archi®</a> <span class="i18n-about-plugintext3"></span></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default i18n-close" data-dismiss="modal"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END ABOUT MODAL DIALOG -->
+
+	<!-- START HINT MODAL DIALOG -->
+	<div class="modal fade first-load" id="myModalHint" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+						<h4 class="modal-title i18n-hint"></h4>
+				</div>
+				<div class="modal-body">
+						<iframe id="frame-hint" name="hint" onload="if($('#myModalHint').hasClass('first-load')) $('#myModalHint').removeClass('first-load'); else $('#myModalHint').modal({show:true});"></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default i18n-close" data-dismiss="modal"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- END HINT MODAL DIALOG -->
+</body>
+</html>
