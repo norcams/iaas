@@ -3,7 +3,7 @@
 *~
 *.swp
 *.pyc
-docs/_*/
-lib/
-bin/
-share/
+/docs/_*/
+/lib/
+/bin/
+/share/
