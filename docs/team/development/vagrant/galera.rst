@@ -4,10 +4,12 @@ Galera DB cluster
 
 Some tips for setting up galera in vagrant:
 
-
-
 Setup
 -----
+
+.. WARNING::
+   If you have running :file:`db-global` or :file:`db-regional` nodes these must
+   be halted or destroyed first!
 
 * use :file:`db` nodeset
 * you will need 3 nodes: :file:`db-global-01`, :file:`db-global-02`,
