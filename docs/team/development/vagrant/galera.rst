@@ -27,6 +27,7 @@ Setup
 * Start :file:`ha-01` and make sure :file:`garbd` is running. You should now have
   a size 2 cluster (see below)
 * Start :file:`db-global-01` and start :file:`mariadb.service`.
+  If you have problems starting the database, try to stop iptables first
 
 
 Check status
