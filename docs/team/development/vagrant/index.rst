@@ -12,3 +12,4 @@ Vagrant
     testing
     himlarcli
     dataporten
+    galera
