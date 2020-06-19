@@ -26,7 +26,7 @@ Setup
   to start database service and run provision once more with errors
 * Start :file:`ha-01` and make sure :file:`garbd` is running. You should now have
   a size 2 cluster (see below)
-* Start :file:`db-global-01` and start :file:`mariadb.service`.
+* Start :file:`db-global-02` and start :file:`mariadb.service`.
   If you have problems starting the database, try to stop iptables first
 
 
