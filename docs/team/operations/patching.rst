@@ -56,6 +56,9 @@ Make sure all nodes will autostart with::
 Normal OS patching
 ==================
 
+For each for the production regions, `BGO` and `OSL`, do the following:
+
+
 Patching controller-04
 ----------------------
 
@@ -81,8 +84,6 @@ Option                 Effect
   
 Patching other controller nodes
 -------------------------------
-
-For each for the production regions, `BGO` and `OSL`, do the following:
 
 #. Upgrade virtual nodes, while excluding the **httpd**, **mariadb**
    and **mod_ssl** packages. This is usually safe to do outside of a
