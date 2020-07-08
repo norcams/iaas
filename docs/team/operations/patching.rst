@@ -69,7 +69,7 @@ therefore be patched and rebooted outside of a maintenance window.
 The controller node and all virtual nodes running on the controller
 can be patched with a single Ansible playbook::
 
-  sudo ansible-playbook --become -e "myhosts=${location}-controller-04" lib/yum_update_controller.yaml
+  sudo ansible-playbook -e "myhosts=${location}-controller-04" lib/yum_update_controller.yaml
 
 This playbook takes extra options, if needed:
 
