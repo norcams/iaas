@@ -50,7 +50,7 @@ or::
 
 Make sure all nodes will autostart with::
 
-  sudo ansible-playbook --become -e "myhosts=${location}-controller" lib/autostart_nodes.yaml
+  sudo ansible-playbook -e "myhosts=${location}-controller" lib/autostart_nodes.yaml
 
 
 Normal OS patching
