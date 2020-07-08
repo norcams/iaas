@@ -78,6 +78,7 @@ Then, run the following playbook::
 
 This playbook takes extra options, if needed:
 
+=====================  ===========================================================
 Option                 Effect
 =====================  ===========================================================
 ``async=1``            will run yum and puppet in parallel on the vms
