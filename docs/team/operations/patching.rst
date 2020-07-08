@@ -67,12 +67,7 @@ critical to the operation of Openstack, and controller-04 can
 therefore be patched and rebooted outside of a maintenance window.
 
 The controller node and all virtual nodes running on the controller
-can be patched with a single Ansible playbook. First, make sure that
-the virtual nodes are set to autostart with::
-
-  sudo ansible-playbook --become -e "myhosts=${location}-controller-04" lib/autostart_nodes.yaml
-
-Then, run the following playbook::
+can be patched with a single Ansible playbook::
 
   sudo ansible-playbook --become -e "myhosts=${location}-controller-04" lib/yum_update_controller.yaml
 
