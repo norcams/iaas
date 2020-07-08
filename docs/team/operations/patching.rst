@@ -118,6 +118,10 @@ without error before starting on the next controller.
 
      for i in $(seq 1 3); do sudo ssh iaas@${location}-cephmon-0$i 'sudo ceph status' ; done
 
+   In addition, check "cephmon-object" in BGO::
+
+     for i in $(seq 1 3); do sudo ssh iaas@${location}-cephmon-object-0$i 'sudo ceph status' ; done
+
 #. Turn off the nodes on the controller before reboot::
 
      sudo ansible-playbook -e "myhosts=${location}-controller-<id> action=stop" lib/manage_nodes.yaml
