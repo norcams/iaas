@@ -2,7 +2,7 @@
 Patching
 ========
 
-Last changed: 2019-06-28
+Last changed: 2020-07-08
 
 Update repo
 ============
@@ -55,6 +55,32 @@ Make sure all nodes will autostart with::
 
 Normal OS patching
 ==================
+
+Patching controller-04
+----------------------
+
+The controller node and all virtual nodes running on the controller
+can be patched with a single Ansible playbook. First, make sure that
+the virtual nodes are set to autostart with::
+
+  sudo ansible-playbook --become -e "myhosts=${location}-controller-04" lib/autostart_nodes.yaml
+
+Then, run the following playbook::
+
+  sudo ansible-playbook --become -e "myhosts=${location}-controller-04" lib/yum_update_controller.yaml
+
+This playbook takes extra options, if needed:
+
+Option                 Effect
+=====================  ===========================================================
+``async=1``            will run yum and puppet in parallel on the vms
+``no_reboot=1``        will not reboot controller (vms will still be turned off)
+``exclude="package"``  will not update package with yum
+=====================  ===========================================================
+
+  
+Patching other controller nodes
+-------------------------------
 
 For each for the production regions, `BGO` and `OSL`, do the following:
 
