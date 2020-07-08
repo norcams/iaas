@@ -62,7 +62,7 @@ For each for the production regions, `BGO` and `OSL`, do the following:
    and **mod_ssl** packages. This is usually safe to do outside of a
    scheduled maintenance window::
 
-     sudo ansible-playbook -e "myhosts=${location}-nodes exclude=httpd*,MariaDB*,mod_ssl" lib/yumupdate.yaml
+     sudo ansible-playbook -e "myhosts=${location}-nodes exclude=httpd*,MariaDB*,mod_ssl,nfs-utils" lib/yumupdate.yaml
 
 #. While in a scheduled maintenance window, upgrade virtual nodes::
 
