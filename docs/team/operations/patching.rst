@@ -62,6 +62,10 @@ For each for the production regions, `BGO` and `OSL`, do the following:
 Patching controller-04
 ----------------------
 
+The node controller-04 is usually running virtual nodes that are not
+critical to the operation of Openstack, and controller-04 can
+therefore be patched and rebooted outside of a maintenance window.
+
 The controller node and all virtual nodes running on the controller
 can be patched with a single Ansible playbook. First, make sure that
 the virtual nodes are set to autostart with::
