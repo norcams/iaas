@@ -166,7 +166,7 @@ Storage
 
      ceph status
 
-#. After all nodes are rebooted, ensure that automatic rebalancing is enabled:
+#. After all nodes are rebooted, ensure that automatic rebalancing is enabled::
 
      ceph osd unset noout
 
