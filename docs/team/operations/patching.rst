@@ -162,7 +162,11 @@ Storage
 
      sudo ansible-playbook -e "myhosts=${location}-storage" lib/checkupdate.yaml
 
-#. Reboot one storage node at the time and check ceph status before next nodes::
+#. Reboot one storage node at the time::
+
+     sudo ansible-playbook -e "myhosts=${location}-<node>" lib/reboot.yaml
+
+#. and check ceph status before next nodes::
 
      ceph status
 
@@ -219,7 +223,17 @@ For physical nodes it might be worth considering firmware patching.
 Dell
 ****
 
-Run the ansible job `lib/upgrade/dell_compute.yaml`.
+#. Install **DSU** on the node::
+
+     sudo ansible-playbook -e "myhosts=${location}-<node>" lib/install_dsu.yaml
+
+#. Upgrade firmware::
+
+     sudo ansible-playbook -e "myhosts=${location}-<node>" lib/upgrade/dell_compute.yaml
+
+#. Reboot::
+
+     sudo ansible-playbook -e "myhosts=${location}-<node>" lib/reboot.yaml
 
 
 Testing
