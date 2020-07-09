@@ -81,6 +81,8 @@ Option                 Effect
 ``exclude="package"``  will not update package with yum
 =====================  ===========================================================
 
+Also, consider patching `Firmware`_.
+
   
 Patching other controller nodes
 -------------------------------
@@ -129,6 +131,8 @@ without error before starting on the next controller.
    Monitor through **virt-manager** or **virsh list** that all virtual
    nodes are shut down before proceeding with rebooting the controller.
 
+#. Consider patching `Firmware`_.
+
 #. Reboot the controller node::
 
      sudo ansible-playbook -e "myhosts=${location}-controller-<id>" lib/reboot.yaml
@@ -154,6 +158,14 @@ Storage
 
      ceph osd set noout
 
+#. Run **ceph status** continuously in another window on one of the cephmon nodes::
+
+     watch ceph status
+
+   Before rebooting a node, check that all OSDs are up, e.g.::
+
+     osd: 30 osds: 30 up, 30 in
+
 #. Upgrade storage::
 
      sudo ansible-playbook -e "myhosts=${location}-storage" lib/yumupdate.yaml
@@ -162,14 +174,14 @@ Storage
 
      sudo ansible-playbook -e "myhosts=${location}-storage" lib/checkupdate.yaml
 
+#. Consider patching `Firmware`_.
+
 #. Reboot one storage node at the time::
 
      sudo ansible-playbook -e "myhosts=${location}-<node>" lib/reboot.yaml
 
-#. and check ceph status before next nodes::
-
-     ceph status
-
+   NB! Check **ceph status**, see above.
+     
 #. After all nodes are rebooted, ensure that automatic rebalancing is enabled::
 
      ceph osd unset noout
