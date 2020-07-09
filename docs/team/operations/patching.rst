@@ -156,11 +156,11 @@ Storage
 
 #. Upgrade storage::
 
-     sudo ansible-playbook --become -e "myhosts=${location}-storage" lib/yumupdate.yaml
+     sudo ansible-playbook -e "myhosts=${location}-storage" lib/yumupdate.yaml
 
 #. Check if the storage nodes are upgraded::
 
-     sudo ansible-playbook --become -e "myhosts=${location}-storage" lib/checkupdate.yaml
+     sudo ansible-playbook -e "myhosts=${location}-storage" lib/checkupdate.yaml
 
 #. Reboot one storage node at the time and check ceph status before next nodes::
 
