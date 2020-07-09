@@ -229,7 +229,7 @@ Dell
 
 #. Upgrade firmware::
 
-     sudo ansible-playbook -e "myhosts=${location}-<node>" lib/upgrade/dell_compute.yaml
+     sudo ansible-playbook -e "myhosts=${location}-<node>" lib/upgrade_dell_firmware.yaml
 
 #. Reboot::
 
