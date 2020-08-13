@@ -42,9 +42,42 @@ Hva må gjøres:
    inneholde riktig institusjon. Dette gjøres manuelt.
 
 #. Himlarcli-scriptet **project.py** må skrives om til å kunne sette
-   property.
+   property **org** ved prosjektets opprettelse.
 
 #. Det bør lages en alarm eller annen varsling dersom det finnes
    prosjekter i Dataporten-domenet (unntatt PRIVATE og DEMO) som
    mangler property org.
 
+
+Kontaktinfo
+===========
+
+I en del tilfeller er det upraktisk å bruke admin som kontaktpunkt for
+prosjekter.
+
+Forslag
+-------
+
+Gjelder kun shared-prosjekter, dvs. ikke PRIVATE eller DEMO.
+
+Vi setter kontakt som en **property** med navn **contact**, dvs. at
+feltet kan kun ha én enkelt verdi. Dette skal ikke være obligatorisk,
+men valgfritt og skal kunne brukes for de som ønsker å ha en
+e-postliste som kontaktpunkt for prosjektet, istedenfor en privat
+e-postadresse.
+
+Sette property::
+
+  openstack project set --property contact=mail-liste@usit.uio.no test-project
+
+Hva må gjøres:
+
+#. Himlarcli-scriptet **project.py** må skrives om til å kunne sette
+   property **contact** ved prosjektets opprettelse.
+
+#. Oppdatere bestillingsskjemaet for prosjekter
+
+#. Varsle brukere om at denne muligheten finnes
+
+#. Oppdatere automatikk (f.eks. script som varsler admin) til å bruke
+   contact-feltet dersom det eksisterer
