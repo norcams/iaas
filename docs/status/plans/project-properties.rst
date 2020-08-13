@@ -7,10 +7,12 @@ Sist endret: 2020-08-13
 Tilknyttet institusjon
 ======================
 
-Tilknyttet institusjon er noe vi allerede spør etter i
+**Bakgrunn**: Tilknyttet institusjon er noe vi allerede spør etter i
 bestillingsskjemaet for prosjekter. Årsaken til at vi spør er for å
 kunne sette et fornuftig navn på prosjektet. Navnet skal normalt
-inneholde forkortelsen til institusjonen.
+inneholde forkortelsen til institusjonen. Innføring av dette er en
+forutsetning for god automatikk rundt deling av spesialiserte images
+basert på tilknyttet institusjon.
 
 Forslag
 -------
@@ -52,8 +54,10 @@ Hva må gjøres:
 Kontaktinfo
 ===========
 
-I en del tilfeller er det upraktisk å bruke admin som kontaktpunkt for
-prosjekter.
+**Bakgrunn**: I en del tilfeller er det upraktisk å bruke admin som
+kontaktpunkt for prosjekter. Det kan være ønskelig med muligheten til
+å sette et alternativt kontaktpunkt, f.eks. en e-postliste, for et
+prosjekt.
 
 Forslag
 -------
