@@ -14,6 +14,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
 
     resources
     projects
+    project-properties
     abuse
     documentation
     dns
