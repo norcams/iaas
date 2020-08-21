@@ -2,7 +2,7 @@
 (KLADD) Tags og properties for prosjekter
 =========================================
 
-Sist endret: 2020-08-13
+Sist endret: 2020-08-21
 
 Tilknyttet institusjon
 ======================
