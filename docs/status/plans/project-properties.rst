@@ -50,6 +50,9 @@ Hva må gjøres:
    prosjekter i Dataporten-domenet (unntatt PRIVATE og DEMO) som
    mangler property org.
 
+#. Himlarcli-scriptet **image.py** må skrives om til å kunne dele ut
+   shared images basert på property **org**
+
 
 Kontaktinfo
 ===========
