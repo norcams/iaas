@@ -61,13 +61,14 @@ Execute installation steps:
     yum install -y wget unzip
     yum groupinstall -y "Development Tools"
     yum install -y kernel-devel epel-release
+    yum install -y dkms
     yum update -y
     reboot
     (log back in)
     mkdir /root/md
     cd /root/md
     unzip /tmp/$bundle
-    sh \*-vgpu-kvm.run -s
+    sh \*-vgpu-kvm.run -s --dkms
     reboot
     (log back in)
     ls /sys/class/mdev_bus/$pci_id/mdev_supported_types/
