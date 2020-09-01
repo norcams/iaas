@@ -55,7 +55,7 @@ Now set up the link on both Host A and Host B:
 .. IMPORTANT::
    VXLAN adds significant overhead on the packets, and you must adjust the MTU accordingly.
    For IPv4 only traffic an MTU size of 1450 can be used, but IPv6 adds another 20 bytes on
-   top of that, so MTU size of 1420 is necessary.
+   top of that, so MTU size of 1430 is necessary.
 
 Set MTU on the br-tun interface:
 
