@@ -16,37 +16,57 @@ Prerequisites:
 Start by installing Openvswitch on each instance (from now on called Host A and Host B).
 
 .. code:: bash
+
     yum install -y epel-release centos-release-openstack-train
     yum install -y openvswitch libibverbs
     systemctl enable --now openvswitch
 
 Create a bridge called br-tun:
 .. code:: bash
+
     ovs-vsctl add-br br-tun
 
 On each host, create a VXLAN interface attached to the bridge, pointing to the IP address of
 the other instance.
 
 .. code:: bash
+
     ovs-vsctl add-port br-tun vxlan0 -- set interface vxlan0 type=vxlan options:remote_ip=[IP address to connect to]
 
 Then set an IP address on the bridge interface, on Host A:
 .. code:: bash
+
     ip addr add 192.168.0.1/24 dev br-tun
 
 on Host B:
 .. code:: bash
+
     ip addr add 192.168.0.2/24 dev br-tun
 
-Now set up the link on both Host A and Host B and check for connectivity:
+Now set up the link on both Host A and Host B:
 .. code:: bash
+
     ip link set up dev br-tun
 
-.. code:: bash
-[root@Host A ~]# ping -c 1 192.168.100.2
-PING 192.168.100.2 (192.168.100.2) 56(84) bytes of data.
-64 bytes from 192.168.100.2: icmp_seq=1 ttl=64 time=5.02 ms
+.. IMPORTANT::
+   VXLAN adds significant overhead on the packets, and you must adjust the MTU accordingly.
+   For IPv4 only traffic an MTU size of 1450 can be used, but IPv6 adds another 20 bytes on
+   top of that, so MTU size of 1420 is necessary.
 
---- 192.168.100.2 ping statistics ---
+Set MTU on the br-tun interface:
+
+.. code:: bash
+
+    ip link set mtu 1450 dev br-tun
+
+Check for connectivity:
+
+.. code:: bash
+
+[root@Host A ~]# ping -c 1 192.168.0.2
+PING 192.168.0.2 (192.168.0.2) 56(84) bytes of data.
+64 bytes from 192.168.0.2: icmp_seq=1 ttl=64 time=5.02 ms
+
+--- 192.168.0.2 ping statistics ---
 1 packets transmitted, 1 received, 0% packet loss, time 0ms
 rtt min/avg/max/mdev = 5.016/5.016/5.016/0.000 ms
