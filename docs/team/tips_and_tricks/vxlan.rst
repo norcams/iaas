@@ -22,6 +22,7 @@ Start by installing Openvswitch on each instance (from now on called Host A and 
     systemctl enable --now openvswitch
 
 Create a bridge called br-tun:
+
 .. code:: bash
 
     ovs-vsctl add-br br-tun
@@ -34,16 +35,19 @@ the other instance.
     ovs-vsctl add-port br-tun vxlan0 -- set interface vxlan0 type=vxlan options:remote_ip=[IP address to connect to]
 
 Then set an IP address on the bridge interface, on Host A:
+
 .. code:: bash
 
     ip addr add 192.168.0.1/24 dev br-tun
 
 on Host B:
+
 .. code:: bash
 
     ip addr add 192.168.0.2/24 dev br-tun
 
 Now set up the link on both Host A and Host B:
+
 .. code:: bash
 
     ip link set up dev br-tun
