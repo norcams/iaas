@@ -148,14 +148,14 @@ Execute installation steps:
     dracut --force
     yum -y install wget unzip
     yum -y install kernel-devel epel-release
-    yum -y groupinstall "Development Tools"
+    yum -y dkms
     yum -y update
     reboot
     log back in
     mkdir /root/nvidia
     cd /root/nvidia
     unzip /tmp/$bundle
-    sh \*-grid.run -s
+    sh \*-grid.run -s --dkms
     cd /etc/nvidia/
     cp gridd.conf.template  gridd.conf
     sed -i "s/^ServerAddress=/ServerAddress=$licenseserver/" gridd.conf
