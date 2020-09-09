@@ -2,7 +2,7 @@
 (KLADD) Tags og properties for prosjekter
 =========================================
 
-Sist endret: 2020-08-21
+Sist endret: 2020-09-09
 
 Tilknyttet institusjon
 ======================
@@ -17,7 +17,8 @@ basert på tilknyttet institusjon.
 Forslag
 -------
 
-Gjelder kun shared-prosjekter, dvs. ikke PRIVATE eller DEMO.
+Gjelder alle prosjekter i domain Dataporten, inkludert PRIVATE og
+DEMO.
 
 Vi setter institusjon som en **property** med navn **org**, dvs. at
 feltet kan kun ha én enkelt verdi. Eksempler:
@@ -88,3 +89,29 @@ Hva må gjøres:
 
 #. Oppdatere automatikk (f.eks. script som varsler admin) til å bruke
    contact-feltet dersom det eksisterer
+
+
+Admin
+=====
+
+Navnet "admin" er villedende idet admin ikke har ekstra privilegier,
+det er kun en kontaktadresse for den som bestilte prosjektet i
+utgangspunktet.
+
+Forslag
+-------
+
+Endre "admin" til "owner".
+
+Hva må gjøres:
+
+#. Himlarcli-scriptet **project.py** må skrives om til å sette
+   property **owner** istedenfor admin ved prosjektets opprettelse.
+
+#. Oppdatere automatikk som i dag bruker admin-feltet
+
+#. Endre **admin** --> **owner** for alle eksisterende prosjekter.
+
+#. Oppdatere bestillingsskjemaet dersom dette refererer til admin
+
+
