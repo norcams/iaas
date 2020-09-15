@@ -9,17 +9,15 @@ uke.
 
 Rotasjon
 ========
-
-=========== === === === ===
-Deltaker    Uke Uke Uke Uke
-=========== === === === ===
-Trond        22  28  34  40
-Anders       23  29  35  41
-Raymond      24  30  36  42
-Mikael       25  31  37  43
-Tannaz       26  32  38  44
-Tor          27  33  39  45
-=========== === === === ===
+=========== === === ===
+Deltaker    Uke Uke Uke
+=========== === === ===
+Trond        34  40  45
+Raymond      36  41  46
+Mikael       37  42  47
+Tannaz       38  43  48
+Tor          39  44  49
+=========== === === ===
 
 Instruks
 ========

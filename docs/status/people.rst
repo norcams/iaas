@@ -2,9 +2,9 @@
 Teamdeltakere og roller
 =======================
 
-Sist endret: 2018-01-17
+Sist endret: 2020-09-15
 
-**Teamleder/Prosjektleder:** Raymond Kristiansen, UiB (100%)
+**Teamleder/Prosjektleder:** Raymond Kristiansen, UiB (50% til 80%)
 
 Deltakere
 ---------
@@ -15,15 +15,7 @@ Deltakere
 
 * Trond Hasle Amundsen - UiO (40%)
 
-* Anders Vaage - UiB (100%)
-
-* Tannaz Navaie Roshandel - UiO (100%)
-
-Tjenesteansvarlig
------------------
-
-* Irene Husa - UiB
-
+* Tannaz Navaie Roshandel - UiO (60%)
 
 Koordinatorer
 -------------
@@ -39,10 +31,9 @@ Arbeidsdager
 ============ ============ ============ ============ ============ ============
    Name       Monday       Tuesday      Wednesday    Thursday     Friday
 ============ ============ ============ ============ ============ ============
-Raymond       1            1            1            1            1
+Raymond       1            1            0            1            1
 Mikael        0            1            1            1            0
 Tor           1            1            1            1            1
 Trond         0            1            1            0            0
-Anders        1            1            1            1            1
-Tannaz        1            1            1            1            1
+Tannaz        1            1            0            0            1
 ============ ============ ============ ============ ============ ============
