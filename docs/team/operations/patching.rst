@@ -209,6 +209,28 @@ Before you start check to documentation for
    and added back to the AZ iaas-team-only. Update trello status for
    `Availability zone / Host aggregate`.
 
+Compute (HPC)
+-------------
+
+In this case, you need to remember and notify users in advance.
+
+#. Check the instances' status, and stop the active instances by using CLI.
+
+#. Upgrade compute HPC::
+
+     sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/yumupdate.yaml
+
+#. Check if the nodes are upgraded::
+
+     sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/checkupdate.yaml
+
+#. Reboot one node at the time::
+
+     sudo ansible-playbook -e "myhosts=${location}-compute-hpc-<id>" lib/reboot.yaml
+
+#. Start the instances that were previously activ
+
+
 Leaf
 ----
 
