@@ -116,3 +116,10 @@ Merk at du for øyeblikket må avkommentere::
   #'6'': getattr(i, 'OS-EXT-SRV-ATTR:instance_name'),
 
 i hypervisor.py for å få qemu-navn listet ut i tabellen.
+
+Imagebuilder
+------------
+
+1. create a cron job as the imagebuilder user under build_scripts directory
+2. run the new cron job and check if the image is available under /op/images
+3. to make the image available in prod, run the himlarcli's image update script
