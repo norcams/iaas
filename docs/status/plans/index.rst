@@ -19,6 +19,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     documentation
     dns
     compute
+    compute_resources
     gpu
     telemetry
 
