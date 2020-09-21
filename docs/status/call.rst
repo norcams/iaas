@@ -4,7 +4,7 @@ Vakt
 
 Sist endret: 2019-11-25
 
-Alle i UH-IaaS deltar i en vaktordning i arbeidstiden. Vakten går over en hel
+Alle i NREC deltar i en vaktordning i arbeidstiden. Vakten går over en hel
 uke.
 
 Rotasjon
@@ -27,7 +27,7 @@ Instruks
 * Svare på kundehenvendelser på Slack (#iaas) og RT (rt.uninett.no)
 * Sjekke Sensu dashboard for varsler (full disk, etc)
 * Sjekke Foreman dashboard for feilet puppetrun og out-of-sync noder
-* Sjekke Grafana dashboard for avvik (ink. status.uh-iaas.no)
+* Sjekke Grafana dashboard for avvik (ink. status.nrec.no)
 
 RT
 --
