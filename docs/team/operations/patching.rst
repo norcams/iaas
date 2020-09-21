@@ -83,7 +83,7 @@ Option                 Effect
 
 Also, consider patching `Firmware`_.
 
-  
+
 Patching other controller nodes
 -------------------------------
 
@@ -181,7 +181,7 @@ Storage
      sudo ansible-playbook -e "myhosts=${location}-<node>" lib/reboot.yaml
 
    NB! Check **ceph status**, see above.
-     
+
 #. After all nodes are rebooted, ensure that automatic rebalancing is enabled::
 
      ceph osd unset noout
@@ -190,9 +190,7 @@ Compute
 -------
 
 None disruptive patching will only be possible for compute nodes
-running in AZ ``<location>-default-1``. Compute nodes in
-``<location>-legacy-1`` will need to be patched in a limited scheduled
-maintenance window.
+running in host aggregate ``central1``.
 
 Before you start check to documentation for
 `reinstall of compute <compute.html#compute-reinstall>`_
@@ -209,48 +207,57 @@ Before you start check to documentation for
    and added back to the AZ iaas-team-only. Update trello status for
    `Availability zone / Host aggregate`.
 
-Compute (HPC)
--------------
-
-In this case, you need to remember and notify users in advance.
-
-#. Check the instances' status, and stop the active instances by using CLI.
-
-#. Upgrade compute HPC::
-
-     sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/yumupdate.yaml
-
-#. Check if the nodes are upgraded::
-
-     sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/checkupdate.yaml
-
-#. Reboot one node at the time::
-
-     sudo ansible-playbook -e "myhosts=${location}-compute-hpc-<id>" lib/reboot.yaml
-
-#. Start the instances that were previously activ
-
-
 Leaf
 ----
 
-Only reboot one node at a time, and never if one node is a single point of
-failure.
+   Only reboot one node at a time, and never if one node is a single point of
+   failure.
 
-.. WARNING::
-   Never patch Cumulus VX (virtual appliance). Only physical hardware. Cumulus VX
-   are only used in testing/development.
+   .. WARNING::
+      Never patch Cumulus VX (virtual appliance). Only physical hardware. Cumulus VX
+      are only used in testing/development.
 
-Upgrade node::
+   Upgrade node::
 
-  apt-get update
-  apt-get dist-upgrade
+     apt-get update
+     apt-get dist-upgrade
 
-Reboot node.
+   Reboot node.
+
+Compute (compute resources/HPC)
+===============================
+
+In this case, you need to remember and notify users in advance. Use ``notify.py``
+in himlarcli to notify all users in an aggregate (e.g. ``hpc1``).
+
+#. Check instance status::
+
+    himlarcli/aggregate.py instances <aggregate>
+
+#. Stop instances::
+
+    himlarcli/state.py purge instances
+    himlarcli/aggregate.py stop-instance <aggregate>
+
+#. Upgrade compute HPC::
+
+    sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/yumupdate.yaml
+
+#. Check if the nodes are upgraded::
+
+    sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/checkupdate.yaml
+
+#. Reboot one node at the time::
+
+    sudo ansible-playbook -e "myhosts=${location}-compute-hpc-<id>" lib/reboot.yaml
+
+#. Start the instances::
+
+    himlarcli/aggregate.py start-instance <aggregate>
 
 
 Firmware
---------
+========
 
 For physical nodes it might be worth considering firmware patching.
 
