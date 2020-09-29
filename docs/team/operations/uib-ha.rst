@@ -1,7 +1,7 @@
 uib-ha
 ======
 
-In location `uib` we are running 4 nodes (2 test and 2 prod) with haproxy
+In location `uib` we are running 6 nodes (2 test and 4 prod) with haproxy
 and corosync/pacemaker.
 
 These nodes run load balancing/HA for different UiB only services, but can
@@ -16,11 +16,16 @@ The service are setup with to different domains:
 
 * uibproxy.ha.uib.no (use this for uib only services)
 * pubproxy.ha.uib.no (use this for public services)
+* sslproxy.ha.uib.no (use for public services with ssl termination)
+* gridproxy.ha.uib.no (used for NetApp grid uib service)
+
+gridproxy runs on dedicated hardware (uib-ha-grid-01 anduib-ha-grid-02)
 
 Test domains:
 
 * uibtestproxy.ha.uib.no
 * pubtestproxy.ha.uib.no
+* ssltestproxy.ha.uib.no
 
 Each domain use 2 public IPs with round-robin A-records.
 

@@ -20,9 +20,11 @@ Operations
     himlarcli/index
     local-repo
     ssl
+    ssl-certs
     dns
     designate
     etcd
     uib-ha
     hardware
     report
+    cleanup
