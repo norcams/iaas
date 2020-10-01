@@ -42,7 +42,25 @@ Compute hosts
 
 Vi har følgende compute hosts tilgjengelig::
 
-  TODO: liste med host og spec (ram, cpu og disk)
+============ ===== ======== ===== ======= ========
+host         cpu   tot. thr ghz   ram GB  disk GB
+============ ===== ======== ===== ======= ========
+compute-41   7702       256  2.00    1024      400
+compute-42   7702       256  2.00    1024      400
+compute-43   7702       256  2.00    1024      400
+compute-44   7702       256  2.00    1024      400
+compute-45   7702       256  2.00     512      400
+compute-46   7452       128  2.35     512      400
+compute-47   7452       128  2.35     512      400
+compute-48   7452       128  2.35     512      400
+compute-49   7452       128  2.35     512      400
+compute-50   7302        64  3.00    1024      400
+compute-51   7302        64  3.00    1024      400
+vgpu-52      5215        40  2.50     384      400
+vgpuinfo-35  5218        64  2.30    1024     5300
+============ ===== ======== ===== ======= ========
+
+Compute har AMD EPYC Rome-CPUer, vgpu har Intel Xeon Gold
 
 Navn
 ----
