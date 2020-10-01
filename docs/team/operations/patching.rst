@@ -262,7 +262,7 @@ Firmware
 For physical nodes it might be worth considering firmware patching.
 
 Dell
-****
+----
 
 #. Install **DSU** on the node::
 
@@ -276,6 +276,18 @@ Dell
 
      sudo ansible-playbook -e "myhosts=${location}-<node>" lib/reboot.yaml
 
+Supermicro
+----------
+
+Supermicro does not recommend flashing firmware unless it is necessary. Also, there is no
+automated way to do it. If needed, though, download the necessary firmware from the
+vendor's website and upload the BIOS or firmware files via the bmc's update feature. When
+finished the server must do a full reset, so it is absolutely best to flash the firmware
+when the server is down (for example being in the grub boot menu).
+
+.. WARNING::
+   If flashing the BIOS the settings will be lost! Be sure to adjust settings after flashing,
+   otherwise the server won't boot.
 
 Testing
 =======
