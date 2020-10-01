@@ -40,7 +40,7 @@ vGPU i fremtiden.
 Compute hosts
 -------------
 
-Vi har følgende compute hosts tilgjengelig::
+Vi har følgende compute hosts tilgjengelig:
 
 ============ ===== ======== ===== ======= ========
 host         cpu   tot. thr ghz   ram GB  disk GB
