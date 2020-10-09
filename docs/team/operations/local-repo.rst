@@ -59,10 +59,10 @@ the UH-IaaS team. Data configured into these are then available for consumption
 in the same controlled manner as any other external repository which is mirrored
 locally.
 
-**rpm**, **nonfree** and **ports** are `free and unmanaged` repositories without the
-forementioned snapshotting and consistent control. Data located here is
-available instantly, but outside of any version control and without any kind of
-meta data.
+**rpm**, **nonfree**, **nonfree/yum-nonfree** and **ports** are `free and
+unmanaged` repositories without the forementioned snapshotting and consistent
+control. Data located here is available instantly, but outside of any version
+control and without any kind of meta data.
 
 
 Diagram of setup
@@ -83,16 +83,15 @@ Directory description
   same.
 * **test**: As for ``prod``, but separate links (usually for a more recent
   snapshot which is supposed to be used for production next).
-* **vgpu**: For each repository a pointer (symbolic link) to a snapshot of the
-  same. This is intended for vGPU machines for which there are very specific
-  requirements regarding version of packages.
 * **yumrepo**: Locally maintained RPM repository. Mirrored under ``repo`` as any
   external repository is (named *uh-iaas*).
 * **aptrepo**: Locally maintained APT repository. Mirrored under ``repo`` as any
   external repository is (named *uh-iaas-apt*).
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
-  snapshotting. Only accessible from login and proxy-nodes!
+  snapshotting.
 * **nonfree** Generic file distribution. No metadata, versioning, mirroring or
+  snapshotting. Only accessible from login and proxy-nodes!
+* **nonfree/yum-nonfree** RPM repository. No versioning, mirroring or
   snapshotting. Only accessible from login and proxy-nodes!
 * **gem**: Local Ruby Gem distribution. No metadata, versioning, mirroring or
   snapshotting.
@@ -102,9 +101,10 @@ Directory description
 Common attributes and requirements
 ==================================
 
-Packages built locally by the project are made available for use (default for the world!)
-by storing it in one of the prepared directories depending on whether the package is to
-be part of a yum repository or as a stand-alone package or file.
+Packages built locally by the project are made available for use by storing it
+in one of the prepared directories depending on whether the package is to be
+part of a yum repository or as a stand-alone package or file, and whether it
+should be exposed to the world or only internally.
 
 The *iaas* group owns all files and directories under the repository root
 directory; the hierarchy is configured with the `set group ID` bit. Accordingly,
@@ -133,10 +133,14 @@ This section describes each and how to add and update packages and files.
 YUM repository
 --------------
 
-**Directory name**: ``yumrepo``
+**Directory name**: ``yumrepo`` (wolrd wide availability)
+                    ``nonfree/yum-nonfree`` (internally available)
 
 For local RPM packages which are maintained in the same way as any external RPM
-packages from oridnary repositories, there is a YUM repo located in ``yumrepo``.
+packages from oridnary repositories, there are YUM repos located in ``yumrepo``
+and ``nonfree/yum-nonfree``. The former have world wide availability and is
+versioned/snapshot'ed, while the latter is only available locally and is
+additionally not versioned.
 These files/packages are considered and consumed exactly like any other, external,
 repository used by the project/code!
 
@@ -145,13 +149,15 @@ repository used by the project/code!
 
 After all file operations update the repository meta data::
 
-  sudo /usr/bin/createrepo <repo root directory>/yumrepo
+  sudo /usr/bin/createrepo <repo root directory>/i[yumrepo|nonfree/yum-nonfree]
 
 
-**URL**: `<https://download.iaas.uio.no/uh-iaas/yumrepo>`_
+**URL**:
+  `<https://download.iaas.uio.no/uh-iaas/yumrepo>`_
+  `<https://download.iaas.uio.no/uh-iaas/nonfree/yum-nonfree>`_
 
 .. NOTE::
-   This repository is mirrored and snapshotted just like any external
+   YUMREPO: This repository is mirrored and snapshotted just like any external
    repository (named *uh-iaas*). As such it can be reached through the
    `test` and `prod` interfaces described elsewhere.
 
@@ -163,6 +169,15 @@ Example of client configuration in a yum repo file under ``/etc/yum.repos.d/``::
   [uh-iaas]
   name=UH-IaaS repo
   baseurl=https://download.iaas.uio.no/uh-iaas/prod/uh-iaas/
+  enabled=1
+  gpgcheck=0
+  priority=10
+
+For the internal (nonfree) repository::
+
+  [nrec-nonfree]
+  name=Internal NREC repository
+  baseurl=https://download.iaas.uio.no/uh-iaas/nonfree/yum-nonfree
   enabled=1
   gpgcheck=0
   priority=10
@@ -288,7 +303,6 @@ repo       Repository      Latest sync from external sources                    
 snapshots  Snapshots       Regular (usually daily) snapshots of data in repo                                              https://download.iaas.uio.no/uh-iaas/snapshots
 test       Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/uh-iaas/test
 prod       Production repo Pointer to a specific snapshot in time with well-tested data, used in production environments  https://download.iaas.uio.no/uh-iaas/prod
-vgpu       vGPU repo       Pointer to a specific snapshot in time with well-tested data, used in nVIDIA vGPU environments https://download.iaas.uio.no/uh-iaas/vgpu
 ========== =============== ============================================================================================== ===============================================
 
 Usage is normally as follows:
@@ -296,7 +310,6 @@ Usage is normally as follows:
 :repo: for development or other use of most up-to-date code
 :test: test code which is aimed for next production release
 :prod: production code
-:vgpu: nVIDIA vGPU installs
 :snapshots: can be used to test against code from any specific date in the past
 
 
@@ -364,16 +377,6 @@ snapshots!
 .. Important::
    This is the access point to use in the production and test environments!
 
-vgpu...
--------
-
-**Directories**: ``vgpu``, ``...``
-
-Same as for ``test`` and ``prod``. These are separate *modes* for installations
-which requires other versions of packages than available through the normal
-interfaces. Examples of this is nVIDIA vGPU hosts where the drivers are
-supported only under a very limited and specific set of OS versions etc.
-
 
 Configuration
 -------------
@@ -393,7 +396,6 @@ Files
 :repo.config: Definition of the external repositories to mirror
 :test.config: Which snapshots and local repositories to point to in `test`
 :prod.config: Which snapshots and local repositories to point to in `prod`
-:vgpu.config: Which snapshots and local repositories to point to in `vgpu`
 
 
 Considerations
@@ -408,9 +410,6 @@ Considerations
 - If there is more than one link listed to the same repo the most current
   is always the one activated.
 - Existing links not listed in the current configuration will be removed!
-- The extra interfaces (like ``vgpu``) does not have any of the special
-  requirements that is in place for ``prod``, and thus may have pointers set
-  without special considerations.
 
 Update procedure
 ````````````````
@@ -465,7 +464,7 @@ Normal (automatic)
   is additionally presented as "current".
 
 
-**test**, **prod**, **vgpu**, **...**:
+**test**, **prod**:
   These interfaces should be seen as a static representation of data from specific
   date/times. Each mirrored repository (if configured to be listed here) is
   listed with a link to a specific snapshot of the repo in question. The PROD
@@ -478,7 +477,7 @@ Normal (automatic)
 Manual routine for instant publicizing
 ``````````````````````````````````````
 
-**rpm**, **nonfree**, **gem**  and **ports**:
+**rpm**, **nonfree** (incl. *yum-nonfree*), **gem**  and **ports**:
   Nothing required!
 
 **yumrepo** and **aptrepo**:
