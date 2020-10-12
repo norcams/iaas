@@ -21,3 +21,4 @@ Tips and tricks
     compute-vgpu
     dedicated-flavors
     vxlan
+    large-rootdisk
