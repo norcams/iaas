@@ -85,6 +85,10 @@ Rack 3
 ================== ========================== =========== ===========
 osl-mgmt-opx-02    Dell S3048-ON
 osl-nfs-01         Dell PowerEdge R710        300 W       400 W
+osl-controller-01  Dell PowerEdge R640        355 W ?     557 W ?
+osl-controller-02  Dell PowerEdge R640        355 W ?     557 W ?
+osl-controller-03  Dell PowerEdge R640        355 W ?     557 W ?
+osl-controller-04  Dell PowerEdge R640        355 W ?     557 W ?
 osl-compute-11     Dell PowerEdge R7425       579 W       889 W
 osl-compute-12     Dell PowerEdge R7425       579 W       889 W
 osl-compute-13     Dell PowerEdge R7425       579 W       889 W
@@ -93,7 +97,7 @@ osl-compute-15     Dell PowerEdge R7425       579 W       889 W
 osl-compute-16     Dell PowerEdge R7425       579 W       889 W
 osl-compute-21..24 Supermicro AS -2123BT-HTR  2000 W      3000 W
 osl-compute-25..28 Supermicro AS -2123BT-HTR  2000 W      3000 W
-**Total**                                     *7774 W*    *11734 W*
+**Total**                                     *9194 W*    *13962 W*
 ================== ========================== =========== ===========
 
 
