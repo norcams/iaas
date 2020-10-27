@@ -111,6 +111,7 @@ Rack 4
 ================== ========================== =========== ===========
  Host               Vendor/Model               Typical     Maximum
 ================== ========================== =========== ===========
+osl-mgmt-opx-03    Dell S3048-ON
 osl-spine-01       Dell S5232F-ON             360 W       635 W
 osl-spine-02       Dell S5232F-ON             360 W       635 W
 osl-compute-18     Dell PowerEdge R6525       354 W       1061 W
