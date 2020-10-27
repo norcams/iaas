@@ -101,8 +101,8 @@ osl-compute-25..28 Supermicro AS -2123BT-HTR  2000 W      3000 W
 ================== ========================== =========== ===========
 
 
-Rack 4 (planned)
-~~~~~~~~~~~~~~~~
+Rack 4
+~~~~~~
 
 .. image:: images/osl-rack-4.png
 
@@ -113,7 +113,18 @@ Rack 4 (planned)
 ================== ========================== =========== ===========
 osl-spine-01       Dell S5232F-ON             360 W       635 W
 osl-spine-02       Dell S5232F-ON             360 W       635 W
-osl-compute-??     Dell PowerEdge R6525       354 W       1061 W
+osl-compute-18     Dell PowerEdge R6525       354 W       1061 W
+osl-compute-43     Huawei                     500 W       ?
+osl-compute-44     Huawei                     500 W       ?
+osl-compute-45     Huawei                     500 W       ?
+osl-compute-46     Huawei                     500 W       ?
+osl-compute-47     Huawei                     500 W       ?
+osl-compute-48     Huawei                     500 W       ?
+osl-compute-49     Huawei                     500 W       ?
+osl-compute-50     Huawei                     500 W       ?
+osl-compute-29..32 Supermicro                 2000 W      3000 W
+osl-compute-33..36 Supermicro                 2000 W      3000 W
+osl-compute-37..40 Supermicro                 2000 W      3000 W
 **Total**                                     ?           ?
 ================== ========================== =========== ===========
 
