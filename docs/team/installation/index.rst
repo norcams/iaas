@@ -9,4 +9,4 @@ Documentation describing installation of the IaaS platform
 
     hardware
     ip
-
+    new_phy_host
