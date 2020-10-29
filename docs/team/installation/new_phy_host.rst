@@ -70,8 +70,10 @@ Configuring transport switches
 ------------------------------
 
 All physical hosts are dual connected using the team driver, so a LACP interface is necessary
-on the switches. The LACP interfaces are abbrevated host[port_no]. If not already configured, add
-hieradata for the switches, deploy code to admin node, and after a puppet run bring the interface(s) up:
+on the switches. The LACP interfaces are named host[number], "number" corresponds to port number on
+the switch. Switches with breakout ports are the exeption as there are four host interfaces pr physical
+port. If not already configured, add hieradata for the switches, deploy code to admin node, and after a
+puppet run bring the interface(s) up:
 
 .. code:: bash
 
