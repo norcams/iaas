@@ -59,7 +59,7 @@ the UH-IaaS team. Data configured into these are then available for consumption
 in the same controlled manner as any other external repository which is mirrored
 locally.
 
-**rpm**, **nonfree**, **nonfree/yum-nonfree** and **ports** are `free and
+**rpm**, **nonfree**, **nonfree/yum-nonfree**, **nrec-resources** and **ports** are `free and
 unmanaged` repositories without the forementioned snapshotting and consistent
 control. Data located here is available instantly, but outside of any version
 control and without any kind of meta data.
@@ -91,6 +91,9 @@ Directory description
   snapshotting.
 * **nonfree** Generic file distribution. No metadata, versioning, mirroring or
   snapshotting. Only accessible from login and proxy-nodes!
+* **nrec-resources** Generic file distribution. No metadata, versioning, mirroring or
+  snapshotting. Only accessible from NREC allocated IP ranges (incl. user
+  instances)!
 * **nonfree/yum-nonfree** RPM repository. No versioning, mirroring or
   snapshotting. Only accessible from login and proxy-nodes!
 * **gem**: Local Ruby Gem distribution. No metadata, versioning, mirroring or
@@ -254,19 +257,24 @@ For upload procedure, see below.
 Standalone file archives
 ------------------------
 
-**Directory name**: ``rpm`` and ``nonfree``
+**Directory name**: ``rpm``, ``nrec-resources`` and ``nonfree``
 
 Files (RPM packages or other types) which are needed by the project but which should or cannot
 use the local YUM repository, can be distributed from the generic archive
-located under the ``rpm`` or ``nonfree`` subdirectory. No additional operations required, other
+located under the ``rpm``, ``nrec-resources`` or ``nonfree`` subdirectory. No additional operations required, other
 than the ensuring correct SELinux label as described above.
 
 **URL**: `<https://download.iaas.uio.no/uh-iaas/rpm>`_
 **URL**: `<https://download.iaas.uio.no/uh-iaas/nonfree>`_
+**URL**: `<https://download.iaas.uio.no/nrec-resources>`_
 
-The distinction between those two, is that `nonfree` is only accessible from a
+The distinction between those, is that `nonfree` is only accessible from a
 restricted set of IP addresses (at the time of writing the *login* and *proxy*
-nodes) whereas `rpm` is reachable from wherever.
+nodes), `nrec-resources` from all NREC allocated ranges (infra and instances)
+whereas `rpm` is reachable from the world.
+
+The access lists for the restricted areas are maintained in the *repo-admin*
+gitolite repositoryi, in the `httpd` subdirectory.
 
 
 Upload procedure
@@ -336,6 +344,8 @@ To access the most current data in the mirror, us this URL::
 
     https://download.iaas.uio.no/uh-iaas/repo/
 
+This repository also contains the access list configuration for the restricted
+areas like **nonfree** and **nrec-resources**.
 
 Snapshots
 ---------
@@ -440,9 +450,11 @@ Publicizing procedure
 Normal (automatic)
 ``````````````````
 
-**rpm**, **nonfree**  and **gem**:
+**rpm**, **nonfree**, **nrec-resources**  and **gem**:
   Files placed inside this location is instantly accessible, provided correct
-  SELinux labeling. No snapshotting provided!
+  SELinux labeling. No snapshotting provided! Access lists set up via the
+  configuration and scripts in the `httpd` subdirectory of the *repo-admin*
+  repo documented above.
 
 
 **yumrepo** and **aptrepo**:
