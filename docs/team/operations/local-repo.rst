@@ -520,16 +520,21 @@ remove (purge) snapshots which are no longer used::
 Invocation:
 
 .. parsed-literal::
-   /usr/local/sbin/snapshot_cleanup.sh [-d|u] [-t <YYYY-MM-DD-HHMM> ]
+   [ sudo ] /usr/local/sbin/snapshot_cleanup.sh [-d|u] [ [-t <YYYY-MM-DD-HHMM> ] | [-r <repository name>] ]
 
    -u: print usage text and exit
    -d: dry-run (just print what would otherwise be deleted)
    -t: purge snapshots older than timestamp provided
        Timestamp format equals format used by kelda (config fields and snapshot
        directory naming)
+   -r: expunge named repository, complete with mirror and every snapshot of it
+       (but only snapshots of this particular mirror)
 
-   If no `-t` argument provided then all snapshots older than oldest still in
+   NB: `-t` and `-r` are mutually exclusive!
+
+   If no `-t` or `-r` argument provided then all snapshots older than oldest still in
    use are removed!
 
 For now there is no automatic invocation, and any cleanup should be done
-manually. User confirmation is requested.
+manually. User confirmation is requested. If running as the *iaas* user then
+`sudo` is required.
