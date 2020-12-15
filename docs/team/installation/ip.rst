@@ -48,13 +48,6 @@ Public IPv6 network.
  dev      dev                         TBD
 ========= ======= ================== ======
 
-Legacy public network not used any more
-
-========= ======= ================= ======
- region    env     IPv4              IPv6
-========= ======= ================= ======
- trd      prod     158.39.48.0/24    2001:700:2:8400::/56
-========= ======= ================= ======
 
 .. NOTE:: The networks enclosed in parentheses are not reachable outside of
           their locally managed routing domains.
