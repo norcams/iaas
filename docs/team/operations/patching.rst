@@ -276,6 +276,22 @@ Dell
 
      sudo ansible-playbook -e "myhosts=${location}-<node>" lib/reboot.yaml
 
+Workaround for problematic r740/r740xd BIOS update
+--------------------------------------------------
+
+BIOS update for PowerEdge r740/r740xd might fail with a message "BIOS File is Corrupt", and
+you have to press F1 to boot and then reflash the BIOS. A robust workaround is to flash the
+BIOS via det iDRAC. First, flash firmware (only) normally: ::
+
+     dsu -n -q --component-type=FRMW'
+
+Download the latest BIOS file for the Windows platform from the Dell website to a login node
+and upload it to the iDRAC, scheduling a BIOS upgrade at next boot::
+
+     /opt/dell/srvadmin/bin/idracadm7 -r [bmc_address] -u [username] -p [password] update -f /tmp/BIOS_NVGR9_WN64_2.10.0.EXE
+
+Then reboot.
+
 Supermicro
 ----------
 
