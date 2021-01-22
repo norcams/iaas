@@ -28,6 +28,15 @@ Endringsrapport
 Ukesrapport
 ===========
 
+2021
+----
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    2021/uke_*
+
 2019
 ----
 
