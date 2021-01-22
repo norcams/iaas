@@ -22,7 +22,7 @@ vi vet hvorfor Ceph fikk problemer og skal implementere tiltak for å unngå at
 dette skjer igjen.
 
 Manglende objekter i Ceph
-=========================
+-------------------------
 
 Objektene i Ceph som var tapt påvirket i alt 33 volum i NREC. Disse volumene
 var brukt av 12 forskjellige prosjekter. Vi varslet først eier av prosjektene
