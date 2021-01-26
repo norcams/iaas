@@ -53,9 +53,7 @@ Vulnerability management
   When testing is completed and the update is verified, and we are
   satisfied with any performance impact, stability, application impact
   etc., the update is deployed in production. This is done via the
-  following procedure:
-
-  * Patching_
+  Patching_ policy.
 
 
 Configuration management
