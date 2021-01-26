@@ -1,16 +1,16 @@
 .. |date| date::
 
-[2019] Management
+[2021] Management
 =================
 
-``REVISION 2019-02-21``
+``REVISION 2021-01-26``
 
 .. contents::
 
 +-------------------------+---------------------+
 | **Impact**              | Medium              |
 +-------------------------+---------------------+
-| **Implemented percent** | **64%** (11/17)     |
+| **Implemented percent** | **76%** (13/17)     |
 +-------------------------+---------------------+
 
 Continuous systems management
@@ -61,12 +61,13 @@ Vulnerability management
 Configuration management
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deployment of both physical and virtual nodes in UH-IaaS is done using
+Deployment of both physical and virtual nodes in NREC is done using
 Ansible playbooks, which are maintained on GitHub. The configuration
 managements is completely automated via Puppet. The Puppet code and
 hieradata is maintained on GitHub. All changes are tracked via Git.
 
-``[PASS]`` **changes**
+``[PASS]`` **Policy changes**
+  Policy changes are tracked in Git and/or our KanBan board
 
 Secure backup and recovery
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -76,7 +77,9 @@ instances, we should include the backup procedures and policies in the
 overall security plan.
 
 ``[PASS]`` **Backup procedure and policy**
-  We do not take backup of anything (yet).
+  We do not take regular, incremental backups. Important data are
+  replicated within the NREC infrastructure to mitigate information
+  loss.
 
 Security auditing tools
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -128,7 +131,8 @@ cloud needs special attention.
 ``[PASS]`` **Node hardening**
   We do general node hardening via a security baseline which we
   maintain via Puppet. The security baseline is based on best practice
-  from the OS vendor, as well as our own experience.
+  from the OS vendor, as well as our own experience. All nodes are
+  using Mandatory Access Control (MAC) via SELinux.
 
 
 Runtime verification
@@ -143,7 +147,7 @@ From OpenStack Security Guide:
   assurance that the system is operating as desired.*
 
 ``[FAIL]`` **Intrusion detection system**
-  At the moment we don't see the need to run an IDS system.
+  We are not running an Intrusion detection system (IDS).
 
 
 Server hardening
@@ -156,7 +160,7 @@ This mostly includes file integrity management.
   system or application configuration files are no corrupted or
   changed to allow unauthorized access or malicious behaviour.
 
-  * We don't run a specific FIM tool, but our configuration
+  * While we don't run a specific FIM tool, our configuration
     management system (Puppet) functions as a watchdog for most
     important files.
 
@@ -186,21 +190,22 @@ Dashboard
 ``[PASS]`` **Capabilities**
   The dashboard is configured via Puppet, and shows only capabilities
   that are known to work properly. Buttons, menu items etc. that
-  doesn't work or provides capabilities that UH-IaaS doesn't offer are
+  doesn't work or provides capabilities that NREC doesn't offer are
   disabled in the dashboard.
 
-``[DEFERRED]`` **Security considerations**
+``[PASS]`` **Security considerations**
   There are a few things that need to be considered (from `OpenStack Security Guide\: Management - Management interfaces`_):
 
   * The dashboard requires cookies and JavaScript to be enabled in the
     web browser.
 
-    - **FIXME:** Users should be warned according to EU law.
+    - **(FIXME FIXME FIXME)** The cookies are only used for the dashboard and are
+      not used for tracking the user's activities beyond NREC.
 
   * The web server that hosts the dashboard should be configured for
     TLS to ensure data is encrypted.
 
-    - **FIXME:** Ensure TLS 1.2
+    - **(pass):** TLS v1.2 or later is enforced.
 
   * Both the horizon web service and the OpenStack API it uses to
     communicate with the back end are susceptible to web attack
@@ -228,13 +233,13 @@ Dashboard
 OpenStack API
 ~~~~~~~~~~~~~
 
-``[DEFERRED]`` **Security considerations**
+``[PASS]`` **Security considerations**
   There are a few things that need to be considered (from `OpenStack Security Guide\: Management - Management interfaces`_):
 
   * The API service should be configured for TLS to ensure data is
     encrypted.
 
-    - **FIXME:** Ensure TLS 1.2
+    - **(pass):** TLS v1.2 or later is enforced.
 
  * As a web service, OpenStack API is susceptible to familiar web
    site attack vectors such as denial of service attacks.
