@@ -1,9 +1,9 @@
 .. |date| date::
 
-[2019] API endpoints
+[2021] API endpoints
 ====================
 
-``REVISION 2019-02-21``
+``REVISION 2021-01-27``
 
 .. contents::
 
