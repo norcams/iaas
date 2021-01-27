@@ -17,15 +17,31 @@
 
 From `OpenStack Security Guide\: Secure communication`_:
 
-  *There are a number of situations where there is a security
-  requirement to assure the confidentiality or integrity of network
-  traffic in an OpenStack deployment. This is generally achieved using
-  cryptographic measures, such as the Transport Layer Security (TLS)
-  protocol.*
+  *There are situations where there is a security requirement to
+   assure the confidentiality or integrity of network traffic in an
+   OpenStack deployment. This is generally achieved using
+   cryptographic measures, such as the Transport Layer Security (TLS)
+   protocol.
 
-Bottom line is that **all** endpoints, whether they are internal or
-external, should be secured with encryption. TLS is strongly
-preferred, due to recent published security vulnerabilities in SSL.
+   In a typical deployment all traffic transmitted over public
+   networks is secured, but security best practice dictates that
+   internal traffic must also be secured. It is insufficient to rely
+   on security domain separation for protection. If an attacker gains
+   access to the hypervisor or host resources, compromises an API
+   endpoint, or any other service, they must not be able to easily
+   inject or capture messages, commands, or otherwise affect the
+   management capabilities of the cloud.
+
+   All domains should be secured with TLS, including the management
+   domain services and intra-service communications. TLS provides the
+   mechanisms to ensure authentication, non-repudiation,
+   confidentiality, and integrity of user communications to the
+   OpenStack services and between the OpenStack services themselves.
+
+   Due to the published vulnerabilities in the Secure Sockets Layer
+   (SSL) protocols, we strongly recommend that TLS is used in
+   preference to SSL, and that SSL is disabled in all cases, unless
+   compatibility with obsolete browsers or libraries is required.*
 
 There are a number of services that need to be addressed:
 
@@ -76,7 +92,7 @@ From OpenStack Security Guide:
 We need to make sure that we're using an updated version of OpenSSL.
 
 ``[PASS]`` **Ensure updated OpenSSL**
-  UH-IaaS is based on CentOS, and uses the OpenSSL library from that
+  NREC is based on CentOS, and uses the OpenSSL library from that
   distro. We need to make sure that OpenSSL is up-to-date.
 
   * OpenSSL and all other packages are manually updated once a month.
