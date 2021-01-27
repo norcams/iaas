@@ -1,16 +1,16 @@
 .. |date| date::
 
-[2019] Secure communication
+[2021] Secure communication
 ===========================
 
-``REVISION 2019-02-21``
+``REVISION 2021-01-27``
 
 .. contents::
 
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **50%** (3/6)       |
+| **Implemented percent** | **83%** (5/6)       |
 +-------------------------+---------------------+
 
 .. _OpenStack Security Guide\: Secure communication: http://docs.openstack.org/security-guide/secure-communication.html
@@ -74,9 +74,9 @@ want to use separate PKI deployments for different security domains.
   As described above, it is recommended to use a private CA for
   internal endpoints.
 
-  * db connection between regions use non-public CA
-  * internal connections within regions use private networks and using a
-    CA for these provide very little added value
+  * Database connection between regions use non-public CA
+  * Internal connections within regions use private networks and
+    are **not** secured via a CA (private or otherwise)
 
 
 TLS libraries
@@ -101,19 +101,20 @@ Cryptographic algorithms, cipher modes, and protocols
 -----------------------------------------------------
 
 The security guide recommends using **TLS 1.2**, as previous versions
-are known to be vulnerable. Furthermore, it is recommended to limit
-the cipher suite to **ECDHE-ECDSA-AES256-GCM-SHA384**. It is
-acceptable to
-accept **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA** in
-cases where we don't control both endpoints.
+are known to be vulnerable:
 
-``[FAIL]`` **Ensure TLS 1.2**
+  When you are using TLS 1.2 and control both the clients and the
+  server, the cipher suite should be limited to
+  **ECDHE-ECDSA-AES256-GCM-SHA384**. In circumstances where you do not
+  control both endpoints and are using TLS 1.1 or 1.2 the more general
+  **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA** is a
+  reasonable cipher selection.
+
+``[PASS]`` **Ensure TLS 1.2**
   Make sure that only TLS 1.2 is used. Previous versions of TLS, as
   well as SSL, should be disabled completely.
 
-  * We support TLS 1.1 and 1.2 on dashboard
-
-``[DEFERRED]`` **Limit cipher suite on public endpoints**
+``[PASS]`` **Limit cipher suite on public endpoints**
   Limit the cipher suite on public facing endpoints to the
   general **HIGH:!aNULL:!eNULL:!DES:!3DES:!SSLv3:!TLSv1:!CAMELLIA**.
 
