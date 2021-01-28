@@ -1,9 +1,9 @@
 .. |date| date::
 
-[2019] Identity
+[2021] Identity
 ===============
 
-``REVISION 2019-02-21``
+``REVISION 2021-01-28``
 
 .. contents::
 
@@ -12,7 +12,7 @@
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **88%** (16/18)     |
+| **Implemented percent** | **95%** (17/18)     |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Identity`_:
@@ -54,7 +54,6 @@ Multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``[PASS]`` **Multi-factor authentication for privileged accounts**
-
   We should employ multi-factor authentication for network access to
   privileged user accounts. This will provide insulation from brute
   force, social engineering, and both spear and mass phishing attacks
@@ -102,18 +101,21 @@ Ref: `OpenStack Security Guide\: Identity - Authorization`_
 Establish formal access control policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[N/A]`` **Describe formal access control policies**
+``[PASS]`` **Describe formal access control policies**
   The policies should include the conditions and processes for
   creating, deleting, disabling, and enabling accounts, and for
   assigning privileges to the accounts.
 
-  * We use an external authentication point
+  * Enabling accounts and giving account privileges (such access to
+    projects, flavors, images) are done automatically using the
+    self-service portal, or by the NREC administrators.
 
-``[DEFERRED]`` **Describe periodic review**
+``[PASS]`` **Describe periodic review**
   We should periodically review the policies to ensure that the
   configuration is in compliance with approved policies.
 
-  * FIXME: Work in progress.
+  * The policy is reviewed in this document. The compliance is
+    reviewed often, during regular daily meetings.
 
 
 Service authorization
@@ -126,14 +128,11 @@ Service authorization
 
   * ``tempAuth`` is not used.
 
-``[FAIL]`` **Use client authentication for TLS**
+``[DEFERRED]`` **FIXME Use client authentication for TLS**
   The Identity service supports client authentication for TLS which
   may be enabled. TLS client authentication provides an additional
   authentication factor, in addition to the user name and password,
   that provides greater reliability on user identification.
-
-  * The negative implications for the user experience by implementing this
-    is considered to outweight the extra security gained by this.
 
 ``[PASS]`` **Protect sensitive files**
   The cloud administrator should protect sensitive configuration files
