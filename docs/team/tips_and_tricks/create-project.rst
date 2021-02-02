@@ -21,5 +21,5 @@ Example
 
 .. code:: bash
 
-   ./project.py create -t <admin> -a <email> -q <small> --end <enddate> --desc <"description"> --dry-run --debug
+   ./project.py create -t <type> -a <email> -q <small> --end <enddate> --desc <"description"> --rt <number> -m --dry-run --debug
 
