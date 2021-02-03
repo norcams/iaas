@@ -1,5 +1,5 @@
 ====================
-Planer og designvalg
+Aktiviteter
 ====================
 
 Her ligger det informasjon om overordnede planer og designvalg.
@@ -22,7 +22,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     compute_resources
     gpu
     telemetry
-    ceph-block-osl-2021
+    ceph-block-osl-2021/index
 
 Arkiv
 -----
