@@ -22,6 +22,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     compute_resources
     gpu
     telemetry
+    ceph-block-osl-2021
 
 Arkiv
 -----

@@ -1,0 +1,50 @@
+Møte, 3.februar 2021
+====================
+
+Tilstede:
+
+* Trond H. Amundsen
+* Tor Lædre
+* Raymond Kristiansen
+* Sjur Hernes
+* Erik Berg
+
+.. contents::
+
+
+Crush Map
+---------
+
+Vi lager 2 nye pools:
+
+* EC-pool med SSD for CERN, rask mass storage.
+* EC-pool med HDD for normal mass storage
+* Eksisterende pool for OS-disk utvides med de nye nodene
+
+EC-algoritme:
+
+* SSD: Bruker 8+2
+* HDD: Bruker 8+3 pga. ekstra sårbarhet knyttet til rebalansering av
+  store/trege disker
+
+
+Hva skal vi gjøre med NVMe-disken
+---------------------------------
+
+Caching av HDD-er krever 30GB per OSD, totalt <250 GB. Det er mye
+plass til overs på NVMe-diskene.
+
+Vi setter opp endel av NVMe-disken til metadata-pool for begge
+EC-pool'ene.
+
+* Metadata-pool settes opp med 3-veis replikering
+
+På denne måten vil NVMe-disken håndtere mye av mengden iops i
+clusteret.
+
+
+Hvordan skal vi migrere arccache-data
+-------------------------------------
+
+Vi sjekker hvorvidt CERN-workloaden kan generere nye data slik at vi
+slipper å tenke på flytting.
