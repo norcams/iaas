@@ -25,6 +25,6 @@ tjenesten i bruk finnes på http://www.uh-iaas.no
     tracking
     history
     reports/index
-    plans/index
+    activities/index
     archive/index
     hardware
