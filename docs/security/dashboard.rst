@@ -1,9 +1,9 @@
 .. |date| date::
 
-Dashboard
-=========
+[2021] Dashboard
+================
 
-Last changed: |date|
+``REVISION 2021-02-03``
 
 .. contents::
 
@@ -17,12 +17,12 @@ Last changed: |date|
 
 From `OpenStack Security Guide\: Dashboard`_:
 
-  *Horizon is the OpenStack dashboard that provides users a
-  self-service portal to provision their own resources within the
-  limits set by administrators. These include provisioning users,
-  defining instance flavors, uploading VM images, managing networks,
-  setting up security groups, starting instances, and accessing the
-  instances through a console.*
+  *The Dashboard (horizon) is the OpenStack dashboard that provides
+  users a self-service portal to provision their own resources within
+  the limits set by administrators. These include provisioning users,
+  defining instance flavors, uploading virtual machine (VM) images,
+  managing networks, setting up security groups, starting instances,
+  and accessing the instances through a console.*
 
 
 Domain names, dashboard upgrades, and basic web server configuration
@@ -48,7 +48,7 @@ From OpenStack Security Guide:
 
 ``[FAIL]`` **Use second-level domain**
   We are not given our own second-devel domain. The dashboard is
-  available as "dashboard.uh-iaas.no".
+  available as "dashboard.nrec.no".
 
 ``[DEFERRED]`` **Employ HTTP Strict Transport Security (HSTS)**
   If not using second-level domain, we are advised to avoid a
@@ -56,6 +56,7 @@ From OpenStack Security Guide:
   Security (HSTS)
 
   * We need to revisit this as soon as possible.
+
 
 Basic web server configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,6 +70,7 @@ From OpenStack Security Guide:
 
 ``[PASS]`` **Is dashboard deployed as a WSGI application behind an HTTPS proxy?**
   Yes, dashboard is deployed using mod_wsgi on an Apache server.
+
 
 Allowed hosts
 ~~~~~~~~~~~~~
@@ -85,8 +87,10 @@ From OpenStack Security Guide:
   be vulnerable to security breaches associated with fake HTTP Host
   headers.*
 
-``[DEFERRED]`` **Is ALLOWED_HOSTS configured for dashboard?**
-  FIXME
+``[FAIL]`` **Is ALLOWED_HOSTS configured for dashboard?**
+  The NREC dashboard should be available on the Internet. As such,
+  using ALLOWED_HOSTS would defeat the purpose of the dashboard.
+
 
 Horizon image upload
 ~~~~~~~~~~~~~~~~~~~~
@@ -94,9 +98,9 @@ Horizon image upload
 It is recommended that we disable HORIZON_IMAGES_ALLOW_UPLOAD unless
 we have a plan to prevent resource exhaustion and denial of service.
 
-``[DEFERRED]`` **Is HORIZON_IMAGES_ALLOW_UPLOAD disabled?**
+``[FAIL]`` **Is HORIZON_IMAGES_ALLOW_UPLOAD disabled?**
   We are currently willing to accept the risk of DoS by allowing image
-  uploads.
+  uploads. (FIXME)
 
 
 HTTPS, HSTS, XSS, and SSRF
@@ -105,6 +109,7 @@ HTTPS, HSTS, XSS, and SSRF
 .. _OpenStack Security Guide\: Dashboard - HTTPS, HSTS, XSS, and SSRF: http://docs.openstack.org/security-guide/dashboard/https-hsts-xss-ssrf.html
 
 Ref: `OpenStack Security Guide\: Dashboard - HTTPS, HSTS, XSS, and SSRF`_
+
 
 Cross Site Scripting (XSS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -136,6 +141,21 @@ From OpenStack Security Guide:
 ``[N/A]`` **Audit custom dashboards**
   We are not using custom dashboards
 
+
+Cross-Frame Scripting (XFS)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From OpenStack Security Guide:
+
+  *Legacy browsers are still vulnerable to a Cross-Frame Scripting
+  (XFS) vulnerability, so the OpenStack dashboard provides an option
+  DISALLOW_IFRAME_EMBED that allows extra security hardening where
+  iframes are not used in deployment.*
+
+``[PASS]`` **Disallow iframe embed**
+  DISALLOW_IFRAME_EMBED it set.
+
+
 HTTPS
 ~~~~~
 
@@ -150,6 +170,7 @@ From OpenStack Security Guide:
 ``[PASS]`` **Redirect to fully qualified HTTPS URL**
   HTTP requests to the dashboard domain are configured to redirect to
   the fully qualified HTTPS URL.
+
 
 HTTP Strict Transport Security (HSTS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -198,14 +219,15 @@ Ref: `OpenStack Security Guide\: Dashboard - Static media`_
   subdomain should not set cookies or serve user-provided content. The
   media should also be served with HTTPS.*
 
-``[DEFERRED]`` **Static media via subdomain**
-  FIXME: Implemented this.
+``[FAIL]`` **Static media via subdomain**
+  The amount of static media served from the NREC dashboard is next to
+  nothing. We don't see any need to move this to a subdomain.
 
 ``[N/A]`` **Subdomain not serving cookies or user-provided content**
-  FIXME: Make sure
+  Not using subdomain.
 
 ``[N/A]`` **Subdomain via HTTPS**
-  FIXME: Make sure
+  Not using subdomain.
 
 
 Secret key
@@ -223,8 +245,8 @@ Ref: `OpenStack Security Guide\: Dashboard - Secret key`_
   invalidates existing user sessions and caching. Do not commit this
   key to public repositories.*
 
-``[----]`` **Randomly generated string at least 64 characters long**
-  Randomly generated, but much shorter than 64 chars
+``[FAIL]`` **Randomly generated string at least 64 characters long**
+  Randomly generated, but much shorter than 64 chars (FIXME)
 
 ``[PASS]`` **Not in public repo**
   We have internal stores for secret keys.
@@ -237,8 +259,10 @@ Cookies
 
 Ref: `OpenStack Security Guide\: Dashboard - Cookies`_
 
-``[----]`` **Session cookies should be set to HTTPONLY**
-  FIXME: Make sure
+``[PASS]`` **Session cookies should be set to HTTPONLY**
+  Configured in /etc/openstack-dashboard/local_settings::
+
+    OPENSTACK_SESSION_COOKIE_HTTPONLY = True
 
 ``[PASS]`` **Never configure CSRF or session cookies to have a wild card domain with a leading dot**
   Configured in /etc/openstack-dashboard/local_settings::
@@ -261,8 +285,19 @@ Ref: `OpenStack Security Guide\: Dashboard - Cross Origin Resource Sharing (CORS
   *Configure your web server to send a restrictive CORS header with
   each response, allowing only the dashboard domain and protocol*
 
-``[----]`` **Restrictive CORS header**
-  FIXME: Make sure
+``[DEFERRED]`` **Restrictive CORS header**
+  FIXME
+
+
+Debug
+-----
+
+It is recommended to set debug to false in production environments.
+
+``[PASS]`` **Disable the debug flag**
+  Configured in /etc/openstack-dashboard/local_settings::
+
+    DEBUG = False
 
 
 Checklist
@@ -274,33 +309,44 @@ Ref: `OpenStack Security Guide\: Dashboard - Checklist`_
 
 See the above link for info about these checks.
 
-``[N/A]`` **Check-Dashboard-01: Is user/group of config files set to root/horizon?**
-  The "horizon" group does not exist in our case. The local_settings
-  file has user/group "root root"::
+``[FAIL]`` **Check-Dashboard-01: Is user/group of config files set to root/horizon?**
+  The "horizon" group does not exist in our case, we're using the
+  group "apache". The local_settings file has user/group "apache
+  apache" (FIXME)::
 
     # ls -l /etc/openstack-dashboard/local_settings
-    -rw-r--r--. 1 root root 30438 Oct 20 10:44 /etc/openstack-dashboard/local_settings
+    -rw-r-----. 1 apache apache 32004 Dec  3 13:21 /etc/openstack-dashboard/local_settings
 
-``[N/A]`` **Check-Dashboard-02: Are strict permissions set for horizon configuration files?**
-  As the horizon user doesn't exist, and there are no real users, the
-  only system users that needs to read the the local_settings file are
-  root and apache. In our case, there is no reason to restrict the
-  access to this file more than we already have, using mode 0644.
+``[PASS]`` **Check-Dashboard-02: Are strict permissions set for horizon configuration files?**
+  The "horizon" group does not exist in our case, we're using the
+  group "apache". The local_settings file has mode 0640::
 
-``[----]`` **Check-Dashboard-03: Is USE_SSL parameter set to True?**
-  FIXME
+    # ls -l /etc/openstack-dashboard/local_settings
+    -rw-r-----. 1 apache apache 32004 Dec  3 13:21 /etc/openstack-dashboard/local_settings
 
+``[PASS]`` **Check-Dashboard-03: Is DISALLOW_IFRAME_EMBED parameter set to True?**
+  Yes.
+    
 ``[PASS]`` **Check-Dashboard-04: Is CSRF_COOKIE_SECURE parameter set to True?**
   Yes
 
 ``[PASS]`` **Check-Dashboard-05: Is SESSION_COOKIE_SECURE parameter set to True?**
   Yes
 
-``[----]`` **Check-Dashboard-06: Is SESSION_COOKIE_HTTPONLY parameter set to True?**
+``[PASS]`` **Check-Dashboard-06: Is SESSION_COOKIE_HTTPONLY parameter set to True?**
+  Yes
+
+``[PASS]`` **Check-Dashboard-07: Is PASSWORD_AUTOCOMPLETE set to False?**
+  Yes
+
+``[PASS]`` **Check-Dashboard-08: Is DISABLE_PASSWORD_REVEAL set to True?**
+  Yes
+
+``[PASS]`` **Check-Dashboard-09: Is ENFORCE_PASSWORD_CHECK set to True?**
+  Yes
+
+``[N/A]`` **Check-Dashboard-10: Is PASSWORD_VALIDATOR configured?**
+  We use external authentication
+
+``[FAIL]`` **Check-Dashboard-11: Is SECURE_PROXY_SSL_HEADER configured?**
   FIXME
-
-``[----]`` **Check-Dashboard-07: Is password_autocomplete set to False?**
-  Is "off" the default?
-
-``[----]`` **Check-Dashboard-08: Is disable_password_reveal set to True?**
-  Is "true" the default?
