@@ -3,7 +3,7 @@
 [2021] Dashboard
 ================
 
-``REVISION 2021-02-03``
+``REVISION 2021-02-05``
 
 .. contents::
 
@@ -98,9 +98,9 @@ Horizon image upload
 It is recommended that we disable HORIZON_IMAGES_ALLOW_UPLOAD unless
 we have a plan to prevent resource exhaustion and denial of service.
 
-``[FAIL]`` **Is HORIZON_IMAGES_ALLOW_UPLOAD disabled?**
-  We are currently willing to accept the risk of DoS by allowing image
-  uploads. (FIXME)
+``[N/A]`` **Is HORIZON_IMAGES_ALLOW_UPLOAD disabled?**
+  Image uploads works through the Glance API and not through
+  dashboard. The API has rate-limiting turned on.
 
 
 HTTPS, HSTS, XSS, and SSRF
@@ -202,8 +202,8 @@ our session back end with memcache as the cache. This as opposed to
 the default, which saves user data in signed, but unencrypted cookies
 stored in the browser.
 
-``[DEFERRED]`` **Consider using caching back end**
-  FIXME: Revisit this
+``[PASS]`` **Consider using caching back end**
+  Memcache is used as caching backend.
 
 
 Static media
@@ -245,8 +245,8 @@ Ref: `OpenStack Security Guide\: Dashboard - Secret key`_
   invalidates existing user sessions and caching. Do not commit this
   key to public repositories.*
 
-``[FAIL]`` **Randomly generated string at least 64 characters long**
-  Randomly generated, but much shorter than 64 chars (FIXME)
+``[DEFERRED]`` **Randomly generated string at least 64 characters long**
+  Randomly generated, but much shorter than 64 chars (FIXME - TODO)
 
 ``[PASS]`` **Not in public repo**
   We have internal stores for secret keys.
@@ -286,7 +286,7 @@ Ref: `OpenStack Security Guide\: Dashboard - Cross Origin Resource Sharing (CORS
   each response, allowing only the dashboard domain and protocol*
 
 ``[DEFERRED]`` **Restrictive CORS header**
-  FIXME
+  FIXME - TODO
 
 
 Debug
@@ -312,7 +312,7 @@ See the above link for info about these checks.
 ``[FAIL]`` **Check-Dashboard-01: Is user/group of config files set to root/horizon?**
   The "horizon" group does not exist in our case, we're using the
   group "apache". The local_settings file has user/group "apache
-  apache" (FIXME)::
+  apache" (FIXME - TODO)::
 
     # ls -l /etc/openstack-dashboard/local_settings
     -rw-r-----. 1 apache apache 32004 Dec  3 13:21 /etc/openstack-dashboard/local_settings
@@ -349,4 +349,4 @@ See the above link for info about these checks.
   We use external authentication
 
 ``[FAIL]`` **Check-Dashboard-11: Is SECURE_PROXY_SSL_HEADER configured?**
-  FIXME
+  FIXME - TODO
