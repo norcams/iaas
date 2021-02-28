@@ -1,9 +1,9 @@
 .. |date| date::
 
-[2019] Compute
+[2021] Compute
 ==============
 
-``REVISION 2019-02-25``
+``REVISION 2021-02-28``
 
 .. contents::
 
@@ -107,10 +107,23 @@ Ref: `OpenStack Security Guide\: Compute - Checklist`_
 See the above link for info about these checks.
 
 ``[PASS]`` **Check-Compute-01: Is user/group ownership of config files set to root/nova?**
-  Yes
+  Yes, except for **/etc/nova** which has "root root"::
+
+    # stat -L -c "%U %G" /etc/nova/{,nova.conf,api-paste.ini,policy.json,rootwrap.conf}
+    root root
+    root nova
+    root nova
+    root nova
+    root nova
 
 ``[PASS]`` **Check-Compute-02: Are strict permissions set for configuration files?**
-  Yes
+  Yes::
+
+    # stat -L -c "%a" /etc/nova/{nova.conf,api-paste.ini,policy.json,rootwrap.conf}
+    640
+    640
+    640
+    640
 
 ``[PASS]`` **Check-Compute-03: Is keystone used for authentication?**
   Yes
