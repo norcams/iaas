@@ -1,9 +1,9 @@
 .. |date| date::
 
-[2019] Block Storage
+[2021] Block Storage
 ====================
 
-``REVISION 2019-02-25``
+``REVISION 2021-03-06``
 
 .. contents::
 
@@ -49,13 +49,26 @@ Ref: `OpenStack Security Guide\: Block Storage - Checklist`_
 See the above link for info about these checks.
 
 ``[PASS]`` **Check-Block-01: Is user/group ownership of config files set to root/cinder?**
-  Yes
+  Yes, except for **/etc/cinder** which has "root root"::
+
+    # stat -L -c "%U %G" /etc/cinder/{,cinder.conf,api-paste.ini,policy.json,rootwrap.conf}
+    root root
+    root cinder
+    root cinder
+    stat: cannot stat ‘/etc/cinder/policy.json’: No such file or directory
+    root cinder
 
 ``[PASS]`` **Check-Block-02: Are strict permissions set for configuration files?**
-  Yes
+  Yes::
 
-``[PASS]`` **Check-Block-03: Is keystone used for authentication?**
-  Yes
+    # stat -L -c "%a" /etc/cinder/{cinder.conf,api-paste.ini,policy.json,rootwrap.conf}
+    640
+    640
+    stat: cannot stat ‘/etc/cinder/policy.json’: No such file or directory
+    640
+
+``[N/A]`` **Check-Block-03: Is keystone used for authentication?**
+  Deprecated as of Stein release.
 
 ``[FAIL]`` **Check-Block-04: Is TLS enabled for authentication?**
   Communication is completely on the inside on a private network,
