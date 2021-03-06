@@ -30,8 +30,8 @@ From `OpenStack Security Guide\: Block Storage`_:
   storage equipment or where it is located.*
 
 
-UH-IaaS block storage description
----------------------------------
+NREC block storage description
+------------------------------
 
   We have deployed a cinder backend based on Ceph, the clustered file
   system. Every compute node is given read/write access to a pool where

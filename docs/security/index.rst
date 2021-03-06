@@ -38,6 +38,7 @@ of four different values:
     dashboard
     compute
     block-storage
+    image-storage
     shared-file-systems
     networking
     object-storage
