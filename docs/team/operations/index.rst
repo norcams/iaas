@@ -27,4 +27,5 @@ Operations
     uib-ha
     hardware
     report
+    images
     cleanup
