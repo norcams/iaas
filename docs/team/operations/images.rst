@@ -9,6 +9,8 @@ images, from builds to retirement procedures.
 Imagebuilder (How a NREC endorsed (GOLD) image is built
 =======================================================
 
+WIP (Soon[TM] coming to a web browser near you)
+
 
 Retirement/Deprecation
 ======================
@@ -28,12 +30,15 @@ Steps to fully remove a retired image
   a. Remove entry from the image definition file:
 
      Usually by editing the file **config/images/default.yaml**
+
   #. Enter the image into the retired list:
 
      Edit the file **config/images/retired.yaml**
+
   #. Push changes:
 
      ``git push``
+
   #. On all *proxy* nodes:
 
      - ``cd /opt/himlarcli``
@@ -51,6 +56,7 @@ Steps to fully remove a retired image
   b. Push changes:
 
      ``git push`` (adapt to your environment!)
+
   #. Deploy (preferably by means of the Ansible jobb ``bin/deploy.sh``)
 
      Remember all environments!
