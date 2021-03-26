@@ -16,6 +16,8 @@ images, start an instance from this and adapt that instance using custom scripts
 and finally create an image which is the base for the GOLD images offered to end
 users.
 
+Home page (Github page) : https://github.com/norcams/imagebuilder
+
 
 Build routine
 -------------
