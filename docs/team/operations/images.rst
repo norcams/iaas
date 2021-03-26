@@ -34,9 +34,9 @@ The procedure goes like this:
 1. Puppet creates cron jobs and scripts from the hash
    **profile::application::builder::images** on `builder` nodes
 #. The jobs are set up to run every wednesday at different times
-#. Each distribution maintained have its own build script located here::
+#. Each distribution maintained have its own build script located here:
 
-     /home/imagebuilder/build_scripts
+   /home/imagebuilder/build_scripts
 
 #. The script basically perform these steps:
 
@@ -46,7 +46,7 @@ The procedure goes like this:
      #. start an instance based on this image (`packer`)
      #. run all custom scripts listed in the template (`packer`)
      #. use the final instance state to create a new image (`packer`)
-     #. remove all temporary security rules, instances Rannad images (`packer`)
+     #. remove all temporary security rules, instances and images (`packer`)
      #. convert to *qcow2*, store into local image storage and purge all but the
         latest two images built
 
