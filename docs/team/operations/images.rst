@@ -129,8 +129,37 @@ inside the RPM.
 This section describes how to update, alter and/or add code or scripts to the
 package.
 
+
 Update code (base python code or provisioning scripts)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+Github: https://github.com/norcams/imagebuilder
+
+The most common task is to update or add a customization script. These are
+located in the **scripts** directory. Just change, add or remove as needed, and
+then push upstream. A push will never initiate a new RPM, so there is little
+danger doing this.
+
+.. Note::
+   A new script in the scripts directory alone will not be enough to get it
+   activated on new builds! The script must also be entered into the template as
+   described above!
+
+.. Note::
+   To test a fix to one of the scripts just change it directly on one of the
+   builder nodes (preferably in one of the test environments) and manually initiate
+   one of the cron jobs as user imagebuilder. Puppet runs will never revert
+   code.
+   To revert just run "yum reinstall imagebuilder".
+
+.. Important::
+   Remember the scripts are not run as the root user under Packer! Even if it
+   works as expected during manual tests, this might not be the case when building
+   properly. Also consider that the build process is using a new installation where
+   not everything might be set up yet.
+
+To fix or change the builder code itself, it's mostly the `Python` code in the
+**image_builder** directory which should be altered.
 
 
 Build RPM package
