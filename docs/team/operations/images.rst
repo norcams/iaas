@@ -194,12 +194,11 @@ There should now be an RPM package in the current directory, named
    distributions/versions!
 
 
-Testing RPM package
-!!!!!!!!!!!!!!!!!!!
+**Testing RPM package**
 
-The package may be uploaded to a web server and installed from there using *yum*
+The package may be uploaded to a web server and installed from there using `yum`
 and a remote URL, or the packaged transfered to one of the build nodes and
-installed with *yum* on the local file. Check scripts or codes to make sure
+installed with `yum` on the local file. Check scripts or codes to make sure
 latest changes are in place, and then manually initiate a build to confirm
 nothing brake and the changes have the desired effect.
 
@@ -211,6 +210,23 @@ When finished testing revert the package to the previous installed one::
 Add to repository
 """""""""""""""""
 
+.. Note::
+   Before releasing this new version make sure it is tested and that the version is
+   higher than the current version in the repository!
+
+The *imagebuilder* RPM package just built should be released through the
+``yumrepo`` repository (which is mirrored and snapshot through the **uh-iaas**
+name). Read the  `Repository server < `here <https://report.nrec.no/api/ui/>`_
+documentation for details.
+
+.. Important::
+   Remember to run ``createrepo`` as described!
+
+The package is then available instantly as
+https://iaas-repo.uio.no/uh-iaas/yumrepo/<packagename> and next day through the
+normal snapshot interface (i.e. using *test* and *prod* URLs when `repo-admin`
+configuration has been updated. Consult the unreadable and terrible repository
+documentation listed above.
 
 
 Retirement/Deprecation
