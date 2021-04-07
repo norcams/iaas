@@ -194,6 +194,20 @@ There should now be an RPM package in the current directory, named
    distributions/versions!
 
 
+Testing RPM package
+!!!!!!!!!!!!!!!!!!!
+
+The package may be uploaded to a web server and installed from there using *yum*
+and a remote URL, or the packaged transfered to one of the build nodes and
+installed with *yum* on the local file. Check scripts or codes to make sure
+latest changes are in place, and then manually initiate a build to confirm
+nothing brake and the changes have the desired effect.
+
+When finished testing revert the package to the previous installed one::
+
+  yum reinstall imagebuilder
+
+
 Add to repository
 """""""""""""""""
 
