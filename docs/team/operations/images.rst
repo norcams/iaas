@@ -165,6 +165,33 @@ To fix or change the builder code itself, it's mostly the `Python` code in the
 Build RPM package
 """""""""""""""""
 
+We use *fpm* (https://fpm.readthedocs.io/en/latest/) as the tool for creating
+RPM packages of *imagebuilder*. To make it easy to use this tool, the
+**package-imagebuilder** project is created. What this provides is mainly a
+`Makefile` and the facility to create an RPM out of *imagebuilder* by just
+providing a simple ``Make`` command.
+
+1. ``git pull https://github.com/norcams/package-imagebuilder.git``
+#. ``cd package-imagebuilder``
+#. (optional) ``make clean``  <-- use if this is not the first attempt
+#. (conditional) ``vi Makefile`` <-- only once for each package released
+   a. change *VERSION* and *PACKAGE_VERSION* as apropriate
+
+      This will become the version of the RPM package and must be higher than the
+      current released version og imagebuilder.
+
+   b. ``git commit -am "Bumped package version``
+   c. ``git push``
+#. ``make``
+
+There should now be an RPM package in the current directory, named
+**imagebuilder-X-Y.el7.x86_64.rpm**, where `X=VERSION` and `Y=PACKAGE_VERSION`.
+
+.. Important::
+   This build/Make system is updated and currently adapted to ``Centos/RHEL 7``.
+   It will probably fail and must be adjusted if used on other
+   distributions/versions!
+
 
 Add to repository
 """""""""""""""""
