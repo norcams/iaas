@@ -225,7 +225,7 @@ documentation for details.
 The package is then available instantly as
 https://iaas-repo.uio.no/uh-iaas/yumrepo/<packagename> and next day through the
 normal snapshot interface (i.e. using *test* and *prod* URLs when `repo-admin`
-configuration has been updated. Consult the unreadable and terrible repository
+configuration has been updated). Consult the unreadable and terrible repository
 documentation listed above.
 
 
