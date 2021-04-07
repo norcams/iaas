@@ -216,7 +216,7 @@ Add to repository
 
 The *imagebuilder* RPM package just built should be released through the
 ``yumrepo`` repository (which is mirrored and snapshot through the **uh-iaas**
-name). Read the  `Repository server < `here <https://report.nrec.no/api/ui/>`_
+name). Read the  `Repository server <https://report.nrec.no/api/ui/>`_
 documentation for details.
 
 .. Important::
