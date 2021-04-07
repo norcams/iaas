@@ -175,13 +175,14 @@ providing a simple ``Make`` command.
 #. ``cd package-imagebuilder``
 #. (optional) ``make clean``  <-- use if this is not the first attempt
 #. (conditional) ``vi Makefile`` <-- only once for each package released
+
    a. change *VERSION* and *PACKAGE_VERSION* as apropriate
 
       This will become the version of the RPM package and must be higher than the
       current released version og imagebuilder.
 
-   b. ``git commit -am "Bumped package version``
-   c. ``git push``
+   #. ``git commit -am "Bumped package version"``
+   #. ``git push``
 #. ``make``
 
 There should now be an RPM package in the current directory, named
