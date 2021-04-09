@@ -22,3 +22,4 @@ Tips and tricks
     dedicated-flavors
     vxlan
     large-rootdisk
+    openstack_db_hacks
