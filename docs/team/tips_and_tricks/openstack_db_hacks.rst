@@ -8,7 +8,7 @@ command line tools, prompting manual intervention in the databases
 directly.
 
 
-Non-existant volume attached to instance
+Non-existent volume attached to instance
 ----------------------------------------
 
 In some cases a volume attachment is created with a volume in state 'reserved'.
