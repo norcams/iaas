@@ -2,13 +2,16 @@
 Patching
 ========
 
-Last changed: 2020-07-08
+Last changed: 2021-03-09
+
+.. contents:: Table of Contents
+    :depth: 2
 
 Update repo
 ============
 
 Repo list (test and/or prod) are updated during the planing phase of an
-upgrade. But this is usually the repo we update:
+upgrade. But this is usually the repo we update::
 
 * centos-base
 * centos-extras
@@ -224,11 +227,14 @@ Leaf
 
    Reboot node.
 
-Compute (compute resources/HPC)
-===============================
+Compute (dedicated compute resources/HPC)
+=========================================
 
-In this case, you need to remember and notify users in advance. Use ``notify.py``
-in himlarcli to notify all users in an aggregate (e.g. ``hpc1``).
+#. Before we start (3-5 days before) we should notify all users in the aggregate (e.g. ``hpc1``)
+
+   .. code-block:: bash
+
+      himlarcli/mail.py aggregate -s 'Scheduled maintenance 2021-03-13' -t notify/maintenance/hpc.txt --date '2021-03-13 12:00-16:00' hpc1 --debug [--dry-run]
 
 #. Check instance status::
 
