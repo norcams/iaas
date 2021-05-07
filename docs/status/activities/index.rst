@@ -23,6 +23,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     gpu
     telemetry
     ceph-block-osl-2021/index
+    platform_himlar
 
 Arkiv
 -----
