@@ -1,9 +1,9 @@
 .. |date| date::
 
-[2021] Image Storage (FIXME)
-============================
+[2021] Image Storage
+====================
 
-``REVISION 2021-03-06``
+``REVISION 2021-05-12``
 
 .. contents::
 
@@ -12,7 +12,7 @@
 +-------------------------+---------------------+
 | **Impact**              | Medium              |
 +-------------------------+---------------------+
-| **Implemented percent** | **60%** (3/5)       |
+| **Implemented percent** | **80%** (4/5)       |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Image Storage`_:
@@ -54,7 +54,7 @@ See the above link for info about these checks.
     stat: cannot stat ‘/etc/glance/schema.json’: No such file or directory
 
 ``[FAIL]`` **Check-Image-02: Are strict permissions set for configuration files?**
-  No (FIXME)::
+  Yes, all files have permissions **640**::
 
     # stat -L -c "%a" /etc/glance/{,glance-api-paste.ini,glance-api.conf,glance-cache.conf,glance-manage.conf,glance-registry-paste.ini,glance-registry.conf,glance-scrubber.conf,glance-swift-store.conf,policy.json,schema-image.json,schema.json}
     755
