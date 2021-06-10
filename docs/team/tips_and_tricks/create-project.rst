@@ -23,3 +23,15 @@ Example
 
    ./project.py create -t <type> -a <email> -q <small> --end <enddate> --desc <"description"> --rt <number> -m --dry-run --debug
 
+
+Access to additional resources
+------------------------------
+
+Some projects need access to additional resources, like volumes backed by SSD drives, special flavors, images etc.
+
+Grant access to a given volume type (for example, mass-storage-ssd), and set a specific quota for that volume type:
+
+.. code:: bash
+
+   openstack volume type set --project <project name>
+   openstack quota set -volume-type mass-storage-ssd --gigabytes 100 <project name>
