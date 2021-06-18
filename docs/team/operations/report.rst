@@ -27,7 +27,7 @@ Instance
 --------
 
 Used to collect instance information (POST) using `report-utils
-<https://github.com/norcams/report-utils>`_ and to read instances owner and
+<report-utils.html>`_ and to read instances owner and
 information (GET).
 
 
