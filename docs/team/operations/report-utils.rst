@@ -62,7 +62,7 @@ role file.
 Structure
 `````````
 
-.. code:
+.. parsed-literal::
    <distribution>:
      scripts:
        <script name>: [ '<array of fragments in correct order>', '...' ]
@@ -78,26 +78,33 @@ distributions:
   This will create a directory hiearchy directly on the web service root
 
 scripts:
-  keys:  describes the contents of a script created directly under the
-         distribution sub directory
-  value: lists the code fragments which forms the report script
+  Builds the scripts
+
+  * **keys**:  Describes the contents of a script created directly under the distribution sub directory
+  * **value**: Lists the code fragments which forms the report script
 
 versions:
-  keys:  creates a link `<distribution>/<key>/<app version>/report
-  value: the physical name under distribution root which to link to
+  Creates the symbolic links for each version, pointing to the appropriate real
+  script.
+
+  * **keys**:  Creates a link `<distribution>/<key>/<app version>/report
+  * **value**: The physical name under distribution root which to link to
 
 
 Other configuration variables
 `````````````````````````````
 
-- app_downloaddir (default: '/opt/report-utils')
+- *app_downloaddir* (default: '/opt/report-utils')
+
   Top web service directory.
 
-- app_version (default: 'v1')
-  one of the directory parts will contain this
+- *app_version* (default: 'v1')
+
+  One of the directory parts will contain this.
   Used if a new API version emerges.
 
-- report_linkname (default 'report')
-  the name of the links
+- *report_linkname* (default 'report')
+
+  The name of the links.
   This is what the clients will request.
 
