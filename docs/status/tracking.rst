@@ -2,15 +2,20 @@
 Kontaktpunkter
 ==============
 
-Sist endret: 2018-11-30
+Sist endret: 2021-07-05
 
 Her er oversikten over alle faste møteflater og kontaktpunkter for teamet
 og andre som jobber mot teamet.
 
-.. contents::
+.. contents:: Innhold
+   :depth: 2
 
 Møter
 =====
+
+Alle møtene er digitale og gjennomføres i samme møterom på zoom.
+Link til møtet finnes på status i Trello. Samme møterom blir også brukt til
+andre ad hoc møter.
 
 Morgenmøte
 ----------
@@ -21,23 +26,25 @@ har skjedd siden sist, hva er planen videre og eventuelle utfordringer man
 trenger hjelp til. Dersom det er uløste saker i RT kan disse også
 fordeles/diskuteres.
 
-Vi bruker Google Hangout til å avholde videomøter. Direkte link til vårt rom
-http://hangout.norcams.org
+Utvidet teammøte
+----------------
 
-Utvidet morgemøte
------------------
-
-Ved behov utvides morgenmøte hver onsdag med inntil en time (frem til 10:30).
-Her har man mulighet til å diskutere større tema. Agenda for ukesmøte skal
-ligge i Trello på forhånd. Kort skal være merket "discussion" og ligge i "Now"
-for at de vil bli lagt til agenda.
+Hver tirsdag fra 10:00 til 11:00. Her har man mulighet til å diskutere og bli
+enig om større tema. Blir avlyst om det ikke finnes agent til morgenmøte mandag
+samme uke.
 
 Samling
 -------
 
-3-4 ganger i året avholdes det en felles workshop for hele teamet. Disse blir
+2 ganger i året avholdes det en fysisk workshop for hele teamet. Disse blir
 avholdt ved behov og strekker seg vanligvis over 1-2 dager. Vi har et mål om at
 vi prøver å rullere på om samlingen avholdes ved UiO eller UiB.
+
+Vaktoverleveringsmøte
+---------------------
+
+Mandag kl 09:15-09:30 har pågående og avgående vakt møte for å overlevere
+pågående saker og sjekke at alt ser bra ut i saksbehandlingsverktøyet.
 
 Kommunikasjon
 =============
