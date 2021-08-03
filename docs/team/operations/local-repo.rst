@@ -8,7 +8,7 @@ Introduction
 
 
 For local caching of external repositories and to facilitate a repository of
-packages created by the UH-IaaS team etc., a server system is installed.
+packages created by the NREC team etc., a server system is installed.
 Because the production environment has to be carefully managed, some issues are
 raised which is attempted resolved by this setup:
 
@@ -29,7 +29,7 @@ repository and a general distribution point.
 * **Alias** (used in code): ``download.iaas.uio.no``
 * **Access**: as for normal infrastructure nodes (*iaas*-user from one of the
   login nodes)
-* **Repo root directory**: ``/var/www/html/uh-iaas``
+* **Repo root directory**: ``/var/www/html/nrec``
 * **Available protocols**: ``https``
 
 
@@ -53,14 +53,14 @@ in an uncontrolled fashion, and is available locally at all times. It is
 possible to set up further such repos, in case a certain installation requires
 packages from a very specific date (other than in **test** and **prod**).
 
-**yumrepo** and **aptrepo** should be assumed to be like any other ``external``
+**nrec-internal** and **aptrepo** should be assumed to be like any other ``external``
 repositories, just that these `external` repositories are coincidentally managed by
-the UH-IaaS team. Data configured into these are then available for consumption
+the NREC team. Data configured into these are then available for consumption
 in the same controlled manner as any other external repository which is mirrored
 locally.
 
-**rpm**, **nonfree**, **nonfree/yum-nonfree**, **nrec-resources** and **ports** are `free and
-unmanaged` repositories without the forementioned snapshotting and consistent
+**rpm**, **nonfree**, **nonfree/yum-nonfree**, **nrec-resources** and **ports** are
+`unmanaged` repositories without the forementioned snapshotting and consistent
 control. Data located here is available instantly, but outside of any version
 control and without any kind of meta data.
 
@@ -83,10 +83,10 @@ Directory description
   same.
 * **test**: As for ``prod``, but separate links (usually for a more recent
   snapshot which is supposed to be used for production next).
-* **yumrepo**: Locally maintained RPM repository. Mirrored under ``repo`` as any
-  external repository is (named *uh-iaas*).
+* **nrec-internal** (prev. *yumrepo*): Locally maintained RPM repository. Mirrored under ``repo`` as any
+  external repository is.
 * **aptrepo**: Locally maintained APT repository. Mirrored under ``repo`` as any
-  external repository is (named *uh-iaas-apt*).
+  external repository is (named *nrec-internal-apt*).
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
   snapshotting.
 * **nonfree** Generic file distribution. No metadata, versioning, mirroring or
@@ -136,11 +136,11 @@ This section describes each and how to add and update packages and files.
 YUM repository
 --------------
 
-**Directory name**: ``yumrepo`` (wolrd wide availability)
+**Directory name**: ``nrec-internal`` (wolrd wide availability)
                     ``nonfree/yum-nonfree`` (internally available)
 
 For local RPM packages which are maintained in the same way as any external RPM
-packages from oridnary repositories, there are YUM repos located in ``yumrepo``
+packages from oridnary repositories, there are YUM repos located in ``nrec-internal``
 and ``nonfree/yum-nonfree``. The former have world wide availability and is
 versioned/snapshot'ed, while the latter is only available locally and is
 additionally not versioned.
@@ -152,26 +152,25 @@ repository used by the project/code!
 
 After all file operations update the repository meta data::
 
-  sudo /usr/bin/createrepo <repo root directory>/i[yumrepo|nonfree/yum-nonfree]
+  sudo /usr/bin/createrepo <repo root directory>/[nrec-internal|nonfree/yum-nonfree]
 
 
 **URL**:
-  `<https://download.iaas.uio.no/uh-iaas/yumrepo>`_
-  `<https://download.iaas.uio.no/uh-iaas/nonfree/yum-nonfree>`_
+  `<https://download.iaas.uio.no/nrec/nrec-internal>`_
+  `<https://download.iaas.uio.no/nrec/nonfree/yum-nonfree>`_
 
 .. NOTE::
-   YUMREPO: This repository is mirrored and snapshotted just like any external
-   repository (named *uh-iaas*). As such it can be reached through the
-   `test` and `prod` interfaces described elsewhere.
+   NREC-INTERNAL: This repository is mirrored and snapshotted just like any external
+   repository. As such it can be reached through the `test` and `prod` interfaces described elsewhere.
 
 Client configuration (example)
 ``````````````````````````````
 
 Example of client configuration in a yum repo file under ``/etc/yum.repos.d/``::
 
-  [uh-iaas]
-  name=UH-IaaS repo
-  baseurl=https://download.iaas.uio.no/uh-iaas/prod/uh-iaas/
+  [nrec-internal]
+  name=NREC internal repo
+  baseurl=https://download.iaas.uio.no/nrec/prod/nrec-internal/
   enabled=1
   gpgcheck=0
   priority=10
@@ -215,11 +214,11 @@ Steps to import packages
 
 
 
-**URL**: `<https://download.iaas.uio.no/uh-iaas/aptrepo>`_
+**URL**: `<https://download.iaas.uio.no/nrec/aptrepo>`_
 
 .. NOTE::
    This repository is mirrored and snapshotted ijust like any external
-   repository (named *uh-iaas-apt*). As such it can be reached through the
+   repository (named *nrec-internal-apt*). As such it can be reached through the
    `test` and `prod` interfaces described elsewhere.
 
 Client configuration (example)
@@ -227,7 +226,7 @@ Client configuration (example)
 
 Example of client configuration in ``/etc/apt/sources.list``::
 
-  deb [trusted=yes] https://download.iaas.uio.no/uh-iaas/prod/uh-iaas-apt wheezy main
+  deb [trusted=yes] https://download.iaas.uio.no/nrec/prod/nrec-internal-apt wheezy main
 
 
 Ruby Gem repository
@@ -264,9 +263,9 @@ use the local YUM repository, can be distributed from the generic archive
 located under the ``rpm``, ``nrec-resources`` or ``nonfree`` subdirectory. No additional operations required, other
 than the ensuring correct SELinux label as described above.
 
-**URL**: `<https://download.iaas.uio.no/uh-iaas/rpm>`_
-**URL**: `<https://download.iaas.uio.no/uh-iaas/nonfree>`_
-**URL**: `<https://download.iaas.uio.no/nrec-resources>`_
+**URL**: `<https://download.iaas.uio.no/nrec/rpm>`_
+**URL**: `<https://download.iaas.uio.no/nrec/nonfree>`_
+**URL**: `<https://download.iaas.uio.no/nrec/nrec-resources>`_
 
 The distinction between those, is that `nonfree` is only accessible from a
 restricted set of IP addresses (at the time of writing the *login* and *proxy*
@@ -289,7 +288,7 @@ the archive on *download*:
 
     sudo ssh iaas@download.iaas.uio.no
 
-#. `cd /var/www/html/uh-iaas/rpm`
+#. `cd /var/www/html/nrec/rpm`
 
 #. download the file with wget, curl or something like that
 
@@ -307,10 +306,10 @@ Content and description of included subdirectories:
 ========== =============== ============================================================================================== ===============================================
 Short name Long name        Description                                                                                    URL
 ========== =============== ============================================================================================== ===============================================
-repo       Repository      Latest sync from external sources                                                              https://download.iaas.uio.no/uh-iaas/repo
-snapshots  Snapshots       Regular (usually daily) snapshots of data in repo                                              https://download.iaas.uio.no/uh-iaas/snapshots
-test       Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/uh-iaas/test
-prod       Production repo Pointer to a specific snapshot in time with well-tested data, used in production environments  https://download.iaas.uio.no/uh-iaas/prod
+repo       Repository      Latest sync from external sources                                                              https://download.iaas.uio.no/nrec/repo
+snapshots  Snapshots       Regular (usually daily) snapshots of data in repo                                              https://download.iaas.uio.no/nrec/snapshots
+test       Test repo       Pointer to a specific snapshot in time, usually newer than `prod`                              https://download.iaas.uio.no/nrec/test
+prod       Production repo Pointer to a specific snapshot in time with well-tested data, used in production environments  https://download.iaas.uio.no/nrec/prod
 ========== =============== ============================================================================================== ===============================================
 
 Usage is normally as follows:
@@ -342,7 +341,7 @@ The mirroring is done once every night by a root cron job.
 
 To access the most current data in the mirror, us this URL::
 
-    https://download.iaas.uio.no/uh-iaas/repo/
+    https://download.iaas.uio.no/nrec/repo/
 
 This repository also contains the access list configuration for the restricted
 areas like **nonfree** and **nrec-resources**.
@@ -363,7 +362,7 @@ snapshot.
 
 To access the snapshot library::
 
-    https://download.iaas.uio.no/uh-iaas/snapshots/
+    https://download.iaas.uio.no/nrec/snapshots/
 
 
 .. Note::
@@ -433,7 +432,7 @@ Update procedure
 #. Edit one or both files: `prod.config` and/or `test.config` (or any of the
    other config files), entering or
    changing to reflect the date required (consult
-   `the web page <https://iaas-repo.uio.no/uh-iaas/snapshots/>`_ for exact
+   `the web page <https://iaas-repo.uio.no/nrec/snapshots/>`_ for exact
    timestamp to use.
 #. Commit and push to the central git repo.
 #. On `osl-login-01` run the ansible job ``update_repo.yaml``::
@@ -457,7 +456,7 @@ Normal (automatic)
   repo documented above.
 
 
-**yumrepo** and **aptrepo**:
+**nrec-internal** and **aptrepo**:
   Files placed inside this location is instantly accessible, provided correct
   SELinux labeling. No snapshotting provided through this interface! For this use
   the SNAPSHOT, TEST or PROD interfaces instead.
@@ -492,7 +491,7 @@ Manual routine for instant publicizing
 **rpm**, **nonfree** (incl. *yum-nonfree*), **gem**  and **ports**:
   Nothing required!
 
-**yumrepo** and **aptrepo**:
+**nrec-internal** and **aptrepo**:
   New files are available through the ordinary interfaces after mirroring and
   snapshotting. This is usually done nightly, but the routines might be run
   manually if necessary:
@@ -504,7 +503,7 @@ Manual routine for instant publicizing
 Caveats
 -------
 
-* Any changes in the local YUM or APT repository (``yumrepo`` resp. ``aptrepo``) is not
+* Any changes in the local YUM or APT repository (``nrec-internal`` resp. ``aptrepo``) is not
   accessible through the mirror interface (``repo``) until after the next upcoming
   mirror job (usually during the next night, check crontab on the mirror server
   for details). After this, the data should be accessible under the ``repo`` link.
