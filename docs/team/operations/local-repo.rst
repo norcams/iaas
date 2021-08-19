@@ -84,7 +84,7 @@ Directory description
 * **test**: As for ``prod``, but separate links (usually for a more recent
   snapshot which is supposed to be used for production next).
 * **nrec-internal** (prev. *yumrepo*): Locally maintained RPM repository. Mirrored under ``repo`` as any
-  external repository is.
+  external repository is. Available for *el7* and *el8*.
 * **aptrepo**: Locally maintained APT repository. Mirrored under ``repo`` as any
   external repository is (named *nrec-internal-apt*).
 * **rpm**: Generic file distribution. No metadata, versioning, mirroring or
@@ -95,7 +95,8 @@ Directory description
   snapshotting. Only accessible from NREC allocated IP ranges (incl. user
   instances)!
 * **nonfree/yum-nonfree** RPM repository. No versioning, mirroring or
-  snapshotting. Only accessible from login and proxy-nodes!
+  snapshotting. Only accessible from login and proxy-nodes! Available for *el7*
+  and *el8*.
 * **gem**: Local Ruby Gem distribution. No metadata, versioning, mirroring or
   snapshotting.
 * **ports**: For FreeBSD packages. No metadata, versioning, mirroring or
@@ -136,11 +137,11 @@ This section describes each and how to add and update packages and files.
 YUM repository
 --------------
 
-**Directory name**: ``nrec-internal`` (wolrd wide availability)
-                    ``nonfree/yum-nonfree`` (internally available)
+**Directory name**: ``nrec-internal/el[78]`` (wolrd wide availability)
+                    ``nonfree/yum-nonfree/el[78]`` (internally available)
 
 For local RPM packages which are maintained in the same way as any external RPM
-packages from oridnary repositories, there are YUM repos located in ``nrec-internal``
+packages from ordinary repositories, there are YUM repos located in ``nrec-internal``
 and ``nonfree/yum-nonfree``. The former have world wide availability and is
 versioned/snapshot'ed, while the latter is only available locally and is
 additionally not versioned.
@@ -152,7 +153,7 @@ repository used by the project/code!
 
 After all file operations update the repository meta data::
 
-  sudo /usr/bin/createrepo <repo root directory>/[nrec-internal|nonfree/yum-nonfree]
+  sudo /usr/bin/createrepo <repo root directory>/[nrec-internal|nonfree/yum-nonfree]/el[78]
 
 
 **URL**:
@@ -170,7 +171,7 @@ Example of client configuration in a yum repo file under ``/etc/yum.repos.d/``::
 
   [nrec-internal]
   name=NREC internal repo
-  baseurl=https://download.iaas.uio.no/nrec/prod/nrec-internal/
+  baseurl=https://download.iaas.uio.no/nrec/prod/nrec-internal/el7
   enabled=1
   gpgcheck=0
   priority=10
@@ -179,7 +180,7 @@ For the internal (nonfree) repository::
 
   [nrec-nonfree]
   name=Internal NREC repository
-  baseurl=https://download.iaas.uio.no/uh-iaas/nonfree/yum-nonfree
+  baseurl=https://download.iaas.uio.no/uh-iaas/nonfree/yum-nonfree/el7
   enabled=1
   gpgcheck=0
   priority=10
