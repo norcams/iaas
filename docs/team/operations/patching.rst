@@ -2,7 +2,7 @@
 Patching
 ========
 
-Last changed: 2021-03-09
+Last changed: 2021-08-26
 
 .. contents:: Table of Contents
     :depth: 2
@@ -11,26 +11,21 @@ Update repo
 ============
 
 Repo list (test and/or prod) are updated during the planing phase of an
-upgrade. But this is usually the repo we update::
+upgrade. Repo we will need to update for el7 and el8::
 
-* centos-base
-* centos-extras
-* centos-updates
-* centos-qemu-ev
-* ceph-nautilus
-* ceph-nautilus-noarch
+* centos-*
+* ceph-*
 * epel
-* mariadb
-* rdo-queens
+* mariadb-*
+* rdo-*
 * sensu
-* puppetlabs-PC1
+* puppetlabs5
 
 .. IMPORTANT::
    Do **NOT** update :file:`calico`-repo without extra planned testing og
    repackaging.
 
 Avoid updating management repos at the same time as normal patching.
-
 
 Before we start
 ===============
@@ -58,6 +53,10 @@ Make sure all nodes will autostart with::
 
 Normal OS patching
 ==================
+
+.. IMPORTANT::
+  When we patch BGO and OSL at the same time, make sure to keep one NS node up
+  at all time!
 
 For each for the production regions, `BGO` and `OSL`, do the following:
 
