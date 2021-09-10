@@ -235,6 +235,24 @@ Compute (dedicated compute resources/HPC)
 
       himlarcli/mail.py aggregate -s 'Scheduled maintenance 2021-03-13' -t notify/maintenance/hpc.txt --date '2021-03-13 12:00-16:00' hpc1 --debug [--dry-run]
 
+   Aggregate to consider patching on second Tuesday of every month:
+
+  +------------------+--------+----------------------------------------+
+  | Aggregate        | Region | Template                               |
+  +==================+========+========================================+
+  | hpc1             | osl    | notify/maintenance/hpc.txt             |
+  +------------------+--------+----------------------------------------+
+  | robin1           | osl    | notify/maintenance/dedicated.txt       |
+  +------------------+--------+----------------------------------------+
+  | shpc_cpu1        | bgo    | notify/maintenance/shpc.txt            |
+  +------------------+--------+----------------------------------------+
+  | shpc_ram1        | bgo    | notify/maintenance/shpc.txt            |
+  +------------------+--------+----------------------------------------+
+  | vgpu1            | bgo    | notify/maintenance/dedicated.txt       |
+  +------------------+--------+----------------------------------------+
+  | vgpu1            | osl    | notify/maintenance/dedicated.txt       |
+  +------------------+--------+----------------------------------------+
+
 #. Check instance status::
 
     himlarcli/aggregate.py instances <aggregate>
