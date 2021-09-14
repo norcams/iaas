@@ -253,13 +253,16 @@ Compute (dedicated compute resources/HPC)
   | vgpu1            | osl    | notify/maintenance/dedicated.txt       |
   +------------------+--------+----------------------------------------+
 
+#. Purge state database (once per region)::
+
+    himlarcli/state.py purge instance
+
 #. Check instance status::
 
     himlarcli/aggregate.py instances <aggregate>
 
 #. Stop instances::
 
-    himlarcli/state.py purge instances
     himlarcli/aggregate.py stop-instance <aggregate>
 
 #. Upgrade compute HPC::
@@ -270,9 +273,11 @@ Compute (dedicated compute resources/HPC)
 
     sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/checkupdate.yaml
 
-#. Reboot one node at the time::
+#. Reboot nodes. Always check inventory to make sure the target of ``myhosts``
+   match the intended targets for reboot. Some hosts might be running in other
+   aggregates::
 
-    sudo ansible-playbook -e "myhosts=${location}-compute-hpc-<id>" lib/reboot.yaml
+    sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/reboot.yaml
 
 #. Start the instances::
 
