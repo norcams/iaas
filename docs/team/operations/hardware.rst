@@ -51,6 +51,18 @@ firmware on storage components may fail. If this happens:
 
      reboot
 
+Fix corrupt bios after firmware update
+--------------------------------------
+
+#. Get service tag for the machine with corrupt bios
+
+#. Download new bios from https://www.dell.com/support/home/no-no
+
+#. Store the EXE file on a machine with oob-net access (e.g. login)
+
+#. make sure idracadm7 is installed and run as root::
+
+    /opt/dell/srvadmin/bin/idracadm7 -r <idrac-ip> -u gaussian -p <idrac-pass> update -f <path-to-EXE-bios-file>
 
 iDRAC settings
 --------------
