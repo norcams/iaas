@@ -1,6 +1,6 @@
-===========
-Setup vGPU
-===========
+=====================
+Setup vGPU [Outdated]
+=====================
 
 This documents how to install and set upp a compute host with a vGPU capable
 nVIDIA card and a corresponding guest running CentOS.
