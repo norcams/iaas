@@ -1,9 +1,9 @@
 .. |date| date::
 
-Message queuing
-===============
+[2021] Message queuing
+======================
 
-Last changed: |date|
+``REVISION 2021-10-20``
 
 .. contents::
 
@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/8)        |
+| **Implemented percent** | **50%** (4/8)       |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Message queuing`_:
@@ -50,13 +50,13 @@ From OpenStack Security Guide:
   provides protection of the communications from tampering and
   eavesdropping in-transit to the messaging server.*
 
-``[DEFERRED]`` **Ensure TLS is used for RabbitMQ**
-  * TLS is NOT used for the messaging service. Should be considered.
+``[FAIL]`` **Ensure TLS is used for RabbitMQ**
+  * TLS is NOT used for the messaging service
 
-``[DEFERRED]`` **Use an internally managed CA**
+``[FAIL]`` **Use an internally managed CA**
   * No CA as TLS is not used
 
-``[DEFERRED]`` **Ensure restricted file permissions on certificate and key files**
+``[FAIL]`` **Ensure restricted file permissions on certificate and key files**
   * No CA as TLS is not used
 
 Queue authentication and access control
@@ -71,25 +71,26 @@ From OpenStack Security Guide:
   and passwords, accounts should be created per-service and node for
   finer grained auditability of access to the queue.*
 
-``[DEFERRED]`` **Configure X.509 client certificates on all OpenStack service nodes**
+``[FAIL]`` **Configure X.509 client certificates on all OpenStack service nodes**
   * Currently no TLS/user certificates set up
 
-``[DEFERRED]`` **Any user names and passwords are per-service and node**
-  * Currently common password. ?????
+``[PASS]`` **Any user names and passwords are per-service and node**
+  All services have their own queue, using their own username and
+  password combination.
 
 Message queue process isolation and policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[----]`` **Use network namespaces**
+``[N/A]`` **Use network namespaces**
   Network namespaces are highly recommended for all services running
   on OpenStack Compute Hypervisors. This will help prevent against the
   bridging of network traffic between VM guests and the management
   network.
 
-  * FIXME: Ensure and document
+  * The messaging queue uses a different network than VM guests.
 
-``[DEFERRED]`` **Ensure queue servers only accept connections from management network**
-  FIXME: Ensure and document
+``[PASS]`` **Ensure queue servers only accept connections from management network**
+  Only internal traffic is allowed to the MQ nodes
 
-``[DEFERRED]`` **Use mandatory access controls**
-  FIXME: SELinux in enforcing mode on all nodes
+``[PASS]`` **Use mandatory access controls**
+  SELinux in enforcing mode on all nodes
