@@ -230,6 +230,54 @@ configuration has been updated). Consult the unreadable and terrible repository
 documentation listed above.
 
 
+Add new image
+=============
+
+If you want to add a new image to the NREC offering, then follow the
+procedures described below.
+
+
+Test phase
+----------
+
+1. on a (test) builder node, copy on of the build scripts under `/home/imagebuilder/build_scripts`
+#. adapt the script to the new build/image
+#. manually run the script using the correct template (consult the *imagebuilder* crontab)
+#. if everything succeeds there is now an image in `/opt/images/public_builds/`
+
+   Also available through the web service running on each builder node.
+#. upload the image to NREC and test
+#. if necessary adapt the build scripts, then repeat the procedure
+
+   Remember to build a new *Imagebuilder* RPM package if any scripts have been added or changed!
+
+Production phase
+----------------
+
+Image building
+""""""""""""""
+
+1. Add an entry to the hash **profile::application::builder::images** (*builder.yaml*)
+#. Add an entry to the hash **profile::monitoring::sensu::agent::expanded_checks**
+
+This is enough to make the images built
+
+Image uploading
+"""""""""""""""
+
+In `Himlarcli` enter the image in the relevant file under
+**config/images**. Usually **default.yaml**.
+
+This will upload the latest image at the same time as other entries in the same
+file. For images in **default.yaml** this is done on the 1st of every month.
+
+For manually upload outside of the automatic date, run this himlarcli command::
+
+  /opt/himlarcli/image.py update [-i <config>.yaml ]
+
+`-i` is not necessary for images in *default*.
+
+
 Retirement/Deprecation
 ======================
 
