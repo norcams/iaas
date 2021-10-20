@@ -87,7 +87,9 @@ Message queue process isolation and policy
   bridging of network traffic between VM guests and the management
   network.
 
-  * The messaging queue uses a different network than VM guests.
+  * Instance traffic is not bridged on the hypervisors, and instance
+    traffic directed to the internal services is dropped (blackholed)
+    on the hypervisor itself
 
 ``[PASS]`` **Ensure queue servers only accept connections from management network**
   Only internal traffic is allowed to the MQ nodes
