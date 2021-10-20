@@ -19,6 +19,7 @@ Operations
     migrate
     himlarcli/index
     local-repo
+    gitolite
     ssl
     ssl-certs
     dns
