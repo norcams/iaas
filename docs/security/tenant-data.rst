@@ -1,9 +1,9 @@
 .. |date| date::
 
-Tenant data privacy
-===================
+[2021] Tenant data privacy
+==========================
 
-Last changed: |date|
+``REVISION 2021-10-20``
 
 .. contents::
 
@@ -12,7 +12,7 @@ Last changed: |date|
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **0%** (0/?)        |
+| **Implemented percent** | **55%** (10/18)     |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Tenant data privacy`_:
@@ -72,20 +72,20 @@ From OpenStack Security Guide:
 The security guide states that the cloud operators should do the
 following:
 
-``[DEFERRED]`` **Track, document and verify media sanitization and disposal actions**
+``[PASS]`` **Track, document and verify media sanitization and disposal actions**
   * OSL: Media are shredded before being disposed
-  * BGO: unknown
+  * BGO: Media are shredded before being disposed
 
-``[DEFERRED]`` **Test sanitation equipment and procedures to verify proper performance**
+``[PASS]`` **Test sanitation equipment and procedures to verify proper performance**
   * OSL: Equipment has been properly tested
-  * BGO: unknown
+  * BGO: Equipment has been properly tested
 
-``[PASS]`` **Sanitize portable, removable storage devices prior to connecting such devices to the cloud infrastructure**
+``[N/A]`` **Sanitize portable, removable storage devices prior to connecting such devices to the cloud infrastructure**
   * Portable, removable media are never connected to the cloud infrastructure
 
-``[DEFERRED]`` **Destroy cloud system media that cannot be sanitized**
+``[PASS]`` **Destroy cloud system media that cannot be sanitized**
   * OSL: Media are destroyed using a shredder
-  * BGO: unknown
+  * BGO: Media destruction is contracted to external provider
 
 Data not securely erased
 """"""""""""""""""""""""
@@ -98,7 +98,11 @@ free-space wiping.
   Not implemented at this time. We will revisit this at a later time.
 
 ``[FAIL]`` **Periodic free-space wiping of ephemeral storage**
-  We're not doing this, as we consider this to be an acceptable risk.
+  Most instances are hosted on a centralized, object based storage
+  system (ceph) with no physical or logical access to an underlying
+  block based storage. For specialized instances (vGPU, HPC, sHPC etc)
+  with instance disk hosted locally on the hypervisor in QCOW2 files
+  the risk is considered to be acceptable
 
 Instance memory scrubbing
 """""""""""""""""""""""""
@@ -108,8 +112,8 @@ Instance memory scrubbing
 As we're using KVM, which relies on Linux page management, we need to
 consult the `KVM documentation`_ about memory scrubbing.
 
-``[----]`` **Consider automatic/periodic memory scrubbing**
-  FIXME: Consult KVM doc, consider if this is needed and document
+``[FAIL]`` **Consider automatic/periodic memory scrubbing**
+  We rely on the KVM defaults for memory management and scrubbing
 
 Cinder volume data
 """"""""""""""""""
@@ -121,11 +125,12 @@ From OpenStack Security Guide:
   below. When this feature is used, destruction of data is
   accomplished by securely deleting the encryption key.*
 
-``[DEFERRED]`` **Consider volume encryption**
-  Nice to have, but adds complexity. We will revisit this.
+``[FAIL]`` **Consider volume encryption**
+  Not considered to be essential at this time
 
-``[FAIL]`` **Secure erasure of volume data**
-  We're not doing this, as we consider this to be an acceptable risk.
+``[PASS]`` **Secure erasure of volume data**
+  Ceph will automatically erase the objects within a volume when the
+  volume is deleted
 
 Image service delay delete feature
 """"""""""""""""""""""""""""""""""
@@ -180,8 +185,8 @@ From `OpenStack Security Guide\: Tenant data privacy - Data encryption`_:
 Volume encryption
 ~~~~~~~~~~~~~~~~~
 
-``[DEFERRED]`` **Consider volume encryption**
-  Postponed.
+``[PASS]`` **Consider volume encryption**
+  Considered.
 
 Ephemeral disk encryption
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -193,7 +198,7 @@ Block Storage volumes and instance ephemeral filesystems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``[DEFERRED]`` **Consider which options we have available**
-  FIXME: Document
+  FIXME: Consider and Document
 
 ``[PASS]`` **Consider adding encryption**
   Considered.
@@ -219,5 +224,5 @@ From `OpenStack Security Guide\: Tenant data privacy - Key management`_:
   Module (HSM) or the use of the Key Management Interchange Protocol
   (KMIP), which is supported by an open-source project called PyKMIP.*
 
-``[DEFERRED]`` **Consider adding Barbican**
-  FIXME: Consider and document
+``[PASS]`` **Consider adding Barbican**
+  Considered. We will not add Barbican at this time
