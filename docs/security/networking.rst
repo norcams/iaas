@@ -1,9 +1,9 @@
 .. |date| date::
 
-[2019] Networking
+[2021] Networking
 =================
 
-``REVISION 2019-03-14``
+``REVISION 2021-10-20``
 
 .. contents::
 
@@ -12,19 +12,20 @@
 +-------------------------+---------------------+
 | **Impact**              | High                |
 +-------------------------+---------------------+
-| **Implemented percent** | **85%** (12/14)     |
+| **Implemented percent** | **93%** (13/14)     |
 +-------------------------+---------------------+
 
 From `OpenStack Security Guide\: Networking`_:
 
-  *OpenStack Networking enables the end-user or tenant to define,
-  utilize, and consume networking resources. OpenStack Networking
-  provides a tenant-facing API for defining network connectivity and
-  IP addressing for instances in the cloud in addition to
-  orchestrating the network configuration. With the transition to an
-  API-centric networking service, cloud architects and administrators
-  should take into consideration best practices to secure physical and
-  virtual network infrastructure and services.*
+  *The OpenStack Networking service (neutron) enables the end-user or
+  tenant to define, utilize, and consume networking
+  resources. OpenStack Networking provides a tenant-facing API for
+  defining network connectivity and IP addressing for instances in the
+  cloud, in addition to orchestrating the network configuration. With
+  the transition to an API-centric networking service, cloud
+  architects and administrators should take into consideration best
+  practices to secure physical and virtual network infrastructure and
+  services.*
 
 
 Networking services
@@ -55,7 +56,7 @@ Networking services security best practices
 
 Ref: `OpenStack Security Guide\: Networking - Networking services security best practices`_
 
-``[PASS]`` **Document how Calico is used in UH-IaaS infrastructure**
+``[PASS]`` **Document how Calico is used in NREC infrastructure**
   We enable the calico plugin as the neutron core plugin system wide. Thus, no L2
   connectivity is provided between instances, and as a design feature, no project
   isolation on L3 connectivity. In other words, there is no such thing as a
@@ -110,12 +111,12 @@ Security groups
   to **nova.virt.firewall.NoopFirewallDriver** so that nova-compute
   does not perform iptables-based filtering itself.
 
-``[FAIL]`` **Set security_group_api option in nova.conf**
+``[N/A]`` **Set security_group_api option in nova.conf**
   It is recommended that **security_group_api** is set to neutron so
   that all security group requests are proxied to the OpenStack
   Networking service.
 
-  We do not set the **security_group_api** option at all.
+  The **security_group_api** option was deprecated in Mitaka.
 
 Quotas
 ~~~~~~
