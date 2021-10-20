@@ -1,9 +1,9 @@
 .. |date| date::
 
-[2019] Object Storage
+[2021] Object Storage
 =====================
 
-``REVISION 2019-03-14``
+``REVISION 2021-10-20``
 
 .. contents::
 
