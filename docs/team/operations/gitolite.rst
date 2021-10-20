@@ -26,11 +26,19 @@ publickey) the user and relevant nodes must be exempted.
 have an entry for each host with a suitable short name.
 
 **ssh::server::options** (*<loc>/roles/login.yaml*) should have an entry for
-each of the nodes IP addresses allowing ``publickey`` only for the `git` user.
+each of the nodes IP addresses allowing ``publickey`` login for the `git` user.
 
 .. NOTE::
    osl-login-01 is a *bastard* and not fully configured by Puppet. This node may
    have to have it sshd configuration adapted by manual means.
+
+The ``git`` user must get an ssh keypair::
+
+  [git@osl-login-01 ~] ssh-keygen
+
+Check the public key into the **gitolite-admin** repository as
+*server-<shortnam>.key* (replacing any old keys for the same system if
+reinstalled).
 
 
 gitolite configuration
@@ -42,14 +50,11 @@ For each new mirror add this for the ``@all`` pseudo repo in
   RW+     =   server-<shortname>
   option mirror.copies.nosync = <shortname>
 
-  or
-
-
 <shortname> = short name used for server in SSH configuration
 
 .. NOTE::
    The option contaning `nosync` should be used initially until the cluster is
-   complete. The option exempts the slave from automatic push fr om master, and
+   complete. The option exempts the slave from automatic push from master, and
    avoids error messages (to any user pushing whatever) until the slave is
    ready. Until this push any changes manually with the command described in the
    node bootstraping section.
@@ -58,7 +63,7 @@ For each new mirror add this for the ``@all`` pseudo repo in
 
    option mirror.copies.nosync = <shortname> -> option mirror.copies-# = <shortname>
 
-   where # = a uniq number
+   where # = a uniqe number
 
 
 Bootstraping the gitolite service
@@ -79,6 +84,10 @@ Afterwards activate the new set up like this::
 
   gitolite setup
 
+Add the other cluster nodes public keys (git user) into the git users *authorized_keys*.
+Check with this command from any of the other nodes::
+
+  [git@osl-login-01 ~] ssh <shortname> info
 
 At this stage the slave is still running with the initial (local) repositories only, but it will now accept
 push from master. Update the mirror like this::
@@ -87,6 +96,5 @@ push from master. Update the mirror like this::
 
 .. IMPORTANT::
    Since the configuration is basically data in a (special) repository **gitolite-admin** even the configuration
-   will be overwritten! Make sure the central cluster configuration is
-   up-to-date with the new node before this step.
+   will be overwritten! Make sure the central cluster configuration is up-to-date with the new node before this step.
 
