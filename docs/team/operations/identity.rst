@@ -30,7 +30,7 @@ environment in the situation where a new master node is set up.
 Master nodes
 ============
 
-The hiera value of *profile::openstack::identity::manage_token_rotate*
+The hiera value of ``profile::openstack::identity::manage_token_rotate``
 designates a node as a master or a slave. If this is set to `true` then the node
 acts as a master (implying creation, rotation and distribution of tokens).
 
@@ -46,7 +46,7 @@ test02
   test02-identity-01
 
 
-**NOTE** that ``osl-identity-01`` is defined as a slave!
+**NOTE** that *osl-identity-01* is defined as a slave!
 
 
 Token storage
@@ -57,7 +57,7 @@ Local storage (identity nodes)
 
 **/etc/keystone/credential-keys**
 
-**/etc/keystone/fernet/keys**
+**/etc/keystone/fernet-keys**
 
 
 Distribution
@@ -92,14 +92,18 @@ of the slave nodes in the environment.
 Initial bootstrap procedure
 """""""""""""""""""""""""""
 
-Choose **one** of these methods:
+Choose **one** of these methods::
 
-* wait until the next day when the rotation job has secured a third token
-* manually run the rotation job (must be run as the ``keystone`` user):
+  wait until the next day when the rotation job has secured a third token
 
-  [root@master ] sudo -u keystone keystone-manage fernet_rotate
+or
 
-  This job should be run on the master only!
+manually run the rotation job (must be run as the ``keystone`` user):
+
+.. ::
+   [root@master ] sudo -u keystone keystone-manage fernet_rotate
+
+This job should be run on the master only!
 
 
 Slaves
