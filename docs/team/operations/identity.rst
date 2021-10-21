@@ -100,7 +100,7 @@ or
 
 manually run the rotation jobs (must be run as the ``keystone`` user)::
 
-   [root@master ] sudo -u keystone keystone-manage fernet_rotate
+   [root@master ] sudo -u keystone keystone-manage credential_rotate
 
    [root@master ] sudo -u keystone keystone-manage fernet_rotate
 
