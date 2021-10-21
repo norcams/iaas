@@ -98,9 +98,8 @@ Choose **one** of these methods::
 
 or
 
-manually run the rotation job (must be run as the ``keystone`` user):
+manually run the rotation job (must be run as the ``keystone`` user)::
 
-.. ::
    [root@master ] sudo -u keystone keystone-manage fernet_rotate
 
 This job should be run on the master only!
