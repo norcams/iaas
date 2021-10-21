@@ -72,8 +72,8 @@ Initial bootstrap procedure
 
 Choose **one** of these methods:
 
-- wait until the next day when the rotation job has secured a third token
-- manually run the rotation job (must be run as the ``keystone`` user):
+* wait until the next day when the rotation job has secured a third token
+* manually run the rotation job (must be run as the ``keystone`` user):
 
   [root@master ] sudo -u keystone keystone-manage fernet_rotate
 
