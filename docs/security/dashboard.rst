@@ -3,7 +3,7 @@
 [2021] Dashboard (FIXME)
 ========================
 
-``REVISION 2021-02-05``
+``REVISION 2021-10-20``
 
 .. contents::
 
@@ -47,8 +47,8 @@ From OpenStack Security Guide:
   same-origin-policy.*
 
 ``[FAIL]`` **Use second-level domain**
-  We are not given our own second-devel domain. The dashboard is
-  available as "dashboard.nrec.no".
+  We have not secured a separate second-level domain for the dashboard
+  service. The dashboard is available as "dashboard.nrec.no".
 
 ``[DEFERRED]`` **Employ HTTP Strict Transport Security (HSTS)**
   If not using second-level domain, we are advised to avoid a
