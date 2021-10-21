@@ -2,8 +2,8 @@
 Identity and tokens
 ===================
 
-Keystone has an extensive use of tokens (Read the Openstack documentation for
-more details <https://docs.openstack.org/keystone/rocky/admin/identity-tokens.html>_ ).
+Keystone has an extensive use of tokens (`Read the Openstack documentation for
+more details <https://docs.openstack.org/keystone/rocky/admin/identity-tokens.html>`_ ).
 The identity nodes have to share the same set of tokens to make this all work as
 expected. One of the nodes is responsible for rotating the tokens at regular
 intervals, and then distribute them to the other participtaing nodes. This
