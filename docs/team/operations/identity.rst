@@ -27,6 +27,28 @@ environment in the situation where a new master node is set up.
    in addition to the most current.
 
 
+Master nodes
+============
+
+The hiera value of *profile::openstack::identity::manage_token_rotate*
+designates a node as a master or a slave. If this is set to `true` then the node
+acts as a master (implying creation, rotation and distribution of tokens).
+
+At the time of writing, these nodes are designated masters:
+
+production
+  bgo-identity-01
+
+test01
+  test01-identity-01
+
+test02
+  test02-identity-01
+
+
+**NOTE** that ``osl-identity-01`` is defined as a slave!
+
+
 Token storage
 =============
 
