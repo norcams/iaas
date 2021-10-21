@@ -34,6 +34,7 @@ Local storage (identity nodes)
 ------------------------------
 
 **/etc/keystone/credential-keys**
+
 **/etc/keystone/fernet/keys**
 
 
