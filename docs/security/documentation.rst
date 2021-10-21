@@ -33,8 +33,8 @@ From `OpenStack Security Guide\: System documentation`_:
   volumes that would otherwise be persistent resources in a
   traditional IT system.*
 
-The UH-IaaS infrastructure is, from hardware and up, managed
-completely by the UH-IaaS group, and therefore independent of each
+The NREC infrastructure is, from hardware and up, managed
+completely by the NREC group, and therefore independent of each
 institution. Except for networking interface and physical hardware
 management, there are no dependencies on the institutions. Links to
 infrastructure documentation:
