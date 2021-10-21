@@ -10,6 +10,7 @@ Operations
     himlar-bootstrap
     deploy
     compute
+    identity
     hpc
     network
     logging
