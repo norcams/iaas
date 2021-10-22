@@ -98,6 +98,8 @@ Check with this command from any of the other nodes::
 At this stage the slave is still running with the initial (local) repositories only, but it will now accept
 push from master. Update the mirror like this::
 
+  [git@osl-login-01 ~] gitolite mirror push <shortname> gitolite-admin
+
   [git@osl-login-01 ~] for repo in `gitolite list-phy-repos`; do gitolite mirror push <shortname> $repo; done
 
 .. IMPORTANT::
