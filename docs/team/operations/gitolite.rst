@@ -28,13 +28,16 @@ have an entry for each host with a suitable short name.
 **ssh::server::options** (*<loc>/roles/login.yaml*) should have an entry for
 each of the nodes IP addresses allowing ``publickey`` login for the `git` user.
 
+**profile::application::git::settings** should have an entry *hostname* set to
+the <shortname> of this gitolite server.
+
 .. NOTE::
    osl-login-01 is a *bastard* and not fully configured by Puppet. This node may
    have to have it sshd configuration adapted by manual means.
 
 The ``git`` user must get an ssh keypair::
 
-  [git@osl-login-01 ~] ssh-keygen
+  [git@<new login node> ~] ssh-keygen
 
 Check the public key into the **gitolite-admin** repository as
 *server-<shortnam>.key* (replacing any old keys for the same system if
@@ -84,7 +87,10 @@ Afterwards activate the new set up like this::
 
   gitolite setup
 
-Add the other cluster nodes public keys (git user) into the git users *authorized_keys*.
+Add the master node public key (git user) into the git users *authorized_keys*.
+Copy the options from the existing admin user if required, but it is important
+that the username is set as `server-osl` (if osl is the master node)!
+
 Check with this command from any of the other nodes::
 
   [git@osl-login-01 ~] ssh <shortname> info
