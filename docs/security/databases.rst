@@ -1,9 +1,9 @@
 .. |date| date::
 
-Databases
-=========
+[2021] Databases
+================
 
-Last changed: |date|
+``REVISION 2021-11-02``
 
 .. contents::
 
@@ -12,7 +12,7 @@ Last changed: |date|
 +--------------------------+---------------------+
 | **Impact**               | High                |
 +--------------------------+---------------------+
-| **Implemented percent** | **44%** (4/9)        |
+| **Implemented percent** | **55%** (5/9)        |
 +--------------------------+---------------------+
 
 From `OpenStack Security Guide\: Databases`_:
@@ -26,7 +26,7 @@ From `OpenStack Security Guide\: Databases`_:
   Security Guide currently focuses on PostgreSQL and MySQL.*
 
 .. NOTE::
-   We are using MariaDB 10.1 with packages directly from upstream repo.
+   We are using MariaDB 10.2 with packages directly from upstream repo.
 
 
 Database back end considerations
@@ -64,21 +64,22 @@ From OpenStack Security Guide:
 ``[PASS]`` **Separate database administrator account**
   The root user is only used to provision new databases and users.
 
-``[DEFERRED]`` **Database administrator account is protected**
-  FIXME: Document this
+``[PASS]`` **Database administrator account is protected**
+  The root user can only connect from localhost
 
 Require user accounts to require SSL transport
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[DEFERRED]`` **The database user accounts are configured to require TLS**
+``[FAIL]`` **The database user accounts are configured to require TLS**
   All databases support TLS, but only DB replication between location requires
-  TLS.
+  TLS. All other traffic runs on a closed network.
 
 Authentication with X.509 certificates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-``[DEFERRED]`` **The database user accounts are configured to require X.509 certificates**
-  FIXME: Document this
+``[FAIL]`` **The database user accounts are configured to require X.509 certificates**
+  Will not be implemented in the forseeable future. All traffic
+  (except replication which runs over TLS) is on a closed network.
 
 Nova-conductor
 ~~~~~~~~~~~~~~
@@ -109,6 +110,6 @@ Database server IP address binding
 Database transport
 ~~~~~~~~~~~~~~~~~~
 
-``[DEFERRED]`` **The database requires TLS**
+``[FAIL]`` **The database requires TLS**
   All databases support TLS transport, but only DB replication between
   locations requires TLS.
