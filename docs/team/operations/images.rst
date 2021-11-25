@@ -333,4 +333,11 @@ Steps to fully remove a retired image
      **/opt/images/public_builds**
   #. Purge all logs and reports from **/var/log/imagebuilder**
 
+  #. Remove all old crontab entries (``imagebuilder`` user)
+
+  #. Remove all now redundant build scripts
+
+  The last two may be done by having it removed (remove all crontab entries for the user
+  and delete every script in **/home/imagebuilder/build_scripts**), and then
+  apply puppet.
 
