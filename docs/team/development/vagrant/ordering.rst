@@ -7,33 +7,34 @@ before the next one are started.
 
 **First stage:**
 
-* db-01
-* mq-01
-* api-01
-* dashboard-01 (optional)
-* access-01 (optional)
-* monitor-01 (optional)
-* logger-01 (optional)
-* proxy-01 (optional)
-* admin-01 (optional)
+  * db-global-01
+  * db-regional-01
+  * mq-01
+  * api-01
+  * dashboard-01 (optional)
+  * access-01 (optional)
+  * monitor-01 (optional)
+  * logger-01 (optional)
+  * proxy-01 (optional)
+  * admin-01 (optional)
 
 **Second stage:**
 
-* identity-01
+  * identity-01
 
 **Main stage:**
 
-* novactrl-01
-* image-01
-* volume-01
-* network-01
-* console-01 (optional)
-* metric-01 (optional)
-* telemetry-01 (optional)
+  * novactrl-01
+  * image-01
+  * volume-01
+  * network-01
+  * console-01 (optional)
+  * metric-01 (optional)
+  * telemetry-01 (optional)
 
 **Last stage:**
 
-* compute-01
+  * compute-01
 
 Final fixes
 ===========
@@ -52,22 +53,23 @@ Metadata api
 
 We need to restart openstack-nova-metadata-api on compute-01. This can be done with ansible::
 
-  ansible-playbook -e "myhosts=vagrant-compute name=openstack-nova-metadata-api.service" lib/systemd_restart.yaml
+  ansible-playbook -e "myhosts=vagrant-compute" lib/restart_compute_services.yaml
 
 
 Flavors
 -------
 
-Flavors are missing. m1 can be added with himlarcli/flavor.py or openstack cli.
+Flavors are missing. m1 can be added with :file:`himlarcli/flavor.py` or openstack cli::
+
+  ./flavor.py update m1
 
 Image
 -----
 
 You will need a public cirros image to test with. One way to quickly fix this are to
-use himlarcli/image.py and edit config/images/cirros.yaml and set it to be public.
-You can then just run::
+use :file:`himlarcli/image.py` and then just run::
 
-  ./image.py update -i cirros.yaml
+  ./image.py update -i vagrant.yaml
 
 Dataporten
 ----------
