@@ -4,8 +4,15 @@
 Vagrant with virtualbox
 =======================
 
-Last changed: |date|
+Last changed: 2021-12-21
 
 You first will need to install the virutalbox and vagrant packages for
-your operating system. This have been tested on Ubuntu and OSX and
-works without any other configuration.
+your operating system.
+
+For version :file:`6.1.26+` you will need to update the privat networks
+virtualbox can use. Edit :file:`/etc/vbox/networks.conf` and add::
+
+  * 10.0.0.0/8 192.168.0.0/16 172.16.0.0/12
+
+This have been tested on Ubuntu 20.04 LTS and works without any other
+configuration.
