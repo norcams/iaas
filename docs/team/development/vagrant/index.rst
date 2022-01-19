@@ -9,6 +9,7 @@ Vagrant
     development
     virtualbox
     libvirt
+    vagrantbox
     testing
     himlarcli
     dataporten
