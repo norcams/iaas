@@ -15,10 +15,10 @@ Deltaker    Uke Uke Uke
 =========== === === ===
 Tannaz        8  14  20
 Tor           9  15  21
-Erik          10 16  22
-Mikael        11 17  23
-Trond         12 18  24
-Raymond       13 19  25
+Erik         10  16  22
+Mikael       11  17  23
+Trond        12  18  24
+Raymond      13  19  25
 =========== === === ===
 
 Instruks
