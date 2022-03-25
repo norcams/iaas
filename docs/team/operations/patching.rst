@@ -61,11 +61,11 @@ Normal OS patching
 For each for the production regions, `BGO` and `OSL`, do the following:
 
 
-Patching controller-04
-----------------------
+Patching controller-04/08
+-------------------------
 
-The node controller-04 is usually running virtual nodes that are not
-critical to the operation of Openstack, and controller-04 can
+The node controller-04/08 (OSL/BGO) is usually running virtual nodes that are not
+critical to the operation of Openstack, and controller-04/08 can
 therefore be patched and rebooted outside of a maintenance window.
 
 The controller node and all virtual nodes running on the controller
@@ -84,6 +84,10 @@ Option                 Effect
 =====================  ===========================================================
 
 Also, consider patching `Firmware`_.
+
+.. IMPORTANT::
+  As controller-04/08 hosts the proxy node, the reboot playbook will not work. Use normal
+  reboot command.
 
 
 Patching other controller nodes
@@ -134,6 +138,13 @@ without error before starting on the next controller.
    nodes are shut down before proceeding with rebooting the controller.
 
 #. Consider patching `Firmware`_.
+
+.. IMPORTANT::
+  To keep services for the instances uninterrupted, consider nodes and workloads which depends
+  on the NAT nodes. This includes IPv4 access for instances with private IPv4 addresses, the
+  resolver nodes and the identity nodes. Most of these nodes and instances consumes nat-01 by
+  default, which runs on controller-01, but temporarily they can use nat-02. The resolver-02 nodes
+  use nat-01 by default.
 
 #. Reboot the controller node::
 
