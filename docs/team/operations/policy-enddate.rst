@@ -6,11 +6,11 @@ Policy for håndtering av prosjekter som når enddate
 Før enddate
 ===========
 
-  * Varsling om enddate:
+* Varsling om enddate:
 
-    - Når det er 60 dager til enddate
-    - Når det er 30 dager til enddate
-    - Når det er 14 dager til enddate
+  - Når det er 60 dager til enddate
+  - Når det er 30 dager til enddate
+  - Når det er 14 dager til enddate
 
   Gjøres med::
     
