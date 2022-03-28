@@ -6,11 +6,11 @@ Policy for håndtering av prosjekter som når enddate
 Før enddate
 ===========
 
-* Varsling om enddate:
+  * Varsling om enddate:
 
-  - Når det er 60 dager til enddate
-  - Når det er 30 dager til enddate
-  - Når det er 14 dager til enddate
+    - Når det er 60 dager til enddate
+    - Når det er 30 dager til enddate
+    - Når det er 14 dager til enddate
 
   Gjøres med::
     
@@ -22,17 +22,12 @@ Ved enddate
 Når enddate nås:
 
 * Alle instanser skrus av
-
 * Prosjektet disables
-
 * Varsling til admin / contact
-
 * Setter tags på prosjektet:
 
   - ``quarantine date: <dato>``
-
   - ``quarantine type: enddate``
-
   - ``quarantine_active``
 
   Gjøres med::
@@ -49,7 +44,6 @@ Når prosjektet er i karantene varsler vi admin/contact:
 
 * Når det er 60 dager til sletting (30 dager siden tag ``quarantine
   date: <dato>``)
-
 * Når det er 30 dager til sletting (60 dager siden tag ``quarantine
   date: <dato>``)
 
@@ -85,11 +79,8 @@ Andre rutiner
   av enddate:
 
   - Prosjektet enables
-
   - tags "quarantine*" fjernes
-
   - Ny enddate settes (maks 2 år frem i tid)
-
   - Admin må selv skru på instanser
 
   Gjøres med::
