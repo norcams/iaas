@@ -45,13 +45,13 @@ Når enddate nås:
 Etter enddate
 =============
 
-Når prosjektet er i karantene:
+Når prosjektet er i karantene varsler vi admin/contact:
 
 * Når det er 60 dager til sletting (30 dager siden tag ``quarantine
-  date: <dato>``): Varsling til admin / contact
+  date: <dato>``)
 
 * Når det er 30 dager til sletting (60 dager siden tag ``quarantine
-  date: <dato>``): Varsling til admin / contact
+  date: <dato>``)
 
   Gjøres med::
 
