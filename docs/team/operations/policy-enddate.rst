@@ -87,3 +87,37 @@ Andre rutiner
 
     ./project.py quarantine --unset <prosjekt>
     ./project.py extend --end <arg> <prosjekt>
+
+
+Utrullingsplan
+==============
+
+Problemområder:
+
+#. Prosjekter hvor enddate er passert
+#. Prosjekter med enddate i nær fremtid (dvs. mindre enn 3 mnd)
+#. Prosjekter som ikke har enddate
+#. Prosjekter med enddate for langt frem i tid (mer enn 2 år)
+
+Plan for utrulling:
+
+#. Policy må beskrives på brukerdoc-sidene
+
+#. URL til policy må legges inn i mail templates i himlarcli
+
+#. Sende e-post til alle brukerne for å informere om at ny policy trer
+   i kraft, link til informasjon, samt informasjon om utrulling
+
+#. Alle prosjekter uten enddate får satt enddate 1 år frem i
+   tid. Kun unntak for systemprosjekter.
+
+#. Prosjekter hvor enddate er passert får satt ny enddate 6 mnd frem i
+   tid.
+
+#. Prosjekter med enddate i nær fremtid for satt ny enddate 6 mnd frem
+   i tid.
+
+#. Prosjekter med enddat for langt frem får satt ny enddate 2 år frem
+   i tid
+
+#. Policy iverksettes
