@@ -49,7 +49,7 @@ Når prosjektet er i karantene varsler vi admin/contact:
 
   Gjøres med::
 
-    ./report.py enddate --days -60 --days -30 --template notify/notify_enddate_quarantine.txt
+    ./report.py quarantine --days 60 --days 30 --template notify/notify_enddate_quarantine.txt
 
 Når prosjektet har vært i karantene i 90 dager, dvs. det er 90 dager
 siden tag ``quarantine date: <dato>``:
@@ -58,7 +58,7 @@ siden tag ``quarantine date: <dato>``:
 
   Gjøres med::
 
-    ./report.py enddate --days -90 --list | awk '{print $2}' # lage liste
+    ./report.py quarantine --days 90 --list | awk '{print $2}' # lage liste
     for project in <liste>; do
         ./project delete $project
     done
