@@ -10,11 +10,11 @@ Før enddate
 
   - Når det er 60 dager til enddate
   - Når det er 30 dager til enddate
-  - Når det er 14 dager til enddate
+  - Når det er 7 dager til enddate
 
   Gjøres med::
     
-    ./report.py enddate --days 60 --days 30 --days 14 --template notify/notify_enddate_before.txt
+    ./report.py enddate --days 60 --days 30 --days 7 --template notify/notify_enddate_before.txt
 
 Ved enddate
 ===========
