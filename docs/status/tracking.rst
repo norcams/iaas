@@ -89,7 +89,7 @@ men denne tjenesten er avviklet f.o.m. november 2018
 Epost
 -----
 
-Vi har en epostliste for teamet og andre knyttet som er knyttet til oss.
+Vi har en epostliste for teamet og andre som er knyttet til oss.
 Denne listen administreres av USIT og er ment for intern bruk.
 
 Prosjektstyring
