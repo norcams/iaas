@@ -34,14 +34,17 @@ Known issues
 If an instance where created with a server group and this server group are deleted
 the instance can refuse to be migrated. This behavior have been seen on some
 instances with local storage (e.q. shpc or alice). There is a script in himlarcli
-to fix the problem::
+to fix the problem:
 
 .. code:: bash
+   
    ./request_specs.py show <instance-id>
 
-If there is a server group present and this is removed from openstack remove this::
+if there is a server group present and this cannot be found with openstack cli we
+can remove the group from the instance scheduler hints:
 
 .. code:: bash
+   
    ./request_specs.py remove-hints <instance-id>
 
 Help
