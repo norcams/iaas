@@ -34,10 +34,19 @@ Known issues
 If an instance where created with a server group and this server group are deleted
 the instance can refuse to be migrated. This behavior have been seen on some
 instances with local storage (e.q. shpc or alice). There is a script in himlarcli
-to fix the problem:
+to fix the problem but to avoid bloting /opt/himlarcli more than needed we should
+install himlarcli to another location:
 
 .. code:: bash
-   
+
+   cd /tmp
+   git clone https://github.com/norcams/himlarcli
+   cd himlarcli
+   # we need python >= 3.8
+   virutalenv-3 -p /usr/bin/python39 .
+   source bin/activate
+   pip install -r requirements.txt
+   pip install nova
    ./request_specs.py show <instance-id>
 
 if there is a server group present and this cannot be found with openstack cli we
