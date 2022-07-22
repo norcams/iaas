@@ -29,17 +29,21 @@ defined under :file:`config/nodes/` in `himlarcli <../operations/himlarcli/index
 =========== ===== ===== ========
  node        inf   net   addr
 =========== ===== ===== ========
+login-02    eth0  mgmt  x.x.x.8
 login-01    eth0  mgmt  x.x.x.10
 admin-01    eth0  mgmt  x.x.x.11
 proxy-01    eth0  mgmt  x.x.x.12
 logger-01   eth0  mgmt  x.x.x.13
-monitor-01  eth0  mgmt  x.x.x.14
+monitor-01  eth0  mgmt  x.x.x.14*
 builder-01  eth0  mgmt  x.x.x.15
 ns-01       eth0  mgmt  x.x.x.16
-resolver-01 eth0  mgmt  x.x.x.17
-resolver-02 eth0  mgmt  x.x.x.18
+tsdb-01     eth0  mgmt  x.x.x.20
+monitor-01  eth0  mgmt  x.x.x.21
+monitor-02  eth0  mgmt  x.x.x.22
+monitor-03  eth0  mgmt  x.x.x.23
 =========== ===== ===== ========
 
+*= old monitor
 
 OOB hosts
 ---------
@@ -70,18 +74,19 @@ This is to allow admin-01 to control the power interface on all physical nodes
    control of the management switches.
 
 
-Openstack nodes
----------------
+Production nodes plan
+---------------------
+
+These should use the last octet between :file:`.26` and :file:`.99`.
 
 Management net (mgmt) should have the same last octet as the transport net (trp).
 
 ================= ===== ===== ========
  node              inf   net   addr
 ================= ===== ===== ========
-status-01         eth1  trp   x.x.x.21
-report-01         eth1  trp   x.x.x.22
-nat-linux-01      eth1  trp   x.x.x.26
-nat-linux-02      eth1  trp   x.x.x.27
+nat-01            eth1  trp   x.x.x.26
+nat-02            eth1  trp   x.x.x.27
+nat-03            eth1  trp   x.x.x.28
 mq-01             eth1  trp   x.x.x.31
 mq-02             eth1  trp   x.x.x.32
 mq-03             eth1  trp   x.x.x.33
@@ -91,12 +96,16 @@ image-01          eth1  trp   x.x.x.36
 image-02          eth1  trp   x.x.x.37
 image-03          eth1  trp   x.x.x.38
 dns-03            eth1  trp   x.x.x.39
+report-01         eth1  trp   x.x.x.40
 db-01             eth1  trp   x.x.x.41
 db-02             eth1  trp   x.x.x.42
 db-03             eth1  trp   x.x.x.43
+resolver-01       eth1  trp   x.x.x.44
+resolver-02       eth1  trp   x.x.x.45
 volume-01         eth1  trp   x.x.x.46
 volume-02         eth1  trp   x.x.x.47
 volume-03         eth1  trp   x.x.x.48
+status-01         eth1  trp   x.x.x.50
 dashboard-01      eth1  trp   x.x.x.51
 dashboard-02      eth1  trp   x.x.x.52
 dashboard-03      eth1  trp   x.x.x.53
@@ -136,31 +145,5 @@ cephmon-03        eth1  trp   x.x.x.93
 cephmon-object-03 eth1  trp   x.x.x.94
 rgw-03            eth1  trp   x.x.x.95
 metric-01         eth1  trp   x.x.x.96
-metric-02         eth1  trp   x.x.x.97
-metric-03         eth1  trp   x.x.x.98
+proxy-02          eth1  trp   x.x.x.97
 ================= ===== ===== ========
-
-Openstack hosts
----------------
-
-============== ===== ===== =========
- node           inf   net   addr
-============== ===== ===== =========
-controller-01  eth1  trp   x.x.x.100
-controller-02  eth1  trp   x.x.x.101
-controller-03  eth1  trp   x.x.x.102
-controller-04  eth1  trp   x.x.x.114
-compute-01*    eth1  trp   x.x.x.103
-compute-02*    eth1  trp   x.x.x.104
-compute-03*    eth1  trp   x.x.x.105
-compute-04*    eth1  trp   x.x.x.111
-compute-05*    eth1  trp   x.x.x.112
-compute-06*    eth1  trp   x.x.x.113
-compute-07*    eth1  trp   x.x.x.115
-compute-08*    eth1  trp   x.x.x.116
-storage-01*    eth1  trp   x.x.x.106
-storage-02*    eth1  trp   x.x.x.107
-storage-03*    eth1  trp   x.x.x.108
-storage-04*    eth1  trp   x.x.x.109
-storage-05*    eth1  trp   x.x.x.110
-============== ===== ===== =========
