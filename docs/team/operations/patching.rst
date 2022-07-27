@@ -93,15 +93,20 @@ Also, consider patching `Firmware`_.
 Patching other controller nodes
 -------------------------------
 
+.. IMPORTANT::
+  On el8 we have had a problem with iptables dropping rules when we do dnf update (8.6)
+  Test on one el8 node to see if this is a problem before running pre-patching
+  outside scheduled maintenance window.
+  
 #. Upgrade virtual nodes, while excluding the **httpd**, **mariadb**
    and **mod_ssl** packages. This is usually safe to do outside of a
    scheduled maintenance window::
 
-     sudo ansible-playbook -e "myhosts=${location}-nodes exclude=httpd*,MariaDB*,mod_ssl,nfs-utils" lib/yumupdate.yaml
+     sudo ansible-playbook --forks 30 -e "myhosts=${location}-nodes exclude=httpd*,MariaDB*,mod_ssl,nfs-utils" lib/yumupdate.yaml
 
 #. While in a scheduled maintenance window, upgrade virtual nodes::
 
-     sudo ansible-playbook -e "myhosts=${location}-nodes" lib/yumupdate.yaml
+     sudo ansible-playbook --forks 50 -e "myhosts=${location}-nodes" lib/yumupdate.yaml
 
 #. Check if all virtual nodes are updated::
 
