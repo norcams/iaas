@@ -17,6 +17,7 @@ Operations
     foreman
     ansible/index
     patching
+    reinstall
     migrate
     himlarcli/index
     local-repo
