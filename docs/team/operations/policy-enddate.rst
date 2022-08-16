@@ -253,7 +253,7 @@ Plan for utrulling:
        --
        The NREC Team <support@nrec.no>
 
-#. Policy iverksettes
+#. Policy iverksettes. **Kun på osl-proxy-02**
 
    * Cron-jobb for varsling før enddate::
 
