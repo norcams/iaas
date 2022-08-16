@@ -101,11 +101,11 @@ Problemområder:
 
 Plan for utrulling:
 
-#.  **UTFØRT** Policy må beskrives på brukerdoc-sidene
+#. **UTFØRT** Policy må beskrives på brukerdoc-sidene
 
    * https://docs.nrec.no/enddate.html
 
-#. URL til policy må legges inn i mail templates i himlarcli:
+#. **UTFØRT** URL til policy må legges inn i mail templates i himlarcli:
 
    * notify_enddate_before.txt
    * notify_enddate_after.txt
