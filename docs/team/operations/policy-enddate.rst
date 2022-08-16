@@ -103,21 +103,150 @@ Plan for utrulling:
 
 #. Policy må beskrives på brukerdoc-sidene
 
+   * **UTFØRT** https://docs.nrec.no/enddate.html
+
 #. URL til policy må legges inn i mail templates i himlarcli
 
-#. Sende e-post til alle brukerne for å informere om at ny policy trer
-   i kraft, link til informasjon, samt informasjon om utrulling
+#. Varsle om at ny policy trer i kraft, link til informasjon. Normal
+   varsling til Twitter, Slack og Statussiden.
 
-#. Alle prosjekter uten enddate får satt enddate 1 år frem i
-   tid. Kun unntak for systemprosjekter.
+   * Forslag til tekst::
 
-#. Prosjekter hvor enddate er passert får satt ny enddate 6 mnd frem i
-   tid.
+       New end date policy will take effect soon:
+       https://docs.nrec.no/enddate.html Projects where end date has
+       passed or is due soon will automatically get en extension, and
+       you will be informed via email
 
-#. Prosjekter med enddate i nær fremtid for satt ny enddate 6 mnd frem
-   i tid.
+#. Alle prosjekter uten enddate får satt enddate 6 mnd frem i tid. Kun
+   unntak for systemprosjekter. Prosjekteiere + contact varsles via
+   mail
 
-#. Prosjekter med enddat for langt frem får satt ny enddate 2 år frem
-   i tid
+   * Forslag til tekst::
+
+       From: The NREC Team <support@nrec.no>
+       To: <admin>
+       Cc: <contact>
+       Subject: NREC: New end date set for project <foo>
+
+       Hi,
+
+       Our new policy for project end date is in effect very
+       soon. More information:
+
+         https://docs.nrec.no/enddate.html
+
+       The project <foo> did not have an end date.
+
+       New end date is: <date>
+
+       See the URL above for information about how to get an end date
+       extension.
+
+       IMPORTANT: If this project is no longer in use, please let us
+       know so that we may delete it and free up the resources for
+       other users.
+
+       Kind Regards,
+       --
+       The NREC Team <support@nrec.no>
+
+#. Prosjekter hvor enddate er passert får satt ny enddate 3 mnd frem i
+   tid. Prosjekteiere + contact varsles via mail
+
+   * Forslag til tekst::
+
+       From: The NREC Team <support@nrec.no>
+       To: <admin>
+       Cc: <contact>
+       Subject: NREC: New end date set for project <foo>
+
+       Hi,
+
+       Our new policy for project end date is in effect very
+       soon. More information:
+
+         https://docs.nrec.no/enddate.html
+
+       The end date for project <foo> was passed.
+
+       New end date is: <date>
+
+       See the URL above for information about how to get an end date
+       extension.
+
+       IMPORTANT: If this project is no longer in use, please let us
+       know so that we may delete it and free up the resources for
+       other users.
+
+       Kind Regards,
+       --
+       The NREC Team <support@nrec.no>
+
+#. Prosjekter med enddate i nær innen 60 dager får satt ny enddate 4
+   mnd frem i tid. Prosjekteiere + contact varsles via mail
+
+   * Forslag til tekst::
+
+       From: The NREC Team <support@nrec.no>
+       To: <admin>
+       Cc: <contact>
+       Subject: NREC: New end date set for project <foo>
+
+       Hi,
+
+       Our new policy for project end date is in effect very
+       soon. More information:
+
+         https://docs.nrec.no/enddate.html
+
+       The end date for project <foo> was due soon.
+
+       New end date is: <date>
+
+       See the URL above for information about how to get an end date
+       extension.
+
+       IMPORTANT: If this project is no longer in use, please let us
+       know so that we may delete it and free up the resources for
+       other users.
+
+       Kind Regards,
+       --
+       The NREC Team <support@nrec.no>
+
+#. Prosjekter med enddate for langt frem (>2 år) får satt ny enddate 2
+   år frem i tid. Prosjekteiere + contact varsles via mail
+
+   * Forslag til tekst::
+
+       From: The NREC Team <support@nrec.no>
+       To: <admin>
+       Cc: <contact>
+       Subject: NREC: New end date set for project <foo>
+
+       Hi,
+
+       Our new policy for project end date is in effect very
+       soon. More information:
+
+         https://docs.nrec.no/enddate.html
+
+       The end date for project <foo> was set too far into the
+       future. According to the policy, maximum is 2 years. You may
+       extend the life time of the project by applying for an
+       extension when the new end date is due.
+
+       New end date is: <date>
+
+       See the URL above for information about how to get an end date
+       extension.
+
+       IMPORTANT: If this project is no longer in use, please let us
+       know so that we may delete it and free up the resources for
+       other users.
+
+       Kind Regards,
+       --
+       The NREC Team <support@nrec.no>
 
 #. Policy iverksettes
