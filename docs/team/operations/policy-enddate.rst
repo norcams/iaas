@@ -101,9 +101,9 @@ Problemområder:
 
 Plan for utrulling:
 
-#. Policy må beskrives på brukerdoc-sidene
+#.  **UTFØRT** Policy må beskrives på brukerdoc-sidene
 
-   * **UTFØRT** https://docs.nrec.no/enddate.html
+   * https://docs.nrec.no/enddate.html
 
 #. URL til policy må legges inn i mail templates i himlarcli:
 
@@ -254,3 +254,19 @@ Plan for utrulling:
        The NREC Team <support@nrec.no>
 
 #. Policy iverksettes
+
+   * Cron-jobb for varsling før enddate::
+
+       0 6 * * * /opt/himlarcli/bin/enddate-notify-before.sh >/dev/null 2>&1
+
+   * Cron-jobb for å sette i karantene::
+
+       5 6 * * * /opt/himlarcli/bin/enddate-enter-quarantine.sh >/dev/null 2>&1
+
+   * Cron-jobb for varsling av prosjekter i karantene::
+
+       10 6 * * * /opt/himlarcli/bin/enddate-notify-quarantine.sh >/dev/null 2>&1
+
+   * Cron-jobb for slette prosjekter som har vært i karantene 90 dager::
+
+       15 6 * * * /opt/himlarcli/bin/enddate-delete.sh >/dev/null 2>&1
