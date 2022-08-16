@@ -105,7 +105,11 @@ Plan for utrulling:
 
    * **UTFØRT** https://docs.nrec.no/enddate.html
 
-#. URL til policy må legges inn i mail templates i himlarcli
+#. URL til policy må legges inn i mail templates i himlarcli:
+
+   * notify_enddate_before.txt
+   * notify_enddate_after.txt
+   * notify_enddate_quarantine.txt
 
 #. Varsle om at ny policy trer i kraft, link til informasjon. Normal
    varsling til Twitter, Slack og Statussiden.
