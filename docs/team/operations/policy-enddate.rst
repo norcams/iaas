@@ -103,7 +103,7 @@ Plan for utrulling:
 
 #. **UTFØRT** Policy må beskrives på brukerdoc-sidene
 
-   * https://docs.nrec.no/enddate.html
+   * https://docs.nrec.no/project-lifecycle.html
 
 #. **UTFØRT** URL til policy må legges inn i mail templates i himlarcli:
 
@@ -116,10 +116,10 @@ Plan for utrulling:
 
    * Forslag til tekst::
 
-       New end date policy will take effect soon:
-       https://docs.nrec.no/enddate.html Projects where end date has
-       passed or is due soon will automatically get en extension, and
-       you will be informed via email
+       New project lifecycle policy will take effect soon:
+       https://docs.nrec.no/project-lifecycle.html Projects where
+       expiration date has passed or is due soon will automatically
+       get en extension, and you will be informed via email
 
 #. Alle prosjekter uten enddate får satt enddate 6 mnd frem i tid. Kun
    unntak for systemprosjekter. Prosjekteiere + contact varsles via
@@ -130,21 +130,21 @@ Plan for utrulling:
        From: The NREC Team <support@nrec.no>
        To: <admin>
        Cc: <contact>
-       Subject: NREC: New end date set for project <foo>
+       Subject: NREC: New expiration date set for project <foo>
 
        Hi,
 
-       Our new policy for project end date is in effect very
+       Our new policy for project expiration date is in effect very
        soon. More information:
 
-         https://docs.nrec.no/enddate.html
+         https://docs.nrec.no/project-lifecycle.html
 
-       The project <foo> did not have an end date.
+       The project <foo> did not have an expiration date.
 
-       New end date is: <date>
+       New expiration date is: <date>
 
-       See the URL above for information about how to get an end date
-       extension.
+       See the URL above for information about how to get an
+       expiration date extension.
 
        IMPORTANT: If this project is no longer in use, please let us
        know so that we may delete it and free up the resources for
@@ -162,21 +162,21 @@ Plan for utrulling:
        From: The NREC Team <support@nrec.no>
        To: <admin>
        Cc: <contact>
-       Subject: NREC: New end date set for project <foo>
+       Subject: NREC: New expiration date set for project <foo>
 
        Hi,
 
-       Our new policy for project end date is in effect very
+       Our new policy for project expiration date is in effect very
        soon. More information:
 
-         https://docs.nrec.no/enddate.html
+         https://docs.nrec.no/project-lifecycle.html
 
-       The end date for project <foo> was passed.
+       The expiration date for project <foo> was passed.
 
-       New end date is: <date>
+       New expiration date is: <date>
 
-       See the URL above for information about how to get an end date
-       extension.
+       See the URL above for information about how to get an
+       expiration date extension.
 
        IMPORTANT: If this project is no longer in use, please let us
        know so that we may delete it and free up the resources for
@@ -194,21 +194,21 @@ Plan for utrulling:
        From: The NREC Team <support@nrec.no>
        To: <admin>
        Cc: <contact>
-       Subject: NREC: New end date set for project <foo>
+       Subject: NREC: New expiration date set for project <foo>
 
        Hi,
 
-       Our new policy for project end date is in effect very
+       Our new policy for project expiration date is in effect very
        soon. More information:
 
-         https://docs.nrec.no/enddate.html
+         https://docs.nrec.no/project-lifecycle.html
 
-       The end date for project <foo> was due soon.
+       The expiration date for project <foo> was due soon.
 
-       New end date is: <date>
+       New expiration date is: <date>
 
-       See the URL above for information about how to get an end date
-       extension.
+       See the URL above for information about how to get an
+       expiration date extension.
 
        IMPORTANT: If this project is no longer in use, please let us
        know so that we may delete it and free up the resources for
@@ -226,24 +226,24 @@ Plan for utrulling:
        From: The NREC Team <support@nrec.no>
        To: <admin>
        Cc: <contact>
-       Subject: NREC: New end date set for project <foo>
+       Subject: NREC: New expiration date set for project <foo>
 
        Hi,
 
-       Our new policy for project end date is in effect very
+       Our new policy for project expiration date is in effect very
        soon. More information:
 
-         https://docs.nrec.no/enddate.html
+         https://docs.nrec.no/project-lifecycle.html
 
-       The end date for project <foo> was set too far into the
+       The expiration date for project <foo> was set too far into the
        future. According to the policy, maximum is 2 years. You may
        extend the life time of the project by applying for an
-       extension when the new end date is due.
+       extension when the new expiration date is due.
 
-       New end date is: <date>
+       New expiration date is: <date>
 
-       See the URL above for information about how to get an end date
-       extension.
+       See the URL above for information about how to get an
+       expiration date extension.
 
        IMPORTANT: If this project is no longer in use, please let us
        know so that we may delete it and free up the resources for
