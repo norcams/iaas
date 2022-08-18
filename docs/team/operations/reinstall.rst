@@ -22,7 +22,7 @@ or, to save time when there are several instances::
 
     yum install -y parallel
     cd /var/lib/nova/instances/
-    \ls -1 | parallel rsync -Hav --sparse --exclude swapfile {} /cephfs/$compute/
+    \ls -1 | parallel rsync -Hav --sparse --exclude swapfile {} /cephfs/<host>
 
 * For controller only: backup domxml from :file:`/etc/libvirt/qemu/<nodename>.xml`
   to :file:`/cephfs/<host>`
