@@ -18,6 +18,12 @@ controllers and compute with local storage).
 
     rsync -Pav --sparse --exclude swapfile /var/lib/nova/instances/* /cephfs/<host>
 
+or, to save time when there are several instances::
+
+    yum install -y parallel
+    cd /var/lib/nova/instances/
+    \ls -1 | parallel rsync -Hav --sparse --exclude swapfile {} /cephfs/$compute/
+
 * For controller only: backup domxml from :file:`/etc/libvirt/qemu/<nodename>.xml`
   to :file:`/cephfs/<host>`
 
