@@ -23,7 +23,7 @@ Build routine
 -------------
 
 Through the profile class *application/builder* Puppet creates cron
-specifications and build scripts. The cron entries is set up to run once a week
+specifications and build scripts. The cron entries are set up to run once a week
 (once per distribtion offered) on the `builder` nodes. The end result (NREC
 adapted images) are found on the nodes ready to download if required. On the
 `proxy` nodes there should be a monthly cron job uploading the latest images
