@@ -34,3 +34,4 @@ Operations
     images
     cleanup
     policy-enddate
+    kompetansematrise
