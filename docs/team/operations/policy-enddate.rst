@@ -111,8 +111,8 @@ Plan for utrulling:
    * notify_enddate_after.txt
    * notify_enddate_quarantine.txt
 
-#. Varsle om at ny policy trer i kraft, link til informasjon. Normal
-   varsling til Twitter, Slack og Statussiden.
+#. **UTFØRT** Varsle om at ny policy trer i kraft, link til
+   informasjon. Normal varsling til Twitter, Slack og Statussiden.
 
    * Forslag til tekst::
 
@@ -121,9 +121,9 @@ Plan for utrulling:
        expiration date has passed or is due soon will automatically
        get en extension, and you will be informed via email
 
-#. Alle prosjekter uten enddate får satt enddate 6 mnd frem i tid. Kun
-   unntak for systemprosjekter. Prosjekteiere + contact varsles via
-   mail
+#. **UTFØRT** Alle prosjekter uten enddate får satt enddate 6 mnd frem
+   i tid. Kun unntak for systemprosjekter. Prosjekteiere + contact
+   varsles via mail
 
    * Forslag til tekst::
 
@@ -154,8 +154,8 @@ Plan for utrulling:
        --
        The NREC Team <support@nrec.no>
 
-#. Prosjekter hvor enddate er passert får satt ny enddate 3 mnd frem i
-   tid. Prosjekteiere + contact varsles via mail
+#. **UTFØRT** Prosjekter hvor enddate er passert får satt ny enddate 3
+   mnd frem i tid. Prosjekteiere + contact varsles via mail
 
    * Forslag til tekst::
 
@@ -186,8 +186,8 @@ Plan for utrulling:
        --
        The NREC Team <support@nrec.no>
 
-#. Prosjekter med enddate i nær innen 60 dager får satt ny enddate 4
-   mnd frem i tid. Prosjekteiere + contact varsles via mail
+#. **UTFØRT** Prosjekter med enddate i innen 75 dager får utvidet
+   enddate med 4 mnd. Prosjekteiere + contact varsles via mail
 
    * Forslag til tekst::
 
@@ -218,40 +218,7 @@ Plan for utrulling:
        --
        The NREC Team <support@nrec.no>
 
-#. Prosjekter med enddate for langt frem (>2 år) får satt ny enddate 2
-   år frem i tid. Prosjekteiere + contact varsles via mail
-
-   * Forslag til tekst::
-
-       From: The NREC Team <support@nrec.no>
-       To: <admin>
-       Cc: <contact>
-       Subject: NREC: New expiration date set for project <foo>
-
-       Hi,
-
-       Our new policy for project expiration date is in effect very
-       soon. More information:
-
-         https://docs.nrec.no/project-lifecycle.html
-
-       The expiration date for project <foo> was set too far into the
-       future. According to the policy, maximum is 2 years. You may
-       extend the life time of the project by applying for an
-       extension when the new expiration date is due.
-
-       New expiration date is: <date>
-
-       See the URL above for information about how to get an
-       expiration date extension.
-
-       IMPORTANT: If this project is no longer in use, please let us
-       know so that we may delete it and free up the resources for
-       other users.
-
-       Kind Regards,
-       --
-       The NREC Team <support@nrec.no>
+#. Gjennomgå Prosjekter med enddate for langt frem (>2 år)
 
 #. Policy iverksettes. **Kun på osl-proxy-02**
 
