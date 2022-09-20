@@ -15,14 +15,15 @@ Public
 
 Public IPv4 network.
 
-========= ========= ==================
+========= ========= ====================
  region    env       IPv4
-========= ========= ==================
- bgo      reserved   158.37.64.0/24
+========= ========= ====================
+ bgo      uib conn   158.37.64.0/24
  bgo      prod       158.37.65.0/24
  bgo      prod       158.39.77.0/24
  bgo      prod       158.39.74.0/24
  bgo      prod       158.39.201.0/24
+ bgo      lhc        109.105.127.128/26
  osl      prod       158.37.63.0/24
  osl      reserved   158.37.66.0/23
  osl      prod       158.39.75.0/24
@@ -35,7 +36,7 @@ Public IPv4 network.
  local1   dev        (192.168.12.0/24)
  local2   dev        (192.168.13.0/24)
  local3   dev        (192.168.12.0/24)
-========= ========= ==================
+========= ========= ====================
 
 Public IPv6 network.
 
@@ -43,6 +44,8 @@ Public IPv6 network.
  region    env     Private IPv4       IPv6
 ========= ======= ================== ======
  bgo      prod                        2001:700:2:8300::/56
+ bgo      lhc                         2001:948:62:3::/64
+ bgo      lhc       10.109.0.0/22     2001:948:62:4::/64
  osl      prod                        2001:700:2:8200::/56
  test01   test     (10.0.250.0/24)    (2001:700:200:915::/64)
  test02   test                        (fd32::/64)
@@ -52,7 +55,6 @@ Public IPv6 network.
  vagrant  dev                         (fc00:700:100:200::/64)
  dev      dev                         TBD
 ========= ======= ================== ======
-
 
 .. NOTE:: The networks enclosed in parentheses are not reachable outside of
           their locally managed routing domains.
