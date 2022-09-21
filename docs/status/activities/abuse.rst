@@ -25,10 +25,10 @@ instruks:
     $ openstack project show -f shell <project-id> | grep admin
     admin="foo@bar.com"
 
-#. Skru av og lås instansen::
+#. Skru av og lås instansen, ta med grunngiving og referanse til RT-sak ::
 
-    openstack server stop <instance-id>
-    openstack server lock <instance-id>
+    openstack server stop <instance-id> 
+    openstack server lock <instance-id> --reason "<forklaring og RT-ref>"
 
 #. Informer prosjektadmin via RT (e-post)
 
