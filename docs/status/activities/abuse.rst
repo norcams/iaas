@@ -32,6 +32,8 @@ instruks:
 
 #. Informer prosjektadmin via RT (e-post)
 
+#. Sett saken til "Stalled"
+
 #. Dersom man oppnår kontakt bli enig med bruker om en løsning på
    problemet
 
