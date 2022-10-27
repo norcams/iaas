@@ -44,6 +44,64 @@ with default login. As a minimum, configure:
 - hard drive as secondary boot device
 
 
+Basics on Zero Touch Provisioning (Dell hardware)
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+Dell systems using Zero Touch Provisioning can be initilized without manual
+interventions. Details can be found in Dell documentation, for instance this
+`ZERO-TOUCH BARE-METAL PROVISIONING document`_.
+
+.. _ZERO-TOUCH BARE-METAL PROVISIONING document: https://downloads.dell.com/manuals/all-products/esuprt_software/esuprt_it_ops_datcentr_mgmt/dell-management-solution-resources_white-papers9_en-us.pdf
+
+
+Flowchart
+*********
+
+- System has its 'DHCP Provisioning' attribute set to 'Enable once'
+- Machine is turned on for the first time
+- iDRAC sends vendor-class 'iDRAC'
+- For these the DHCP server return option 43 containing information about filename and location
+  of XML with configuration data
+- iDRAC configures itself according to XML data
+- iDRAC resets the 'DHCP Provisioning' attribute to 'Disabled'
+
+
+Local configuration locations
+*****************************
+
+The DHCP configuration is in */etc/dhcp/oob_network.conf* on the admin nodes:
+
+.. code:: bash
+
+   # out-of-band network definition
+   subnet 172.17.32.0 netmask 255.255.248.0 {
+     option routers 172.17.32.10;
+     default-lease-time 43200;
+     max-lease-time 86400;
+     option domain-name-servers 172.17.32.10;
+
+     # iDRAC will search for file in order <servicetag>-config.json,
+   <model>-config.json, config.json
+     # examples: 4U1BGM7-config.json, R740xd-config.json, config.json
+     # Refer to the zero-touch, bare metal server provisioning document from Dell
+   for options.
+     option vendor-class-identifier "iDRAC";
+     set vendor-string = option vendor-class-identifier;
+     option idrac-provision-url "-i 172.17.32.9 -s http -t 500 -n osl/";
+   }
+
+This is for `OSL`, but very similar in all of the environments.
+
+The files themselves are in */etc/repo/public/<location>*. The 'osl/' part above
+is the last part of this. The naming of the files is descibed in the above
+snippet and in the PDF linked above.
+
+.. Note::
+   If a machine is powered on and booted before its MAC address is set up, the
+   provisioning attribute must be switched back to `Enabled once` again to get
+   it to provision itself.
+
+
 Determine role and define hieradata
 -----------------------------------
 
@@ -63,7 +121,7 @@ hieradata accordingly.
 For more specialized roles, like controller, a host file with a complete network interfaces hash
 is necessary.
 
-Now deploy the configuration to the region's admin node. 
+Now deploy the configuration to the region's admin node.
 
 
 Configuring transport switches
