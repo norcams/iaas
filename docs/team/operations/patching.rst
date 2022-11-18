@@ -10,20 +10,12 @@ Last changed: 2021-08-26
 Update repo
 ============
 
-Repo list (test and/or prod) are updated during the planing phase of an
-upgrade. Repo we will need to update for el7 and el8::
-
-* centos-*
-* ceph-*
-* epel
-* mariadb-*
-* rdo-*
-* sensu
-* puppetlabs5
+Update all important repos in test and run there for a week. After testing
+update the same repos in prod on the first day of patching.
 
 .. IMPORTANT::
    Do **NOT** update :file:`calico`-repo without extra planned testing og
-   repackaging.
+   repackaging. Minor updates are usually fine but we need testing.
 
 Avoid updating management repos at the same time as normal patching.
 
@@ -55,8 +47,9 @@ Normal OS patching
 ==================
 
 .. IMPORTANT::
-  When we patch BGO and OSL at the same time, make sure to keep one NS node up
-  at all time!
+  When we patch BGO and OSL at the same time, make sure to keep one NS node and
+  one db-global node up at all time! Also make sure galera cluster size 3 before
+  we start!
 
 For each for the production regions, `BGO` and `OSL`, do the following:
 
@@ -97,7 +90,7 @@ Patching other controller nodes
   On el8 we have had a problem with iptables dropping rules when we do dnf update (8.6)
   Test on one el8 node to see if this is a problem before running pre-patching
   outside scheduled maintenance window.
-  
+
 #. Upgrade virtual nodes, while excluding the **httpd**, **mariadb**
    and **mod_ssl** packages. This is usually safe to do outside of a
    scheduled maintenance window::
@@ -121,7 +114,8 @@ Patching other controller nodes
      sudo ansible-playbook -e "myhosts=${location}-controller" lib/checkupdate.yaml
 
 For each controller do the following. Make sure cephmon is running
-without error before starting on the next controller.
+without error before starting on the next controller. In BGO cephmon are
+standalone servers and we do not need to check ceph status.
 
 #. Check ceph status on cephmon::
 
@@ -169,6 +163,9 @@ patching.
 
 Storage
 -------
+
+#. In BGO we will need to patch (if it is not already patched) and reboot
+   all cephmon nodes.
 
 #. Before you begin, you can avoid automatic rebalancing of the ceph
    cluster during maintenance. Run this command on a cephmon or
