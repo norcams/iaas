@@ -4,17 +4,17 @@ Create a new project
 
 
 - ssh <user>@<loc>-login-01.<domain>
-  
+
 - ssh iaas@<loc>-proxy-01.<domain>
-   
+
 - sudo -i
-- source openrc   
- 
+- source openrc
+
 - cd /opt/himlarcli
 - source bin/activate
-      
-- run ./project.py 
-   
+
+- run ./project.py
+
 
 Example
 -------
@@ -33,5 +33,8 @@ Grant access to a given volume type (for example, mass-storage-ssd), and set a s
 
 .. code:: bash
 
-   openstack volume type set --project <project name>
+   openstack volume type set --project <project name> mass-storage-ssd
    openstack quota set -volume-type mass-storage-ssd --gigabytes 100 <project name>
+
+*mass-storage-ssd* is an example of an additinal resource which may be added.
+Change as appopriate.
