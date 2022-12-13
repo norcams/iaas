@@ -16,6 +16,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     projects
     project-properties
     abuse
+    security_events
     documentation
     dns
     compute
