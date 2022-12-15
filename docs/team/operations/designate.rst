@@ -28,7 +28,7 @@ command **dns.py**::
 
   # download the TLD list from IANA
   curl http://data.iana.org/TLD/tlds-alpha-by-domain.txt -o /tmp/tlds-alpha-by-domain.txt
-  
+
   # import the TLD list into designate
   ./dns.py tld_import --file /tmp/tlds-alpha-by-domain.txt
 
@@ -140,14 +140,68 @@ The following domains should be blacklisted in production:
 These are added with these commands::
 
   ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uh-iaas\.no\.$' --comment 'Official UH-IaaS domain, managed outside of Openstack Designate'
-  ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uhdc\.no\.$' --comment 'Official UH-IaaS domain, managed outside of Openstack Designate'                                                                                                                        
+  ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uhdc\.no\.$' --comment 'Official UH-IaaS domain, managed outside of Openstack Designate'
   ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uio\.no\.$' --comment 'Domain belonging to UiO. Instances in UH-IaaS are not allowed to have UiO addresses'
   ./dns.py blacklist_create --pattern '^uib\.no\.$' --comment 'Domain belonging to UiB. The domain itself is forbidden, but subdomains are allowed'
-  ./dns.py blacklist_create --pattern '^uiocloud\.no\.$' --comment 'Domain belonging to UiO. The domain itself is forbidden, but subdomains are allowed'               
+  ./dns.py blacklist_create --pattern '^uiocloud\.no\.$' --comment 'Domain belonging to UiO. The domain itself is forbidden, but subdomains are allowed'
   ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uninett\.no\.$' --comment 'Domain belonging to Uninett. Reserved for possible future use'
   ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*ntnu\.no\.$' --comment 'Domain belonging to NTNU. Reserved for possible future use'
   ./dns.py blacklist_create --pattern '^([A-Za-z0-9_\-]+\.)*uia\.no\.$' --comment 'Domain belonging to UiA. Reserved for possible future use'
 
 
+
+Reinstall exisiting name server
+-------------------------------
+
+*Designate* constantly check existing zone data on the name servers (`slaves`).
+If any of the existing servers are reinstalled, they lose the data concerning
+the Designate administered domains! Designate itself will, when the
+discrepancies are uncovered, attempt to **modify** the zones on the server. Due
+to the zone not being configured in ant of the views of the new system, it will
+reject any of these attempts. Unfortunately it seems that Designate will only
+create a zone on the slaves during its initial definition process (i.e. a user
+running the ``openstack zone create`` command). From then on the zone is
+expected to exist. For this reason, all previously created zones must be
+recreated on the new server.
+
+This may be done by quering Designate for any active zones, and then execute a
+suitable *rndc* command. Fortunately Designate creates a zone in this manner
+using a deterministic pattern, so it is trivial to define a suitable command for
+this issue.
+
+When the new server has finished its installation, follow this procedure:
+
+1) Block incoming DNS traffic (forcing all requests over to ns2)
+   NB: Do not block traffic from the admin note!
+2) Ensure `puppet` has run several times
+   Check the existence of zone files not administered bt Designate in */var/named/pz*
+3) On the *dns* node, execute this (altering the data inside square brackets):
+
+   .. code::
+      . openrc
+      OLDIFS="$IFS"
+      export IFS=$'\t\n'
+      for LINE in $(openstack zone list -f value -c name -c id --all); do
+        IFS=$' \t\n' read -r ID ZONE <<<$(echo $LINE); rndc -s [rndc-servers IP-adresse] -p 953 -c /etc/rndc.conf -k /etc/rndc-mdns.key "addzone ${ZONE}  { type slave; masters {[designate-servers IP-adresse] port 5354;}; file \"slave.${ZONE}${ID}\"; };";
+      done
+      IFS="$OLDIFS"
+
+   Afterwards check the existence of slave files in */var/named*
+4) Perform various sanity checks, for instance:
+
+   - There should be one slave zone file for every existing **ACTIVE** zone
+     Note that if comparing with other slave name servers, they can have several
+     additional files. These are from previously created but now deleted zones.
+     The zone fiels are not always instantly deleted.
+   - Check zone status with the command `rndc zonestatus [zone]` (locally!)
+   - Query Designate for currently active zones and compare with existing slave
+     zone files
+   - Dump the local nameserver database (`rndc dumpdb -all`) and validate
+     zone data from the dump file (*/var/named/data/named_dump.db*)
+
+5) Remove traffic block
+6) Monitor logs:
+   - `journalctl -fu named`
+   - check/follow */var/named/data/querylog*
 
 
