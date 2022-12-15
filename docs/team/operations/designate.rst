@@ -157,7 +157,7 @@ Reinstall exisiting name server
 If any of the existing servers are reinstalled, they lose the data concerning
 the Designate administered domains! Designate itself will, when the
 discrepancies are uncovered, attempt to **modify** the zones on the server. Due
-to the zone not being configured in ant of the views of the new system, it will
+to the zone not being configured in any of the views of the new system, it will
 reject any of these attempts. Unfortunately it seems that Designate will only
 create a zone on the slaves during its initial definition process (i.e. a user
 running the ``openstack zone create`` command). From then on the zone is
@@ -172,12 +172,15 @@ this issue.
 When the new server has finished its installation, follow this procedure:
 
 1) Block incoming DNS traffic (forcing all requests over to ns2)
-   NB: Do not block traffic from the admin note!
+
+   *NB*: Do not block traffic from the admin node!
 2) Ensure `puppet` has run several times
-   Check the existence of zone files not administered bt Designate in */var/named/pz*
+
+   Check the existence of zone files not administered by Designate in */var/named/pz*
 3) On the *dns* node, execute this (altering the data inside square brackets):
 
-   .. code::
+   .. code:: bash
+
       . openrc
       OLDIFS="$IFS"
       export IFS=$'\t\n'
@@ -187,12 +190,14 @@ When the new server has finished its installation, follow this procedure:
       IFS="$OLDIFS"
 
    Afterwards check the existence of slave files in */var/named*
+
 4) Perform various sanity checks, for instance:
 
    - There should be one slave zone file for every existing **ACTIVE** zone
-     Note that if comparing with other slave name servers, they can have several
+
+     Note that if comparing with other slave name servers, they may have several
      additional files. These are from previously created but now deleted zones.
-     The zone fiels are not always instantly deleted.
+     The files are not always instantly deleted.
    - Check zone status with the command `rndc zonestatus [zone]` (locally!)
    - Query Designate for currently active zones and compare with existing slave
      zone files
@@ -201,6 +206,7 @@ When the new server has finished its installation, follow this procedure:
 
 5) Remove traffic block
 6) Monitor logs:
+
    - `journalctl -fu named`
    - check/follow */var/named/data/querylog*
 
