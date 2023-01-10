@@ -3,14 +3,13 @@ NREC Årsplan 2023
 =======================================================
 
 .. contents::
-.. section-numbering::
 
 
-Flytting til nytt maskinrom
----------------------------
+Flytting til nytt maskinrom (OSL)
+---------------------------------
 
 **Overordnet mål**
-  Flytte hele NREC-infrastrukturen til nytt maskinrom
+  Flytte hele NREC-infrastrukturen i OSL til nytt maskinrom
 
 Helhetlige rutiner for sikkerhetshendelser
 ------------------------------------------
