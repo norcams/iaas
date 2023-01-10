@@ -1,0 +1,89 @@
+=======================================================
+NREC Årsplan 2023
+=======================================================
+
+.. contents::
+.. section-numbering::
+
+
+Flytting til nytt maskinrom
+---------------------------
+
+**Overordnet mål**
+  Flytte hele NREC-infrastrukturen til nytt maskinrom
+
+Helhetlige rutiner for sikkerhetshendelser
+------------------------------------------
+
+**Overordnet mål**
+  Etablere, automatisere og dokumentere rutiner for å håndtere mindre
+  sikkerhetshendelser og sårbarheter
+
+===========================================  ======================
+Delmål                                       Ferdig dato
+===========================================  ======================
+Dokumentere rutiner                          -
+Automatisere håndtering                      -
+===========================================  ======================
+
+Bedre rutiner for oppgradering
+------------------------------
+
+**Overordnet mål**
+  Etablere rutiner, metodikk og dokumentasjon som gjør det enklere å
+  oppgradere Openstack-versjon, med det formål å oppdatere hyppigere
+  enn i dag
+
+Oppgradere
+----------
+
+**Overordnet mål**
+  Oppgradere til N-1
+
+===========================================  ======================
+Delmål                                       Ferdig dato
+===========================================  ======================
+Oppgradere til Victoria                      -
+Oppgradere til Wallaby                       -
+Oppgradere til Xena                          -
+Oppgradere til Yoga                          -
+Oppgradere til Zed                           -
+Oppgradere til Antilope                      -
+===========================================  ======================
+
+Etablere brukerportal
+---------------------
+
+**Overordnet mål**
+  Etablere en brukerportal som gjør det mulig for
+  prosjektadministratorer å gjøre enkle endringer for sine prosjekter
+  uten å involvere NREC support
+
+Prismodell
+----------
+
+**Overordnet mål**
+  Etablere og publisere en prisliste, samt tilpasse bestillingssystem
+  o.l. til denne prislisten.
+
+===========================================  ======================
+Delmål                                       Ferdig dato
+===========================================  ======================
+Publisere priser på web                      -
+Endre bestillingssiden                       -
+Etablere kundemottak                         -
+===========================================  ======================
+
+Samlinger
+---------
+
+**Overordnet mål**
+  Det skal være to samlinger per år, en på våren og en på høsten.
+
+===========================================  ======================
+Delmål                                       Ferdig dato
+===========================================  ======================
+Samling våren 2023                           -
+Samling høsten 2023                          -
+===========================================  ======================
+
