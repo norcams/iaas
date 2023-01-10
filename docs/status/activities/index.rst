@@ -25,6 +25,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     telemetry
     ceph-block-osl-2021/index
     platform_himlar
+    plan-2023
 
 Arkiv
 -----
