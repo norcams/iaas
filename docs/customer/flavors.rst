@@ -114,6 +114,10 @@ c1.4xlarge   16    32        20
 
 r1
 ==
+
+.. IMPORTANT::
+   DENNE SKAL IKKE LENGER TILBYS!!!!!
+
 r1 er tenkt som en maskin med mer RAM som m1 og c1 dekker.
 
 Ratio: 1 til 8 (vcpu til ram)
