@@ -15,7 +15,8 @@ m1
 ==
 
 m1 er tenkt som en general purpose type av flavors som alle prosjekter har
-tilgang til.
+tilgang til. Denne er altså DEFAULT, alle prosjekter får tilgang automatisk ved
+opprettelse.
 
 Ratio: 1 til 4 (vcpu til ram)
 
