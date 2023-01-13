@@ -164,4 +164,4 @@ Before the new node appears as a hypervisor it needs to be discoverd an put in a
 On e.g. novactl node run: 
 
 .. code:: bash 
-     nova-manage cell_v2 discover_hosts
+    nova-manage cell_v2 discover_hosts
