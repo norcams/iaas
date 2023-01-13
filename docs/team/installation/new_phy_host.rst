@@ -163,5 +163,6 @@ Activate new node in Openstack
 Before the new node appears as a hypervisor it needs to be discoverd an put in a cell!
 On e.g. novactl node run: 
 
-.. code:: bash 
+.. code:: bash
+
     nova-manage cell_v2 discover_hosts
