@@ -139,11 +139,8 @@ puppet run bring the interface(s) up:
 
 on both switches. 
 
-Or/And you may need to restart switchd: 
+If the port is segmented (configured in **ports.conf**) the switch needs to be rebooted, it is not recommended to restart switchd to make the configuration in effect because it puts the switch in a non- or semi-configured state. 
 
-.. code:: bash
-
-    systemctl restart switchd && systemctl status switchd
     
 .. note::
    You need to configure both leaf and spine, look at the compute-81/host17 realted commits for hints.
