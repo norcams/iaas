@@ -137,7 +137,24 @@ puppet run bring the interface(s) up:
 
     ifup -a
 
-on both switches.
+on both switches. 
+
+Or/And you may need to restart switchd: 
+
+.. code:: bash
+
+    systemctl restart switchd && systemctl status switchd
+    
+.. note::
+   You need to configure both leaf and spine, look at the compute-81/host17 realted commits for hints.
+   e.g. The hostXX naming:  *Fix(bgo) clagid, there is logic at work here. ((Portnr - 1) x 4 )+ subport.*
+
+Tip on how check link status:
+
+.. code:: 
+   ethtool NICname
+   lldpctl NICname
+   clagctl status (on switch)
 
 
 Instruct the Foreman to install server
