@@ -2,7 +2,11 @@
 SSL overview
 ============
 
-Last changed: 2020-02-17
+Last changed: 2023-02-08
+
+Documentation and script to get and deploy certs are found in
+:file:`public_certs` repo on login.
+
 
 nrec.no
 =======
@@ -15,6 +19,7 @@ access-bgo.nrec.no           A        bgo-api-01          `*.nrec.no`
 access-osl.nrec.no           A        osl-api-01          `*.nrec.no`
 
 report.nrec.no               CNAME    bgo-api-01          `*.nrec.no`
+report.uh-iaas.no            CNAME    bgo-api-01          `*.uh-iaas.no`
 report-osl.nrec.no           A        bgo-api-01          `*.nrec.no`
 report-bgo.nrec.no           A        osl-api-01          `*.nrec.no`
 
