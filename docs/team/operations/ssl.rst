@@ -2,19 +2,20 @@
 SSL certificates
 ================
 
+Last changed: 2023-02-08
+
 
 Generation
 ----------
 
-Generation for :file:`*.iaas.uio.no` and :file:`*.iaas.uib.no` are done
-following each organizations normal process. :file:`*.uh-iaas.no` are
-done at UNINETT.
-
-For self signed certificates we use our own Root CA git repo on `login`::
+Generation of CSR for :file:`*.iaas.uio.no` and self signed
+certificates we use our own Root CA git repo on `login`::
 
   git@git.iaas.uib.no:ca_setup
 
-This repo should also all key, certs and config files for all certs in use.
+This repo should also have all key, certs and config files for all certs in use.
+
+For nrec.no, uh-iaas.no and iaas.uib.no se :file:`public_certs` repo.
 
 Naming conventions
 ------------------
