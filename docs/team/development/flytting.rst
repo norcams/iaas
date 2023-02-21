@@ -13,7 +13,7 @@ Kan flyttes/settes opp først
 
 #. compute-epyc-56
 
-#. div. mgmt-switcher
+#. diverse mgmt-switcher
 
 #. sette opp ny osl-login (krever uio-nett)
 
