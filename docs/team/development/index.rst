@@ -11,3 +11,4 @@ Development
     ip
     hostname
     rack
+    flytting
