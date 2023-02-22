@@ -39,6 +39,9 @@ Flytting
 
 #. maskiner som er i placeholder + teste
 
+#. storage-noder
+   - en og en ... hvordan?
+   
 #. standard computes
    - disable
    - migrere ut instanser til en compute i nytt maskinrom
