@@ -21,7 +21,7 @@ With full access to Cumulus Linux
 
 As *root*, run:
 
-.. code-block console
+.. code-block:: console
    onie-select -i
 
 This will start a PXE installation on next run.
