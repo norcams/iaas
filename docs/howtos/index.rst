@@ -20,3 +20,4 @@ project.
     idrac-vnc
     cumulus-buildling-puppet
     designate-dashboard-plugin
+    start-swicth-install.rst
