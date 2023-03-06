@@ -19,10 +19,9 @@ Trigger install from running OS
 With full access to Cumulus Linux
 *********************************
 
-As *root*, run:
+As *root*, run::
 
-.. code-block:: console
-   onie-select -i
+  # onie-select -i
 
 This will start a PXE installation on next run.
 
