@@ -17,11 +17,14 @@ Kan flyttes/settes opp først
 
 #. sette opp ny osl-login (krever uio-nett)
 
+#. Sette opp "gammel" leaf
+
+#. verifisere at trp funker
+
 
 Transportnett
 -------------
 
-#. verifisere at trp funker
 
 #. en leaf
 
@@ -29,13 +32,13 @@ Transportnett
 
 #. en spine + uplink + teste uplink
 
+#. verifisere at alt av trp fungerer
+
 #. verifisere at nye computes virker
 
 
 Flytting
 --------
-
-#. migrere/reinstallere controller-vm-er til controller-05..08
 
 #. maskiner som er i placeholder + teste
 
@@ -62,6 +65,8 @@ Flytting
 
 #. flytte siste uplink
 
+#. migrere/reinstallere controller-vm-er til controller-05..08
+
 
 Etter flytting
 --------------
@@ -69,6 +74,8 @@ Etter flytting
 #. sette opp fysiske ceph-mons
 
 #. gjennomgå kabling
+
+#. flytte kabling for mgmt-nett til å bruke osl-mgmt-00
 
 #. testing?
 
