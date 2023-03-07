@@ -42,22 +42,19 @@ Then power on or reset the switch (i.e. by removing an reinserting power cables)
 Proecdure
 \\\\\\\\\
 
-** TODO **
-First part missing!
-
 Press a key when there is a message about pressing `<F2>`, `<F11>` etc. or the
 text ``Hit any key to stop autoboot``.
 Either a menu or a prompt appear.
 
 - If a prompt appear:
 
-  1.  Start an ONIE shell ("rescue")::
+  1. Start an ONIE shell ("rescue"):
 
-     accton_as4610-54 -> run onie_rescue
+     *accton_as4610-54 ->* **run onie_rescue**
 
-  2. After a request to press *Enter*::
+  2. After a request to press *Enter*:
 
-     ONIE# onie-nos-install http://repo.mgmt.osl.uhdc.no/images/cumuluslinux/onie-installer-arm
+     *ONIE#* **onie-nos-install http://repo.mgmt.osl.uhdc.no/images/cumuluslinux/onie-installer-arm**
 
   Adjust URL according to the setting.
 
