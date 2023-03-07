@@ -39,7 +39,7 @@ other useable software.
 
 Then power on or reset the switch (i.e. by removing an reinserting power cables)
 
-Proecdure
+Procedure
 \\\\\\\\\
 
 Press a key when there is a message about pressing `<F2>`, `<F11>` etc. or the
@@ -51,6 +51,7 @@ Either a menu or a prompt appear.
   1. Start an ONIE shell ("rescue"):
 
      *accton_as4610-54 ->* **run onie_rescue**
+
 
   2. After a request to press *Enter*:
 
@@ -64,7 +65,7 @@ Either a menu or a prompt appear.
 Debugging provisioning script
 -----------------------------
 
-After the basic installation, the default provisioning attempts to retrive a
+After the basic installation, the default provisioning attempts to retrieve a
 "program" if the relevant DHCP option is set (``cumulus-provision-url`` or
 ``ztd-provision-url`` for Cumulus Linux or OPX respectively). We provide a
 script at::
