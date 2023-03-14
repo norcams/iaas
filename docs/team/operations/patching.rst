@@ -276,7 +276,7 @@ Compute (dedicated compute resources/HPC)
 
 #. Stop instances::
 
-    himlarcli/aggregate.py stop-instance <aggregate>
+    himlarcli/aggregate.py stop-instance <aggregate> [--region <region>]
 
 #. Upgrade all compute nodes in the aggregate::
 
@@ -296,7 +296,7 @@ Compute (dedicated compute resources/HPC)
 
 #. Start the instances::
 
-    himlarcli/aggregate.py start-instance <aggregate>
+    himlarcli/aggregate.py start-instance <aggregate> [--region <region>]
 
 
 Firmware
