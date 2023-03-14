@@ -2,7 +2,7 @@
 Patching
 ========
 
-Last changed: 2021-08-26
+Last changed: 2023-03-14
 
 .. contents:: Table of Contents
     :depth: 2
@@ -266,7 +266,7 @@ Compute (dedicated compute resources/HPC)
   | vgpu1            | osl    | notify/maintenance/dedicated.txt       |
   +------------------+--------+----------------------------------------+
 
-#. Purge state database (once per region)::
+#. Purge state database (only once per region!)::
 
     himlarcli/state.py purge instance
 
@@ -278,19 +278,21 @@ Compute (dedicated compute resources/HPC)
 
     himlarcli/aggregate.py stop-instance <aggregate>
 
-#. Upgrade compute HPC::
+#. Upgrade all compute nodes in the aggregate::
 
-    sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/yumupdate.yaml
+    himlarcli/hypervisor.py list -a <aggregate>
+
+    sudo ansible-playbook -e "myhosts=${location}-compute-epyc-53" lib/yumupdate.yaml
 
 #. Check if the nodes are upgraded::
 
-    sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/checkupdate.yaml
+    sudo ansible-playbook -e "myhosts=${location}-compute-epyc-53" lib/checkupdate.yaml
 
-#. Reboot nodes. Always check inventory to make sure the target of ``myhosts``
-   match the intended targets for reboot. Some hosts might be running in other
-   aggregates::
+#. If Dell server update firmware. See below for more information.
 
-    sudo ansible-playbook -e "myhosts=${location}-compute-hpc" lib/reboot.yaml
+#. Reboot nodes::
+
+    sudo ansible-playbook -e "myhosts=${location}-compute-epyc-53" lib/reboot.yaml
 
 #. Start the instances::
 
