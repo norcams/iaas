@@ -2,7 +2,7 @@
 SSL certificates
 ================
 
-Last changed: 2023-02-08
+Last changed: 2023-03-28
 
 
 Generation
@@ -15,7 +15,7 @@ certificates we use our own Root CA git repo on `login`::
 
 This repo should also have all key, certs and config files for all certs in use.
 
-For nrec.no, uh-iaas.no and iaas.uib.no se :file:`public_certs` repo.
+For nrec.no, uhdc.no, uh-iaas.no and iaas.uib.no se :file:`public_certs` repo.
 
 Naming conventions
 ------------------
