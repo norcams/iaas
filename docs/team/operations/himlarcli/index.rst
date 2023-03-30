@@ -10,7 +10,10 @@ Source code: https://github.com/norcams/himlarcli
 .. toctree::
     :glob:
     :maxdepth: 2
+    :numbered:
+    :caption: Useful himlarcli tasks
 
     setup
     scripts
+    ../policy-enddate
     publish_status
