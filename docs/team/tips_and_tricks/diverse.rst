@@ -2,13 +2,16 @@
 Diverse småtterier som ikke passer i egne kapitler
 ==================================================
 
-Management-switch i OSL (10.17.32.1)
-------------------------------------
+Management-switch i OSL (10.17.32.1) og test01 (10.17.0.1)
+----------------------------------------------------------
 
-Denne støtter ikke en av default'e cipher som nyere ssh-klienter tilbyr. Man må
+Disse støtter ikke en av de default'e ciphers som nyere ssh-klienter tilbyr. Man må
 derfor spesifisere denne eksplisitt når man skal inn på switchen::
 
   ssh iaas@10.17.32.1 -c 3des-cbc
+
+Man må også komme med passord her, både for initiell login og for *enable*.
+Dette passordet ligger i secrets-repoet.
 
 
 EPEL-repo
