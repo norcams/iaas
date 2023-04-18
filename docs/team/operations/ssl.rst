@@ -15,7 +15,8 @@ certificates we use our own Root CA git repo on `login`::
 
 This repo should also have all key, certs and config files for all certs in use.
 
-For nrec.no, uhdc.no, uh-iaas.no and iaas.uib.no se :file:`public_certs` repo.
+For nrec.no, uhdc.no, uh-iaas.no and iaas.uib.no se :file:`/opt/public_certs` 
+repo on login.
 
 Naming conventions
 ------------------
