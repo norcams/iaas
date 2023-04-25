@@ -16,25 +16,28 @@ You will need to update the :file:`/etc/hosts` on the machine where you
 run your browser or API calls. Look in :file:`common.yaml` for the location
 you are working with, and add all public address. Example for full nodeset::
 
+  # vagrant frontend
+  192.168.0.250   access.iaas.intern
+  192.168.0.250   console.iaas.intern
+  192.168.0.250   api.iaas.intern
+  192.168.0.250   report.iaas.intern
+  192.168.0.251   ns.iaas.intern
+  192.168.0.252   resolver.iaas.intern
+  192.168.0.254   dashboard.iaas.intern
+  192.168.0.250   status.iaas.intern
+
   # vagrant public
-  192.168.0.250   access.vagrant.iaas.intern
-  192.168.0.250   console.vagrant.iaas.intern
-  192.168.0.250   api.vagrant.iaas.intern
-  192.168.0.250   identity.api.vagrant.iaas.intern
-  192.168.0.250   image.api.vagrant.iaas.intern
-  192.168.0.250   network.api.vagrant.iaas.intern
   192.168.0.250   compute.api.vagrant.iaas.intern
-  192.168.0.250   placement.api.vagrant.iaas.intern
+  192.168.0.250   network.api.vagrant.iaas.intern
+  192.168.0.250   image.api.vagrant.iaas.intern
+  192.168.0.250   identity.api.vagrant.iaas.intern
   192.168.0.250   volume.api.vagrant.iaas.intern
-  192.168.0.250   status.vagrant.iaas.intern
   192.168.0.250   metric.api.vagrant.iaas.intern
-  192.168.0.250   rating.api.vagrant.iaas.intern
   192.168.0.250   object.api.vagrant.iaas.intern
+  192.168.0.250   metric.trp.vagrant.iaas.intern
+  192.168.0.250   placement.api.vagrant.iaas.intern
+  192.168.0.250   rating.api.vagrant.iaas.intern
   192.168.0.250   dns.api.vagrant.iaas.intern
-  192.168.0.250   report.vagrant.iaas.intern
-  192.168.0.251   ns.vagrant.iaas.intern
-  192.168.0.252   resolver.vagrant.iaas.intern
-  192.168.0.254   dashboard.vagrant.iaas.intern
 
   # vagrant mgmt
   172.31.0.11     foreman.mgmt.vagrant.iaas.intern
