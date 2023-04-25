@@ -11,19 +11,16 @@ Kan flyttes/settes opp først
 
    - Installert
    - Mangler trp-nett
-   - Mangler patching
 
 #. compute-57..63
 
    - Installert
    - Mangler trp-nett
-   - Mangler patching
 
 #. compute-epyc-56
 
    - Installert
    - Mangler trp-nett
-   - Mangler patching
 
 #. diverse mgmt-switcher
 
@@ -77,7 +74,7 @@ Flytting
 
    - kan startes fredag 5.mai
    - kan gjøres uavhengig av alt annet
-   
+
 #. standard computes
 
    - migrere ut instanser til en compute i nytt maskinrom
