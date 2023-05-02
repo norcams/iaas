@@ -3,6 +3,90 @@
 Flytting til nytt maskinrom OSL
 ===============================
 
+Fordeling av oppgaver
+---------------------
+
+* Varsling til brukere (spesifikk mail om nedetid):
+
+  - Raymond
+
+* Varsling til brukere generelt (twitter o.l.):
+
+  - Trond
+
+* Transportnett:
+
+  - Raymond
+  - Mikael
+  - Erik
+  - (Trond)
+
+* Migrering:
+
+  - Lennart
+  - Raymond
+  - Erik
+
+* Storage-migrering:
+
+  - Terje
+  - (Lennart)
+
+* Flytting av sHPC o.l.:
+
+  - Trond
+  - Mikael
+  - Raymond
+  - (Lennart)
+
+* Migrere m2-instanser for IntArk:
+
+  - Raymond
+  - Erik
+
+* Migrere m2-instanser generelt:
+
+  - Raymond
+  - Erik
+
+* Fysisk flytting:
+
+  - Trond
+  - Mikael
+    
+    
+Dagsplan
+--------
+
+* Torsdag 4.mai:
+
+  - Varsle brukere (hvis ikke gjort før)
+  - Flytte transportnett
+  - verifisere trp-nett, nye computes m.m.
+
+* Fredag 5.mai:
+
+  - Starte migrering
+  - Starte flytting av storage
+  - Flytte placeholder
+  - Flytte tomme computes
+
+* Mandag 8.mai:
+
+  - Migrere m2-instanser i IntArk (uh-intark-prod)
+
+* Tirsdag 9.mai:
+
+  - Flytte sHPC
+  - Flytte HPC
+  - Flytte vGPU
+  - Flytte ROBIN
+
+* Onsdag 10.mai:
+
+  - Migrere m2-instanser (shutoff m/nedetid)
+
+
 
 Kan flyttes/settes opp først
 ----------------------------
