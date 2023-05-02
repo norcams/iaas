@@ -32,7 +32,7 @@ Fordeling av oppgaver
   - Terje
   - (Lennart)
 
-* Flytting av sHPC o.l.:
+* Flytting av sHPC, HPC, vGPU, ROBIN, ATLAS:
 
   - Trond
   - Mikael
@@ -85,6 +85,7 @@ Dagsplan
 * Onsdag 10.mai:
 
   - Migrere m2-instanser (shutoff m/nedetid)
+  - Flytte ATLAS
 
 
 
