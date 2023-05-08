@@ -77,15 +77,15 @@ Dagsplan
 
 * Tirsdag 9.mai:
 
-  - Flytte sHPC
-  - Flytte HPC
-  - Flytte vGPU
-  - Flytte ROBIN
+  - Flytte sHPC (3 compute)
+  - Flytte HPC (4 compute)
+  - Flytte vGPU (2 compute)
+  - Flytte ROBIN (1 compute)
 
 * Onsdag 10.mai:
 
   - Migrere m2-instanser (shutoff m/nedetid)
-  - Flytte ATLAS
+  - Flytte ATLAS (22 compute)
 
 
 
