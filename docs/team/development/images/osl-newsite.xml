@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-05-09T15:08:54.853Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="LQy3I-1Diue9qPJms2iN" version="21.1.2" type="device">
+<mxfile host="Electron" modified="2023-05-12T08:01:26.848Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="hu72ntH_c1BTbjmWAzsD" version="21.1.2" type="device">
   <diagram id="RTKYiIBhPvMRZFNGM_q5" name="Page-1">
-    <mxGraphModel dx="1434" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1358" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -136,6 +136,9 @@
         <mxCell id="K7vm81kLbyolTTs8fvvA-16" value="" style="shape=mxgraph.rack.cisco.cisco_catalyst_4948_switch;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="B1O90HXozEI6CT3rQwqF-1" vertex="1">
           <mxGeometry x="33" y="60" width="168" height="20" as="geometry" />
         </mxCell>
+        <mxCell id="B1O90HXozEI6CT3rQwqF-168" value="" style="shape=mxgraph.rack.cisco.cisco_ucs_c240_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="B1O90HXozEI6CT3rQwqF-1" vertex="1">
+          <mxGeometry x="33" y="120" width="168" height="40" as="geometry" />
+        </mxCell>
         <mxCell id="l4DxGU9o1dvOYwJYzsgw-2" value="" style="strokeColor=#9673a6;html=1;labelPosition=right;align=left;spacingLeft=15;shadow=0;dashed=0;outlineConnect=0;shape=mxgraph.rack.dell.poweredge_r730xd;fillColor=#e1d5e7;" vertex="1" parent="B1O90HXozEI6CT3rQwqF-1">
           <mxGeometry x="33" y="160" width="168" height="40" as="geometry" />
         </mxCell>
@@ -249,9 +252,6 @@
         </mxCell>
         <mxCell id="B1O90HXozEI6CT3rQwqF-195" value="" style="shape=mxgraph.rack.cisco.cisco_ucs_c240_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="B1O90HXozEI6CT3rQwqF-51" vertex="1">
           <mxGeometry x="33" y="120" width="168" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="B1O90HXozEI6CT3rQwqF-168" value="" style="shape=mxgraph.rack.cisco.cisco_ucs_c240_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="B1O90HXozEI6CT3rQwqF-51" vertex="1">
-          <mxGeometry x="33" y="80" width="168" height="40" as="geometry" />
         </mxCell>
         <mxCell id="B1O90HXozEI6CT3rQwqF-174" value="" style="shape=mxgraph.rack.cisco.cisco_ucs_c240_m3_server;html=1;labelPosition=right;align=left;spacingLeft=15;dashed=0;shadow=0;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="B1O90HXozEI6CT3rQwqF-51" vertex="1">
           <mxGeometry x="33" y="280" width="168" height="40" as="geometry" />
@@ -532,7 +532,7 @@
           <mxGeometry x="953" y="210" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="B1O90HXozEI6CT3rQwqF-196" value="osl-storage-25" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="952" y="170" width="100" height="20" as="geometry" />
+          <mxGeometry x="604" y="210" width="100" height="20" as="geometry" />
         </mxCell>
         <mxCell id="B1O90HXozEI6CT3rQwqF-201" value="osl-compute-vgpu-20" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="1310" y="790" width="118" height="20" as="geometry" />
