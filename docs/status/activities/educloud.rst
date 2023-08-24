@@ -18,7 +18,8 @@ cumbersome and time consuming, and does not allow any flexibility.
 
 With this proposal implemented, Educloud admins can easily use tools
 such as Terraform to install, delete virtual machines, e.g. to scale
-up or down services.
+up or down services. Educloud will be able to use all of the NREC
+infrastructure (both regions, lightweigth HPC, GPU etc.).
 
 
 Proposal
