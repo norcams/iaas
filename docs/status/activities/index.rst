@@ -26,6 +26,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     ceph-block-osl-2021/index
     platform_himlar
     plan-2023
+    educloud
 
 Arkiv
 -----
