@@ -2,7 +2,7 @@
 Patching
 ========
 
-Last changed: 2023-03-14
+Last changed: 2023-08-13
 
 .. contents:: Table of Contents
     :depth: 2
@@ -54,17 +54,17 @@ Normal OS patching
 For each for the production regions, `BGO` and `OSL`, do the following:
 
 
-Patching controller-04/08
+Patching controller-08
 -------------------------
 
-The node controller-04/08 (OSL/BGO) is usually running virtual nodes that are not
-critical to the operation of Openstack, and controller-04/08 can
+The node controller-08 (04 in test-01) is usually running virtual nodes that are not
+critical to the operation of Openstack, and controller-08 can
 therefore be patched and rebooted outside of a maintenance window.
 
 The controller node and all virtual nodes running on the controller
 can be patched with a single Ansible playbook::
 
-  sudo ansible-playbook -e "myhosts=${location}-controller-04" lib/yum_update_controller.yaml
+  sudo ansible-playbook -e "myhosts=${location}-controller-08" lib/yum_update_controller.yaml
 
 This playbook takes extra options, if needed:
 
@@ -78,10 +78,14 @@ Option                 Effect
 
 Also, consider patching `Firmware`_.
 
-.. IMPORTANT::
-  As controller-04/08 hosts the proxy node, the reboot playbook will not work. Use normal
-  reboot command.
+.. TIP::
+   Check that things work before rebooting controller-08, as error
+   analysis etc. often depends on the virtual nodes running on
+   controller-04.
 
+.. IMPORTANT::
+  As controller-08 hosts the proxy node, the reboot playbook will not work. Use normal
+  reboot command.
 
 Patching other controller nodes
 -------------------------------
@@ -113,21 +117,18 @@ Patching other controller nodes
 
      sudo ansible-playbook -e "myhosts=${location}-controller" lib/checkupdate.yaml
 
-For each controller do the following. Make sure cephmon is running
-without error before starting on the next controller. In BGO cephmon are
-standalone servers and we do not need to check ceph status.
+#. For each controller in BGO, check ceph status on cephmon-object, and make sure cephmon is running
+without error before starting on the next controller::
 
-#. Check ceph status on cephmon::
-
-     sudo ssh iaas@${location}-cephmon-01 'sudo ceph status'
+     sudo ssh iaas@${location}-cephmon-object-01 'sudo ceph status'
 
    Or, alternatively::
 
-     for i in $(seq 1 3); do sudo ssh iaas@${location}-cephmon-0$i 'sudo ceph status' ; done
-
-   In addition, check "cephmon-object" in BGO::
-
      for i in $(seq 1 3); do sudo ssh iaas@${location}-cephmon-object-0$i 'sudo ceph status' ; done
+
+   In addition, check "cephmon" in test01::
+
+     for i in $(seq 1 3); do sudo ssh iaas@${location}-cephmon-0$i 'sudo ceph status' ; done
 
 #. Turn off the nodes on the controller before reboot::
 
@@ -149,11 +150,6 @@ standalone servers and we do not need to check ceph status.
 
      sudo ansible-playbook -e "myhosts=${location}-controller-<id>" lib/reboot.yaml
 
-.. TIP::
-   Check that things work before rebooting controller-04, as error
-   analysis etc. often depends on the virtual nodes running on
-   controller-04.
-
 
 None disruptive patching
 ========================
@@ -164,7 +160,7 @@ patching.
 Storage
 -------
 
-#. In BGO we will need to patch (if it is not already patched) and reboot
+#. In BGO and OSL we will need to patch (if it is not already patched) and reboot
    all cephmon nodes.
 
 #. Before you begin, you can avoid automatic rebalancing of the ceph
