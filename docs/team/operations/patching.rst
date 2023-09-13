@@ -117,8 +117,7 @@ Patching other controller nodes
 
      sudo ansible-playbook -e "myhosts=${location}-controller" lib/checkupdate.yaml
 
-#. For each controller in BGO, check ceph status on cephmon-object, and make sure cephmon is running
-without error before starting on the next controller::
+#. For each controller in BGO, check ceph status on cephmon-object, and make sure cephmon is running without error before starting on the next controller::
 
      sudo ssh iaas@${location}-cephmon-object-01 'sudo ceph status'
 
