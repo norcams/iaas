@@ -57,7 +57,7 @@ For each for the production regions, `BGO` and `OSL`, do the following:
 Patching controller-08
 -------------------------
 
-The node controller-08 (04 in test-01) is usually running virtual nodes that are not
+The node controller-08 is usually running virtual nodes that are not
 critical to the operation of Openstack, and controller-08 can
 therefore be patched and rebooted outside of a maintenance window.
 
