@@ -328,15 +328,17 @@ If patching using DSU fails due to missing keys, then follow this procedure:
 
 1. Find name of missing file(s).
    Either study output from Ansible job or check files in the directory
-   `/usr/libexec/dell_dup` on the machine itself.
+   */usr/libexec/dell_dup* on the machine itself.
 
-#. Get the file(s) from **osl-compute-08.mgmt.osl.uhdc.no**
+#. Get the file(s) from `<https://linux.dell.com/repo/pgp_pubkeys/>`_
 
 #. Store the file(s) on *download.iaas.uio.no:/var/www/html/nrec/nrec-resources/files/dell/keys*
 
 #. Enter the filename(s) in the appropriate place in these two files in the
-   *Ansible* respository:
+   local Ansible respository:
+
    - `lib/install_dsu.yaml`
+
    - `files/scripts/cp_dell_gpg_keys.sh`
 
    Remember to commit and push!
