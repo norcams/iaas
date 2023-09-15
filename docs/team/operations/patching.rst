@@ -314,6 +314,34 @@ Dell
 
      sudo ansible-playbook -e "myhosts=${location}-<node>" lib/reboot.yaml
 
+GPG-nøkler (Dell)
+-----------------
+
+For patching of Dell servers using *DSU*, their keys must be available or
+otherwise it fails. The Ansible job *install_dsu* is responsible to install
+these keys, and so must be up to date with the current keys used by DSU. This
+includes both the Ansible job itself, but also the script which do the main part
+on the server under patching. The keys is fetched from our internal server, so
+the files must additionally be downloaded onto there.
+
+If patching using DSU fails due to missing keys, then follow this procedure:
+
+1. Find name of missing file(s).
+   Either study output from Ansible job or check files in the directory
+   `/usr/libexec/dell_dup` on the machine itself.
+
+#. Get the file(s) from **osl-compute-08.mgmt.osl.uhdc.no**
+
+#. Store the file(s) on *download.iaas.uio.no:/var/www/html/nrec/nrec-resources/files/dell/keys*
+
+#. Enter the filename(s) in the appropriate place in these two files in the
+   *Ansible* respository:
+   - `lib/install_dsu.yaml`
+   - `files/scripts/cp_dell_gpg_keys.sh`
+
+   Remember to commit and push!
+
+
 Workaround for problematic r740/r740xd BIOS update
 --------------------------------------------------
 
