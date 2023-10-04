@@ -28,12 +28,7 @@ All user logins must be authenticated by providing *two* independent components:
 2. TOTP verification code
 
 The public part of the user SSH key is provisioned using Puppet by publisizing
-the key in `hieradata`::
-
-  common/modules/accounts.yaml
-
-In addition the user must be allocated membership of the *wheel* group (same
-file).
+the key in `hieradata`. In addition the user must be allocated membership of the *wheel* group.
 
 The TOTP setup is done by executing `/usr/bin/google-authenticator`.
 
