@@ -2,7 +2,7 @@
 Build new vagrantbox
 ====================
 
-Last changed: 2022-01-19
+Last changed: 2023-10-05
 
 We use bento to build our own vagrantboxes. The norcams templates can be found
 in our fork of bento: https://github.com/norcams/bento
@@ -11,24 +11,7 @@ in our fork of bento: https://github.com/norcams/bento
 Build new box
 =============
 
-Make sure you have packer installed and in :file:`$PATH`
-Edit the template if needed or there are a new OS version
-
-Provider will be :file:`virtualbox-iso` or :file:`qemu` for libvirt
-
-el7::
-
-  cd packer_templates/centos
-  packer build -only=<provider> centos-norcams-<version>-x86_64.json
-
-This will create a new box for :file:`norcams/base`
-
-el8::
-
-  cd packer_templates/almalinux
-  packer build -only=<provider> almalinux-norcams-<version>-x86_64.json
-
-This will create a new box for :file:`norcams/el8`
+See `this page <https://github.com/norcams/bento/blob/main/NORCAMS.md>`_ for details on how to build new boxes.
 
 Upload new box
 --------------
