@@ -60,7 +60,8 @@ Now set up the link on both vxlan-host-a and vxlan-host-b:
    For IPv4 only traffic an MTU size of 1450 can be used, but IPv6 adds another 20 bytes on
    top of that, so MTU size of 1430 is necessary.
 
-Set MTU on the br-tun interface:
+Set MTU on the br-tun interface (for NREC, use **1450**. If using
+jumbo frames: **8950**):
 
 .. code:: bash
 
