@@ -56,9 +56,11 @@ Now set up the link on both vxlan-host-a and vxlan-host-b:
     ip link set up dev br-tun
 
 .. IMPORTANT::
-   VXLAN adds significant overhead on the packets, and you must adjust the MTU accordingly.
-   For IPv4 only traffic an MTU size of 1450 can be used, but IPv6 adds another 20 bytes on
-   top of that, so MTU size of 1430 is necessary.
+   VXLAN adds significant overhead on the packets, and you must adjust
+   the MTU accordingly.  For IPv4 only traffic an MTU size of 1450 can
+   be used, but IPv6 adds another 20 bytes on top of that, so MTU size
+   of 1430 is necessary.
+
 
 Set MTU on the br-tun interface (for NREC, use **1450**. If using
 jumbo frames: **8950**):
