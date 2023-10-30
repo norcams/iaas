@@ -20,20 +20,19 @@ https://docs.nrec.no/elasticip.html for details).
 How it works
 ============
 
-A pair of routers in the infrastructure has been equipped with loopback addresses
+A pair of routers in each region have been equipped with loopback addresses
 and firewall rules that allow instances to do BGP peering (normally all traffic
 from instances to NREC infrastructure is immediately dropped on the compute host).
 The router pair will typically be the same routers with the public uplinks (ie, spine)
 The instances doing the peering can only do so if they are connected to a
-specific neutron network ("Elastic_IP"). The BGP peering happens over IPv4 only, but
+specific neutron network ("Elastic IP"). The BGP peering happens over IPv4 only, but
 IPv6 prefixes are announcable by default via BGP Multiprotocol.
 
 Each project that needs access to this feature must be given the following
-information, in addition to access to the Elastic_IP neutron network and the loopback
-IPv4 addresses to peer to:
+information, in addition to access to the Elastic IP neutron network, the NREC region
+specific AS number, and the loopback IPv4 addresses to peer to:
 
 * A 4 byte private AS number (unique pr project, range 4200000000 to 4294967294)
-* The region specific NREC AS number
 * md5 password for the BGP session
 * An announcable IPv4 prefix
 * An announcable IPv6 prefix
