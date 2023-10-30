@@ -28,6 +28,7 @@ Operations
     designate
     etcd
     uib-ha
+    elasticip
     hardware
     report
     report-utils
