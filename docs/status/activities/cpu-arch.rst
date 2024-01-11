@@ -87,7 +87,7 @@ Nye flavors
 NB! For praktiske formål later vi som at dagens m2-flavor ikke
 eksisterer.
 
-Jeg ønsker å definere nye flavors::
+Jeg ønsker å definere nye flavors:
 
 * m3 flavor for G3-nodene. Her må vi sette en "trait" for at scheduler
   skal velge riktig hypervisor::
