@@ -27,6 +27,7 @@ gjennomført med mindre noe annet går frem av dokumentet.
     platform_himlar
     plan-2023
     educloud
+    cpu-arch
 
 Arkiv
 -----
