@@ -111,8 +111,8 @@ Jeg ønsker å definere nye flavors:
 Resultatet av dette vil være at:
 
 #. Instanser av m3 vil alltid havne på G3-nodene
-#. Instanser av m2 vil havne på G2 elle G3
-#. Instanser av m1 vil hanve hvor som helst
+#. Instanser av m2 vil havne på G2 eller G3
+#. Instanser av m1 vil havne hvor som helst
 
 Dette gir relativt god fleksibilitet.
 
