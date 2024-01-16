@@ -2,6 +2,14 @@
 Branding & Customization
 ========================
 
+==========
+NREC Logo
+==========
+
+.. image:: images/nrec-horizontal_dark.svg
+
+.. image:: images/nrec-horizontal_light.svg
+
 Where do we use logo
 ====================
 
@@ -12,17 +20,9 @@ Where do we use logo
 * Twitter
 
 ==========
-NREC Logo
-==========
-
-.. image:: images/nrec-horizontal_dark.svg
-
-.. image:: images/nrec-horizontal_light.svg
-
-==========
 NREC poster [2024-01-16]
 ==========
 
-.. image:: posters/nrec-2024.pdf
-.. image:: posters/nrec-2024.odp
+:download:`PDF <posters/nrec-2024.pdf>`
 
+:download:`ODP <posters/nrec-2024.odp>`
