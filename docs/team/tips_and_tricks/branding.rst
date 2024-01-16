@@ -2,14 +2,6 @@
 Branding & Customization
 ========================
 
-==========
-NREC Logo
-==========
-
-.. image:: images/nrec-horizontal_dark.svg
-
-.. image:: images/nrec-horizontal_light.svg
-
 Where do we use logo
 ====================
 
@@ -18,6 +10,14 @@ Where do we use logo
 * Github
 * Slack
 * Twitter
+
+==========
+NREC Logo
+==========
+
+.. image:: images/nrec-horizontal_dark.svg
+
+.. image:: images/nrec-horizontal_light.svg
 
 ==========
 NREC poster [2024-01-16]
