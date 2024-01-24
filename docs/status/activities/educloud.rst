@@ -2,7 +2,7 @@
 Proposal: Connect Educloud with NREC
 =========================================
 
-Last changed: 2023-11-04
+Last changed: 2024-01-24
 
 Background and Purpose
 ======================
