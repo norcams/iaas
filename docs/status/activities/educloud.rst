@@ -22,29 +22,39 @@ up or down services. Educloud will be able to use all of the NREC
 infrastructure (both regions, lightweigth HPC, GPU etc.).
 
 
-Proposal
-========
+Implementation
+==============
 
-We propose that we make NREC a viable option for running Educloud
+We want to make NREC a viable option for running Educloud
 services. For this we need to solve the storage problem: NREC is
 considered outside of Educloud and Educloud storage is not available
 for NREC instances.
 
-We can accomplish this with a few simple steps:
+The following has been implemented:
 
-#. NREC creates an IPv6 subnet which is specifically tagged for
+#. NREC has created an IPv6 subnet which is specifically tagged for
    Educloud usage. This will be a /64 within the NREC IPv6 range, and
    will be a different subnet in each of the regions
 
-#. NREC creates a user selectable network called "Educloud" which
+#. NREC has created a user selectable network called "Educloud" which
    contains the new IPv6 network and the default RFC1918 IPv4
    network. Only select NREC projects will able to select this
    network.
 
-#. Agree to and set up a policy that describes how this should be
-   used. Most notably, only select NREC projects managed by Educloud
-   personnel will be able to use the "Educloud" IPv6 network in NREC,
-   and any instances in these projects should be UiO-managed.
+These networks are:
+
+* OSL:
+
+  - IPv6: ``2001:700:2:8204::/64``
+  - IPv4: ``10.4.0.0/20``
+
+* BGO:
+
+  - IPv6: ``2001:700:2:8304::/64``
+  - IPv4: ``10.3.0.0/20``
+
+TODO
+====
 
 #. Router ACLs in NREC are changed to allow NFS and SMB from Educloud
 
@@ -58,4 +68,29 @@ We can accomplish this with a few simple steps:
 #. On the UiO and Educloud side, define the NREC Educloud IPv6 network
    as a part of Educloud for all intents and purposes.
 
-   Question: what does this mean in practice?
+
+Policy
+======
+
+This is a short description of the policy dictating how the Educloud
+networks NREC should be used.
+
+* The network **educloud1** is not publicly available to NREC projects
+
+* Access to the **educloud1** network will be given to projects that
+  are completely owned and managed by Educloud personnel. These
+  project should never include members that are regular Educloud
+  users. Regular Educloud users should not have access to these
+  projects via NREC
+
+* All instances in the Educloud projects should be managed as any
+  other server within the Educloud realm
+
+
+What does this mean in practice?
+================================
+
+When this is implemented, Educloud personnel may use NREC as a backend
+service to run servers and services within the Educloud realm. There
+should be no difference between running an Educloud server on Vmware
+or on NREC.
