@@ -13,15 +13,21 @@ Prerequisites
 
 - A login node (with an up-to-date */opt/[himlar|repo]* hiearchy) which is
   maintained by `Puppet`
+
+- A SSH key pair with the private key in /root/.ssh and the public in :file:`hieradata/${{loc}}/modules/accounts.yaml`
+
 - No management-node installed (`controller`)
+
 - *hieradata/${loc}/common.yaml*, *hieradata/common/common.yaml*, *hieradata/nodes/${loc}/...*
   etc. are populated with relevant data
+
 - puppet is disabled on new nodes:
 
   ensure **$loc/modules/puppet.yaml** includes *puppet::runmode: 'none'*
 
 - All commands run as the admin user (`root`) unless noted
   (consult the document `2FA on jumphosts (login nodes) <https://iaas.readthedocs.io/en/latest/team/getting_started/two-factor-authentication.html>`_)
+
 - The new controller node (and all further controller and compute nodes) must
   have CPU virtualization extentions enabled in BIOS
 
