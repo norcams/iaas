@@ -48,17 +48,20 @@ Procedure
 ---------
 
 1. Make sure the dhcp and tftp services are allowed through the firewall, if
-   RHEL 7/Centos 7:
+   RHEL 7/Centos 7::
 
-   **iptables -I INPUT 1 -i <mgmt interface for environment> -p udp --dport 67:68 --sport 67:68 -j ACCEPT**
+     iptables -I INPUT 1 -i <mgmt interface for environment> -p udp --dport 67:68 --sport 67:68 -j ACCEPT
+     iptables -I INPUT 1 -i <mgmt interface for environment> -p udp --dport 69 -j ACCEPT
 
-   **iptables -I INPUT 1 -i <mgmt interface for environment> -p udp --dport 69 -j ACCEPT**
+   The mgmt net is usually a closed network so we could also just run::
+
+     iptables -I INPUT 1 -i <mgmt interface> -j ACCEPT
 
 #. Enable NAT of relevant mgmt interface on the login node out through the public facing interface
 
-#. On the login node:
+#. On the login node::
 
-   **/usr/local/sbin/bootstrap-$loc-controller-01.sh**
+     /usr/local/sbin/bootstrap-$loc-controller-01.sh
 
    .. NOTE::
       The error message "curl: (33) HTTP server doesn't seem to support byte
@@ -66,9 +69,9 @@ Procedure
       run. If so this is just an indication that the files to be fetched are
       already in place. But please make sure the files nevertheless are recent!
 
-#. Boot the relevant physical node using the web GUI on the `iDrac` or with this command on the login node:
+#. Boot the relevant physical node using the web GUI on the `iDrac` or with this command on the login node::
 
-   **idracadm -r <idrac-IP for $loc-controller-01 to be installed> -u gaussian -p <idrac-pw> serveraction powercycle**
+     idracadm -r <idrac-IP for $loc-controller-01 to be installed> -u gaussian -p <idrac-pw> serveraction powercycle**
 
    .. NOTE::
       Make sure the system is configured to PXE boot on the relevant (mgmt)
@@ -79,21 +82,21 @@ Procedure
       quit if the new system is set to primarly attempt PXE boot, otherwise
       it will enter an endless installation loop!
 
-#. Log on to the freshly installed controller node:
+#. Log on to the freshly installed controller node::
 
-   (**sudo**) **ssh iaas@$loc-controller-01**
+     sudo ssh iaas@$loc-controller-01
 
-#. Run puppet in bootstrap mode:
+#. Run puppet in bootstrap mode::
 
-   **bash /root/puppet_bootstrap.sh**
+     /opt/himlar/provision/puppetrun.sh
 
-#. Run puppet normally:
+#. Run puppet normally::
 
-   **/opt/himlar/provision/puppetrun.sh**
+     /opt/himlar/provision/puppetrun.sh
 
-#. Punch a hole in the firewall for traffic to port 8000:
+#. Punch a hole in the firewall for traffic to port 8000::
 
-   **iptables -I INPUT 1 -p tcp --dport 8000 -j ACCEPT**
+     iptables -I INPUT 1 -p tcp --dport 8000 -j ACCEPT
 
 #. Initiate installation of the admin node/Foreman:
 
