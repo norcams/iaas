@@ -230,6 +230,27 @@ Example of client configuration in ``/etc/apt/sources.list``::
   deb [trusted=yes] https://download.iaas.uio.no/nrec/prod/nrec-internal-apt wheezy main
 
 
+(Temp) How to build reprepro
+````````````````````````````
+
+*reprepro* has been fetched from ``epel``, but this package is not (yet) built
+for RHEL 9. It is thus built locally for now, until a proper package is
+available. This section should then be removed!
+
+On a clean **UiO managed RHEL 9** instance, these commands is run to build a
+*reprepro* command for EL9 (inside a suitable build area):
+
+1. dnf install git automake libdb-devel zlib-devel bzip2-devel xz-devel
+#. git clone https://salsa.debian.org/debian/reprepro.git
+#. cd reprepo
+#. ./autogen.sh
+#. /configure --with-libgpgme=no
+#. make
+
+There should now be a *reprepro'* binary inside this directory. This file is
+copied over to */usr/local/sbin* on `download`.
+
+
 Ruby Gem repository
 -------------------
 
