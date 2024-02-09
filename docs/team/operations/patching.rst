@@ -252,13 +252,13 @@ Compute (dedicated compute resources/HPC)
   +------------------+--------+----------------------------------------+
   | robin1           | osl    | notify/maintenance/dedicated.txt       |
   +------------------+--------+----------------------------------------+
-  | shpc_cpu1        | bgo    | notify/maintenance/shpc.txt            |
+  | shpc_cpu1        | ALL    | notify/maintenance/shpc.txt            |
   +------------------+--------+----------------------------------------+
-  | shpc_ram1        | bgo    | notify/maintenance/shpc.txt            |
+  | shpc_ram1        | ALL    | notify/maintenance/shpc.txt            |
   +------------------+--------+----------------------------------------+
-  | vgpu1            | bgo    | notify/maintenance/dedicated.txt       |
+  | vgpu1            | ALL    | notify/maintenance/dedicated.txt       |
   +------------------+--------+----------------------------------------+
-  | vgpu1            | osl    | notify/maintenance/dedicated.txt       |
+  | vgpu161          | bgo    | notify/maintenance/dedicated.txt       |
   +------------------+--------+----------------------------------------+
 
 #. Clean state database (only once per region!)::
