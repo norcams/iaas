@@ -261,9 +261,9 @@ Compute (dedicated compute resources/HPC)
   | vgpu1            | osl    | notify/maintenance/dedicated.txt       |
   +------------------+--------+----------------------------------------+
 
-#. Purge state database (only once per region!)::
+#. Clean state database (only once per region!)::
 
-    himlarcli/state.py purge instance
+    himlarcli/state.py clean instance
 
 #. Check instance status::
 
