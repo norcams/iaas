@@ -267,7 +267,7 @@ Compute (dedicated compute resources/HPC)
 
 #. Check instance status::
 
-    himlarcli/aggregate.py instances <aggregate>
+    himlarcli/aggregate.py instances <aggregate> --format table
 
 #. Stop instances::
 
@@ -275,7 +275,7 @@ Compute (dedicated compute resources/HPC)
 
 #. Upgrade all compute nodes in the aggregate::
 
-    himlarcli/hypervisor.py list -a <aggregate>
+    himlarcli/hypervisor.py list --format table -a <aggregate>
 
     sudo ansible-playbook -e "myhosts=${location}-compute-epyc-53" lib/yumupdate.yaml
 
