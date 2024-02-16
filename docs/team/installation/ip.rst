@@ -85,19 +85,25 @@ Network prefixes
 
 IP networks in use
 
-========= ======= ============ ================= ====== ====== ========
- region    env     Name         IPv4              IPv6   VLAN   BGP AS
-========= ======= ============ ================= ====== ====== ========
- bgo       prod    trp          172.18.0.0/21     TBD    100    65501
- bgo       prod    link1        172.18.228.0/30   TBD           65502
- osl       prod    trp          172.18.32.0/21    TBD    100    65502
- osl       prod    link1        172.18.228.0/30   TBD           65502
- test01    test    trp          172.30.0.0/24     TBD           65535
- test02    test    trp          172.30.32.0/24    TBD           65536
- vagrant   dev     trp          172.31.8.0/24     TBD           65500
- local1    dev     trp          172.31.12.0/24    TBD    100
- local2    dev     trp          172.31.13.0/24    TBD    101
-========= ======= ============ ================= ====== ====== ========
+========= ======= ============ ================= =========== ========= ========
+ region    env     Name         IPv4              IPv6        VLAN      BGP AS
+========= ======= ============ ================= =========== ========= ========
+ bgo       prod    trp          172.18.0.0/21     fd00::/64   100       65501
+ bgo       prod    ceph         172.20.0.0/21     NA          110/130   NA
+ bgo       prod    live         172.22.0.0/21     NA          120       NA
+ bgo       prod    link1        172.18.228.0/30   TBD                   65502
+ osl       prod    trp          172.18.32.0/21    fd32::/64   100       65502
+ osl       prod    ceph         172.20.32.0/21    NA          110/130   NA
+ osl       prod    live         172.22.32.0/21    NA          120       NA
+ osl       prod    link1        172.18.228.0/30   TBD                   65502
+ test01    test    trp          172.30.0.0/21     fd00::/64   100       65535
+ test01    test    ceph         172.29.0.0/21     NA          110/130   NA
+ test01    test    live         172.31.0.0/21     NA          120       NA
+ test02    test    trp          172.30.32.0/24    TBD                   65536
+ vagrant   dev     trp          172.31.8.0/24     TBD                   65500
+ local1    dev     trp          172.31.12.0/24    TBD         100
+ local2    dev     trp          172.31.13.0/24    TBD         101
+========= ======= ============ ================= =========== ========= ========
 
 Prefix reservations per link type and location
 
@@ -107,9 +113,6 @@ Prefix reservations per link type and location
  prod   leaf-node   bgo      `172.18.0.0/19`_   TBD
  prod   leaf-node   osl      `172.18.32.0/19`_  TBD
  prod   leaf-node   TBD      `172.18.64.0/19`_  TBD
- prod   gw-gw       bgo      172.18.224.0/22    TBD
- prod   gw-gw       osl      172.18.228.0/22    TBD
- prod   gw-gw       TBD      172.18.232.0/22    TBD
 ====== =========== ======== ================== =============
 
 As specified above, each region-specific transport network block is again split
@@ -204,3 +207,16 @@ NAT'ed out on its outside interface.
  IPv6  fd96::/64          br2    1     bridge.100    2
 ====== ================= ===== ====== ============ ======
 
+
+Reserved internal IP addressing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For external infrastructure which potentially may be connected to the
+NREC infrastructure in some point in time, the following addressing space
+is reserved:
+
+=================== =============
+ IPv4                Description
+=================== =============
+ 172.24.0.0/16       uib-ds
+=================== =============
