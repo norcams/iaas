@@ -4,7 +4,7 @@
 Vagrant with virtualbox
 =======================
 
-Last changed: 2021-12-21
+Last changed: 2024-02-22
 
 You first will need to install the virutalbox and vagrant packages for
 your operating system.
@@ -14,5 +14,5 @@ virtualbox can use. Edit :file:`/etc/vbox/networks.conf` and add::
 
   * 10.0.0.0/8 192.168.0.0/16 172.16.0.0/12
 
-This have been tested on Ubuntu 20.04 LTS and works without any other
+This have been tested on Ubuntu 20.04 and 22.04 and works without any other
 configuration.
