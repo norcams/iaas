@@ -8,6 +8,7 @@ Operations
 
     db
     himlar-bootstrap
+    ceph
     deploy
     compute
     identity
