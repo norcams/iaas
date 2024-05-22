@@ -19,6 +19,7 @@ Tips and tricks
     norcams-himlar-dp-prep
     network-issues
     compute-vgpu
+    full-compute-disk
     dedicated-flavors
     vxlan
     large-rootdisk
