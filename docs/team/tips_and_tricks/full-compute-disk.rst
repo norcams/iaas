@@ -15,3 +15,24 @@ e.g. atlas, alice, shpc, vgpu, etc
 
 It will take 1-2 hours to fix a alice compute node with 180GB os-disk.
 
+Alternative approach
+--------------------
+
+There is a 10G swapfile in /var/lib/nova/instances. Free up some space with:
+
+.. code:: bash
+
+    puppet agent --disable "temp remove swap"
+    swapoff -v /var/lib/nova/instances/swapfile
+    rm -f /var/lib/nova/instances/swapfile
+
+fstrim instances to free up space
+
+.. code:: bash
+
+      dd if=/dev/zero of=/var/lib/nova/instances/swapfile bs=1024 count=10485760
+      chmod 600 /var/lib/nova/instances/swapfile
+      mkswap /var/lib/nova/instances/swapfile
+      swapon /var/lib/nova/instances/swapfile
+      swapon --show
+      puppet agent --enable
