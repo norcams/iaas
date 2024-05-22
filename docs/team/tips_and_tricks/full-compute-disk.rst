@@ -13,3 +13,5 @@ e.g. atlas, alice, shpc, vgpu, etc
 #. copy back the disk from cephfs
 #. start the destroyed instance with openstack cli
 
+It will take 1-2 hours to fix a alice compute node with 180GB os-disk.
+
