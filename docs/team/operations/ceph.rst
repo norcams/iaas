@@ -54,7 +54,7 @@ Need to find the /dev-name and the physical device matching the osd. We will use
 #. After a reboot, when the cluster is stable, or if no reboot was necessary::
 
     puppet agent --enable; puppet agent -t
-    ceph osd unset norebalce
+    ceph osd unset norebalance
     ceph osd unset noout
 
 
