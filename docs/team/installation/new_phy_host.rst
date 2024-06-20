@@ -153,6 +153,38 @@ Tip on how check link status:
    lldpctl NICname
    clagctl status (on switch)
 
+BGP config
+----------
+
+Add the new hosts to BGP
+in **hieradata/<region>/roles/spine.yaml**. Example::
+
+  diff --git a/hieradata/osl/roles/spine.yaml b/hieradata/osl/roles/spine.yaml
+  index ddc2162f7..50df5e2b8 100644
+  --- a/hieradata/osl/roles/spine.yaml
+  +++ b/hieradata/osl/roles/spine.yaml
+  @@ -870,6 +870,9 @@ frrouting::frrouting::bgp_neighbor_groups:
+         - '172.18.33.122'
+         - '172.18.33.123'
+         - '172.18.33.124'
+  +      - '172.18.33.125' # compute-64
+  +      - '172.18.33.126' # compute-65
+  +      - '172.18.33.127' # compute-66
+       'options6':
+         - 'neighbor rr-clients route-reflector-client'
+         - 'neighbor rr-clients soft-reconfiguration inbound'
+  @@ -941,6 +944,9 @@ frrouting::frrouting::bgp_neighbor_groups:
+         - 'fd32::1:122'
+         - 'fd32::1:123'
+         - 'fd32::1:124'
+  +      - 'fd32::1:125' # compute-64
+  +      - 'fd32::1:126' # compute-65
+  +      - 'fd32::1:127' # compute-66
+     'object_rgw':
+       'options':
+         - 'peer-group'
+
+
 
 Instruct the Foreman to install server
 --------------------------------------
