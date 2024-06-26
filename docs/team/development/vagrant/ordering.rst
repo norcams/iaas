@@ -36,6 +36,9 @@ before the next one are started.
 
   * compute
 
+
+Tips: There is a script that does this automatically for you at himlar/provision/vagrant-allup.sh
+
 Final fixes
 ===========
 
