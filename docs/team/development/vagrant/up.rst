@@ -115,7 +115,7 @@ chmod 600 in all private keys.
 
 chmod 644 on all public keys.
 
-Can then deploy himlarcli from login.
+Deploy himlarcli from login: See https://iaas.readthedocs.io/team/development/vagrant/deployment.html
 
 Restart metadata API (from login)
 --------------------------------
