@@ -1,8 +1,8 @@
 .. |date| date::
 
-======================
-Development in vagrant
-======================
+==================================
+Full guide: Development in vagrant
+==================================
 
 Last changed: |date|
 
@@ -17,5 +17,7 @@ libvirt. Then following these steps will get you up and running with vagrant.
     github
     ca
     nodeset
-    ordering
+    up
     web
+    deployment
+    validation
