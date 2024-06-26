@@ -13,17 +13,9 @@ Default nodeset
 ===============
 
 The default nodeset uses the :file:`vagrant` location. Here we have added all the
-important roles into one node called :file:`vagrant-api-01`. The reset of the
-nodes are optional (like dashboard, access and compute).
+important roles.
 
-Full nodeset
-============
-
-The full nodeset uses the :file:`dev` location. Here all roles have nodes
-matching the test and production locations. This will require more resources
-on the vagrant host (16GB+ RAM, 4+ Cores). To use the full nodeset::
-
-  export HIMLAR_NODESET=full
+  export HIMLAR_NODESET=default
 
 Other nodeset
 =============
