@@ -2,7 +2,7 @@
 Setup nodes and guest
 =====================
 
-The nodes in vagrant should be started in stages. Each stage should complete
+The nodes in Vagrant should be started in stages. Each stage should complete
 before the next one are started.
 
 **First stage:**
@@ -62,7 +62,7 @@ Up::
 Final fixes
 ===========
 
-A few final stages are needed to start an instance in vagrant.
+A few final stages are needed to start an instance in Vagrant.
 
 Set host aggregate and availability zone
 ---------------------
@@ -95,7 +95,7 @@ Add to ~/.ssh/config on host::
     ControlPath ~/.ssh/controlmasters/%r@%h:%p
     ControlPersist yes
     ForwardAgent yes
-    Hostname vagrant-login-01.mgmt.vagrant.iaas.intern 
+    Hostname login.mgmt.vagrant.iaas.intern 
 
 Installing necessary keys and fixing their permissions:
 
@@ -200,13 +200,19 @@ at [root@vagrant-proxy-01 ~(keystone_vagrant_admin)]$::
 Horizon config and login
 ------------------------
 
-Install NREC dev Root CA as Authority in Chrome:
+Install NREC dev Intermediate CA as Authority in Chrome:
+
+If you trust that no one will have access to your passfile, you could
+add :file:`$himlar/provision/ca/intermediate/certs/intermediate.cert.pem`
+to your browser to avoid warnings. 
+
+For Chrome, this is done by:
 
 Privacy and security -> Security -> Manage certificates -> Authorities -> Import
 
-Select himlar/provision/ca/certs/ca.cert.pem, import, then tick off all boxes.
+Select the intermediate.cert.pem file, then tick off all boxes.
 
-Access dashboard at https://dashboard.vagrant.iaas.intern
+Access dashboard at https://dashboard.iaas.intern
 
 Authenticate using: Keystone Credentials
 
@@ -221,6 +227,6 @@ Dataporten
 
 After running destroy/up only himlarcli/dataporten.py will be needed.
 
-To create a dataporten user in vagrant after setting dashboard up, we can use
+To create a dataporten user in Vagrant after setting dashboard up, we can use
 :file:`himlarcli/access.py` to add a user request to the queue and process the
 request and add the user.

@@ -6,14 +6,14 @@ Nodeset
 
 Last changed: |date|
 
-There are different sets of nodes to use in vagrant. The node set can be
+There are different sets of nodes to use in Vagrant. The node set can be
 changed by setting the environment variable called :file:`HIMLAR_NODESET`.
 
 Default nodeset
 ===============
 
 The default nodeset uses the :file:`vagrant` location. Here we have added all the
-important roles.
+important roles.::
 
   export HIMLAR_NODESET=default
 

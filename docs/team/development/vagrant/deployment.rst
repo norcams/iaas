@@ -46,7 +46,7 @@ Prod::
 himlar
 ======
 
-Using vagrant. Does not require admin node, unlike puppet agent -t
+Using Vagrant. Does not require admin node, unlike puppet agent -t
 
 Example 1: vagrant rsync and provision from host:<himlar>
 

@@ -11,7 +11,7 @@ Last changed: |date|
    out all files tracked in git and rerun :file:`bootstrap.sh`
 
 You will need to generate a CA key pair with openssl to sign the certificate
-used in vagrant to test TLS for endpoint. First make sure openssl is installed
+used in Vagrant to test TLS for endpoint. First make sure openssl is installed
 on your host computer (if not, run the scipts and copy all the .pem files
 back to your host)::
 
@@ -25,11 +25,7 @@ back to your host)::
 
 The CA chain .pem file can be found in::
 
-  $himlar/provision/ca/certs/intermediate/ca-chain.cert.pem
-
-If you trust that no one will have access to your passfile, you could
-add :file:`$himlar/provision/ca/certs/intermediate/intermediate.cert.pem`
-to your browser to avoid warnings.
+  $himlar/provision/ca/intermediate/certs/ca-chain.cert.pem
 
 Use in puppet
 =============
