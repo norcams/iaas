@@ -18,21 +18,19 @@ himlarcli on proxy
 
 ::
 
-	[<username>@vagrant-login-01 ~]$ sudo ssh vagrant@vagrant-proxy-01
-	sudo -i
-	cd /opt/himlarcli
-	source bin/activate
-	./hypervisor.py list --format table
+  [<username>@vagrant-login-01 ~]$ sudo ssh vagrant@vagrant-proxy-01
+  sudo -i
+  cd /opt/himlarcli
+  source bin/activate
+  ./hypervisor.py list --format table
 
 openstack cli on proxy
 ======================
 
 ::
 
-	[<username>@vagrant-login-01 ~]$ sudo ssh vagrant@vagrant-proxy-01
-	sudo -i
-	source openrc
+  [<username>@vagrant-login-01 ~]$ sudo ssh vagrant@vagrant-proxy-01
+  sudo -i
+  source openrc
   openstack flavor list
-
-
 

@@ -37,7 +37,7 @@ before the next one are started.
   * compute
 
 
-Tips: You may want to destroy all existing nodes and run vagrant box update prior to starting nodes. Second, there is a script that automatically starts all nodes for you in the right order: himlar/provision/vagrant-allup.sh
+Tips: You may want to destroy all existing nodes and run vagrant box update prior to starting nodes. There is a script that automatically starts all nodes for you in the right order: himlar/provision/vagrant-allup.sh
 
 See the below example using the default nodeset and some additional nodes (proxy and login):
 
@@ -71,16 +71,10 @@ After running vagrant up compute you will need to run vagrant provison novactrl
 to add the newly created compute node to a host aggregate and the correct
 availability zone (AZ).
 
-Start login
-----------
-
-You may want to run ansible jobs from the login node within the Vagrant environment, or use it to access the proxy node for running openstack commands.
-Outcomment login under default nodeset in nodes.yaml, then vagrant up login.
-
 Config login
 ------------
 
-You may config 2FA on login simlar to prod. Using existing file::
+You may want to run ansible jobs from the login node within the Vagrant environment, or use it to access the proxy node for running openstack commands. You may config 2FA on login simlar to prod. Using existing file::
 
   [<username>@vagrant-login-01 ~]$ vim .google_authenticator
   # paste contents of existing file
@@ -94,7 +88,7 @@ or create new::
 
 with the options specified in https://iaas.readthedocs.io/team/getting_started/two-factor-authentication.html#fa-on-jumphosts-login-nodes
 
-Add to ~/.ssh/config::
+Add to ~/.ssh/config on host::
 
  Host vagrant
     ControlMaster auto
