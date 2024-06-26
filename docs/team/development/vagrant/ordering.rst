@@ -7,34 +7,34 @@ before the next one are started.
 
 **First stage:**
 
-  * db-global-01
-  * db-regional-01
-  * mq-01
-  * api-01
-  * dashboard-01 (optional)
-  * access-01 (optional)
-  * monitor-01 (optional)
-  * logger-01 (optional)
-  * proxy-01 (optional)
-  * admin-01 (optional)
+  * db-global
+  * db-regional
+  * mq
+  * api
+  * dashboard (optional)
+  * access (optional)
+  * monitor (optional)
+  * logger (optional)
+  * proxy (optional)
+  * admin (optional)
 
 **Second stage:**
 
-  * identity-01
+  * identity
 
 **Main stage:**
 
-  * novactrl-01
-  * image-01
-  * volume-01
-  * network-01
-  * console-01 (optional)
-  * metric-01 (optional)
-  * telemetry-01 (optional)
+  * novactrl
+  * image
+  * volume
+  * network
+  * console (optional)
+  * metric (optional)
+  * telemetry (optional)
 
 **Last stage:**
 
-  * compute-01
+  * compute
 
 Final fixes
 ===========
