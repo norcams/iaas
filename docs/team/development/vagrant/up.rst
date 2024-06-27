@@ -122,7 +122,7 @@ Restart metadata API (from login)
 
 We need to restart openstack-nova-metadata-api on compute-01. This can be done with ansible::
 
-  sudo ansible-playbook -e "myhosts=vagrant-compute" lib/restart_compute_services.yaml
+  sudo ansible-playbook -e "myhosts=vagrant-compute-01" lib/restart_compute_services.yaml
 
 himlarcli setup on guest to use the Vagrant environment
 -------------------------------------------------------
