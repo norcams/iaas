@@ -12,7 +12,7 @@ opp etter denne endringen, dvs. ingen manuell rydding nødvendig.
 
 Endre repo-filene til å bruke test-peker::
 
-  perl -p -i -e 's/prod/test/' /etc/yum.repos.d/*.repo
+  perl -p -i -e 's/prod/test/g' /etc/yum.repos.d/*.repo
 
 Deretter kjøre yum upgrade::
 
