@@ -2,6 +2,23 @@
 Diverse småtterier som ikke passer i egne kapitler
 ==================================================
 
+Patching av prod-noder før prod-peker er oppdatert
+--------------------------------------------------
+
+Dersom man ønsker å patche noder i prod (f.eks. compute-noder i
+placeholder) før prod-peker er oppdatert til samme som test-peker, kan
+man endre repo-filene til å peke på test midlertidig. Puppet vil rydde
+opp etter denne endringen, dvs. ingen manuell rydding nødvendig.
+
+Endre repo-filene til å bruke test-peker::
+
+  perl -p -i -e 's/prod/test/' /etc/yum.repos.d/*.repo
+
+Deretter kjøre yum upgrade::
+
+  yum upgrade --refresh
+
+
 Management-switch i OSL (10.17.32.1) og test01 (10.17.0.1)
 ----------------------------------------------------------
 
