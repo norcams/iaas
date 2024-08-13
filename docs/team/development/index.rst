@@ -12,3 +12,4 @@ Development
     hostname
     rack
     flytting
+    test02
