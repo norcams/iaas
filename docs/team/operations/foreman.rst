@@ -5,30 +5,19 @@ Foreman
 Runs on :file:`<loc>-admin-01` and is the DHCP-server, puppetmaster and is used to
 install new hosts (nodes, compute and storage).
 
-Kickstart templates
+Installation
 -------------------
 
-The templates used to install new nodes are found on the master branch of:
-https://github.com/norcams/community-templates.git
+Since :file:`<loc>-admin-01` is the node used to install everything else we need to
+bootstrap this node from a controller. See bootstrap documentation for more info.
 
-Included here are only the templates that diverge from upstream.
 
-If this repo is updated, you will need to update all admin nodes manually.
-Run as root on the admin server::
+Setup
+-----
 
-  foreman-rake templates:sync \
-    repo="https://github.com/norcams/community-templates.git" \
-    branch="master" associate="always" prefix="norcams ""
+Puppet (norcams/himlar) will do the basic install and setup.
 
-or run::
+For the rest of the configruation and setup of foreman we use
+https://github.com/norcams/foreman-setup
 
-  /opt/himlar/provision/foreman-settings.sh
-
-Upgrade
--------
-
-Foreman are upgraded by changing the :file:`foreman_version` i himlar and
-running the foreman upgrade playbook in `ansible <ansible/index.html>`_.
-
-Also remember to rebase our community templates fork against upstream. Upstream
-has tags corresponding to the Foreman version.
+See readme in this repo for more info.
