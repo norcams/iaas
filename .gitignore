@@ -5,6 +5,7 @@
 *.pyc
 /docs/_*/
 /lib/
+lib64
 /bin/
 /share/
 pyvenv.cfg

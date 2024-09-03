@@ -7,3 +7,5 @@ This repository is our team handbook and the documents here are built as
 HTML and published to
 
 https://iaas.readthedocs.org
+
+For local build: https://iaas.readthedocs.io/howtos/build_docs.html
