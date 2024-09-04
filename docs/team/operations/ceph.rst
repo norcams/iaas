@@ -20,11 +20,11 @@ At this stage we assume that the OSD is in the "down" state, puppet is disabled 
   ceph osd set norebalance
   puppet agent -t   # check if puppet is disabled (it should be)
 
-Need to find the /dev-name and the physical device matching the osd. We will use osd.443 as an example.
+Need to find the /dev-name and the physical device matching the osd.
 
 #. Find volume group and device (take notes)::
 
-    ceph-volume lvm list 443
+    ceph-volume lvm list <osd-id>
 
 #. Find the physical device, On iDrac, use the filter functionality found in the storage overview to find the pysical location of the drive. Storage -> Physical Disks -> Filter Drives/Options::
 
@@ -32,7 +32,7 @@ Need to find the /dev-name and the physical device matching the osd. We will use
 
 #. Delete osd::
 
-    ceph osd purge 443 --yes-i-really-mean-it
+    ceph osd purge <osd-id> --yes-i-really-mean-it
 
 #. Check if volume groupe is removed, if not, remove the volume group::
 
@@ -41,8 +41,8 @@ Need to find the /dev-name and the physical device matching the osd. We will use
 
 #. Check if the OSDs service is enabled, if not, disable it::
 
-    systemctl list-units | grep 443
-    systemctl disable ceph-osd@443.service
+    systemctl list-units | grep <osd-id>
+    systemctl disable ceph-osd@<osd-id>.service
 
 #. Now it is time to physically replace the drive. Summon your minions.
 
