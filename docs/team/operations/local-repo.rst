@@ -53,13 +53,13 @@ in an uncontrolled fashion, and is available locally at all times. It is
 possible to set up further such repos, in case a certain installation requires
 packages from a very specific date (other than in **test** and **prod**).
 
-**nrec-internal** and **aptrepo** should be assumed to be like any other ``external``
+**nrec-internal**, **nonfree/yum-nonfree** and **aptrepo** should be assumed to be like any other ``external``
 repositories, just that these `external` repositories are coincidentally managed by
 the NREC team. Data configured into these are then available for consumption
 in the same controlled manner as any other external repository which is mirrored
 locally.
 
-**rpm**, **nonfree**, **nonfree/yum-nonfree**, **nrec-resources** and **ports** are
+**rpm**, **nonfree**, **nrec-resources** and **ports** are
 `unmanaged` repositories without the forementioned snapshotting and consistent
 control. Data located here is available instantly, but outside of any version
 control and without any kind of meta data.
@@ -94,9 +94,9 @@ Directory description
 * **nrec-resources** Generic file distribution. No metadata, versioning, mirroring or
   snapshotting. Only accessible from NREC allocated IP ranges (incl. user
   instances)!
-* **nonfree/yum-nonfree** RPM repository. No versioning, mirroring or
-  snapshotting. Only accessible from login and proxy-nodes! Available for *el7*
-  and *el8*.
+* **nonfree/yum-nonfree** Restricted locally maintained RPM repository. Mirrored under ``repo`` as any
+  external repository is (under the name *nrec-nonfree*) Only accessible from login
+  and proxy-nodes! Available for *el7* and *el8*.
 * **gem**: Local Ruby Gem distribution. No metadata, versioning, mirroring or
   snapshotting.
 * **ports**: For FreeBSD packages. No metadata, versioning, mirroring or
@@ -138,13 +138,12 @@ YUM repository
 --------------
 
 **Directory name**: ``nrec-internal/el[78]`` (wolrd wide availability)
-                    ``nonfree/yum-nonfree/el[78]`` (internally available)
+                    ``nonfreei/yum-nonfree/el[78]`` (internally available)
 
 For local RPM packages which are maintained in the same way as any external RPM
 packages from ordinary repositories, there are YUM repos located in ``nrec-internal``
-and ``nonfree/yum-nonfree``. The former have world wide availability and is
-versioned/snapshot'ed, while the latter is only available locally and is
-additionally not versioned.
+and ``nonfree-nonfree``. The former have world wide availability while the
+latter is only available locally. They are both versioned/snapshot'ed.
 These files/packages are considered and consumed exactly like any other, external,
 repository used by the project/code!
 
@@ -161,8 +160,10 @@ After all file operations update the repository meta data::
   `<https://download.iaas.uio.no/nrec/nonfree/yum-nonfree>`_
 
 .. NOTE::
-   NREC-INTERNAL: This repository is mirrored and snapshotted just like any external
-   repository. As such it can be reached through the `test` and `prod` interfaces described elsewhere.
+   The repositories are mirrored and snapshotted just like any external
+   repository. As such they can be reached through the `test` and `prod`
+   interfaces described elsewhere.
+   NB: the nonfree repo is known as *nrec-nonfree* when mirrored!
 
 Client configuration (example)
 ``````````````````````````````
@@ -171,7 +172,7 @@ Example of client configuration in a yum repo file under ``/etc/yum.repos.d/``::
 
   [nrec-internal]
   name=NREC internal repo
-  baseurl=https://download.iaas.uio.no/nrec/prod/nrec-internal/el7
+  baseurl=https://download.iaas.uio.no/nrec/prod/nrec-internal/el8
   enabled=1
   gpgcheck=0
   priority=10
@@ -180,7 +181,7 @@ For the internal (nonfree) repository::
 
   [nrec-nonfree]
   name=Internal NREC repository
-  baseurl=https://download.iaas.uio.no/uh-iaas/nonfree/yum-nonfree/el7
+  baseurl=https://download.iaas.uio.no/uh-iaas/prod/nrec-nonfree/el8
   enabled=1
   gpgcheck=0
   priority=10
@@ -295,15 +296,14 @@ nodes), `nrec-resources` from all NREC allocated ranges (infra and instances)
 whereas `rpm` is reachable from the world.
 
 The access lists for the restricted areas are maintained in the *repo-admin*
-gitolite repositoryi, in the `httpd` subdirectory.
+gitolite repository, in the `httpd` subdirectory.
 
 
 Upload procedure
 ````````````````
 
 Probably the simplest way to upload a file to the ``rpm`` (or ``nonfree``) archive is to first
-place the file on an available web site and then download it into
-the archive on *download*:
+place the file on an available web site and then download it into the archive on *download*:
 
 1. upload file to a web archive (for instance `<https://folk.uio.no>`_ for UiO affiliated personel)
 #. log in to *download* from one of the login nodes in the usual manner::
@@ -513,7 +513,7 @@ Manual routine for instant publicizing
 **rpm**, **nonfree** (incl. *yum-nonfree*), **gem**  and **ports**:
   Nothing required!
 
-**nrec-internal** and **aptrepo**:
+**nrec-internal**, **nrec-nonfree**  and **aptrepo**:
   New files are available through the ordinary interfaces after mirroring and
   snapshotting. This is usually done nightly, but the routines might be run
   manually if necessary:
@@ -525,10 +525,11 @@ Manual routine for instant publicizing
 Caveats
 -------
 
-* Any changes in the local YUM or APT repository (``nrec-internal`` resp. ``aptrepo``) is not
-  accessible through the mirror interface (``repo``) until after the next upcoming
-  mirror job (usually during the next night, check crontab on the mirror server
-  for details). After this, the data should be accessible under the ``repo`` link.
+* Any changes in the local YUM or APT repositories (``nrec-internal``, ``nrec-nonfree``
+  resp. ``aptrepo``) are not accessible through the mirror interface (``repo``) until
+  after the next upcoming mirror job (usually during the next night, check crontab on
+  the mirror server for details). After this, the data should be accessible under the
+  ``repo`` link.
 
 * New data mirrored is available under the ``snapshot`` link only after the next
   snapshot run (check crontab for details). This is normally scheduled for some
