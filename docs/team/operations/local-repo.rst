@@ -181,7 +181,7 @@ For the internal (nonfree) repository::
 
   [nrec-nonfree]
   name=Internal NREC repository
-  baseurl=https://download.iaas.uio.no/uh-iaas/prod/nrec-nonfree/el8
+  baseurl=https://download.iaas.uio.no/nrec/prod/nrec-nonfree/el8
   enabled=1
   gpgcheck=0
   priority=10
@@ -398,7 +398,7 @@ Test and prod
 **Directories**: ``test``, ``prod``
 
 
-All mirrored repos used by UH IaaS can be accessed through a static and well
+All mirrored repos used by NREC can be accessed through a static and well
 known historic version using the *test* and *prod* interfaces. By configuring
 the appropriate files in the internal **repo-admin** git repo, each repo might
 have a ``test`` and ``prod`` pointer linking to a specific snapshot of this
@@ -434,11 +434,7 @@ Considerations
 
 - ``test`` should never point to a snapshot older than what the corresponding
   ``prod`` are linking to
-- Pointers in ``prod`` **must also** exist in ``test``, the rationale
-  being that this somewhat ensures that `prod` has already been tested.
-  Links in the `prod` configuration which does not also exist in the `test`
-  configuration will *not* be activated (removed if the exists)!
-- If there is more than one link listed to the same repo the most current
+- If there are more than one link listed to the same repo the most current
   is always the one activated.
 - Existing links not listed in the current configuration will be removed!
 
@@ -452,8 +448,7 @@ Update procedure
    This must be done on a node inside the set up (like the login nodes) due
    to access restrictions on the local git repo.
 #. Edit one or both files: `prod.config` and/or `test.config` (or any of the
-   other config files), entering or
-   changing to reflect the date required (consult
+   other config files), entering or changing to reflect the date required (consult
    `the web page <https://iaas-repo.uio.no/nrec/snapshots/>`_ for exact
    timestamp to use.
 #. Commit and push to the central git repo.
