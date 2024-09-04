@@ -26,6 +26,7 @@ Public IPv4 network.
  bgo      lhc        109.105.127.128/26
  osl      prod       158.37.63.0/24
  osl      prod       158.37.66.0/24
+ osl/bgo  reserved   158.37.66.1/24
  osl      prod       158.39.75.0/24
  osl      prod       158.39.48.0/24
  osl      prod       158.39.200.0/24
