@@ -21,3 +21,4 @@ project.
     cumulus-buildling-puppet
     designate-dashboard-plugin
     start-swicth-install.rst
+    dashboard-themes
