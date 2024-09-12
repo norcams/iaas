@@ -92,6 +92,8 @@ Find the pg and repair it.
 
   cephmon# ceph pg repair 49.f47
 
+This sometimes takes hours. It is polite to notify the rest of the team of your actions.
+
 If this does not work - restart the primary OSD. In pg 49.f47 the primary osd is 446 - ref ``ceph health detail``. Use ``ceph osd find 446``. And on the host ``systemctl restart ceph-osd@446``
 
 If that doesn't solve the problem. Dig a rabbit hole. Start by digging into the log of the primary OSD
