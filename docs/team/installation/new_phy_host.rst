@@ -69,7 +69,7 @@ Flowchart
 Local configuration locations
 *****************************
 
-The DHCP configuration is in */etc/dhcp/oob_network.conf* on the admin nodes:
+The DHCP configuration is in */etc/dhcp/dhcpd.conf* on the admin nodes:
 
 .. code:: bash
 
