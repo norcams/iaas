@@ -99,7 +99,7 @@ snippet and in the PDF linked above.
 .. Note::
    If a machine is powered on and booted before its MAC address is set up, the
    provisioning attribute must be switched back to `Enabled once` again to get
-   it to provision itself.
+   it to provision itself. On iDRAC9: *iDRAC Settings - Connectivity - Network - Auto Config*
 
 
 Determine role and define hieradata
