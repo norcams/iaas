@@ -142,7 +142,7 @@ i hypervisor.py for å få qemu-navn listet ut i tabellen.
 
 Dette gjelder kun status med grafite datasoure på monitor (el7)
 
-Puppet setter opp det meste men det er to ting som manuelt må settes opp to ting:
+Puppet setter opp det meste men det er to ting som manuelt må settes opp:
 
 * Endre org name til "norcams"
 * Endre settings til å bruke Dashboard/Status som default dashboard
