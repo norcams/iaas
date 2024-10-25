@@ -140,7 +140,7 @@ i hypervisor.py for å få qemu-navn listet ut i tabellen.
 (Re)installasjon av status-01
 -----------------------------
 
-Dette gjelder kun status med grafite datasoure på monitor (el7)
+Dette gjelder kun status med graphite datasoure på monitor (el7)
 
 Puppet setter opp det meste men det er to ting som manuelt må settes opp:
 
