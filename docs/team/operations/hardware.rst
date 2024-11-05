@@ -71,6 +71,10 @@ Setting proper name on the iDRAC::
 
   racadm config -g cfgLanNetworking -o cfgDNSRacName $(hostname -s)
 
+For iDRAC version 4.40+ use::
+
+  /opt/dell/srvadmin/sbin/racadm set System.ServerOS.HostName $(hostname -s)
+
 
 Hardware inventory
 ------------------
