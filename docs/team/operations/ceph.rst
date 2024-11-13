@@ -65,7 +65,7 @@ To avoid this hopelessness in the long run – add more storage when possible an
 
 Hovewer, in the short term:
 
-Find the fullest OSDs, and if the storage capacity on these is less than the average drive in the pool, try doing some reweig:
+Find the fullest OSDs, and if the storage capacity on these is less than the average drive in the pool, try doing some reweight:
 
 .. code:: bash
 
@@ -92,6 +92,8 @@ Find the pg and repair it.
 
   cephmon# ceph pg repair 49.f47
 
-If this does not work - restart the primary OSD. In pg 49.f47 the primary osd is 446 - ref ``ceph health detail``. Use ``ceph osd find 446``. And on the host ``systemctl restart ceph-osd@446``
+This sometimes takes hours. It is polite to notify the rest of the team of your actions.
+
+If this does not work - restart the primary OSD. In pg 49.f47 the primary osd is 446 - ref output from *ceph health detail*. Use ``ceph osd find <osd-id>``, to find the storage-host. And on the host ``systemctl restart ceph-osd@<osd-id>``
 
 If that doesn't solve the problem. Dig a rabbit hole. Start by digging into the log of the primary OSD

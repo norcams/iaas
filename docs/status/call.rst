@@ -13,12 +13,12 @@ Rotasjon
 =========== === === ===
 Deltaker    Uke Uke Uke
 =========== === === ===
-Ivar         24  30  36
-Terje        25  31  37
-Mikael       26  32  38
-Erik         27  33  39
-Trond        28  34  40
-Lennart      29  35  41
+Ivar         42  30  36
+Terje        43  31  37
+Mikael       44  32  38
+Erik         45  33  39
+Trond        46  34  40
+Lennart      47  35  41
 =========== === === ===
 
 Instruks
