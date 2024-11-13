@@ -59,7 +59,7 @@ Before maintenance window
       -    osl-proxy-01            shut off
       -    osl-resolver-02         shut off
 
-#. Reboot controller-08::
+#. Reboot controller-08:
 
    .. code-block:: bash
 
