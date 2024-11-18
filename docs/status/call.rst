@@ -34,7 +34,7 @@ Instruks
 RT
 --
 
-Vakten har hovedansvar for åpne saker i RT (rt.uninett.no). Dette inkluderer:
+Vakten har hovedansvar for åpne saker i RT (rt.uio.no). Dette inkluderer:
 
 * Vakten trenger ikke å tildele saker til seg selv. Alle saker som blir løst
   av vakten kan stå som nobody slik at de er lett å overføre til neste person.
