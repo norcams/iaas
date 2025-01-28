@@ -38,3 +38,4 @@ Operations
     cleanup
     policy-enddate
     kompetansematrise
+    vgpu-sriov
