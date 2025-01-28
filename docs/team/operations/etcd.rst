@@ -2,6 +2,14 @@
 ETCD
 ====
 
+Maintenance
+===========
+
+Tips for retention compaction and defrag of datastore. Max size for the datastore
+is default 2 GB. 
+
+https://etcd.io/docs/v3.2/op-guide/maintenance/
+
 How to fix etcd cluster
 =======================
 
