@@ -26,7 +26,7 @@ There is a 10G swapfile in /var/lib/nova/instances. Free up some space with:
     swapoff -v /var/lib/nova/instances/swapfile
     rm -f /var/lib/nova/instances/swapfile
 
-fstrim instances
+fstrim instances, then create swapfile:
 
 .. code:: bash
 
