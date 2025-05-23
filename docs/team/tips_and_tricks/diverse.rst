@@ -30,6 +30,10 @@ derfor spesifisere denne eksplisitt når man skal inn på switchen::
 Man må også komme med passord her, både for initiell login og for *enable*.
 Dette passordet ligger i secrets-repoet.
 
+Dersom login ikke er på 10.17.0.0/24 nettet::
+
+  ip addr add 10.17.0.10/24 dev eth1
+
 
 EPEL-repo
 ---------
