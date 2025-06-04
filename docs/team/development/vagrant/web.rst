@@ -49,6 +49,7 @@ you are working with, and add all public address. Example for default nodeset::
   172.31.8.81     identity.trp.vagrant.iaas.intern
   172.31.8.86     compute.trp.vagrant.iaas.intern
   172.31.8.86     network.trp.vagrant.iaas.intern
+  172.31.8.86     placement.trp.vagrant.iaas.intern
 
 sshuttle
 ========
