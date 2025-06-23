@@ -15,13 +15,13 @@ Kompetansematrise
 +---------------------+----------+---------------------+
 |Glance               |          |Terje, Ivar          |
 +---------------------+----------+---------------------+
-|Horizon              |Lennart   |Ivar                 |
+|Horizon              |Lennart   |Ivar, Mikael         |
 +---------------------+----------+---------------------+
 |Designate            |Trond     |Mikael, Erik         |
 +---------------------+----------+---------------------+
 |Swift / S3           |Raymond   |Terje                |
 +---------------------+----------+---------------------+
-|Ceilometer / Metrics |Erik      |Lennart              |
+|Ceilometer / Metrics |Erik      |Lennart, Mikael      |
 +---------------------+----------+---------------------+
 |Database             |Lennart   |Mikael, Raymond      |
 +---------------------+----------+---------------------+
