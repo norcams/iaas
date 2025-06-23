@@ -7,15 +7,15 @@ Kompetansematrise
 +=====================+==========+=====================+
 |Keystone             |Raymond   |Lennart, Trond       |
 +---------------------+----------+---------------------+
-|Nova                 |          |Erik, Trond          |
+|Nova                 |Ivar      |Erik, Trond          |
 +---------------------+----------+---------------------+
-|Neutron              |          |Trond, Terje         |
+|Neutron              |          |Trond, Terje, Ivar   |
 +---------------------+----------+---------------------+
-|Cinder               |          |Terje, Trond         |
+|Cinder               |          |Terje, Trond, Ivar   |
 +---------------------+----------+---------------------+
-|Glance               |          |Terje                |
+|Glance               |          |Terje, Ivar          |
 +---------------------+----------+---------------------+
-|Horizon              |Lennart   |                     |
+|Horizon              |Lennart   |Ivar                 |
 +---------------------+----------+---------------------+
 |Designate            |Trond     |Mikael, Erik         |
 +---------------------+----------+---------------------+
@@ -25,9 +25,9 @@ Kompetansematrise
 +---------------------+----------+---------------------+
 |Database             |Lennart   |Mikael, Raymond      |
 +---------------------+----------+---------------------+
-|Ceph                 |Terje     |Lennart              |
+|Ceph                 |Terje     |Lennart, Ivar        |
 +---------------------+----------+---------------------+
-|Nettverk             |          |Raymond, Terje       |
+|Nettverk             |          |Raymond, Terje, Ivar |
 +---------------------+----------+---------------------+
 |Message Queue        |          |Raymond              |
 +---------------------+----------+---------------------+
@@ -39,7 +39,7 @@ Kompetansematrise
 +---------------------+----------+---------------------+
 |Foreman              |          |Raymond, Erik, Trond |
 +---------------------+----------+---------------------+
-|Brukerdokumentasjon  |Trond     |                     |
+|Brukerdokumentasjon  |Trond     |Ivar                 |
 +---------------------+----------+---------------------+
 |DNS                  |Mikael    |Trond                |
 +---------------------+----------+---------------------+
