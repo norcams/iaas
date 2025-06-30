@@ -129,6 +129,7 @@ network-03        eth1  trp   x.x.x.73
 telemetry-01      eth1  trp   x.x.x.76
 telemetry-02      eth1  trp   x.x.x.77
 telemetry-03      eth1  trp   x.x.x.78
+portal-01         eth1  trp   x.x.x.79
 identity-01       eth1  trp   x.x.x.81
 identity-02       eth1  trp   x.x.x.82
 identity-03       eth1  trp   x.x.x.83
