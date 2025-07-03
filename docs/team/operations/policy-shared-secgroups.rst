@@ -126,3 +126,5 @@ Følgende må på plass for å implementere dette:
   - liste delinger basert på tags
 
 * ``project.py`` må oppdateres til å slette delingen når et prosjekt slettes
+
+* Dokumentere og informere brukerne
