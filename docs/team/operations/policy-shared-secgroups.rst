@@ -10,7 +10,8 @@ Bakgrunn
 
 Det er flere ting som kan deles via `Role-Based Access Control
 (RBAC)`_ i Openstack. Av det som er interessant for oss er deling av
-security groups og address groups.
+security groups og address groups. Alt er spesifikt for region og må
+derfor gjøres i alle regioner.
 
 
 Manuelt oppsett for test
