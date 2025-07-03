@@ -3,6 +3,12 @@
 Policy for shared security groups
 ===================================================
 
+.. _BUG: https://bugs.launchpad.net/neutron/+bug/1942615
+
+.. IMPORTANT::
+   Pga. en BUG_ kan dette ikke implementeres før vi har oppgradert til
+   2025.1
+
 Bakgrunn
 ========
 
