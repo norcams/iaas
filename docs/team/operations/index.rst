@@ -37,5 +37,6 @@ Operations
     images
     cleanup
     policy-enddate
+    policy-shared-secgroups
     kompetansematrise
     vgpu-sriov
