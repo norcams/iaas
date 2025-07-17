@@ -103,7 +103,7 @@ IP networks in use
  osl       prod    live         172.22.32.0/21    NA          120       NA
  osl       prod    link1        172.18.228.0/30   TBD                   65502
  test01    test    trp          172.30.0.0/21     fd00::/64   100       65535
- test01    test    ceph         172.29.0.0/21     NA          110/130   NA
+ test01    test    ceph         172.27.0.0/21     NA          110/130   NA
  test01    test    live         172.31.0.0/21     NA          120       NA
  test02    test    trp          172.30.32.0/24    TBD                   65536
  vagrant   dev     trp          172.31.8.0/24     TBD                   65500
