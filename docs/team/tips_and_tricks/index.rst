@@ -25,3 +25,4 @@ Tips and tricks
     large-rootdisk
     openstack_db_hacks
     bgo-login-02
+    influxdb
