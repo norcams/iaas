@@ -3,10 +3,12 @@ Build docs locally using Sphinx
 
 This describes how to build the documentation from norcams/iaas locally
 
-Build docs
+Linux
 ----------
 
 .. code:: bash
+
+  git clone <repo> && cd <repo>
 
   # Make a virtual Python environment
   python3 -m venv .
@@ -29,3 +31,21 @@ Build docs
 
   # Deactivate the virtualenv
   deactivate
+
+Windows Terminal
+----------------
+
+.. code:: powershell
+
+  winget install python Git.Git ezwinports.make
+  (re-login)
+  git clone <repo>
+  cd .\<repo>\
+  python -m venv .
+  .\Scripts\activate
+  pip install -r .\requirements.txt
+  cd .\docs\
+  make html
+  ii .\_build\html\index.html
+  deactivate
+
