@@ -10,7 +10,6 @@ project.
 
     reStructuredText syntax overview <http://rest-sphinx-memo.readthedocs.org/>
     build_docs
-    git_tips
     installing_libvirt
     mgmtswitch
     cumulus-install
