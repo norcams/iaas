@@ -6,9 +6,12 @@ Testing in Vagrant
 
 Last changed: |date|
 
+
+.. NOTE::
+   Much of this page is automated in himlar/provision: `vagrant-allup.sh` and `vagrant-provision.sh`
+
 .. WARNING::
   This might be outdated.
-
 
 Connecting to Horizon
 =====================
