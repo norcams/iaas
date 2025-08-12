@@ -196,7 +196,7 @@ Management switches
 .. _IPMI BMC devices: https://en.wikipedia.org/wiki/Intelligent_Platform_Management_Interface#Baseboard_management_controller
 
 
-Test02 internal gateway network
+test02 internal gateway network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Internal network between virtual leaf node (test02-leaf-01) and the host
