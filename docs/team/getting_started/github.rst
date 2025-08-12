@@ -24,4 +24,4 @@ When you need to make a change the rule of thumb is the following:
 * All other changes will need a :abbr:`PR (pull request)` on Github
 
 * All code change should also be deployed first on a development location
-  (e.g. `dev01`)
+  (e.g. `test01`) or using Vagrant
