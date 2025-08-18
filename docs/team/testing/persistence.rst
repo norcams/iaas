@@ -62,3 +62,9 @@ Change volume type while attached / unattached:
   * rbd <-> mass-storage--ssd
 
 
+Save instance for later while freeing resources:
+
+Shelve running instance
+
+Unselve shelved instance
+
