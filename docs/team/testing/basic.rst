@@ -10,7 +10,7 @@ Import ED25519 public key from file
 
 Import RSA public key from file
 
-Create SSH security group and add IPv4 and IPv6 rule
+Create ICMP+SSH security group and add IPv4 and IPv6 rules
 
 Create instance
 

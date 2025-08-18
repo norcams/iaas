@@ -8,5 +8,7 @@ Testing
 
     basic
     persistence
+    reconfiguration
+    gui
     automated
 
