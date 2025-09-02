@@ -65,7 +65,7 @@ The reason for also including::
 
   192.168.0.250   api.iaas.intern
 
-is because the generated sertificate is a wildcard sertificate and will lead to an SSL error if OS_AUTH_URL in the openrc file for use by the Openstack client, is api.vagrant.iaas.intern. Instead, set it to api.iaas.intern
+is because the generated certificate is a wildcard certificate and will lead to an SSL error if OS_AUTH_URL in the openrc file for use by the Openstack client, is api.vagrant.iaas.intern. Instead, set it to api.iaas.intern
 
 sshuttle
 ========
