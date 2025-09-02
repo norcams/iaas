@@ -37,7 +37,7 @@ before the next one are started.
   * compute
 
 
-Tips: You may want to destroy all existing nodes and run vagrant box update prior to starting nodes. There is a script that automatically starts all nodes for you in the right order: himlar/provision/vagrant-allup.sh
+Tips: You may want to destroy all existing nodes and run vagrant box update prior to starting nodes. There is a script that automatically starts all nodes for you in the right order: himlar/provision/vagrant-allup.sh. Also check out the page "Vagrant with libvirt".
 
 See the below example using the default nodeset and some additional nodes (proxy and login):
 
@@ -141,8 +141,8 @@ Edit the [openstack] section (based on config.ini from proxy:/etc/himlarcli/conf
   default_domain=default
   region=vagrant
   domain=mgmt.vagrant.iaas.intern
-  compute_api_version=2.79
-  volume_api_version=3.50
+  compute_api_version=2.90
+  volume_api_version=3.68
   keystone_cachain=<himlar path>/provision/ca/intermediate/certs/ca-chain.cert.pem
 
 Install dependencies (RHEL9)::
@@ -162,6 +162,46 @@ Create virtualenv::
 Add to /etc/hosts on guest:
 
 See the next page.
+
+Openstack CLI setup on guest to use the Vagrant environment
+-----------------------------------------------------------
+
+admin_openrc::
+
+  export OS_USERNAME=admin
+  export OS_PROJECT_NAME=openstack
+  export OS_PASSWORD='admin_pass'
+  export OS_AUTH_URL=https://api.iaas.intern:5000/v3
+  export OS_IDENTITY_API_VERSION=3
+  export OS_CACERT=/home/ivarth/Projects/himlar/provision/ca/intermediate/certs/ca-chain.cert.pem
+  export OS_USER_DOMAIN_NAME=Default
+  export OS_PROJECT_DOMAIN_NAME=Default
+  export OS_INTERFACE=public
+  export OS_NO_CACHE=1
+
+Add additional API user with demo project using access.py in himlarcli::
+
+  ./access.py push --debug --email ivarth@uio.no --password insecure
+  ./access.py pop
+
+Note that the access and proxy Vagrant VMs/roles do not need to run for access.py to work in this way.
+
+ivarth_openrc::
+
+  export OS_USERNAME=ivarth@uio.no
+  export OS_PROJECT_NAME=DEMO-ivarth.uio.no
+  export OS_PASSWORD=insecure
+  export OS_AUTH_URL=https://api.iaas.intern:5000/v3
+  export OS_IDENTITY_API_VERSION=3
+  export OS_CACERT=/home/ivarth/Projects/himlar/provision/ca/intermediate/certs/ca-chain.cert.pem
+  export OS_USER_DOMAIN_NAME=dataporten
+  export OS_PROJECT_DOMAIN_NAME=dataporten
+  export OS_INTERFACE=public
+  export OS_NO_CACHE=1
+
+For further inspiration, check out the already existing openrc files for the root user inside vagrant VMs such as compute (from himlar)::
+
+  vagrant ssh compute; sudo -i; cat openrc
 
 Add flavors
 -----------
@@ -212,7 +252,7 @@ Privacy and security -> Security -> Manage certificates -> Authorities -> Import
 
 Select the intermediate.cert.pem file, then tick off all boxes.
 
-Access dashboard at https://dashboard.iaas.intern
+Access dashboard at https://dashboard.vagrant.iaas.intern
 
 Authenticate using: Keystone Credentials
 

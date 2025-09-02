@@ -2,6 +2,8 @@
 Setting up dataporten in vagrant
 ================================
 
+Note! [2025-09-02] Creating a dashboard user in Vagrant using Feide/Dataporten in the same way as in production, is no longer supported.
+
 First make sure that the `access` and `proxy`-node are parts of your :file:`HIMLAR_NODESET`.
 There should be at least one nodeset with `access` and `proxy` in :file:`nodes.yaml`.
 
