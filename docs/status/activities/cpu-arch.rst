@@ -209,7 +209,25 @@ For G3 det samme, men inkludere IceLake::
     - 'Icelake-Server'
 
 Ideen bak dette er tatt fra `Openstack Doc - CPU models`_
-      
+
+
+Sette traits på hypervisors
+---------------------------
+
+Vi definerer et par custom traits for å sørge for at scheduler
+filtrerer til riktig compute-node. For hver compute-node som skal ha
+m3-flavor::
+
+  openstack --os-placement-api-version 1.28 resource provider \
+      trait set --trait CUSTOM_NREC_FLAVOR_GEN_3 <uuid>
+
+Der ``uuid`` er id-en som man finner slik::
+
+  $ openstack resource provider list -c name -c uuid -f value | grep osl-compute-63
+  69b5e9c2-3fc1-4762-9347-c21a44b16f4d osl-compute-63.mgmt.osl.uhdc.no
+
+
+
 Nye flavors
 -----------
 
@@ -219,21 +237,13 @@ eksisterer.
 Jeg ønsker å definere nye flavors:
 
 * m3 flavor for G3-nodene. Her må vi sette en "trait" for at scheduler
-  skal velge riktig hypervisor::
+  skal velge riktig hypervisor (i YAML-fila)::
     
-    openstack flavor set m3 --property trait:HW_CPU_X86_AVX512-VPOPCNTDQ=required
-
-  Dette er basert på `Openstack Doc - CPU models`_ og::
-
-    diff /usr/share/libvirt/cpu_map/x86_Skylake-Server-noTSX-IBRS.xml /usr/share/libvirt/cpu_map/x86_Icelake-Server-noTSX.xml | grep feature | grep '>'
+    trait:CUSTOM_NREC_FLAVOR_GEN_3: 'required'
 
 * m2 flavor for G2-nodene. Her må også sette en trait::
 
-    openstack flavor set m2 --property trait:HW_CPU_X86_3DNOWPREFETCH=required
-
-  Dette er basert på `Openstack Doc - CPU models`_ og::
-    
-    diff /usr/share/libvirt/cpu_map/x86_Haswell.xml /usr/share/libvirt/cpu_map/x86_Skylake-Server-noTSX-IBRS.xml | grep feature | grep '>'
+    trait:CUSTOM_NREC_FLAVOR_GEN_2: 'required'
 
 * m1 flavor skal ikke endres
 
