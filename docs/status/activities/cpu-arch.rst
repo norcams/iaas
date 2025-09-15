@@ -2,7 +2,7 @@
 (KLADD) Endre CPU-arkitektur i central1
 =========================================
 
-Last changed: 2024-01-11
+Last changed: 2025-09-15
 
 
 Dagens tilstand
@@ -34,12 +34,141 @@ Meltdown og tilsvarende sikkerhetshull.
 
 Dernest ønsker jeg å kunne tilby nyere CPU-arkitektur for
 VIP-kunder. Dette kan gjøres ved å innføre "tiering". For
-enkelhetsskyld deler jeg opp hypervisor-nodene i tre generasjoner:
+enkelhetsskyld deler jeg opp hypervisor-nodene i tre generasjoner.
 
-1. G1 (Haswell): De eldste nodene
-2. G2 (CascadeLake): Ikke eldst, ikke nyest
-3. G3 (IceLake): De nyeste nodene
 
+Analyse av dagens maskinpark
+----------------------------
+
+For å finne ut hvilken cpu model som passer best for hver enkelt
+hypervisor skal man kunne kjøre::
+
+  virsh -c qemu:///system capabilities
+
+Resultat for bgo::
+
+  $ sudo ansible bgo-compute-central -m shell -a 'sudo virsh -c qemu:///system capabilities | grep /model | head -n 1'
+  bgo-compute-04 | CHANGED | rc=0 >>
+        <model>Broadwell-IBRS</model>
+  bgo-compute-03 | CHANGED | rc=0 >>
+        <model>Haswell-noTSX-IBRS</model>
+  bgo-compute-01 | CHANGED | rc=0 >>
+        <model>Haswell-noTSX-IBRS</model>
+  bgo-compute-02 | CHANGED | rc=0 >>
+        <model>Haswell-noTSX-IBRS</model>
+  bgo-compute-05 | CHANGED | rc=0 >>
+        <model>Broadwell-IBRS</model>
+  bgo-compute-06 | CHANGED | rc=0 >>
+        <model>Broadwell-IBRS</model>
+  bgo-compute-09 | CHANGED | rc=0 >>
+        <model>Haswell-noTSX-IBRS</model>
+  bgo-compute-08 | CHANGED | rc=0 >>
+        <model>Haswell-noTSX-IBRS</model>
+  bgo-compute-07 | CHANGED | rc=0 >>
+        <model>Haswell-noTSX-IBRS</model>
+  bgo-compute-10 | CHANGED | rc=0 >>
+        <model>Haswell-noTSX-IBRS</model>
+  bgo-compute-38 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  bgo-compute-40 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  bgo-compute-39 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  bgo-compute-59 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  bgo-compute-58 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  bgo-compute-60 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  bgo-compute-81 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  bgo-compute-82 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  bgo-compute-83 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  bgo-compute-84 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+
+Resultat for osl::
+
+  $ sudo ansible osl-compute-central -m shell -a 'sudo virsh -c qemu:///system capabilities | grep /model | head -n 1'
+  osl-compute-06 | CHANGED | rc=0 >>
+        <model>Broadwell-IBRS</model>
+  osl-compute-04 | CHANGED | rc=0 >>
+        <model>Broadwell-IBRS</model>
+  osl-compute-05 | CHANGED | rc=0 >>
+        <model>Broadwell-IBRS</model>
+  osl-compute-08 | CHANGED | rc=0 >>
+        <model>Skylake-Server-IBRS</model>
+  osl-compute-07 | CHANGED | rc=0 >>
+        <model>Skylake-Server-IBRS</model>
+  osl-compute-43 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  osl-compute-10 | CHANGED | rc=0 >>
+        <model>Skylake-Server-IBRS</model>
+  osl-compute-09 | CHANGED | rc=0 >>
+        <model>Skylake-Server-IBRS</model>
+  osl-compute-44 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  osl-compute-45 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  osl-compute-46 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  osl-compute-47 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  osl-compute-48 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  osl-compute-49 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  osl-compute-50 | CHANGED | rc=0 >>
+        <model>Cascadelake-Server-noTSX</model>
+  osl-compute-57 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  osl-compute-58 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  osl-compute-60 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  osl-compute-59 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  osl-compute-61 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  osl-compute-62 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  osl-compute-63 | CHANGED | rc=0 >>
+        <model>Broadwell-noTSX-IBRS</model>
+  osl-compute-65 | CHANGED | rc=0 >>
+        <model>Skylake-Server-IBRS</model>
+  osl-compute-64 | CHANGED | rc=0 >>
+        <model>Skylake-Server-IBRS</model>
+  osl-compute-66 | CHANGED | rc=0 >>
+        <model>Skylake-Server-IBRS</model>
+
+
+Basert på dette vil vi fordele det slik:
+
++------------+--------------------------+------------------------+
+| Aggregat   | CPU model                | Compute hosts          |
++============+==========================+========================+
+| central1   | Haswell-noTSX            | Alle                   |
++------------+--------------------------+------------------------+
+| central2   | Cascadelake-Server-noTSX | * bgo-compute-38..40   |
+|            |                          | * bgo-compute-58..60   |
+|            |                          | * bgo-compute-81..84   |
+|            |                          | * osl-compute-09..10   |
+|            |                          | * osl-compute-43..50   |
+|            |                          | * osl-compute-57..66   |
++------------+--------------------------+------------------------+
+| central3   | Broadwell-noTSX-IBRS     | * bgo-compute-81..84   |
+|            |                          | * osl-compute-57..63   |
++------------+--------------------------+------------------------+
+
+De tre generasjonene:
+
+1. G1 (Haswell-noTSX): De eldste nodene
+2. G2 (Cascadelake-Server-noTSX): Ikke eldst, ikke nyest
+3. G3 (Broadwell-noTSX-IBRS): De nyeste nodene
+
+	
 Endringer i nova.conf
 ---------------------
 
