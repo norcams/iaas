@@ -146,26 +146,26 @@ Resultat for osl::
 
 Basert på dette vil vi fordele det slik:
 
-+------------+--------------------------+------------------------+
-| Aggregat   | CPU model                | Compute hosts          |
-+============+==========================+========================+
-| central1   | Haswell-noTSX            | Alle                   |
-+------------+--------------------------+------------------------+
-| central2   | Cascadelake-Server-noTSX | * bgo-compute-38..40   |
-|            |                          | * bgo-compute-58..60   |
-|            |                          | * bgo-compute-81..84   |
-|            |                          | * osl-compute-09..10   |
-|            |                          | * osl-compute-43..50   |
-|            |                          | * osl-compute-57..66   |
-+------------+--------------------------+------------------------+
-| central3   | Broadwell-noTSX-IBRS     | * bgo-compute-81..84   |
-|            |                          | * osl-compute-57..63   |
-+------------+--------------------------+------------------------+
++------------+---------------------------+------------------------+
+| Aggregat   | CPU model                 | Compute hosts          |
++============+===========================+========================+
+| central1   | Haswell-noTSX             | Alle                   |
++------------+---------------------------+------------------------+
+| central2   | Skylake-Server-IBRS-noTSX | * bgo-compute-38..40   |
+|            |                           | * bgo-compute-58..60   |
+|            |                           | * bgo-compute-81..84   |
+|            |                           | * osl-compute-09..10   |
+|            |                           | * osl-compute-43..50   |
+|            |                           | * osl-compute-57..66   |
++------------+---------------------------+------------------------+
+| central3   | Broadwell-noTSX-IBRS      | * bgo-compute-81..84   |
+|            |                           | * osl-compute-57..63   |
++------------+---------------------------+------------------------+
 
 De tre generasjonene:
 
 1. G1 (Haswell-noTSX): De eldste nodene
-2. G2 (Cascadelake-Server-noTSX): Ikke eldst, ikke nyest
+2. G2 (Skylake-Server-IBRS-noTSX): Ikke eldst, ikke nyest
 3. G3 (Broadwell-noTSX-IBRS): De nyeste nodene
 
 	
