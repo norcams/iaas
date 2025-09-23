@@ -216,21 +216,11 @@ Add test image
 You will need a public cirros image to test with. One way to quickly fix this are to
 use :file:`himlarcli/image.py` and then just run::
 
-  ./image.py update -i vagrant.yaml
+  ./image.py update --domain default -i vagrant.yaml
 
 This will add a test image called "CirrOS vagrant image"
 
-This will not set an owner to the image, which may cause and error in the dashboard when viewing images.
-
-Fix: Set the openstack project as owner for the image:
-
-openstack project list to find the ID for the project "openstack", for instance 8c8797024bc24587aa9b8052c293d18f
-
-then::
-
-  openstack image set --property owner=8c8797024bc24587aa9b8052c293d18f 'CirrOS vagrant image'
-
-Alternatively, the CirrOS image can be uploaded like the following, which correctly sets the owner to 'openstack':
+Alternatively, the CirrOS image can be uploaded like the following:
 
 at [root@vagrant-proxy-01 ~(keystone_vagrant_admin)]$::
 
