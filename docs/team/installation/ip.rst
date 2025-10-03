@@ -24,8 +24,11 @@ Public IPv4 network.
  bgo      prod       158.39.74.0/24
  bgo      prod       158.39.201.0/24
  bgo      lhc        109.105.127.128/26
- bgo      reserved   158.37.43.0/24
- -        elixir     158.37.43.0/28
+ bgo      elixir     158.37.43.0/28
+ bgo      reserved   158.37.43.16/28
+ bgo      reserved   158.37.43.32/27
+ bgo      reserved   158.37.43.64/26
+ bgo      reserved   158.37.43.128/25
  osl      prod       158.37.63.0/24
  osl      prod       158.37.66.0/24
  osl/bgo  reserved   158.37.67.0/24
