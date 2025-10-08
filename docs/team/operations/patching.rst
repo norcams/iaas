@@ -258,6 +258,8 @@ Compute (dedicated compute resources/HPC)
   +------------------+--------+----------------------------------------+
   | vgpu1            | ALL    | notify/maintenance/dedicated.txt       |
   +------------------+--------+----------------------------------------+
+  | vgpu_l40s1       | ALL    | notify/maintenance/dedicated.txt       |
+  +------------------+--------+----------------------------------------+
   | vgpu161          | bgo    | notify/maintenance/dedicated.txt       |
   +------------------+--------+----------------------------------------+
 
