@@ -256,11 +256,11 @@ Compute (dedicated compute resources/HPC)
   +------------------+--------+----------------------------------------+
   | shpc_ram1        | ALL    | notify/maintenance/shpc.txt            |
   +------------------+--------+----------------------------------------+
-  | vgpu1            | ALL    | notify/maintenance/dedicated.txt       |
+  | vgpu1            | ALL    | notify/maintenance/vgpu_patching.txt   |
   +------------------+--------+----------------------------------------+
-  | vgpu_l40s1       | ALL    | notify/maintenance/dedicated.txt       |
+  | vgpu_l40s1       | ALL    | notify/maintenance/vgpu_patching.txt   |
   +------------------+--------+----------------------------------------+
-  | vgpu161          | bgo    | notify/maintenance/dedicated.txt       |
+  | vgpu161          | bgo    | notify/maintenance/vgpu_patching.txt   |
   +------------------+--------+----------------------------------------+
 
 #. Clean state database (only once per region!)::
