@@ -5,6 +5,28 @@ NREC compute host with full instance disk
 Can only happen on compute node with instances with local os-disk,
 e.g. atlas, alice, shpc, vgpu, etc
 
+Quick fix
+---------
+
+There is a 10G swapfile in /var/lib/nova/instances. Free up some space with and run fstrim with:
+
+.. code:: bash
+
+    puppet agent --disable "temp remove swap"
+    swapoff -v /var/lib/nova/instances/swapfile
+    rm -f /var/lib/nova/instances/swapfile
+    virsh resume <instance-name>
+    virsh domfstrim <instance-name>
+    puppet agent --enable
+    puppet agent -t
+
+Puppet will fix swap for you.
+
+Alternative approach
+--------------------
+
+This will take some time to do.
+
 #. backup the smalles disk to cephfs
 #. delete the disk for the instance with disk backup
 #. run :file:`virsh destroy <dom>`
@@ -14,25 +36,3 @@ e.g. atlas, alice, shpc, vgpu, etc
 #. start the destroyed instance with openstack cli
 
 It will take 1-2 hours to fix a alice compute node with 180GB os-disk.
-
-Alternative approach
---------------------
-
-There is a 10G swapfile in /var/lib/nova/instances. Free up some space with:
-
-.. code:: bash
-
-    puppet agent --disable "temp remove swap"
-    swapoff -v /var/lib/nova/instances/swapfile
-    rm -f /var/lib/nova/instances/swapfile
-
-fstrim instances, then create swapfile:
-
-.. code:: bash
-
-      dd if=/dev/zero of=/var/lib/nova/instances/swapfile bs=1024 count=10485760
-      chmod 600 /var/lib/nova/instances/swapfile
-      mkswap /var/lib/nova/instances/swapfile
-      swapon /var/lib/nova/instances/swapfile
-      swapon --show
-      puppet agent --enable
