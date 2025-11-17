@@ -20,7 +20,8 @@ There is a 10G swapfile in /var/lib/nova/instances. Free up some space with and 
     puppet agent --enable
     puppet agent -t
 
-Puppet will fix swap for you.
+Puppet will fix swap for you. You will need to resume all other instances on the compute
+node manually as well.
 
 Alternative approach
 --------------------
