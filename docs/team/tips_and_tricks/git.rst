@@ -17,5 +17,5 @@ To fix
 .. code:: bash
 
   git pull --autostash upstream master
-  git push norcams master
+  git push upstream master
 
