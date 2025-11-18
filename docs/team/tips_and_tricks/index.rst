@@ -26,3 +26,4 @@ Tips and tricks
     openstack_db_hacks
     bgo-login-02
     influxdb
+    git
