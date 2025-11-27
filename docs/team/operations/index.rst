@@ -40,3 +40,4 @@ Operations
     policy-shared-secgroups
     kompetansematrise
     vgpu-sriov
+    sensu
