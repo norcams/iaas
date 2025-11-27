@@ -28,10 +28,12 @@ Silence a check for a week::
 
 This silence will be removed if the check is resolved OR after a week.
 
-Useing the option ``--no-resolve`` will only remove the silence after a week.
+Using the option ``--no-resolve`` will only remove the silence after a week.
 
 We can also set the ``-r`` for a reason (default 'silenced by himlarcli') and ``-e``
 to set the expire time to shorter than a week (a week is max and default).
+
+To silence all checks on a host we can use ``-C '*'`` (remember to quote the star!).
 
 Silence known issues
 ====================
