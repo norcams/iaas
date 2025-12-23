@@ -2,7 +2,7 @@
 Vakt
 ====
 
-Sist endret: 2025-06-02
+Sist endret: 2025-12-23
 
 Mange i NREC deltar i en vaktordning i arbeidstiden. Vakten går over en hel
 uke.
@@ -13,12 +13,12 @@ Rotasjon
 =========== === === ===
 Deltaker    Uke Uke Uke
 =========== === === ===
-Terje        33  39  45
-Lennart      34  40  46
-Mikael       35  41  47
-Erik         36  42  48
-Ivar         37  43  49
-Trond        38  44  50
+Terje        51   7  13
+Lennart       2   8  14
+Mikael        3   9  15
+Erik          4  10  16
+Ivar          5  11  17
+Trond         6  12  18
 =========== === === ===
 
 Instruks
