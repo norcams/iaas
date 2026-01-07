@@ -21,3 +21,4 @@ project.
     designate-dashboard-plugin
     start-swicth-install.rst
     dashboard-themes
+    dangling-volume-attachment-remedy
