@@ -16,6 +16,7 @@ To fix
 
 .. code:: bash
 
+  git config pull.rebase true # needed once
   git pull --autostash upstream master
   git push upstream master
 
