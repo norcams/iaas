@@ -2,13 +2,15 @@
 Persistence
 ===========
 
-Snapshot instance (cold / shutoff + warm / running)
+Snapshot instance (warm / running + cold / shutoff)
 
-Snapshot instance (cold / shutoff + warm / running) with attached volume
+Snapshot instance (warm / running + cold / shutoff) with attached volume(s)
 
-Shutoff and resume instance
+Power off / stop and power on / start instance
 
-Pause and resume instance
+Suspend / hibernate and resume instance (suspend to disk)
+
+Pause and unpause instance (suspend to RAM)
 
 New instance from snapshot
 
@@ -20,16 +22,12 @@ Download volume snapshot
 
 Update instance packages
 
-Read from attached volume
-
-Write to attached volume
-
 
 Live networking:
 
-Remove IPv4 and IPv6 ICMP security group rule to instance and verify
+Remove IPv4 and IPv6 ICMP+SSH security group rules to instance and verify
 
-Add IPv4 and IPv6 ICMP security group rule to instance and verify
+Add IPv4 and IPv6 ICMP+SSH security group rules to instance and verify
 
 
 Verify QEMU guest agent is running

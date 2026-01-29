@@ -22,6 +22,10 @@ Create volume
 
 Attach volume to instance
 
+Read and write to volume
+
+Simple read and write benchmark of volume
+
 Detach volume
 
 Delete volume
