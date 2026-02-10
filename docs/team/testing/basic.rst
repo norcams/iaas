@@ -12,6 +12,8 @@ Import RSA public key from file
 
 Create ICMP+SSH security group and add IPv4 and IPv6 rules
 
+Upload and download a VM instance image
+
 Create instance
 
 SSH to instance (IPv4)

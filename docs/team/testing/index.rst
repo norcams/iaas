@@ -7,9 +7,9 @@ Testing
     :maxdepth: 2
 
     basic
-    performance
     persistence
     reconfiguration
     gui
+    performance
     repositories
 

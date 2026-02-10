@@ -2,6 +2,12 @@
 Persistence
 ===========
 
+VM image:
+
+Upload and download a VM image
+
+VM instance:
+
 Snapshot instance (warm / running + cold / shutoff)
 
 Snapshot instance (warm / running + cold / shutoff) with attached volume(s)
@@ -37,7 +43,7 @@ Modify instance while running:
 
 Install secondary pubkey to cloud user and use to login SSH
 
-Install secondary user and pubkey in instance and use to login SSH
+Install secondary SSH user and pubkey in instance and use to login SSH
 
 Set root password with --password and verify
 
@@ -62,7 +68,7 @@ Change volume type while attached / unattached:
 
 Save instance for later while freeing resources:
 
-Shelve running instance
+Shelve instance
 
 Unselve shelved instance
 
