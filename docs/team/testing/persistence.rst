@@ -14,7 +14,7 @@ Snapshot instance (warm / running + cold / shutoff) with attached volume(s)
 
 Power off / stop and power on / start instance
 
-Suspend / hibernate and resume instance (suspend to disk)
+(Skipped, since Policy doesn't allow os_compute_api:os-suspend-server:suspend to be performed 2026-02-10) Suspend / hibernate and resume instance (suspend to disk)
 
 Pause and unpause instance (suspend to RAM)
 
@@ -50,6 +50,10 @@ Set root password with --password and verify
 
 Modify instance while preserving network:
 
+Given no volumes attached:
+
+Note! Rebuild is verified to hang if volume(s) are attached to the instance prior to running the rebuild command. However, resize works with volumes attached (test01 2026-02-10).
+
 Rebuild instance with user data to change root password and verify
 
 Rebuild instance from snapshot and login SSH
@@ -58,6 +62,7 @@ Rebuild instance with new pubkey and login SSH
 
 Resize instance to another flavor within the same aggregate
 
+Note! Changing volume type while attached is not allowed. An error message will be shown (2026-02-10 test01)
 
 Change volume type while attached / unattached:
 
