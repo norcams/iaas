@@ -14,6 +14,7 @@ Snapshot instance (warm / running + cold / shutoff) with attached volume(s)
 
 Power off / stop and power on / start instance
 
+2026-02-11: The reason for suspend / resume disabled is due to it preventing live migration
 (Skipped, since Policy doesn't allow os_compute_api:os-suspend-server:suspend to be performed 2026-02-10) Suspend / hibernate and resume instance (suspend to disk)
 
 Pause and unpause instance (suspend to RAM)
