@@ -2,11 +2,8 @@
 Persistence
 ===========
 
-VM image:
-
-Upload and download a VM image
-
-VM instance:
+Operate instance
+================
 
 Snapshot instance (warm / running + cold / shutoff)
 
@@ -29,29 +26,17 @@ Download volume snapshot
 
 Update instance packages
 
-
-Live networking:
-
 Remove IPv4 and IPv6 ICMP+SSH security group rules to instance and verify
 
 Add IPv4 and IPv6 ICMP+SSH security group rules to instance and verify
 
-
 Verify QEMU guest agent is running
-
-
-Modify instance while running:
 
 Install secondary pubkey to cloud user and use to login SSH
 
 Install secondary SSH user and pubkey in instance and use to login SSH
 
 Set root password with --password and verify
-
-
-Modify instance while preserving network:
-
-Given no volumes attached:
 
 Note! Rebuild is verified to hang if volume(s) are attached to the instance prior to running the rebuild command. However, resize works with volumes attached (test01 2026-02-10).
 
@@ -61,20 +46,108 @@ Rebuild instance from snapshot and login SSH
 
 Rebuild instance with new pubkey and login SSH
 
-Resize instance to another flavor within the same aggregate
+Resize instance to another flavor within the same aggregate with volumes attached
 
-Note! Changing volume type while attached is not allowed. An error message will be shown (2026-02-10 test01)
+Note! Changing volume type (re-type) while attached is not allowed. An error message will be shown (2026-02-10 test01)
 
-Change volume type while attached / unattached:
+Change volume type (re-type) while attached / unattached:
 
   * mass-storage-default <-> rbd
   * mass-storage-default <-> mass-storage-ssd
   * rbd <-> mass-storage--ssd
 
-
-Save instance for later while freeing resources:
-
 Shelve instance
 
 Unselve shelved instance
+
+Backup & Restore instance
+
+Backup instance (warm / running + cold / shutoff)
+
+Backup instance (warm / running + cold / shutoff) with attached volume(s)
+
+Download and Upload instance backup file
+
+Download:
+
+Download raw and qcow2 image to file using openstack cli and glanceclient
+
+Upload:
+
+Create image from file using openstack cli: openstack image create --file
+
+Create image from file using glanceclient: glance image-create --file
+
+TODO: Create image from file to existing image ID using glanceclient: glance image-uplaod --file ID
+
+Rebuld instance from uploaded image: openstack server rebuild --image
+
+TODO: Rebuld instance from uploaded image and preserve root disk: openstack server rebuild --image --preserve-ephermal
+
+Operate image
+=============
+
+Upload and Download image
+
+Operate volume
+==============
+
+TODO: Backup & Restore volume using volume backup service:
+
+TODO: Backup volume: openstack volume backup create (incremental and not)
+
+TODO: Backup volume when attached / in-use: openstack volume backup create --force
+
+TODO: Backup volume from snapshot: openstack volume backup create --snapshot
+
+TODO: Backup volume from snapshot when volume attached: openstack volume backup create --snapshot --force
+
+TODO: Convert volume snapshot to volume
+
+TODO: Restore volume backup to volume
+
+Create qcow2 image from volume
+
+Download and Upload image backup of volume
+
+Download:
+
+Same as with operating instance
+
+Upload:
+
+Create image from file using openstack cli: openstack image create --file
+
+Create image from file using glanceclient: glance image-create --file
+
+#Create image from file to existing image ID using glanceclient: glance image-uplaod --file ID
+
+Create image from volume when volume not attached: openstack image create --volume
+
+Create volume from image: openstack volume create --image
+
+TODO: Create volume from snapshot: openstack volume create --snapshot
+
+TODO: Clone volume: openstack volume create --source
+
+TODO: Revert a volume from snapshot (in-place)
+
+TODO: Create volume from backup: openstack volume create --backup --os-volume-api-version 3.47
+
+Create volume snapshot from volume: openstack volume snapshot create --volume
+
+TODO: Create volume snapshot from volume when attached: openstack volume snapshot create --volume --force
+
+TODO: Create volume backup from snapshot of volume: openstack volume backup create --snapshot
+
+TODO: Create volume backup from snapshot of volume when volume in-use: openstack volume backup create --snapshot --force
+
+TODO: Restore volume backup to volume
+
+TOOD: Restore volume backup to volume while volume attached: openstack volume backup restore --force
+
+Operate Object Storage
+======================
+
+TODO: Backup & Restore object
 
