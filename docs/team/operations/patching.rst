@@ -46,6 +46,15 @@ Make sure all nodes will autostart with::
 Normal OS patching
 ==================
 
+To show maintenance page on dashboard::
+
+  touch /var/www/maintenance
+
+remove the page with::
+
+  rm /var/www/maintenance
+
+
 .. IMPORTANT::
   When we patch BGO and OSL at the same time, make sure to keep one NS node and
   one db-global node up at all time! Also make sure galera cluster size 3 before
