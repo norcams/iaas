@@ -66,7 +66,7 @@ Backup instance (warm / running + cold / shutoff)
 
 Backup instance (warm / running + cold / shutoff) with attached volume(s)
 
-Download and Upload instance backup file
+Download and Upload instance snapshot and backup image file
 
 Download:
 
@@ -83,11 +83,6 @@ TODO: Create image from file to existing image ID using glanceclient: glance ima
 Rebuld instance from uploaded image: openstack server rebuild --image
 
 TODO: Rebuld instance from uploaded image and preserve root disk: openstack server rebuild --image --preserve-ephermal
-
-Operate image
-=============
-
-Upload and Download image
 
 Operate volume
 ==============
