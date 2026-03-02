@@ -38,11 +38,11 @@ Install secondary SSH user and pubkey in instance and use to login SSH
 
 Set root password with --password and verify
 
-Note! Rebuild is verified to hang if volume(s) are attached to the instance prior to running the rebuild command. However, resize works with volumes attached (test01 2026-02-10).
+Note! Rebuild is verified to hang if volume(s) are attached to the instance prior to running the rebuild command. However, resize works with volumes attached (test01 2026-02-10). If rebuild with attached volume succeeds, it seems to change the root device from /dev/sda to /dev/vda which prevents any future volume attachments (Ubuntu VM, osl 2026-02-27).
 
 Rebuild instance with user data to change root password and verify
 
-Rebuild instance from snapshot and login SSH
+Rebuild instance from backup / snapshot and login SSH
 
 Rebuild instance with new pubkey and login SSH
 
@@ -80,7 +80,7 @@ Create image from file using glanceclient: glance image-create --file
 
 TODO: Create image from file to existing image ID using glanceclient: glance image-uplaod --file ID
 
-Rebuld instance from uploaded image: openstack server rebuild --image
+Rebuild instance from uploaded image: openstack server rebuild --image
 
 TODO: Rebuld instance from uploaded image and preserve root disk: openstack server rebuild --image --preserve-ephermal
 
