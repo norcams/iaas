@@ -49,6 +49,7 @@ Rebuild instance with new pubkey and login SSH
 Resize instance to another flavor within the same aggregate with volumes attached
 
 Note! Changing volume type (re-type) while attached is not allowed. An error message will be shown (2026-02-10 test01)
+Note! Re-type of a volume is not allowed if the volume has snapshot(s) (2026-03-03 prod)
 
 Change volume type (re-type) while attached / unattached:
 
