@@ -2,6 +2,8 @@
 GUI (TODO)
 ==========
 
+The Graphical User Interface (GUI) tests implemented in nrec-tests
+
 Login to dashboard.nrec.no
 
 Change between regions

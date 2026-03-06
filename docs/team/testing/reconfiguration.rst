@@ -2,6 +2,8 @@
 Reconfiguration (TODO)
 ======================
 
+The reconfiguration tests implemented in nrec-tests
+
 Move instance and data between regions
 ======================================
 

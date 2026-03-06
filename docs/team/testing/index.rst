@@ -29,3 +29,5 @@ Storage test (Terraform + Ansible): https://github.com/norcams/nrec-storagetest
 
 vGPU test (Terraform): https://github.com/norcams/tf-vgputest
 
+vGPU performance benchmarks (Python): https://github.com/caleno/tf-vgpu-bench
+

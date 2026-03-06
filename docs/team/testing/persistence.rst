@@ -2,6 +2,8 @@
 Persistence
 ===========
 
+The persistence tests implemented in nrec-tests
+
 Operate instance
 ================
 
@@ -46,7 +48,13 @@ Rebuild instance from backup / snapshot and login SSH
 
 Rebuild instance with new pubkey and login SSH
 
-Resize instance to another flavor within the same aggregate with volumes attached
+Resize instance to another flavor within the same aggregate with volumes attached (assuming resize cold instance with volumes attached will work if resize warm instance with volumes attached works. Assuming resize cold / warm without volumes attached will work if resize cold / warm instance with volumes attached works)
+
+TODO: Resize instance with local disk to another flavor with local disk within the same aggregate
+
+TODO: Live migrate instance between two hosts
+
+TODO: Cold migrate instance between two hosts
 
 Note! Changing volume type (re-type) while attached is not allowed. An error message will be shown (2026-02-10 test01)
 Note! Re-type of a volume is not allowed if the volume has snapshot(s) (2026-03-03 prod)
@@ -69,11 +77,7 @@ Backup instance (warm / running + cold / shutoff) with attached volume(s)
 
 Download and Upload instance snapshot and backup image file
 
-Download:
-
 Download raw and qcow2 image to file using openstack cli and glanceclient
-
-Upload:
 
 Create image from file using openstack cli: openstack image create --file
 
@@ -105,12 +109,6 @@ TODO: Restore volume backup to volume
 Create qcow2 image from volume
 
 Download and Upload image backup of volume
-
-Download:
-
-Same as with operating instance
-
-Upload:
 
 Create image from file using openstack cli: openstack image create --file
 
