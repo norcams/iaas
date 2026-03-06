@@ -39,7 +39,7 @@ Operate instance
 
 - Set root password with --password and verify
 
-  Note! Rebuild is verified to hang if volume(s) are attached to the instance prior to running the rebuild command. However, resize works with volumes attached (test01 2026-02-10). If rebuild with attached volume succeeds, it seems to change the root device from /dev/sda to /dev/vda which prevents any future volume attachments (Ubuntu VM, osl 2026-02-27).
+  Note! Rebuild is verified to hang if volume(s) are attached to the instance prior to running the rebuild command. However, resize works with volumes attached (test01 2026-02-10). If rebuild with attached volume succeeds, it seems to change the root device from /dev/sda to /dev/vda which prevents any future volume attachments (Ubuntu VM, osl 2026-02-27). If setting openstack image set --property hw_disk_bus=scsi to the image used in rebuild before the rebuild, the rebuild will keep the root device at /dev/sda and volume attachments will work (2026-03-06 prod)
 
 - Rebuild instance with user data to change root password and verify
 
