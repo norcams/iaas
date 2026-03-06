@@ -13,8 +13,7 @@ Operate instance
 
 - Power off / stop and power on / start instance
 
-2026-02-11: The reason for suspend / resume disabled is due to it preventing live migration
-(Skipped, since Policy doesn't allow os_compute_api:os-suspend-server:suspend to be performed 2026-02-10) Suspend / hibernate and resume instance (suspend to disk)
+  2026-02-11: The reason for suspend / resume disabled is due to it preventing live migration (Skipped, since Policy doesn't allow os_compute_api:os-suspend-server:suspend to be performed 2026-02-10) Suspend / hibernate and resume instance (suspend to disk)
 
 - Pause and unpause instance (suspend to RAM)
 
@@ -40,7 +39,7 @@ Operate instance
 
 - Set root password with --password and verify
 
-- Note! Rebuild is verified to hang if volume(s) are attached to the instance prior to running the rebuild command. However, resize works with volumes attached (test01 2026-02-10). If rebuild with attached volume succeeds, it seems to change the root device from /dev/sda to /dev/vda which prevents any future volume attachments (Ubuntu VM, osl 2026-02-27).
+  Note! Rebuild is verified to hang if volume(s) are attached to the instance prior to running the rebuild command. However, resize works with volumes attached (test01 2026-02-10). If rebuild with attached volume succeeds, it seems to change the root device from /dev/sda to /dev/vda which prevents any future volume attachments (Ubuntu VM, osl 2026-02-27).
 
 - Rebuild instance with user data to change root password and verify
 
@@ -56,8 +55,8 @@ Operate instance
 
 - TODO: Cold migrate instance between two hosts
 
-- Note! Changing volume type (re-type) while attached is not allowed. An error message will be shown (2026-02-10 test01)
-- Note! Re-type of a volume is not allowed if the volume has snapshot(s) (2026-03-03 prod)
+  Note! Changing volume type (re-type) while attached is not allowed. An error message will be shown (2026-02-10 test01)
+  Note! Re-type of a volume is not allowed if the volume has snapshot(s) (2026-03-03 prod)
 
 - Change volume type (re-type) while attached / unattached:
 

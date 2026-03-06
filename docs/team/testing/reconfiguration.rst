@@ -13,8 +13,8 @@ Move instance and data between regions
 
 - Create instance in new region from uploaded snapshot
 
-- Move move instance and data between projects
-- ============================================
+Move move instance and data between projects
+============================================
 
 - Upload instance snapshot to another project
 
