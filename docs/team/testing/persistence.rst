@@ -113,7 +113,7 @@ Operate volume
 
 - Create image from file using glanceclient: glance image-create --file
 
-- #Create image from file to existing image ID using glanceclient: glance image-uplaod --file ID
+- TODO: Create image from file to existing image ID using glanceclient: glance image-uplaod --file ID
 
 - Create image from volume when volume not attached: openstack image create --volume
 
