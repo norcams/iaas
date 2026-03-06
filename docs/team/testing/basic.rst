@@ -4,20 +4,35 @@ Basic
 
 The basic tests implemented in nrec-tests
 
--Generate ED25519 keypair
--Generate RSA keypair
--Import ED25519 public key from file
--Import RSA public key from file
--Create ICMP+SSH security group and add IPv4 and IPv6 rules
--Upload and download a VM instance image
--Create instance
--SSH to instance (IPv4)
--SSH to instance (IPv6)
--Create volume
--Attach volume to instance
--Read and write to volume
--Simple read and write benchmark of volume
--Detach volume
--Delete volume
--Delete instance
+- Generate ED25519 keypair
+
+- Generate RSA keypair
+
+- Import ED25519 public key from file
+
+- Import RSA public key from file
+
+- Create ICMP+SSH security group and add IPv4 and IPv6 rules
+
+- Upload and download a VM instance image
+
+- Create instance
+
+- SSH to instance (IPv4)
+
+- SSH to instance (IPv6)
+
+- Create volume
+
+- Attach volume to instance
+
+- Read and write to volume
+
+- Simple read and write benchmark of volume
+
+- Detach volume
+
+- Delete volume
+
+- Delete instance
 
