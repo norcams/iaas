@@ -32,10 +32,10 @@ Rutine
 
 * Lav: Bruker varsles, ingen videre oppfølging
 
-Minidump
+Minnedump
 ========
 
-Blir du bed om å ta en minidump så kan du bruke virsh dump 
+Blir du bed om å ta en minnedump så kan du bruke virsh dump 
 
 #. Finn ut hvilken instans det er, vanligvis utfra IP:
 
@@ -52,7 +52,7 @@ Blir du bed om å ta en minidump så kan du bruke virsh dump
     $ openstack server show -f shell <instance-id> | grep instance_name
     os_ext_srv_attr_instance_name="instance-xxxxxxx"
 
-#. Ta minidump på hypervisor der det finnes plass eller ev. bruke cephfs. F.eks.
+#. Ta minnedump på hypervisor der det finnes plass eller ev. bruke cephfs. F.eks.
 
    * Lag mappe:: 
        
@@ -60,4 +60,4 @@ Blir du bed om å ta en minidump så kan du bruke virsh dump
 
    * Ta dump::
        
-      virsh dump --domain instance-xxxxxxx --file dumps/<name>.dump
+      virsh dump --memory-only --domain instance-xxxxxxx --file dumps/<name>.dump
