@@ -31,3 +31,33 @@ Rutine
 * Middels: Bruker varsles og følges opp dersom det er behov.
 
 * Lav: Bruker varsles, ingen videre oppfølging
+
+Minidump
+========
+
+Blir du bed om å ta en minidump så kan du bruke virsh dump 
+
+#. Finn ut hvilken instans det er, vanligvis utfra IP:
+
+   * IPv4::
+
+       openstack server list --all --ip <ip-address-regex>
+
+   * IPv6::
+
+       openstack server list --all --ip6 <ip-address-regex>
+
+#. Finn ut prosjekt-ID::
+
+    $ openstack server show -f shell <instance-id> | grep instance_name
+    os_ext_srv_attr_instance_name="instance-xxxxxxx"
+
+#. Ta minidump på hypervisor der det finnes plass eller ev. bruke cephfs. F.eks.
+
+   * Lag mappe:: 
+       
+      cd /var/lib/nova/instances && mkdir dumps
+
+   * Ta dump::
+       
+      virsh dump --domain instance-xxxxxxx --file dumps/<name>.dump
