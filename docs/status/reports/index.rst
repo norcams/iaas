@@ -37,6 +37,15 @@ Ukesrapport
 
     2021/uke_*
 
+2020
+----
+
+.. toctree::
+    :glob:
+    :maxdepth: 1
+
+    2020/uke_*
+
 2019
 ----
 
