@@ -156,7 +156,7 @@ Patching other controller nodes
 
 #. Reboot the controller node::
 
-     sudo ansible-playbook -e "myhosts=${location}-controller-<id>" lib/reboot.yaml
+     sudo ansible-playbook -e "myhosts=${location}-controller-<id>" -e silence_sensu=false lib/reboot.yaml
 
 
 None disruptive patching
