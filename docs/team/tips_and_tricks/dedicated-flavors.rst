@@ -9,7 +9,7 @@ Has the SHPC-like properties:
 - Pinned CPU cores to VMs
 - Enabled static huge pages
 - Disabled transparent huge pages
-- Hypervisor selected based on trait and aggregate einstance extra specs
+- VM provisioned on hypervisor based on trait (only) and/or aggregate instance extra specs
 
 Atlas hardware and flavors class
 --------------------------------
@@ -53,14 +53,14 @@ How the flavors for atlas3 were made
 
 2. Configure hypervisor with hugepagesz and hugepages
 
-Example:
+Example::
 
-Set a large hugepages size (hugepagesz): 2M (Mebibyte)
+  Set a large hugepages size (hugepagesz): 2M (Mebibyte)
 
-Determine the number of hugepages (hugepages) according to total RAM specification (as from dmidecode) and a large enough (non-hugepages) RAM for OS:
+  Determine the number of hugepages (hugepages) according to total RAM specification (as from dmidecode) and a large enough (non-hugepages) RAM for OS:
 
-# hugepages = floor ( 1024 * ( total RAM GiB - OS RAM GiB) / hugepagesz MiB )
-# hugepages = floor ( 1024 * ( 768 * 32 ) / 2 ) = 376832
+  # hugepages = floor ( 1024 * ( total RAM GiB - OS RAM GiB) / hugepagesz MiB )
+  # hugepages = floor ( 1024 * ( 768 * 32 ) / 2 ) = 376832
 
 3. RAM used for hugepages should not be larger than the RAM available for VMs according to Placement (openstack resource provider inventory list <resource provider uuid>). In the example, the RAM used for hugepages will be: 1024 * ( 768-32 ) = 753664 Mebibyte, which is less than the MEMORY_MB max_unit 772785 Mebibyte reported from openstack resource provider inventory list <resource provider uuid>
 
@@ -82,9 +82,7 @@ Determine the number of hugepages (hugepages) according to total RAM specificati
 Flavor specific configuration for atlas3:
 .........................................
 
-- himlar
-
-cat hieradata/osl/roles/compute-atlas3.yaml::
+- himlar (hieradata/osl/roles/compute-atlas3.yaml)::
 
   profile::base::physical::hugepagesz:       '2M'
   profile::base::physical::hugepages:        '376832'
@@ -94,9 +92,7 @@ cat hieradata/osl/roles/compute-atlas3.yaml::
   nova::compute::cpu_dedicated_set:
     - '0-191'
 
-- himlarcli
-
-cat config/flavors/atlas3.yaml::
+- himlarcli (config/flavors/atlas3.yaml)::
 
   ---
   # https://iaas.readthedocs.io/team/tips_and_tricks/dedicated-flavors.html
@@ -104,7 +100,7 @@ cat config/flavors/atlas3.yaml::
   properties: {}
   atlas3: {}
 
-cat config/flavors/atlas3-osl.yaml::
+- himlarcli (config/flavors/atlas3-osl.yaml)::
 
   ---
   # https://iaas.readthedocs.io/team/tips_and_tricks/dedicated-flavors.html
@@ -142,13 +138,9 @@ cat config/flavors/atlas3-osl.yaml::
 - OpenStack admin CLI::
 
   # Create custom trait
-
   openstack trait create CUSTOM_NREC_ATLAS3
-
   # Add trait to atlas3 hypervisors
-
   for uuid in $(openstack resource provider list -c name -c uuid -f value | grep atlas3 | awk '{print $1}')
   do
     openstack resource provider trait set --trait CUSTOM_NREC_ATLAS3 $uuid
   done
-
