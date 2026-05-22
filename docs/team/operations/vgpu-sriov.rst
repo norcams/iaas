@@ -2,10 +2,17 @@
 Configuring vGPU with SR-IOV capable GPUs
 =========================================
 
-We use traits to ensure that placement doesn't allocate GPU resources
-that doesn't exist on SR-IOV GPUs.
+Currently, newer Single Root IO Virtualization (SR-IOV) capable GPUs such as Nvidia L40s, are installed in NREC/OpenStack Zed in the following way (2026-05-22):
 
-To configure vGPU with a specific flavor, you need to:
+- The Nvidia driver version needs to be supported by NVidia for the current Linux kernel version of AlmaLinux. NREC has its own nrec-nonfree repository that provides the correct driver from the package NVIDIA-vGPU-rhel.x86_64
+- Enabled VT-d (Intel) or IOMMU (AMD) in BIOS
+- Set OpenStack to use VT-d (Intel) or IOMMU (AMD). For instance, for Intel, the config line in hieradata that enables VT-d is: profile::openstack::compute::pci_passthrough::configure_intel_iommu: true
+- Make sure the GPU driver creates Virtual Functions (VFs). The NVidia SR-IOV capable driver provides a tool for this in /usr/lib/nvidia/sriov-manage. There is a one-shot systemd serve called create-nvidia-mdev.service that will run /usr/lib/nvidia/sriov-manage -e ALL on startup, which should create the VFs. This service is installed with the hieradata config line: profile::openstack::compute::nvidia_vgpu_createmdev::enable: true
+- OpenStack Zed accesses vGPU resources using the legacy mediated device (mdev). From Linux kernel 5.16 and newer, OpenStack will instead use native SR-IOV VFs (See: https://specs.openstack.org/openstack/nova-specs/specs/2025.1/implemented/enable-vfio-devices-with-kernel-variant-drivers.html). Until then, when detecting a vGPU resource as mdev, OpenStack will create a resource provider. Running sriov-manage -e ALL to create VFs should also create mdevs. If this is not the case, a workaround seems to reinstall the NVidia driver (dnf reinstall NVIDIA-vGPU-rhel.x86_64), followed by a reboot. vGPU resource providers should then be apparent.
+- The Virtual Functions provided by the SR-IOV driver are Virtual Function IO devices. The SR-IOV driver provides vfio linux kernel modules. The modules can be seen from lsmod | grep nvidia
+- OpenStack will create a resource provider (uuid) of each possible Virtual Function, linked to the PCIe address of the physical GPU + virtual index based on the VF.
+- vGPU flavor needs to use a specific mdev type. Select which type to use from the list from mdevctl types. The mdev type(s) to use needs to be set in hieradata using nova::compute::mdev::mdev_types:
+- Placement provisions the vGPU resource based on resource provider trait. This requires the following setup::
 
 1. Create the trait::
 
@@ -40,5 +47,15 @@ To configure vGPU with a specific flavor, you need to:
 4. The trait must be added to the flavor in the yaml file::
 
   trait:CUSTOM_NREC_VGPU_L40S_24G: 'required'
-  
 
+How vGPU memory is configured for vGPU flavors
+----------------------------------------------
+
+This will probably change when OpenStack stops using mdevs
+
+- Select a mdev type from the list given from mdevctl types, with the appropriate framebuffer=*M. framebuffer is VRAM
+- Allow Nova to use the mdev type. Configure this either in the hypervisor node file or compute role
+- Find out which resource providers that need the VGPU trait in order to fully utilize all vGPU resources (see above)
+- Add the trait to the resource provides (see above)
+
+Some commands the may be needed at the various steps are: restarting nova, flavor.py update <flavor class>
