@@ -1,15 +1,17 @@
-=============================
-vGPU with SR-IOV capable GPUs
-=============================
+=========================================
+Configuring vGPU with SR-IOV capable GPUs
+=========================================
 
 We use traits to ensure that placement doesn't allocate GPU resources
 that doesn't exist on SR-IOV GPUs.
 
-First, create the trait::
+To configure vGPU with a specific flavor, you need to:
 
-  openstack --os-placement-api-version 1.28 trait create CUSTOM_NREC_VGPU_L40S_24G
+1. Create the trait::
 
-Find which resources providers we want to add the trait to::
+     openstack --os-placement-api-version 1.28 trait create CUSTOM_NREC_VGPU_L40S_24G
+
+2. Find which resources providers we want to add the trait to. These have to be the correct SR-IOV Virtual Function (VF) PCIe addresses according to the selected GPU mediated device (mdev) type and vGPU flavor confiugration::
 
   $ openstack resource provider list -c name -c uuid -f value | grep -E 'osl-compute-l40s-6(7|8).mgmt.osl.uhdc.no_pci_0000_(61|4a|e1|ca)_01_(1|2)'
   6f258839-9288-47ec-a1ea-be1237c0bd0b osl-compute-l40s-67.mgmt.osl.uhdc.no_pci_0000_ca_01_1
@@ -29,13 +31,13 @@ Find which resources providers we want to add the trait to::
   a26fc9ce-8f62-4672-92e6-5e6fe22c130c osl-compute-l40s-68.mgmt.osl.uhdc.no_pci_0000_e1_01_1
   3e9fb1ca-0cf7-4971-8d56-dcbcfb379eb1 osl-compute-l40s-68.mgmt.osl.uhdc.no_pci_0000_e1_01_2
 
-Add the trait to the resource providers::
+3. Add the trait to the resource providers::
 
   for uuid in $(openstack resource provider list -c name -c uuid -f value | grep -E 'osl-compute-l40s-6(7|8).mgmt.osl.uhdc.no_pci_0000_(61|4a|e1|ca)_01_(1|2)' | awk '{print $1}'); do
       openstack --os-placement-api-version 1.28 resource provider trait set --trait CUSTOM_NREC_VGPU_L40S_24G $uuid
   done
 
-The trait must be added to the flavor in the yaml file::
+4. The trait must be added to the flavor in the yaml file::
 
   trait:CUSTOM_NREC_VGPU_L40S_24G: 'required'
   
