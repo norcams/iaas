@@ -58,4 +58,4 @@ This will probably change when OpenStack stops using mdevs
 - Find out which resource providers that need the VGPU trait in order to fully utilize all vGPU resources (see above)
 - Add the trait to the resource providers (see above)
 
-Some commands the may be needed at the various steps are: restarting nova, flavor.py update <flavor class>
+Some commands that may be needed at the various steps are: restarting nova, flavor.py update <flavor class>
