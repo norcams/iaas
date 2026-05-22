@@ -11,7 +11,7 @@ To configure vGPU with a specific flavor, you need to:
 
      openstack --os-placement-api-version 1.28 trait create CUSTOM_NREC_VGPU_L40S_24G
 
-2. Find which resources providers we want to add the trait to. These have to be the correct SR-IOV Virtual Function (VF) PCIe addresses according to the selected GPU mediated device (mdev) type and vGPU flavor confiugration::
+2. Find which resource providers we want to add the trait to. These have to be the correct SR-IOV Virtual Function (VF) PCIe addresses according to the selected GPU mediated device (mdev) type and vGPU flavor confiugration::
 
   $ openstack resource provider list -c name -c uuid -f value | grep -E 'osl-compute-l40s-6(7|8).mgmt.osl.uhdc.no_pci_0000_(61|4a|e1|ca)_01_(1|2)'
   6f258839-9288-47ec-a1ea-be1237c0bd0b osl-compute-l40s-67.mgmt.osl.uhdc.no_pci_0000_ca_01_1
