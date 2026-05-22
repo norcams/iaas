@@ -56,6 +56,6 @@ This will probably change when OpenStack stops using mdevs
 - Select a mdev type from the list given from mdevctl types, with the appropriate framebuffer=*M. framebuffer is VRAM
 - Allow Nova to use the mdev type. Configure this either in the hypervisor node file or compute role
 - Find out which resource providers that need the VGPU trait in order to fully utilize all vGPU resources (see above)
-- Add the trait to the resource provides (see above)
+- Add the trait to the resource providers (see above)
 
 Some commands the may be needed at the various steps are: restarting nova, flavor.py update <flavor class>
