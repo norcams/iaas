@@ -55,7 +55,7 @@ You can list resource providers having a trait set by using --required::
 
    openstack resource provider list --required CUSTOM_NREC_VGPU_L40S_24G -c name -c uuid
 
-To limit to a given hypervisor, find the root resourde provider uuid for the hypervisor and list all child resource providers having the trait set with::
+To limit to a given hypervisor, find the root resource provider uuid for the hypervisor and list all child resource providers having the trait set with::
 
    openstack resource provider list --in-tree <root resource provider uuid> --required CUSTOM_NREC_VGPU_L40S_24G -c name -c uuid
 
