@@ -16,7 +16,7 @@ Currently, newer Single Root IO Virtualization (SR-IOV) capable GPUs such as Nvi
 
 1. Create the trait::
 
-     openstack --os-placement-api-version 1.28 trait create CUSTOM_NREC_VGPU_L40S_24G
+     openstack trait create CUSTOM_NREC_VGPU_L40S_24G
 
 2. Find which resource providers we want to add the trait to. These have to be the correct SR-IOV Virtual Function (VF) PCIe addresses according to the selected GPU mediated device (mdev) type and vGPU flavor confiugration::
 
@@ -41,12 +41,31 @@ Currently, newer Single Root IO Virtualization (SR-IOV) capable GPUs such as Nvi
 3. Add the trait to the resource providers::
 
      for uuid in $(openstack resource provider list -c name -c uuid -f value | grep -E 'osl-compute-l40s-6(7|8).mgmt.osl.uhdc.no_pci_0000_(61|4a|e1|ca)_01_(1|2)' | awk '{print $1}'); do
-         openstack --os-placement-api-version 1.28 resource provider trait set --trait CUSTOM_NREC_VGPU_L40S_24G $uuid
+         openstack resource provider trait set --trait CUSTOM_NREC_VGPU_L40S_24G $uuid
      done
 
 4. The trait must be added to the flavor in the yaml file::
 
      trait:CUSTOM_NREC_VGPU_L40S_24G: 'required'
+
+Useful commands
+...............
+
+You can list resource providers having a trait set by using --required::
+
+   openstack resource provider list --required CUSTOM_NREC_VGPU_L40S_24G -c name -c uuid
+
+To limit to a given hypervisor, find the root resourde provider uuid for the hypervisor and list all child resource providers having the trait set with::
+
+   openstack resource provider list --in-tree <root resource provider uuid> --required CUSTOM_NREC_VGPU_L40S_24G -c name -c uuid
+
+Show allocations (=server uuids) on vGPUs::
+
+   for uuid in $(openstack resource provider list --in-tree <root resource provider uuid> --required CUSTOM_NREC_VGPU_L40S_24G -c uuid -f value); do openstack resource provider show --allocations $uuid; done
+
+Alternatively, to just show vGPU inventory and usage::
+
+   for uuid in $(openstack resource provider list --in-tree <root resource provider uuid> --required CUSTOM_NREC_VGPU_L40S_24G -c uuid -f value); do openstack resource provider inventory list $uuid; done
 
 How vGPU memory is configured for vGPU flavors
 ----------------------------------------------
