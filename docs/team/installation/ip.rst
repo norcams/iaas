@@ -187,10 +187,29 @@ Out of band management, `IPMI BMC devices`_.
  bgo      prod     172.17.0.0/21       N/A
  osl      prod     172.17.32.0/21      N/A
  test01   test     172.29.0.0/21       N/A
- test02   test     172.28.160.0/24     N/A
+ test02   test     172.29.32.0/21      N/A
 ========= ======= =================== ====== ======
 
 Management switches
+^^^^^^^^^^^^^^^^^^^
+
+We need to set a custom MAC on **sonic** mgmt switches in DEVICE_METADATA => localhost => mac
+The last two digits of the mac should be the number/id of the switch (e.g. 00,01,02).
+
+========= ======= ===================
+ region    env     mac
+========= ======= ===================
+ bgo       prod    06:de:ad:ab:00:XY
+ osl       prod    06:de:ad:ab:32:XY
+ lmd       prod    06:de:ad:ab:64:XY
+ test01    test    06:de:ad:0a:00:XY
+ test02    test    06:de:ad:0a:32:XY
+ pri       uib     06:de:ad:00:00:XY
+ sec       uib     06:de:ad:00:32:XY
+ ter       uib     06:de:ad:00:64:XY
+========= ======= ===================
+
+Old switches
 
 ========= ======= =================== ====== ======
  region    env     IPv4                IPv6   vlan
