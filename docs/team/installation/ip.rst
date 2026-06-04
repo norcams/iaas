@@ -174,11 +174,11 @@ Out of band management, `IPMI BMC devices`_.
  env    IPv4 prefix
 ====== ================
  prod   `172.17.0.0/16`_
- test   `172.28.128.0/17`_
+ test   `172.29.0.0/16`_
 ====== ================
 
 .. _172.17.0.0/16: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.17.0.0&mask=16&division=29.723d9c40
-.. _172.28.128.0/17: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.28.128.0&mask=17&division=29.723d9c40
+.. _172.29.0.0/16: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.28.128.0&mask=17&division=29.723d9c40
 .. _172.31.16.0/21: http://www.davidc.net/sites/default/subnets/subnets.html?network=172.31.16.0&mask=21&division=29.723d9c40
 
 ========= ======= =================== ====== ======
