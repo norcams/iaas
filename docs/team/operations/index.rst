@@ -10,6 +10,7 @@ Operations
     himlar-bootstrap
     ceph
     deploy
+    autoconfig_network
     compute
     identity
     hpc
