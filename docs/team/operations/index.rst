@@ -14,6 +14,7 @@ Operations
     compute
     identity
     hpc
+    vgpu
     network
     logging
     foreman
