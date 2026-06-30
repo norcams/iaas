@@ -18,7 +18,7 @@ Atlas hardware and flavors class
 
 - 12 x osl-compute-[29-40] (192 vpu, 512 GB RAM, 213 GB disk) - atlas.c1a
 
-- 4 x osl-compute-[069-072] (192 vpu, 768 GB RAM, 878 GB disk) - atlas3
+- 4 x osl-compute-[069-072] (192 vpu, 768 GB RAM, 878 GB disk) - atlas3.m1a
 
 RAM formulas
 ............
@@ -33,7 +33,7 @@ RAM/cores:
 
 - robin.c1a: 1920 MB
 
-- atlas3: 3925 MB
+- atlas3.m1a: 3925 MB
 
 Flavor RAM:
 
@@ -60,7 +60,7 @@ Example::
   Determine the number of hugepages (hugepages) according to total RAM specification (as from dmidecode) and a large enough (non-hugepages) RAM for OS:
 
   # hugepages = floor ( 1024 * ( total RAM GiB - OS RAM GiB) / hugepagesz MiB )
-  # hugepages = floor ( 1024 * ( 768 * 32 ) / 2 ) = 376832
+  # hugepages = floor ( 1024 * ( 768 - 32 ) / 2 ) = 376832
 
 3. RAM used for hugepages should not be larger than the RAM available for VMs according to Placement (openstack resource provider inventory list <resource provider uuid>). In the example, the RAM used for hugepages will be: 1024 * ( 768-32 ) = 753664 Mebibyte, which is less than the MEMORY_MB max_unit 772785 Mebibyte reported from openstack resource provider inventory list <resource provider uuid>
 
@@ -79,8 +79,12 @@ Example::
 10. Create flavors and verify full hypervisor utilization with the different flavor configurations using Terraform
 
 
-Flavor specific configuration for atlas3:
-.........................................
+Flavor specific configuration for atlas:
+........................................
+
+This is according to the latest CERN ATLAS1/2/3 optimized flavors.
+
+The below specific configuration is for ATLAS3:
 
 - himlar (hieradata/osl/roles/compute-atlas3.yaml)::
 
@@ -95,10 +99,11 @@ Flavor specific configuration for atlas3:
 - himlarcli (config/flavors/atlas3.yaml)::
 
      ---
+     # M1 flavor class used for ATLAS3 (OSL)
      # https://iaas.readthedocs.io/team/tips_and_tricks/dedicated-flavors.html
      public: false
      properties: {}
-     atlas3: {}
+     atlas3.m1a: {}
 
 - himlarcli (config/flavors/atlas3-osl.yaml)::
 
@@ -113,24 +118,24 @@ Flavor specific configuration for atlas3:
        hw:cpu_policy: 'dedicated'
        hw:cpu_thread_policy: 'require'
        trait:CUSTOM_NREC_ATLAS3: 'required'
-     atlas3:
-       'atlas3.32-cores':
+     atlas3.m1a:
+       'atlas3.m1a.8xlarge':
          vcpus: 32
          ram:   125610
          disk:  146
-       'atlas3.48-cores':
+       'atlas3.m1a.12xlarge':
          vcpus: 48
          ram:   188414
          disk:  218
-       'atlas3.64-cores':
+       'atlas3.m1a.16xlarge':
          vcpus: 64
          ram:   251220
          disk:  292
-       'atlas3.96-cores':
+       'atlas3.m1a.24xlarge':
          vcpus: 96
          ram:   376830
          disk:  438
-       'atlas3.192-cores':
+       'atlas3.m1a.48xlarge':
          vcpus: 192
          ram:   753662
          disk:  876
@@ -144,3 +149,22 @@ Flavor specific configuration for atlas3:
      do
        openstack resource provider trait set --trait CUSTOM_NREC_ATLAS3 $uuid
      done
+
+How traits were set on ATLAS1/2/3
+.................................
+
+ATLAS1::
+
+  for uuid in $(openstack resource provider list -c name -c uuid -f value | grep -E 'atlas-02[1-4] | 'awk '{print $1}'); do openstack resource provider trait set --trait CUSTOM_NREC_ATLAS1 $uuid; done
+
+ATLAS2::
+
+  for uuid in $(openstack resource provider list -c name -c uuid -f value | grep -E 'atlas-0(29|[3-4][0-9])' | awk '{print $1}'); do openstack resource provider trait set --trait CUSTOM_NREC_ATLAS2 $uuid; done
+
+ATLAS3::
+
+  for uuid in $(openstack resource provider list -c name -c uuid -f value | grep atlas3 | awk '{print $1}'); do openstack resource provider trait set --trait CUSTOM_NREC_ATLAS3 $uuid; done
+
+Verify that traits are set with::
+
+  openstack resource provider list --required <trait>
