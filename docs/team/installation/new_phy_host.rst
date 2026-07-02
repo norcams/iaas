@@ -35,6 +35,8 @@ with default login. As a minimum, configure:
 
 - user with password and admin privileges
 
+- monitor-user with password and readonly privileges
+
 - disable default user
 
 - UEFI, and UEFI only, boot
