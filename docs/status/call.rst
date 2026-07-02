@@ -2,7 +2,7 @@
 Vakt
 ====
 
-Sist endret: 2025-12-23
+Sist endret: 2026-07-02
 
 Mange i NREC deltar i en vaktordning i arbeidstiden. Vakten går over en hel
 uke.
