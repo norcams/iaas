@@ -12,6 +12,7 @@ Operations
     deploy
     autoconfig_network
     compute
+    compute_disk
     identity
     hpc
     vgpu
