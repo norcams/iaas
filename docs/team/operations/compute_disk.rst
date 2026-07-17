@@ -44,7 +44,7 @@ we install the OS on the correct disk.
 The second is to make sure puppet use the correct disk to create :file:`vg_ext`.
 To fix this there is two options and the first is the best:
 
-#. As long ad the disks do not use the same kernel disk driver we can set the
+1. As long ad the disks do not use the same kernel disk driver we can set the
   order the kernel modules are loaded to fix the issue. To see if this is possible
   first check if they are using the same disk controller. You can see this with::
 
@@ -61,7 +61,7 @@ To fix this there is two options and the first is the best:
 
   This will make sure the :file:`ahci` is loaded first.
 
-#. If the disks use the same kernel driver you will need to use the :file:`wwn`
+2. If the disks use the same kernel driver you will need to use the :file:`wwn`
   number in hieradata to tell puppet which disk device you want to use::
 
     profile::base::lvm::physical_volume:
