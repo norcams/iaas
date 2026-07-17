@@ -62,14 +62,14 @@ To fix this there is two options and the first is the best:
   This will make sure the :file:`ahci` is loaded first.
 
 #. If the disks use the same kernel driver you will need to use the :file:`wwn`
-number in hieradata to tell puppet which disk device you want to use::
+  number in hieradata to tell puppet which disk device you want to use::
 
-  profile::base::lvm::physical_volume:
-    '/dev/disk/by-id/wwn-0x64cd98f07c7cdd002d4fb2ffe3a37666':
-      ensure: present
-      force:  true
-  profile::base::lvm::volume_group:
-    'vg_ext':
-      followsymlinks: true
-      physical_volumes:
-        - '/dev/disk/by-id/wwn-0x64cd98f07c7cdd002d4fb2ffe3a37666'
+    profile::base::lvm::physical_volume:
+      '/dev/disk/by-id/wwn-0x64cd98f07c7cdd002d4fb2ffe3a37666':
+        ensure: present
+        force:  true
+    profile::base::lvm::volume_group:
+      'vg_ext':
+        followsymlinks: true
+        physical_volumes:
+          - '/dev/disk/by-id/wwn-0x64cd98f07c7cdd002d4fb2ffe3a37666'
