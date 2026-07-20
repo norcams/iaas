@@ -168,3 +168,25 @@ ATLAS3::
 Verify that traits are set with::
 
   openstack resource provider list --required <trait>
+
+
+How traits were set on DEDICATED1
+.................................
+
+Create and assign trait::
+
+   $ openstack trait create CUSTOM_NREC_DEDICATED1
+
+   $ openstack resource provider list -c name -c uuid -f value | grep compute-ded
+   9b8c05c7-a58c-4dd3-b23a-9adbafc6eea6 osl-compute-ded-028.mgmt.osl.uhdc.no
+
+   $ openstack resource provider trait set --trait CUSTOM_NREC_DEDICATED1 9b8c05c7-a58c-4dd3-b23a-9adbafc6eea
+
+Verification::
+
+  $ openstack resource provider list --required CUSTOM_NREC_DEDICATED1
+  +--------------------------------------+--------------------------------------+------------+--------------------------------------+----------------------+
+  | uuid                                 | name                                 | generation | root_provider_uuid                   | parent_provider_uuid |
+  +--------------------------------------+--------------------------------------+------------+--------------------------------------+----------------------+
+  | 9b8c05c7-a58c-4dd3-b23a-9adbafc6eea6 | osl-compute-ded-028.mgmt.osl.uhdc.no |          6 | 9b8c05c7-a58c-4dd3-b23a-9adbafc6eea6 | None                 |
+  +--------------------------------------+--------------------------------------+------------+--------------------------------------+----------------------+
