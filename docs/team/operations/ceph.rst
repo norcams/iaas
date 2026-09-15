@@ -84,7 +84,7 @@ Find the pg and repair it.
 
 .. code:: bash
 
-  cephmon# ceph health detail
+  cephmon# ceph health detail  # alt: ceph pg ls inconsistent
   HEALTH_ERR 1 scrub errors; Possible data damage: 1 pg inconsistent
   [ERR] OSD_SCRUB_ERRORS: 1 scrub errors
   [ERR] PG_DAMAGED: Possible data damage: 1 pg inconsistent
