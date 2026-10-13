@@ -111,7 +111,7 @@ IP networks in use
  test01    test    trp          172.30.0.0/21     fd00::/64   100       65535
  test01    test    ceph         172.27.0.0/21     NA          110/130   NA
  test01    test    live         172.31.0.0/21     NA          120       NA
- test02    test    trp          172.30.32.0/24    TBD                   65536
+ test02    test    trp          172.30.32.0/21    fd32::/64             65536
  vagrant   dev     trp          172.31.8.0/24     TBD                   65500
  local1    dev     trp          172.31.12.0/24    TBD         100
  local2    dev     trp          172.31.13.0/24    TBD         101
@@ -157,8 +157,8 @@ Interactive ssh access, os level maintenance services
 ========= ======= =================== ====== ======
  bgo      prod     172.16.0.0/21       TBD
  osl      prod     172.16.32.0/21      TBD
- test01   test     172.28.0.0/24       TBD
- test02   test     172.28.32.0/24      TBD
+ test01   test     172.28.0.0/21       TBD
+ test02   test     172.28.32.0/21      TBD
  vagrant  dev      172.31.0.0/24       TBD
  local1   dev      172.31.4.0/24       TBD    10
  local2   dev      172.31.5.0/24       TBD    11
