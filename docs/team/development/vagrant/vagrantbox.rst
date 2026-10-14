@@ -16,12 +16,15 @@ See `this page <https://github.com/norcams/bento/blob/main/NORCAMS.md>`_ for det
 Upload new box
 --------------
 
-We host the boxes at https://app.vagrantup.com/norcams/
-If you do not have access ask Raymond
+We host the boxes at https://download.iaas.uio.no/nrec/vagrant/
 
-* Create a new version  x.y.z, x.y is upstream version and z is our box iteration.
-* Create a new provider, virutalbox or libvirt and upload the box
+There is a folder with a metadata in json format for each vagrant box we host.
+To add a new version of a box edit the file and add a new version with path
+to the box file and SHA256 checksum. The boxes are hosted in on a seperat folder for each box.
 
+We do not need to keep more that a few (2-3) version in the metadata file or on disk,
+so remove old ones when you add a new, but never delete all the old ones just in case
+the new one do not work!
 
 Upgrade box
 -----------
